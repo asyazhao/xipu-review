@@ -1,15 +1,15 @@
-# XJTLU_Bioinformatics_Y2S1_Course-Notes
+# XJTLU_Bioinformatics_Course-Notes
 
 > 从细胞到代码，从分子到模型。  
 > From cells to code, from molecules to models.
 
-欢迎来到我的大二上课程笔记仓库。
+欢迎来到我的课程笔记仓库。
 
-我是西交利物浦大学（XJTLU）生物信息学专业大二上学生。这个仓库把我这一学期七门课的复习内容整理成一个可以直接打开的静态复习站：左边按学科和章节阅读，正文里保留课件原图，术语带释义，考前可以搜索、对照和打印。
+我是西交利物浦大学（XJTLU）生物信息学专业学生。这个仓库把我本科阶段七门课的复习内容整理成一个可以直接打开的静态复习站：左边按学科和章节阅读，正文里保留课件原图，术语带释义，考前可以搜索、对照和打印。
 
-Welcome! This is my personal, exam-oriented review site for seven Year 2 Semester 1 modules in Bioinformatics at XJTLU. It is a static, offline-friendly site built from my lecture notes, with courseware figures placed in the relevant sections, annotated terminology, full-text search, and per-subject export.
+Welcome! This is my personal, exam-oriented review site for seven undergraduate modules in Bioinformatics at XJTLU. It is a static, offline-friendly site built from my lecture notes, with courseware figures placed in the relevant sections, annotated terminology, full-text search, and per-subject export.
 
-**在线复习站：** <https://zhihezhao25.github.io/xipu-review/>
+**在线复习站：** [打开复习站](https://zhihezhao25.github.io/xipu-review/)
 
 > 这不是课程官方资料，也不能替代课堂、教材和老师的讲解。内容以我拿到的课件为准；课件没有覆盖的地方会明确标注，不自行编造。
 
@@ -36,7 +36,7 @@ Welcome! This is my personal, exam-oriented review site for seven Year 2 Semeste
 
 ## 涵盖课程
 
-大二上（Year 2 Semester 1）
+本科课程（Undergraduate modules）
 
 | 课程代码 | 课程 | 章节 | 主要内容 |
 |---|---|---:|---|
@@ -143,9 +143,9 @@ Welcome! This is my personal, exam-oriented review site for seven Year 2 Semeste
 
 ### 在线访问
 
-<https://zhihezhao25.github.io/xipu-review/>
+[打开复习站](https://zhihezhao25.github.io/xipu-review/)
 
-不依赖本机进程，电脑关机后仍然可以打开。GitHub Pages 由公开仓库 `zhihezhao25/xipu-review` 的 `main` 分支发布。
+不依赖本机进程，电脑关机后仍然可以打开。站点由 GitHub Pages 从公开仓库的 `main` 分支发布。
 
 ### 本地打开
 
@@ -296,7 +296,6 @@ git push origin notes@<你的名字>
 
 - 感谢 BIO103、BIO105、CHE105、MTH113、SCI101、SOE102、SOE105 各位老师的课件与讲解；没有这些讲义，就没有这份整理。
 - 感谢一起讨论过题目、帮我指出错误的朋友和同学。
-- README 的结构参考了 [MushihimePepsi/XJTLU_ICS_Y2S2_Course-Notes](https://github.com/MushihimePepsi/XJTLU_ICS_Y2S2_Course-Notes)，课程内容与站点实现均为本人按生物信息学大二上的课程重新整理。
 
 ---
 
