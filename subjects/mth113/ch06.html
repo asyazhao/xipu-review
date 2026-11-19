@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 Poisson 与几何分布 · 全科复习</title>
+  <meta name="description" content="MTH113 第 6 章 Poisson 与几何分布：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="mth113" data-chapter="06">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">MTH113</a>
+      <span>/</span>
+      <span aria-current="page">第 6 章 Poisson 与几何分布</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html" class="is-current" aria-current="page"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html" class="is-current" aria-current="page"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">MTH113 · 第 6 章</p>
+          <h1>Poisson 与几何分布</h1>
+          <p class="chapter-head__en">Poisson &amp; Geometric Distributions</p>
+          <p class="chapter-head__meta">来源 W6 · 术语 6 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">6.1 四种离散模型的分工</a></li>
+        <li><a href="#s2">6.2 Poisson 模型与四条假设</a></li>
+        <li><a href="#s3">6.3 Poisson PMF 的合法性</a></li>
+        <li><a href="#s4">6.4 均值、方差与过离散诊断</a></li>
+        <li><a href="#s5">6.5 率的缩放：λ = rt</a></li>
+        <li><a href="#s6">6.6 Poisson CDF、尾部与边界</a></li>
+        <li><a href="#s7">6.7 Poisson 近似二项</a></li>
+        <li><a href="#s8">6.8 Poisson 递推、可加性与拆分</a></li>
+        <li><a href="#s9">6.9 几何分布：定义、条件与 PMF</a></li>
+        <li><a href="#s10">6.10 几何 CDF、均值与方差</a></li>
+        <li><a href="#s11">6.11 无记忆性、分位数与模型选择</a></li>
+        <li><a href="#s12">6.12 综合案例与常见错误</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲补齐核心离散模型：Poisson 描述固定时间、面积或体积内的<span class="c-term c-term--auto" data-term="event" title="事件｜event：样本空间的子集，包含使事件发生的结果。">事件</span>计数，几何分布描述直到第一次<span class="c-term c-term--auto" data-term="success" title="成功｜success：概率模型中被计数的那个事件，不一定是好事。">成功</span>所需的试验次数；最后用一张模型选择表把 Bernoulli、二项、Poisson 与几何区分开。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>Poisson 模型适用于固定区间内随机、独立、平均速率恒定的事件计数，计数没有固定上限。</li>
+    <li>Poisson PMF：<i>P</i>(<i>X</i>=<i>x</i>) = <i>e</i><sup>−<i>λ</i></sup><i>λ<sup>x</sup></i>/<i>x</i>!，<i>x</i> = 0,1,2,…；<i>E</i>(<i>X</i>) = <i>Var</i>(<i>X</i>) = <i>λ</i>。</li>
+    <li>率要随区间缩放：<i>λ</i> = <i>rt</i>；时间单位必须先统一。</li>
+    <li><i>n</i> 大、<i>p</i> 小时可用 Poisson(<i>np</i>) 近似二项；<i>p</i> 不小时近似很差。</li>
+    <li>几何分布计数“直到第一次成功的试验次数”，<span class="c-term c-term--auto" data-term="support" title="支撑集｜support：随机变量以正概率取到的全部值。">支撑集</span>为 1,2,3,…；本课程约定包含成功那次。</li>
+    <li>几何 PMF <i>P</i>(<i>X</i>=<i>x</i>) = (1−<i>p</i>)<sup><i>x</i>−1</sup><i>p</i>，CDF 1−(1−<i>p</i>)<sup><i>k</i></sup>，<i>E</i>(<i>X</i>) = 1/<i>p</i>。</li>
+    <li>几何分布无记忆：<i>P</i>(<i>X</i> &gt; <i>s</i>+<i>t</i> | <i>X</i> &gt; <i>s</i>) = <i>P</i>(<i>X</i> &gt; <i>t</i>)。</li>
+    <li>选模型先问“<span class="c-term c-term--auto" data-term="random-variable" title="随机变量｜random variable：把样本空间每个结果映射为数值的函数。">随机变量</span>数什么、取值范围是什么”，再检查<span class="c-term c-term--auto" data-term="independence" title="独立性｜independence：一个事件发生不改变另一个事件概率的性质。">独立性</span>、恒定率等假设。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">6.1</span> 四种离散模型的分工</h2>
+  <p>第 5 周用 Bernoulli 描述一次成功—失败试验，用二项描述固定 <i>n</i> 次试验中的成功数。本讲再加入两类：Poisson 描述固定区间内的事件数，几何描述直到第一次成功所需的试验次数。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>四种特殊离散模型的适用问题</caption>
+      <thead><tr><th scope="col">模型</th><th scope="col">最适合</th><th scope="col">主要<span class="c-term c-term--auto" data-term="parameter" title="参数｜parameter：对整个总体的数值概括，通常未知。">参数</span></th></tr></thead>
+      <tbody>
+        <tr><td>Bernoulli</td><td>一次成功—失败试验</td><td><i>p</i></td></tr>
+        <tr><td>二项</td><td>固定 <i>n</i> 次独立试验中的成功数</td><td><i>n</i>, <i>p</i></td></tr>
+        <tr><td>Poisson</td><td>固定时间/空间/面积区间内的事件数</td><td><i>λ</i></td></tr>
+        <tr><td>几何</td><td>直到第一次成功的试验次数</td><td><i>p</i></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义用一组动机例子建立直觉：服务中心下一小时到达的来电数、每平方米材料上的小缺陷数、网站每天的报错数，这些是“固定区间内有多少事件”，用 Poisson；询问多少位顾客才出现第一次购买、尝试多少次才首次登录成功，这些是“直到第一次成功要多少次”，用几何。</p>
+  <p>同一个现实过程可以对应不同的随机变量。顾客按 <span class="c-term c-term--auto" data-term="poisson-process" title="Poisson 过程｜Poisson process：事件按恒定平均速率独立随机发生的计数过程。">Poisson 过程</span>到达，若只问“一小时内有多少人购买”，计数用 Poisson；若问“第几位顾客才是第一位购买者”，等待用几何。先定义随机变量，再选分布。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>区分“固定区间内的计数”（Poisson）与“固定次数中的成功数”（二项）。前者的上限不固定，后者的上限是 <i>n</i>。</p>
+  </aside>
+  <p class="c-source">W6 p.5–7</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">6.2</span> Poisson 模型与四条假设</h2>
+  <p><span class="c-term">Poisson 分布<span class="c-term__en">Poisson distribution</span></span>建模固定区间内以平均速率随机发生的事件计数。讲义例子：每小时来电数、每页打字错误数、每月故障数、每秒粒子发射数、每 10 分钟到达顾客数。Poisson 是计数模型，计数没有固定上限。</p>
+  <p>模型合理的四条假设：</p>
+  <ol>
+    <li>事件相互独立发生。</li>
+    <li>平均速率在区间内恒定。</li>
+    <li>在极小的子区间内发生两个或更多事件的概率极小。</li>
+    <li>随机变量计数的是固定区间内的事件数。</li>
+  </ol>
+  <p>若事件强烈聚集，或速率随时间变化（例如高峰与低谷），简单 Poisson 模型可能很差。讲义把这称为“模型检查”：公式好用，但假设不成立时结论不可信。</p>
+  <p>若 <i>X</i> 服从参数 <i>λ</i> &gt; 0 的 <span class="c-term">Poisson 分布<span class="c-term__en">Poisson distribution</span></span>，记 <i>X</i> ~ Pois(<i>λ</i>)，PMF 为</p>
+  <div class="c-formula"><i>P</i>(<i>X</i> = <i>x</i>) = <i>e</i><sup>−<i>λ</i></sup> <i>λ<sup>x</sup></i> / <i>x</i>!，&nbsp; <i>x</i> = 0, 1, 2, …</div>
+  <p><i>λ</i> 是所研究区间内事件数的<span class="c-term c-term--auto" data-term="expected-value" title="期望｜expected value：取值的概率加权平均，描述分布中心。">期望</span>。注意 <i>λ</i> 与区间绑定：同一过程在 1 小时与 20 分钟下的 <i>λ</i> 不同。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><i>λ</i> 不是“速率”本身，而是“速率 × 区间长度”。题目给 6 次/小时，问 20 分钟时必须先换算成 <i>λ</i> = 2，不能直接用 6。</p>
+  </aside>
+  
+<!-- course-image:mth113-ch06-poisson-shape.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-mth113-ch06-poisson-shape">
+        <img class="c-course-figure__img" src="../../assets/course/mth113-ch06-poisson-shape.jpg" alt="Poisson PMF 随 λ 变化的形状" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> Poisson PMF 随 λ 变化的形状 <span class="c-course-figure__src">来源：Week 6 p.16</span></figcaption>
+      </figure>
+
+<p class="c-source">W6 p.8–10</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">6.3</span> Poisson PMF 的合法性</h2>
+  <p>用指数级数证明 PMF 总和为 1：</p>
+  <div class="c-formula"><i>e</i><sup><i>λ</i></sup> = Σ<sub><i>x</i>=0</sub><sup>∞</sup> <i>λ<sup>x</sup></i>/<i>x</i>!</div>
+  <p>因此</p>
+  <div class="c-formula">Σ<sub><i>x</i>=0</sub><sup>∞</sup> <i>e</i><sup>−<i>λ</i></sup><i>λ<sup>x</sup></i>/<i>x</i>! = <i>e</i><sup>−<i>λ</i></sup> Σ <i>λ<sup>x</sup></i>/<i>x</i>! = <i>e</i><sup>−<i>λ</i></sup><i>e</i><sup><i>λ</i></sup> = 1</div>
+  <p>且 <i>e</i><sup>−<i>λ</i></sup> &gt; 0、<i>λ<sup>x</sup></i> &gt; 0、<i>x</i>! &gt; 0，所以每项非负。Poisson 公式在所有非负整数计数上构成合法 PMF。</p>
+  <p>这个证明也解释了 <i>e</i><sup>−<i>λ</i></sup> 的角色：它是归一化因子，保证概率总质量为 1。<i>P</i>(<i>X</i>=0) = <i>e</i><sup>−<i>λ</i></sup>，这是最常用的单点概率，也是递推表的起点。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>Poisson 的 <i>x</i> 从 0 开始，几何的 <i>x</i> 从 1 开始。两者的支撑集不同，写 PMF 前先确认“0 是否可能”。</p>
+  </aside>
+  <p class="c-source">W6 p.11</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">6.4</span> 均值、<span class="c-term c-term--auto" data-term="variance" title="方差｜variance：偏差平方的概率加权平均，衡量离散程度。">方差</span>与过离散诊断</h2>
+  <p>若 <i>X</i> ~ Pois(<i>λ</i>)，则</p>
+  <div class="c-formula"><i>E</i>(<i>X</i>) = <i>λ</i>，&nbsp;&nbsp; <i>Var</i>(<i>X</i>) = <i>λ</i>，&nbsp;&nbsp; <i>SD</i>(<i>X</i>) = √<i>λ</i></div>
+  <p>均值与方差相等是 Poisson 的重要特征。讲义把它当作诊断工具：若实际数据的方差远大于均值，可能存在<span class="c-term">过离散<span class="c-term__en">overdispersion</span></span>，简单 Poisson 模型会低估尾部概率。原因可能是速率变化、事件聚集或区间之间不可比。</p>
+  <p>例：某网站平均每天 4 次报错，<i>X</i> ~ Pois(4)。则 <i>E</i>(<i>X</i>) = <i>Var</i>(<i>X</i>) = 4，<i>SD</i> = 2。若实际观测的日方差是 20，就说明“每天速率恒定、事件独立”的假设值得怀疑。</p>
+  <p>Poisson 的方差随 <i>λ</i> 增大而增大，<span class="c-term c-term--auto" data-term="standard-deviation" title="标准差｜standard deviation：方差的平方根，单位与原变量相同。">标准差</span>随 √<i>λ</i> 增大。这与二项的 <i>np</i>(1−<i>p</i>) 不同：Poisson 只有一个参数，均值和方差被绑在一起。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p><i>E</i>(<i>X</i>) = <i>Var</i>(<i>X</i>) = <i>λ</i> 必须同时记住。若题目给出均值与方差不等，就不能直接套 Poisson，除非说明是<span class="c-term c-term--auto" data-term="sample" title="样本｜sample：实际被观测到的总体子集。">样本</span>波动。</p>
+  </aside>
+  <p class="c-source">W6 p.12、46</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">6.5</span> 率的缩放：<i>λ</i> = <i>rt</i></h2>
+  <p>若事件平均每个单位时间发生 <i>r</i> 次，区间长度为 <i>t</i>，则区间内的 Poisson 参数为</p>
+  <div class="c-formula"><i>λ</i> = <i>r t</i></div>
+  <p>例：服务台平均每小时 6 通来电。1 小时 <i>λ</i> = 6；20 分钟 = 1/3 小时，<i>λ</i> = 6(1/3) = 2；2 小时 <i>λ</i> = 12。速率与区间必须换算到同一单位，否则 <i>λ</i> 没有意义。</p>
+  <p>同样的缩放适用于面积、长度与体积：织物每平方米 0.8 个瑕疵，5 平方米一卷的 <i>λ</i> = 0.8 × 5 = 4；某路段每公里 2 个坑洞，10 公里的 <i>λ</i> = 20。</p>
+  <p>讲义的服务台例：来电率 6 次/小时，问未来 20 分钟无来电的概率。<i>λ</i> = 2，<i>P</i>(<i>X</i>=0) = <i>e</i><sup>−2</sup>2<sup>0</sup>/0! = <i>e</i><sup>−2</sup> ≈ 0.1353，约 13.53%。</p>
+  <p>缩放的反向问题也常考：已知某区间内平均 2 次事件，问速率是多少。此时 <i>r</i> = <i>λ</i>/<i>t</i>。若 20 分钟平均 2 次，则每小时 6 次。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>时间单位不统一是 Poisson 题最常见的失分点。题目给“每小时”，问“每 15 分钟”时必须乘 0.25；给“每天”，问“每周”时必须乘 7。</p>
+  </aside>
+  <p class="c-source">W6 p.13–14</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">6.6</span> Poisson CDF、尾部与边界</h2>
+  <p>Poisson 的 CDF 是逐项求和：<i>F</i>(<i>k</i>) = <i>P</i>(<i>X</i> ≤ <i>k</i>) = Σ<sub><i>x</i>=0</sub><sup><i>k</i></sup> <i>e</i><sup>−<i>λ</i></sup><i>λ<sup>x</sup></i>/<i>x</i>!。对 <i>X</i> ~ Pois(2)：</p>
+  <div class="c-formula"><i>P</i>(<i>X</i> ≤ 2) = <i>e</i><sup>−2</sup>(1 + 2 + 2<sup>2</sup>/2) = 5<i>e</i><sup>−2</sup> ≈ 0.6767</div>
+  <p>因此 <i>P</i>(<i>X</i> ≥ 3) = 1 − 0.6767 = 0.3233。注意补集退到 2，而不是 3。</p>
+  <p>网站报错例：<i>X</i> ~ Pois(4)。<i>P</i>(<i>X</i>=0) = <i>e</i><sup>−4</sup> ≈ 0.0183；<i>P</i>(<i>X</i> ≤ 2) = <i>e</i><sup>−4</sup>(1 + 4 + 16/2) = 13<i>e</i><sup>−4</sup> ≈ 0.2381；<i>P</i>(<i>X</i> ≥ 3) = 0.7619。</p>
+  <p>织物瑕疵例：每平方米 0.8 个瑕疵，5 平方米卷材 <i>λ</i> = 4，<i>P</i>(<i>X</i>=5) = <i>e</i><sup>−4</sup>4<sup>5</sup>/5! ≈ 0.1563。Poisson 率可随时间、面积、长度或体积缩放，关键是区间与率匹配。</p>
+  <p>形状上，<i>λ</i> 增大使 Poisson 分布右移、偏度减小、逐渐接近钟形；<i>λ</i> 较小时右偏明显，0 的概率不可忽略。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 6-1 不同 λ 的 Poisson PMF</span>
+      <button class="c-copy" type="button" data-copy="Clean vector plot of three Poisson probability histograms for lambda = 2, 4 and 6 on the same axes, drawn as thin outlined bars in three muted tones, showing the distribution shifting right and becoming less skewed as lambda increases. Axes labelled x and P(X = x), legend lambda = 2, lambda = 4, lambda = 6. Flat 2D, thin strokes, muted slate blue, warm grey and sand palette, white background, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector plot of three Poisson probability histograms for lambda = 2, 4 and 6 on the same axes, drawn as thin outlined bars in three muted tones, showing the distribution shifting right and becoming less skewed as lambda increases. Axes labelled x and P(X = x), legend lambda = 2, lambda = 4, lambda = 6. Flat 2D, thin strokes, muted slate blue, warm grey and sand palette, white background, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p><i>P</i>(<i>X</i> ≥ 3) = 1 − <i>P</i>(<i>X</i> ≤ 2)。Poisson 的补集边界与二项相同：上尾要退一位。计算 <i>P</i>(<i>X</i>≤<i>k</i>) 时把 <i>e</i><sup>−<i>λ</i></sup> 提出求和，可减少重复运算。</p>
+  </aside>
+  <p class="c-source">W6 p.15–19</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">6.7</span> <span class="c-term c-term--auto" data-term="poisson-approximation" title="Poisson 近似｜Poisson approximation：n 大 p 小时用 Pois(np) 近似二项分布。">Poisson 近似</span>二项</h2>
+  <p>当 <i>X</i> ~ Bin(<i>n</i>, <i>p</i>) 且 <i>n</i> 大、<i>p</i> 小时，可用</p>
+  <div class="c-formula"><i>X</i> ≈ Pois(<i>λ</i> = <i>np</i>)</div>
+  <p>这适用于“很多次机会中的罕见事件”：大量产品中的少量缺陷、大量患者中的罕见不良事件、大量交易中的少量错误。</p>
+  <p>例：<i>X</i> ~ Bin(500, 0.004)，<i>λ</i> = 500(0.004) = 2。用 <i>Y</i> ~ Pois(2) 近似：<i>P</i>(<i>X</i> ≤ 1) ≈ <i>P</i>(<i>Y</i> ≤ 1) = <i>e</i><sup>−2</sup>(1 + 2) ≈ 0.4060。精确二项值约 0.4055，近似非常接近。</p>
+  <p>不适用的情形：<i>p</i> 不小、<i>n</i> 不大、事件不独立、存在会起作用的固定上限、事件率在区间内变化。讲义反例：用 Poisson 近似 Bin(10, 0.5) 很差，因为成功并不罕见。</p>
+  <p>近似好用的原因可以这样看：二项 PMF 在 <i>n</i> 大、<i>p</i> 小时可写成 <i>C</i>(<i>n</i>,<i>x</i>)<i>p<sup>x</sup></i>(1−<i>p</i>)<sup><i>n</i>−<i>x</i></sup>，其中 (<i>n</i>)<sub><i>x</i></sub><i>p<sup>x</sup></i> ≈ <i>λ<sup>x</sup></i>，(1−<i>p</i>)<sup><i>n</i></sup> ≈ <i>e</i><sup>−<i>λ</i></sup>。讲义不要求推导，只要求会判断适用性。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>近似的前提是“罕见事件”。<i>p</i> = 0.5 时即使 <i>n</i> 很大，Poisson 也不是好近似；此时<span class="c-term c-term--auto" data-term="binomial-distribution" title="二项分布｜binomial distribution：固定 n 次独立试验中成功次数的分布。">二项分布</span>接近对称，而 Poisson 仍右偏。</p>
+  </aside>
+  <p class="c-source">W6 p.20–22</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">6.8</span> Poisson 递推、可加性与拆分</h2>
+  <p>相邻概率满足递推：</p>
+  <div class="c-formula"><i>P</i>(<i>X</i>=<i>x</i>+1) / <i>P</i>(<i>X</i>=<i>x</i>) = <i>λ</i>/(<i>x</i>+1)</div>
+  <p>从 <i>P</i>(<i>X</i>=0) = <i>e</i><sup>−<i>λ</i></sup> 出发即可逐项建表。例 <i>X</i> ~ Pois(3)：0.0498、0.1494、0.2240、0.2240、0.1680、0.1008、0.0504。对 <i>λ</i> = 3，最可能的计数在 2 与 3 附近。</p>
+  <p>可加性：若 <i>X</i> ~ Pois(<i>λ</i><sub>1</sub>)、<i>Y</i> ~ Pois(<i>λ</i><sub>2</sub>) 且独立，则 <i>X</i> + <i>Y</i> ~ Pois(<i>λ</i><sub>1</sub> + <i>λ</i><sub>2</sub>)。产品 A 每小时 2 通来电、产品 B 每小时 5 通，合计每小时 7 通。</p>
+  <p>拆分：若 <i>N</i> ~ Pois(<i>λ</i>)，每个事件独立地以概率 <i>p</i> 属于类型 A，则 <i>N<sub>A</sub></i> ~ Pois(<i>λp</i>)，<i>N<sub>B</sub></i> ~ Pois(<i>λ</i>(1−<i>p</i>))。可用于按类别分来电、按类型分错误、按严重程度分缺陷。</p>
+  <p>从数据估率：在 <i>T</i> 个暴露单位内观测到 <i>x</i> 次事件，则 <i>r̂</i> = <i>x</i>/<i>T</i>；未来长度 <i>t</i> 的区间用 <i>λ̂</i> = <i>r̂t</i>。例：8 小时 24 通来电，<i>r̂</i> = 3 次/小时，30 分钟的 <i>λ̂</i> = 1.5。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>独立 Poisson 相加，参数相加；按概率拆分，参数按比例拆分。两类操作都不要把 <i>λ</i> 直接相加而忽略比例。</p>
+  </aside>
+  <p class="c-source">W6 p.41–45</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">6.9</span> 几何分布：定义、条件与 PMF</h2>
+  <p><span class="c-term">几何分布<span class="c-term__en">geometric distribution</span></span>建模直到第一次成功所需的试验次数。例：直到第一次成交的销售电话数、直到登录成功的尝试次数、直到第一个次品的检查件数、直到第一套满意公寓的看房次数。固定次数问成功数用二项；直到第一次成功用几何。</p>
+  <p>几何模型的条件：试验独立；每次只有成功/失败两种结果；成功概率 <i>p</i> 恒定；<i>X</i> 计数直到第一次成功的试验次数，包含成功那次。</p>
+  <p>约定警告：有些书或软件把几何定义为“第一次成功之前的失败次数”。本课程采用“直到第一次成功的试验次数”，支撑集为 1, 2, 3, …。两种约定相差 1，用软件时必须核对。</p>
+  <p>若 <i>X</i> = <i>x</i>，则前 <i>x</i>−1 次都失败、第 <i>x</i> 次成功：FF…FS。由独立性，</p>
+  <div class="c-formula"><i>P</i>(<i>X</i> = <i>x</i>) = (1 − <i>p</i>)<sup><i>x</i>−1</sup> <i>p</i>，&nbsp; <i>x</i> = 1, 2, 3, …</div>
+  <p>令 <i>q</i> = 1 − <i>p</i>，则总和为 <i>p</i>Σ<sub><i>j</i>=0</sub><sup>∞</sup><i>q<sup>j</sup></i> = <i>p</i>/(1−<i>q</i>) = 1。几何 PMF 合法。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>本课程几何的 <i>x</i> 从 1 开始。若写成 <i>x</i> = 0,1,2,… 或把指数写成 <i>x</i>，整道题的数值会整体错位。</p>
+  </aside>
+  <p class="c-source">W6 p.25–28</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">6.10</span> 几何 CDF、均值与方差</h2>
+  <p>要算 <i>P</i>(<i>X</i> ≤ <i>k</i>)，先看补集“前 <i>k</i> 次全失败”：<i>P</i>(<i>X</i> &gt; <i>k</i>) = (1−<i>p</i>)<sup><i>k</i></sup>。因此</p>
+  <div class="c-formula"><i>F</i>(<i>k</i>) = <i>P</i>(<i>X</i> ≤ <i>k</i>) = 1 − (1 − <i>p</i>)<sup><i>k</i></sup>，&nbsp; <i>k</i> = 1, 2, …</div>
+  <p>均值和方差为</p>
+  <div class="c-formula"><i>E</i>(<i>X</i>) = 1/<i>p</i>，&nbsp;&nbsp; <i>Var</i>(<i>X</i>) = (1 − <i>p</i>)/<i>p</i><sup>2</sup>，&nbsp;&nbsp; <i>SD</i>(<i>X</i>) = √(1−<i>p</i>)/<i>p</i></div>
+  <p>成功越罕见，期望等待越长。例：销售员每次独立电话成交概率 <i>p</i> = 0.20，<i>X</i> ~ Geom(0.20)。<i>P</i>(<i>X</i>=4) = 0.8<sup>3</sup>(0.2) = 0.1024；<i>E</i>(<i>X</i>) = 5 通电话。</p>
+  <p>累积与尾部：<i>P</i>(<i>X</i> ≤ 4) = 1 − 0.8<sup>4</sup> = 0.5904；<i>P</i>(<i>X</i> &gt; 10) = 0.8<sup>10</sup> ≈ 0.1074。前者是“前 4 通内成交”的概率，后者是“需要超过 10 通”的概率。</p>
+  <p>公寓例：10% 的公寓可接受，每周看一套，<i>X</i> ~ Geom(0.10)。<i>E</i>(<i>X</i>) = 10 周；<i>P</i>(<i>X</i> ≤ 2) = 1 − 0.9<sup>2</sup> = 0.19；<i>P</i>(<i>X</i> &gt; 17) = 0.9<sup>17</sup> ≈ 0.1668。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>几何 CDF 用补集最快：<i>P</i>(<i>X</i> ≤ <i>k</i>) = 1 − (1−<i>p</i>)<sup><i>k</i></sup>。<i>E</i>(<i>X</i>) = 1/<i>p</i> 的直觉是“平均每 1/<i>p</i> 次出现一次成功”。</p>
+  </aside>
+  <p class="c-source">W6 p.29–32、35–36</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">6.11</span> 无记忆性、<span class="c-term c-term--auto" data-term="quantile" title="分位数｜quantile：使累积概率达到 p 的取值。">分位数</span>与模型选择</h2>
+  <p>几何分布具有离散情形下的<span class="c-term">无记忆性<span class="c-term__en">memoryless property</span></span>：</p>
+  <div class="c-formula"><i>P</i>(<i>X</i> &gt; <i>s</i>+<i>t</i> | <i>X</i> &gt; <i>s</i>) = <i>P</i>(<i>X</i> &gt; <i>t</i>)</div>
+  <p>证明：左边 = (1−<i>p</i>)<sup><i>s</i>+<i>t</i></sup>/(1−<i>p</i>)<sup><i>s</i></sup> = (1−<i>p</i>)<sup><i>t</i></sup> = 右边。已经失败了 <i>s</i> 次之后，剩余等待时间的分布与一开始相同；过去的失败不改变未来的成功概率。</p>
+  <p>分位数：要使 <i>P</i>(<i>X</i> ≤ <i>k</i>) ≥ <i>q</i>，解 1 − (1−<i>p</i>)<sup><i>k</i></sup> ≥ <i>q</i>，得</p>
+  <div class="c-formula"><i>k</i> ≥ log(1 − <i>q</i>) / log(1 − <i>p</i>)</div>
+  <p>结果向上取整。例 <i>p</i> = 0.20，要 90% 把握成交：<i>k</i> ≥ log(0.10)/log(0.80) ≈ 10.32，故需 11 通电话。<span class="c-term c-term--auto" data-term="median" title="中位数｜median：排序后位于中间的观测值，对极端值稳健。">中位数</span>：解 1 − 0.8<sup><i>m</i></sup> ≥ 0.5，<i>m</i> ≥ log(0.5)/log(0.8) ≈ 3.11，中位数为 4 通。</p>
+  <p>模型选择的提问顺序：是 0/1 单次结果吗（Bernoulli）？是固定 <i>n</i> 次中的成功数吗（二项）？是固定区间内的事件数吗（Poisson）？是直到第一次成功的次数吗（几何）？先定义随机变量，再选分布。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>按问题模式选择离散模型</caption>
+      <thead><tr><th scope="col">问题模式</th><th scope="col">随机变量</th><th scope="col">模型</th></tr></thead>
+      <tbody>
+        <tr><td>一件事是否发生？</td><td>0/1 结果</td><td>Bernoulli</td></tr>
+        <tr><td>固定 <i>n</i> 次中成功几次？</td><td>0 到 <i>n</i> 的计数</td><td>二项</td></tr>
+        <tr><td>固定区间内发生几次？</td><td>0 到 ∞ 的计数</td><td>Poisson</td></tr>
+        <tr><td>直到第一次成功要几次？</td><td>1 到 ∞ 的计数</td><td>几何</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>无记忆性只对几何（离散）与指数（连续）成立，不能套到二项或 Poisson 上。几何的“过去失败不影响未来”来自恒定 <i>p</i> 与独立性。</p>
+  </aside>
+  <p class="c-source">W6 p.33、47–50、52–54</p>
+</section>
+
+<section id="s12">
+  <h2 id="s12"><span class="sec-num">6.12</span> 综合案例与常见错误</h2>
+  <p>客服中心例：投诉以平均每小时 3 次的速率到达。30 分钟内 <i>λ</i> = 3(0.5) = 1.5，无投诉概率 <i>e</i><sup>−1.5</sup> ≈ 0.2231。一小时内 <i>Y</i> ~ Pois(3)，至少 3 次投诉 <i>P</i>(<i>Y</i> ≥ 3) = 1 − <i>P</i>(<i>Y</i> ≤ 2) = 1 − <i>e</i><sup>−3</sup>(1 + 3 + 9/2) = 1 − 8.5<i>e</i><sup>−3</sup> ≈ 0.5768。若每件投诉独立地以 0.20 的概率升级，则 10 件投诉中的升级数 <i>Z</i> ~ Bin(10, 0.20)。同一个案例同时用了 Poisson 与二项，说明“先分清随机变量”比“背公式”更重要。</p>
+  <p>Poisson 与几何可以在同一过程中共存：顾客以每小时 12 人到达，每人以 0.25 的概率购买。一小时内购买者数 ~ Pois(12 × 0.25) = Pois(3)；直到第一位购买者所需的顾客数 ~ Geom(0.25)。前者是“钟表时间内的计数”，后者是“按顾客编号的等待”，问题不同，分布不同。</p>
+  <p>讲义汇总 Week 5–6 的常见错误：试验次数不固定却用二项；有固定上限 <i>n</i> 却用 Poisson；忘记把 Poisson 率缩放到正确区间；混淆 <i>P</i>(<i>X</i>=<i>k</i>) 与 <i>P</i>(<i>X</i>≤<i>k</i>)；混淆几何的“直到成功”与“成功前失败”；忽略独立与恒定概率假设。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>综合题先写“设 <i>X</i> = …，单位 …”，再写分布与参数。若同一题有两个随机变量，分别命名、分别说明分布，不要把一个的 <i>λ</i> 用到另一个上。</p>
+  </aside>
+  <p class="c-source">W6 p.51、55–57</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W6</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch05.html"><span>上一章</span>Bernoulli 与二项分布</a>
+          <a class="pager__next" href="ch07.html"><span>下一章</span>均匀与正态分布</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

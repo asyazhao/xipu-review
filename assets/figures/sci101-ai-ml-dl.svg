@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 355" role="img" aria-label="AI / ML / DL 嵌套关系">
+<title>AI / ML / DL 嵌套关系</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">AI / ML / DL 嵌套关系</text>
+<rect x="50" y="75" width="700" height="240" rx="6" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.6"/>
+<text x="70" y="102" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" fill="#2E4A6B" text-anchor="start" font-weight="700">人工智能 AI</text>
+<text x="70" y="126" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">规则系统、搜索、专家系统</text>
+<rect x="130" y="140" width="540" height="150" rx="5" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="150" y="166" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2E4A6B" text-anchor="start" font-weight="700">机器学习 ML</text>
+<text x="150" y="190" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">从数据中学习模式：回归、决策树、SVM</text>
+<rect x="230" y="205" width="340" height="70" rx="5" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="400" y="232" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2E4A6B" text-anchor="middle" font-weight="700">深度学习 DL</text>
+<text x="400" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">多层神经网络学习表示</text>
+<text x="40" y="340" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">三者是包含关系，不是并列关系；深度学习是机器学习的一个子集。</text>
+</svg>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 字符与字符串 · 全科复习</title>
+  <meta name="description" content="SOE105 第 11 章 字符与字符串：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="11">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 11 章 字符与字符串</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html" class="is-current" aria-current="page"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html" class="is-current" aria-current="page"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 11 章</p>
+          <h1>字符与字符串</h1>
+          <p class="chapter-head__en">Characters &amp; Strings</p>
+          <p class="chapter-head__meta">来源 L13 · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">11.1 char：一个字符的变量</a></li>
+        <li><a href="#s2">11.2 ASCII：字符的编号表</a></li>
+        <li><a href="#s3">11.3 <cctype>：字符判断与转换</a></li>
+        <li><a href="#s4">11.4 三个字符程序：判断、响铃与随机</a></li>
+        <li><a href="#s5">11.5 空白字符：cin >> 与 cin.get 的分工</a></li>
+        <li><a href="#s6">11.6 字符转数字：逐位构造与溢出</a></li>
+        <li><a href="#s7">11.7 C 风格字符串：字符数组加 '\0'</a></li>
+        <li><a href="#s8">11.8 string 类：比较、拼接、子串与查找</a></li>
+        <li><a href="#s9">11.9 <cstring> 与 get/getline</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本章从单个字符讲起：char 存什么、ASCII 怎么编码、&lt;cctype&gt; 提供哪些判断函数，再转到字符串的两种表示——以 '\0' 结尾的字符<span class="c-term c-term--auto" data-term="array" title="数组｜array：同一类型元素的线性集合，存于连续内存。">数组</span>与 string 类，最后是 &lt;cstring&gt; 的库函数与 get/getline 的读法。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>char 存单个字符，比较用 &lt;、&lt;=、&gt;、&gt;=、==、!=，比较的其实是编码值。</li>
+    <li>ASCII 用 7 位编码 128 个字符：数字 48–57，大写 65–90，小写 97–122，<span class="c-term c-term--auto" data-term="control-character" title="控制字符｜control character：编码 0–31 与 127 的不可打印字符，用于格式与控制。">控制字符</span> 0–31 与 127。</li>
+    <li>&lt;cctype&gt; 的 isupper/islower/isalpha/isdigit/isalnum/isspace 返回“非零”表示真，tolower/toupper 做大小写转换。</li>
+    <li>cin &gt;&gt; 会跳过空白；要保留空格、制表与换行，必须用 cin.get 与 cout.put。</li>
+    <li><span class="c-term c-term--auto" data-term="c-style-string" title="C 风格字符串｜C-style string：以 &#x27;\0&#x27; 结尾的字符数组，容量须事先给定。">C 风格字符串</span>是字符数组，以 '\0' 结尾；string 类自动管理长度，并支持比较、拼接、substr 与 find。</li>
+    <li>&lt;cstring&gt; 提供 strcpy、strcmp、strlen、strcat；get 不取走<span class="c-term c-term--auto" data-term="delimiter" title="分隔符｜delimiter：标记读取结束的字符；get 保留它，getline 取走并丢弃。">分隔符</span>，getline 会取走并丢弃它。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">11.1</span> char：一个字符的<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：有名字、有类型、可存放一个值的存储单元。">变量</span></h2>
+  <p><span class="c-term">字符类型<span class="c-term__en">char</span></span>用来存放单个字符。声明写成 char resp;，赋值写成 resp = 'c';，<span class="c-term c-term--auto" data-term="constant" title="常量｜constant：声明时赋值、之后不可修改的永久值。">常量</span>声明写成 const char star = '*';——字符字面量用单引号，这一点与字符串的双引号必须分清。</p>
+  <p>讲义给的第一个例子是连续读四个字符：声明 char a, b, c, d; 然后 cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;，用户输入 1X2Y，四个变量依次拿到 '1'、'X'、'2'、'Y'；再 cout &lt;&lt; a &lt;&lt; b &lt;&lt; c &lt;&lt; d; 原样输出 1X2Y。这个例子说明输入流是按字符切分的，数字字符 '1' 与整数 1 是两回事。</p>
+  <p>字符可以比较，用的运算符与整数完全一样：&lt;、&lt;=、&gt;、&gt;=、==、!=。比较的依据不是“字母表顺序”这种模糊直觉，而是字符在编码表里的编号——这正是下一节 ASCII 的内容。理解了这一点，'a' &lt; 'b' 成立、'A' &lt; 'a' 也成立，就都不奇怪了。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>'1' 与 1 不相等：前者是编码为 49 的字符，后者是整数值 1。判断字符是不是数字要用 isdigit(c) 或 c &gt;= '0' &amp;&amp; c &lt;= '9'，不能写 c &gt;= 0。</p>
+  </aside>
+  <p class="c-source">L13 p.2–3</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">11.2</span> ASCII：字符的编号表</h2>
+  <p><span class="c-term">ASCII<span class="c-term__en">American Standard Code for Information Interchange</span></span>用 7 位编码 128 个字符；现代用法常把它们存进 8 位字节，并把最高位置 0。讲义把这张表分成三段来看：</p>
+  <ul>
+    <li>95 个可打印字符，编码 32–126，包括空格（32）、数字（48–57）、大小写英文字母（65–90 与 97–122）、标点与符号。</li>
+    <li>33 个不可打印的控制字符，编码 0–31 与 127，用于格式与控制，例如 NULL（0）、BEL（7，响铃）、BS（8，退格 \b）、NL（10，换行 \n）、CR（13，回车）。</li>
+    <li>它是 Unicode 前 128 个码点的基础，在编程、数据<span class="c-term c-term--auto" data-term="swap" title="交换｜swap：借助一个临时变量互换两个变量的值。">交换</span>与遗留系统中仍是基本约定。</li>
+  </ul>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>ASCII 中必须记住的几段编号</caption>
+      <thead>
+        <tr><th scope="col">区间</th><th scope="col">编码</th><th scope="col">用途</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>数字 '0'–'9'</td><td>48–57</td><td>连续排列，'9' − '0' = 9</td></tr>
+        <tr><td>大写 'A'–'Z'</td><td>65–90</td><td>连续排列，共 26 个</td></tr>
+        <tr><td>小写 'a'–'z'</td><td>97–122</td><td>连续排列，与大写相差 32</td></tr>
+        <tr><td>空格</td><td>32</td><td>可打印，但 cin &gt;&gt; 会跳过它</td></tr>
+        <tr><td>控制字符</td><td>0–31、127</td><td>NULL、BEL、BS、NL、CR 等</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>这张表最实用的两个推论是：字符减字符可以得到数值（'7' − '0' = 7）；大小写之间只差 32，所以 tolower/toupper 只需要加减这个偏移。讲义后面 read_int 的写法，正是第一条推论的应用。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>记住三个起点：'0' = 48、'A' = 65、'a' = 97；并记住数字、大写、小写各自连续。给出任一字符就能推出同组其它字符的编码。</p>
+  </aside>
+  <p class="c-source">L13 p.3–4</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">11.3</span> &lt;cctype&gt;：字符判断与转换</h2>
+  <p>标准库 &lt;cctype&gt; 提供了一组针对字符的小函数。讲义的表述有一个共同点：判断类函数“返回非零”表示条件成立，而不是严格返回 true——在 C 里它们返回 int。</p>
+  <ul>
+    <li>isupper(c)：c 是大写字母时返回非零。</li>
+    <li>islower(c)：c 是小写字母时返回非零。</li>
+    <li>isalpha(c)：islower(c) 或 isupper(c) 成立时返回非零。</li>
+    <li>isdigit(c)：c 是数字字符时返回非零。</li>
+    <li>isalnum(c)：isalpha(c) 或 isdigit(c) 成立时返回非零。</li>
+    <li>isspace(c)：c 是空格、换行或制表符时返回非零。</li>
+    <li>tolower(c)：大写则返回对应小写，否则原样返回 c。</li>
+    <li>toupper(c)：小写则返回对应大写，否则原样返回 c。</li>
+  </ul>
+  <p>这组函数的返回值可以直接放在 if 条件里用，因为“非零即真”。tolower/toupper 的“否则原样返回”也很重要：它们不会把数字或标点变成别的东西，可以放心地对任意字符调用。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>isalnum 不是“字母或数字以外的都算”，而是“字母或数字才返回非零”。空格、下划线、标点都会让它返回 0。判断“是不是分隔符”要用 isspace 或直接比较。</p>
+  </aside>
+  <p class="c-source">L13 p.4–5</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">11.4</span> 三个字符程序：判断、响铃与随机</h2>
+  <p>第一个例子是自己实现一个 islower：函数体只有一句 if (c &gt;= 'a' &amp;&amp; c &lt;= 'z') return 1; else return 0;。主程序读一个字符，调用它并分别输出“是小写字母”或“是大写字母”。这个例子把 ASCII 的“连续排列”用上了——小写字母正好占据 'a' 到 'z' 这一段连续编码。</p>
+<pre class="c-code"><code>int islower(char c) {
+    if (c &gt;= 'a' &amp;&amp; c &lt;= 'z') return 1;
+    else return 0;
+}</code></pre>
+  <p>第二个例子只有一行：cout &lt;&lt; '\7';。反斜杠加数字是<b>八进制</b>转义，'\7' 对应编码 7，也就是 BEL，<span class="c-term c-term--auto" data-term="terminal" title="终端｜terminal：与计算机交互的文本界面，又称 console 或命令提示符。">终端</span>会发出一声提示音。这是控制字符在代码里的直接用法。</p>
+  <p>第三个例子输出随机字符：先 srand(time(0)) 用当前时间<span class="c-term c-term--auto" data-term="initialization" title="初始化｜initialization：在声明时用列表给数组元素赋初值。">初始化</span>随机数发生器，再取 r = rand() % 26 得到 0–25，最后 c = 'a' + r。因为小写字母编码连续，'a' 加上偏移就落在 'a'–'z' 之间。这个技巧在需要随机生成名字、随机选字母时很好用。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>'\7' 是八进制转义（编码 7），不是十进制 7、也不是字符 '7'。字符 '7' 的编码是 55。写 '\7' 得到响铃，写 '7' 得到数字七的字形。</p>
+  </aside>
+  <p class="c-source">L13 p.5–7</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">11.5</span> <span class="c-term c-term--auto" data-term="whitespace" title="空白字符｜whitespace：空格、制表符与换行，cin &gt;&gt; 提取时默认跳过。">空白字符</span>：cin &gt;&gt; 与 cin.get 的分工</h2>
+  <p>讲义先点明一个容易被忽略的行为：cin &gt;&gt; c 会跳过任何空白——空格、制表符、换行都算。它给的例子是用 while (c != '\n') <span class="c-term c-term--auto" data-term="loop" title="循环｜loop：重复执行一段语句的控制结构，又称迭代。">循环</span>读字符并输出，输入 a b c d，输出却是 abcd，中间的空格全被吃掉了。</p>
+<pre class="c-code"><code>char c = ' ';
+while (c != '\n') {
+    cin &gt;&gt; c;      // skips whitespace
+    cout &lt;&lt; c;
+}</code></pre>
+  <p>要保留空白，就得换成<span class="c-term">成员函数<span class="c-term__en">member function</span></span>式的读取：cin.get(char &amp;c) 读入一个字符，其余内容留在流里；cout.put(char) 向标准输出写一个字符。把循环体换成 cin.get(c); cout.put(c);，同样的输入就原样输出 a b c d，空格一个不少。</p>
+  <p>这一对函数的意义在于“逐字符处理”：读<span class="c-term c-term--auto" data-term="file" title="文件｜file：存放在二级存储上的永久数据集合，读取前必须先打开。">文件</span>、统计字符、解析格式时，往往需要知道每一个空格与换行的位置，而不是让输入流替我们跳过它们。讲义把 get/put 归入“读取字符时有用的 I/O 与文件流函数”，后面第 14 章的文件读写会再次用到。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>cin &gt;&gt; 提取的是“符合目标类型的一个 token”，会自动跳过前导空白；cin.get 提取的是“下一个字节”，不做任何跳过。要数空格就用 get。</p>
+  </aside>
+  <p class="c-source">L13 p.8–9</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">11.6</span> 字符转数字：逐位构造与溢出</h2>
+  <p>讲义给了一个把一行字符里的数字拼成整数的函数 read_int。它用 do-while 逐字符读取，遇到数字字符就把当前值乘 10 再加新的一位，直到读到换行为止。</p>
+<pre class="c-code"><code>int read_int() {
+    const char delimiter = '\n';
+    char next = ' ';
+    int digit;
+    int value = 0;
+    do {
+        cin.get(next);                 // read in the character
+        if (isdigit(next)) {           // update value if input is a digit
+            digit = (int)(next - '0');
+            value = 10 * value + digit;
+        }
+    } while (next != delimiter);
+    return value;
+}</code></pre>
+  <p>三处细节值得注意。第一，next − '0' 把字符编码差转成数值：'7' 的编码是 55，'0' 是 48，相减得 7。第二，value = 10 * value + digit 是“左移一位再补个位”的标准写法，读 1、2、3 会依次得到 1、12、123。第三，非数字字符被直接忽略，所以输入 1a234 得到 1234。</p>
+  <p>讲义还展示了两个运行结果：输入 1234567890 输出 1234567890，正常；输入 12345678900 却输出 −539222988。幻灯片上标着“Why?”，答案是<span class="c-term">溢出<span class="c-term__en">overflow</span></span>——这个数已经超出 int 能表示的范围，高位被截断，结果变成一个负数。这段代码没有任何检查，溢出了也照算不误。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>value = 10 * value + digit 不会自己判断越界。输入位数超过 int 的表示能力时，得到的是一个“看起来合法”的错误数值，而不是报错。需要处理长数字时，必须自己检查范围或换更宽的类型。</p>
+  </aside>
+  <p class="c-source">L13 p.10–12</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">11.7</span> C 风格字符串：字符数组加 '\0'</h2>
+  <p>讲义把字符串定义为“以<span class="c-term c-term--auto" data-term="null-character" title="空字符｜null character：编码为 0 的 &#x27;\0&#x27;，标记 C 风格字符串的结尾。">空字符</span> '\0'（即 char(0)）结尾的字符数组”。这个结尾标记是整套规则的核心：函数靠它判断字符串到哪里结束，数组的容量则可能比字符串长。</p>
+<pre class="c-code"><code>char nameA[20] = "Peter Pan";
+cout &lt;&lt; "nameA: " &lt;&lt; nameA &lt;&lt; endl;
+for (int i = 0; i &lt; 20; i++) {
+    printf("nameA[%i]='%c'\n", i, nameA[i]);
+}</code></pre>
+  <p>这段代码能打印整个名字，是因为 cout 遇到 '\0' 就停；而下面的循环把 20 个格子全打出来，可以看到 "Peter Pan" 只占前 9 个字符，第 9 个格子是 '\0'，后面还有未使用的空间。讲义在幻灯片上标注：数组大小必须事先给定。</p>
+  <p>对照的 string 版本是 string nameS = "Peter Pan";。它同样能用<span class="c-term c-term--auto" data-term="subscript" title="下标｜subscript：用方括号给出元素位置的写法。">下标</span>访问字符（nameS[i]），但长度由变量自己记录——讲义的原话是“数组大小会自动确定，并作为属性存在变量内部”，取长度用 nameS.length()，循环上界可以直接写 i &lt; nameS.length()，不必事先猜一个 20。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>char nameA[20] 的 20 是“容量”，strlen 之类得到的是“内容长度”，两者不是一回事。容量不够时字符串会被截断，容量富余时尾部是一片没用到的格子。</p>
+  </aside>
+  <p class="c-source">L13 p.13–14</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">11.8</span> string 类：比较、拼接、<span class="c-term c-term--auto" data-term="substring" title="子串｜substring：从指定位置开始、指定长度的连续字符，用 substr 取。">子串</span>与查找</h2>
+  <p>string 不是 C/C++ 的内置类型，用之前要包含 &lt;string&gt; 库。它的操作比字符数组丰富得多：用 &lt;、&lt;=、&gt;、&gt;=、==、!= 比较字符串，用 + 拼接（连接）字符串，用 s.c_str() 取回一个指向“以 '\0' 结尾的字符数组”的 const char*，用 s.substr(position, size) 取从 position 开始、长度为 size 的子串，用 s.find(subs) 找子串出现的位置。</p>
+  <p>find 有一个必须记住的失败返回值：如果 subs 不在 s 中，它返回 std::npos——讲义的解释是“一个比字符串中任何合法位置都大的数”。因此判断“找到没有”不能写 if (pos == 0)，而要写 if (pos == string::npos) 或与 npos 比较。</p>
+  <p>讲义的例子把常用操作串在一起：s = "Top"、t = "ten"，w = s + t 得到 "Topten"，w[5] 是 'n'（下标从 0 开始数：T、o、p、t、e、n）；s &lt; t 成立，因为按字典序比较时 "Top" 排在 "ten" 之前（大写字母的编码比小写小）；s + t == w 成立；在 x = "Top 10 Uses for Strings" 里 x.find("Uses") 返回 7；x.substr(12, 7) 返回 "for Str"。</p>
+  <p>把这些结果与上一节的字符数组对照，可以看出 string 的优势：不必预先定容量、不必手工维护 '\0'、比较与拼接都有现成的运算符。代价是要记得包含<span class="c-term c-term--auto" data-term="header-file" title="头文件｜header file：含库函数与变量声明的文件，由 #include 引入。">头文件</span>，并且在需要传给 C 风格接口时用 c_str() 转换。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>substr(position, size) 的两个参数是“起点 + 长度”，不是“起点 + 终点”；find 失败返回 npos，不是 −1，也不是 0。</p>
+  </aside>
+  <p class="c-source">L13 p.14–17</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">11.9</span> &lt;cstring&gt; 与 get/getline</h2>
+  <p>处理 C 风格字符串时，标准库 &lt;cstring&gt; 提供了一组函数：strcpy(dest, src) 把 src 复制到 dest；带第三个参数的版本最多复制 n 个字符；strcmp 比较两个字符串，相等返回 0；strlen 返回字符串长度；strcat 把 src 追加到 dest 末尾。讲义提醒，可以用 s.c_str() 从 string 对象取出字符数组，再交给这些函数。</p>
+  <p>输入方面有四个容易混淆的函数。get(char str[], int len, char delim) 最多读 len − 1 个字符，或读到下一个 delim、或<span class="c-term c-term--auto" data-term="end-of-file" title="文件结束｜end-of-file：输入流已无字符可读的状态，用 eof() 检测。">文件结束</span>为止，然后自动在 str 末尾补 '\0'；get(str, len) 等价于把 delim 取 '\n'；getline(str, len, delim) 与 get 相同，区别是它会把随后的那个 delim 也取走并丢弃；getline(str, len) 等价于 delim 为 '\n'。</p>
+<pre class="c-code"><code>char str[20], buffer[100];
+cin.get(str, 20);            // up to 19 chars, stops at '\n'
+cin.get(str, 20, '/');       // stops at '/'
+cin.getline(str, 20, '/');   // stops at '/' and discards it
+cin.getline(buffer, 100);    // stops at '\n' and discards it</code></pre>
+  <p>“是否丢弃分隔符”看起来只是细节，实际会决定下一次读取拿到什么：get 把 '\n' 留在流里，下一次读字符会先读到这个换行；getline 把它取走，下一行才能正常读。混用两者时如果发现程序“莫名其妙读到了空行”，先检查这里。</p>
+  <p>“最多 len − 1 个字符”也值得记住：参数 len 是缓冲区容量，必须给 '\0' 留一个位置，所以实际能存的内容比 len 少一个。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>get 与 getline 的 len 是缓冲区大小，不是要读的字符数；能读到的上限是 len − 1。写成 get(str, 20) 却期待读到 20 个字符，会少一个。</p>
+  </aside>
+  <p class="c-source">L13 p.16–19</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L13</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch10.html"><span>上一章</span>作用域与递归</a>
+          <a class="pager__next" href="ch12.html"><span>下一章</span>文件 I/O 与流</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

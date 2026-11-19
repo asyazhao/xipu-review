@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCI101 机器学习数学基础 · 全科复习</title>
+  <meta name="description" content="SCI101 第 5 章 机器学习数学基础：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="sci101" data-chapter="05">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SCI101</a>
+      <span>/</span>
+      <span aria-current="page">第 5 章 机器学习数学基础</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html" class="is-current" aria-current="page"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html" class="is-current" aria-current="page"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SCI101 · 第 5 章</p>
+          <h1>机器学习数学基础</h1>
+          <p class="chapter-head__en">Math for Machine Learning</p>
+          <p class="chapter-head__meta">来源 L2 · 术语 8 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">5.1 为什么需要数学：神经网络就是矩阵运算</a></li>
+        <li><a href="#s2">5.2 数学循环：表示、预测、学习</a></li>
+        <li><a href="#s3">5.3 线性方程组：完备、冗余、矛盾</a></li>
+        <li><a href="#s4">5.4 行列式：方程独立性的度量</a></li>
+        <li><a href="#s5">5.5 点积与矩阵乘法</a></li>
+        <li><a href="#s6">5.6 感知机：阈值与偏置等价</a></li>
+        <li><a href="#s7">5.7 预测与学习是两种操作</a></li>
+        <li><a href="#s8">5.8 损失函数：把误差变成一个数</a></li>
+        <li><a href="#s9">5.9 导数与梯度下降</a></li>
+        <li><a href="#s10">5.10 完整学习回路与三条结论</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲把机器学习拆成两半：线性代数负责“<span class="c-term c-term--auto" data-term="representation" title="表示｜representation：把每个观测转换成模型可处理形式的方式。">表示</span>与预测”，微积分负责“学习”。全部内容围绕一个循环——把输入写成向量，用矩阵运算算出预测，用损失衡量误差，再用导数决定参数往哪改。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>神经网络本质上是一连串矩阵运算；图像识别与蛋白质结构识别都可归结为矩阵乘法。</li>
+    <li>线性方程组分三类：完备且非奇异（唯一解）、冗余且奇异（无穷多解）、矛盾且奇异（无解）。</li>
+    <li>行列式衡量方程之间的独立程度；行列式为零即奇异。</li>
+    <li>点积产生一个分数；矩阵乘法对每一行做一次点积，因此一次算出所有样本的得分。</li>
+    <li>感知机中“阈值”与“偏置”等价，加偏置只是把判决边界平移。</li>
+    <li>预测使用当前参数，学习改变参数；损失把误差变成一个数，导数指出降低损失的方向。</li>
+    <li>梯度下降更新式 <i>w</i> ← <i>w</i> − <i>α</i>·d<i>L</i>/d<i>w</i>；<span class="c-term c-term--auto" data-term="learning-rate" title="学习率｜learning rate：梯度下降中控制每步更新幅度的系数 α。">学习率</span>过大会越过最小值，过小则学得慢。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">5.1</span> 为什么需要数学：神经网络就是矩阵运算</h2>
+  <p>讲义开篇给出一句判断：“Neural Networks are Matrix Operations.” 一层的输出是下一层的输入，每一层都是一次矩阵乘法，最后一层给出“Yes! Cat!”这样的判断。所谓“图像识别”，就是让计算机看见图像并认出其中的内容——讲义举的两个例子是纽约繁忙街道的场景识别与蛋白质序列的结构识别，二者在数学上是同一类问题：把输入表示成向量或矩阵，再做变换。</p>
+  <p>课程大纲页把数学分成两组：线性代数负责“方程组的表示、奇异与非<span class="c-term c-term--auto" data-term="singular-matrix" title="奇异矩阵｜singular matrix：行列式为零、各方程线性相关的矩阵。">奇异矩阵</span>、把系统看作向量、矩阵乘法、神经网络”；微积分负责“导数与优化、梯度与梯度下降”。这正是本章的两条主线。</p>
+  <p class="c-source">L2 p.2–4</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">5.2</span> 数学循环：表示、预测、学习</h2>
+  <p>讲义把整个过程压缩成三步循环，这三步是全章的目录：</p>
+  <ol>
+    <li><strong>表示（represent）</strong>：把输入写成向量，例如 x = [2, 1]；</li>
+    <li><strong>预测（predict）</strong>：计算 z = wᵀx + b，再取 ŷ = step(z)；</li>
+    <li><strong>学习（learn）</strong>：比较 ŷ 与真实 y，调整 w 与 b。</li>
+  </ol>
+  <div class="c-formula"><i>z</i> = <i>w</i><sup>T</sup><i>x</i> + <i>b</i>，&nbsp;&nbsp; <i>ŷ</i> = step(<i>z</i>)</div>
+  <p>讲义用一句话点明分工：“Linear algebra carries information forward. Calculus tells us how to change the model.”（线性代数把信息往前传，微积分告诉我们如何改变模型。）记住这句话，就记住了为什么两套数学缺一不可。</p>
+  <p class="c-source">L2 p.5</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">5.3</span> 线性方程组：完备、冗余、矛盾</h2>
+  <p>讲义先用“句子系统”（system of sentences）建立直觉，再映射到方程。三类情形一一对应：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>方程组的三种形态与解的个数</caption>
+      <thead><tr><th scope="col">形态</th><th scope="col">矩阵性质</th><th scope="col">解</th></tr></thead>
+      <tbody>
+        <tr><td>完备（complete）</td><td>非奇异（non-singular）</td><td>唯一解</td></tr>
+        <tr><td>冗余（redundant）</td><td>奇异（singular）</td><td>无穷多解</td></tr>
+        <tr><td>矛盾（contradictory）</td><td>奇异（singular）</td><td>无解</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义的信息题可以直接检验这套<span class="c-term c-term--auto" data-term="classification" title="分类｜classification：目标为类别的监督学习任务。">分类</span>：狗、猫、鸟三者中有一个是红色；狗与猫中有一个是橙色；狗是黑色。由第三条知狗既非红也非橙，由第二条知猫是橙色，再由第一条推出鸟是红色——解唯一，所以该系统非奇异。若三条陈述互相冲突（例如又说“猫是黑色”），则变成矛盾系统，无解。</p>
+  <p>几何上，两个变量的线性方程是一条直线：两条直线相交于一点是唯一解，重合是无穷多解，平行是无解。三个变量的方程是平面，情形同理。讲义随后把方程组写成矩阵形式，为行列式做准备。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“奇异”不等于“无解”。奇异只说明方程之间线性相关，可能冗余（无穷多解）也可能矛盾（无解）；要区分二者必须看等式右端是否相容。</p>
+  </aside>
+  <p class="c-source">L2 p.6–13</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">5.4</span> 行列式：方程独立性的度量</h2>
+  <p>讲义给<span class="c-term">行列式<span class="c-term__en">determinant</span></span>下了一句可直接背的定义：“A determinant is a measure of how independent the equations are.”（行列式是方程彼此独立程度的度量。）行列式为零意味着方程线性相关，矩阵奇异；不为零则非奇异，存在唯一解。</p>
+  <p>二乘二矩阵的行列式是 ad − bc；讲义进一步展示三乘三矩阵的计算，并用“对角线”的方式帮助记忆——主对角线方向的乘积取正，副对角线方向的乘积取负，再相加。</p>
+  <div class="c-formula">det [[<i>a</i>, <i>b</i>], [<i>c</i>, <i>d</i>]] = <i>ad</i> − <i>bc</i></div>
+  <p>把行列式理解为“独立性”而不是“计算公式”很重要：它回答的是“这些方程是否提供了新信息”，而不是“解是多少”。这与 5.3 的三分法是同一件事的两种说法。</p>
+  <p class="c-source">L2 p.14–18</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">5.5</span> 点积与矩阵乘法</h2>
+  <p>讲义用买菜算账引入<span class="c-term">点积<span class="c-term__en">dot product</span></span>：苹果 2 个、单价 3 元；香蕉 4 个、单价 5 元；樱桃 1 个、单价 2 元。总价 2×3 + 4×5 + 1×2 = 28。把数量写成向量 x = [2, 4, 1]，单价写成权重 w = [3, 5, 2]，则</p>
+  <div class="c-formula"><i>x</i><sup>T</sup><i>w</i> = 2×3 + 4×5 + 1×2 = 28</div>
+  <p>讲义的解读是：每个特征贡献“它的值乘以它的权重”，点积把所有这些贡献合成一个分数。这正是感知机里 z = wᵀx 的含义——权重就是每个特征的重要性。</p>
+  <p>矩阵乘法则是“对每一行做一次点积”。若 X 的每一行是一个样本（讲义的自然语言例子中，一行代表一封邮件），那么</p>
+  <div class="c-formula"><i>X</i><i>w</i> + <i>b</i> = <i>z</i>，&nbsp;&nbsp; step(<i>z</i>) → 0/1 标签</div>
+  <p>一次矩阵乘法就算出所有样本的得分，再经 step 函数变成 0 或 1。这解释了为什么说“矩阵乘法给每个样本打分”：它把逐样本的循环变成了一次批量运算。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>点积 → 一个分数；矩阵乘向量 → 每个样本一个分数；矩阵乘矩阵 → 每个样本在每个输出上的分数。三层说法是同一操作的不同规模。</p>
+  </aside>
+  <p class="c-source">L2 p.19–24</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">5.6</span> 感知机：阈值与偏置等价</h2>
+  <p>一个<span class="c-term">感知机<span class="c-term__en">perceptron</span></span>由四部分组成：输入 x₀…xₙ、权重 w₀…wₙ、求和（Σ）、激活（阶跃函数）。讲义用一页专门强调：<strong>阈值与偏置是等价的</strong>。判据 z &gt; θ 可以改写成 z − θ &gt; 0，把 −θ 并入偏置 b，就得到 z + b &gt; 0。因此“调阈值”和“调偏置”在数学上是同一件事，只是参数化的方式不同。</p>
+  <div class="c-formula">Σ<sub><i>i</i></sub> <i>w<sub>i</sub>x<sub>i</sub></i> &gt; <i>θ</i> &nbsp;⟺&nbsp; Σ<sub><i>i</i></sub> <i>w<sub>i</sub>x<sub>i</sub></i> + <i>b</i> &gt; 0，&nbsp; <i>b</i> = −<i>θ</i></div>
+  <p>这个等价性在几何上就是“把判决边界平移”：没有偏置时边界过原点，加上偏置后可以移到任意位置。第 6 章会用 −2x₁ − 2x₂ + 3 = 0 这样的例子反复使用这一点。</p>
+  <p class="c-source">L2 p.26–27</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">5.7</span> 预测与学习是两种操作</h2>
+  <p>讲义用两张并排的图区分两件事。<strong>预测</strong>使用当前参数：输入 x 进入模型（参数 w、b），得到 ŷ。<strong>学习</strong>改变参数：拿真实 y 与预测 ŷ 算损失 L(y, ŷ)，据此更新 w、b，得到新的参数，再重复预测。</p>
+  <p>这个区分的实践含义是：训练完成后，<span class="c-term c-term--auto" data-term="inference" title="推理｜inference：用训练好的模型对新输入给出预测的阶段。">推理</span>阶段不再更新参数；参数更新只发生在训练阶段，而且每次更新的依据是损失对参数的导数，而不是预测值本身。</p>
+  <p class="c-source">L2 p.31</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">5.8</span> <span class="c-term c-term--auto" data-term="loss-function" title="损失函数｜loss function：把预测误差转换成一个可最小化的数值的函数。">损失函数</span>：把误差变成一个数</h2>
+  <p>讲义用一个观测值把损失讲透：x = 2，y = 6，模型是 ŷ = wx，损失取平方误差：</p>
+  <div class="c-formula"><i>L</i>(<i>w</i>) = ½(<i>y</i> − <i>ŷ</i>)² = ½(6 − 2<i>w</i>)²</div>
+  <p>当 w = 1 时，ŷ = 2，L = ½(6 − 2)² = 8。把 L 对 w 画出来是一条开口向上的抛物线，最低点在 w = 3（此时 ŷ = 6，误差为零）。训练就是在这条曲线上寻找损失更低的参数值。</p>
+  <p>系数 ½ 的作用是让求导后清爽：dL/dw = ½·2(6 − 2w)·(−2) = 4(w − 3)。若不取 ½，导数会多一个因子 2，不影响最小值位置，只影响步长。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>损失是参数的函数，不是数据的函数。数据 (x, y) 固定后，L 只随 w 变化；所谓“训练”就是在这个函数上找低点。</p>
+  </aside>
+  <p class="c-source">L2 p.32</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">5.9</span> 导数与梯度下降</h2>
+  <p>讲义对同一例子求导：L(w) = ½(6 − 2w)²，dL/dw = 4(w − 3)。在 w = 1 处导数为 −8，是负斜率，说明“增大 w 会降低损失”。于是做一次<span class="c-term">梯度下降<span class="c-term__en">gradient descent</span></span>更新：</p>
+  <div class="c-formula"><i>w</i>′ = <i>w</i> − <i>α</i>·d<i>L</i>/d<i>w</i> = 1 − 0.1×(−8) = 1.8</div>
+  <p>损失从 8.00 降到 2.88。重复该过程得到一串越来越接近最优值的参数：w = 1.00（L = 8.00）→ 1.80（2.88）→ 2.28（1.04）→ 2.57（0.37）。步长随着接近最小值而变小，因为导数本身在变小。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 5-1 损失曲线上的梯度下降</span>
+      <button class="c-copy" type="button" data-copy="Clean vector plot of a convex parabolic loss curve with weight w on the horizontal axis and loss L on the vertical axis, four labelled points stepping down the left branch toward the minimum, tangent slope indicated at the first point, and the minimum marked at w equals 3. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/sci101-gradient-descent.svg" alt="损失曲线上的梯度下降与负梯度更新" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector plot of a convex parabolic loss curve with weight w on the horizontal axis and loss L on the vertical axis, four labelled points stepping down the left branch toward the minimum, tangent slope indicated at the first point, and the minimum marked at w equals 3. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p>讲义对学习率给出两条警告：学习率过大可能越过（overshoot）最小值；过小则学得很慢。这也解释了为什么学习率是必须调的<span class="c-term">超参数<span class="c-term__en">hyperparameter</span></span>。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>导数不直接给出答案，它只指出“往哪个方向小改能降低损失”。把梯度下降理解成“一步求解析解”是错的。</p>
+  </aside>
+  <p class="c-source">L2 p.33–34</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">5.10</span> 完整学习回路与三条结论</h2>
+  <p>把前面各节接起来，就是讲义所谓的完整回路：数据 x → 预测 ŷ = f(x; w, b) → 损失 L(y, ŷ) → 更新 w ← w − α∇L → 用新参数重复。线性代数负责算出模型输出，微积分负责找出能降低损失的参数变化；神经网络只是把这两步在许多相连的层上重复。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>两套数学的分工</caption>
+      <thead><tr><th scope="col">数学</th><th scope="col">在循环中的位置</th><th scope="col">具体工具</th></tr></thead>
+      <tbody>
+        <tr><td>线性代数</td><td>表示与预测</td><td>向量、矩阵、点积、矩阵乘法</td></tr>
+        <tr><td>微积分</td><td>学习</td><td>导数、梯度、梯度下降</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义的收尾结论有三条：算法看起来像黑箱，但其力量建立在这些基础数学之上；数据集本质上是数字的表格，线性代数提供了操作与理解这些表格的词汇；训练的核心是最小化误差，微积分提供了工具，导数与梯度告诉我们调整参数以降低误差的方向。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>能复述“表示—预测—学习”三步、写出 z = wᵀx + b 与 w ← w − α∇L，并解释 ½ 与学习率的作用，本章即达标。</p>
+  </aside>
+  <p class="c-source">L2 p.36–37</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L2</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch04.html"><span>上一章</span>生成式 AI</a>
+          <a class="pager__next" href="ch06.html"><span>下一章</span>感知机、激活函数与过拟合/欠拟合</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

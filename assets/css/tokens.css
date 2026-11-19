@@ -1,0 +1,88 @@
+/* ============================================================
+   tokens.css — 设计变量（浅色 / 暗色）
+   所有颜色、字号、间距只在这里定义；组件不得写死颜色。
+   ============================================================ */
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC",
+               "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC",
+               "Microsoft YaHei", sans-serif;
+  --font-mono: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* 浅色主题 */
+  --bg: #FAF8F3;
+  --surface: #FFFFFF;
+  --surface-2: #F3F0E8;
+  --text: #262624;
+  --muted: #5E5E58;
+  --accent: #2E4A6B;
+  --accent-hover: #243C58;
+  --accent-soft: #E7EBF1;
+  --border: #DCD6C9;
+  --border-strong: #8F887C;
+  --exam-bg: #EDF1F5;
+  --code-bg: #F1EEE6;
+  --tag-bg: #E9E4D8;
+  --mark-bg: #DDE4EE;
+  --selection: #DDE4EE;
+
+  /* 布局 */
+  --container: 1200px;
+  --prose: 720px;
+  --sidebar: 220px;
+  --header-h: 64px;
+  --gutter: 64px;
+
+  /* 字号 */
+  --fs-display: 40px;
+  --fs-h1: 32px;
+  --fs-h2: 24px;
+  --fs-h3: 19px;
+  --fs-body: 17px;
+  --fs-small: 14px;
+  --fs-micro: 12px;
+  --fs-code: 14px;
+
+  /* 间距与圆角 */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --radius: 2px;
+  --radius-control: 3px;
+}
+
+[data-theme="dark"] {
+  --bg: #16181A;
+  --surface: #1D2023;
+  --surface-2: #202428;
+  --text: #D9DAD7;
+  --muted: #9A9D99;
+  --accent: #93ADC9;
+  --accent-hover: #A9C0D8;
+  --accent-soft: #222A34;
+  --border: #2C3034;
+  --border-strong: #62686E;
+  --exam-bg: #1F262E;
+  --code-bg: #1B1E21;
+  --tag-bg: #24282C;
+  --mark-bg: #2E3A48;
+  --selection: #2C3A4A;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --fs-display: 32px;
+    --fs-h1: 26px;
+    --fs-h2: 21px;
+    --fs-h3: 17px;
+    --fs-body: 16px;
+    --gutter: 40px;
+    --header-h: 56px;
+  }
+}

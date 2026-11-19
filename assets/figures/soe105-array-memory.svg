@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" role="img" aria-label="一维数组的内存布局">
+<title>一维数组的内存布局</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">一维数组的内存布局</text>
+<rect x="100" y="150" width="88" height="60" rx="0" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="144.0" y="186" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">a[0]</text>
+<rect x="188" y="150" width="88" height="60" rx="0" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="232.0" y="186" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">a[1]</text>
+<rect x="276" y="150" width="88" height="60" rx="0" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="320.0" y="186" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">a[2]</text>
+<rect x="364" y="150" width="88" height="60" rx="0" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="408.0" y="186" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">a[3]</text>
+<rect x="452" y="150" width="88" height="60" rx="0" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="496.0" y="186" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">a[4]</text>
+<rect x="540" y="150" width="88" height="60" rx="0" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="584.0" y="186" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">a[5]</text>
+<rect x="628" y="150" width="88" height="60" rx="0" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="672.0" y="186" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">a[6]</text>
+<text x="100" y="130" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="start" font-weight="400">基地址</text>
+<line x1="100" y1="120" x2="100" y2="146" stroke="#2E4A6B" stroke-width="1.2" marker-end="url(#arrowBlue)"/>
+<text x="408.0" y="236" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">连续内存</text>
+<text x="40" y="290" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">a[i] 的地址 = 基地址 + i × sizeof(元素类型)；下标从 0 开始。</text>
+<text x="40" y="314" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">数组名在表达式中通常退化为指向首元素的指针；越界访问不会自动检查。</text>
+</svg>

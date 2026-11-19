@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE102 数据类型、变量、方法与运算符 · 全科复习</title>
+  <meta name="description" content="SOE102 第 2 章 数据类型、变量、方法与运算符：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe102" data-chapter="02">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE102</a>
+      <span>/</span>
+      <span aria-current="page">第 2 章 数据类型、变量、方法与运算符</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html" class="is-current" aria-current="page"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html" class="is-current" aria-current="page"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE102 · 第 2 章</p>
+          <h1>数据类型、变量、方法与运算符</h1>
+          <p class="chapter-head__en">Data Types, Variables, Methods &amp; Operators</p>
+          <p class="chapter-head__meta">来源 W2 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">2.1 Hello World：关键字与类</a></li>
+        <li><a href="#s2">2.2 main 方法：程序入口与方法体</a></li>
+        <li><a href="#s3">2.3 变量、声明语句与表达式</a></li>
+        <li><a href="#s4">2.4 运算符、操作数与注释</a></li>
+        <li><a href="#s5">2.5 八种基本类型与宽度</a></li>
+        <li><a href="#s6">2.6 溢出、下溢与包装类</a></li>
+        <li><a href="#s7">2.7 强制类型转换</a></li>
+        <li><a href="#s8">2.8 浮点数：float、double 与精度</a></li>
+        <li><a href="#s9">2.9 char、Unicode、boolean 与 String</a></li>
+        <li><a href="#s10">2.10 注释、编码风格与 Math 对象</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲以 Hello World 为解剖对象，讲清关键字、类、main 方法与语句，再展开变量与表达式、八种基本类型及其宽度、溢出与强制转换、浮点精度，最后落到字符、注释、编码风格与 Math 对象。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>Java 关键字区分大小写，<code>public</code> 是访问修饰符，<code>class</code> 用来定义类，类体由一对花括号界定。</li>
+    <li>方法是执行某个操作的一组语句；main 是程序入口，签名固定为 public static void main(String[] args)。</li>
+    <li>变量声明要给出类型与名字，可选地加表达式初始化；表达式求值后得到单个值。</li>
+    <li>运算符作用于操作数并返回结果；<code>+ - * /</code> 是讲义给出的四种算术运算符，括号可改变求值顺序。</li>
+    <li>八种基本类型是 boolean、byte、char、short、int、long、float、double，宽度分别为 8/16/32/64 位不等。</li>
+    <li>超出最大值发生溢出、低于最小值发生下溢，计算机会跳回另一端。</li>
+    <li>强制类型转换写作 <code>(目标类型)(表达式)</code>；float 是单精度、double 是双精度，货币等精确计算不应使用浮点。</li>
+    <li>char 占 16 位以容纳 Unicode；编码风格的核心是可读性，维护通常占开发工作量的 80%。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">2.1</span> Hello World：关键字与类</h2>
+  <p>Java 程序由<span class="c-term">关键字<span class="c-term__en">keyword</span></span>构成，每个关键字有特定含义，有时必须按特定顺序出现。讲义特别提醒：关键字区分大小写，<code>public</code>、<code>Public</code> 与 <code>PUBLIC</code> 是三样不同的东西。最小的程序是：</p>
+<pre class="c-code"><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}</code></pre>
+  <p><code>public</code> 是<span class="c-term">访问修饰符<span class="c-term__en">access modifier</span></span>，用来定义作用域，即代码的其他部分（甚至别人的代码）能否访问这段代码；现阶段一律用 public 表示完全开放。<code>class</code> 关键字用来定义类，关键字后面跟类名（这里是 HelloWorld），再用一对花括号界定类体。花括号之间的任何内容都是这个类的一部分，既可以是数据，也可以是代码。</p>
+  <p>定义类的完整写法是：可选的访问修饰符 + <code>class</code> + 类名 + 左花括号 + 类体 + 右花括号。讲义把这称为“我们的第一个类”。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p><code>public</code> 修饰类时表示“谁都能访问这个类”，修饰方法时表示“谁都能调用这个方法”，两者含义一致但作用对象不同；<code>static</code> 不是访问修饰符，它回答的是“需不需要对象”。</p>
+  </aside>
+  <p class="c-source">W2 slide 4–7</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">2.2</span> main 方法：程序入口与方法体</h2>
+  <p><span class="c-term">方法<span class="c-term__en">method</span></span>是执行某个操作的一条或多条语句的集合。Java 运行程序时会寻找一个特殊方法——<span class="c-term">main 方法<span class="c-term__en">main method</span></span>，它是任何 Java 代码的入口点。main 的声明里每个词都有作用：</p>
+  <ul>
+    <li><code>public</code>：访问修饰符，与定义类时同理。</li>
+    <li><code>static</code>：Java 关键字，现阶段只需知道“必须有 static，Java 才能找到这个方法去运行我们写的代码”。</li>
+    <li><code>void</code>：表示这个方法不返回任何东西。</li>
+    <li><code>main</code>：方法名。</li>
+    <li><code>(String[] args)</code>：圆括号在方法声明中是必需的，里面可选地放一个或多个参数，参数是向方法传递信息的方式。</li>
+  </ul>
+  <p><span class="c-term">代码块<span class="c-term__en">code block</span></span>用来界定一段代码，方法里必须有代码块，我们要执行任务的语句就写在这里。<span class="c-term">语句<span class="c-term__en">statement</span></span>是一条待执行的完整命令，可以包含一个或多个表达式。</p>
+  <p>讲义给了一个挑战：把程序改成打印自己的名字而不是 World。改法只是替换引号里的文本。随之而来的“常见错误”只有一句提醒：不要漏分号和双引号——<code>System.out.println("Hello, Jim")</code> 少了末尾的分号就无法编译。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>main 的签名一个词都不能少、不能换序：<code>public static void main(String[] args)</code>。返回类型写在方法名之前，<code>void</code> 表示无返回值。</p>
+  </aside>
+  <p class="c-source">W2 slide 8–14</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">2.3</span> 变量、声明语句与表达式</h2>
+  <p><span class="c-term">变量<span class="c-term__en">variable</span></span>是在计算机里存信息的方式。我们给变量起一个名字，之后就能用这个名字访问它，而由计算机负责把它放在随机存取存储器（RAM）的哪个位置。顾名思义，变量的内容可以改变。使用前必须告诉计算机要存什么类型的信息，再给它一个名字。</p>
+  <p>这些类型统称<span class="c-term">数据类型<span class="c-term__en">data type</span></span>，在 Java 里都是关键字。先从 int 开始：int 是 integer 的缩写，表示整数，即没有小数点的数。<span class="c-term">声明语句<span class="c-term__en">declaration statement</span></span>用来定义变量——给出数据类型、名字，可选地设定初始值：</p>
+<pre class="c-code"><code>int myFirstNumber = 5;</code></pre>
+  <p>这一行声明了一个 int 类型的变量 myFirstNumber，并把值 5 赋给它（赋值也叫初始化）。<span class="c-term">表达式<span class="c-term__en">expression</span></span>是求值后得到单个值的构造。表达式可以由字面量、变量、方法返回值与运算符组合而成，也可以很复杂：<code>int myFirstNumber = (10 + 5) + (2 * 10);</code>。</p>
+  <p>用双引号包住的任意字符序列是<span class="c-term">字符串字面量<span class="c-term__en">String literal</span></span>。它的值不能改变（不同于变量），它是表达式而不是变量。讲义用一个小实验说明差别：把 <code>System.out.println("myFirstNumber")</code> 的引号去掉，输出的就不再是这段文字，而是变量的值。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><code>System.out.println("myFirstNumber")</code> 打印的是文字 myFirstNumber，<code>System.out.println(myFirstNumber)</code> 打印的才是变量的值 5；引号的有无决定“字面量”还是“变量”。</p>
+  </aside>
+  <p class="c-source">W2 slide 15–28</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">2.4</span> 运算符、操作数与注释</h2>
+  <p><span class="c-term">运算符<span class="c-term__en">operator</span></span>是对一个、两个或三个操作数执行特定运算并返回结果的特殊符号。加号 <code>+</code> 把两个变量的值相加就是例子。<span class="c-term">操作数<span class="c-term__en">operand</span></span>是被运算符处理的对象：在 <code>int myVar = 15 + 12;</code> 中，<code>+</code> 是运算符，15 与 12 是操作数；换用变量也一样，<code>double mySalary = hoursWorked * hourlyRate;</code> 中 <code>*</code> 是运算符，两个变量是操作数。</p>
+  <p>讲义本讲涉及的算术运算符是 <code>+</code>、<code>-</code>、<code>/</code>、<code>*</code>。它还演示了括号的作用：<code>(10 + 5) + (2 * 10)</code> 先算两个括号内的部分再相加，结果与不加括号可能不同。至于完整的优先级表，本课程资料未提供，只给出括号可以改变求值顺序这一条。讲义另外提到常见运算符有缩写形式（如把“加一个数再存回原变量”写成复合赋值），但幻灯片未展开具体写法。</p>
+  <p><span class="c-term">注释<span class="c-term__en">comment</span></span>会被计算机忽略，只为人类阅读而存在。用 <code>//</code> 放在代码前或空行上，从 <code>//</code> 到行尾全部被忽略。注释除了描述程序，还可以用来临时禁用一段代码——调试时非常实用。多行注释的写法在 2.10 节说明。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>能区分三个概念：运算符是符号（<code>+</code>），操作数是被运算的东西（15、12 或变量），表达式是它们组合起来求值得到单个值的整体（<code>hoursWorked * hourlyRate</code>）。</p>
+  </aside>
+  <p class="c-source">W2 slide 29–34、66–70</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">2.5</span> 八种基本类型与宽度</h2>
+  <p>在 Java 中，<span class="c-term">基本类型<span class="c-term__en">primitive type</span></span>是最基础的数据类型，int 只是其中一种。八种基本类型是：<span class="c-term">boolean</span>、<span class="c-term">byte</span>、<span class="c-term">char</span>、<span class="c-term">short</span>、<span class="c-term">int</span>、<span class="c-term">long</span>、<span class="c-term">float</span>、<span class="c-term">double</span>。讲义把它们称为数据操作的积木。</p>
+  <p>每种类型占用的内存不同，讲义用“宽度”（width）来描述：byte 占 8 位、宽度 8；short 占 16 位、宽度 16；int 占 32 位、宽度 32；char 占 2 字节即 16 位、宽度 16；float 是单精度、占 32 位；double 是双精度、占 64 位。核心结论是：一个 int 需要的空间是 byte 的四倍。讲义坦言这些数字“不是特别相关”，但可能出现在面试里，而且知道某些类型更占空间是有用的。</p>
+  <p>类可以被组织进<span class="c-term">包<span class="c-term__en">package</span></span>：包是组织 Java 项目的方式，现阶段可以理解为文件夹，例如 introducingJava 是 PrimitiveTypes 的子文件夹。公司习惯把域名倒过来用作包名，所以 <code>introducingJava.week3</code> 会成为 <code>PrimitiveTypes.introducingJava.week3</code> 这样的层级；更详细的包机制后续再讲。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>char 不是 1 字节而是 2 字节（16 位），因为它要容纳 Unicode；boolean 讲义说“只用到 1 bit，但可能占用多达 32 bit”，所以不要把它当成固定 1 位。</p>
+  </aside>
+  <p class="c-source">W2 slide 35–36、45、57–61</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">2.6</span> 溢出、下溢与包装类</h2>
+  <p>每种基本类型能表示的范围有限。Java 为八种基本类型都提供了<span class="c-term">包装类<span class="c-term__en">wrapper class</span></span>：int 对应 Integer，通过包装类可以对这个 int 执行各种操作。讲义用 <code>Integer.MIN_VALUE</code> 与 <code>Integer.MAX_VALUE</code> 让 Java 自己报出可存储的最小值与最大值。</p>
+  <p>如果试图放入比最大值更大的值，会发生<span class="c-term">溢出<span class="c-term__en">overflow</span></span>；放入比最小值更小的值，会发生<span class="c-term">下溢<span class="c-term__en">underflow</span></span>。计算机的处理方式是“跳回”另一端——溢出后跳到最小值，下溢后跳到最大值。“这通常不是你想要的结果”，因此讲义强调这是必须意识到的概念。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>溢出与下溢不会报错，而是静默地环绕到另一端：超过 MAX 得到 MIN，低于 MIN 得到 MAX。范围查询用 <code>Integer.MIN_VALUE</code> / <code>Integer.MAX_VALUE</code>。</p>
+  </aside>
+  <p class="c-source">W2 slide 39–42</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">2.7</span> 强制类型转换</h2>
+  <p>做算术时常常会遇到类型不匹配的报错。<span class="c-term">强制类型转换<span class="c-term__en">casting</span></span>就是把一个数字从一种类型当作（或转换成）另一种类型：把目标类型写进圆括号，放在要转换的值前面。</p>
+<pre class="c-code"><code>(byte)(myMinByteValue / 2);</code></pre>
+  <p>讲义说明这不是 Java 独有的机制，其他语言也有 casting。它给出一条务实建议：除非有充分理由，否则一律使用整数（int）——整数是默认选择，转换只在必要时使用。</p>
+  <p>对应的课堂挑战是：声明一个 byte 变量并赋任意合法值，声明一个 short 变量并赋任意合法值，声明一个 int 变量并赋任意合法值，最后声明一个 long 变量，令它等于 50000 加上 10 乘以（byte + short + int）三个值之和。这道题同时考了类型选择、算术与“小类型参与运算会先提升”的感觉。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>强转是“把值塞进更小的容器”，可能丢信息；把 double 强转成 int 会直接截断小数部分，而不是四舍五入。讲义的建议是默认用 int，不要为了省空间随意用 byte/short。</p>
+  </aside>
+  <p class="c-source">W2 slide 46–49</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">2.8</span> 浮点数：float、double 与精度</h2>
+  <p>与整数不同，<span class="c-term">浮点数<span class="c-term__en">floating point number</span></span>带有用小数点表示的小数部分，3.14159 就是一例。浮点数也叫实数，需要更高精度时使用。Java 有两种表示浮点数的基本类型：float 是单精度（single precision），double 是双精度（double precision）。“精度”指该类型的格式以及占用的空间大小。</p>
+  <p>单精度占 32 位（宽度 32），双精度占 64 位（宽度 64）。因此 float 的范围是 1.4E-45 到 3.4028235E+38，double 精确得多，范围是 4.9E-324 到 1.7976931348623157E+308。</p>
+  <p>写 float 字面量要在末尾加 <code>f</code>；讲义认为这比强转更省事，也明确说如今不太推荐使用 float，double 才是首选的浮点类型。更重要的警告是：float 与 double 适合一般浮点运算，但不适合需要精确计算的场合——这是浮点数存储方式的固有限制，不是 Java 的问题。Java 提供 <code>BigDecimal</code> 来克服这一点，做货币计算这类精确运算时不应使用浮点类型。</p>
+  <p>课堂挑战是磅转千克：用合适的类型存磅数，按 1 pound = 0.45359237 kilogram 计算千克数存入第二个变量，再打印结果。用 double 是最自然的选择。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>float 32 位单精度、double 64 位双精度；float 字面量要加 f 后缀；货币等精确计算用 BigDecimal，不用 float/double。这些是判断题的高频点。</p>
+  </aside>
+  <p class="c-source">W2 slide 50–56</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">2.9</span> char、Unicode、boolean 与 String</h2>
+  <p>char 占 2 字节即 16 位，宽度为 16。“为什么不是一个字节？”因为它要能存 <span class="c-term">Unicode</span> 字符。Unicode 是面向不同语言与文字的国际化编码标准，每个字母、数字或符号都被分配一个唯一的数值，并跨平台、跨程序通用。英文字母表只需 26 个字符，其他语言需要多得多；用 char 的两个字节组合，Unicode 可以表示 65535 种不同字符。讲义给出查询站点 unicode-table.com。</p>
+  <p>boolean 只有两个选择：true / false、yes / no、1 / 0。在 Java 里 boolean 基本类型只能取 true 或 false 两个值，编程中会大量使用。</p>
+  <p>String 是字符序列。与只能装单个字符（普通字符或 Unicode 字符）的 char 不同，String 可以装很长的字符序列，技术上受内存或 int 的 MAX_VALUE 限制，即约 21.4 亿个字符。讲义强调 Java 的 String 是<span class="c-term">不可变<span class="c-term__en">immutable</span></span>的：字符串创建之后不能修改，所谓“追加”其实是创建了一个新 String。</p>
+<pre class="c-code"><code>String lastString = "100";
+lastString = lastString + "20.47";
+// 并没有修改原对象，而是新建了一个 String</code></pre>
+  <p>正因为每次拼接都会新建对象，这种写法效率不高、不被推荐；更好的方式是用可修改的 StringBuffer，但那要先理解类，后续再讲。现阶段只需记住 String 不可变。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“String 可以删除字符”是错觉：String 不可变，任何看似修改的操作都返回新对象。原变量若没被重新赋值，仍指向旧内容。</p>
+  </aside>
+  <p class="c-source">W2 slide 57–65</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">2.10</span> 注释、编码风格与 Math 对象</h2>
+  <p>注释有两种：<code>//</code> 写单行注释，<code>/* …… */</code> 写多行注释。一行注释说明类或方法的用途通常就够了，代码越复杂越要多写；写得好的代码需要更少注释，但在学习阶段和自己的项目里，讲义建议“什么都注释”。</p>
+  <p>讲义把<span class="c-term">编码风格<span class="c-term__en">coding style</span></span>提到很高的位置：代码必须容易被别人和自己读懂，这能在维护时省时间、减少人为错误；在软件开发项目中，维护往往占 80% 的工作量，所以可读性至关重要。具体要求是：</p>
+  <ul>
+    <li>用有意义的名字：<code>firstName</code>、<code>dayOfWeek</code>、<code>maxTemperature</code> 优于 <code>a1</code>、<code>a2</code>、<code>b</code>；循环计数器等临时变量可以例外。</li>
+    <li>不要缩写单词或删掉元音：用 <code>message</code> 而不是 <code>msg</code>；缩略词只大写首字母，写 <code>importHtml</code> 而不是 <code>importHTML</code>。</li>
+    <li>缩进：用空格而不是制表符；NetBeans 里 <code>Alt-Shift-F</code> 可自动缩进。</li>
+    <li>空白：每个词之间留空格，适当加空行提升可读性。</li>
+    <li>花括号位置：<code>{</code> 放在代码块第一行的末尾，<code>}</code> 单独占一行放在块尾；两个花括号之间的代码叫一个块。</li>
+  </ul>
+  <p>最后是 <span class="c-term">Math 对象<span class="c-term__en">Math object</span></span>：需要开方、随机数等额外运算时用它。Math 是一个对象（后续再讲），拥有一批方法，通过 <code>Math.</code> 访问。例子：<code>Math.sqrt(num1)</code> 求平方根，<code>Math.max(num1, num2)</code> 取较大值，<code>Math.random()</code> 产生 0.0 到 1.0 之间的伪随机数，乘以 100 就得到 0.0 到 100.0 之间的 double。讲义还列出 acos、asin、atan、exp、floor、hypot、log、min、pow、round、signum、sin、tan、toDegrees、toRadians 等方法及其返回类型（多为 double，round 返回 int）。</p>
+  <p>综合例子是求直角三角形斜边：已知 a = 4、b = 2，用 <code>Math.sqrt(Math.pow(a,2) + Math.pow(b,2))</code> 得到 4.47；更简单的写法是 <code>Math.hypot(a, b)</code>，它正是为此设计的。求角度则用 TOA（tan = 对边/邻边）：<code>Math.atan(opp/adj)</code> 得到弧度，再用 <code>Math.toDegrees(val)</code> 转成角度。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p><code>Math.random()</code> 返回 double，范围 [0.0, 1.0)；要其他区间就乘一个倍数，但它不是整数，取整需要另做处理。求斜边优先用 <code>Math.hypot</code>，它比 pow + sqrt 更简洁，也避免了中间结果的溢出。</p>
+  </aside>
+  <p class="c-source">W2 slide 71–91</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W2</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch01.html"><span>上一章</span>Java 入门与开发环境</a>
+          <a class="pager__next" href="ch03.html"><span>下一章</span>数组、输入与控制流</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

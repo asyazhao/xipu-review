@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE102 数组、输入与控制流 · 全科复习</title>
+  <meta name="description" content="SOE102 第 3 章 数组、输入与控制流：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe102" data-chapter="03">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE102</a>
+      <span>/</span>
+      <span aria-current="page">第 3 章 数组、输入与控制流</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html" class="is-current" aria-current="page"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html" class="is-current" aria-current="page"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE102 · 第 3 章</p>
+          <h1>数组、输入与控制流</h1>
+          <p class="chapter-head__en">Arrays, Input &amp; Control Flows</p>
+          <p class="chapter-head__meta">来源 W3 · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">3.1 数组：创建、索引与 length</a></li>
+        <li><a href="#s2">3.2 Scanner 输入与边界检查</a></li>
+        <li><a href="#s3">3.3 while：先判断后执行</a></li>
+        <li><a href="#s4">3.4 do-while：至少执行一次</a></li>
+        <li><a href="#s5">3.5 for 与增强 for</a></li>
+        <li><a href="#s6">3.6 嵌套循环与二维数组</a></li>
+        <li><a href="#s7">3.7 break 与 continue</a></li>
+        <li><a href="#s8">3.8 分支与控制流全景（含资料缺口）</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本章把“存一组值、读入用户输入、选择执行路径”三件事放在一起：数组的创建与索引、Scanner 的读取与校验、while / do-while / for 三种循环，以及<span class="c-term c-term--auto" data-term="nested-loop" title="嵌套循环｜nested loop：一个循环体内再写一个循环，外层走行、内层走列。">嵌套循环</span>中的 break 与 continue。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>数组用 <code>类型[] 名字</code> 声明，索引从 0 开始，最后一个索引是 length − 1。</li>
+    <li><code>array.length</code> 是字段而不是<span class="c-term c-term--auto" data-term="method" title="方法｜method：类中具名、可复用的代码块，被调用时执行。">方法</span>，用来代替硬编码的数组长度。</li>
+    <li>Scanner 的 <code>nextInt()</code> 读取整数；读入后必须先校验范围，再访问数组。</li>
+    <li>while 在每次迭代前检查条件，条件一开始就为假则循环体一次都不执行。</li>
+    <li>do-while 先执行循环体再判断，因此至少执行一次，适合反复索要合法输入。</li>
+    <li>for 把初始化、条件、更新写在一行；增强 for 只遍历值，不提供索引。</li>
+    <li>二维数组是“数组的数组”，嵌套循环的外层走行、内层走列。</li>
+    <li>break 结束当前循环，continue 跳过本次剩余语句直接进入下一次迭代。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">3.1</span> 数组：创建、索引与 length</h2>
+  <p>数组用来把一组同类型的值存在一起。声明时类型后面加方括号：<code>String[] team</code> 表示一个存放 String 的数组，<code>int[] scores</code> 表示一个存放整数的数组。创建时可以直接给出元素（数组初始化器），也可以只给出长度让 Java 填入默认值。</p>
+<pre class="c-code"><code>String[] team = {"Pikachu", "Charmander", "Squirtle", "Bulbasaur"};
+
+System.out.println("Team size: " + team.length);
+System.out.println("Before: " + team[1]);
+
+team[1] = "Eevee";
+System.out.println("After: " + team[1]);
+System.out.println("First: " + team[0]);
+System.out.println("Last: " + team[team.length - 1]);</code></pre>
+  <p>这段程序输出 Team size: 4、Before: Charmander、After: Eevee、First: Pikachu、Last: Bulbasaur。要看清三件事：<span class="c-term">索引<span class="c-term__en">index</span></span>从 0 开始，所以 <code>team[1]</code> 是第二个元素；<code>team.length</code> 给出元素个数；给 <code>team[1]</code> 赋值只是替换了这个槽位里的<span class="c-term c-term--auto" data-term="reference" title="引用｜reference：变量中保存的、指向堆上对象的内存地址。">引用</span>，并没有修改原来那个 String <span class="c-term c-term--auto" data-term="object" title="对象｜object：把相关的数据（状态）与处理（行为）封装在一起的实体。">对象</span>的文本——这与 String <span class="c-term c-term--auto" data-term="immutable" title="不可变｜immutable：对象创建后内容不能修改，例如 String。">不可变</span>是一致的。</p>
+  <p>Lab 提出的检验问题是：“改变一个元素会改变数组的长度吗？”答案是不会。数组一经创建长度固定，能变的只是每个槽位里存的值。最后一个元素的索引永远是 <code>length - 1</code>，写 <code>team[team.length]</code> 就会越界。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>合法索引范围是 0 到 <code>array.length - 1</code>；<code>array.length</code> 没有括号，String 的长度才是 <code>length()</code>。数组长度创建后不可改变，改变元素不等于改变长度。</p>
+  </aside>
+  <p class="c-source">W3 Lab p.1</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">3.2</span> Scanner 输入与边界检查</h2>
+  <p>从控制台读入要用 <span class="c-term">Scanner</span>。Lab 要求读入一个 1 到 10 之间的分数槽位数量，超范围就打印提示且不创建数组；再问要更新哪个索引，越界就提示；最后读分数并要求 0 到 100。整个流程的关键是“先校验、后访问”。</p>
+<pre class="c-code"><code>Scanner input = new Scanner(System.in);
+
+System.out.print("Number of score slots (1-10): ");
+int size = input.nextInt();
+
+if (size &lt; 1 || size &gt; 10) {
+    System.out.println("Size must be from 1 to 10.");
+} else {
+    int[] scores = new int[size];
+    System.out.println("Array length: " + scores.length);
+    System.out.println("Initial first score: " + scores[0]);
+}</code></pre>
+  <p>两个细节值得注意。第一，<code>new int[size]</code> 里的 size 是运行时才确定的<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：具名的内存位置，用来存放可以改变的值。">变量</span>，Java 允许用变量指定数组长度；新建的 int 数组每个元素默认是 0，所以“初始第一个分数”打印 0。第二，判断越界要用 <code>index &lt; 0 || index &gt;= scores.length</code>，其中 <code>&gt;=</code> 不能写成 <code>&gt;</code>——索引等于长度时已经越界。</p>
+  <p>Lab 还要求测试四种情况：合法更新、size 为 0、index 等于 length、score 为 101。这四种正好覆盖“边界值”的典型考法：合法路径一次，下边界与上边界各一次，再加一次明显越界。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>先访问再校验是最常见的错误：<code>scores[index]</code> 写在 if 之前，一旦 index 越界程序直接抛<span class="c-term c-term--auto" data-term="exception" title="异常｜exception：表示异常情况并打断正常指令流的对象。">异常</span>，后面的提示语句根本执行不到。校验必须发生在访问之前。</p>
+  </aside>
+  <p class="c-source">W3 Lab p.2</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">3.3</span> while：先判断后执行</h2>
+  <p><span class="c-term">while 循环<span class="c-term__en">while loop</span></span>在每次迭代之前检查条件，条件为真才执行循环体。Lab 的例子是皮卡丘的能量倒计时：初始 3 点能量，每轮先打印当前能量再减 1，只要能量大于 0 就继续，结束后打印 Time to rest.。</p>
+<pre class="c-code"><code>int energy = 3;
+
+while (energy &gt; 0) {
+    System.out.println("Energy: " + energy);
+    energy--;
+}
+
+System.out.println("Time to rest.");</code></pre>
+  <p>输出是三行 Energy: 3、Energy: 2、Energy: 1，最后一行 Time to rest.。把初始能量改成 0 再运行，循环体一次都不会执行，只会打印 Time to rest.——这正是 while“先判断”的直接后果。</p>
+  <p>Lab 的检验问题是：“如果把更新语句去掉会怎样？”答案是不再更新条件里的变量，<code>energy</code> 永远是 3，条件永远为真，循环永不结束，形成死循环。写循环时必须确认三件事：条件里的变量有初值、循环体内会改变它、改变的方向最终能让条件变假。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>while 可能执行 0 次；循环体必须推动条件变量向“假”的方向变化，否则死循环。判断执行次数时先看初始条件是否成立。</p>
+  </aside>
+  <p class="c-source">W3 Lab p.2</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">3.4</span> do-while：至少执行一次</h2>
+  <p><span class="c-term">do-while 循环<span class="c-term__en">do-while loop</span></span>把判断放在循环体之后，所以循环体至少执行一次。它最适合“必须先问一次，再根据答案决定要不要再问”的场景，例如菜单选择与输入校验。</p>
+<pre class="c-code"><code>String[] starters = {"Pikachu", "Charmander", "Squirtle"};
+int choice;
+
+do {
+    System.out.print("Choose a starter (1=Pikachu, 2=Charmander, 3=Squirtle): ");
+    choice = input.nextInt();
+    if (choice &lt; 1 || choice &gt; 3) {
+        System.out.println("Invalid choice.");
+    }
+} while (choice &lt; 1 || choice &gt; 3);
+
+System.out.println("You chose " + starters[choice - 1] + ".");</code></pre>
+  <p>输入 0 时打印 Invalid choice. 并再次询问；输入 3 时跳出循环，输出 You chose Squirtle.。Lab 在这里给了一个非常实用的提示：菜单用 1 到 3 编号，而数组用 0 到 2 索引，所以取值时要写 <code>starters[choice - 1]</code>。这个“菜单编号与索引差一”的换算在实际项目里到处出现。</p>
+  <p>与 while 的差别可以用一句话记住：while 先看条件，可能一次都不做；do-while 先做一次，再看条件。选择哪一种，取决于“第一次是否必须执行”。输入校验天然是 do-while，因为无论如何都要先问一次。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>do-while 的 <code>while (条件);</code> 末尾必须有分号，这是唯一需要分号的循环写法；漏掉分号会编译失败。另外菜单 1..3 与索引 0..2 之间要减 1。</p>
+  </aside>
+  <p class="c-source">W3 Lab p.2–3</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">3.5</span> for 与增强 for</h2>
+  <p>传统的 <span class="c-term">for 循环<span class="c-term__en">for loop</span></span>把三件事写在一行：初始化、条件、更新。它最适合“已知要遍历多少个元素”的场合，尤其是按下标访问数组。</p>
+<pre class="c-code"><code>int[] scores = {60, 75, 80, 90};
+int total = 0;
+
+for (int i = 0; i &lt; scores.length; i++) {
+    scores[i] = scores[i] + 5;
+    System.out.println("scores[" + i + "] = " + scores[i]);
+    total = total + scores[i];
+}
+
+System.out.println("Total: " + total);</code></pre>
+  <p>这段程序把每个元素加 5，依次输出 65、80、85、95，最后 Total: 325。循环条件是 <code>i &lt; scores.length</code>，Lab 专门问“为什么不能写 <code>&lt;=</code>”：因为一旦 i 等于 length，<code>scores[i]</code> 就访问到数组之外，抛越界异常。</p>
+  <p><span class="c-term">增强 for 循环<span class="c-term__en">enhanced for loop</span></span>（也叫 for-each）用于“只关心值、不关心下标”的遍历：</p>
+<pre class="c-code"><code>int[] scores = {45, 80, 60, 95, 30};
+int count = 0;
+
+for (int score : scores) {
+    System.out.println("Score: " + score);
+    if (score &gt;= 60) {
+        count++;
+    }
+}
+
+System.out.println("Scores at least 60: " + count);</code></pre>
+  <p>输出 5 行分数，最后 Scores at least 60: 3。<code>for (int score : scores)</code> 读作“对 scores 里的每一个 int，命名为 score”。Lab 的检验问题是：在循环里写 <code>score = 100;</code> 会改变数组元素吗？不会——score 只是本轮取出的一个副本，改它不影响原数组；要修改元素必须用带下标的普通 for。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>普通 for 能读能改、能拿到下标；增强 for 只能读值，修改循环变量不会写回数组。遍历条件一律用 <code>i &lt; array.length</code>，不要用 <code>&lt;=</code>。</p>
+  </aside>
+  <p class="c-source">W3 Lab p.3</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">3.6</span> 嵌套循环与二维数组</h2>
+  <p><span class="c-term">二维数组<span class="c-term__en">two-dimensional array</span></span>是“数组的数组”。<code>new int[3][4]</code> 表示 3 行 4 列：第一个方括号是行数，第二个是列数。Lab 的训练记录场景是三位教练、每人最多四次训练，行属于教练，列属于第几次尝试。</p>
+<pre class="c-code"><code>int[][] scores = new int[3][4];
+
+for (int trainer = 0; trainer &lt; scores.length; trainer++) {
+    for (int attempt = 0; attempt &lt; scores[trainer].length; attempt++) {
+        System.out.print("Trainer " + (trainer + 1)
+                + ", attempt " + (attempt + 1) + ": ");
+        scores[trainer][attempt] = input.nextInt();
+    }
+}</code></pre>
+  <p>嵌套循环的执行顺序是：外层取一个行号，内层把这一行的所有列走完，再回到外层取下一行。计数时要注意“显示编号从 1 开始，而索引从 0 开始”，所以提示文字里写 <code>trainer + 1</code>。访问元素写成 <code>scores[trainer][attempt]</code>，第一个下标永远是行。</p>
+  <p>输出整张表也要用嵌套循环：外层逐行，内层逐列。Lab 要求同时统计每位教练“已记录分数的个数与总和”，这需要在行循环内部维护两个累加变量，并在行末打印。新建的 int 二维数组每个格子默认是 0，Lab 明确规定 0 表示“这一格没有记录”，而不是一个合法分数。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 3-1 二维数组的行与列</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of a 3 by 4 integer array drawn as a grid: three rows labelled trainer 0, trainer 1, trainer 2 and four columns labelled attempt 0 to attempt 3, every cell showing the default value 0, with the cell at row 0 column 0 highlighted and annotated scores[0][0]. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/soe102-array-2d.svg" alt="二维数组的行、列与 a[1][2] 的位置" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector diagram of a 3 by 4 integer array drawn as a grid: three rows labelled trainer 0, trainer 1, trainer 2 and four columns labelled attempt 0 to attempt 3, every cell showing the default value 0, with the cell at row 0 column 0 highlighted and annotated scores[0][0]. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>一维数组用 <code>length</code>，二维数组的 <code>scores.length</code> 是行数，<code>scores[0].length</code> 才是列数。写内层条件时用 <code>scores[trainer].length</code> 最稳妥，行长度不一致时也不会出错。</p>
+  </aside>
+  <p class="c-source">W3 Lab p.4</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">3.7</span> break 与 continue</h2>
+  <p><span class="c-term">break</span>立刻结束当前这一层循环，执行跳到循环之后；<span class="c-term">continue</span>跳过本次迭代剩余的语句，直接进入下一次迭代的条件判断与更新。Lab 用一张输入规则表把它们讲清楚：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>训练记录中的输入规则</caption>
+      <thead><tr><th scope="col">输入</th><th scope="col">行为</th><th scope="col">用哪个控制语句</th></tr></thead>
+      <tbody>
+        <tr><td>1 到 100</td><td>存入当前格子</td><td>无，正常赋值</td></tr>
+        <tr><td>-1</td><td>打印 Attempt skipped.，该格保持 0</td><td>continue</td></tr>
+        <tr><td>0</td><td>打印 Trainer finished.，结束这位教练的所有尝试</td><td>break</td></tr>
+        <tr><td>其他整数</td><td>打印 Invalid score; attempt skipped.，该格保持 0</td><td>continue</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义特别强调：跳过或无效的输入仍然占用当前这次尝试，不要为同一格再次索要输入。也就是说 continue 之后，内层循环的 <code>attempt++</code> 照常执行，程序自然移动到下一格。这里用的是不带标签的 break 与 continue，因此它们只影响内层循环——输入 0 只结束这位教练的尝试，外层继续处理下一位教练。</p>
+  <p>Lab 留了三个追问，都指向同一件事：<code>continue</code> 之后执行的是内层 for 的更新语句与条件判断，不是循环体开头；而 0 不能区分“跳过”“无效”和“从未到达”，因为三种情况留下的都是默认值 0。若 0 本身要作为合法分数，就必须换一种方式表示“未使用”，例如改用 <code>Integer</code> 数组让空格为 null，或另开一个布尔数组记录是否填写。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>break 只跳出它所在的那一层循环，不会结束整个嵌套结构；想让外层也停必须用标签或在外层加判断。continue 不是“回到循环开头”，而是“跳到更新语句”。</p>
+  </aside>
+  <p class="c-source">W3 Lab p.4–5</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">3.8</span> 分支与控制流全景（含资料缺口）</h2>
+  <p>本周标题是 Arrays, Input and Control Flows，讲义首页给了一段“代码—追踪”对照，用来说明分支是怎样被一步步执行的：源码是 <code>int x = 3;</code> 之后跟 <code>if (x &gt; 0)</code>，右侧追踪表记录 state（x = 3）、test（true）、next（x = 4）。也就是说，判断一个 if 是否进入，要先看当前状态里变量的值，再求条件表达式的真假，最后决定下一行去哪里。</p>
+  <p>Week 4 开头对 Week 3 的回顾把控制流与循环并列列出：用布尔条件选择路径的工具是 <code>if / else</code> 与 <code>switch</code>，逻辑运算符是 <code>&amp;&amp;</code>、<code>||</code>、<code>!</code>；重复执行靠 <code>while</code>、<code>do-while</code>、<code>for</code> 与增强 for；改变循环走向用 <code>break</code>（退出）与 <code>continue</code>（跳过）。这份回顾可以作为本周的骨架。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>控制流工具与用途</caption>
+      <thead><tr><th scope="col">工具</th><th scope="col">用途</th><th scope="col">关键提醒</th></tr></thead>
+      <tbody>
+        <tr><td>if / else</td><td>按布尔条件选择一条路径</td><td>条件必须是 boolean，不能写数字</td></tr>
+        <tr><td>switch</td><td>按离散取值分支</td><td>讲义仅列为回顾项，未展开语法</td></tr>
+        <tr><td>while</td><td>先判断，可能 0 次</td><td>循环体要推动条件变量</td></tr>
+        <tr><td>do-while</td><td>先执行，至少 1 次</td><td>结尾有分号</td></tr>
+        <tr><td>for / 增强 for</td><td>计数遍历 / 只读遍历</td><td>增强 for 不能改数组元素</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>资料缺口：</strong>本周的讲义文件 <code>week-3-standalone.txt</code> 共 62 页，但除首页与“Previously”页外均为空白页，没有数组、Scanner、循环与 switch 的正文讲解、语法示例与页码内容。本章的数组、输入与循环细节依据同周的 Week 3 Lab 材料（Arrays, input and loops）写成；if/else 与 switch 仅依据 Week 3 首页的追踪示例与 Week 4 的回顾页，switch 的具体语法、case 穿透、逻辑运算符真值表等内容本课程资料未提供，不作展开。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>读追踪表是本周的基本功：给出初始状态与条件，能写出每一轮循环或分支后的变量值。答题时把 state / test / next 三列写清楚，比只写最终结果更稳。</p>
+  </aside>
+  <p class="c-source">W3 p.1；W4 slide 2</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W3</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch02.html"><span>上一章</span>数据类型、变量、方法与运算符</a>
+          <a class="pager__next" href="ch04.html"><span>下一章</span>字符串与静态方法</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

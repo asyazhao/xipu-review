@@ -1,0 +1,64 @@
+/* ============================================================
+   print.css — 打印 / 导出 PDF
+   ============================================================ */
+
+@media print {
+  :root {
+    --bg: #FFFFFF;
+    --surface: #FFFFFF;
+    --surface-2: #F2F2F2;
+    --text: #111111;
+    --muted: #444444;
+    --accent: #1F3550;
+    --accent-hover: #1F3550;
+    --accent-soft: #EDEDED;
+    --border: #CCCCCC;
+    --border-strong: #999999;
+    --exam-bg: #F4F4F4;
+    --code-bg: #F4F4F4;
+    --tag-bg: #F2F2F2;
+    --mark-bg: #E8E8E8;
+  }
+
+  @page { size: A4; margin: 18mm 16mm; }
+
+  body {
+    background: #fff;
+    color: #111;
+    font-size: 10.5pt;
+    line-height: 1.65;
+  }
+
+  .site-header,
+  .site-footer,
+  .subject-toc,
+  .mobile-toc,
+  .theme-toggle,
+  .chapter-toc,
+  .pager,
+  .quick-links,
+  .subject-switch,
+  .breadcrumb,
+  .skip-link,
+  .c-copy,
+  .search-form,
+  .chips,
+  .toolbar { display: none !important; }
+
+  .container { width: 100%; max-width: none; }
+  .subject-layout,
+  .chapter-layout { display: block; }
+  .prose { max-width: none; }
+  .page-head, .chapter-head { padding-top: 0; }
+
+  a { color: #111; text-decoration: none; }
+  h1, h2, h3 { page-break-after: avoid; }
+  section, .c-figure, .c-callout, table { page-break-inside: avoid; }
+
+  .c-callout { border-left: 1px solid #999; background: #F4F4F4; }
+  .c-figure { border: 1px solid #CCC; }
+  .c-figure__img { max-width: 100%; max-height: 95mm; object-fit: contain; }
+  .c-figure__prompt-wrap { display: none; }
+  .c-table th { background: #EEE; }
+  .c-code, .c-formula { background: #F4F4F4; }
+}

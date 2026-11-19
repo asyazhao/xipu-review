@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" role="img" aria-label="手性中心与一对对映体">
+<title>手性中心与一对对映体</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">手性中心与一对对映体</text>
+<text x="40" y="56" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">同一个碳上连四个不同基团 → 手性中心（chiral center）</text>
+<text x="260" y="98" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">H</text>
+<line x1="260" y1="106" x2="260" y2="150" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="260" y="250" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">OH</text>
+<line x1="260" y1="190" x2="260" y2="236" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="188" y="174" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">CH3</text>
+<line x1="240" y1="174" x2="224" y2="174" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="332" y="174" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">Cl</text>
+<line x1="280" y1="174" x2="296" y2="174" stroke="#2E4A6B" stroke-width="1.5"/>
+<circle cx="260" cy="170" r="19" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="260" y="176" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#262624" text-anchor="middle" font-weight="700">C</text>
+<polygon points="280,170 315,158 315,182" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="252" y1="190" x2="252" y2="226" stroke="#2E4A6B" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="260" y="286" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">对映体</text>
+<text x="540" y="98" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">H</text>
+<line x1="540" y1="106" x2="540" y2="150" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="540" y="250" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">OH</text>
+<line x1="540" y1="190" x2="540" y2="236" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="612" y="174" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">CH3</text>
+<line x1="560" y1="174" x2="576" y2="174" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="468" y="174" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">Cl</text>
+<line x1="520" y1="174" x2="504" y2="174" stroke="#2E4A6B" stroke-width="1.5"/>
+<circle cx="540" cy="170" r="19" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="540" y="176" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#262624" text-anchor="middle" font-weight="700">C</text>
+<line x1="520" y1="170" x2="485" y2="170" stroke="#2E4A6B" stroke-width="1.2" stroke-dasharray="3 3"/>
+<polygon points="532,190 522,230 542,230" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<text x="540" y="286" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">对映体</text>
+<text x="400" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="600">互为镜像</text>
+<text x="400" y="174" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#5E5E58" text-anchor="middle" font-weight="400">不可重叠</text>
+<line x1="345" y1="200" x2="455" y2="200" stroke="#5E5E58" stroke-width="1.4" marker-end="url(#arrowMuted)"/>
+<line x1="345" y1="200" x2="365" y2="200" stroke="#5E5E58" stroke-width="1.4"/>
+<text x="40" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">对映体除旋光方向相反外，普通物理性质相同；生物活性可能完全不同。</text>
+</svg>

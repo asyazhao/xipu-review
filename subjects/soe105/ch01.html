@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 课程导论与实验环境 · 全科复习</title>
+  <meta name="description" content="SOE105 第 1 章 课程导论与实验环境：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="01">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 1 章 课程导论与实验环境</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html" class="is-current" aria-current="page"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html" class="is-current" aria-current="page"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 1 章</p>
+          <h1>课程导论与实验环境</h1>
+          <p class="chapter-head__en">Course Introduction &amp; Logistics</p>
+          <p class="chapter-head__meta">来源 L00 · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">1.1 课程定位与四项学习目标</a></li>
+        <li><a href="#s2">1.2 这门课不教什么</a></li>
+        <li><a href="#s3">1.3 学习者与先修知识</a></li>
+        <li><a href="#s4">1.4 教学团队与答疑渠道</a></li>
+        <li><a href="#s5">1.5 实验课：时间、地点与出勤</a></li>
+        <li><a href="#s6">1.6 工具链：IDE、Make、Doxygen、Graphviz</a></li>
+        <li><a href="#s7">1.7 教材与参考资料</a></li>
+        <li><a href="#s8">1.8 考核结构与补考规则</a></li>
+        <li><a href="#s9">1.9 人工智能使用政策</a></li>
+        <li><a href="#s10">1.10 课堂规范</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲是课程的导论课：说明 SOE105 教什么、不教什么，课程如何组织（人员、实验、教材、考核），以及课堂与学术诚信的基本规则。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>课程目标是掌握 C/C++ 的基本原理，并能按规格说明分析、设计、编码、调试、测试与文档化程序。</li>
+    <li>课程不教“用 AI 写程序”，而要训练独立编码、逻辑思维与问题解决能力。</li>
+    <li>实验课每周五 2 小时（第 7 周除外），地点 CB-G13，出勤为强制要求。</li>
+    <li>工具链：任意支持 C/C++ 的 <span class="c-term">集成开发环境<span class="c-term__en">integrated development environment</span></span>（实验用 VS Code）、MinGW Make、Doxygen、Graphviz。</li>
+    <li>无指定必修教材，可选 Dale、Weems、Richards 的《Programming and Problem Solving with C++》。</li>
+    <li>平时成绩 50%（10 次实验 15% + 测验 15% + 个人项目 20%），期末 50%；<span class="c-term c-term--auto" data-term="resit-examination" title="补考｜resit examination：不计平时成绩、按 100% 计的成绩补救考试。">补考</span>按 100% 计。</li>
+    <li>所有作业严禁使用生成式 AI 工具，包括 ChatGPT、DeepSeek 等。</li>
+    <li>课堂规范按“尊重同学与教师”的常识执行：准时、不早退、手机静音、不在教室饮食。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">1.1</span> 课程定位与四项学习目标</h2>
+  <p>SOE105 的定位是“C 与 C++ 程序设计的扎实入门”，同时给出这两种语言设计与应用背后的原理与约束（underlying principles and constraints）的概览。也就是说，课程不只要求写出“能跑”的代码，还要求理解语言为什么这样设计、在什么条件下适用。</p>
+  <p>讲义把课程目标拆成四条：</p>
+  <ul>
+    <li>展示对 C/C++ 语言基本原理的知识与理解；</li>
+    <li>按<span class="c-term">规格说明<span class="c-term__en">specification</span></span>给出的需求，对 C/C++ 程序进行分析、设计、编码、调试、测试与文档化；</li>
+    <li>使用并构造<span class="c-term">抽象<span class="c-term__en">abstraction</span></span>来有效解决问题；</li>
+    <li>分析、理解并修改已有的 C/C++ 代码。</li>
+  </ul>
+  <p>四条目标对应四个层次：语言概念、工程流程、抽象能力、代码阅读。最后一条常被忽略——能读懂并改动别人写的代码，与从零写代码是两种不同的能力，作业与项目都会用到。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>课程目标包含“分析、理解并修改已有代码”，不只是“从零写程序”；规格说明（specification）是分析与测试的起点。</p>
+  </aside>
+  <p class="c-source">L00 p.4–5</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">1.2</span> 这门课不教什么</h2>
+  <p>讲义用一整页说明“本课程不是什么”：课程不会教你用任何<span class="c-term">人工智能<span class="c-term__en">artificial intelligence</span></span>工具写程序；相反，它要教你<b>自己</b>写程序，并训练逻辑思维与问题解决能力（logical thinking and problem-solving skills）。</p>
+  <p>这一定位解释了后面所有安排：实验课上助教不替你调试、作业禁止 AI、考试要求手写代码。讲义引用 Namanyay（2025）的评论作为理由：AI 直接给出答案，得到的是浅层知识；过去在 StackOverflow 上要读多份专家讨论才能拼出全貌，过程慢，但收获的不只是“什么能跑”，还有“为什么能跑”。真正的开发者不是靠复制方案成长起来的，而是靠深入理解系统与他人思路。</p>
+  <p>与此配套的一句提醒是“讲义 ≠ 教材 ≠ 课程内容”（SLIDES ≠ TEXTBOOK ≠ module contents）：三者互不覆盖，缺一不可；而“练习即精通，没有捷径”（PRACTICE means PERFECT, there is NO SHORTCUT）。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“讲义没讲”不等于“不考”。讲义明确写出讲义、教材与课程内容三者不等价，复习要以课程内容为准。</p>
+  </aside>
+  <p class="c-source">L00 p.6, p.16</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">1.3</span> 学习者与先修知识</h2>
+  <p>课程没有形式上的先修要求，唯一被认为“绝对必需”的，是一颗好奇、严谨、有逻辑的头脑（a curious, rigorous, and logical mind）。以前的编程经验有帮助，但不是必需；基础代数、概率统计与基础线性代数在解某些问题时可能有用。</p>
+  <p>这意味着课堂上的起点差异是被默认接受的：有基础的人不会因为“太简单”而跳过练习，没有基础的人也不必先补一门语言课。前几周真正的门槛不是语法，而是把“编辑器—编译器—终端”这条链路走顺，并能读懂编译器报出的第一条错误。</p>
+  <p>讲义也给出学习方式的建议：把讲座与实验当作学习的资源，而不是全部内容；遇到问题时先自己定位，再向助教提出具体问题。</p>
+  <p class="c-source">L00 p.9–10</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">1.4</span> 教学团队与答疑渠道</h2>
+  <p>课程由 Dr. Ho-Pun Lam（Brian）主讲，办公室 SD-439，邮箱 ho.lam@xjtlu.edu.cn。<span class="c-term">办公时间<span class="c-term__en">office hours</span></span>为每周四 12:00–14:00 与周五 16:00–18:00，可用于当面的问题讨论。</p>
+  <p>助教（teaching assistants, TAs）为 Letizia Marceline Maukar 与 Qinghe (Wei) Shao，均给出校内邮箱。助教负责实验课的组织与答疑，是日常编码问题第一顺位的联系人；但按讲义规定，他们不负责替你调试程序。</p>
+  <p>提问的质量直接影响答疑效率。把“程序不对”换成“输入 34 和 107 时输出 19 元 7 角，但按公式应为 19 元 7 角 5 分”，助教才能判断是<span class="c-term c-term--auto" data-term="algorithm" title="算法｜algorithm：为解决特定问题而设的一系列指令或过程性步骤。">算法</span>问题还是类型问题。</p>
+  <p class="c-source">L00 p.8, p.13</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">1.5</span> 实验课：时间、地点与出勤</h2>
+  <p>实验课每周五 2 小时，第 7 周停一次，地点 CB-G13。两个班次分别为 11:00–12:50（SOE105-Lab-D1/1）与 14:00–15:50（SOE105-Lab-D1/2）。讲义对出勤的表述是“强制”（attendance is mandatory）。</p>
+  <p>实验课的目标有两条：用带功能的编码练习把理论落到手上；训练逻辑、分析与问题解决能力。它与讲座是并列的学习资源，而不是讲座的补充说明。</p>
+  <p>实验课一般由助教主持：介绍实验任务、复习相关材料、回答学生的问题。但讲义明确划线——助教不负责调试你的程序，调试是这门课要学的能力本身。此外还需要学会与<span class="c-term">终端<span class="c-term__en">terminal</span></span>（又称 console，Windows 上称命令提示符）交互，具体做法见《General Notes for Laboratories》。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>实验课：每周五 2 小时、第 7 周除外、CB-G13、出勤强制；助教讲解任务与答疑，但不代为调试。</p>
+  </aside>
+  <p class="c-source">L00 p.10, p.13</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">1.6</span> 工具链：IDE、Make、Doxygen、Graphviz</h2>
+  <p>实验所需的第一件工具是<span class="c-term">集成开发环境<span class="c-term__en">integrated development environment</span></span>（IDE）。讲义的态度是“任何支持 C/C++ 开发的 IDE 都可以”：每个 IDE 都有自己的长处与限制，应当保持灵活，不要只依赖某一个 IDE 或某一个操作系统，也就是要走出“在我的 IDE 里能编译就行”（it-compiles-in-my-IDE）的心态。实验课统一使用 Visual Studio Code（VS Code）。</p>
+  <p>另外三件工具各有分工：</p>
+  <ul>
+    <li><b>MinGW Make</b>（简称 Make）：按 Makefile 描述批量编译、链接，是命令行构建的标准做法，用法见《Make and Makefile for Building C/C++ Applications》；</li>
+    <li><b>Doxygen</b>：用于生成代码文档，用法见《Documentation for C/C++ Files》；</li>
+    <li><b>Graphviz</b>：图形绘制工具，讲义只给出官网，未展开用法。</li>
+  </ul>
+  <p>三者的安装与配置见讲义给出的《General Notes for Laboratories》，其中还附有“如何使用终端”的附录。讲义在后续讲次反复提醒要先按该说明配置好个人电脑。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>IDE 只是编辑器、编译器与调试器的外壳。代码在 A 的 IDE 里能编译，不代表在命令行或其他平台上也能编译；判断标准应是“源码 + 编译器 + 构建命令”，而不是某个 IDE 的绿灯。</p>
+  </aside>
+  <p class="c-source">L00 p.11–12；L03 p.21–22</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">1.7</span> 教材与参考资料</h2>
+  <p>本课程没有指定必修教材（NO mandatory textbook）。可选教材为 Nell Dale、Chip Weems 与 Tim Richards 的《Programming and Problem Solving with C++》第 7 版（2022，Jones &amp; Bartlett）。</p>
+  <p>参考书共四本：Hanly 与 Koffman 的《Problem Solving and Program Design in C》第 8 版（2016）；Stephen Prata 的《C Primer Plus》第 6 版（2014）；Kernighan 与 Ritchie 的《The C Programming Language》第 2 版（1988）；Scott Meyers 的《Effective Modern C++》（2015）。前两本偏入门与问题求解，后两本分别偏语言本身与现代 C++ 实践。</p>
+  <p>在线资源为 cppreference.com 的 C++ 与 C 语言参考。它的价值在于查标准库函数的声明、参数与返回类型，而不是替代讲义——讲义中的语法约定（如 using namespace std 的影响）仍以课堂为准。</p>
+  <p class="c-source">L00 p.14</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">1.8</span> 考核结构与补考规则</h2>
+  <p>课程采用“平时 + 期末”的结构，平时成绩占 50%，<span class="c-term c-term--auto" data-term="final-examination" title="期末考试｜final examination：占总评 50% 的课程考试。">期末考试</span>占 50%。平时成绩由三部分组成：10 次实验练习共 15%（每次 1.5%）、1 次测验或期中测试 15%、1 次个人编程项目 20%。重修学生同样必须提交作业才能取得分数。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>SOE105 考核结构</caption>
+      <thead><tr><th scope="col">组成部分</th><th scope="col">占比</th><th scope="col">说明</th></tr></thead>
+      <tbody>
+        <tr><td>实验练习（10 次）</td><td>15%</td><td>每次 1.5%</td></tr>
+        <tr><td>测验 / 期中测试</td><td>15%</td><td>1 次</td></tr>
+        <tr><td>个人编程项目</td><td>20%</td><td>1 次</td></tr>
+        <tr><td>平时成绩合计</td><td>50%</td><td><span class="c-term c-term--auto" data-term="continuous-assessment" title="连续评估｜continuous assessment：占总评 50% 的平时成绩，含实验、测验与项目。">continuous assessment</span></td></tr>
+        <tr><td>期末考试</td><td>50%</td><td>final examination</td></tr>
+        <tr><td>补考</td><td>100%</td><td>resit examination</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>补考（resit）不计平时成绩，按 100% 的补考考试计算，这一点与平时成绩的构成方式不同，容易在计算总评时弄错。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>平时 50% = 实验 15%（10 × 1.5%）+ 测验 15% + 个人项目 20%；期末 50%；补考 100%。</p>
+  </aside>
+  <p class="c-source">L00 p.15</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">1.9</span> 人工智能使用政策</h2>
+  <p>讲义对 AI 的规定是“所有作业中严格禁止”（strictly prohibited in ALL assignments）。被点名的<span class="c-term">生成式人工智能<span class="c-term__en">generative AI</span></span>工具包括但不限于 ChatGPT 与 DeepSeek；任何此类使用都被视为严重的<span class="c-term">学术不端<span class="c-term__en">academic offence</span></span>，并可能按学校规定受到处罚。</p>
+  <p>边界并不等于“禁止一切软件”。标准编辑软件（如 Microsoft Office、Grammarly）可以用于写报告，IDE 可以用于编码，前提是不使用其中的代码生成功能。换句话说，被判违规的是“让工具产出代码或答案”，而不是“使用工具排版或编辑”。</p>
+  <p>讲义给出的理由与 1.2 节一致：AI 给答案，但留下的知识是浅的；这门课要练的正是“自己定位问题、自己写出并调试”的过程。违规的代价不只是纪律处分，还包括在后续课程与项目中缺少可迁移的能力。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“只用 AI 解释报错、不复制代码”仍需谨慎：讲义的口径是禁止使用 AI 工具完成作业，允许的是不带代码生成功能的编辑软件与 IDE。</p>
+  </aside>
+  <p class="c-source">L00 p.16–17</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">1.10</span> 课堂规范</h2>
+  <p>讲义的出发点是“教室是学习的地方，师生共同维护”，规则多为常识与礼貌：准时到课，迟到超过 15 分钟不应进入教室；若迟到但需要找教师，应在下课时再来。一旦进入课堂，就应待到下课；若确需早退，须在课前取得教师同意。</p>
+  <p>课堂上不应做干扰教学或分散同学注意力的事，例如教师讲课时交谈；手机与寻呼机应关闭。教室若有禁止饮食的标识，应遵守标识。</p>
+  <p>关于诚信，讲义的说法是：作业、测验与考试是学习过程的一部分，作弊破坏这一过程；教师有责任让作弊变难，但“即使能蒙混过关，作弊本身也是错的”。教师也有权制定其他必要规则，例如最低出勤比例，不遵守可能影响成绩。</p>
+  <p>最后一段回到责任：大学教育是数年的投入，学会承担责任是其中重要的一部分，课堂正是开始表现“已准备好承担成年人责任”的地方。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>“出勤强制”是实验课的要求，“最低出勤比例”则是教师可另行设定的课堂规则，两者来源不同，不要混为一谈。</p>
+  </aside>
+  <p class="c-source">L00 p.19–22</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L00</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="index.html"><span>返回</span>学科主页</a>
+          <a class="pager__next" href="ch02.html"><span>下一章</span>程序设计导论：IPO、语言与编译</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

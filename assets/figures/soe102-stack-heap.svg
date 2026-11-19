@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 365" role="img" aria-label="栈与堆中的基本类型与对象引用">
+<title>栈与堆中的基本类型与对象引用</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">栈与堆中的基本类型与对象引用</text>
+<rect x="50" y="80" width="280" height="240" rx="3" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<rect x="430" y="80" width="320" height="240" rx="3" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="60" y="104" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="start" font-weight="700">栈 stack</text>
+<text x="440" y="104" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="start" font-weight="700">堆 heap</text>
+<rect x="80" y="130" width="200" height="42" rx="2" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<text x="180" y="156" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">int age = 20</text>
+<rect x="80" y="186" width="200" height="42" rx="2" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<text x="180" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">Student s</text>
+<text x="180" y="232" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">（引用）</text>
+<rect x="500" y="140" width="190" height="130" rx="3" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="595" y="166" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">Student 对象</text>
+<text x="595" y="194" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">name = &quot;…&quot;</text>
+<text x="595" y="216" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">age = 20</text>
+<line x1="282" y1="207" x2="496" y2="207" stroke="#8C4F45" stroke-width="1.6" marker-end="url(#arrowRed)"/>
+<text x="390" y="194" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8C4F45" text-anchor="middle" font-weight="400">引用</text>
+<text x="40" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">基本类型变量的值直接放在栈帧中；对象本身在堆，栈里只保存指向它的引用。</text>
+</svg>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIO103 基因表达调控 · 全科复习</title>
+  <meta name="description" content="BIO103 第 12 章 基因表达调控：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="bio103" data-chapter="12">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">BIO103</a>
+      <span>/</span>
+      <span aria-current="page">第 12 章 基因表达调控</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>A 细胞生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">细胞的基本属性与原核/真核细胞</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">细胞周期、有丝分裂与减数分裂</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">核内过程与细胞骨架</span><span class="toc-src">L3–4</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">内膜系统与膜运输</span><span class="toc-src">L5–6</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">细胞间通讯</span><span class="toc-src">L7–8</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">线粒体与核糖体</span><span class="toc-src">L9–10</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">细胞生物学方法</span><span class="toc-src">L11</span></a></li>
+        </ol>
+      </details>
+      <details class="toc-group" open>
+        <summary>B 分子生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">核酸的结构与功能</span><span class="toc-src">Park L10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">DNA 复制</span><span class="toc-src">Park L11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">DNA 突变与修复</span><span class="toc-src">L12</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">转录：原核与真核</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html" class="is-current" aria-current="page"><span class="toc-num">12</span><span class="toc-title">基因表达调控</span><span class="toc-src">L14–15</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">翻译</span><span class="toc-src">L16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">蛋白质结构与功能</span><span class="toc-src">L17</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>A 细胞生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">细胞的基本属性与原核/真核细胞</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">细胞周期、有丝分裂与减数分裂</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">核内过程与细胞骨架</span><span class="toc-src">L3–4</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">内膜系统与膜运输</span><span class="toc-src">L5–6</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">细胞间通讯</span><span class="toc-src">L7–8</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">线粒体与核糖体</span><span class="toc-src">L9–10</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">细胞生物学方法</span><span class="toc-src">L11</span></a></li>
+        </ol>
+      </details>
+      <details class="toc-group" open>
+        <summary>B 分子生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">核酸的结构与功能</span><span class="toc-src">Park L10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">DNA 复制</span><span class="toc-src">Park L11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">DNA 突变与修复</span><span class="toc-src">L12</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">转录：原核与真核</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html" class="is-current" aria-current="page"><span class="toc-num">12</span><span class="toc-title">基因表达调控</span><span class="toc-src">L14–15</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">翻译</span><span class="toc-src">L16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">蛋白质结构与功能</span><span class="toc-src">L17</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">BIO103 · 第 12 章</p>
+          <h1>基因表达调控</h1>
+          <p class="chapter-head__en">Control of Gene Expression</p>
+          <p class="chapter-head__meta">来源 L14–15 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">12.1 基因表达与管家基因</a></li>
+        <li><a href="#s2">12.2 基因表达的五个调控层次</a></li>
+        <li><a href="#s3">12.3 启动子、操纵子与操作子</a></li>
+        <li><a href="#s4">12.4 trp 操纵子：可阻遏的负调控</a></li>
+        <li><a href="#s5">12.5 lac 操纵子：可诱导的负调控</a></li>
+        <li><a href="#s6">12.6 葡萄糖效应与 CRP–cAMP 正调控</a></li>
+        <li><a href="#s7">12.7 可诱导与可阻遏的系统对照</a></li>
+        <li><a href="#s8">12.8 染色质修饰与表观遗传</a></li>
+        <li><a href="#s9">12.9 转录因子、增强子与可变剪接</a></li>
+        <li><a href="#s10">12.10 非编码 RNA 与翻译、翻译后调控</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲分两部分：先讲原核的负调控与正调控，以 trp 操纵子、lac 操纵子与 CRP–cAMP 为例；再讲真核的五个调控层次，重点是染色质修饰、<span class="c-term c-term--auto" data-term="transcription" title="转录｜transcription：以 DNA 为模板合成 RNA 的过程。">转录</span>因子与非编码 RNA。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>所有<span class="c-term c-term--auto" data-term="cell" title="细胞｜cell：生命的基本单位；所有生物由一个或多个细胞组成，细胞来自已有细胞。">细胞</span>都含完整 DNA 补体，但并非所有基因都表达；管家基因在各组织持续表达。</li>
+    <li>基因表达可在五个层次被调控：染色质重塑、转录、转录后、翻译、翻译后；多数调控发生在转录起始。</li>
+    <li>操纵子是一组由同一启动子转录、产生多顺反子 mRNA 的基因；操作子是阻遏/激活蛋白结合的位置。</li>
+    <li>trp 操纵子是可阻遏操纵子：通常开启，色氨酸作为辅阻遏物使<span class="c-term c-term--auto" data-term="repressor" title="阻遏蛋白｜repressor：结合操作子以关闭操纵子转录的调控蛋白。">阻遏蛋白</span>活化而关闭转录。</li>
+    <li>lac 操纵子是可诱导操纵子：通常关闭，异乳糖作为诱导物使阻遏蛋白失活而开启转录。</li>
+    <li>葡萄糖缺乏时 cAMP 升高，CRP–cAMP 结合启动子促进转录，构成正调控（分解代谢物阻遏）。</li>
+    <li>真核通过组蛋白乙酰化、DNA 甲基化等染色质修饰与转录因子、可变剪接、非编码 RNA 多层调控。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">12.1</span> 基因表达与管家基因</h2>
+  <p><span class="c-term">基因表达<span class="c-term__en">gene expression</span></span>是基因中的信息被用于合成功能性基因产物的过程，路径为 DNA → mRNA → 蛋白质。几乎所有细胞都含有完整的 DNA 补体，但并非所有基因都在表达。</p>
+  <p>在各组织中都持续表达的基因称为<span class="c-term">管家基因<span class="c-term__en">housekeeping genes</span></span>，它们组成型表达（constitutively expressed），例如编码 actin 与 tubulin 的基因。其余基因的表达是<span class="c-term">组织依赖性<span class="c-term__en">tissue-dependent</span></span>的：同一套基因组在不同细胞中读出不同的子集，才产生不同的细胞类型与功能。</p>
+  <p>这一事实是理解整个调控章节的起点：调控不是“有没有基因”，而是“在哪个细胞、哪个时间、表达多少”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>管家基因 = 所有组织组成型表达（如 actin、tubulin）；组织特异基因 = 只在特定组织表达。判断时看“是否普遍、持续”，不看表达量高低。</p>
+  </aside>
+  <p class="c-source">L14–15 p.3–4</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">12.2</span> 基因表达的五个调控层次</h2>
+  <p>原核与真核都能调控基因表达，且调控可发生在信息流的多个节点。讲义把它们归纳为五个层次：</p>
+  <ol>
+    <li>染色质重塑（chromatin rearrangement）：改变染色质构象与 DNA 对转录机器的可及性。</li>
+    <li>转录调控（transcriptional control）：调控 RNA 聚合酶与启动子的结合及转录起始。多数基因调控发生在此层。</li>
+    <li>转录后调控（post-transcriptional control）：调控 RNA 转录后的加工、运输与稳定性。</li>
+    <li>翻译调控（translational control）：调控翻译的起始与延伸。</li>
+    <li>翻译后调控（post-translational control）：调控蛋白质合成后的修饰、折叠、定位与降解。</li>
+  </ol>
+  <p>层次越靠前，调控越“经济”：在转录前关闭一个基因，比先合成 mRNA 再阻止翻译节省能量。这也是转录起始成为主要控制点的原因。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“转录后调控”不等于“翻译调控”。前者作用于 RNA（加工、剪接、稳定性、运输），后者作用于核糖体读取 mRNA 的过程，两者是不同层次。</p>
+  </aside>
+  <p class="c-source">L14–15 p.5, p.28, p.47</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">12.3</span> 启动子、操纵子与操作子</h2>
+  <p>原核调控的三个核心元件必须分清：</p>
+  <ul>
+    <li><span class="c-term">启动子<span class="c-term__en">promoter</span></span>：RNA 聚合酶开始转录的一段短 DNA 区域，通常紧邻转录起始位点上游。</li>
+    <li><span class="c-term">操纵子<span class="c-term__en">operon</span></span>：由同一启动子转录的一组基因，产生一条携带多个编码序列的<span class="c-term">多顺反子 mRNA<span class="c-term__en">polycistronic mRNA</span></span>。</li>
+    <li><span class="c-term">操作子<span class="c-term__en">operator</span></span>：紧邻细菌操纵子启动子的一小段 DNA，结合阻遏蛋白或激活蛋白，控制该操纵子的转录速率。</li>
+  </ul>
+  <p>三者关系可以这样理解：启动子是“开关的位置”，操作子是“开关的手柄”，操纵子是“被开关控制的一组灯”。一个操纵子只用一个启动子，因此这组基因总是被一起转录、一起关闭。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>操纵子（operon）= 启动子 + 操作子 + 结构基因的整体；操作子（operator）只是其中的调控序列。两者中文只差一字，英文必须分清。</p>
+  </aside>
+  <p class="c-source">L14–15 p.6</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">12.4</span> trp 操纵子：可阻遏的负调控</h2>
+  <p>E. coli 从一种前体分子经三步反应合成色氨酸，每一步由一种酶催化；编码这些酶亚基的五个基因聚在一起，共用一个启动子，构成一个转录单位。当环境中缺少色氨酸时，细胞必须自己合成，五个酶的基因便同时表达。</p>
+  <p>这个操纵子的开关是一段称为操作子的 DNA。trp 操纵子属于<span class="c-term">可阻遏操纵子<span class="c-term__en">repressible operon</span></span>：通常处于开启状态，以低速率持续合成色氨酸；当色氨酸充足时被抑制。</p>
+  <p>调控的逻辑是“阻遏蛋白默认失活”：</p>
+  <ul>
+    <li>色氨酸低时：阻遏蛋白以无活性形式存在，对 trp 操作子亲和力很低，不结合；RNA 聚合酶可结合启动子并转录整个操纵子。</li>
+    <li>色氨酸高时：色氨酸与阻遏蛋白的别构位点结合，使其变为有活性的构象，结合到操作子上，操纵子关闭。</li>
+  </ul>
+  <p>阻遏蛋白由调控基因 trpR 编码。trpR 位于 trp 操纵子之外的一段距离，拥有自己的启动子，因此它的表达不受 trp 操纵子控制。这种“调节基因独立、阻遏蛋白靠小分子变构”的设计，使细胞能对色氨酸浓度作出快速反应。</p>
+  <p>除转录阻遏外，色氨酸充足时还会抑制通路中第一个酶的活性，称为反馈抑制（feedback inhibition），这是更快的短期响应；转录阻遏则是较长期的响应。两者配合，避免浪费前体与能量。讲义在 trp 操纵子的示意图中还标注了 <span class="c-term">trp 衰减子<span class="c-term__en">trp attenuator</span></span>，但正文未展开其机制，此处只作位置提示，详细调控留待课程补充。</p>
+  
+<!-- course-image:bio103-ch12-trp.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-bio103-ch12-trp">
+        <img class="c-course-figure__img" src="../../assets/course/bio103-ch12-trp.jpg" alt="trp 操纵子的阻遏调控" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> trp 操纵子的阻遏调控 <span class="c-course-figure__src">来源：L14–15 p.16</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 12-1 trp 操纵子的阻遏调控</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of the trp operon in two states: upper panel low tryptophan with the inactive repressor unable to bind the operator, RNA polymerase transcribing the five structural genes; lower panel high tryptophan with tryptophan bound to the repressor at an allosteric site, the active repressor bound to the operator, and RNA polymerase blocked. Labels for promoter, operator, the five structural genes and the trpR gene. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram of the trp operon in two states: upper panel low tryptophan with the inactive repressor unable to bind the operator, RNA polymerase transcribing the five structural genes; lower panel high tryptophan with tryptophan bound to the repressor at an allosteric site, the active repressor bound to the operator, and RNA polymerase blocked. Labels for promoter, operator, the five structural genes and the trpR gene. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>trp 阻遏蛋白本身是“无活性”的，色氨酸是使它活化的辅阻遏物；不是“色氨酸抑制酶”。另外 trpR 不属于 trp 操纵子，它有自己的启动子。</p>
+  </aside>
+  
+<p class="c-source">L14–15 p.7–12</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">12.5</span> lac 操纵子：可诱导的负调控</h2>
+  <p>lac 操纵子编码三个参与乳糖代谢的蛋白：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>lac 操纵子的三个结构基因</caption>
+      <thead><tr><th scope="col">基因</th><th scope="col">蛋白</th><th scope="col">功能</th></tr></thead>
+      <tbody>
+        <tr><td>lacZ</td><td>β-半乳糖苷酶</td><td>把乳糖切成葡萄糖与半乳糖</td></tr>
+        <tr><td>lacY</td><td>β-半乳糖苷渗透酶</td><td>膜上的运输蛋白，把乳糖泵入细胞</td></tr>
+        <tr><td>lacA</td><td>β-半乳糖苷转乙酰酶</td><td>把乙酰基从乙酰-CoA 转移到 β-半乳糖苷</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>lac 操纵子属于<span class="c-term">可诱导操纵子<span class="c-term__en">inducible operon</span></span>：通常关闭，只有在特定小分子存在时才被开启。诱导物不是乳糖本身，而是<span class="c-term">异乳糖<span class="c-term__en">allolactose</span></span>——乳糖进入细胞后由少量转化生成的一种异构体。</p>
+  <p>调控逻辑与 trp 相反，是“阻遏蛋白默认有活性”：没有乳糖时，阻遏蛋白结合在操作子上，RNA 聚合酶无法转录；乳糖存在时，异乳糖结合阻遏蛋白使其构象改变、从操作子上脱落，聚合酶得以转录 lacZ、lacY、lacA。</p>
+  <p>但乳糖存在并不足以让细胞大量使用乳糖。若葡萄糖与乳糖同时存在，E. coli 优先利用葡萄糖；只有当乳糖存在且葡萄糖不足时，才切换到乳糖作为能源。这一层选择由下一节的正调控完成。</p>
+  
+<!-- course-image:bio103-ch12-lac.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-bio103-ch12-lac">
+        <img class="c-course-figure__img" src="../../assets/course/bio103-ch12-lac.jpg" alt="lac 操纵子的诱导调控" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> lac 操纵子的诱导调控 <span class="c-course-figure__src">来源：L14–15 p.17</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 12-2 lac 操纵子的诱导调控</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of the lac operon in two states: upper panel no lactose with the active repressor bound to the operator blocking RNA polymerase; lower panel lactose present with allolactose bound to the repressor, the repressor released from the operator, and RNA polymerase transcribing lacZ, lacY and lacA. Labels for promoter, operator, lacI repressor gene and the three structural genes. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram of the lac operon in two states: upper panel no lactose with the active repressor bound to the operator blocking RNA polymerase; lower panel lactose present with allolactose bound to the repressor, the repressor released from the operator, and RNA polymerase transcribing lacZ, lacY and lacA. Labels for promoter, operator, lacI repressor gene and the three structural genes. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>诱导物是异乳糖（allolactose），不是乳糖；lacZ 切乳糖、lacY 运乳糖、lacA 转乙酰基。三者由一条多顺反子 mRNA 编码。</p>
+  </aside>
+  
+<p class="c-source">L14–15 p.13–17</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">12.6</span> 葡萄糖效应与 CRP–cAMP 正调控</h2>
+  <p>细胞如何感知葡萄糖浓度并把信息传给 lac 操纵子？机制仍然是一个<span class="c-term c-term--auto" data-term="allosteric-protein" title="别构蛋白｜allosteric protein：结合特定小分子后构象改变、活性随之改变的蛋白。">别构调节蛋白</span>与一个小分子配体的相互作用，这个小分子是<span class="c-term">环腺苷酸<span class="c-term__en">cyclic AMP (cAMP)</span></span>，在葡萄糖缺乏时积累。</p>
+  <p>受体蛋白称为 <span class="c-term">cAMP 受体蛋白<span class="c-term__en">cAMP receptor protein (CRP)</span></span>，也称分解代谢物激活蛋白（CAP）。它是一种激活蛋白：结合 DNA 后刺激基因转录。</p>
+  <ul>
+    <li>乳糖存在、葡萄糖缺乏：cAMP 水平高 → CRP 与 cAMP 结合后被激活 → 结合到 lac 启动子 → 增加 RNA 聚合酶在该处的结合 → 大量 lac mRNA 合成。</li>
+    <li>乳糖存在、葡萄糖也存在：cAMP 水平低 → CRP 无法有效刺激转录；即使操作子上没有阻遏蛋白，lac mRNA 也只少量合成。</li>
+  </ul>
+  <p>这就是<span class="c-term">分解代谢物阻遏<span class="c-term__en">catabolite repression</span></span>：葡萄糖的存在间接抑制了其他碳源利用基因的表达。它属于正调控，因为 CRP 的作用是“促进”而非“阻止”。</p>
+  <p>宏观表现是两段生长：E. coli 在葡萄糖与乳糖混合培养基中先利用葡萄糖快速生长，葡萄糖耗尽后生长短暂停滞（滞后期，lag phase），此时细胞合成新的酶，随后以乳糖为碳源进入第二段生长。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>lac 操纵子同时受两套控制：负调控（阻遏蛋白，响应乳糖）+ 正调控（CRP–cAMP，响应葡萄糖）。只有“乳糖有、葡萄糖无”时表达最强。</p>
+  </aside>
+  <p class="c-source">L14–15 p.18–23</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">12.7</span> 可诱导与可阻遏的系统对照</h2>
+  <p>两个操纵子的逻辑可以并列记忆：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>trp 与 lac 操纵子的对照</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">trp 操纵子</th><th scope="col">lac 操纵子</th></tr></thead>
+      <tbody>
+        <tr><td>类型</td><td>可阻遏（repressible）</td><td>可诱导（inducible）</td></tr>
+        <tr><td>默认状态</td><td>通常开启</td><td>通常关闭</td></tr>
+        <tr><td>小分子角色</td><td>色氨酸：辅阻遏物</td><td>异乳糖：诱导物</td></tr>
+        <tr><td>阻遏蛋白</td><td>默认无活性，结合色氨酸后活化</td><td>默认有活性，结合异乳糖后失活</td></tr>
+        <tr><td>通路类型</td><td>合成代谢（anabolic）</td><td>分解代谢（catabolic）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义据此给出一般规律：可诱导酶通常作用于分解代谢通路，其合成由化学信号诱导；可阻遏酶通常作用于合成代谢通路，其合成被终产物高水平所阻遏。两者的调控都是负调控，因为操纵子都是被阻遏蛋白的活性形式关闭的。</p>
+  <p>这一规律也有例外，但讲义只要求掌握这两个经典例子。答题时若问“为什么 trp 是可阻遏而 lac 是可诱导”，应从“细胞何时需要该通路”回答：色氨酸是产物，产物充足时应关闭合成；乳糖是底物，底物出现时才需要降解它的酶。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“负调控”指调控蛋白的作用是抑制，不指小分子的作用方向。trp 与 lac 都是负调控，区别在于阻遏蛋白默认状态与配体效应相反。</p>
+  </aside>
+  <p class="c-source">L14–15 p.24–26</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">12.8</span> 染色质修饰与表观遗传</h2>
+  <p>真核的第一个调控层次是染色质。DNA 与组蛋白组成<span class="c-term c-term--auto" data-term="nucleosome" title="核小体｜nucleosome：DNA 缠绕组蛋白形成的染色质基本结构单位。">核小体</span>，紧密包装的<span class="c-term">异染色质<span class="c-term__en">heterochromatin</span></span>中的基因通常不表达，较疏松的<span class="c-term">常染色质<span class="c-term__en">euchromatin</span></span>则允许转录。组蛋白的化学修饰与 DNA 甲基化都能改变染色质结构，从而影响基因表达。</p>
+  <p>核心机制是电荷：组蛋白尾部富含带正电的赖氨酸，与带负电的 DNA 相互吸引，使染色质压缩。乙酰化把乙酰基加到这些赖氨酸上，中和正电荷，削弱组蛋白与 DNA 的吸引，染色质变得疏松，转录起始得以进行。去乙酰化则恢复正电荷，染色质重新压缩，DNA 不可转录。</p>
+  <p>甲基化与磷酸化的作用更依赖具体位点：加甲基可改变染色质状态（取决于具体的组蛋白修饰）；在已甲基化的氨基酸旁再加磷酸基，也能使染色质疏松。这些修饰共同影响染色质结构与基因表达，并且可以被逆转。</p>
+  <p>这类不改变<span class="c-term c-term--auto" data-term="nucleotide" title="核苷酸｜nucleotide：由含氮碱基、戊糖与磷酸组成的核酸单体。">核苷酸</span>序列、却可遗传给子代细胞的性状传递称为<span class="c-term">表观遗传<span class="c-term__en">epigenetic inheritance</span></span>。关键区别是：DNA 突变是永久改变，而染色质修饰可以被逆转——这使细胞能够根据信号灵活开关基因，而不必改动基因组。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 12-3 组蛋白乙酰化与染色质状态</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram comparing two chromatin states: left, unacetylated histone tails with positive lysines attracting DNA, nucleosomes tightly packed and RNA polymerase excluded; right, acetylated histone tails with acetyl groups on lysines, chromatin loosened and RNA polymerase bound to a promoter. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram comparing two chromatin states: left, unacetylated histone tails with positive lysines attracting DNA, nucleosomes tightly packed and RNA polymerase excluded; right, acetylated histone tails with acetyl groups on lysines, chromatin loosened and RNA polymerase bound to a promoter. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>乙酰化 → 中和赖氨酸正电荷 → 染色质疏松 → 促进转录；去乙酰化 → 压缩 → 抑制转录。DNA 甲基化通常与沉默相关。修饰可逆，突变不可逆。</p>
+  </aside>
+  <p class="c-source">L14–15 p.29–33</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">12.9</span> 转录因子、<span class="c-term c-term--auto" data-term="enhancer" title="增强子｜enhancer：远离启动子、结合激活蛋白以提高转录速率的 DNA 序列。">增强子</span>与可变剪接</h2>
+  <p>第二个层次是转录起始的调控，依靠特异性转录因子。精确的基因表达很大程度上取决于特异性转录因子与调控元件的结合；这类因子在正确的时间与位置，使特定基因达到高水平转录。</p>
+  <p><span class="c-term">激活蛋白<span class="c-term__en">activator</span></span>结合增强子并刺激该基因转录；另一些转录因子作为阻遏蛋白（repressor），抑制特定基因的表达。增强子与沉默子可以位于远离启动子的位置，却仍能影响该基因的转录速率。</p>
+  <p>第三个层次是转录后调控。<span class="c-term">可变剪接<span class="c-term__en">alternative RNA splicing</span></span>使同一个初级转录本产生不同的 mRNA，取决于哪些区段被当作外显子、哪些被当作内含子。讲义以肌钙蛋白 T（troponin T）基因为例：不同的剪接组合产生不同的 mRNA，翻译成不同但相关的蛋白。这样，一个基因就能编码多种产物，显著扩展了基因组的编码能力。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>增强子是 DNA 序列，激活蛋白是结合它的蛋白质；题目问“增强子是什么”应回答 DNA，问“激活蛋白是什么”才回答蛋白质。</p>
+  </aside>
+  
+<!-- course-image:bio103-ch12-euk-regulation.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-bio103-ch12-euk-regulation">
+        <img class="c-course-figure__img" src="../../assets/course/bio103-ch12-euk-regulation.jpg" alt="真核基因表达的调控" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 真核基因表达的调控 <span class="c-course-figure__src">来源：L14–15 p.35</span></figcaption>
+      </figure>
+
+<p class="c-source">L14–15 p.35–38</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">12.10</span> 非编码 RNA 与翻译、翻译后调控</h2>
+  <p>非编码 RNA 在多个层次参与调控。讲义列出六类：rRNA 是核糖体的必需组分；mRNA 携带基因产物的编码信息并结合核糖体；tRNA 被特定氨基酸“充载”，通过<span class="c-term c-term--auto" data-term="anticodon" title="反密码子｜anticodon：tRNA 上与 mRNA 密码子互补配对的三联体。">反密码子</span>与<span class="c-term c-term--auto" data-term="codon" title="密码子｜codon：mRNA 上编码一个氨基酸或终止信号的三联体。">密码子</span>的配对把氨基酸送到核糖体；snRNA 参与 pre-mRNA 剪接；snoRNA 参与 rRNA 加工；miRNA 参与转录后调控，与靶 mRNA 互补配对，通常引起基因沉默。</p>
+  <p>siRNA 与 miRNA 的差别要按讲义的三条特征记：siRNA 由长双链 RNA 前体产生，序列不保守，与 mRNA 完全配对，导致 mRNA 切割并阻止翻译；miRNA 与 mRNA 多为不完全配对——若全长完全互补则 mRNA 被降解，若配对不完整则翻译被阻断。双链 RNA 之所以“危险”，正是因为它可被加工成 siRNA、miRNA 或 shRNA，造成 mRNA 切割与翻译中止。</p>
+  <p>第四、第五个层次发生在细胞质。翻译效率可被调控；mRNA 可被降解，从而决定其半衰期与蛋白产量。翻译出的多肽需经<span class="c-term">蛋白质加工<span class="c-term__en">protein processing</span></span>才能成为活性蛋白，随后被运往目的地执行功能；蛋白质最终也可被降解。</p>
+  <p>翻译后调控的典型方式是磷酸化与降解。磷酸化可快速、可逆地改变酶活性；蛋白质降解则由<span class="c-term">蛋白酶体<span class="c-term__en">proteasome</span></span>执行，清除不再需要或已受损的蛋白。这样，细胞不仅能决定“造多少”，也能决定“留多久”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>五个层次要能各举一例：染色质（组蛋白乙酰化）、转录（增强子/激活蛋白）、转录后（可变剪接、miRNA）、翻译（翻译效率）、翻译后（磷酸化、蛋白酶体降解）。</p>
+  </aside>
+  <p class="c-source">L14–15 p.40–47</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L14–15</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch11.html"><span>上一章</span>转录：原核与真核</a>
+          <a class="pager__next" href="ch13.html"><span>下一章</span>翻译</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

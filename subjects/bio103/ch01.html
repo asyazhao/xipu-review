@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIO103 细胞的基本属性与原核/真核细胞 · 全科复习</title>
+  <meta name="description" content="BIO103 第 1 章 细胞的基本属性与原核/真核细胞：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="bio103" data-chapter="01">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">BIO103</a>
+      <span>/</span>
+      <span aria-current="page">第 1 章 细胞的基本属性与原核/真核细胞</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>A 细胞生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html" class="is-current" aria-current="page"><span class="toc-num">01</span><span class="toc-title">细胞的基本属性与原核/真核细胞</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">细胞周期、有丝分裂与减数分裂</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">核内过程与细胞骨架</span><span class="toc-src">L3–4</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">内膜系统与膜运输</span><span class="toc-src">L5–6</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">细胞间通讯</span><span class="toc-src">L7–8</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">线粒体与核糖体</span><span class="toc-src">L9–10</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">细胞生物学方法</span><span class="toc-src">L11</span></a></li>
+        </ol>
+      </details>
+      <details class="toc-group" open>
+        <summary>B 分子生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">核酸的结构与功能</span><span class="toc-src">Park L10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">DNA 复制</span><span class="toc-src">Park L11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">DNA 突变与修复</span><span class="toc-src">L12</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">转录：原核与真核</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">基因表达调控</span><span class="toc-src">L14–15</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">翻译</span><span class="toc-src">L16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">蛋白质结构与功能</span><span class="toc-src">L17</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>A 细胞生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html" class="is-current" aria-current="page"><span class="toc-num">01</span><span class="toc-title">细胞的基本属性与原核/真核细胞</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">细胞周期、有丝分裂与减数分裂</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">核内过程与细胞骨架</span><span class="toc-src">L3–4</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">内膜系统与膜运输</span><span class="toc-src">L5–6</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">细胞间通讯</span><span class="toc-src">L7–8</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">线粒体与核糖体</span><span class="toc-src">L9–10</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">细胞生物学方法</span><span class="toc-src">L11</span></a></li>
+        </ol>
+      </details>
+      <details class="toc-group" open>
+        <summary>B 分子生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">核酸的结构与功能</span><span class="toc-src">Park L10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">DNA 复制</span><span class="toc-src">Park L11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">DNA 突变与修复</span><span class="toc-src">L12</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">转录：原核与真核</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">基因表达调控</span><span class="toc-src">L14–15</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">翻译</span><span class="toc-src">L16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">蛋白质结构与功能</span><span class="toc-src">L17</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">BIO103 · 第 1 章</p>
+          <h1>细胞的基本属性与原核/真核细胞</h1>
+          <p class="chapter-head__en">Basic Properties of the Cell; Prokaryotes &amp; Eukaryotes</p>
+          <p class="chapter-head__meta">来源 L1–2 · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">1.1 细胞学说与细胞的基本属性</a></li>
+        <li><a href="#s2">1.2 原核与真核：遗传区室与基因组组织</a></li>
+        <li><a href="#s3">1.3 原核与真核：核糖体、膜与细胞壁</a></li>
+        <li><a href="#s4">1.4 原核与真核：细胞骨架、代谢与增殖</a></li>
+        <li><a href="#s5">1.5 细胞的大小、形态与单细胞真核生物</a></li>
+        <li><a href="#s6">1.6 真核细胞细胞器总览</a></li>
+        <li><a href="#s7">1.7 膜的组装：两亲性脂质、脂质体与微团</a></li>
+        <li><a href="#s8">1.8 膜的组成、流动性与透过性</a></li>
+        <li><a href="#s9">1.9 细胞核、染色质与核孔</a></li>
+        <li><a href="#s10">1.10 核糖体与内质网</a></li>
+        <li><a href="#s11">1.11 高尔基体与溶酶体</a></li>
+        <li><a href="#s12">1.12 线粒体、质体、液泡与细胞外结构</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本章从细胞学说的建立出发，比较原核细胞与真核细胞在遗传区室、核糖体、膜系统、细胞骨架与增殖方式上的差异，再依次认识真核细胞的膜性细胞器、细胞骨架与细胞外结构。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>细胞是生命的基本单位：所有生物由一个或多个细胞组成，细胞来自已有细胞。</li>
+    <li>原核细胞没有膜包围的细胞核，遗传物质位于拟核；真核细胞有核被膜与多种膜性细胞器。</li>
+    <li>细菌核糖体为 70S（30S + 50S），真核细胞质核糖体为 80S（40S + 60S）。</li>
+    <li>细胞器是由膜界定和包围的区室，形态随功能而异，是高度动态的结构。</li>
+    <li>两亲性脂质在水中自发形成双分子层、脂质体或微团，膜内分子可侧向扩散与翻转。</li>
+    <li>细胞核、核仁、核孔、内质网、高尔基体、溶酶体、线粒体、质体与液泡各有专一功能。</li>
+    <li>细胞骨架由微丝、微管与<span class="c-term c-term--auto" data-term="intermediate-filament" title="中间丝｜intermediate filament：直径 8–12 nm、缺乏结构极性的细胞骨架纤维。">中间丝</span>组成，维持形态并参与运动；细胞壁与细胞外基质提供外部支撑。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">1.1</span> 细胞学说与细胞的基本属性</h2>
+  <p>Robert Hooke 于 1665 年观察软木薄片，首次描述并命名了“cell”（细胞）；Antonie van Leeuwenhoek 于 1674 年首次描述活细胞。讲义由此给出几条基本判断：<span class="c-term">细胞<span class="c-term__en">cell</span></span>是生命的 building blocks（构成单位），但“单位”不等于“简单”；所有生物都由一个或多个细胞组成；细胞来自其他细胞（cells originate from other cells）；细胞非常小。</p>
+  <p>讲义同时给出三域的系统发生关系：Bacteria（细菌）、Archaea（古菌）与 <span class="c-term">真核域<span class="c-term__en">Eukarya</span></span>，并在系统发生树上标注 3.9 billion years ago 与 2.7 billion years ago 两个年代标记，用于说明细胞谱系在数十亿年尺度上的分化。细胞的尺度可借助在线工具 Cell Size and Scale 直观比较。</p>
+  <p>讲义强调“单细胞不等于简单”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>细胞学说的三条核心表述：所有生物由细胞组成、细胞是生命的基本单位、细胞来自已有细胞。命名“cell”的是 Hooke（1665），首次描述活细胞的是 Leeuwenhoek（1674），两者不要互换。</p>
+  </aside>
+  <p class="c-source">L1–2 p.1–3</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">1.2</span> 原核与真核：遗传区室与基因组组织</h2>
+  <p>原核细胞与真核细胞最根本的差别在遗传物质的存放方式。真核细胞有由膜包围的<span class="c-term">细胞核<span class="c-term__en">nucleus</span></span>；原核细胞没有膜包围的核，DNA 集中在<span class="c-term">拟核<span class="c-term__en">nucleoid</span></span>区域。由此派生出一系列差别：</p>
+  <ul>
+    <li>细胞器：真核细胞有若干膜包围的细胞器；原核细胞没有膜包围的细胞器。</li>
+    <li>染色体：真核细胞通常不止一条染色体；原核细胞主要只有一条，少数细菌有两条（如 Vibrio  species）。</li>
+    <li>组蛋白：真核 DNA 缠绕组蛋白形成<span class="c-term c-term--auto" data-term="nucleosome" title="核小体｜nucleosome：DNA 缠绕组蛋白形成的染色质基本结构单位。">核小体</span>；细菌没有组蛋白，古菌有组蛋白用于包装染色体 DNA。</li>
+    <li><span class="c-term c-term--auto" data-term="transcription" title="转录｜transcription：以 DNA 为模板合成 RNA 的过程。">转录</span>与翻译：真核细胞在核内转录、在细胞质翻译，两者被核被膜分隔；原核细胞在细胞质中同时进行，即偶联（coupled）。</li>
+    <li>倍性：真核以<span class="c-term c-term--auto" data-term="diploid" title="二倍体｜diploid：染色体数为 2N、含两套染色体的状态。">二倍体</span>基因组为主，许多植物还有更高倍性；原核为<span class="c-term c-term--auto" data-term="haploid" title="单倍体｜haploid：染色体数为 N、只含一套染色体的状态。">单倍体</span>基因组，快速分裂的细胞可含多个染色体拷贝。</li>
+  </ul>
+  <p>在基因组结构上，真核细胞常有大量非编码与重复序列，基因可含 spliceosomal introns；原核基因组紧凑、重复序列极少，蛋白编码基因中没有<span class="c-term c-term--auto" data-term="spliceosome" title="剪接体｜spliceosome：由蛋白质与小 RNA 组成、切除内含子并连接外显子的复合体。">剪接体</span>内含子，只有 tRNA/rRNA 中罕见的自剪接内含子。质粒方面，真核细胞少见（如酵母 2-μm plasmid），原核细胞普遍具有染色体外的质粒 DNA。DNA 复制起点上，真核有多个复制起点，多数细菌只有一个，部分古菌有多个。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“原核细胞完全没有组蛋白”只对细菌成立；古菌具有组蛋白，可像真核一样包装染色体 DNA。判断时先区分 Bacteria 与 Archaea。</p>
+  </aside>
+  
+<!-- course-image:bio103-ch01-bacteria.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-bio103-ch01-bacteria">
+        <img class="c-course-figure__img" src="../../assets/course/bio103-ch01-bacteria.jpg" alt="大肠杆菌的结构（原核细胞）" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 大肠杆菌的结构（原核细胞） <span class="c-course-figure__src">来源：L1–2 p.8</span></figcaption>
+      </figure>
+
+<p class="c-source">L1–2 p.4</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">1.3</span> 原核与真核：核糖体、膜与细胞壁</h2>
+  <p>核糖体按沉降系数区分：真核细胞质<span class="c-term">核糖体<span class="c-term__en">ribosome</span></span>为 80S，由 40S 小亚基与 60S 大亚基组成，沉降较快；原核核糖体为 70S，由 30S 与 50S 组成，沉降较慢。rRNA 大小相应不同：真核细胞质与核内较大的 rRNA 为 28S、18S、5.8S、5S，线粒体与叶绿体中的核糖体则属 70S 型、rRNA 较小；原核 rRNA 为 23S、16S、5S。</p>
+  <p>膜与壁的差别同样明显。真核<span class="c-term">质膜<span class="c-term__en">plasma membrane</span></span>有受体、含固醇与碳水化合物；原核质膜有膜蛋白与受体，但一般不含固醇。真核细胞壁化学组成复杂：植物为纤维素，真菌为几丁质，动物细胞无壁；原核细胞壁化学组成简单，为肽聚糖（所有具壁细菌；mycoplasma 与古菌无），部分原核细胞还有荚膜或糖被（capsule / glycocalyx）。液泡方面，真核细胞可有液泡（植物中央大液泡尤为显著），原核一般没有真正的膜包围液泡，蓝细菌的气囊（gas vacuole）是例外。</p>
+  <p>微管方面，真核细胞普遍有丰富的微管；原核细胞没有真正的微管，分裂时使用与 tubulin 同源的 FtsZ 蛋白形成分裂环。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>80S = 40S + 60S（真核细胞质）；70S = 30S + 50S（原核、线粒体与叶绿体）。S 值相加不等于整体系数，40 + 60 ≠ 80，这是常考的“陷阱算术”。</p>
+  </aside>
+  <p class="c-source">L1–2 p.5</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">1.4</span> 原核与真核：细胞骨架、代谢与增殖</h2>
+  <p>真核细胞有由 actin、微管与中间丝构成的复杂<span class="c-term">细胞骨架<span class="c-term__en">cytoskeleton</span></span>，并有胞质环流（cytoplasmic streaming）；原核细胞只有简单的原核骨架（FtsZ、MreB、crescentin），没有真核型的 actin-微管骨架，也没有真正的胞质环流。真核细胞可有溶酶体与过氧化物酶体，原核两者皆无；原核可有提供浮力的气囊，真核没有。</p>
+  <p>代谢与生活史方面：真核多为需氧或兼性厌氧，也存在专性厌氧种；原核氧需求多样（需氧、兼性厌氧、严格厌氧），部分种类能固氮，真核不能。细胞大小上，真核通常 10–150 μm，某些单细胞真核可小于 10 μm；原核通常 0.5–5 μm，罕见的巨型细菌可达数百 μm。<span class="c-term c-term--auto" data-term="cell-cycle" title="细胞周期｜cell cycle：导致细胞分裂与复制、产生两个子细胞的一系列事件。">细胞周期</span>上，真核体细胞常为 12–24 h 且随物种与细胞类型变化很大；原核可短至 20–60 min，慢生长菌株周期长得多，并可进行多叉复制（multifork replication）。</p>
+  <p>增殖方式：真核常见<span class="c-term c-term--auto" data-term="mitosis" title="有丝分裂｜mitosis：母细胞 2N 产生两个遗传上相同的 2N 子细胞的核分裂。">有丝分裂</span>的无性繁殖，有性繁殖使用<span class="c-term c-term--auto" data-term="meiosis" title="减数分裂｜meiosis：分裂两次、形成四个各含一半遗传信息（N）细胞的核分裂。">减数分裂</span>加有丝分裂；原核主要进行二分裂（binary fission），并通过接合（conjugation）、转化（transformation）与转导（transduction）实现水平基因转移。</p>
+  <p class="c-source">L1–2 p.6</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">1.5</span> 细胞的大小、形态与单细胞<span class="c-term c-term--auto" data-term="eukaryote" title="真核生物｜eukaryote：具有膜包围的细胞核与多种膜性细胞器的生物。">真核生物</span></h2>
+  <p>真核细胞形态极其多样：神经元有长轴突与树突分支，红细胞呈双凹圆盘状以利于气体<span class="c-term c-term--auto" data-term="crossing-over" title="交换｜crossing over：同源染色体的非姐妹染色单体之间互换遗传物质。">交换</span>，精子有鞭毛与顶体。形态与功能直接相关——讲义以肝脏为例：健康肝、脂肪肝与肝硬化肝的组织形态依次改变，说明观察细胞与组织形状具有诊断意义。大肠杆菌的横切面则用于说明原核细胞的尺度：在光学显微镜下只是一个短杆，内部结构需靠更高<span class="c-term c-term--auto" data-term="resolution" title="分辨率｜resolution：分辨两个靠得很近物体的能力，光镜极限约 200 nm。">分辨率</span>手段才能分辨。</p>
+  <p>单细胞真核生物中，<span class="c-term">原生动物<span class="c-term__en">protozoa</span></span>是动物样的单细胞生物，靠鞭毛等结构运动。讲义列举三类致病原虫：<em>Giardia lamblia</em> 引起肠道感染，表现为腹痛、腹胀、恶心与水样腹泻，病原经污染水源传播；<em>Entamoeba histolytica</em> 引起阿米巴病，经粪口途径传播，可无症状或出现腹泻、恶心与体重下降；<em>Plasmodium</em> 引起疟疾，轻症为发热、寒战与头痛，重症可出现意识混乱、抽搐与呼吸困难，幼儿、孕妇与免疫缺陷者风险更高。</p>
+  <p>多细胞生物的组织层次为：细胞 → 组织（tissue）→ 器官（organ）→ 器官系统（organ system）。生物多样性源于细胞属性的差异，而细胞本身是高度复杂且有序的结构。</p>
+  <p class="c-source">L1–2 p.7–12</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">1.6</span> 真核细胞细胞器总览</h2>
+  <p>典型真核细胞可辨识 14 种结构：核仁、细胞核、核糖体、囊泡、粗面内质网、高尔基体、细胞骨架、光面内质网、线粒体、液泡、细胞质基质、溶酶体、<span class="c-term c-term--auto" data-term="centrosome" title="中心体｜centrosome：含一对中心粒的微管组织中心，在 S 期复制。">中心体</span>与细胞膜。</p>
+  <p><span class="c-term">细胞器<span class="c-term__en">organelle</span></span>的定义是：由膜界定并包围的细胞区室。它们具有三个特点：高度动态，会移动并改变形状；界定专门的功能，使特定过程被限制在特定细胞器中；形态与功能匹配——球形（细胞核、溶酶体）、囊状（粗面内质网、高尔基体）、管状（光面内质网）、圆柱或“香肠状”（线粒体）。</p>
+  <p>所有细胞的结构组织方式大致相同，但会随功能改变：肌肉细胞、神经元与血细胞各不相同。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>细胞器必须是“膜界定”的区室；核仁、核糖体与细胞骨架没有膜包围，讲义在细胞器总览中列出它们，是为了定位，不应据此认为它们都是膜性细胞器。</p>
+  </aside>
+  
+<!-- course-image:bio103-ch01-cell-plant.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-bio103-ch01-cell-plant">
+        <img class="c-course-figure__img" src="../../assets/course/bio103-ch01-cell-plant.jpg" alt="植物细胞的结构" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 植物细胞的结构 <span class="c-course-figure__src">来源：L1–2 p.30</span></figcaption>
+      </figure>
+
+<p class="c-source">L1–2 p.15–16</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">1.7</span> 膜的组装：两亲性脂质、脂质体与微团</h2>
+  <p>膜脂是<span class="c-term">两亲性<span class="c-term__en">amphiphilic</span></span>分子：同一分子既有疏水（非极性）区域，又有亲水（极性）区域。磷脂由磷酸基团（phosphate group）与脂质链（lipid chain）构成。在水溶液中，这类分子自发聚集，形成两种几何形态：单尾两亲分子偏好形成大小与几何形状不同的<span class="c-term">微团<span class="c-term__en">micelle</span></span>；双尾磷脂则形成双分子层，进而可闭合成<span class="c-term">脂质体<span class="c-term__en">liposome</span></span>——由一个或多个脂质双分子层构成的中空球形囊泡，脂质可带电或中性、可相同或不同。</p>
+  <p>维持双分子层的力是范德华吸引，讲义称之为疏水键（hydrophobic bond）。分子在膜内的运动分两类：<span class="c-term">侧向扩散<span class="c-term__en">lateral diffusion</span></span>是沿同一侧膜面滑动，速度快；<span class="c-term">翻转<span class="c-term__en">transverse diffusion / flip-flop</span></span>是跨越到膜的另一侧，速度慢。这一快一慢的对比是理解膜不对称性的基础。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 1-1 两亲性脂质的三种组装形态</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram in three panels: a single-tailed amphiphile drawn as a head with one tail, assembling into a spherical micelle; a double-tailed phospholipid drawn with phosphate head and two acyl chains, assembling into a flat bilayer; the same bilayer closing into a hollow spherical liposome with an aqueous core. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/bio103-lipid-assemblies.svg" alt="两亲性脂质的三种组装形态：胶束、双分子层与脂质体" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector diagram in three panels: a single-tailed amphiphile drawn as a head with one tail, assembling into a spherical micelle; a double-tailed phospholipid drawn with phosphate head and two acyl chains, assembling into a flat bilayer; the same bilayer closing into a hollow spherical liposome with an aqueous core. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p class="c-source">L1–2 p.17–18</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">1.8</span> 膜的组成、流动性与透过性</h2>
+  <p>膜的组成包括<span class="c-term">磷脂双分子层<span class="c-term__en">phospholipid bilayer</span></span>、蛋白质、糖类与<span class="c-term">胆固醇<span class="c-term__en">cholesterol</span></span>，具体比例高度依赖细胞器与细胞类型。膜的特征可归纳为一组关键词：流体且动态的结构；分子既能扩散也能翻转；具有平面性（planarity）；具有弯曲能力（bending capacity）；对大多数离子不通透，构成内外的屏障；具有极性（polarized），即两侧组成与功能不同。</p>
+  <p>质膜是细胞的“外壳”，细胞器也都由膜包围。膜支持酶促反应，因为膜可以把酶与底物浓缩在二维表面上。讲义特别指出：膜不决定细胞的形状，决定形状的是细胞骨架。</p>
+  <p>膜组成异质（heterogeneous），不同区域脂质与蛋白比例不同。细胞融合实验（fusion of cells）显示，融合后的质膜双分子层核心仍保持流体性质，来自两种细胞的膜组分可以相互混合，这是膜流动性的直接证据。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>“膜决定细胞形状”是错误表述——细胞形状由细胞骨架决定；膜的功能包括区室化、屏障、极性、支持酶促反应与信号接收。</p>
+  </aside>
+  <p class="c-source">L1–2 p.19–20</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">1.9</span> 细胞核、染色质与核孔</h2>
+  <p>细胞核由双层<span class="c-term">核被膜<span class="c-term__en">nuclear envelope</span></span>包围，两层膜之间形成核周间隙（perinuclear space），核被膜把核内 DNA 与细胞质隔开并起保护作用。核内含有细胞的大部分遗传物质。DNA 与组蛋白结合形成<span class="c-term">染色质<span class="c-term__en">chromatin</span></span>，染色质有三种状态：<span class="c-term">异染色质<span class="c-term__en">heterochromatin</span></span>紧密包装；<span class="c-term">常染色质<span class="c-term__en">euchromatin</span></span>松散，是 DNA 转录为 mRNA 的场所；<span class="c-term">染色体<span class="c-term__en">chromosome</span></span>是 DNA 浓缩的最高形式，在细胞分裂时出现。</p>
+  <p>染色质状态的调控因素成对出现：DNA 甲基化、组蛋白甲基化（如 H3K9me3）、组蛋白去乙酰化与辅阻遏复合物（corepressor complexes）推动异染色质；组蛋白甲基化（如 H3K4me3）、组蛋白乙酰化、连接组蛋白 H1 减少与辅激活复合物（coactivator complexes）推动常染色质。</p>
+  <p><span class="c-term">核仁<span class="c-term__en">nucleolus</span></span>是核内分化的亚区，是 rRNA 转录的场所，也是细胞中最大的细胞器（5–20 μm）。</p>
+  <p>核被膜上的<span class="c-term">核孔<span class="c-term__en">nuclear pore</span></span>控制分子进出：小分子可自由扩散，大分子蛋白需要信号肽（signal peptide）才能通过。核孔是环状蛋白复合物，即核被膜中蛋白衬里的通道，负责 mRNA、tRNA 与蛋白质的输入输出。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 1-2 细胞核与核孔</span>
+      <button class="c-copy" type="button" data-copy="Clean vector cross-section of a eukaryotic nucleus: double nuclear envelope with perinuclear space, ring-shaped nuclear pores spanning both membranes, nucleolus as a dense body inside the nucleoplasm, chromatin fibres shown as loose and dense regions, and a nuclear pore channel with small molecules diffusing and a large protein complex carrying a signal peptide. Flat 2D, thin strokes, muted slate blue and warm grey, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector cross-section of a eukaryotic nucleus: double nuclear envelope with perinuclear space, ring-shaped nuclear pores spanning both membranes, nucleolus as a dense body inside the nucleoplasm, chromatin fibres shown as loose and dense regions, and a nuclear pore channel with small molecules diffusing and a large protein complex carrying a signal peptide. Flat 2D, thin strokes, muted slate blue and warm grey, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p class="c-source">L1–2 p.21–22</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">1.10</span> 核糖体与内质网</h2>
+  <p>核糖体是翻译的场所，把氨基酸按 mRNA <span class="c-term c-term--auto" data-term="codon" title="密码子｜codon：mRNA 上编码一个氨基酸或终止信号的三联体。">密码子</span>（codon）顺序连接成多肽链，由小亚基与大亚基组成。在真核细胞中，核糖体分布于三处：游离于细胞质、附着于内质网、以及线粒体与叶绿体内部。真核 80S 核糖体的大亚基为 60S。</p>
+  <p><span class="c-term">内质网<span class="c-term__en">endoplasmic reticulum</span></span>分为两类。<span class="c-term">粗面内质网<span class="c-term__en">rough ER</span></span>由堆叠并相互连通的膜性囊（cisternae）构成，从核外膜延伸而来，表面附着核糖体，是活跃的蛋白质合成场所。<span class="c-term">光面内质网<span class="c-term__en">smooth ER</span></span>没有核糖体，外观更呈管状；它制造并包装分子送往高尔基体，合成脂质与部分类固醇激素，在某些细胞中还代谢附着于其外侧的糖类。肝细胞含大量光面内质网，因为肝脏承担解毒功能。</p>
+  <p>信号肽决定蛋白质去向：分泌、留在 ER、进入细胞核（如组蛋白）或成为膜蛋白。</p>
+  <p class="c-source">L1–2 p.23–24</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">1.11</span> 高尔基体与溶酶体</h2>
+  <p><span class="c-term">高尔基体<span class="c-term__en">Golgi apparatus</span></span>是由扁平膜囊（saccules）层层堆叠而成的特化膜系统。目的地为高尔基体、溶酶体、需<span class="c-term c-term--auto" data-term="post-translational-modification-ptm" title="翻译后修饰｜post-translational modification (PTM)：蛋白质翻译完成后发生的化学修饰。">翻译后修饰</span>或细胞外液的蛋白质，在内质网出口位点（ER exit sites）被包装成<span class="c-term">囊泡<span class="c-term__en">vesicle</span></span>；囊泡融合形成囊泡-管状簇（vesicular tubular cluster），再转运至高尔基体。高尔基体分三个功能区：<strong>cis 面</strong>接收来自粗面与光面内质网的囊泡；<strong>medial 区</strong>进行糖基化与翻译后修饰；<strong>trans 面</strong>释放分泌囊泡，指向质膜与溶酶体。囊泡在 cis 与 trans 之间的移动是双向的。</p>
+  <p>高尔基体参与蛋白质的分选与翻译后修饰，修饰类型包括糖基化、硫酸化（在酪氨酸的 OH 上加硫酸基）、磷酸化与脂质转运。它修饰寡糖链，使其成为复杂寡糖；有些蛋白需要额外的寡糖才能具备特定功能。高尔基体通过 O-糖基化修饰蛋白。</p>
+  <p><span class="c-term">溶酶体<span class="c-term__en">lysosome</span></span>起源于高尔基体，含多达 40 种糖基化的水解酶（核酸酶、蛋白酶、糖苷酶、脂肪酶、磷酸酶等），把大分子水解为单体，是细胞的“消化系统”。未参与功能的为<span class="c-term">初级溶酶体<span class="c-term__en">primary lysosome</span></span>；已与其他囊泡融合并正在降解内容物的为<span class="c-term">次级溶酶体<span class="c-term__en">secondary lysosome</span></span>。食物分子经吞噬作用（phagocytosis）进入细胞形成<span class="c-term">吞噬体<span class="c-term__en">phagosome</span></span>，与初级溶酶体融合成次级溶酶体；溶酶体也消化细胞自身物质，即<span class="c-term">自噬<span class="c-term__en">autophagy</span></span>。被吞入的微生物<span class="c-term c-term--auto" data-term="blocking" title="封闭｜blocking：用蛋白试剂结合非特异位点以降低假阳性信号。">封闭</span>于吞噬体中，吞噬体成熟后与溶酶体融合为<span class="c-term">吞噬溶酶体<span class="c-term__en">phagolysosome</span></span>，抗原在此降解并可呈递给 T 细胞（例：<em>Mycobacterium tuberculosis</em>）。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>分泌途径的方向性：粗面内质网 → 囊泡 → 高尔基体 cis 面 → medial 区修饰 → trans 面 → 分泌囊泡。溶酶体由高尔基体出芽形成，其中的水解酶在最适酸性 pH 下工作。</p>
+  </aside>
+  <p class="c-source">L1–2 p.25–27</p>
+</section>
+
+<section id="s12">
+  <h2 id="s12"><span class="sec-num">1.12</span> 线粒体、质体、液泡与细胞外结构</h2>
+  <p><span class="c-term">线粒体<span class="c-term__en">mitochondrion</span></span>典型大小 0.75–3 μm，具双层膜。外膜光滑，富含<span class="c-term">孔蛋白<span class="c-term__en">porin</span></span>，允许小分子扩散；内膜极不通透，明显折叠成<span class="c-term">嵴<span class="c-term__en">cristae</span></span>；内膜折叠之间为<span class="c-term c-term--auto" data-term="intermembrane-space" title="膜间隙｜intermembrane space：线粒体内外膜之间的区室，质子被泵入此处。">膜间隙</span>，内膜内部的腔为<span class="c-term">线粒体基质<span class="c-term__en">mitochondrial matrix</span></span>。线粒体被认为由内共生细菌演化而来，拥有自己的质粒或环状线粒体 DNA。<span class="c-term">内共生<span class="c-term__en">endosymbiosis</span></span>指一种单细胞生物居住在另一细胞内部、形成互利关系。线粒体把燃料分子能量转变为 ATP 的高能磷酸键：糖酵解净得 2 ATP，三羧酸循环净得 2 ATP，<span class="c-term c-term--auto" data-term="oxidative-phosphorylation" title="氧化磷酸化｜oxidative phosphorylation：电子传递与化学渗透偶联、产生约 90% 细胞 ATP 的过程。">氧化磷酸化</span>净得约 32（现代估计 26–28）ATP。</p>
+  <p><span class="c-term">叶绿体<span class="c-term__en">chloroplast</span></span>是光合作用场所，把光能转变为化学键能，具双层膜与类囊体（thylakoid）囊；<span class="c-term">基粒<span class="c-term__en">granum</span></span>是类囊体堆叠而成，<span class="c-term">基质<span class="c-term__en">stroma</span></span>是悬浮基粒的液体，含 DNA 与核糖体。</p>
+  <p><span class="c-term">液泡<span class="c-term__en">vacuole</span></span>（植物与原生生物）储存废物与有毒化合物，可防食草动物取食；为植物细胞提供结构支撑，即<span class="c-term">膨压<span class="c-term__en">turgor</span></span>；储存花与果实中的花青素（anthocyanins，粉蓝色素）；许多原生生物有由吞噬作用形成的食物泡。</p>
+  <p><span class="c-term">细胞壁<span class="c-term__en">cell wall</span></span>：植物细胞壁由纤维素纤维（β(1-4)D-glucose）嵌入其他复杂多糖与蛋白质构成，提供刚性。<span class="c-term">细胞外基质<span class="c-term__en">extracellular matrix</span></span>包围许多动物细胞，由胶原等纤维蛋白、凝胶状蛋白聚糖（proteoglycans）与其他蛋白组成，把细胞黏合成组织，决定骨、软骨与皮肤的性质，并在发育与组织修复中引导细胞迁移。</p>
+  <p><span class="c-term">微丝<span class="c-term__en">microfilament</span></span>由 actin 组成：G-actin 为单体，F-actin 为纤维，具极性且动态，可形成刚性内骨架，也作为马达蛋白运动的轨道。<span class="c-term">微管<span class="c-term__en">microtubule</span></span>由 α/β-tubulin 异二聚体构成，有正端与负端，可通过增减二聚体快速改变长度，参与纺锤体形成；中心粒（centriole）与基体（basal body）结构相同。tau 假说说明微管与疾病的关系：阿尔茨海默病中 tau 过度磷酸化，彼此配对形成神经纤维缠结，导致脑细胞微管解体。神经元数量约 1000 亿，突触约 1000 万亿；胶质细胞不发起也不传导冲动，只从物理、代谢与功能上支持神经元。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>微丝（actin，约 7 nm）与微管（tubulin，约 25 nm）都由<span class="c-term c-term--auto" data-term="nucleotide" title="核苷酸｜nucleotide：由含氮碱基、戊糖与磷酸组成的核酸单体。">核苷酸</span>依赖的聚合维持；线粒体与叶绿体都具双层膜、都有自己的 DNA 与核糖体，但只有线粒体有嵴。</p>
+  </aside>
+  <p class="c-source">L1–2 p.28–37</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L1–2</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="index.html"><span>返回</span>学科主页</a>
+          <a class="pager__next" href="ch02.html"><span>下一章</span>细胞周期、有丝分裂与减数分裂</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

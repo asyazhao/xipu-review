@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCI101 科学人工智能 · 全科复习</title>
+  <meta name="description" content="面向科学研究的 AI/ML 基础：数学、感知机、经典方法、评估指标与聚类。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-subject" data-subject="sci101" data-chapter="">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <span aria-current="page">SCI101</span>
+    </nav>
+
+    <header class="page-head">
+      <p class="kicker">SCI101</p>
+      <h1>科学人工智能</h1>
+      <p class="page-head__en">Artificial Intelligence for Science</p>
+      <p class="page-head__desc">面向科学研究的 AI/ML 基础：数学、感知机、经典方法、评估指标与聚类。</p>
+            <p class="page-head__meta">CW1 15% · CW2 35% · Final 50%</p>
+    </header>
+
+    <nav class="subject-switch" aria-label="学科切换">
+      <a href="../../subjects/bio103/index.html">BIO103</a>
+      <a href="../../subjects/bio105/index.html">BIO105</a>
+      <a href="../../subjects/che105/index.html">CHE105</a>
+      <a href="../../subjects/mth113/index.html">MTH113</a>
+      <a href="../../subjects/sci101/index.html" aria-current="page">SCI101</a>
+      <a href="../../subjects/soe102/index.html">SOE102</a>
+      <a href="../../subjects/soe105/index.html">SOE105</a>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="subject-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+      <div class="subject-body">
+<p class="lead">SCI101 面向科学各学科的入门学生，用 Python 与基础数学（线性代数、微积分、统计）搭建在科研中使用 AI/ML 的工具箱。课程按“数学 → 数据 → 监督/无监督 → 算法 → 聚类 → 评估 → 感知机与深度学习”的顺序展开，并明确声明自己不是机器学习课、计算科学课或算法课。</p>
+
+<section id="traps">
+  <h2>高频易错点</h2>
+  <ol class="trap-list">
+    <li><a href="ch02.html">“表示”与“模型”是两件事</a> — 同一份数据换一种表示（缩放、筛选、编码）就会改变模型效果；选模型不等于选表示。</li>
+    <li><a href="ch03.html">逻辑回归是分类，不是回归</a> — 它输出 0–1 的概率，需再取阈值才变成类别；预测连续数值的才是线性回归。</li>
+    <li><a href="ch04.html">判别式学 P(y|x)，生成式学 P(x)</a> — 前者学类别边界、回答“这是什么”，后者学数据分布、回答“怎么造出这个”；生成式 AI 也不等于“无监督学习”的同义词。</li>
+    <li><a href="ch05.html">奇异 ≠ 无解</a> — 奇异只说明方程之间线性相关：冗余时无穷多解，矛盾时才无解，要看等式右端是否相容。</li>
+    <li><a href="ch06.html">阶跃激活的问题是“不可导”</a> — 不是不够准：它的导数几乎处处为零、阈值处不存在，梯度下降拿不到更新方向。</li>
+    <li><a href="ch07.html">装袋并行，提升串行</a> — 随机森林属 bagging（样本随机 + 特征随机），各树独立后投票或平均；梯度提升逐棵拟合前序模型的残差。</li>
+    <li><a href="ch08.html">轮廓系数是内部指标，ARI 是外部指标</a> — 前者不需要真实标签，后者必须拿真实分组来比对，不能把 ARI 当成无监督也能算的指标。</li>
+    <li><a href="ch09.html">距离聚类前必须标准化</a> — 距离对量纲敏感，pH 与温度各变 1 的分量并不相同；不缩放会让数值范围大的特征主导结果。</li>
+  </ol>
+</section>
+
+<section id="exam">
+  <h2>考点概览</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>按章节汇总；仅列资料可支撑的考点</caption>
+      <thead>
+        <tr><th scope="col">章节</th><th scope="col">核心考点</th><th scope="col">依据</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>01</td><td>课程三条边界（不是机器学习/计算科学/算法课）；七个主题的顺序；考核 15/35/50 与 AI 声明五要素</td><td>L1a</td></tr>
+        <tr><td>02</td><td>AI ⊃ ML ⊃ DL 的包含关系；机器学习问题五要素；传统编程 vs 机器学习；六步工作流与数据泄漏；四种失败模式</td><td>L1b、Wang</td></tr>
+        <tr><td>03</td><td>监督/无监督/强化/弱监督四类；回归与分类的判据；弱监督的三种不完整</td><td>Wang</td></tr>
+        <tr><td>04</td><td>判别式 P(y|x) vs 生成式 P(x)；GAN、VAE、Transformer、扩散模型四类分工；训练五步</td><td>Wang</td></tr>
+        <tr><td>05</td><td>矩阵运算与线性方程组的三种情形；行列式与奇异；点积/矩阵乘法；感知机中阈值与偏置等价；损失、导数与梯度下降</td><td>L2</td></tr>
+        <tr><td>06</td><td>感知机与多层感知机；阶跃函数为何要换成 Sigmoid；全连接层 vs 卷积层；数据预处理四步；过拟合/欠拟合的判据与对策</td><td>L3</td></tr>
+        <tr><td>07</td><td>决策树的分裂与不纯度；随机森林的 bagging；SVM 最大间隔与核技巧；梯度提升拟合残差；四种方法对比</td><td>L5</td></tr>
+        <tr><td>08</td><td>混淆矩阵与 Precision/Recall/F1；ROC-AUC 与 PR 曲线的选择；MAE/MSE/RMSE/R²；轮廓系数与 ARI</td><td>Metrics</td></tr>
+        <tr><td>09</td><td>三种距离度量；K-Means 三步循环与选 K；层次聚类剪树；DBSCAN 的 ε 与 MinPts；GMM/谱聚类；算法选择准则</td><td>Clustering</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+        <nav class="quick-links" aria-label="本学科工具">
+          <a href="glossary.html">术语词典</a>
+          <a href="compare.html">对比速记</a>
+        </nav>
+      </div>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

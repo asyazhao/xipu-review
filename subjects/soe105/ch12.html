@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 文件 I/O 与流 · 全科复习</title>
+  <meta name="description" content="SOE105 第 12 章 文件 I/O 与流：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="12">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 12 章 文件 I/O 与流</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html" class="is-current" aria-current="page"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html" class="is-current" aria-current="page"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 12 章</p>
+          <h1>文件 I/O 与流</h1>
+          <p class="chapter-head__en">File I/O &amp; Streams</p>
+          <p class="chapter-head__meta">来源 L14 · 术语 8 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">12.1 文件与流：两个基本概念</a></li>
+        <li><a href="#s2">12.2 标准流：cin、cout、cerr、clog</a></li>
+        <li><a href="#s3">12.3 文件流：ifstream、ofstream、open 与 close</a></li>
+        <li><a href="#s4">12.4 文件流函数：get、put、fail、eof</a></li>
+        <li><a href="#s5">12.5 两个读写示例：数组反转与字符统计</a></li>
+        <li><a href="#s6">12.6 流是对象：标志决定行为</a></li>
+        <li><a href="#s7">12.7 操纵符与成员函数：两种等价写法</a></li>
+        <li><a href="#s8">12.8 综合示例：用输出格式画函数图像</a></li>
+        <li><a href="#s9">12.9 与 C 的关系及小结</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本章把“输入输出”统一成一个概念——流：键盘、屏幕、文件都是字节序列。先看标准流与文件流的打开/关闭，再用 get/put/fail/eof 读写文件，最后用 I/O <span class="c-term c-term--auto" data-term="flag" title="标志｜flag：记录状态、用于控制循环是否继续的变量。">标志</span>与<span class="c-term c-term--auto" data-term="manipulator" title="操纵符｜manipulator：修改流标志的辅助函数，如 setw、setprecision、setiosflags。">操纵符</span>控制输出的宽度、对齐、<span class="c-term c-term--auto" data-term="precision" title="精度｜precision：浮点输出保留的位数，用 setprecision 设置并持续生效。">精度</span>与格式。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>文件存放在二级存储上、是永久的；读之前必须先打开，且要放在 Project 目录下。</li>
+    <li>流是 C/C++ 对所有输入输出的<span class="c-term c-term--auto" data-term="abstraction" title="抽象｜abstraction：忽略不必要的细节，把“做什么”与“怎么做”分开。">抽象</span>：一段（可能无限长的）按时间到达的数据<span class="c-term c-term--auto" data-term="element" title="元素｜element：数组中的一个数据项，由下标定位。">元素</span>序列。</li>
+    <li>cin/cout/cerr/clog 是四个标准流；&gt;&gt; 提取并自动跳过空白、按目标<span class="c-term c-term--auto" data-term="type-conversion" title="类型转换｜type conversion：改变表达式类型的操作，又称 casting。">类型转换</span>，&lt;&lt; 插入。</li>
+    <li>文件流用 ifstream 与 ofstream，open 关联文件、close 断开，get/put 按字符读写，fail/eof 判断状态。</li>
+    <li>输出格式由标志控制：skipws、left/right、fixed/scientific、showpoint；操纵符 setw、setprecision、setiosflags 修改它们。</li>
+    <li>setw 只作用于下一个输出项；精度对浮点数生效，对整数无效。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">12.1</span> 文件与流：两个基本概念</h2>
+  <p>讲义对<span class="c-term">计算机文件<span class="c-term__en">computer file</span></span>给了五条性质：它存放在二级存储设备上（磁盘、U 盘等）；它是永久的；它可以用来提供输入数据、接收输出数据，或者两者兼有；它必须放在 Project 目录下（不必和存放 .cpp 的<span class="c-term c-term--auto" data-term="source-file" title="源文件｜source file：存放程序文本的文件，如 helloworld.cpp。">源文件</span>夹同一目录）；读取之前必须先打开。</p>
+  <p>“永久”是相对内存说的：程序结束后<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：有名字、有类型、可存放一个值的存储单元。">变量</span>消失，文件还在。这也解释了为什么作业里的数据常用文件保存——下次运行程序时还能读到上次的结果。</p>
+  <p><span class="c-term">流<span class="c-term__en">stream</span></span>是 C/C++ 对所有程序输入输出的抽象，包括键盘、显示器、外部文件等等。讲义的定义是：一段（可能无限长的）数据元素序列，随时间逐步变得可用。它用一个例子说明：用户敲下 “This is characters typed using keyboard” 再按回车，程序看到的不是一句话，而是一串字符，最后跟一个换行字符；每个字符都是流里的一个元素，程序按需一个一个取。</p>
+  <p>既然流里只有字符，那些看不见的<span class="c-term c-term--auto" data-term="control-character" title="控制字符｜control character：编码 0–31 与 127 的不可打印字符，用于格式与控制。">控制字符</span>就要有写法。讲义列了一张特殊字符表示表：换行 \n（八进制 012）、水平制表 \t（011）、垂直制表 \v（013）、退格 \b（010）、换页 \f（014）、回车 \r（015）、响铃 \a（017），以及反斜杠 \\、问号 \?、单引号 \'、双引号 \"。写文件内容时如果出现这些字符，落盘的就是对应的控制码。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>读文件前必须先 open 建立连接，用完必须 close 断开；文件名相对 Project 目录解析，而不是相对 .cpp 所在目录。漏掉 open 就直接 &gt;&gt;，流没有关联任何文件，提取必然失败。</p>
+  </aside>
+  
+<!-- course-image:soe105-ch12-stream.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe105-ch12-stream">
+        <img class="c-course-figure__img" src="../../assets/course/soe105-ch12-stream.jpg" alt="文件与流：程序的输入输出" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 文件与流：程序的输入输出 <span class="c-course-figure__src">来源：L14 p.4</span></figcaption>
+      </figure>
+
+<p class="c-source">L14 p.2–4</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">12.2</span> 标准流：cin、cout、cerr、clog</h2>
+  <p>与标准控制台交互时用 &lt;iostream&gt;，四个流各司其职：cin 是标准输入流，cout 是标准输出流，cerr 是标准（中间）错误流，clog 是标准（带缓冲）流。讲义的程序—流示意图把 cerr 与 clog 都画在“标准错误”这一侧：平时看到的错误信息走 cerr，需要缓冲的输出走 clog。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 12-1 程序与三个标准流的连接</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of a C++ program in the centre connected to three standard streams: one arrow from standard input labelled cin into the program, one arrow out to standard output labelled cout, and one arrow out to standard error labelled cerr and clog; each stream drawn as a horizontal row of small character cells. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram of a C++ program in the centre connected to three standard streams: one arrow from standard input labelled cin into the program, one arrow out to standard output labelled cout, and one arrow out to standard error labelled cerr and clog; each stream drawn as a horizontal row of small character cells. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>输入用提取运算符 &gt;&gt;。讲义列了它的三个特点：从输入流中提取数据；总是跳过空白；只提取“形式正确”的字符并做自动转换。所以 cin &gt;&gt; id &gt;&gt; session &gt;&gt; name_init &gt;&gt; score 可以从一行里依次取到整数、字符、字符、整数，中间的空格与换行都不需要自己处理。</p>
+  <p>输出用插入运算符 &lt;&lt;，把数据插进输出流或错误流：cout &lt;&lt; "Sum = " &lt;&lt; sum &lt;&lt; endl; 或 cerr &lt;&lt; "ERROR: unknown command " &lt;&lt; command &lt;&lt; endl;。同一个运算符，方向不同，含义相反——&gt;&gt; 是从流里取出，&lt;&lt; 是往流里放。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>&gt;&gt; 的“跳过空白”是优点也是陷阱：读字符时会跳过空格与换行，所以想读入空格必须改用 get（第 11 章）；读数字时若输入了字母，提取会失败并让流进入失败状态，后续读取全部失效。</p>
+  </aside>
+  <p class="c-source">L14 p.4–5</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">12.3</span> 文件流：ifstream、ofstream、open 与 close</h2>
+  <p>外部文件用 &lt;fstream&gt; 里的两种文件流类型：<span class="c-term">输入文件流<span class="c-term__en">ifstream</span></span>负责读，<span class="c-term">输出文件流<span class="c-term__en">ofstream</span></span>负责写。用法与 cin/cout 高度一致：声明流对象、把它关联到一个文件、像用 cin/cout 那样用 &gt;&gt; 与 &lt;&lt;、最后关闭。</p>
+<pre class="c-code"><code>#include &lt;fstream&gt;
+using namespace std;
+
+int main() {
+    int data;
+    ifstream ins;
+    ofstream outs;
+
+    ins.open("in_data.dat");      // associate stream with file
+    outs.open("out_data.dat");
+
+    ins &gt;&gt; data;                  // read from ins
+    outs &lt;&lt; data &lt;&lt; endl;         // write to outs
+
+    ins.close();
+    outs.close();
+    return 0;
+}</code></pre>
+  <p>三个动作对应三个函数：xxx.open(fname) 把流 xxx 连接到外部文件 fname，也就是打开文件；xxx.close() 断开连接，也就是关闭文件；中间的 &gt;&gt; 与 &lt;&lt; 与标准流完全相同。这个设计的好处是“换一个流对象，代码不变”：把 cin 换成 ins，同一段读取逻辑就从键盘搬到了文件。</p>
+  <p>讲义强调“文件必须先打开才能读”。没有 open 就直接 &gt;&gt;，流没有关联任何文件，提取必然失败；而 open 的文件名默认相对于 Project 目录，不是相对于 .cpp 所在目录——把数据文件和源文件放在不同文件夹时，这一点尤其容易出错。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>ifstream 只能读、ofstream 只能写，方向不能互换：读用 &gt;&gt; 或 get，写用 &lt;&lt; 或 put。把流类型声明反，后面的提取或插入就无法通过编译。</p>
+  </aside>
+  <p class="c-source">L14 p.5–7</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">12.4</span> 文件流函数：get、put、fail、eof</h2>
+  <p>除了 &gt;&gt; 与 &lt;&lt;，文件流还提供一组成员函数，讲义的清单如下：</p>
+  <ul>
+    <li>xxx.open(fname)：把流连接到外部文件，即打开文件。</li>
+    <li>xxx.close()：断开流与文件的连接，即关闭文件。</li>
+    <li>xxx.get(<span class="c-term c-term--auto" data-term="char" title="字符类型｜char：用来存放单个字符的数据类型，字面量用单引号。">char</span> &amp;ch)：从输入流 xxx 读下一个字符，放进字符变量 ch。</li>
+    <li>xxx.put(char ch)：把字符 ch 写进流 xxx。</li>
+    <li>xxx.fail()：检查是否发生了错误，即 I/O 操作是否失败。</li>
+    <li>xxx.eof()：检测<span class="c-term c-term--auto" data-term="end-of-file" title="文件结束｜end-of-file：输入流已无字符可读的状态，用 eof() 检测。">文件结束</span>（EOF），即下一个字符是否是文件尾。</li>
+  </ul>
+  <p>get 与 put 是“逐字符”通道，不跳过空白、不做类型转换，读到什么就是什么；&gt;&gt; 与 &lt;&lt; 是“按类型”通道，会自动跳过空白并转换格式。统计字符数、复制文件、逐行处理这类任务要用前者；读一组整数、写一张表格用后者。</p>
+  <p>fail 与 eof 是“状态查询”，返回的是条件是否成立，所以直接放在 if 或 while 的条件里。它们的区别在于：fail 回答“刚才那次操作成功了吗”，eof 回答“是不是已经到文件末尾了”。讲义的统计程序两个都用到了。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>get 的参数是引用（char &amp;ch），因为它要把读到的字符写回调用者的变量；put 的参数是值，因为只往里写、不需要带回任何东西。</p>
+  </aside>
+  <p class="c-source">L14 p.7–8</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">12.5</span> 两个读写示例：<span class="c-term c-term--auto" data-term="array" title="数组｜array：同一类型元素的线性集合，存于连续内存。">数组</span>反转与字符统计</h2>
+  <p>第一个例子演示 &gt;&gt; 与 &lt;&lt; 在文件上同样好用。程序打开 file1.dat，用 for <span class="c-term c-term--auto" data-term="loop" title="循环｜loop：重复执行一段语句的控制结构，又称迭代。">循环</span>把四个整数读进数组 A；关闭输入流后打开 file2.dat，再倒着遍历数组把四个数写出去。文件里 1 2 3 4 变成 4 3 2 1，代码与“从键盘读、往屏幕写”几乎没有差别。</p>
+<pre class="c-code"><code>ifstream fin;
+int A[4], r;
+fin.open("file1.dat");
+for (r = 0; r &lt; 4; r++)      // read data file of four integers
+    fin &gt;&gt; A[r];
+fin.close();
+
+ofstream fout;
+fout.open("file2.dat");
+for (r = 3; r &gt;= 0; r--)     // write with numbers reversed
+    fout &lt;&lt; A[r] &lt;&lt; ' ';
+fout.close();</code></pre>
+  <p>第二个例子统计文件的行数与字符数，用的是双层 while(true) 加 break 的结构：外层每轮处理一行，内层每轮读一个字符；读到换行或文件结束时跳出内层，行数加一，再判断是否该跳出外层。</p>
+<pre class="c-code"><code>while (true) {                    // loop for each line
+    while (true) {                // loop for each character on line
+        ins.get(c);
+        if (ins.eof() || c == '\n') {
+            break;
+        }
+        nChar++;
+        cout &lt;&lt; c;  outs &lt;&lt; c;
+    }
+    cout &lt;&lt; endl;
+    nLine++;
+    if (ins.eof()) break;
+    outs &lt;&lt; endl;
+}</code></pre>
+  <p>这段代码有两个可读的技巧。第一，条件写成 ins.eof() || c == '\n'，把“文件结束”和“行结束”合并成一个出口，避免读越界。第二，nChar 只在确认不是换行之后才<span class="c-term c-term--auto" data-term="increment" title="自增｜increment：把变量加一；++k 先加后用，k++ 先用后加。">自增</span>，所以统计的是“可见字符 + 空格”，不含换行符本身。讲义给出的示例输出是 characters count: 39、lines count: 4。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>ins.get(c) 之后要先判断状态再用 c：文件已经结束时 c 里可能是上一次的旧值。把 nChar++ 写在判断之前，末尾会多统计一个字符。</p>
+  </aside>
+  <p class="c-source">L14 p.8–10</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">12.6</span> 流是对象：标志决定行为</h2>
+  <p>讲义把 ios 类型的流描述成一个复杂的数据对象：它是一段无限的字节/字符序列；有专门的运算符（&gt;&gt;、&lt;&lt;）；有专门的函数（get、put 等）；还有一组修改设置（flags）用来改变 I/O 行为，以及操纵符（manipulators）与函数来修改这些标志。</p>
+  <p>由此引出两个设计问题。输入方面：提取时空白是否重要？这正是 skipws 标志管的事。输出方面：一个数据项占多少个字符宽度（<span class="c-term c-term--auto" data-term="field-width" title="字段宽度｜field width：一个输出项占用的字符列数，setw 只作用于下一个输出项。">field width</span>）？靠左还是靠右（adjustment）？实数保留几位（precision）？</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>讲义列出的常用 I/O 标志</caption>
+      <thead>
+        <tr><th scope="col">类别</th><th scope="col">标志</th><th scope="col">置位后的含义</th><th scope="col">默认</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>输入</td><td>skipws</td><td>提取时跳过空白</td><td>On</td></tr>
+        <tr><td>输出对齐</td><td>left</td><td>在字段内左对齐</td><td>Off</td></tr>
+        <tr><td>输出对齐</td><td>right</td><td>在字段内右对齐</td><td>Off</td></tr>
+        <tr><td>浮点格式</td><td>fixed</td><td>定点格式（如 59.06）</td><td>Off</td></tr>
+        <tr><td>浮点格式</td><td>scientific</td><td>科学计数格式（如 5.906E1）</td><td>Off</td></tr>
+        <tr><td>浮点格式</td><td>showpoint</td><td>显示小数点与尾随零</td><td>Off</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>这张表的读法是“默认值 + 置位效果”。skipws 默认是开的——这与上一节“&gt;&gt; 总是跳过空白”是同一件事；要读空白就得关掉它或改用 get。left 与 right 默认都关，此时按默认方式对齐；fixed 与 scientific 默认都关，浮点数按默认格式输出；showpoint 默认关，所以 59.0 可能被打印成 59。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>标志是“一旦置位就持续生效”的设置，不是一次性开关。设置一次 ios::fixed 之后，后面所有浮点输出都按定点格式打印，直到被 unset 掉。</p>
+  </aside>
+  <p class="c-source">L14 p.10–12</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">12.7</span> 操纵符与成员函数：两种等价写法</h2>
+  <p>&lt;iomanip&gt; 提供了四个常用操纵符，每个都有一个同名的成员函数版本：setiosflags 对应 setf（设置标志）、unsetiosflags 对应 unsetf（清除标志）、setprecision 对应 precision（设置输出数字的精度）、setw 对应 width（设置下一个输出字段的宽度）。</p>
+<pre class="c-code"><code>cout &lt;&lt; setiosflags(ios::fixed | ios::showpoint | ios::left)
+     &lt;&lt; setprecision(2)
+     &lt;&lt; setw(8)  &lt;&lt; id
+     &lt;&lt; setw(20) &lt;&lt; total
+     &lt;&lt; setw(20) &lt;&lt; average
+     &lt;&lt; endl;
+
+// equivalent member-function form
+cout.setf(ios::fixed | ios::showpoint | ios::left);
+cout.precision(2);
+cout.width(8);
+cout &lt;&lt; id;
+cout.width(20); cout &lt;&lt; total;
+cout.width(20); cout &lt;&lt; average &lt;&lt; endl;</code></pre>
+  <p>两种写法效果相同，讲义把它们并排列出，就是为了说明“操纵符只是成员函数的另一种调用方式”。操纵符写在 &lt;&lt; 链里，读起来更像输出语句的一部分；成员函数单独成行，适合一次设置、长期生效的场合。注意 width(20) 在第二种写法里被调用了两次——因为宽度只对紧接着的那一个输出项有效。</p>
+  <p>三个设置的用途各不相同：setiosflags 一次可以按位或组合多个标志（fixed、showpoint、left）；setprecision(2) 决定实数保留两位；setw(8)、setw(20) 决定这一列占多宽。把三者叠起来，输出就是一张对齐的表。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>setw 只影响“下一个”输出项，写完一个就要再设一次；setprecision 与 setiosflags 则会一直生效。把三者当成同一种“一次性设置”，表格的对齐会从第二列开始错位。</p>
+  </aside>
+  <p class="c-source">L14 p.12–14</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">12.8</span> 综合示例：用输出格式画函数图像</h2>
+  <p>讲义最后一个例子把前面所有东西拼在一起：用字符 * 在<span class="c-term c-term--auto" data-term="terminal" title="终端｜terminal：与计算机交互的文本界面，又称 console 或命令提示符。">终端</span>上画出函数 f(x) = −x² − 2x + 20 在区间 [−5, 5] 上的形状。程序先定义两个<span class="c-term c-term--auto" data-term="constant" title="常量｜constant：声明时赋值、之后不可修改的永久值。">常量</span>：NUM_COLS = 80 表示总共 80 列，FIELD_SIZE_X = 10 表示 x 值占 10 列。</p>
+  <p>变量设置是：xinit = −5、xfinal = −xinit = 5、xstep = 0.5、ystep = 2.0。先打印表头，再用 setiosflags(ios::scientific | ios::showpoint) 与 setprecision(2) 把后面的实数统一成两位小数的科学计数法；然后算出起点的函数值 yinit，作为“零高度”的基准。</p>
+<pre class="c-code"><code>for (float x = xinit; x &lt; xfinal; x += xstep) {
+    y = evaluate_function(x);
+    indent = (int)((1.0 * y - yinit) / ystep + 0.5);
+    cout &lt;&lt; setw(FIELD_SIZE_X - 2) &lt;&lt; x &lt;&lt; " ";
+    if (indent &gt;= 0 &amp;&amp; indent &lt; NUM_COLS - FIELD_SIZE_X) {   // within bound
+        cout &lt;&lt; setw(indent) &lt;&lt; "*";
+        cout &lt;&lt; setw(12) &lt;&lt; y;
+    }
+    cout &lt;&lt; endl;
+}</code></pre>
+  <p>核心是 indent 这个整数：它把函数值换算成“要空多少格才画 *”。(y − yinit) / ystep 得到以 ystep 为单位的相对高度，加 0.5 再取整相当于四舍五入，避免 2.999 被截成 2。setw(indent) 先输出 indent 个空格，再输出 *，星号就落在对应的水平位置上；后面 setw(12) 再把该点的函数值打印在同一行。</p>
+  <p>边界检查 indent &gt;= 0 &amp;&amp; indent &lt; NUM_COLS − FIELD_SIZE_X 很关键：函数值超出绘图区时 indent 可能为负或过大，setw 拿到这种值会输出整行空格或直接错位，所以越界的点只打印 x 与换行。讲义给出的输出中，−5.00e+00 对应 5.00e+00，−1.00e+00 对应 2.10e+01，正好是抛物线的顶点位置。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>“画图”在这里不是图形库，而是用 setw 控制空格数量，把字符摆到指定列。宽度既是排版工具，也是定位工具——这是本讲最值得带走的一个用法。</p>
+  </aside>
+  <p class="c-source">L14 p.14–17</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">12.9</span> 与 C 的关系及小结</h2>
+  <p>讲义在备注里说明：C++ 中的大多数 I/O 与流操纵符、流函数，C 也支持，细节可以查阅 cstdlib 库。这句话的分量在于“不必把它们当成 C++ 独有”：文件打开、读字符、写字符这些操作在 C 里有对应的库函数，只是名字与调用形式不同。第 13 章讲动态内存时会看到同样的对照（new/delete 对 malloc/free）。</p>
+  <p>把整章压缩成一条主线：文件是永久的字节集合，流是访问它的统一接口；打开建立连接，关闭断开连接；&gt;&gt; 与 &lt;&lt; 负责带类型转换的批量读写，get 与 put 负责逐字符的精确读写，fail 与 eof 负责查询状态；标志决定格式，操纵符修改标志。这五件事按顺序记住，读写任何文本文件都不会乱。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>一段完整的文件程序必须能回答四个问题：用哪个流类型？对哪个文件 open？用 &gt;&gt;/get 读还是用 &lt;&lt;/put 写？什么时候 close、关闭前有没有检查 eof 或 fail？</p>
+  </aside>
+  <p class="c-source">L14 p.18–19</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L14</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch11.html"><span>上一章</span>字符与字符串</a>
+          <a class="pager__next" href="ch13.html"><span>下一章</span>指针与动态内存</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

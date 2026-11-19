@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 375" role="img" aria-label="递归调用与回代">
+<title>递归调用与回代</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">递归调用与回代</text>
+<rect x="100" y="80" width="200" height="42" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="200" y="106" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">factorial(4)</text>
+<rect x="100" y="140" width="200" height="42" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="200" y="166" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">factorial(3)</text>
+<rect x="100" y="200" width="200" height="42" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="200" y="226" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">factorial(2)</text>
+<rect x="100" y="260" width="200" height="42" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="200" y="286" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">factorial(1)</text>
+<line x1="200" y1="122" x2="200" y2="138" stroke="#5E5E58" stroke-width="1.2" marker-end="url(#arrowMuted)"/>
+<line x1="200" y1="182" x2="200" y2="198" stroke="#5E5E58" stroke-width="1.2" marker-end="url(#arrowMuted)"/>
+<line x1="200" y1="242" x2="200" y2="258" stroke="#5E5E58" stroke-width="1.2" marker-end="url(#arrowMuted)"/>
+<text x="370" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">调用阶段 ↓</text>
+<text x="370" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">回代阶段 ↑</text>
+<rect x="500" y="260" width="100" height="42" rx="3" fill="#E7EBF1" stroke="#5F735F" stroke-width="1.3"/>
+<text x="550" y="286" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5F735F" text-anchor="middle" font-weight="700">返回 1</text>
+<rect x="500" y="200" width="100" height="42" rx="3" fill="#E7EBF1" stroke="#5F735F" stroke-width="1.3"/>
+<text x="550" y="226" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5F735F" text-anchor="middle" font-weight="700">返回 2</text>
+<rect x="500" y="140" width="100" height="42" rx="3" fill="#E7EBF1" stroke="#5F735F" stroke-width="1.3"/>
+<text x="550" y="166" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5F735F" text-anchor="middle" font-weight="700">返回 6</text>
+<rect x="500" y="80" width="100" height="42" rx="3" fill="#E7EBF1" stroke="#5F735F" stroke-width="1.3"/>
+<text x="550" y="106" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5F735F" text-anchor="middle" font-weight="700">返回 24</text>
+<line x1="500" y1="262" x2="500" y2="224" stroke="#5F735F" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+<line x1="500" y1="202" x2="500" y2="164" stroke="#5F735F" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+<line x1="500" y1="142" x2="500" y2="104" stroke="#5F735F" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+<text x="40" y="360" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">基准情形 factorial(1) = 1 停止递归；每一层把结果乘回上一层。</text>
+</svg>

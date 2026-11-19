@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>搜索 · 全科复习</title>
+  <meta name="description" content="跨学科检索章节、小节、术语与对比表。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="./assets/css/tokens.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/print.css" media="print">
+</head>
+<body class="page-search" data-subject="" data-chapter="">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="./index.html#subjects">学科</a>
+        <a href="./glossary.html">术语</a>
+        <a href="./compare.html">速记</a>
+        <a href="./gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="./search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="./index.html#subjects">学科</a>
+          <a href="./glossary.html">术语</a>
+          <a href="./compare.html">速记</a>
+          <a href="./gallery.html">图示</a>
+          <a href="./search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="index.html">首页</a>
+      <span>/</span>
+      <span aria-current="page">搜索</span>
+    </nav>
+
+    <div class="search-page">
+      <header class="page-head">
+        <p class="kicker">检索</p>
+        <h1>搜索</h1>
+        <p class="page-head__meta">跨学科检索章节、小节、术语与对比表</p>
+      </header>
+
+      <form class="search-form" action="./search.html" method="get" role="search">
+        <label class="visually-hidden" for="q">搜索关键词</label>
+        <input id="q" name="q" type="search" placeholder="输入中文或英文关键词…" autocomplete="off">
+        <button type="submit">搜索</button>
+      </form>
+
+      <div class="chips" id="subjectFilters" aria-label="按学科筛选">
+        <button type="button" class="chip is-active" data-subject="">全部</button>
+        <button type="button" class="chip" data-subject="BIO103">BIO103</button>
+        <button type="button" class="chip" data-subject="BIO105">BIO105</button>
+        <button type="button" class="chip" data-subject="CHE105">CHE105</button>
+        <button type="button" class="chip" data-subject="MTH113">MTH113</button>
+        <button type="button" class="chip" data-subject="SCI101">SCI101</button>
+        <button type="button" class="chip" data-subject="SOE102">SOE102</button>
+        <button type="button" class="chip" data-subject="SOE105">SOE105</button>
+      </div>
+
+      <p class="search-meta" id="searchMeta" aria-live="polite">输入关键词开始搜索；支持中文与英文术语。</p>
+      <div class="search-results" id="searchResults"></div>
+      <p id="searchEmpty" class="search-empty" hidden>未找到。试试英文术语、更短的关键词，或只输入一个词。</p>
+      <noscript><p class="search-empty">搜索需要启用 JavaScript；你也可以从学科主页逐章浏览。</p></noscript>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="./assets/js/theme.js" defer></script>
+  <script src="./assets/js/copy.js" defer></script>
+  <script src="./data/search-index.js"></script>
+  <script src="./assets/js/search.js" defer></script>
+</body>
+</html>

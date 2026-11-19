@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHE105 分子结构：原子轨道、分子轨道与杂化 · 全科复习</title>
+  <meta name="description" content="CHE105 第 4 章 分子结构：原子轨道、分子轨道与杂化：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="che105" data-chapter="04">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">CHE105</a>
+      <span>/</span>
+      <span aria-current="page">第 4 章 分子结构：原子轨道、分子轨道与杂化</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">有机化学导论：从“生命力”到尿素合成</span><span class="toc-src">L1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">有机分子的结构、命名与异构</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">有机反应类型与官能团</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch04.html" class="is-current" aria-current="page"><span class="toc-num">04</span><span class="toc-title">分子结构：原子轨道、分子轨道与杂化</span><span class="toc-src">L4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">有机反应机理：电荷、HOMO–LUMO 与箭头</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">羰基的亲核加成</span><span class="toc-src">L6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">离域与共轭：芳香性</span><span class="toc-src">L7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">酸性、碱性与 pKa</span><span class="toc-src">L8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">立体化学</span><span class="toc-src">L9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">有机金属试剂构建 C–C 键</span><span class="toc-src">L10</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">羰基的亲核取代：酸衍生物</span><span class="toc-src">L11</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">羰基氧的取代：缩醛、亚胺与 Wittig</span><span class="toc-src">L12</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">有机化学导论：从“生命力”到尿素合成</span><span class="toc-src">L1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">有机分子的结构、命名与异构</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">有机反应类型与官能团</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch04.html" class="is-current" aria-current="page"><span class="toc-num">04</span><span class="toc-title">分子结构：原子轨道、分子轨道与杂化</span><span class="toc-src">L4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">有机反应机理：电荷、HOMO–LUMO 与箭头</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">羰基的亲核加成</span><span class="toc-src">L6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">离域与共轭：芳香性</span><span class="toc-src">L7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">酸性、碱性与 pKa</span><span class="toc-src">L8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">立体化学</span><span class="toc-src">L9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">有机金属试剂构建 C–C 键</span><span class="toc-src">L10</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">羰基的亲核取代：酸衍生物</span><span class="toc-src">L11</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">羰基氧的取代：缩醛、亚胺与 Wittig</span><span class="toc-src">L12</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">CHE105 · 第 4 章</p>
+          <h1>分子结构：原子轨道、分子轨道与杂化</h1>
+          <p class="chapter-head__en">Structure of Molecules</p>
+          <p class="chapter-head__meta">来源 L4 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">4.1 原子结构：核与电子云</a></li>
+        <li><a href="#s2">4.2 量子化能级与原子轨道</a></li>
+        <li><a href="#s3">4.3 1s、2s、2p 与电子构型</a></li>
+        <li><a href="#s4">4.4 周期表的两条规律</a></li>
+        <li><a href="#s5">4.5 能级图：从氢到碳</a></li>
+        <li><a href="#s6">4.6 分子轨道：成键与反键</a></li>
+        <li><a href="#s7">4.7 σ 键与键级</a></li>
+        <li><a href="#s8">4.8 不同原子之间的组合</a></li>
+        <li><a href="#s9">4.9 杂化：sp³ 与甲烷</a></li>
+        <li><a href="#s10">4.10 sp² 与 sp：双键和三键</a></li>
+        <li><a href="#s11">4.11 形状、键角与孤对电子</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">为什么甲烷是四面体、乙烯是平面、乙炔是直线？答案不在"碳要画四根键"，而在轨道。本章从原子轨道出发，经分子轨道与杂化，把"形状"还原成"电子结构"。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>电子只能处于量子化的能级中，不能停在两级之间；电子在原子轨道（AO）中出现的概率由波函数描述。</li>
+    <li>一个 AO 最多容纳 2 个自旋相反的电子（Pauli）；等价轨道上电子优先单独占据（Hund）。</li>
+    <li>Aufbau 原理：从最低可用轨道开始逐个填入电子。Cl 的构型为 1s²2s²2p⁶3s²3p⁵。</li>
+    <li>同周期元素尺寸相近（n 相同），同族元素性质相似（最外层电子数相同）。</li>
+    <li>原子轨道同相重叠（constructive）生成成键 MO，反相重叠（destructive）生成反键 MO。</li>
+    <li>s–s、s–p 端对端重叠给 σ 键；p–p 端对端给 pσ，侧向给 pπ。</li>
+    <li>键级 =（成键电子数 − 反键电子数）/ 2；H₂ 为 1，He₂ 为 0，N₂ 为 3。</li>
+    <li>杂化是能量相近的原子轨道重新组合成等数量的等价新轨道；sp³ 四面体、sp² 平面、sp 直线。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">4.1</span> 原子结构：核与电子云</h2>
+  <p>讲义从最朴素的问题开始："作为一个分子是什么感觉？原子之间靠什么连在一起？化学键到底是什么？分子为什么有特定的形状？"要回答这些，先把原子拆开看。</p>
+  <p>原子由带正电的质子、不带电的中子组成的原子核，以及由带负电的电子组成的<span class="c-term">电子云<span class="c-term__en">electron cloud</span></span>构成。电子云不是一层壳，而是一团概率分布——电子并不沿固定轨道绕核运行，它出现的位置只能用概率描述。这就是<span class="c-term">波粒二象性<span class="c-term__en">wave-particle duality</span></span>：电子同时表现粒子的性质（有确定质量、电荷、可被计数）与波的性质（可衍射、可干涉、有相位）。</p>
+  <p>波粒二象性不是哲学玄谈，它直接决定了后面所有的图像。因为电子是波，两个原子的电子波叠加时才有"同相"与"反相"之分；因为同相叠加会增强、反相叠加会抵消，才会出现成键轨道与反键轨道。整章的因果链从这里开始。</p>
+  <p class="c-source">L4 p.2–3</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">4.2</span> 量子化能级与原子轨道</h2>
+  <p>第一个关键事实：电子只能存在于<strong>量子化</strong>的能级上。讲义的说法很形象——电子不能"爬半级台阶"，它只能从一级跳到另一级，中间的状态不存在。因此原子中电子的能量是分立的，不是连续的。</p>
+  <p><span class="c-term">原子轨道<span class="c-term__en">atomic orbital</span></span>（AO）是描述电子在核周围空间中出现概率的<span class="c-term">波函数<span class="c-term__en">wave function</span></span>。它不是"电子运动的轨迹"，而是"电子可能在哪里的地图"。之所以只能用概率，是因为<span class="c-term">海森堡不确定原理<span class="c-term__en">Heisenberg uncertainty principle</span></span>：位置与动量不能同时被精确确定。</p>
+  <p>往轨道里填电子要遵守两条规则。第一条是<span class="c-term">泡利不相容原理<span class="c-term__en">Pauli exclusion principle</span></span>：一个 AO 最多容纳 2 个电子，且两者自旋方向必须相反。第二条是<span class="c-term">洪特规则<span class="c-term__en">Hund's rule</span></span>：当有多个能量相同的轨道（简并轨道，degenerate AOs）可选时，电子优先单独占据不同的轨道，保持不成对。这两条规则加上后面的 Aufbau 原理，构成了写电子构型的全部工具。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>三个名字要对上三件事：Pauli 管"一个轨道最多两个、自旋相反"；Hund 管"简并轨道先单占"；Aufbau 管"从低到高填"。考试常把三者混在一句话里考，先分清谁管什么再作答。</p>
+  </aside>
+  
+<!-- course-image:che105-ch04-orbitals.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-che105-ch04-orbitals">
+        <img class="c-course-figure__img" src="../../assets/course/che105-ch04-orbitals.jpg" alt="1s、2s 与 2p 原子轨道的形状" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 1s、2s 与 2p 原子轨道的形状 <span class="c-course-figure__src">来源：L4 p.7</span></figcaption>
+      </figure>
+
+<p class="c-source">L4 p.5–6</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">4.3</span> 1s、2s、2p 与电子构型</h2>
+  <p><span class="c-term c-term--auto" data-term="organic-chemistry" title="有机化学｜organic chemistry：研究含碳化合物及其多样性的化学分支。">有机化学</span>只需要关心最内层的 1s 与第二层的 2s、2p。1s 与 2s 都是球形，2s 更大、能量更高；2p 有三个轨道，分别沿 x、y、z 轴呈哑铃形，各有一个节面穿过原子核。三个 2p 轨道能量相同，是简并的。</p>
+  <p><span class="c-term">构造原理<span class="c-term__en">Aufbau principle</span></span>描述的是"把原子一步步搭建起来"的过程：从能量最低的可用轨道开始，依次加入电子，每一步都遵守 Pauli 原理与 Hund 规则。用氯（Z = 17）验证：先填满 1s（2 个），再填 2s（2 个）、2p（6 个）、3s（2 个），最后 3p 填 5 个，得到 1s²2s²2p⁶3s²3p⁵。记住"每个 s 容 2 个、每个 p 容 6 个"这条容量规则，就不会数错。</p>
+  <p>碳的构型是 1s²2s²2p²，这个看似平淡的写法后面会反复出现：2s 与 2p 的能量接近，正是它们能够混合、发生杂化的前提。如果 2s 与 2p 的能量差得远，杂化就不可能发生，甲烷的四面体也就无从解释。</p>
+  <p class="c-source">L4 p.7–8、p.10</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">4.4</span> 周期表的两条规律</h2>
+  <p>讲义用两个"为什么"把原子结构连接到周期表。第一问：同一<strong>周期</strong>（row）的元素尺寸相近，为什么？因为它们的电子填在同一层，主量子数 n 相同，拥有的原子轨道数目相同。第二问：同一<strong>族</strong>（column）的元素电子性质与化学性质相似，为什么？因为它们最外层轨道上的电子数相同。</p>
+  <p>这两个答案解释了很多现象。碳与硅同属第 14 族，最外层都是 4 个电子，所以都能形成四根键——这是它们相似的一面。但它们的 n 不同（碳是 2，硅是 3），原子尺寸与轨道重叠方式不同，所以键能、反应性差别很大——这是它们不相似的一面。上一章讲"碳不是小号的硅"，根子就在这里。</p>
+  <p class="c-source">L4 p.9</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">4.5</span> 能级图：从氢到碳</h2>
+  <p>把轨道按能量高低画成横线，把电子画成箭头（↑ 表示自旋向上，↓ 表示自旋向下），就得到<span class="c-term">能级图<span class="c-term__en">energy level diagram</span></span>。它是本章最常用的工具，因为能源清楚地显示"哪些轨道满了、哪些还有空位"。</p>
+  <p>氢（Z = 1）只有一个电子，填在 1s。氦（Z = 2）两个电子都在 1s，自旋相反，1s 填满。铍（Z = 4）是 1s²2s²，2s 填满。碳（Z = 6）是 1s²2s²2p²，两个 2p 电子按 Hund 规则分占两个不同的 p 轨道，自旋平行——这一点很关键，因为"两个未成对电子"正是碳能形成四根键的结构基础之一。</p>
+  <p>画能级图时有两个常见错误：把 2p 的三个轨道画成不同高度（它们是简并的，应画在同一水平线上）；在 2p 上先成对再单占（违反 Hund 规则，应先各占一个）。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>碳的基态是 1s²2s²2p²，不是 1s²2s¹2p³。后者是"激发态"，只在讨论杂化时才会用到——杂化模型确实假设一个 2s 电子被激发到空的 2p，但基态的碳并非如此。两句话不能混着说。</p>
+  </aside>
+  <p class="c-source">L4 p.10</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">4.6</span> 分子轨道：成键与反键</h2>
+  <p>当两个原子的原子轨道组合时，形成属于<strong>两个原子共有</strong>的<span class="c-term">分子轨道<span class="c-term__en">molecular orbital</span></span>（MO）。一个 MO 同样最多容纳 2 个电子。电子带负电，会对两个原子核同时产生吸引力，这股吸引力就是把两个核"粘"在一起的力——这就是化学键。</p>
+  <p>组合的方式有两种。两个波函数<strong>同相</strong>叠加（constructive overlap），波峰对波峰，电子云在两核之间增强，形成的轨道能量低于原来的 AO，叫<span class="c-term">成键轨道<span class="c-term__en">bonding orbital</span></span>。两个波函数<strong>反相</strong>叠加（destructive overlap），波峰对波谷，两核之间出现节面、电子云被排空，形成的轨道能量高于原来的 AO，叫<span class="c-term">反键轨道<span class="c-term__en">antibonding orbital</span></span>，通常记作 σ*。</p>
+  <p>能量账要算清楚：组合前的两个 AO 能量之和，等于组合后的成键轨道与反键轨道能量之和——一个降、一个升，升降幅度相同。所以"形成 MO"本身不省能量，省能量的是<strong>把电子填进成键轨道</strong>。这解释了为什么 He₂ 不存在：它的成键与反键轨道各填 2 个电子，能量一升一降正好抵消，净收益为零。</p>
+  
+<!-- course-image:che105-ch04-mo-waves.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-che105-ch04-mo-waves">
+        <img class="c-course-figure__img" src="../../assets/course/che105-ch04-mo-waves.jpg" alt="同相与反相组合：成键与反键轨道" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 同相与反相组合：成键与反键轨道 <span class="c-course-figure__src">来源：L4 p.18</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 4-1 成键与反键分子轨道</span>
+      <button class="c-copy" type="button" data-copy="Clean vector orbital interaction diagram in two panels: left panel shows two s orbitals overlapping in phase with enhanced electron density between the nuclei, an arrow down to a lower-energy sigma bonding orbital; right panel shows the same two s orbitals overlapping out of phase with a node between the nuclei, an arrow up to a higher-energy sigma antibonding orbital marked with an asterisk. Energy axis on the left with an upward arrow. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector orbital interaction diagram in two panels: left panel shows two s orbitals overlapping in phase with enhanced electron density between the nuclei, an arrow down to a lower-energy sigma bonding orbital; right panel shows the same two s orbitals overlapping out of phase with a node between the nuclei, an arrow up to a higher-energy sigma antibonding orbital marked with an asterisk. Energy axis on the left with an upward arrow. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p class="c-source">L4 p.12–18</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">4.7</span> σ 键与键级</h2>
+  <p>s 轨道是球形，两个 s 轨道无论从哪个方向靠近都是"端对端"重叠，因此 s–s 组合只给出 σ 成键与 σ* 反键。s 与 p 组合时，p 轨道沿键轴的一端与 s 重叠，也给 σ 键。p 与 p 组合有两种可能：<strong>端对端</strong>（end-on）重叠给 <span class="c-term">pσ 键<span class="c-term__en">pσ bond</span></span>，<strong>侧向</strong>（side-on）重叠给 <span class="c-term">pπ 键<span class="c-term__en">pπ bond</span></span>。讲义用一张表总结：s–s → σ；p–p → pσ 或 pπ；s–p → σ。</p>
+  <p>判断一个组合是否成键，标准是"重叠是否有效"。同相且重叠区域在两核之间，成键；反相，反键；两个轨道取向不匹配（例如一个 p 轨道的腰部对着另一个的腰部），重叠为零，既不成就也不成反，属于无效组合。</p>
+  <p><span class="c-term">键级<span class="c-term__en">bond order</span></span>把"成键电子多于反键电子"这件事量化：键级 =（成键电子数 − 反键电子数）/ 2。氢分子 H₂ 有 2 个电子全在 σ 成键轨道，键级 = (2 − 0)/2 = 1，单键。氦分子 He₂ 有 4 个电子，σ 与 σ* 各填 2 个，键级 = (2 − 2)/2 = 0，所以 He₂ 不存在。氮分子 N₂ 的键级为 3，对应一个三键——这也是氮气化学惰性的原因：要打断它得付出很高的代价。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>键级公式必背，且要会用它解释"为什么这个分子不存在"。键级为 0 意味着净成键为零；键级越高，键越短越强。He₂ 与 H₂ 是同一周期、尺寸相近、性质却完全不同的最佳反例。</p>
+  </aside>
+  <p class="c-source">L4 p.19–27</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">4.8</span> 不同原子之间的组合</h2>
+  <p>以上讨论的都是同种原子。当两个<strong>不同</strong>的原子成键时，还有三个因素要考虑。</p>
+  <p>第一是<span class="c-term">电负性<span class="c-term__en">electronegativity</span></span>。电负性是原子吸引电子的量度。两个原子的电负性差得越大，形成的 MO 越"偏心"——成键轨道更靠近电负性大的原子，电子密度也更多落在那里，键因此带有极性。第二是<strong>尺寸</strong>：两个原子的轨道大小要相近，重叠才有效；一个很小的 2p 与一个很大的 3p 重叠，效果差。第三是<strong>取向</strong>：轨道必须指向彼此，才能形成有效的重叠。</p>
+  <p>这三条合起来解释了为什么"随便两个原子靠近"并不足以成键。尺寸与取向决定重叠的几何效率，电负性决定电子云最终偏向哪一边，而能量匹配决定组合后能降多少。第五章讲 <span class="c-term c-term--auto" data-term="homo" title="最高占据轨道｜HOMO：已填充电子的分子轨道中能量最高的一个。">HOMO</span>–<span class="c-term c-term--auto" data-term="lumo" title="最低空轨道｜LUMO：未填充电子的分子轨道中能量最低的一个。">LUMO</span> 时，会用同一套语言解释反应性。</p>
+  
+<!-- course-image:che105-ch04-electronegativity.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-che105-ch04-electronegativity">
+        <img class="c-course-figure__img" src="../../assets/course/che105-ch04-electronegativity.jpg" alt="电负性差异与极性键的分子轨道" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 电负性差异与极性键的分子轨道 <span class="c-course-figure__src">来源：L4 p.28</span></figcaption>
+      </figure>
+
+<p class="c-source">L4 p.28–33</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">4.9</span> 杂化：sp³ 与甲烷</h2>
+  <p>碳的基态是 1s²2s²2p²：两个电子在 2s，两个在 2p，只有两个未成对电子。如果照这个状态成键，碳只能形成两根键，而且两根键的长度、能量还不一样（一根来自 2s，一根来自 2p）。但实验事实是：甲烷有<strong>四根完全等同</strong>的 C–H 键，键角 109.5°，分子呈正四面体。</p>
+  <p>解释这个矛盾的办法是<span class="c-term">杂化<span class="c-term__en">hybridization</span></span>。定义是：两个或多个原子轨道组合，形成<strong>相同数目</strong>的新轨道，每个新轨道形状相同、能量相同。碳先把一个 2s 电子激发到空的 2p，得到 4 个未成对电子（1 个在 s、3 个在 p），然后这 4 个轨道混合成 4 个等价的 <span class="c-term">sp³ 杂化轨道<span class="c-term__en">sp³ hybrid orbital</span></span>。四个 sp³ 轨道在空间上尽可能远离，指向正四面体的四个顶点，夹角 109.5°，每个与一个氢的 1s 重叠，形成四根等长的 σ 键。</p>
+  <p>这套模型是 Linus Pauling 提出的，他因研究化学键的本质获 1954 年诺贝尔化学奖。使用时要注意一句话：杂化是<strong>模型</strong>，不是物理过程。碳并不会真的"先激发再混合"，这只是让轨道图像与实验几何对得上的一种数学处理。</p>
+  
+<!-- course-image:che105-ch04-hybridization.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-che105-ch04-hybridization">
+        <img class="c-course-figure__img" src="../../assets/course/che105-ch04-hybridization.jpg" alt="sp³ 杂化轨道与水分子的成键" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> sp³ 杂化轨道与水分子的成键 <span class="c-course-figure__src">来源：L4 p.35</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 4-2 sp³、sp²、sp 三种杂化</span>
+      <button class="c-copy" type="button" data-copy="Clean vector three-panel diagram of carbon hybridization: left panel sp3 showing one s and three p orbitals combining into four equivalent hybrid orbitals pointing to the corners of a tetrahedron with 109.5 degree angle; middle panel sp2 showing three hybrid orbitals in a plane at 120 degrees plus one unhybridized p orbital perpendicular to the plane; right panel sp showing two hybrid orbitals at 180 degrees plus two unhybridized p orbitals perpendicular to each other. Each panel labeled with the molecule methane, ethene, ethyne. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/che105-hybridization.svg" alt="sp3、sp2、sp 三种杂化轨道与几何构型" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector three-panel diagram of carbon hybridization: left panel sp3 showing one s and three p orbitals combining into four equivalent hybrid orbitals pointing to the corners of a tetrahedron with 109.5 degree angle; middle panel sp2 showing three hybrid orbitals in a plane at 120 degrees plus one unhybridized p orbital perpendicular to the plane; right panel sp showing two hybrid orbitals at 180 degrees plus two unhybridized p orbitals perpendicular to each other. Each panel labeled with the molecule methane, ethene, ethyne. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  
+<p class="c-source">L4 p.34–35</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">4.10</span> sp² 与 sp：双键和三键</h2>
+  <p>乙烯（ethene）的每个碳只与三个原子相连，需要三个等价轨道。碳把 2s 与两个 2p 混合，得到 <strong>3 个 sp² 杂化轨道</strong>，剩下<strong>1 个 p 轨道未参与杂化</strong>。三个 sp² 轨道在同一平面内，互成 120°，形成三根 σ 键（两根 C–H、一根 C–C）；剩下那个垂直于平面的 p 轨道，与另一个碳上同样垂直于平面的 p 轨道侧向重叠，形成 π 键。σ 骨架是平面的，π 键在平面的上下两侧——这就是"乙烯是平面分子"的轨道解释。</p>
+  <p>乙炔（ethyne）的每个碳只与两个原子相连。2s 与一个 2p 混合，得到 <strong>2 个 sp 杂化轨道</strong>，剩下<strong>2 个 p 轨道未参与杂化</strong>。两个 sp 轨道成 180°，形成直线形的 σ 骨架（C–H 与 C–C）；两个未杂化的 p 轨道分别从两个垂直方向侧向重叠，形成两个互相垂直的 π 键。所以三键 = 1 个 σ + 2 个 π，分子是直线形的。</p>
+  <p>同样的逻辑适用于 C=O。甲醛（H<sub>2</sub>C=O）中碳与氧<strong>都是 sp² 杂化</strong>：碳用三个 sp² 轨道分别连两个 H 与一个 O，氧用三个 sp² 轨道连碳并容纳两对孤对电子；剩下的 p 轨道侧向重叠形成 π 键。这一条在第六章解释<span class="c-term c-term--auto" data-term="carbonyl-group" title="羰基｜carbonyl group：C=O 基团，高度极化，易发生亲核加成。">羰基</span>反应性时会直接用到——羰基的 π 键（π* 反键轨道）就是<span class="c-term c-term--auto" data-term="nucleophile" title="亲核试剂｜nucleophile：提供一对电子进攻缺电子中心的物种。">亲核试剂</span>进攻的目标。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>杂化轨道只用来形成 σ 键和容纳孤对电子，<strong>不参与 π 键</strong>。π 键永远由未杂化的 p 轨道侧向重叠形成。数杂化方式时看"σ 键数 + 孤对数"：4 个 → sp³，3 个 → sp²，2 个 → sp。</p>
+  </aside>
+  
+<!-- course-image:che105-ch04-sp2.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-che105-ch04-sp2">
+        <img class="c-course-figure__img" src="../../assets/course/che105-ch04-sp2.jpg" alt="sp² 杂化与乙烯的双键" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> sp² 杂化与乙烯的双键 <span class="c-course-figure__src">来源：L4 p.36</span></figcaption>
+      </figure>
+
+<p class="c-source">L4 p.36–39</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">4.11</span> 形状、键角与孤对电子</h2>
+  <p>把前面所有内容收成一条规则：<strong>原子周围的"基团"数目决定它的几何构型</strong>，而最稳定的排列是让这些基团彼此尽可能远离。这里的"基团"既可以是原子，也可以是一对<span class="c-term">孤对电子<span class="c-term__en">lone pair</span></span>。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>基团数与分子几何</caption>
+      <thead><tr><th scope="col">基团数</th><th scope="col">几何构型</th><th scope="col">键角</th><th scope="col">示例</th></tr></thead>
+      <tbody>
+        <tr><td>4</td><td>四面体（tetrahedral）</td><td>109.5°</td><td>甲烷 CH<sub>4</sub></td></tr>
+        <tr><td>3</td><td>平面三角（trigonal planar）</td><td>120°</td><td>乙烯的每个碳、甲醛的碳</td></tr>
+        <tr><td>2</td><td>直线（linear）</td><td>180°</td><td>乙炔的每个碳</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>这张表与杂化方式一一对应：sp³ ↔ 4 个基团 ↔ 109.5°；sp² ↔ 3 个基团 ↔ 120°；sp ↔ 2 个基团 ↔ 180°。之所以"基团数"能直接推出几何，是因为基团间的排斥把杂化轨道推开到最大夹角——四面体、平面三角、直线，正是 4、3、2 个点在球面上最均匀的分布。</p>
+  <p>孤对电子为什么重要？因为孤对电子占据的空间比成键电子对更大、排斥更强，会把相邻的键角压小。讲义只要求记住"基团可以是原子或孤对电子"，但这条在后面判断胺、醇、水的形状时会反复出现。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 4-3 三种几何构型与键角</span>
+      <button class="c-copy" type="button" data-copy="Clean vector three-panel geometry diagram: tetrahedral carbon with four bonds at 109.5 degrees shown with a dashed tetrahedron guide, trigonal planar carbon with three bonds at 120 degrees shown in a flat plane, and linear carbon with two bonds at 180 degrees. Each panel labeled with the group count 4, 3, 2 and the geometry name. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector three-panel geometry diagram: tetrahedral carbon with four bonds at 109.5 degrees shown with a dashed tetrahedron guide, trigonal planar carbon with three bonds at 120 degrees shown in a flat plane, and linear carbon with two bonds at 180 degrees. Each panel labeled with the group count 4, 3, 2 and the geometry name. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>"数基团 → 定几何 → 定杂化"是一条可以正反使用的链。题目给结构问杂化：数 σ 键与孤对；题目给杂化问形状：4/3/2 对应四面体/平面三角/直线。两种问法都要练到不看笔记就能答。</p>
+  </aside>
+  <p class="c-source">L4 p.41–42</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L4</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch03.html"><span>上一章</span>有机反应类型与官能团</a>
+          <a class="pager__next" href="ch05.html"><span>下一章</span>有机反应机理：电荷、HOMO–LUMO 与箭头</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

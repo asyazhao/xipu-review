@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 325" role="img" aria-label="酰基取代的加成—消除机理">
+<title>酰基取代的加成—消除机理</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">酰基取代的加成—消除机理</text>
+<text x="40" y="56" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">亲核体先加到羰基碳，形成四面体中间体；随后离去基团带着一对电子离开。</text>
+<text x="92" y="185" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="600">R</text>
+<line x1="108" y1="180" x2="130" y2="180" stroke="#262624" stroke-width="1.6"/>
+<text x="150" y="132" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#8C4F45" text-anchor="middle" font-weight="600">O</text>
+<line x1="145" y1="145" x2="145" y2="164" stroke="#8C4F45" stroke-width="1.5"/>
+<line x1="155" y1="145" x2="155" y2="164" stroke="#8C4F45" stroke-width="1.5"/>
+<text x="216" y="185" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="middle" font-weight="600">LG</text>
+<line x1="170" y1="180" x2="200" y2="180" stroke="#262624" stroke-width="1.6"/>
+<text x="150" y="248" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="middle" font-weight="600">酰基化合物</text>
+<text x="150" y="266" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">R–C(=O)–LG</text>
+<line x1="250" y1="180" x2="310" y2="180" stroke="#2E4A6B" stroke-width="1.6" marker-end="url(#arrowBlue)"/>
+<text x="280" y="164" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">Nu−</text>
+<circle cx="400" cy="180" r="20" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="400" y="185" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="700">C</text>
+<line x1="400" y1="180" x2="345" y2="140" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="345" y="144" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#262624" text-anchor="middle" font-weight="600">R</text>
+<line x1="400" y1="180" x2="455" y2="140" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="455" y="144" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#262624" text-anchor="middle" font-weight="600">Nu</text>
+<line x1="400" y1="180" x2="345" y2="228" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="345" y="232" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#8C4F45" text-anchor="middle" font-weight="600">O−</text>
+<line x1="400" y1="180" x2="455" y2="228" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="455" y="232" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="600">LG</text>
+<text x="400" y="98" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="middle" font-weight="600">四面体中间体</text>
+<text x="400" y="80" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">tetrahedral intermediate</text>
+<line x1="480" y1="180" x2="540" y2="180" stroke="#A8894F" stroke-width="1.6" marker-end="url(#arrowGold)"/>
+<text x="510" y="164" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#A8894F" text-anchor="middle" font-weight="600">LG−</text>
+<text x="592" y="185" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="600">R</text>
+<line x1="608" y1="180" x2="630" y2="180" stroke="#262624" stroke-width="1.6"/>
+<text x="650" y="132" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#8C4F45" text-anchor="middle" font-weight="600">O</text>
+<line x1="645" y1="145" x2="645" y2="164" stroke="#8C4F45" stroke-width="1.5"/>
+<line x1="655" y1="145" x2="655" y2="164" stroke="#8C4F45" stroke-width="1.5"/>
+<text x="716" y="185" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">Nu</text>
+<line x1="670" y1="180" x2="700" y2="180" stroke="#262624" stroke-width="1.6"/>
+<text x="650" y="248" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="middle" font-weight="600">取代产物</text>
+<text x="650" y="266" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">R–C(=O)–Nu</text>
+<text x="40" y="310" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">加成—消除是两步：先加成，再消除；四面体中间体是两种产物的分岔点。</text>
+</svg>

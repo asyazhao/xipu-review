@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 连续随机变量 · 全科复习</title>
+  <meta name="description" content="MTH113 第 4 章 连续随机变量：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="mth113" data-chapter="04">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">MTH113</a>
+      <span>/</span>
+      <span aria-current="page">第 4 章 连续随机变量</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html" class="is-current" aria-current="page"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html" class="is-current" aria-current="page"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">MTH113 · 第 4 章</p>
+          <h1>连续随机变量</h1>
+          <p class="chapter-head__en">Continuous Random Variables</p>
+          <p class="chapter-head__meta">来源 W4 · 术语 7 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">4.1 连续随机变量与离散随机变量的差别</a></li>
+        <li><a href="#s2">4.2 从直方图到密度曲线：PDF 的两条条件</a></li>
+        <li><a href="#s3">4.3 面积即概率与均匀密度</a></li>
+        <li><a href="#s4">4.4 为什么 P(X = a) = 0，端点为何无关</a></li>
+        <li><a href="#s5">4.5 求归一化常数：让总面积为 1</a></li>
+        <li><a href="#s6">4.6 先用几何、再上微积分；高度不是概率</a></li>
+        <li><a href="#s7">4.7 连续 CDF 与区间概率</a></li>
+        <li><a href="#s8">4.8 分位数与中位数：解 F(q) = p</a></li>
+        <li><a href="#s9">4.9 连续随机变量的期望</a></li>
+        <li><a href="#s10">4.10 方差、标准差与线性变换</a></li>
+        <li><a href="#s11">4.11 分段密度与库存综合案例</a></li>
+        <li><a href="#s12">4.12 常见错误与连续分布解题流程</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲把概率从“点上的质量”换成“区间上的面积”：连续随机变量用概率密度函数 PDF 描述，概率由定积分或密度曲线下的面积给出，累积分布函数 CDF 把区间概率变成减法，<span class="c-term c-term--auto" data-term="expected-value" title="期望｜expected value：取值的概率加权平均，描述分布中心。">期望</span>与<span class="c-term c-term--auto" data-term="variance" title="方差｜variance：偏差平方的概率加权平均，衡量离散程度。">方差</span>则把求和换成积分。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>连续随机变量的取值填满一个区间，单点概率 <i>P</i>(<i>X</i> = <i>a</i>) = 0，端点是否包含不影响概率。</li>
+    <li>PDF 必须非负且全轴积分为 1；密度高度不是概率，面积才是概率。</li>
+    <li><i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = ∫<sub><i>a</i></sub><sup><i>b</i></sup> <i>f</i>(<i>x</i>)<i>dx</i>；<span class="c-term c-term--auto" data-term="uniform-distribution" title="均匀分布｜uniform distribution：区间上密度恒定、等长区间等概率的分布。">均匀分布</span>的密度是常数 1/(<i>b</i> − <i>a</i>)。</li>
+    <li>CDF <i>F</i>(<i>x</i>) = ∫<sub>−∞</sub><sup><i>x</i></sup> <i>f</i>(<i>t</i>)<i>dt</i>，且 <i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = <i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)；PDF 是 CDF 的导数。</li>
+    <li>分位数由 <i>F</i>(<i>q<sub>p</sub></i>) = <i>p</i> 解出，<span class="c-term c-term--auto" data-term="median" title="中位数｜median：排序后位于中间的观测值，对极端值稳健。">中位数</span>解 <i>F</i>(<i>m</i>) = 0.5。</li>
+    <li><i>E</i>(<i>X</i>) = ∫<i>xf</i>(<i>x</i>)<i>dx</i>，<i>Var</i>(<i>X</i>) = <i>E</i>(<i>X</i><sup>2</sup>) − [<i>E</i>(<i>X</i>)]<sup>2</sup>；均匀分布 <i>E</i> = (<i>a</i>+<i>b</i>)/2，<i>Var</i> = (<i>b</i>−<i>a</i>)<sup>2</sup>/12。</li>
+    <li>分段密度要分区间积分；写 CDF 时<span class="c-term c-term--auto" data-term="support" title="支撑集｜support：随机变量以正概率取到的全部值。">支撑集</span>外要补 0 与 1。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">4.1</span> 连续随机变量与离散随机变量的差别</h2>
+  <p>许多量是测量出来的而不是数出来的：等公交的时间、冷柜温度、瓶装饮料的灌装量、元件寿命、以千件计的周需求。这类量的可能取值填满一个区间，讲义把它们建模为<span class="c-term">连续随机变量<span class="c-term__en">continuous random variable</span></span>。现实中测量会被四舍五入，但底层变量常按连续处理。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>离散与连续随机变量的对照</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">离散</th><th scope="col">连续</th></tr></thead>
+      <tbody>
+        <tr><td>典型来源</td><td>计数</td><td>测量</td></tr>
+        <tr><td>可能取值</td><td>孤立点</td><td>区间</td></tr>
+        <tr><td>单点概率</td><td>可以为正</td><td>恒为 0</td></tr>
+        <tr><td>概率计算</td><td>概率求和</td><td>密度积分</td></tr>
+        <tr><td>核心函数</td><td>PMF <i>p</i>(<i>x</i>)</td><td>PDF <i>f</i>(<i>x</i>)</td></tr>
+        <tr><td>CDF</td><td><i>F</i>(<i>x</i>) = Σ<sub><i>t</i>≤<i>x</i></sub> <i>p</i>(<i>t</i>)</td><td><i>F</i>(<i>x</i>) = ∫<sub>−∞</sub><sup><i>x</i></sup> <i>f</i>(<i>t</i>)<i>dt</i></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>最关键的思维转变：连续变量的概率不挂在单点上。<i>P</i>(<i>X</i> = <i>a</i>) = 0，而 <i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) &gt; 0。因此连续情形问的是“2 到 4 分钟之间”，而不是精确到“3.000000 分钟”。</p>
+  <p>讲义例：班车每 10 分钟一班，学生在两班之间随机到达。令 <i>X</i> = 等待分钟数，则 0 &lt; <i>X</i> &lt; 10；若区间内各等待时间等可能，就建模为 (0, 10) 上的均匀分布。这是最简单的连续模型：区间上密度恒定。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>判断离散还是连续看“计数还是测量”，也看“单点是否有正概率”。连续变量在任何单点的概率都是 0，这是后面所有积分公式的出发点。</p>
+  </aside>
+  <p class="c-source">W4 p.5–9</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">4.2</span> 从<span class="c-term c-term--auto" data-term="histogram" title="直方图｜histogram：用相接的柱表示数值数据各区间频数的图。">直方图</span>到密度曲线：PDF 的两条条件</h2>
+  <p>把测量精度不断提高：先四舍五入到整数，直方图的柱很宽；精确到一位小数，柱变窄；继续精确，直方图逐渐接近一条光滑曲线。这条曲线就是<span class="c-term">密度曲线<span class="c-term__en">density curve</span></span>：它在某区间上的面积等于随机变量落入该区间的概率。</p>
+  <p>函数 <i>f</i> 是<span class="c-term">概率密度函数<span class="c-term__en">probability density function</span></span>（PDF），当且仅当</p>
+  <div class="c-formula"><i>f</i>(<i>x</i>) ≥ 0 对所有 <i>x</i>；&nbsp;&nbsp; ∫<sub>−∞</sub><sup>∞</sup> <i>f</i>(<i>x</i>)<i>dx</i> = 1</div>
+  <p>对任意区间 (<i>a</i>, <i>b</i>)，</p>
+  <div class="c-formula"><i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = ∫<sub><i>a</i></sub><sup><i>b</i></sup> <i>f</i>(<i>x</i>)<i>dx</i></div>
+  <p>PDF 给出的是“密度”，积分才给出“概率”。<i>f</i>(<i>x</i>) 较大处，<i>x</i> 附近的取值比密度较小处更可能；但 <i>f</i>(<i>x</i>) 本身不是 <i>P</i>(<i>X</i> = <i>x</i>)。对很小的区间，<i>P</i>(<i>x</i> &lt; <i>X</i> &lt; <i>x</i> + Δ<i>x</i>) ≈ <i>f</i>(<i>x</i>)Δ<i>x</i>，这说明密度是“单位长度的概率”。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>密度高度可以大于 1。例如 (0, 0.2) 上的均匀密度为 5，但它在整个支撑集上的面积为 1。概率必须落在 0 与 1 之间，密度不必。</p>
+  </aside>
+  <p class="c-source">W4 p.10–16</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">4.3</span> 面积即概率与均匀密度</h2>
+  <p>讲义用图示强调：<i>P</i>(2 &lt; <i>X</i> &lt; 4) 就是曲线在 2 到 4 之间的阴影面积。这个“面积”视角让许多题不必硬算积分，用矩形或三角形面积即可。</p>
+  <p>若 <i>X</i> 在 (<i>a</i>, <i>b</i>) 上均匀分布，则</p>
+  <div class="c-formula"><i>f</i>(<i>x</i>) = 1/(<i>b</i> − <i>a</i>)，<i>a</i> &lt; <i>x</i> &lt; <i>b</i>；&nbsp; 其他处为 0</div>
+  <p>合法性来自矩形面积：(<i>b</i> − <i>a</i>) × 1/(<i>b</i> − <i>a</i>) = 1。均匀意味着区间上密度恒定，任何等长的小区间概率相同。</p>
+  <p>班车例：<i>X</i> ~ Uniform(0, 10)，<i>f</i>(<i>x</i>) = 1/10。则</p>
+  <div class="c-formula"><i>P</i>(3 &lt; <i>X</i> &lt; 7) = ∫<sub>3</sub><sup>7</sup> (1/10)<i>dx</i> = 4/10 = 0.4</div>
+  <p>几何上就是一个宽 4、高 0.1 的矩形面积。均匀分布的概率与区间长度成正比，这是它最重要的性质。</p>
+  <p>由此还可直接得到均匀分布的中位数：使 <i>F</i>(<i>m</i>) = 0.5 的位置正是区间中点 (<i>a</i>+<i>b</i>)/2。均匀分布中位数与均值重合，这是对称分布的共同特征；但它不是所有连续分布的通性，后面 <i>f</i>(<i>x</i>) = <i>x</i>/8 的例子就会看到均值、中位数与区间中点三者分开。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 4-1 均匀密度与区间面积</span>
+      <button class="c-copy" type="button" data-copy="Clean vector plot of a uniform density on 0 to 10: a flat horizontal line at height 0.1, with a shaded rectangle between x equals 3 and x equals 7 labelled P(3 < X < 7) = 0.4. Axes labelled x and f(x), ticks at 0, 2, 4, 6, 8, 10. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector plot of a uniform density on 0 to 10: a flat horizontal line at height 0.1, with a shaded rectangle between x equals 3 and x equals 7 labelled P(3 < X < 7) = 0.4. Axes labelled x and f(x), ticks at 0, 2, 4, 6, 8, 10. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>均匀分布的概率 = 区间长度 / 总长度。先确认区间落在支撑集内，再算长度比，不必每次积分。</p>
+  </aside>
+  <p class="c-source">W4 p.17–19、29</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">4.4</span> 为什么 <i>P</i>(<i>X</i> = <i>a</i>) = 0，端点为何无关</h2>
+  <p>概率是面积，单点没有宽度，所以</p>
+  <div class="c-formula"><i>P</i>(<i>X</i> = <i>a</i>) = ∫<sub><i>a</i></sub><sup><i>a</i></sup> <i>f</i>(<i>x</i>)<i>dx</i> = 0</div>
+  <p>由此，对 <i>a</i> &lt; <i>b</i>，</p>
+  <div class="c-formula"><i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = <i>P</i>(<i>a</i> ≤ <i>X</i> &lt; <i>b</i>) = <i>P</i>(<i>a</i> &lt; <i>X</i> ≤ <i>b</i>) = <i>P</i>(<i>a</i> ≤ <i>X</i> ≤ <i>b</i>)</div>
+  <p>均匀 (0, 10) 中 <i>P</i>(3 &lt; <i>X</i> &lt; 7) 与 <i>P</i>(3 ≤ <i>X</i> ≤ 7) 都等于 0.4。改变端点是否包含，只改变一条零宽度的线，不改变面积。</p>
+  <p>这一点与离散情形形成鲜明对照：离散变量 <i>P</i>(<i>X</i> = 2) 可能等于 0.3，所以 <i>P</i>(<i>X</i> &lt; 2) 与 <i>P</i>(<i>X</i> ≤ 2) 可能不同；连续变量两者总是相同。考试中看到连续分布却纠结“要不要减一个点”，说明还没完成这个思维转变。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><i>P</i>(<i>X</i> = <i>a</i>) = 0 不表示“<i>X</i> = <i>a</i> 不可能发生”，只表示在连续模型下该单点的概率测度为零。模型是理想化，<span class="c-term c-term--auto" data-term="event" title="事件｜event：样本空间的子集，包含使事件发生的结果。">事件</span>仍可能发生。</p>
+  </aside>
+  <p class="c-source">W4 p.20–21</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">4.5</span> 求<span class="c-term c-term--auto" data-term="normalizing-constant" title="归一化常数｜normalizing constant：使密度全轴积分为 1 的乘数。">归一化常数</span>：让总面积为 1</h2>
+  <p>题目常给出含未知常数 <i>k</i> 的密度，要求使它合法。做法固定：令全轴积分为 1，解出 <i>k</i>；再确认非负。</p>
+  <p>例 1：<i>f</i>(<i>x</i>) = <i>k</i>（2 &lt; <i>x</i> &lt; 6），其他为 0。则</p>
+  <div class="c-formula">1 = ∫<sub>2</sub><sup>6</sup> <i>k</i> <i>dx</i> = 4<i>k</i> &nbsp;⇒&nbsp; <i>k</i> = 1/4</div>
+  <p>这是区间上的常数密度，即均匀分布。</p>
+  <p>例 2：<i>f</i>(<i>x</i>) = <i>kx</i>（0 &lt; <i>x</i> &lt; 4），其他为 0。则</p>
+  <div class="c-formula">1 = ∫<sub>0</sub><sup>4</sup> <i>kx</i> <i>dx</i> = <i>k</i>[<i>x</i><sup>2</sup>/2]<sub>0</sub><sup>4</sup> = 8<i>k</i> &nbsp;⇒&nbsp; <i>k</i> = 1/8</div>
+  <p>密度随 <i>x</i> 增大而增大，所以较大的取值比较小的取值更可能。求 <i>P</i>(1 &lt; <i>X</i> &lt; 3)：∫<sub>1</sub><sup>3</sup> (<i>x</i>/8)<i>dx</i> = [<i>x</i><sup>2</sup>/16]<sub>1</sub><sup>3</sup> = 9/16 − 1/16 = 0.5。</p>
+  <p>例 3：三角密度 <i>f</i>(<i>x</i>) = 2(1 − <i>x</i>)（0 &lt; <i>x</i> &lt; 1）。检验 ∫<sub>0</sub><sup>1</sup> 2(1−<i>x</i>)<i>dx</i> = [2<i>x</i> − <i>x</i><sup>2</sup>]<sub>0</sub><sup>1</sup> = 1。密度在 0 附近最高，线性下降到 1 处为 0。计算 <i>P</i>(1/4 &lt; <i>X</i> &lt; 1/2) 得 [2<i>x</i> − <i>x</i><sup>2</sup>]<sub>1/4</sub><sup>1/2</sup> = 3/4 − 7/16 = 5/16。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>归一化常数永远由“总积分等于 1”解出。解完要回代检查非负；若密度在支撑集内变负，即使积分为 1 也不合法。</p>
+  </aside>
+  <p class="c-source">W4 p.22–26</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">4.6</span> 先用几何、再上微积分；高度不是概率</h2>
+  <p>讲义建议先看图形再决定是否积分：均匀密度用矩形面积；线性密度用三角形或梯形面积；分段常数密度用若干矩形面积之和。例：<i>X</i> ~ Uniform(0, 20)，<i>f</i>(<i>x</i>) = 1/20，则 <i>P</i>(7 &lt; <i>X</i> &lt; 12) = (12 − 7)/20 = 0.25。</p>
+  <p>“高度不是概率”的经典反例：<i>f</i>(<i>x</i>) = 2(1 − <i>x</i>)（0 &lt; <i>x</i> &lt; 1），在 <i>x</i> = 0.25 处 <i>f</i>(0.25) = 1.5。1.5 不可能是概率，但它是合法的密度高度；该点附近小区间的面积约 1.5Δ<i>x</i>，仍然小于 1。</p>
+  <p>活动判断四个函数是否可为 PDF：<i>f</i>(<i>x</i>) = 3<i>x</i><sup>2</sup>（0 &lt; <i>x</i> &lt; 1）合法，积分为 1 且非负；<i>f</i>(<i>x</i>) = <i>x</i>（0 &lt; <i>x</i> &lt; 1）不合法，积分为 1/2；<i>f</i>(<i>x</i>) = 1/5（2 &lt; <i>x</i> &lt; 7）合法，面积 (7−2)(1/5) = 1；<i>f</i>(<i>x</i>) = 2 − <i>x</i>（0 &lt; <i>x</i> &lt; 3）不合法，<i>x</i> &gt; 2 时函数为负。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>只检查“积分为 1”不够，还要检查“处处非负”。<i>f</i>(<i>x</i>) = 2 − <i>x</i> 在 (0,3) 上积分虽为 1.5，但后半段为负，绝不能当密度。</p>
+  </aside>
+  <p class="c-source">W4 p.27–30</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">4.7</span> 连续 CDF 与区间概率</h2>
+  <p>连续随机变量的<span class="c-term">累积分布函数<span class="c-term__en">cumulative distribution function</span></span>为</p>
+  <div class="c-formula"><i>F</i>(<i>x</i>) = <i>P</i>(<i>X</i> ≤ <i>x</i>) = ∫<sub>−∞</sub><sup><i>x</i></sup> <i>f</i>(<i>t</i>)<i>dt</i></div>
+  <p>它给出 <i>x</i> 左侧的累积面积。若 <i>a</i> &lt; <i>b</i>，则 <i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = <i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)：用 <i>b</i> 左侧面积减去 <i>a</i> 左侧面积，剩下的正是中间部分。</p>
+  <p>均匀分布 <i>X</i> ~ Uniform(<i>a</i>, <i>b</i>) 的 CDF 为</p>
+  <div class="c-formula"><i>F</i>(<i>x</i>) = 0 (<i>x</i> ≤ <i>a</i>)；(<i>x</i> − <i>a</i>)/(<i>b</i> − <i>a</i>) (<i>a</i> &lt; <i>x</i> &lt; <i>b</i>)；1 (<i>x</i> ≥ <i>b</i>)</div>
+  <p>对 <i>X</i> ~ Uniform(0, 10)，<i>F</i>(<i>x</i>) = <i>x</i>/10（0 &lt; <i>x</i> &lt; 10）。再以 <i>f</i>(<i>x</i>) = <i>x</i>/8（0 &lt; <i>x</i> &lt; 4）为例，<i>F</i>(<i>x</i>) = ∫<sub>0</sub><sup><i>x</i></sup> (<i>t</i>/8)<i>dt</i> = <i>x</i><sup>2</sup>/16。于是 <i>P</i>(1 &lt; <i>X</i> &lt; 3) = <i>F</i>(3) − <i>F</i>(1) = 9/16 − 1/16 = 1/2；<i>P</i>(<i>X</i> &gt; 2) = 1 − <i>F</i>(2) = 1 − 4/16 = 3/4。</p>
+  <p>CDF 的性质：0 ≤ <i>F</i>(<i>x</i>) ≤ 1；非减；左端趋于 0、右端趋于 1；连续随机变量的 <i>F</i> 连续，没有跳跃。PDF 可以分段甚至不连续，但 CDF 一定连续。反过来，若 <i>F</i> 可导，则 <i>f</i>(<i>x</i>) = <i>F</i>′(<i>x</i>)。例如 <i>F</i>(<i>x</i>) = <i>x</i><sup>3</sup>（0 &lt; <i>x</i> &lt; 1），则 <i>f</i>(<i>x</i>) = 3<i>x</i><sup>2</sup>。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>写连续 CDF 必须补齐三段：<i>x</i> 小于支撑集下限时为 0，落在支撑集内用积分，大于上限时为 1。只写中间一段是常见失分点。</p>
+  </aside>
+  <p class="c-source">W4 p.33–41</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">4.8</span> 分位数与中位数：解 <i>F</i>(<i>q</i>) = <i>p</i></h2>
+  <p>第 <i>p</i> <span class="c-term">分位数<span class="c-term__en">quantile</span></span> <i>q<sub>p</sub></i> 满足 <i>F</i>(<i>q<sub>p</sub></i>) = <i>p</i>。中位数是 <i>q</i><sub>0.5</sub>，第一四分位数是 <i>q</i><sub>0.25</sub>，第三四分位数是 <i>q</i><sub>0.75</sub>。连续分布的分位数靠解方程得到，不像离散那样只能取到跳跃点。</p>
+  <p>对 <i>f</i>(<i>x</i>) = <i>x</i>/8（0 &lt; <i>x</i> &lt; 4），<i>F</i>(<i>x</i>) = <i>x</i><sup>2</sup>/16。中位数 <i>m</i> 满足 <i>m</i><sup>2</sup>/16 = 0.5，故 <i>m</i><sup>2</sup> = 8，<i>m</i> = 2√2 ≈ 2.828。支撑集中点是 2，但中位数大于 2，因为密度在较大的 <i>x</i> 处更高。</p>
+  <p>第 70 百分位：<i>q</i><sub>0.70</sub><sup>2</sup>/16 = 0.70，故 <i>q</i><sub>0.70</sub> = 4√0.70 ≈ 3.347。约 70% 的概率落在 3.347 以下。</p>
+  <p>活动：<i>f</i>(<i>x</i>) = 3<i>x</i><sup>2</sup>（0 &lt; <i>x</i> &lt; 1）。<i>F</i>(<i>x</i>) = <i>x</i><sup>3</sup>；<i>P</i>(0.2 &lt; <i>X</i> &lt; 0.8) = 0.8<sup>3</sup> − 0.2<sup>3</sup> = 0.512 − 0.008 = 0.504；中位数解 <i>m</i><sup>3</sup> = 0.5，<i>m</i> = 0.5<sup>1/3</sup> ≈ 0.794。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>中位数不是“支撑集的中点”，也不是“密度的最大值点”。它由累积面积一半决定；密度右偏时中位数会大于区间中点。</p>
+  </aside>
+  <p class="c-source">W4 p.42–46</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">4.9</span> 连续随机变量的期望</h2>
+  <p>连续情形把求和换成积分：</p>
+  <div class="c-formula"><i>E</i>(<i>X</i>) = ∫<sub>−∞</sub><sup>∞</sup> <i>x</i> <i>f</i>(<i>x</i>)<i>dx</i></div>
+  <p>它仍是概率加权平均，只是权重由密度给出。均匀分布 <i>X</i> ~ Uniform(<i>a</i>, <i>b</i>)：</p>
+  <div class="c-formula"><i>E</i>(<i>X</i>) = ∫<sub><i>a</i></sub><sup><i>b</i></sup> <i>x</i>/(<i>b</i>−<i>a</i>) <i>dx</i> = (<i>b</i><sup>2</sup> − <i>a</i><sup>2</sup>)/[2(<i>b</i>−<i>a</i>)] = (<i>a</i> + <i>b</i>)/2</div>
+  <p>即区间中点。这符合直觉：密度恒定，重心在中间。</p>
+  <p>对 <i>f</i>(<i>x</i>) = <i>x</i>/8（0 &lt; <i>x</i> &lt; 4），</p>
+  <div class="c-formula"><i>E</i>(<i>X</i>) = ∫<sub>0</sub><sup>4</sup> <i>x</i>·(<i>x</i>/8)<i>dx</i> = ∫<sub>0</sub><sup>4</sup> <i>x</i><sup>2</sup>/8 <i>dx</i> = [<i>x</i><sup>3</sup>/24]<sub>0</sub><sup>4</sup> = 64/24 = 8/3 ≈ 2.667</div>
+  <p>均值 2.667 高于中点 2，因为密度随 <i>x</i> 增大，较大的值贡献更多。</p>
+  <p>函数的期望同样直接积分：</p>
+  <div class="c-formula"><i>E</i>[<i>g</i>(<i>X</i>)] = ∫ <i>g</i>(<i>x</i>) <i>f</i>(<i>x</i>)<i>dx</i>；&nbsp;&nbsp; <i>E</i>(<i>X</i><sup>2</sup>) = ∫ <i>x</i><sup>2</sup><i>f</i>(<i>x</i>)<i>dx</i></div>
+  <p>线性性照旧：<i>E</i>(<i>a</i> + <i>bX</i>) = <i>a</i> + <i>bE</i>(<i>X</i>)。求 <i>g</i>(<i>X</i>) 的期望不需要先求 <i>g</i>(<i>X</i>) 的分布。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>期望积分里乘的是 <i>x</i>，不是 <i>x</i><sup>2</sup>；求 <i>E</i>(<i>X</i><sup>2</sup>) 时才乘 <i>x</i><sup>2</sup>。均匀分布的期望可直接用 (<i>a</i>+<i>b</i>)/2。</p>
+  </aside>
+  <p class="c-source">W4 p.48–51</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">4.10</span> 方差、<span class="c-term c-term--auto" data-term="standard-deviation" title="标准差｜standard deviation：方差的平方根，单位与原变量相同。">标准差</span>与线性变换</h2>
+  <p>连续方差定义为 <i>Var</i>(<i>X</i>) = <i>E</i>[(<i>X</i> − <i>μ</i>)<sup>2</sup>]，计算仍用捷径</p>
+  <div class="c-formula"><i>Var</i>(<i>X</i>) = <i>E</i>(<i>X</i><sup>2</sup>) − [<i>E</i>(<i>X</i>)]<sup>2</sup>，&nbsp;&nbsp; <i>SD</i>(<i>X</i>) = √<i>Var</i>(<i>X</i>)</div>
+  <p>对 <i>f</i>(<i>x</i>) = <i>x</i>/8（0 &lt; <i>x</i> &lt; 4）：<i>E</i>(<i>X</i>) = 8/3；</p>
+  <div class="c-formula"><i>E</i>(<i>X</i><sup>2</sup>) = ∫<sub>0</sub><sup>4</sup> <i>x</i><sup>2</sup>(<i>x</i>/8)<i>dx</i> = [<i>x</i><sup>4</sup>/32]<sub>0</sub><sup>4</sup> = 256/32 = 8</div>
+  <p>故 <i>Var</i>(<i>X</i>) = 8 − (8/3)<sup>2</sup> = 8/9，<i>SD</i>(<i>X</i>) = 2√2/3。</p>
+  <p>均匀分布的方差公式为</p>
+  <div class="c-formula"><i>Var</i>(<i>X</i>) = (<i>b</i> − <i>a</i>)<sup>2</sup>/12，&nbsp;&nbsp; <i>SD</i>(<i>X</i>) = (<i>b</i> − <i>a</i>)/√12</div>
+  <p>推导先用 <i>E</i>(<i>X</i><sup>2</sup>) = (<i>a</i><sup>2</sup> + <i>ab</i> + <i>b</i><sup>2</sup>)/3，再减去 [(<i>a</i>+<i>b</i>)/2]<sup>2</sup>。例 <i>X</i> ~ Uniform(0, 10)：<i>E</i> = 5，<i>Var</i> = 100/12 ≈ 8.333，<i>SD</i> ≈ 2.887。</p>
+  <p>线性变换 <i>Y</i> = <i>a</i> + <i>bX</i>：<i>E</i>(<i>Y</i>) = <i>a</i> + <i>bE</i>(<i>X</i>)，<i>Var</i>(<i>Y</i>) = <i>b</i><sup>2</sup><i>Var</i>(<i>X</i>)，<i>SD</i>(<i>Y</i>) = |<i>b</i>|<i>SD</i>(<i>X</i>)。分钟换秒 <i>Y</i> = 60<i>X</i>：<i>E</i>(<i>Y</i>) = 300 秒，<i>Var</i>(<i>Y</i>) = 3600 × 100/12 = 30,000。</p>
+  <p>成本例：维修时间 <i>X</i> 的 <i>E</i> = 8/3、<i>Var</i> = 8/9，成本 <i>C</i> = 200 + 150<i>X</i>。则 <i>E</i>(<i>C</i>) = 200 + 150(8/3) = 600，<i>Var</i>(<i>C</i>) = 150<sup>2</sup>(8/9) = 20,000，<i>SD</i>(<i>C</i>) ≈ 141.42。固定成本 200 改变均值，不改变<span class="c-term c-term--auto" data-term="variability" title="变异｜variability：观测值并不完全相同的性质。">变异</span>性。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><i>Var</i>(<i>a</i> + <i>bX</i>) = <i>b</i><sup>2</sup><i>Var</i>(<i>X</i>)，不是 <i>a</i> + <i>bVar</i>(<i>X</i>)。常数项对离散程度没有贡献。</p>
+  </aside>
+  <p class="c-source">W4 p.52–59</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">4.11</span> 分段密度与库存综合案例</h2>
+  <p>许多连续分布分段定义。处理步骤：识别支撑集 → 检查非负 → 在正确区间积分 → 写 CDF 时对不同区域用不同表达式。若 PDF 只在 (<i>a</i>, <i>b</i>) 非零，则 <i>F</i>(<i>x</i>) = 0（<i>x</i> ≤ <i>a</i>）、∫<sub><i>a</i></sub><sup><i>x</i></sup><i>f</i>(<i>t</i>)<i>dt</i>（<i>a</i> &lt; <i>x</i> &lt; <i>b</i>）、1（<i>x</i> ≥ <i>b</i>）。支撑集内部要积到 <i>x</i>，不是积到上限 <i>b</i>。</p>
+  <p>讲义需求模型：周需求 <i>X</i>（千盒）的密度 <i>f</i>(<i>x</i>) = <i>k</i>(<i>x</i> − 2)（2 &lt; <i>x</i> &lt; 4）。令 <i>u</i> = <i>x</i> − 2，则 1 = <i>k</i>∫<sub>0</sub><sup>2</sup><i>u</i> <i>du</i> = 2<i>k</i>，<i>k</i> = 1/2。</p>
+  <p>于是 <i>f</i>(<i>x</i>) = (<i>x</i> − 2)/2。对 2 &lt; <i>x</i> &lt; 4，<i>F</i>(<i>x</i>) = ∫<sub>2</sub><sup><i>x</i></sup> (<i>t</i>−2)/2 <i>dt</i> = (<i>x</i>−2)<sup>2</sup>/4。故 <i>P</i>(2.5 &lt; <i>X</i> &lt; 3.5) = <i>F</i>(3.5) − <i>F</i>(2.5) = 0.5625 − 0.0625 = 0.5。</p>
+  <p>均值：<i>E</i>(<i>X</i>) = ∫<sub>2</sub><sup>4</sup> <i>x</i>(<i>x</i>−2)/2 <i>dx</i> = (1/2)∫<sub>2</sub><sup>4</sup>(<i>x</i><sup>2</sup> − 2<i>x</i>)<i>dx</i> = 10/3 ≈ 3.333 千盒。方差：<i>E</i>(<i>X</i><sup>2</sup>) = 34/3，<i>Var</i> = 34/3 − (10/3)<sup>2</sup> = 2/9，<i>SD</i> ≈ 0.471。</p>
+  <p>库存决策：若备货 3.6 千盒，缺货概率 <i>P</i>(<i>X</i> &gt; 3.6) = 1 − <i>F</i>(3.6) = 1 − (1.6)<sup>2</sup>/4 = 1 − 0.64 = 0.36。若要 75% <span class="c-term c-term--auto" data-term="service-level" title="服务水平｜service level：需求不超过备货量的目标概率。">服务水平</span>，解 (<i>q</i><sub>0.75</sub> − 2)<sup>2</sup>/4 = 0.75，得 <i>q</i><sub>0.75</sub> = 2 + √3 ≈ 3.732 千盒。概率模型直接支撑了备货决策。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 4-2 分段线性密度与 CDF</span>
+      <button class="c-copy" type="button" data-copy="Clean vector two-panel figure for a demand model on 2 to 4: left the triangular density f(x) = (x-2)/2 rising linearly from 0 at x=2 to 1 at x=4; right the CDF F(x) = (x-2)^2/4 rising as a convex curve from 0 to 1, with a dashed line marking the 75th percentile near 3.732. Flat 2D, thin strokes, muted slate blue and warm grey, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector two-panel figure for a demand model on 2 to 4: left the triangular density f(x) = (x-2)/2 rising linearly from 0 at x=2 to 1 at x=4; right the CDF F(x) = (x-2)^2/4 rising as a convex curve from 0 to 1, with a dashed line marking the 75th percentile near 3.732. Flat 2D, thin strokes, muted slate blue and warm grey, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>分段密度的 CDF 必须分三段写；求区间概率用 <i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>) 前先确认两个端点都落在同一段公式内，否则要分别代入。</p>
+  </aside>
+  <p class="c-source">W4 p.63–71</p>
+</section>
+
+<section id="s12">
+  <h2 id="s12"><span class="sec-num">4.12</span> 常见错误与连续分布解题流程</h2>
+  <p>讲义给出六类错误：把 <i>f</i>(<i>x</i>) 当成 <i>P</i>(<i>X</i> = <i>x</i>)；忘记检查总面积为 1；忘记在支撑集外补 <i>F</i>(<i>x</i>) = 0 或 1；把端点包含与否当成会影响概率；把 <i>Var</i>(<i>X</i>) 算成 <i>E</i>(<i>X</i><sup>2</sup>) − <i>E</i>(<i>X</i>)；解释均值与标准差时漏掉单位。</p>
+  <p>应用题的通用流程：定义随机变量与单位 → 写清支撑集 → 检验或求出归一化常数 → 若需多次算概率就先建 CDF → 计算概率、期望、方差或分位数 → 回到原情境解释结果。</p>
+  <p>两个同支撑集的密度对比也值得记住：<i>f</i><sub>1</sub>(<i>x</i>) = 1/4 与 <i>f</i><sub>2</sub>(<i>x</i>) = <i>x</i>/8 都在 (0, 4) 上。前者均值 2，后者均值 8/3 ≈ 2.667。支撑集相同不代表概率、均值或方差相同；密度形状决定了质量往哪里集中。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>Week 4 核心公式</caption>
+      <thead><tr><th scope="col">量</th><th scope="col">公式</th></tr></thead>
+      <tbody>
+        <tr><td>合法性</td><td><i>f</i>(<i>x</i>) ≥ 0，∫<i>f</i>(<i>x</i>)<i>dx</i> = 1</td></tr>
+        <tr><td>区间概率</td><td><i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = ∫<sub><i>a</i></sub><sup><i>b</i></sup><i>f</i>(<i>x</i>)<i>dx</i></td></tr>
+        <tr><td>CDF</td><td><i>F</i>(<i>x</i>) = ∫<sub>−∞</sub><sup><i>x</i></sup><i>f</i>(<i>t</i>)<i>dt</i>，<i>f</i> = <i>F</i>′</td></tr>
+        <tr><td>区间概率（CDF）</td><td><i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)</td></tr>
+        <tr><td>分位数</td><td><i>F</i>(<i>q<sub>p</sub></i>) = <i>p</i></td></tr>
+        <tr><td>期望</td><td><i>E</i>(<i>X</i>) = ∫<i>xf</i>(<i>x</i>)<i>dx</i></td></tr>
+        <tr><td>方差</td><td><i>E</i>(<i>X</i><sup>2</sup>) − [<i>E</i>(<i>X</i>)]<sup>2</sup></td></tr>
+        <tr><td>均匀分布</td><td><i>E</i> = (<i>a</i>+<i>b</i>)/2，<i>Var</i> = (<i>b</i>−<i>a</i>)<sup>2</sup>/12</td></tr>
+        <tr><td>线性变换</td><td><i>E</i>(<i>a</i>+<i>bX</i>) = <i>a</i>+<i>bE</i>(<i>X</i>)，<i>Var</i> = <i>b</i><sup>2</sup><i>Var</i>(<i>X</i>)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>连续变量的方差公式是 <i>E</i>(<i>X</i><sup>2</sup>) − [<i>E</i>(<i>X</i>)]<sup>2</sup>，方括号不能丢。写成 <i>E</i>(<i>X</i><sup>2</sup>) − <i>E</i>(<i>X</i>) 是最典型的计算错误。</p>
+  </aside>
+  <p class="c-source">W4 p.74–78</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W4</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch03.html"><span>上一章</span>离散随机变量</a>
+          <a class="pager__next" href="ch05.html"><span>下一章</span>Bernoulli 与二项分布</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

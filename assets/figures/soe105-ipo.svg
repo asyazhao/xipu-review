@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" role="img" aria-label="IPO 模型">
+<title>IPO 模型</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">IPO 模型</text>
+<rect x="70" y="120" width="160" height="76" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="150" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">Input 输入</text>
+<text x="150" y="174" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">cin / 参数 / 文件</text>
+<rect x="320" y="120" width="160" height="76" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="400" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">Process 处理</text>
+<text x="400" y="174" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">计算、判断、循环</text>
+<rect x="570" y="120" width="160" height="76" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="650" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">Output 输出</text>
+<text x="650" y="174" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">cout / 返回值 / 文件</text>
+<line x1="234" y1="158" x2="316" y2="158" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="484" y1="158" x2="566" y2="158" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">程序 = 输入 → 处理 → 输出；先把问题拆成这三段，再写具体语句。</text>
+</svg>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIO103 细胞周期、有丝分裂与减数分裂 · 全科复习</title>
+  <meta name="description" content="BIO103 第 2 章 细胞周期、有丝分裂与减数分裂：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="bio103" data-chapter="02">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">BIO103</a>
+      <span>/</span>
+      <span aria-current="page">第 2 章 细胞周期、有丝分裂与减数分裂</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>A 细胞生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">细胞的基本属性与原核/真核细胞</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch02.html" class="is-current" aria-current="page"><span class="toc-num">02</span><span class="toc-title">细胞周期、有丝分裂与减数分裂</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">核内过程与细胞骨架</span><span class="toc-src">L3–4</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">内膜系统与膜运输</span><span class="toc-src">L5–6</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">细胞间通讯</span><span class="toc-src">L7–8</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">线粒体与核糖体</span><span class="toc-src">L9–10</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">细胞生物学方法</span><span class="toc-src">L11</span></a></li>
+        </ol>
+      </details>
+      <details class="toc-group" open>
+        <summary>B 分子生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">核酸的结构与功能</span><span class="toc-src">Park L10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">DNA 复制</span><span class="toc-src">Park L11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">DNA 突变与修复</span><span class="toc-src">L12</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">转录：原核与真核</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">基因表达调控</span><span class="toc-src">L14–15</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">翻译</span><span class="toc-src">L16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">蛋白质结构与功能</span><span class="toc-src">L17</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>A 细胞生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">细胞的基本属性与原核/真核细胞</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch02.html" class="is-current" aria-current="page"><span class="toc-num">02</span><span class="toc-title">细胞周期、有丝分裂与减数分裂</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">核内过程与细胞骨架</span><span class="toc-src">L3–4</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">内膜系统与膜运输</span><span class="toc-src">L5–6</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">细胞间通讯</span><span class="toc-src">L7–8</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">线粒体与核糖体</span><span class="toc-src">L9–10</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">细胞生物学方法</span><span class="toc-src">L11</span></a></li>
+        </ol>
+      </details>
+      <details class="toc-group" open>
+        <summary>B 分子生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">核酸的结构与功能</span><span class="toc-src">Park L10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">DNA 复制</span><span class="toc-src">Park L11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">DNA 突变与修复</span><span class="toc-src">L12</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">转录：原核与真核</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">基因表达调控</span><span class="toc-src">L14–15</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">翻译</span><span class="toc-src">L16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">蛋白质结构与功能</span><span class="toc-src">L17</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">BIO103 · 第 2 章</p>
+          <h1>细胞周期、有丝分裂与减数分裂</h1>
+          <p class="chapter-head__en">Cell Cycle, Mitosis &amp; Meiosis</p>
+          <p class="chapter-head__meta">来源 L1–2 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">2.1 细胞周期与不再分裂的细胞</a></li>
+        <li><a href="#s2">2.2 复制的原因：遗传含量与 DNA 结构</a></li>
+        <li><a href="#s3">2.3 DNA 的构象与包装</a></li>
+        <li><a href="#s4">2.4 复制的位置与染色质状态</a></li>
+        <li><a href="#s5">2.5 有丝分裂：保守的增殖</a></li>
+        <li><a href="#s6">2.6 减数分裂：变异从何而来</a></li>
+        <li><a href="#s7">2.7 减数分裂 I 与减数分裂 II</a></li>
+        <li><a href="#s8">2.8 有丝分裂与减数分裂的比较</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本章讨论细胞为什么必须复制遗传物质、DNA 以何种构象被包装进细胞核，以及<span class="c-term c-term--auto" data-term="mitosis" title="有丝分裂｜mitosis：母细胞 2N 产生两个遗传上相同的 2N 子细胞的核分裂。">有丝分裂</span>与减数分裂如何分别实现“增殖”与“产生变异”两种不同的结果。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>细胞周期是导致细胞分裂与复制、产生两个子细胞的一系列事件；不再分裂的细胞可处于静息或衰老状态。</li>
+    <li>有丝分裂负责生长，减数分裂负责世代延续；人类体细胞有 23 对<span class="c-term c-term--auto" data-term="homologous-chromosome" title="同源染色体｜homologous chromosome：含对应基因的一对染色体，一条来自父方、一条来自母方。">同源染色体</span>。</li>
+    <li>DNA 两条链反向平行，A 与 T 之间 2 个氢键、G 与 C 之间 3 个氢键，核苷酸之间以磷酸二酯键相连。</li>
+    <li>B-DNA 是最常见的右手螺旋，每圈约 10.5 个碱基对；Z-DNA 为左手螺旋。</li>
+    <li>约 2 m 的线性 DNA 要装进直径约 10 μm 的核，压缩比约 1/200,000。</li>
+    <li>有丝分裂产生遗传上相同的<span class="c-term c-term--auto" data-term="diploid" title="二倍体｜diploid：染色体数为 2N、含两套染色体的状态。">二倍体</span>子细胞；减数分裂经两次分裂产生四个单倍体细胞。</li>
+    <li>减数分裂的变异来源：前期 I 的联会与交换，以及中期 I 同源染色体的自由组合。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">2.1</span> 细胞周期与不再分裂的细胞</h2>
+  <p><span class="c-term">细胞周期<span class="c-term__en">cell cycle</span></span>是细胞内发生的一系列事件与过程，最终导致细胞分裂与复制，产生两个子细胞。真核体细胞的周期通常为 12–24 h，但随物种与细胞类型变化很大。</p>
+  <p>并非所有细胞都在持续分裂。讲义并列给出两种状态：quiescent（静息）与 <span class="c-term">衰老<span class="c-term__en">senescent</span></span>。衰老的定义是：细胞老化并永久停止分裂，但并不死亡。术语表另列出 <span class="c-term">G₀ 期<span class="c-term__en">G₀ phase</span></span>（静息期），用于描述暂时或长期退出周期的细胞；讲义未对 quiescent 给出独立的定义，此处只保留术语与状态名，具体判定标准本课程资料未提供。</p>
+  <p>周期的分期名称由术语表给出：<span class="c-term">间期<span class="c-term__en">interphase</span></span>包含 <span class="c-term">G₁ 期<span class="c-term__en">G₁ phase</span></span>、<span class="c-term">S 期<span class="c-term__en">S phase</span></span>（DNA 合成期）与 <span class="c-term">G₂ 期<span class="c-term__en">G₂ phase</span></span>；M 期包含<span class="c-term">前期<span class="c-term__en">prophase</span></span>、<span class="c-term">中期<span class="c-term__en">metaphase</span></span>、<span class="c-term">后期<span class="c-term__en">anaphase</span></span>与<span class="c-term">末期<span class="c-term__en">telophase</span></span>，随后是<span class="c-term">胞质分裂<span class="c-term__en">cytokinesis</span></span>。讲义正文只给出分期名称与 S 期进行 DNA 复制的定位，各期的细胞学事件细节本课程资料未提供。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>衰老（senescent）是“永久停止分裂但不死亡”，与细胞死亡不同；G₀ 是静息期，也不等于衰老。三者不能用“不分裂”一概而论。</p>
+  </aside>
+  
+<!-- course-image:bio103-ch02-cell-cycle.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-bio103-ch02-cell-cycle">
+        <img class="c-course-figure__img" src="../../assets/course/bio103-ch02-cell-cycle.jpg" alt="细胞周期：间期、M 期与 G0" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 细胞周期：间期、M 期与 G0 <span class="c-course-figure__src">来源：L1–2 p.39</span></figcaption>
+      </figure>
+
+<p class="c-source">L1–2 p.38–40</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">2.2</span> 复制的原因：遗传含量与 DNA 结构</h2>
+  <p>讲义把复制的意义归结为两件事：<strong>生长</strong>依靠有丝分裂（mitosis），<strong>世代延续</strong>依靠减数分裂（meiosis）。就遗传含量而言，人类有 23 条染色体构成的同源对（homologous pairs）；每个基因有两个代表性等位基因（alleles）；每条染色体可含 1 条或 2 条染色单体（chromatids）。</p>
+  <p>DNA 由<span class="c-term">核苷酸<span class="c-term__en">nucleotide</span></span>聚合而成，每个核苷酸 = 含氮碱基 + 脱氧核糖 + 磷酸基团。碱基配对是特异的：A 与 T 配对，形成 2 个氢键；G 与 C 配对，形成 3 个氢键。相邻核苷酸之间由<span class="c-term">磷酸二酯键<span class="c-term__en">phosphodiester linkage</span></span>连接，即前一个糖的 3′-OH 与后一个核苷酸的 5′-磷酸之间形成共价键。</p>
+  <p>两条链方向相反（antiparallel）：一条为 5′→3′，另一条为 3′→5′，彼此缠绕形成<span class="c-term">双螺旋<span class="c-term__en">double helix</span></span>。<span class="c-term c-term--auto" data-term="purine" title="嘌呤｜purine：双环含氮碱基，包括腺嘌呤与鸟嘌呤。">嘌呤</span>为双环（A、G），<span class="c-term c-term--auto" data-term="pyrimidine" title="嘧啶｜pyrimidine：单六元环含氮碱基，包括胞嘧啶、胸腺嘧啶与尿嘧啶。">嘧啶</span>为单环（C、T）。这一组要点可概括为四句话：A-T、G-C 通过氢键互补配对；核苷酸之间由磷酸二酯键相连；两条链反向平行；两条链缠绕成双螺旋。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 2-1 DNA 双螺旋与碱基配对</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of a DNA double helix opened into a ladder view: two antiparallel sugar-phosphate backbones labelled 5 prime and 3 prime at each end, phosphodiester bonds marked between adjacent nucleotides, A paired with T by two dashed hydrogen bonds and G paired with C by three dashed hydrogen bonds, with one nucleotide callout showing phosphate group, deoxyribose and nitrogenous base. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram of a DNA double helix opened into a ladder view: two antiparallel sugar-phosphate backbones labelled 5 prime and 3 prime at each end, phosphodiester bonds marked between adjacent nucleotides, A paired with T by two dashed hydrogen bonds and G paired with C by three dashed hydrogen bonds, with one nucleotide callout showing phosphate group, deoxyribose and nitrogenous base. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>连接同一链上相邻核苷酸的键是磷酸二酯键（phosphodiester linkage），不是氢键，也不是<span class="c-term c-term--auto" data-term="peptide-bond" title="肽键｜peptide bond：两个氨基酸脱水缩合形成的共价键。">肽键</span>；氢键只负责两条链之间的碱基配对，且 G-C 对（3 个氢键）比 A-T 对（2 个氢键）更稳定。</p>
+  </aside>
+  <p class="c-source">L1–2 p.40–41</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">2.3</span> DNA 的构象与包装</h2>
+  <p>DNA 可采取不同的螺旋构象：<strong>A-DNA</strong> 是右手螺旋，出现在脱水条件下的 DNA 中；<strong>B-DNA</strong> 是最常见的右手形式，每圈约 10.5 个碱基对，直径约 1.8 nm（18 Å）；<strong>Z-DNA</strong> 是左手螺旋，由嘌呤-嘧啶交替序列所偏好。三者都具有大沟（major groove）与小沟（minor groove），沟的宽度与深度不同，这是蛋白识别特定序列的结构基础。</p>
+  <p>包装问题可以用一组数字说明：人类最长染色体的线性 DNA 长约 10 cm；哺乳动物细胞中约有 2 m 的线性 DNA（linear DNA，即直链、非环状的 DNA 分子），却要装进直径约 10 μm 的细胞核。按讲义的计算，10 μm / 2,000,000 μm = 1/200,000，即压缩到原长的二十万分之一。</p>
+  <p class="c-source">L1–2 p.42–44</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">2.4</span> 复制的位置与染色质状态</h2>
+  <p>复制发生在细胞核内；细胞中 99% 的 DNA 位于核内。核内 DNA 与组蛋白及其他蛋白结合形成<span class="c-term">染色质<span class="c-term__en">chromatin</span></span>，染色质有两种状态：<span class="c-term">异染色质<span class="c-term__en">heterochromatin</span></span>高度致密、紧凑；<span class="c-term">常染色质<span class="c-term__en">euchromatin</span></span>松散、开放。</p>
+  <p>人类核型（karyotype）有 46 条染色体。人体细胞分两类：体细胞（somatic cells，身体细胞）与性细胞（sex cells，即配子 gametes）。体细胞含同源染色体对，每个基因有两个等位基因；配子只含一套染色体。</p>
+  <p>实现压缩的关键是<span class="c-term">组蛋白<span class="c-term__en">histone</span></span>：组蛋白高度保守（highly conserved），DNA 缠绕其上形成<span class="c-term">核小体<span class="c-term__en">nucleosome</span></span>，核小体逐级折叠，最终在分裂期形成光学显微镜下可见的染色体。核型图（karyotype）把 46 条染色体按大小与<span class="c-term c-term--auto" data-term="centromere" title="着丝粒｜centromere：染色体上负责纺锤体连接的染色体区域。">着丝粒</span>位置排列，每条染色体分短臂与长臂，可用于判断染色体数目异常。</p>
+  <p class="c-source">L1–2 p.45–46</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">2.5</span> 有丝分裂：保守的增殖</h2>
+  <p>有丝分裂的核心要求是：细胞遗传物质的分离（separation / segregation）与复制必须完成。它是保守的（conservative），生成精确的拷贝——母细胞为二倍体（2N），产生两个二倍体（2N）子细胞；每个子细胞获得正确数量的染色体，即 23 对、46 条。分裂时核被膜“消失”，染色体与纺锤体直接接触细胞质。</p>
+  <p>有丝分裂产生遗传上相同的子细胞，无性繁殖即建立在核的有丝分裂之上：可以是单细胞生物复制自身，也可以是多细胞生物脱落的细胞形成新个体。其子代是克隆（clones），与亲本遗传上相同。</p>
+  <p>讲义以草履虫（Paramecium）为例说明“有丝分裂并非唯一的分裂方式”：草履虫的大核进行无丝分裂（amitotic division），小核进行有丝分裂，同时形成新的口沟与伸缩泡。这一例子提示：同一细胞内可同时存在不同的分裂机制。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“有丝分裂是保守的”指遗传内容保守（2N → 2N，子细胞与母细胞相同），不是指染色体数目减半；数目减半是减数分裂的特征。</p>
+  </aside>
+  
+<!-- course-image:bio103-ch02-mitosis.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-bio103-ch02-mitosis">
+        <img class="c-course-figure__img" src="../../assets/course/bio103-ch02-mitosis.jpg" alt="有丝分裂各阶段" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 有丝分裂各阶段 <span class="c-course-figure__src">来源：L1–2 p.47</span></figcaption>
+      </figure>
+
+<p class="c-source">L1–2 p.47–50</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">2.6</span> 减数分裂：变异从何而来</h2>
+  <p>有丝分裂与减数分裂名称相似，但定义的细胞学结果完全不同。有性繁殖的后代与亲本不相同；减数分裂产生的配子彼此之间也不相同，从而把遗传变异引入群体。</p>
+  <p>变异的实现依赖三个环节。第一，<span class="c-term">减数分裂<span class="c-term__en">meiosis</span></span>产生配子，配子只含基因组的一半，即单倍体（haploid）。第二，<span class="c-term">交换<span class="c-term__en">crossing over / genetic recombination</span></span>发生在同源染色体的非姐妹染色单体之间，互换遗传物质。第三，受精（fertilization）时来自母方与父方的两个配子融合，把染色体数恢复到原来的二倍体值。</p>
+  <p>数目关系可写作 2n → n：减数分裂使细胞分裂两次，形成四个各含一半遗传信息的细胞。体细胞（somatic cells）是不特化为生殖的身体细胞，每个体细胞含同源染色体对，每一对中的一条来自父方、一条来自母方；<span class="c-term">配子<span class="c-term__en">gamete</span></span>只含一套染色体。<span class="c-term">单倍体<span class="c-term__en">haploid</span></span>的染色体数为 N；受精后两个单倍体配子（卵与精子）融合形成二倍体<span class="c-term">受精卵<span class="c-term__en">zygote</span></span>，染色体数为 2N。</p>
+  <p class="c-source">L1–2 p.51–52</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">2.7</span> 减数分裂 I 与减数分裂 II</h2>
+  <p>减数分裂 I 的关键事件是前期 I 的<span class="c-term">联会<span class="c-term__en">synapsis</span></span>：同源染色体配对，使交换得以发生；交换后的重组染色单体同时含有来自双亲的遗传物质。中期 I 时，同源染色体对随机排列在赤道板上，这一随机排列产生<span class="c-term">自由组合<span class="c-term__en">independent assortment</span></span>。人类有 23 对染色体，仅自由组合一项即可产生 2²³ = 8,388,608 种组合。</p>
+  <p>减数分裂 II 分离姐妹染色单体，过程与有丝分裂相似，但起始细胞已是单倍体。讲义以 2N = 4 的动物细胞为例：经过减数分裂 I 与 II，最终形成四个单倍体（N）子细胞。</p>
+  <p>把两次分裂合起来看，变异有两个独立来源：前期 I 的交换（重组）与中期 I 的自由组合（不同同源染色体对的随机取向）。二者叠加，使一个个体产生的配子几乎不可能完全相同。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 2-2 减数分裂 I 与 II 的流程</span>
+      <button class="c-copy" type="button" data-copy="Clean vector flowchart of meiosis for a cell with 2N equals 4: top row shows meiosis I with synapsis and crossing over between non-sister chromatids in prophase I, homologous pairs aligned at the metaphase I plate, then two haploid cells; bottom row shows meiosis II with sister chromatids separating to give four haploid cells, each labelled N. Flat 2D, thin strokes, muted slate blue and warm grey, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/bio103-meiosis.svg" alt="减数分裂 I 与 II 的流程：同源染色体与姐妹染色单体的分离" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector flowchart of meiosis for a cell with 2N equals 4: top row shows meiosis I with synapsis and crossing over between non-sister chromatids in prophase I, homologous pairs aligned at the metaphase I plate, then two haploid cells; bottom row shows meiosis II with sister chromatids separating to give four haploid cells, each labelled N. Flat 2D, thin strokes, muted slate blue and warm grey, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>交换发生在同源染色体的<strong>非姐妹</strong>染色单体之间；自由组合发生在中期 I，而不是中期 II。2²³ = 8,388,608 只计算自由组合，不含交换带来的组合数。</p>
+  </aside>
+  <p class="c-source">L1–2 p.53–55</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">2.8</span> 有丝分裂与减数分裂的比较</h2>
+  <p>把两者放在同一张表里，差异集中在起点、分裂次数、产物数目与遗传结果四个维度上。讲义给出的判断题正是抓住“根本差别”这一点：区分减数分裂与有丝分裂的根本标志是产生单倍体细胞（haploid cell），而不是“是否发生细胞分裂”或“是否进行基因组复制”——两者都要复制 DNA，也都进行细胞分裂。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>有丝分裂与减数分裂的对照</caption>
+      <thead>
+        <tr><th scope="col">维度</th><th scope="col">有丝分裂</th><th scope="col">减数分裂</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>分裂次数</td><td>一次</td><td>两次（I 与 II）</td></tr>
+        <tr><td>产物</td><td>2 个子细胞</td><td>4 个子细胞</td></tr>
+        <tr><td>倍性变化</td><td>2N → 2N（保守）</td><td>2N → N（减半）</td></tr>
+        <tr><td>遗传结果</td><td>与母细胞相同，克隆</td><td>彼此不同，且不同于亲本</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>功能上的对应关系是：有丝分裂服务于生长与无性繁殖，减数分裂服务于有性繁殖。讲义用“sound alike but actually define different cellular outcomes”提醒：两个词形近，考试常以“产物倍性”与“产物数目”设陷阱。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>减数分裂 II 不是“第二次减数分裂”，它分离的是姐妹染色单体，倍性不再减半；倍性减半发生在减数分裂 I，同源染色体分开。</p>
+  </aside>
+  <p class="c-source">L1–2 p.50–57</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L1–2</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch01.html"><span>上一章</span>细胞的基本属性与原核/真核细胞</a>
+          <a class="pager__next" href="ch03.html"><span>下一章</span>核内过程与细胞骨架</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

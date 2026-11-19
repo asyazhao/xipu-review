@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 控制流：顺序与选择 · 全科复习</title>
+  <meta name="description" content="SOE105 第 5 章 控制流：顺序与选择：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="05">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 5 章 控制流：顺序与选择</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html" class="is-current" aria-current="page"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html" class="is-current" aria-current="page"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 5 章</p>
+          <h1>控制流：顺序与选择</h1>
+          <p class="chapter-head__en">Control Flows: Sequence &amp; Choice</p>
+          <p class="chapter-head__meta">来源 L04b–05 · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">5.1 控制流与三种结构</a></li>
+        <li><a href="#s2">5.2 描述算法的两种工具</a></li>
+        <li><a href="#s3">5.3 顺序结构与 if 语句</a></li>
+        <li><a href="#s4">5.4 关系运算符与优先级</a></li>
+        <li><a href="#s5">5.5 if-else 与两路选择</a></li>
+        <li><a href="#s6">5.6 多路选择：成绩等级的例子</a></li>
+        <li><a href="#s7">5.7 用断言检查分支条件</a></li>
+        <li><a href="#s8">5.8 switch 语句</a></li>
+        <li><a href="#s9">5.9 布尔类型、逻辑运算与短路求值</a></li>
+        <li><a href="#s10">5.10 嵌套 if 与悬垂 else</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲进入控制流：先区分顺序、选择与重复三种结构，再聚焦选择结构——if、if-else、if-else-if、switch，以及支撑它们的布尔类型、关系运算、短路求值与嵌套 if 的悬垂 else 问题。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>控制流描述执行如何从一条命令走到下一条，只有顺序、选择、重复三种结构。</li>
+    <li>伪代码是一维的步骤描述，流程图是二维的图形描述，两者都属<span class="c-term c-term--auto" data-term="algorithm" title="算法｜algorithm：为解决特定问题而设的一系列指令或过程性步骤。">算法</span>层。</li>
+    <li>if 的条件为真才执行动作；多条动作必须放进花括号。</li>
+    <li><span class="c-term c-term--auto" data-term="relational-operator" title="关系运算符｜relational operator：比较两个值的大小或相等，结果为真或假。">关系运算符</span> == 是“等于”，= 是赋值，两者不能混用。</li>
+    <li>if-else 提供两路选择；if-else-if 提供多路选择，条件的顺序决定正确性。</li>
+    <li>switch 的条件必须是离散值，break 用于跳出，default 处理无匹配的情况。</li>
+    <li>bool 只有 true/false；&amp;&amp;、||、! 与位运算 &amp;、| 含义不同。</li>
+    <li>短路求值会跳过后面的子表达式；悬垂 else 归属于最近的 if。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">5.1</span> 控制流与三种结构</h2>
+  <p><span class="c-term">控制流<span class="c-term__en">control flow</span></span>（flow of control）描述执行如何从一条命令进行到下一条。讲义只承认三种结构：</p>
+  <ul>
+    <li><b>顺序</b>（sequential）：语句按给定次序依次执行；</li>
+    <li><b>选择</b>（choice，又称条件分支 conditional branch）：根据条件选择要执行的序列；</li>
+    <li><b>重复</b>（repetition，又称<span class="c-term c-term--auto" data-term="loop" title="循环｜loop：重复执行一段语句的控制结构，又称迭代。">循环</span> loop 或<span class="c-term c-term--auto" data-term="iteration" title="迭代｜iteration：用循环重复执行同一段代码，而不是调用自己。">迭代</span> iteration）：重复执行某段序列。</li>
+  </ul>
+  <p>三种结构可以互相嵌套：顺序结构里可以放一个 if，if 的动作里可以放一个 while。讲义用“程序结构 1 → 程序结构 2 → 程序结构 3”的串联图说明：任何复杂程序最终都能拆成这三种结构的组合。</p>
+  <p>这种“只有三种”的限定不是简化，而是结构化程序设计的基石：只要控制流只由这三种结构组成，就可以用“单入口单出口”的方式逐层验证正确性。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>三种控制结构：顺序、选择、重复。switch 与 if 同属选择结构，不是第四种结构。</p>
+  </aside>
+  <p class="c-source">L04b–05 p.3, p.6</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">5.2</span> 描述算法的两种工具</h2>
+  <p>函数/程序内部的算法怎么描述？讲义给出两种工具。</p>
+  <p><span class="c-term">伪代码<span class="c-term__en">pseudocode</span></span>是线性的步骤序列：每一步用高层指令写出“做什么”，精化到刚好够实现即可，但不是真正的程序代码；用基本的控制指令（while、for each、if）表示执行顺序。讲义给了一段图的遍历伪代码作为示例，其中 while、for each、if 直接标出了控制结构。</p>
+  <p><span class="c-term">流程图<span class="c-term__en">flowchart</span></span>是二维图形：方框表示动作与判断，边表示控制流。讲义的基本图形是 Start → step 1 → step 2 → 判断 cond? → 真走 step 3a、假走 step 3b → End。</p>
+  <p>两者的取舍：伪代码便于书写与修改，接近最终代码；流程图便于看清分支与汇合，尤其适合讲清嵌套条件。考试中若要求“画流程图”，判断框必须有两个出口（T/F），这是最容易漏的地方。</p>
+  <p class="c-source">L04b–05 p.4–5</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">5.3</span> 顺序结构与 if 语句</h2>
+  <p>最简单的选择是基本 if 语句：if (Expression) { Action }。表达式为真时执行动作，为假时跳过。讲义用“下雨就带伞、穿雨衣”作比喻，并强调多条动作要放进花括号：</p>
+<pre class="c-code"><code>if (value &lt; 0) {
+    value = -value;
+}</code></pre>
+  <p>完整的求绝对值程序把输入、判断与输出串成顺序结构：读入 value，若小于 0 则取负，最后输出。注意 if 只控制紧随其后的那一条语句（或一个花括号块），后面的 cout 无论条件真假都会执行。</p>
+<pre class="c-code"><code>int value;
+cout &lt;&lt; "Enter integer: ";
+cin &gt;&gt; value;
+if (value &lt; 0)
+    value = -value;
+cout &lt;&lt; "The absolute value is " &lt;&lt; value &lt;&lt; endl;</code></pre>
+  <p>讲义接着用“两个数排序”的例子展示 if 的典型用法：若 value1 &gt; value2 就<span class="c-term c-term--auto" data-term="swap" title="交换｜swap：借助一个临时变量互换两个变量的值。">交换</span>，否则什么都不做。交换仍要借助 temp，这一点与上一章的赋值规则一致。</p>
+<pre class="c-code"><code>if (value1 &gt; value2) {   // check whether swapping is necessary
+    temp = value1;
+    value1 = value2;
+    value2 = temp;
+}
+cout &lt;&lt; "The input in sorted order: " &lt;&lt; value1 &lt;&lt; " " &lt;&lt; value2 &lt;&lt; endl;</code></pre>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>if 分支若有多条语句，必须用 { } 包成一个块；否则只有第一条受条件控制，其余语句会无条件执行。</p>
+  </aside>
+  <p class="c-source">L04b–05 p.7–10</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">5.4</span> 关系运算符与优先级</h2>
+  <p>关系运算符用于比较两个值，结果是真或假：==（等于）、&lt;（小于）、&lt;=（小于等于）、&gt;（大于）、&gt;=（大于等于）、!=（不等于）。讲义特别标注：a = b 表示把 b 的值放进 a，而 a == b 才是比较。把 == 写成 = 是初学者最常见的错误之一，而且往往能通过编译。</p>
+  <p>关系表达式可以组合算术运算，例如 20 * j == 10 + i、numberOfStudents &lt; 200。此时算术运算先于关系运算。</p>
+  <p>完整的优先级（从高到低）为：* / % → + - → &lt; &lt;= &gt;= &gt; → == != → =。也就是说，关系运算符低于算术运算符、高于赋值运算符。因此 <span class="c-term c-term--auto" data-term="flag" title="标志｜flag：记录状态、用于控制循环是否继续的变量。">flag</span> = a &lt; b 会先算 a &lt; b，再把真假值赋给 flag。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>关系运算符与数学符号的对应</caption>
+      <thead><tr><th scope="col">数学</th><th scope="col">C/C++</th><th scope="col">含义</th></tr></thead>
+      <tbody>
+        <tr><td>=</td><td>==</td><td>等于（a = b 是赋值）</td></tr>
+        <tr><td>≠</td><td>!=</td><td>不等于</td></tr>
+        <tr><td>≤</td><td>&lt;=</td><td>小于等于</td></tr>
+        <tr><td>≥</td><td>&gt;=</td><td>大于等于</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>优先级顺序：算术 → 关系（先大小比较，再相等比较）→ 逻辑 → 赋值。== 与 = 的区别是必考点。</p>
+  </aside>
+  <p class="c-source">L04b–05 p.12–14</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">5.5</span> if-else 与两路选择</h2>
+  <p>if-else 在两个动作之间二选一：条件为真执行 Action1，为假执行 Action2，两者必居其一。语法为 if (Expression) { Action1 } else { Action2 }。</p>
+<pre class="c-code"><code>if (value == 0) {
+    cout &lt;&lt; "value is 0";
+} else {
+    cout &lt;&lt; "value is not 0";
+}</code></pre>
+  <p>“找较大者”的例子把 if-else 用在赋值上：条件为真把 value1 赋给 larger，否则把 value2 赋给 larger，之后统一输出。这样写比在两个分支里各写一次 cout 更简洁，也更不容易漏掉某个分支。</p>
+<pre class="c-code"><code>if (value1 &gt; value2)
+    larger = value1;
+else
+    larger = value2;
+cout &lt;&lt; "Larger of inputs is: " &lt;&lt; larger &lt;&lt; endl;</code></pre>
+  <p>结构上，if-else 是一个“两出口、一汇合”的结构：两条路径最终都汇合到 else 之后的语句。这也解释了为什么在分支里改<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：有名字、有类型、可存放一个值的存储单元。">变量</span>、在分支外使用它，是安全的写法。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 5-1 if-else 的控制流</span>
+      <button class="c-copy" type="button" data-copy="Clean vector flowchart of an if-else statement: a diamond labelled Expression? with a true branch going down to a box labelled Action1 and a false branch going right to a box labelled Action2, both branches converging on a single arrow labelled Continue. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/soe105-if-else.svg" alt="if-else 的条件判断与两个互斥分支" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector flowchart of an if-else statement: a diamond labelled Expression? with a true branch going down to a box labelled Action1 and a false branch going right to a box labelled Action2, both branches converging on a single arrow labelled Continue. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p class="c-source">L04b–05 p.15–16</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">5.6</span> 多路选择：成绩等级的例子</h2>
+  <p>讲义用成绩等级贯穿多路选择：70 分及以上为 Distinction，50–70 为 Credit，40–50 为 Pass，低于 40 为 Fail。<span class="c-term c-term--auto" data-term="problem-analysis" title="问题分析｜problem analysis：明确输入、输出、约束与所需的数据类型。">问题分析</span>给出输入 score（实型）、输出 grade（字符串），已知条件就是这张分数—等级表。</p>
+  <p>初始算法是“顺着表往下扫，落在哪个区间就设等级并返回”。第一次精化写成四个并列的 if，每个都带完整区间；进一步精化则利用“前面的条件不成立”这一信息，把后面的条件简化为单边比较：</p>
+  <ol>
+    <li>若 score ≥ 70，grade = "Distinction"，返回；</li>
+    <li>否则（即 score &lt; 70），若 score ≥ 50，grade = "Credit"，返回；</li>
+    <li>否则（即 score &lt; 50），若 score ≥ 40，grade = "Pass"，返回；</li>
+    <li>否则（即 score &lt; 40），grade = "Fail"。</li>
+  </ol>
+  <p>实现时讲义用整数除法把分数压成十位：int s = score / 10; 再用 if-else-if 链判断 s &gt;= 7、s &gt;= 5、s &gt;= 4，最后 else 兜底。这样每个条件只需一次比较。</p>
+<pre class="c-code"><code>int score;
+cout &lt;&lt; "Enter score: ";
+cin &gt;&gt; score;
+int s = score / 10;
+if (s &gt;= 7)
+    cout &lt;&lt; "Grade: Distinction" &lt;&lt; endl;
+else if (s &gt;= 5)
+    cout &lt;&lt; "Grade: Credit" &lt;&lt; endl;
+else if (s &gt;= 4)
+    cout &lt;&lt; "Grade: Pass" &lt;&lt; endl;
+else
+    cout &lt;&lt; "Grade: Fail" &lt;&lt; endl;</code></pre>
+  <p>讲义在这里强调“手工跟踪检查算法的正确性与完备性”（hand trace for correctness and completeness）：条件顺序若写成 s &gt;= 4 在前，所有 40 分以上都会先被判成 Pass，后面的分支永远进不去。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>if-else-if 链依赖“从上到下、命中即停”。把范围宽的条件放在前面，会把后面更具体的分支全部遮住。</p>
+  </aside>
+  <p class="c-source">L04b–05 p.17–20</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">5.7</span> 用断言检查分支条件</h2>
+  <p>讲义在成绩例子上追加了测试设计：用<span class="c-term">断言<span class="c-term__en">assertion</span></span>检查“进入该分支时条件确实成立”。断言来自 &lt;cassert&gt; 库，形式为 assert(表达式)，表达式为假时程序中止并报错。</p>
+<pre class="c-code"><code>#include &lt;cassert&gt;
+// ...
+if (s &gt;= 7)
+    cout &lt;&lt; "Grade: Distinction" &lt;&lt; endl;
+else if (s &gt;= 5) {
+    assert(s &gt;= 5 &amp;&amp; s &lt; 7);
+    cout &lt;&lt; "Grade: Credit" &lt;&lt; endl;
+} else if (s &gt;= 4) {
+    assert(s &gt;= 4 &amp;&amp; s &lt; 5);
+    cout &lt;&lt; "Grade: Pass" &lt;&lt; endl;
+} else {
+    assert(s &lt; 4);
+    cout &lt;&lt; "Grade: Fail" &lt;&lt; endl;
+}</code></pre>
+  <p>三段断言的写法值得注意：在 s &gt;= 5 的分支里，断言写成 s &gt;= 5 &amp;&amp; s &lt; 7，把“进入条件”与“上界”同时写出来，等于把 if-else-if 的隐含前提显式化。若某天条件顺序被改坏，断言会立刻失败。</p>
+  <p>讲义还给出结束测试后的做法：全部测试完成后，加上 #define NDEBUG 关闭 assert()，避免发布版本因断言中止。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>assert 用于检查“本应成立”的前提；#define NDEBUG 可关闭断言。断言不是错误处理，不应用于检查用户输入。</p>
+  </aside>
+  <p class="c-source">L04b–05 p.21</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">5.8</span> <span class="c-term c-term--auto" data-term="switch-statement" title="开关语句｜switch statement：按离散值在多条分支中选择执行的语句。">switch 语句</span></h2>
+  <p>switch 是另一种多路选择：它把同一个表达式的值与若干离散的 case 值比较，命中哪个就从哪里开始执行。语法为 switch (Expression) { case value1: statements1; break; … default: statementsDefault; }。</p>
+  <p>与 if-else-if 的关键差别有两点。第一，switch 的条件必须是离散值，不能是范围；if-else-if 的条件可以是范围，也可以是任意布尔表达式。第二，switch 若不写 break，会“继续执行后面的语句”（fall through），直到遇到 break 或 switch 结束。</p>
+  <p>成绩例子用 switch 重写时，正是利用了 fall through：case 10、9、8、7 共用同一段输出，只在最后写一个 break；case 6、5 共用 Credit；case 4 是 Pass；default 兜底 Fail。这样比写四个 if 更紧凑。</p>
+<pre class="c-code"><code>switch (int(score / 10))
+{
+case 10:
+case 9:
+case 8:
+case 7:
+    cout &lt;&lt; "Grade: Distinction" &lt;&lt; endl;
+    break;
+case 6:
+case 5:
+    cout &lt;&lt; "Grade: Credit" &lt;&lt; endl;
+    break;
+case 4:
+    cout &lt;&lt; "Grade: Pass" &lt;&lt; endl;
+    break;
+default:
+    cout &lt;&lt; "Grade: Fail" &lt;&lt; endl;
+}</code></pre>
+  <p>default 是可选的，作用类似 if-else 的 else：所有 case 都不匹配时执行。讲义在图上标出，若某个 case 后没有 break，控制流会继续落入下一个 case。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 5-2 switch 的分支与贯穿</span>
+      <button class="c-copy" type="button" data-copy="Clean vector flowchart of a switch statement: an evaluate Expression box at the top, then a column of case-value tests value1 to valuen, each with a true branch into its own statement box followed by a break, false branches continuing to the next test, a default statement box at the bottom, and dashed arrows labelled fall through from each statement box to the next when break is omitted. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector flowchart of a switch statement: an evaluate Expression box at the top, then a column of case-value tests value1 to valuen, each with a true branch into its own statement box followed by a break, false branches continuing to the next test, a default statement box at the bottom, and dashed arrows labelled fall through from each statement box to the next when break is omitted. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>switch 只能比较离散值，不能写 case s &gt;= 70:；漏写 break 会继续执行下一个 case，这是 switch 最常见的 bug。</p>
+  </aside>
+  <p class="c-source">L04b–05 p.22–23</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">5.9</span> 布尔类型、逻辑运算与短路求值</h2>
+  <p>C++ 的 <span class="c-term">布尔类型<span class="c-term__en">bool</span></span>只有两个值：true（对应非零值）与 false（对应零值）。逻辑运算符有三个：与 &amp;&amp;、或 ||、非 !。讲义特意提醒：&amp; 与 | 也是运算符，但含义不同（按位运算），不能拿来代替 &amp;&amp; 与 ||。</p>
+<pre class="c-code"><code>bool P = true;
+bool Q = false;
+bool R = true;
+bool S = P &amp;&amp; Q;      // false
+bool T = !Q || R;     // true
+bool U = !(R &amp;&amp; !Q);  // false</code></pre>
+  <p>加入逻辑运算后，优先级从高到低为：括号 → 一元 ! → * / % → + - → 关系 &lt; &lt;= &gt;= &gt; → 相等 == != → &amp;&amp; → || → 赋值 =。因此 5 != 6 || 7 &lt;= 3 应读作 (5 != 6) || (7 &lt;= 3)。</p>
+  <p><span class="c-term">短路求值<span class="c-term__en">short circuit evaluation</span></span>指：逻辑表达式的值一旦能确定，就停止求值。score &lt; 90 &amp;&amp; score &gt;= 80 在 score = 92 时第一个子表达式已为假，后面不再算；cont || exp(x) &gt; x 在 cont 为真时不再调用 exp；x != 0 &amp;&amp; y/x &gt; 5.0 在 x = 0 时不会执行除法，从而避免除零。</p>
+  <p>短路不只是优化，它是写安全条件的手段：把“先决条件”放在左边，把“可能出错的操作”放在右边，是 C/C++ 的惯用写法。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>&amp;&amp; 与 || 会短路，&amp; 与 | 不会；利用短路可避免除零与越界。逻辑运算的结果是 bool，不是操作数本身。</p>
+  </aside>
+  <p class="c-source">L04b–05 p.24–27</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">5.10</span> 嵌套 if 与悬垂 else</h2>
+  <p>嵌套指一个完整语句放在另一个语句内部。讲义的例子是“如果今天是周四，且到了上课时间，就去上 SOE105”：外层 if 判断星期，内层 if 判断时间。</p>
+  <p>嵌套带来<span class="c-term">悬垂 else<span class="c-term__en">dangling else</span></span>问题：当 if 套 if 而只有一个 else 时，else 到底属于哪一个 if？讲义的例子是：</p>
+<pre class="c-code"><code>int a = -1, b = 1, c = 1;
+if (a &gt; 0)
+    if (b &gt; 0)
+        c = 2;
+    else
+        c = 3;</code></pre>
+  <p>缩进看起来像“else 属于外层 if”，但 C/C++ 的规则是：else 与最近的、尚未配对的 if 结合。所以这里 else 属于内层 if。执行时 a = -1，外层条件为假，整个内层语句都不执行，c 保持 1。</p>
+  <p>讲义对比了 Python：Python 用缩进定义代码块，因此不存在这种歧义；C/C++ 用花括号，缩进只是给人看的。解决办法是加一对花括号，把意图写清楚：</p>
+<pre class="c-code"><code>if (a &gt; 0)
+{
+    if (b &gt; 0)
+        c = 2;
+    else          // braces avoid dangling else
+        c = 3;
+}</code></pre>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>缩进不改变语义。C/C++ 中 else 绑定最近的未配对 if；需要别的归属时，必须用花括号显式分块。</p>
+  </aside>
+  <p class="c-source">L04b–05 p.28–32</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L04b–05</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch04.html"><span>上一章</span>算法设计与 C/C++ 基础</a>
+          <a class="pager__next" href="ch06.html"><span>下一章</span>控制流：循环与循环设计</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

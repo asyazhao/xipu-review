@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIO103 对比速记 · 全科复习</title>
+  <meta name="description" content="BIO103 细胞与分子生物学易混概念对比表。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-compare" data-subject="bio103" data-chapter="">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html" aria-current="page">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">BIO103</a>
+      <span>/</span>
+      <span aria-current="page">对比速记</span>
+    </nav>
+
+    <header class="page-head">
+      <p class="kicker">BIO103</p>
+      <h1>对比速记</h1>
+      <p class="page-head__en">细胞与分子生物学</p>
+      <p class="page-head__desc">把易混概念放在同一张表里对照，按主题分组。</p>
+    </header>
+
+    <div class="prose">
+<section class="compare-block" id="c1"><h2>原核细胞 vs 真核细胞</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>遗传区室、核糖体与细胞壁的四点对照</caption>
+      <thead>
+        <tr><th scope="col">维度</th><th scope="col">原核细胞</th><th scope="col">真核细胞</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>遗传区室</td><td>拟核，无膜包围</td><td>细胞核，由双层核被膜包围</td></tr>
+        <tr><td>核糖体</td><td>70S（30S + 50S）</td><td>80S（40S + 60S），线粒体与叶绿体内为 70S 型</td></tr>
+        <tr><td>细胞骨架</td><td>简单原核骨架（FtsZ、MreB、crescentin）</td><td>actin 微丝、微管与中间丝构成的复杂骨架</td></tr>
+        <tr><td>细胞壁</td><td>化学组成简单，主要为肽聚糖（mycoplasma 与古菌无）</td><td>植物为纤维素、真菌为几丁质，动物细胞无壁</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">BIO103 L1–2 p.4–5</p></section>
+
+<section class="compare-block" id="c2"><h2>有丝分裂 vs 减数分裂</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>分裂次数、产物与遗传结果</caption>
+      <thead>
+        <tr><th scope="col">维度</th><th scope="col">有丝分裂</th><th scope="col">减数分裂</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>分裂次数</td><td>一次</td><td>两次（减数分裂 I 与 II）</td></tr>
+        <tr><td>产物数目</td><td>2 个子细胞</td><td>4 个子细胞</td></tr>
+        <tr><td>倍性变化</td><td>2N → 2N，保守复制</td><td>2N → N，倍性减半</td></tr>
+        <tr><td>遗传结果</td><td>与母细胞相同，属克隆</td><td>彼此不同，且不同于亲本</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">BIO103 L1–2 p.47–55</p></section>
+
+<section class="compare-block" id="c3"><h2>微管 vs 微丝 vs 中间丝</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>亚基、直径、极性与装配能量</caption>
+      <thead>
+        <tr><th scope="col">维度</th><th scope="col">微管</th><th scope="col">微丝</th><th scope="col">中间丝</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>亚基</td><td>α/β-tubulin 二聚体</td><td>球状 actin 单体</td><td>角蛋白等纤维状多肽</td></tr>
+        <tr><td>直径</td><td>约 25 nm</td><td>约 7 nm（最细）</td><td>约 8–12 nm</td></tr>
+        <tr><td>极性</td><td>有正端与负端</td><td>有正端与负端</td><td>无结构极性</td></tr>
+        <tr><td>装配能量</td><td>GTP 与 Mg²⁺</td><td>ATP</td><td>不需核苷酸水解</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">BIO103 L3–4 p.12–30</p></section>
+
+<section class="compare-block" id="c4"><h2>桥粒 vs 紧密连接 vs 缝隙连接</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>功能、关键蛋白与通透性</caption>
+      <thead>
+        <tr><th scope="col">维度</th><th scope="col">桥粒</th><th scope="col">紧密连接</th><th scope="col">缝隙连接</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>功能</td><td>像“魔术贴”把相邻细胞锚定，抗拉伸</td><td>封闭细胞间隙，阻止旁细胞通路</td><td>形成连通隧道，传递离子与小分子</td></tr>
+        <tr><td>关键蛋白</td><td>斑块与含 cadherin 的糖蛋白丝</td><td>claudin、occludin、JAM</td><td>connexin 组成 connexon，两个对接</td></tr>
+        <tr><td>分布</td><td>受拉伸的组织，如心肌闰盘</td><td>上皮组织，靠近管腔面的侧缘</td><td>心肌与平滑肌中丰富</td></tr>
+        <tr><td>通透性</td><td>不形成细胞间通道</td><td>不通透，仅允许调控性跨细胞运输</td><td>允许小于 1500 Da 的分子通过</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">BIO103 L7–8 p.4–9</p></section>
+
+<section class="compare-block" id="c5"><h2>前导链 vs 后随链</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>合成方向、连续性与所需酶</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">前导链</th><th scope="col">后随链</th></tr></thead>
+      <tbody>
+        <tr><td>与复制叉的关系</td><td>合成方向与复制叉前进方向一致</td><td>合成方向与复制叉前进方向相反</td></tr>
+        <tr><td>连续性</td><td>连续延伸</td><td>不连续，分段合成</td></tr>
+        <tr><td>引物数量</td><td>只需一个起始引物</td><td>每个 Okazaki 片段各需一个引物</td></tr>
+        <tr><td>片段大小</td><td>无片段化</td><td>原核 1000–2000 bp，真核 100–200 bp</td></tr>
+        <tr><td>成熟所需酶</td><td>DNA 聚合酶 III 延伸</td><td>Pol III 延伸、Pol I 替换引物、连接酶封口</td></tr>
+        <tr><td>共同点</td><td colspan="2">两条新链的化学合成方向都是 5′→3′</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">BIO103 L11 p.17–22</p></section>
+
+<section class="compare-block" id="c6"><h2>trp 操纵子 vs lac 操纵子</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>默认状态、配体角色与调控类型</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">trp 操纵子</th><th scope="col">lac 操纵子</th></tr></thead>
+      <tbody>
+        <tr><td>操纵子类型</td><td>可阻遏（repressible）</td><td>可诱导（inducible）</td></tr>
+        <tr><td>默认状态</td><td>通常开启，低速率合成</td><td>通常关闭</td></tr>
+        <tr><td>小分子与角色</td><td>色氨酸，辅阻遏物</td><td>异乳糖，诱导物</td></tr>
+        <tr><td>阻遏蛋白默认状态</td><td>无活性，结合色氨酸后活化</td><td>有活性，结合异乳糖后失活</td></tr>
+        <tr><td>所属通路</td><td>合成代谢（anabolic）</td><td>分解代谢（catabolic）</td></tr>
+        <tr><td>额外调控</td><td>色氨酸反馈抑制（feedback inhibition）抑制通路第一个酶</td><td>CRP–cAMP 正调控，受葡萄糖影响</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">BIO103 L14–15 p.7–25</p></section>
+
+<section class="compare-block" id="c7"><h2>原核转录 vs 真核转录</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>聚合酶、启动子、终止与加工</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">原核</th><th scope="col">真核</th></tr></thead>
+      <tbody>
+        <tr><td>RNA 聚合酶</td><td>一种，合成所有类型 RNA</td><td>核内至少三种，pre-mRNA 由 Pol II 合成</td></tr>
+        <tr><td>启动子元件</td><td>−35 盒 TTGACA、−10 盒 TATAAT</td><td>TATA 盒、BRE、DPE、起始序列</td></tr>
+        <tr><td>起始蛋白</td><td>σ 因子</td><td>通用转录因子 TFIID→TFIIH 与特异性因子</td></tr>
+        <tr><td>终止方式</td><td>Rho 依赖或 Rho 非依赖</td><td>poly-A 信号 AAUAAA 下游切割释放 pre-mRNA</td></tr>
+        <tr><td>转录后加工</td><td>不需要，转录本可直接翻译</td><td>5′ 加帽、3′ 加 poly-A、剪接</td></tr>
+        <tr><td>转录与翻译</td><td>同一区室，可同时进行</td><td>核膜分隔，时间与空间分离</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">BIO103 L13 p.19–40, p.50–62</p></section>
+
+<section class="compare-block" id="c8"><h2>MMR vs NER vs BER</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>识别对象、切除范围与关键酶</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">MMR</th><th scope="col">NER</th><th scope="col">BER</th></tr></thead>
+      <tbody>
+        <tr><td>识别对象</td><td>复制后的错误碱基配对</td><td>螺旋形状扭曲（如胸腺嘧啶二聚体）</td><td>不显著扭曲螺旋的小碱基损伤</td></tr>
+        <tr><td>切除范围</td><td>错配区域（子链）</td><td>含损伤的一段单链片段</td><td>单个受损碱基</td></tr>
+        <tr><td>关键酶</td><td>MutS / MutL / MutH</td><td>核酸酶、DNA 聚合酶、连接酶</td><td>DNA 糖基化酶、APE1、AP 裂解酶、Pol β</td></tr>
+        <tr><td>典型底物</td><td>错配、插入/缺失环</td><td>UV 二聚体、大体积化学加合物</td><td>尿嘧啶、氧化或甲基化碱基</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">BIO103 L12 slide 26–33</p></section>
+
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

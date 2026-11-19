@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 均匀与正态分布 · 全科复习</title>
+  <meta name="description" content="MTH113 第 7 章 均匀与正态分布：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="mth113" data-chapter="07">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">MTH113</a>
+      <span>/</span>
+      <span aria-current="page">第 7 章 均匀与正态分布</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html" class="is-current" aria-current="page"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html" class="is-current" aria-current="page"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">MTH113 · 第 7 章</p>
+          <h1>均匀与正态分布</h1>
+          <p class="chapter-head__en">Uniform &amp; Normal Distributions</p>
+          <p class="chapter-head__meta">来源 W7 · 术语 7 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">7.1 连续概率回顾：面积、PDF 与 CDF</a></li>
+        <li><a href="#s2">7.2 均匀分布：密度与区间概率</a></li>
+        <li><a href="#s3">7.3 均匀 CDF、均值、方差与分位数</a></li>
+        <li><a href="#s4">7.4 密度可以大于 1，以及均匀模型的前提</a></li>
+        <li><a href="#s5">7.5 一般连续 CDF 与生存函数</a></li>
+        <li><a href="#s6">7.6 连续期望、方差与反 CDF</a></li>
+        <li><a href="#s7">7.7 正态分布：密度与参数含义</a></li>
+        <li><a href="#s8">7.8 标准正态、Φ(z) 与经验法则</a></li>
+        <li><a href="#s9">7.9 标准化与正态概率计算</a></li>
+        <li><a href="#s10">7.10 正态模型检查与制造综合例</a></li>
+        <li><a href="#s11">7.11 常见错误与公式总表</a></li>
+        <li><a href="#s12">7.12 标准正态与正态概率的自测题</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲进入命名连续分布：先复习“概率即面积”，再完整处理均匀分布的 PDF、CDF、均值、<span class="c-term c-term--auto" data-term="variance" title="方差｜variance：偏差平方的概率加权平均，衡量离散程度。">方差</span>与<span class="c-term c-term--auto" data-term="quantile" title="分位数｜quantile：使累积概率达到 p 的取值。">分位数</span>，最后引入正态分布并用标准化 <i>Z</i> = (<i>X</i>−<i>μ</i>)/<i>σ</i> 把任意正态概率化为标准正态概率。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>连续变量的概率是<span class="c-term c-term--auto" data-term="density-curve" title="密度曲线｜density curve：面积表示概率的光滑曲线。">密度曲线</span>下的面积，单点概率为 0，端点是否包含不影响结果。</li>
+    <li>PDF 必须非负且全轴积分为 1；密度高度可以大于 1。</li>
+    <li>均匀分布 <i>X</i> ~ Uniform(<i>a</i>, <i>b</i>)：<i>f</i>(<i>x</i>) = 1/(<i>b</i>−<i>a</i>)，<i>F</i>(<i>x</i>) = (<i>x</i>−<i>a</i>)/(<i>b</i>−<i>a</i>)。</li>
+    <li>均匀分布 <i>E</i>(<i>X</i>) = (<i>a</i>+<i>b</i>)/2，<i>Var</i>(<i>X</i>) = (<i>b</i>−<i>a</i>)<sup>2</sup>/12，第 <i>p</i> 分位数为 <i>a</i> + <i>p</i>(<i>b</i>−<i>a</i>)。</li>
+    <li>任意连续分布都可用 <i>P</i>(<i>a</i>&lt;<i>X</i>&lt;<i>b</i>) = <i>F</i>(<i>b</i>)−<i>F</i>(<i>a</i>) 与生存函数 <i>S</i>(<i>x</i>) = 1−<i>F</i>(<i>x</i>)。</li>
+    <li>正态分布 <i>X</i> ~ N(<i>μ</i>, <i>σ</i><sup>2</sup>)：<i>μ</i> 控制位置，<i>σ</i> 控制离散程度，曲线关于 <i>μ</i> 对称。</li>
+    <li><span class="c-term">标准化<span class="c-term__en">standardization</span></span> <i>Z</i> = (<i>X</i>−<i>μ</i>)/<i>σ</i> ~ N(0,1)，用 <i>Φ</i>(<i>z</i>) 查表或计算。</li>
+    <li><i>Φ</i>(−<i>z</i>) = 1 − <i>Φ</i>(<i>z</i>)；经验法则 68%–95%–99.7% 只用于快速判断。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">7.1</span> 连续概率回顾：面积、PDF 与 CDF</h2>
+  <p><span class="c-term c-term--auto" data-term="continuous-random-variable" title="连续随机变量｜continuous random variable：可能取值填满一个区间的随机变量。">连续随机变量</span>的可能取值填满区间，概率对象不是单点而是区间：</p>
+  <div class="c-formula"><i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = ∫<sub><i>a</i></sub><sup><i>b</i></sup> <i>f</i>(<i>x</i>)<i>dx</i></div>
+  <p>密度高度本身不是概率，只有面积才是概率。密度值可以大于 1，只要总面积为 1。合法 PDF 的两条要求是 <i>f</i>(<i>x</i>) ≥ 0 与 ∫<sub>−∞</sub><sup>∞</sup><i>f</i>(<i>x</i>)<i>dx</i> = 1，这正是离散情形 <i>p</i>(<i>x</i>) ≥ 0 与 Σ<i>p</i>(<i>x</i>) = 1 的连续版本。</p>
+  <p>连续变量 <i>P</i>(<i>X</i> = <i>a</i>) = 0，所以</p>
+  <div class="c-formula"><i>P</i>(<i>a</i>&lt;<i>X</i>&lt;<i>b</i>) = <i>P</i>(<i>a</i>≤<i>X</i>&lt;<i>b</i>) = <i>P</i>(<i>a</i>&lt;<i>X</i>≤<i>b</i>) = <i>P</i>(<i>a</i>≤<i>X</i>≤<i>b</i>)</div>
+  <p>端点是否包含只改变一条零宽度的线。CDF 定义为 <i>F</i>(<i>x</i>) = <i>P</i>(<i>X</i> ≤ <i>x</i>) = ∫<sub>−∞</sub><sup><i>x</i></sup><i>f</i>(<i>t</i>)<i>dt</i>，于是 <i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = <i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)。当 <i>F</i> 可导时 <i>f</i>(<i>x</i>) = <i>F</i>′(<i>x</i>)；<i>F</i> 非减，左端为 0、右端为 1。</p>
+  <p>讲义建议养成“先画图”的习惯：标出<span class="c-term c-term--auto" data-term="support" title="支撑集｜support：随机变量以正概率取到的全部值。">支撑集</span>、密度曲线、所求区间或尾部，再判断是否用补集。一张草图能避免大量代数错误。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>连续题的三件套：PDF 合法性、CDF 分段、<i>F</i>(<i>b</i>)−<i>F</i>(<i>a</i>)。任何“精确等于某点”的概率都写成 0。</p>
+  </aside>
+  <p class="c-source">W7 p.5–10</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">7.2</span> 均匀分布：密度与区间概率</h2>
+  <p><span class="c-term">均匀分布<span class="c-term__en">uniform distribution</span></span>建模在一个区间内处处等可能的取值。例：班车完全准点、乘客随机到达时的等车时间；在舍入区间内均匀分布的测量值；软件生成的 0 到 1 随机数。密度是平的，因为任何等长子区间都不比其他子区间更受偏爱。</p>
+  <p>若 <i>X</i> ~ Uniform(<i>a</i>, <i>b</i>)，则</p>
+  <div class="c-formula"><i>f</i>(<i>x</i>) = 1/(<i>b</i> − <i>a</i>)，<i>a</i> &lt; <i>x</i> &lt; <i>b</i>；&nbsp; 其他处为 0</div>
+  <p>矩形面积 (<i>b</i>−<i>a</i>) × 1/(<i>b</i>−<i>a</i>) = 1，所以合法。对 <i>a</i> &lt; <i>c</i> &lt; <i>d</i> &lt; <i>b</i>，</p>
+  <div class="c-formula"><i>P</i>(<i>c</i> &lt; <i>X</i> &lt; <i>d</i>) = (<i>d</i> − <i>c</i>)/(<i>b</i> − <i>a</i>)</div>
+  <p>概率与区间长度成正比。例 <i>X</i> ~ Uniform(2, 5)：<i>P</i>(3 &lt; <i>X</i> &lt; 4.5) = (4.5−3)/(5−2) = 1.5/3 = 0.5。</p>
+  <p>班车例：<i>X</i> ~ Uniform(0, 10)，<i>f</i>(<i>x</i>) = 1/10。则 <i>P</i>(<i>X</i> &lt; 3) = 0.30；<i>P</i>(4 &lt; <i>X</i> &lt; 8) = 0.40；<i>P</i>(<i>X</i> &gt; 7) = 1 − <i>F</i>(7) = 1 − 0.7 = 0.30。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 7-1 均匀密度与均匀 CDF</span>
+      <button class="c-copy" type="button" data-copy="Clean vector two-panel figure for Uniform(0,10): left a flat density at height 0.1 from 0 to 10 with the region between 4 and 8 shaded and labelled P(4 < X < 8) = 0.4; right the CDF as a straight line from 0 at x=0 to 1 at x=10. Axes labelled x, f(x) and F(x). Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector two-panel figure for Uniform(0,10): left a flat density at height 0.1 from 0 to 10 with the region between 4 and 8 shaded and labelled P(4 < X < 8) = 0.4; right the CDF as a straight line from 0 at x=0 to 1 at x=10. Axes labelled x, f(x) and F(x). Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>均匀分布的概率只与长度有关，但前提是区间完全落在支撑集内。若区间越界，超出部分密度为 0，不能直接按长度比计算。</p>
+  </aside>
+  <p class="c-source">W7 p.12–14、17</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">7.3</span> 均匀 CDF、均值、方差与分位数</h2>
+  <p>对 <i>X</i> ~ Uniform(<i>a</i>, <i>b</i>)，</p>
+  <div class="c-formula"><i>F</i>(<i>x</i>) = 0 (<i>x</i> &lt; <i>a</i>)；(<i>x</i>−<i>a</i>)/(<i>b</i>−<i>a</i>) (<i>a</i> ≤ <i>x</i> ≤ <i>b</i>)；1 (<i>x</i> &gt; <i>b</i>)</div>
+  <p>在支撑集内，<i>F</i> 是一条直线：<i>F</i>(<i>x</i>) = ∫<sub><i>a</i></sub><sup><i>x</i></sup>1/(<i>b</i>−<i>a</i>)<i>dt</i> = (<i>x</i>−<i>a</i>)/(<i>b</i>−<i>a</i>)。</p>
+  <p>均值与方差为</p>
+  <div class="c-formula"><i>E</i>(<i>X</i>) = (<i>a</i>+<i>b</i>)/2，&nbsp; <i>Var</i>(<i>X</i>) = (<i>b</i>−<i>a</i>)<sup>2</sup>/12，&nbsp; <i>SD</i>(<i>X</i>) = (<i>b</i>−<i>a</i>)/√12</div>
+  <p>例 <i>X</i> ~ Uniform(2, 5)：<i>E</i> = 3.5，<i>Var</i> = 9/12 = 0.75。</p>
+  <p>分位数解 <i>F</i>(<i>x<sub>p</sub></i>) = <i>p</i>：</p>
+  <div class="c-formula">(<i>x<sub>p</sub></i> − <i>a</i>)/(<i>b</i> − <i>a</i>) = <i>p</i> &nbsp;⇒&nbsp; <i>x<sub>p</sub></i> = <i>a</i> + <i>p</i>(<i>b</i> − <i>a</i>)</div>
+  <p>例 <i>X</i> ~ Uniform(0, 10)，求 <i>c</i> 使 <i>P</i>(<i>X</i> &lt; <i>c</i>) = 0.90：<i>c</i>/10 = 0.90，<i>c</i> = 9。Uniform(20, 40) 的 75 百分位为 20 + 0.75(20) = 35。</p>
+  <p>快速检查：<i>X</i> ~ Uniform(12, 20)，密度 1/8；<i>P</i>(14 &lt; <i>X</i> &lt; 18) = 4/8 = 0.5；<i>F</i>(17) = 5/8 = 0.625；<i>E</i> = 16；<i>SD</i> = 8/√12 ≈ 2.31。</p>
+  <p>方差公式也可由 <i>E</i>(<i>X</i><sup>2</sup>) 推出：<i>E</i>(<i>X</i><sup>2</sup>) = (1/(<i>b</i>−<i>a</i>))∫<sub><i>a</i></sub><sup><i>b</i></sup><i>x</i><sup>2</sup><i>dx</i> = (<i>a</i><sup>2</sup>+<i>ab</i>+<i>b</i><sup>2</sup>)/3，再减 [(<i>a</i>+<i>b</i>)/2]<sup>2</sup>，化简得 (<i>b</i>−<i>a</i>)<sup>2</sup>/12。直观上区间越宽方差越大；分母 12 来自二次积分的平均效果，与<span class="c-term c-term--auto" data-term="sample" title="样本｜sample：实际被观测到的总体子集。">样本</span>方差的 <i>n</i>−1 不是同一来源，不要混淆。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>均匀分布的分位数不要硬解积分，直接用 <i>a</i> + <i>p</i>(<i>b</i>−<i>a</i>)。方差公式分母是 12，不是 2 或 <i>n</i>−1。</p>
+  </aside>
+  <p class="c-source">W7 p.15–19、22</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">7.4</span> 密度可以大于 1，以及均匀模型的前提</h2>
+  <p>令 <i>X</i> ~ Uniform(0, 0.2)，则 <i>f</i>(<i>x</i>) = 1/0.2 = 5。密度高度 5 看似违反“概率不超过 1”，但 ∫<sub>0</sub><sup>0.2</sup>5<i>dx</i> = 1，合法。概率是面积，不是高度；只有在宽度为 1 的区间上，密度数值才恰好等于概率。</p>
+  <p>均匀模型假设：区间 [<i>a</i>, <i>b</i>] 固定且有限；任何等长子区间概率相同；区间内部没有聚集或趋势。若班车会延误、乘客会挑时间到达，或存在高峰，真实等待时间就不均匀。模型批评（model criticism）是统计建模的一部分，不能因为公式简单就忽略假设。</p>
+  <p>“均匀”也不等于“随机数一定均匀”。软件生成的 0 到 1 随机数在理论上近似 Uniform(0,1)，但真实测量值往往有舍入、量程限制或人为取整，需要先看<span class="c-term c-term--auto" data-term="histogram" title="直方图｜histogram：用相接的柱表示数值数据各区间频数的图。">直方图</span>再决定。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>密度大于 1 不是错误；密度为负、总积分不等于 1 才是错误。考试若问“这个 <i>f</i>(<i>x</i>) 是否可为 PDF”，先查非负与积分，不要被高度吓到。</p>
+  </aside>
+  <p class="c-source">W7 p.20–21</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">7.5</span> 一般连续 CDF 与生存函数</h2>
+  <p>公式 <i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = <i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>) 对任何连续分布都成立，只要 <i>F</i> 已知。例：若 <i>F</i>(<i>x</i>) = 1 − <i>e</i><sup>−<i>x</i>/4</sup>（<i>x</i> ≥ 0），则 <i>P</i>(2 &lt; <i>X</i> &lt; 6) = (1 − <i>e</i><sup>−6/4</sup>) − (1 − <i>e</i><sup>−2/4</sup>) = <i>e</i><sup>−0.5</sup> − <i>e</i><sup>−1.5</sup>。这里只用到 CDF 相减，不需要知道密度的具体形式。</p>
+  <p>右尾概率常称为<span class="c-term">生存函数<span class="c-term__en">survival function</span></span>：</p>
+  <div class="c-formula"><i>S</i>(<i>x</i>) = <i>P</i>(<i>X</i> &gt; <i>x</i>) = 1 − <i>F</i>(<i>x</i>)</div>
+  <p>它在等待时间与寿命问题中尤其有用：<i>S</i>(<i>t</i>) 表示元件寿命超过 <i>t</i> 的概率。对 <i>P</i>(<i>X</i> &gt; <i>c</i>)，直接用 1 − <i>F</i>(<i>c</i>) 比积分尾部更快。</p>
+  <p>CDF 与生存函数的互补关系也提供了检查手段：<i>F</i>(<i>x</i>) + <i>S</i>(<i>x</i>) = 1；若算出两者之和不为 1，说明某一步代数或分段写错。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>“至少/超过”用生存函数 1 − <i>F</i>(<i>c</i>)；“至多/不超过”用 <i>F</i>(<i>c</i>)。连续情形两端相等与否不影响结果，但写公式时仍要分清。</p>
+  </aside>
+  <p class="c-source">W7 p.23–24</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">7.6</span> 连续<span class="c-term c-term--auto" data-term="expected-value" title="期望｜expected value：取值的概率加权平均，描述分布中心。">期望</span>、方差与反 CDF</h2>
+  <p>连续期望与方差仍为</p>
+  <div class="c-formula"><i>E</i>(<i>X</i>) = ∫<i>xf</i>(<i>x</i>)<i>dx</i>，&nbsp; <i>E</i>[<i>g</i>(<i>X</i>)] = ∫<i>g</i>(<i>x</i>)<i>f</i>(<i>x</i>)<i>dx</i></div>
+  <div class="c-formula"><i>Var</i>(<i>X</i>) = <i>E</i>[(<i>X</i>−<i>μ</i>)<sup>2</sup>] = <i>E</i>(<i>X</i><sup>2</sup>) − [<i>E</i>(<i>X</i>)]<sup>2</sup></div>
+  <p>均匀均值的推导：<i>E</i>(<i>X</i>) = (1/(<i>b</i>−<i>a</i>))∫<sub><i>a</i></sub><sup><i>b</i></sup><i>x</i> <i>dx</i> = (<i>b</i><sup>2</sup>−<i>a</i><sup>2</sup>)/[2(<i>b</i>−<i>a</i>)] = (<i>a</i>+<i>b</i>)/2。方差先算 <i>E</i>(<i>X</i><sup>2</sup>) = (<i>a</i><sup>2</sup>+<i>ab</i>+<i>b</i><sup>2</sup>)/3，再减均值平方，得 (<i>b</i>−<i>a</i>)<sup>2</sup>/12。</p>
+  <p><span class="c-term">反 CDF<span class="c-term__en">inverse CDF</span></span>：若 <i>F</i> 连续且严格递增，第 <i>p</i> 分位数 <i>x<sub>p</sub></i> 满足 <i>F</i>(<i>x<sub>p</sub></i>) = <i>p</i>，等价于 <i>x<sub>p</sub></i> = <i>F</i><sup>−1</sup>(<i>p</i>)。它用于求百分位、风险阈值与模拟。均匀分布的反 CDF 最简单：<i>x<sub>p</sub></i> = <i>a</i> + <i>p</i>(<i>b</i>−<i>a</i>)。</p>
+  <p>注意：反 CDF 存在的前提是 <i>F</i> 在该区间上可逆；若 <i>F</i> 有平台（离散分布），分位数要按“最小 <i>k</i> 使 <i>F</i>(<i>k</i>) ≥ <i>p</i>”定义，不能直接求逆。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>反 CDF 求的是“累积概率为 <i>p</i> 的取值”，不是“密度为 <i>p</i> 的取值”。不要把 <i>f</i>(<i>x</i>) = <i>p</i> 当成分位数方程。</p>
+  </aside>
+  <p class="c-source">W7 p.25–29</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">7.7</span> 正态分布：密度与<span class="c-term c-term--auto" data-term="parameter" title="参数｜parameter：对整个总体的数值概括，通常未知。">参数</span>含义</h2>
+  <p><span class="c-term">正态分布<span class="c-term__en">normal distribution</span></span>常见，因为许多测量围绕中心聚集；许多小的独立<span class="c-term c-term--auto" data-term="variability" title="变异｜variability：观测值并不完全相同的性质。">变异</span>源相加后近似正态；<span class="c-term c-term--auto" data-term="sampling-distribution" title="抽样分布｜sampling distribution：重复抽样下统计量的概率分布。">抽样分布</span>常近似正态；它也能近似许多实际数据分布。但讲义提醒：不是每个钟形直方图都精确正态，也不是每个数据集都该用正态模型。</p>
+  <p>若 <i>X</i> ~ N(<i>μ</i>, <i>σ</i><sup>2</sup>)，密度为</p>
+  <div class="c-formula"><i>f</i>(<i>x</i>) = 1/(<i>σ</i>√(2π)) · exp{ −(1/2)[(<i>x</i>−<i>μ</i>)/<i>σ</i>]<sup>2</sup> }，&nbsp; −∞ &lt; <i>x</i> &lt; ∞</div>
+  <p>且 <i>E</i>(<i>X</i>) = <i>μ</i>，<i>Var</i>(<i>X</i>) = <i>σ</i><sup>2</sup>。<i>μ</i> 控制中心位置：改变 <i>μ</i> 使曲线左右平移。<i>σ</i> 控制离散程度：<i>σ</i> 越大，曲线越宽越低；<i>σ</i> 越小，曲线越窄越高。曲线关于 <i>μ</i> 对称，因此 <i>P</i>(<i>X</i> &lt; <i>μ</i>) = <i>P</i>(<i>X</i> &gt; <i>μ</i>) = 0.5。</p>
+  <p>记号陷阱：N(<i>μ</i>, <i>σ</i><sup>2</sup>) 的第二个参数是方差，不是<span class="c-term c-term--auto" data-term="standard-deviation" title="标准差｜standard deviation：方差的平方根，单位与原变量相同。">标准差</span>。若题目写 <i>X</i> ~ N(20, 9)，则 <i>σ</i> = 3；若写 N(20, 3<sup>2</sup>)，<i>σ</i> 也是 3。读题时先确认括号里是 <i>σ</i> 还是 <i>σ</i><sup>2</sup>。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 7-2 不同 σ 的正态曲线</span>
+      <button class="c-copy" type="button" data-copy="Clean vector plot of three normal density curves centred at zero with standard deviations 0.5, 1 and 2, drawn in three muted tones, showing that larger sigma gives a wider and lower curve while all curves remain symmetric about zero. Axes labelled x and f(x), legend sigma = 0.5, sigma = 1, sigma = 2. Flat 2D, thin 1.5 px strokes, muted slate blue, warm grey and sand palette, white background, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/mth113-normal.svg" alt="不同标准差 σ 的正态曲线" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector plot of three normal density curves centred at zero with standard deviations 0.5, 1 and 2, drawn in three muted tones, showing that larger sigma gives a wider and lower curve while all curves remain symmetric about zero. Axes labelled x and f(x), legend sigma = 0.5, sigma = 1, sigma = 2. Flat 2D, thin 1.5 px strokes, muted slate blue, warm grey and sand palette, white background, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p><i>μ</i> 管位置、<i>σ</i> 管宽度；N(<i>μ</i>, <i>σ</i><sup>2</sup>) 的第二个参数是方差。对称性给出 <i>P</i>(<i>X</i>&lt;<i>μ</i>) = 0.5，这是很多尾概率题的捷径。</p>
+  </aside>
+  <p class="c-source">W7 p.31–35</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">7.8</span> 标准正态、<i>Φ</i>(<i>z</i>) 与经验法则</h2>
+  <p><span class="c-term">标准正态分布<span class="c-term__en">standard normal distribution</span></span>是 <i>Z</i> ~ N(0, 1)，密度记 <i>φ</i>(<i>z</i>) = (1/√(2π))<i>e</i><sup>−<i>z</i><sup>2</sup>/2</sup>，CDF 记</p>
+  <div class="c-formula"><i>Φ</i>(<i>z</i>) = <i>P</i>(<i>Z</i> ≤ <i>z</i>) = ∫<sub>−∞</sub><sup><i>z</i></sup> (1/√(2π))<i>e</i><sup>−<i>t</i><sup>2</sup>/2</sup><i>dt</i></div>
+  <p><i>Φ</i>(<i>z</i>) 没有初等闭式，必须查表、用计算器或软件。考试通常给表或给关键值。</p>
+  <p>对称性给出三条常用恒等式：</p>
+  <div class="c-formula"><i>Φ</i>(−<i>z</i>) = 1 − <i>Φ</i>(<i>z</i>)；&nbsp; <i>P</i>(<i>Z</i> &gt; <i>z</i>) = 1 − <i>Φ</i>(<i>z</i>)；&nbsp; <i>P</i>(−<i>z</i> &lt; <i>Z</i> &lt; <i>z</i>) = 2<i>Φ</i>(<i>z</i>) − 1</div>
+  <p>例：<i>Φ</i>(1.96) = 0.975，则 <i>P</i>(−1.96 &lt; <i>Z</i> &lt; 1.96) = 2(0.975) − 1 = 0.95。</p>
+  <p><span class="c-term">经验法则<span class="c-term__en">empirical rule</span></span>：对近似正态的分布，<i>μ</i> ± <i>σ</i> 内约 68%，<i>μ</i> ± 2<i>σ</i> 内约 95%，<i>μ</i> ± 3<i>σ</i> 内约 99.7%。它适合快速判断，不适合替代精确计算；考试若要求概率，仍要标准化后查 <i>Φ</i>。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><i>Φ</i>(−<i>z</i>) ≠ −<i>Φ</i>(<i>z</i>)。CDF 恒为正，正确关系是 <i>Φ</i>(−<i>z</i>) = 1 − <i>Φ</i>(<i>z</i>)。负 z 的查表值要靠这条换算。</p>
+  </aside>
+  
+<!-- course-image:mth113-ch07-empirical-rule.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-mth113-ch07-empirical-rule">
+        <img class="c-course-figure__img" src="../../assets/course/mth113-ch07-empirical-rule.jpg" alt="经验法则：68–95–99.7" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 经验法则：68–95–99.7 <span class="c-course-figure__src">来源：Week 7 p.38</span></figcaption>
+      </figure>
+
+<p class="c-source">W7 p.36–38</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">7.9</span> 标准化与正态概率计算</h2>
+  <p>若 <i>X</i> ~ N(<i>μ</i>, <i>σ</i><sup>2</sup>)，则</p>
+  <div class="c-formula"><i>Z</i> = (<i>X</i> − <i>μ</i>)/<i>σ</i> ~ N(0, 1)</div>
+  <p><span class="c-term">z 分数<span class="c-term__en">z-score</span></span>表示 <i>X</i> 在均值之上或之下多少个标准差；反解为 <i>x</i> = <i>μ</i> + <i>zσ</i>。计算 <i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) 的模板：</p>
+  <div class="c-formula"><i>z<sub>a</sub></i> = (<i>a</i>−<i>μ</i>)/<i>σ</i>，<i>z<sub>b</sub></i> = (<i>b</i>−<i>μ</i>)/<i>σ</i>；&nbsp; <i>P</i>(<i>a</i>&lt;<i>X</i>&lt;<i>b</i>) = <i>Φ</i>(<i>z<sub>b</sub></i>) − <i>Φ</i>(<i>z<sub>a</sub></i>)</div>
+  <p>例 1：<i>X</i> ~ N(100, 15<sup>2</sup>)，求 <i>P</i>(85 &lt; <i>X</i> &lt; 130)。<i>z</i><sub>1</sub> = (85−100)/15 = −1，<i>z</i><sub>2</sub> = (130−100)/15 = 2。<i>P</i> = <i>Φ</i>(2) − <i>Φ</i>(−1) = 0.9772 − 0.1587 = 0.8185。</p>
+  <p>例 2（右尾）：<i>X</i> ~ N(50, 5<sup>2</sup>)，<i>P</i>(<i>X</i> &gt; 60)：<i>z</i> = 2，<i>P</i> = 1 − <i>Φ</i>(2) = 1 − 0.9772 = 0.0228。</p>
+  <p>例 3（左尾）：同分布，<i>P</i>(<i>X</i> &lt; 43)：<i>z</i> = −1.4，<i>P</i> = <i>Φ</i>(−1.4) = 1 − <i>Φ</i>(1.4) = 1 − 0.9192 = 0.0808。</p>
+  <p>例 4（中间）：<i>X</i> ~ N(12, 2<sup>2</sup>)，<i>P</i>(10 &lt; <i>X</i> &lt; 15)：<i>z</i> = −1 与 1.5，<i>P</i> = 0.9332 − 0.1587 = 0.7745。</p>
+  <p>软件只作核对：R 用 <code>pnorm</code>，Excel 用 <code>=NORM.DIST(x, mean, sd, TRUE)</code>。注意 R 的 <code>sd</code> 参数是标准差，不是方差。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>标准化的分母是 <i>σ</i>，不是 <i>σ</i><sup>2</sup>。区间概率用 <i>Φ</i>(上界 z) − <i>Φ</i>(下界 z)，顺序不能反；右尾用 1 − <i>Φ</i>(<i>z</i>)。</p>
+  </aside>
+  <p class="c-source">W7 p.39–44</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">7.10</span> 正态模型检查与制造综合例</h2>
+  <p>使用正态模型前先问：变量是否连续或近似连续？分布是否大致对称单峰？是否有强异常值或重尾？情境是否支持“围绕中心随机波动”？正态曲线是模型，不是保证。强偏态、不能取负却大量聚集在 0 附近、多峰、尾部远厚于正态，都会使正态模型不合适。</p>
+  <p>综合例：某工序轴径近似 N(20.00, 0.04<sup>2</sup>) mm，合格范围 19.94 &lt; <i>X</i> &lt; 20.08。</p>
+  <div class="c-formula"><i>z</i><sub>1</sub> = (19.94−20.00)/0.04 = −1.5，&nbsp; <i>z</i><sub>2</sub> = (20.08−20.00)/0.04 = 2</div>
+  <div class="c-formula"><i>P</i>(19.94&lt;<i>X</i>&lt;20.08) = <i>Φ</i>(2) − <i>Φ</i>(−1.5) = 0.9772 − 0.0668 = 0.9104</div>
+  <p>约 91.04% 的轴径合格。若想提高合格率，可以移动 <i>μ</i> 使区间更居中，或减小 <i>σ</i> 使标准化上下限离 0 更远、中心面积更大。前者改变位置，后者改变离散程度，两者作用机制不同。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>“提高合格率”的两种手段不要混：调整 <i>μ</i> 是把曲线平移，减小 <i>σ</i> 是把曲线变窄。只有后者会同时降低超出两侧规格的概率。</p>
+  </aside>
+  <p class="c-source">W7 p.47–48</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">7.11</span> 常见错误与公式总表</h2>
+  <p>本讲最典型的错误是把 N(<i>μ</i>, <i>σ</i><sup>2</sup>) 的第二个参数当成标准差；其次是不标准化就用 <i>Φ</i>(<i>z</i>)；再其次是混淆 <i>P</i>(<i>X</i> &lt; 5) 与 <i>P</i>(<i>X</i> ≤ 5)（连续情形相等）；还有把密度高度当成概率、忘记均匀分布方差分母为 12。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>Week 7 核心公式</caption>
+      <thead><tr><th scope="col">对象</th><th scope="col">公式</th></tr></thead>
+      <tbody>
+        <tr><td>均匀 PDF</td><td><i>f</i>(<i>x</i>) = 1/(<i>b</i>−<i>a</i>)，<i>a</i> &lt; <i>x</i> &lt; <i>b</i></td></tr>
+        <tr><td>均匀 CDF</td><td>(<i>x</i>−<i>a</i>)/(<i>b</i>−<i>a</i>)</td></tr>
+        <tr><td>均匀均值 / 方差</td><td>(<i>a</i>+<i>b</i>)/2，(<i>b</i>−<i>a</i>)<sup>2</sup>/12</td></tr>
+        <tr><td>均匀分位数</td><td><i>a</i> + <i>p</i>(<i>b</i>−<i>a</i>)</td></tr>
+        <tr><td>连续区间概率</td><td><i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)</td></tr>
+        <tr><td>生存函数</td><td><i>S</i>(<i>x</i>) = 1 − <i>F</i>(<i>x</i>)</td></tr>
+        <tr><td>正态标准化</td><td><i>Z</i> = (<i>X</i>−<i>μ</i>)/<i>σ</i></td></tr>
+        <tr><td>正态区间概率</td><td><i>Φ</i>((<i>b</i>−<i>μ</i>)/<i>σ</i>) − <i>Φ</i>((<i>a</i>−<i>μ</i>)/<i>σ</i>)</td></tr>
+        <tr><td>对称性</td><td><i>Φ</i>(−<i>z</i>) = 1 − <i>Φ</i>(<i>z</i>)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>看到 N(<i>μ</i>, <i>σ</i><sup>2</sup>) 先写下 <i>σ</i>；看到“middle 95%”想 <i>μ</i> ± 1.96<i>σ</i>；看到“top 5%”想 z = 1.645（下一讲会系统处理分位数）。</p>
+  </aside>
+  <p class="c-source">W7 p.49–50、59–60</p>
+</section>
+
+<section id="s12">
+  <h2 id="s12"><span class="sec-num">7.12</span> 标准正态与正态概率的自测题</h2>
+  <p>讲义最后给出一组板演题，用来检查是否真正掌握标准化与查表。第一组：已知 <i>Φ</i>(1.25) = 0.8944，求 <i>P</i>(<i>Z</i> &lt; 1.25)、<i>P</i>(<i>Z</i> &gt; 1.25)、<i>P</i>(−1.25 &lt; <i>Z</i> &lt; 1.25)。答案分别为 0.8944、1 − 0.8944 = 0.1056、2(0.8944) − 1 = 0.7888。三问共用一条对称性，不必分别查表。</p>
+  <p>第二组：<i>X</i> ~ N(40, 6<sup>2</sup>)，求 <i>P</i>(34 &lt; <i>X</i> &lt; 49)。标准化得 <i>z</i> = −1 与 1.5，故概率为 <i>Φ</i>(1.5) − <i>Φ</i>(−1) = 0.9332 − 0.1587 = 0.7745。第三组：<i>X</i> ~ N(100, 12<sup>2</sup>)，求 <i>P</i>(<i>X</i> &gt; 124)：<i>z</i> = 2，概率 1 − <i>Φ</i>(2) = 0.0228。</p>
+  <p>第四组回到密度：<i>f</i>(<i>x</i>) = <i>kx</i>（0 &lt; <i>x</i> &lt; 2），由 ∫<sub>0</sub><sup>2</sup><i>kx dx</i> = 2<i>k</i> = 1 得 <i>k</i> = 1/2；若 <i>f</i>(<i>x</i>) = <i>x</i>/2，则 <i>F</i>(<i>x</i>) = <i>x</i><sup>2</sup>/4（0 &lt; <i>x</i> &lt; 2），<i>P</i>(1 &lt; <i>X</i> &lt; 1.5) = <i>F</i>(1.5) − <i>F</i>(1) = 2.25/4 − 1/4 = 0.3125。第五组：<i>X</i> ~ N(20, 9) 的标准差是 3，因为括号内是方差；这是最常见的记号陷阱。</p>
+  <p>把五组题放在一起看，本讲的工具其实只有三件：均匀分布用长度比；一般连续分布用 <i>F</i>(<i>b</i>) − <i>F</i>(<i>a</i>)；正态分布先标准化再查 <i>Φ</i>。其余都是代数与分段细节。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>标准正态的三问（左尾、右尾、中间）要能在一条对称性上完成；<i>Φ</i>(−<i>z</i>) 用 1 − <i>Φ</i>(<i>z</i>) 换算，绝不写成负值。</p>
+  </aside>
+  <p class="c-source">W7 p.51–60</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W7</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch06.html"><span>上一章</span>Poisson 与几何分布</a>
+          <a class="pager__next" href="ch08.html"><span>下一章</span>正态应用与指数分布</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

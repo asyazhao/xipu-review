@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 程序开发过程与过程抽象 · 全科复习</title>
+  <meta name="description" content="SOE105 第 3 章 程序开发过程与过程抽象：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="03">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 3 章 程序开发过程与过程抽象</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html" class="is-current" aria-current="page"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html" class="is-current" aria-current="page"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 3 章</p>
+          <h1>程序开发过程与过程抽象</h1>
+          <p class="chapter-head__en">Program Development &amp; Procedural Abstraction</p>
+          <p class="chapter-head__meta">来源 L02 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">3.1 程序开发过程的五个阶段</a></li>
+        <li><a href="#s2">3.2 问题识别与问题分析：硬币兑换的例子</a></li>
+        <li><a href="#s3">3.3 算法设计：分解与中间变量</a></li>
+        <li><a href="#s4">3.4 算法精化：从步骤到公式</a></li>
+        <li><a href="#s5">3.5 过程抽象：把子问题交给函数</a></li>
+        <li><a href="#s6">3.6 C++ 程序骨架</a></li>
+        <li><a href="#s7">3.7 调试与测试：四类错误</a></li>
+        <li><a href="#s8">3.8 为什么需要过程抽象</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲把“写程序”拆成可重复的五个阶段，并用一个美元硬币兑换人民币的例子走完全程：从<span class="c-term c-term--auto" data-term="problem-identification" title="问题识别｜problem identification：判断问题是什么、题面是否存在歧义。">问题识别</span>、分析、算法精化，到用过程抽象把子问题交给函数，最后进入实现与测试。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li><span class="c-term c-term--auto" data-term="program-development-process" title="程序开发过程｜program development process：从问题识别到测试的五个阶段。">程序开发过程</span>分五阶段：问题识别、<span class="c-term c-term--auto" data-term="problem-analysis" title="问题分析｜problem analysis：明确输入、输出、约束与所需的数据类型。">问题分析</span>、算法设计、实现、调试与测试。</li>
+    <li>问题分析要明确输入、输出、约束与所需的抽象（<span class="c-term c-term--auto" data-term="data-type" title="数据类型｜data type：刻画数据本质的基本抽象，决定内存占用与运算规则。">数据类型</span>）。</li>
+    <li>算法设计包括分解、初始算法与算法精化三步；分解会产生新的中间变量。</li>
+    <li>过程抽象是把某个子问题暂时搁置、只保留接口，稍后再解决。</li>
+    <li>C++ 程序由注释、预处理指令、函数与语句构成，main() 是程序起点。</li>
+    <li>四类错误：语法错误、链接错误、运行时错误、算法错误。</li>
+    <li>调试应自顶向下进行，重点关注各主要步骤/函数之间的接口。</li>
+    <li>过程抽象支持自顶向下设计、信息隐藏与代码复用。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">3.1</span> 程序开发过程的五个阶段</h2>
+  <p>讲义把开发过程分为五步：</p>
+  <ol>
+    <li><b>问题识别</b>（problem identification）：这个问题到底在讲什么？题面有没有歧义？</li>
+    <li><b>问题分析</b>（problem analysis）：输入是什么、缺什么、怎么得到；输出要求什么；在什么约束下；需要哪些抽象、哪些数据类型。</li>
+    <li><b>算法设计</b>（algorithm design）：分解、初始算法、算法精化。</li>
+    <li><b>程序实现</b>（implementation）：用编程语言把算法翻译成程序。</li>
+    <li><b>调试与测试</b>（debugging, validation and testing）。</li>
+  </ol>
+  <p><span class="c-term c-term--auto" data-term="flowchart" title="流程图｜flowchart：用方框表示动作与判断、用边表示控制流。">流程图</span>把前三个阶段归为“问题求解阶段”（problem-solving phase），后两个阶段（含翻译与桌面测试 desktop testing）归为“实现阶段”（implementation phase），终点是“可运行的程序”。桌面测试指不上机、用纸笔手工跟踪算法，它是实现阶段的第一步，而不是最后一步。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 3-1 程序开发过程</span>
+      <button class="c-copy" type="button" data-copy="Clean vector flowchart of the program development process, top to bottom: Start, Problem identification, Problem analysis, Algorithm design, Translating to a programming language, Desktop testing, Testing, Working program. Group the first three boxes in a shaded band labelled Problem-solving phase and the last four in a band labelled Implementation phase. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector flowchart of the program development process, top to bottom: Start, Problem identification, Problem analysis, Algorithm design, Translating to a programming language, Desktop testing, Testing, Working program. Group the first three boxes in a shaded band labelled Problem-solving phase and the last four in a band labelled Implementation phase. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>五阶段的顺序与归属：问题识别、问题分析、算法设计属于问题求解阶段；翻译、桌面测试、测试属于实现阶段。</p>
+  </aside>
+  <p class="c-source">L02 p.5–7</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">3.2</span> 问题识别与问题分析：硬币兑换的例子</h2>
+  <p>讲义用一个具体题目贯穿全讲：给定一堆 5 美分硬币（nickels）与 1 美分硬币（pennies），求兑换得到多少元人民币与多少枚 1 角硬币。</p>
+  <p>问题识别阶段只问一件事：题面有歧义吗？“兑换”的汇率没有给出，这是必须补上的信息；此外“元”与“角”的关系也需要明确。问题分析阶段把答案写成三类：</p>
+  <ul>
+    <li>输入：nickels（5 美分硬币枚数，整数）、pennies（1 美分硬币枚数，整数）；</li>
+    <li>输出：yuans（兑换得到的人民币元数，整数）、change（1 角硬币枚数，整数）；</li>
+    <li>约束：本题无特殊约束（None）。</li>
+  </ul>
+  <p>讲义还要求回答“需要哪些抽象、哪些数据类型”。这里的选择是：枚数与元、角用整型，中间出现的总金额用实型（real），因为汇率换算会产生小数。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“输入是什么”不等于“题面第一句给了什么”。输入要写成带名字、带类型、带单位的量，例如“nickels —— 5 美分硬币的枚数 —— 整数”，否则后面的算法没有可操作的对象。</p>
+  </aside>
+  <p class="c-source">L02 p.8–9</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">3.3</span> 算法设计：分解与中间变量</h2>
+  <p>算法设计的第一步是<span class="c-term">分解<span class="c-term__en">decomposition</span></span>：把大问题切成更小的子问题。讲义把兑换问题切成三块，并明确每块的输入与输出：</p>
+  <ol>
+    <li>求美元总额：输入 nickels、pennies，输出 total_US_dollars；</li>
+    <li>求兑换后的人民币总额：输入 total_US_dollars，输出 total_chinese_yuans；</li>
+    <li>求元数与角数：输入 total_chinese_yuans，输出 yuans 与 change。</li>
+  </ol>
+  <p>每一块的输出都成为下一块的输入，于是产生了两个新的<span class="c-term">中间变量<span class="c-term__en">intermediate variable</span></span>：total_US_dollars（美元总额，实型）与 total_chinese_yuans（人民币总额，实型）。讲义的数据流图把这条链画得很清楚：nickels、pennies → 计算美元 → total_US_dollars → 兑换 → total_chinese_yuans → 拆分 → yuans、change。</p>
+  <p>这张图正是算法设计的产物：它先于任何一行代码存在，却已经决定了程序的结构——三个处理块、两个中间变量、两个最终输出。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 3-2 兑换问题的数据流与分解</span>
+      <button class="c-copy" type="button" data-copy="Clean vector data-flow diagram, left to right: inputs nickels and pennies entering a rounded box labelled calculate US dollars, producing intermediate variable total_US_dollars; then a box labelled exchange producing total_chinese_yuans; then a box labelled determine Chinese yuan coins producing outputs yuans and change. Mark intermediate variables with a different fill from inputs and outputs, and add a legend. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector data-flow diagram, left to right: inputs nickels and pennies entering a rounded box labelled calculate US dollars, producing intermediate variable total_US_dollars; then a box labelled exchange producing total_chinese_yuans; then a box labelled determine Chinese yuan coins producing outputs yuans and change. Mark intermediate variables with a different fill from inputs and outputs, and add a legend. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p class="c-source">L02 p.10–11</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">3.4</span> 算法精化：从步骤到公式</h2>
+  <p>初始算法只有五句自然语言：读入硬币枚数；计算美元总额；计算兑换后的人民币总额；求出元与角；输出结果。这样的粒度还不能直接编码，需要<span class="c-term">算法精化<span class="c-term__en">algorithm refinement</span></span>，把每一步落到可计算的表达式。</p>
+  <p>讲义给出的精化过程，先把每一步写成可计算的表达式（已知 1 美元 = 100 美分，<span class="c-term c-term--auto" data-term="constant" title="常量｜constant：声明时赋值、之后不可修改的永久值。">常量</span> DOLLAR2CENTS = 100）：</p>
+  <ul>
+    <li>total_US_cents = 5 × nickels + pennies，再换算为美元 total_US_dollars = total_US_cents / DOLLAR2CENTS</li>
+    <li>total_chinese_yuans = exchange_us2yuan(total_US_dollars)</li>
+    <li>total_chinese_cents = total_chinese_yuans × DOLLAR2CENTS</li>
+    <li>yuans = total_chinese_cents / DOLLAR2CENTS</li>
+    <li>change = total_chinese_cents % DOLLAR2CENTS / 10</li>
+  </ul>
+  <p>最后一行是整数运算的典型写法：先用取模得到不足 1 元的部分（美分），再除以 10 换成 1 角硬币的枚数。这里依赖 C/C++ 的整数除法会截断小数这一性质，若把中间量写成实型，结果就会带上小数，反而要额外取整。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>单位换算方向：美分换美元要除以 100。讲义示例代码中把该行写成乘 DOLLAR2CENTS，与“1 美元 = 100 美分”的方向相反，属笔误；理解与答题时以单位换算关系为准。</p>
+  </aside>
+  <p class="c-source">L02 p.12–13, p.23</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">3.5</span> 过程抽象：把子问题交给函数</h2>
+  <p>精化到“计算人民币总额”这一步时，讲义没有继续展开，而是造了一个函数：exchange_us2yuan()，输入 US_dollars（美元金额），输出 chinese_yuans（兑换后的人民币金额）。这一步被称为<span class="c-term">过程抽象<span class="c-term__en">procedural abstraction</span></span>：把某个子问题暂时抽象掉，留到后面再解决。</p>
+  <p>讲义的原话是“此时把这个子问题暂时放到一边”（we temporarily put aside this problem），继续推进主问题的解法。于是算法精化第二版只需写一行：调用 exchange_us2yuan()。主程序与函数之间只剩下一个接口：一个实型参数进，一个实型结果出。</p>
+  <p>这样做的前提是接口先定下来。只要“输入美元、输出人民币”这个约定不变，函数内部怎么实现都不影响主程序；实现可以晚一点写，甚至可以换人写。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 3-3 主程序与函数的接口</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of a main program calling a function: a large box labelled main() on the left passing an arrow labelled total_US_dollars into a smaller box labelled exchange_us2yuan() on the right, which returns an arrow labelled chinese_yuans back to main. Inside main show input, compute and output blocks. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram of a main program calling a function: a large box labelled main() on the left passing an arrow labelled total_US_dollars into a smaller box labelled exchange_us2yuan() on the right, which returns an arrow labelled chinese_yuans back to main. Inside main show input, compute and output blocks. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>讲义在这里加了一句全讲最重要的提醒：<b>在实现之前，先检查和调试算法</b>（Before implementation, CHECK and DEBUG the algorithm）。接口定得对不对、单位一致不一致，都要在纸上先过一遍。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>过程抽象的判定标准是“接口已定、实现暂缺”：函数名、参数与返回值的约定先写出来，函数体可以之后再补。</p>
+  </aside>
+  <p class="c-source">L02 p.15–17</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">3.6</span> C++ 程序骨架</h2>
+  <p>讲义给出 C++ 程序的基本形式：注释、库引用（#include）、预处理语句、函数。main() 这个函数名表示程序的起点，函数名前的返回类型表示执行结束后的返回类型，末尾的 return 0 结束 main()，也就结束了程序。</p>
+<pre class="c-code"><code>// helloworld.cpp
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello world" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+  <p>兑换程序的骨架则先摆出声明部分：一个<span class="c-term c-term--auto" data-term="function-declaration" title="函数声明｜function declaration：只给出返回类型、名字与参数类型的声明。">函数声明</span>（float exchange_us2yuan(float);）、若干变量（nickels、pennies、dollars、change 为整型，total_US_dollars、total_chinese_yuans 为实型），以及一个常量 DOLLAR2CENTS。函数声明只写返回类型、名字与参数类型，不写函数体——这正是 3.5 节所说的“接口先定”。</p>
+<pre class="c-code"><code>// FILE: excoin.cpp
+// DETERMINES THE NUMBER OF CHINESE COINS
+// IN EXCHANGE OF US COINS
+#include &lt;iostream&gt;
+using namespace std;
+
+void main() {
+    // function that returns the equivalent
+    // Chinese yuan for US dollars
+    float exchange_us2yuan(float);
+
+    const int DOLLAR2CENTS = 100;
+    int nickels;                 // count of nickels
+    int pennies;                 // count of pennies
+    int dollars;                 // value of coins in Chinese yuan
+    int change;                  // value of coins in Chinese 10-cents
+    float total_US_dollars;      // total US dollars
+    float total_chinese_yuans;   // total Chinese dollars
+}</code></pre>
+  <p>讲义提醒：此刻不必看懂每一行；而且这份源码还不能编译，因为 exchange_us2yuan(float) 的定义仍然缺失。缺失的定义会在后续讲次补上。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>函数声明（declaration）与函数定义（definition）不同：声明只给编译器一个<span class="c-term c-term--auto" data-term="signature" title="签名｜signature：由参数的类型与个数决定的函数标识，用于区分重载。">签名</span>，定义才提供函数体。只声明不定义，程序能通过编译，却会在链接阶段失败。</p>
+  </aside>
+  <p class="c-source">L02 p.20–23</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">3.7</span> 调试与测试：四类错误</h2>
+  <p>实现之后要编译、运行，并用不同且随机的输入测试。讲义把错误来源分成四类，对应程序生命周期中的不同阶段：</p>
+  <ul>
+    <li><span class="c-term">语法错误<span class="c-term__en">syntax error</span></span>：程序无法编译。多因编码粗心，相对容易修。</li>
+    <li><span class="c-term">链接错误<span class="c-term__en">link error</span></span>：程序无法链接。多因忘记引入库或用错语言库。</li>
+    <li><span class="c-term">运行时错误<span class="c-term__en">runtime error</span></span>：程序能编译能链接，但结果不对，属实现（编码）错误，需要定位 bug 并修复。</li>
+    <li><b>算法错误</b>（algorithmic error）：算法本身错了。若在实现前认真检查并证明过算法，这类错误本不该出现。</li>
+  </ul>
+  <p>调试的原则是<b>自顶向下</b>（top-down），并特别关注主要步骤/函数之间的接口：input → nickels、pennies；nickels、pennies → total_US_dollars；total_US_dollars → total_chinese_yuans；total_chinese_yuans → yuans、change；yuans、change → output。接口处的单位、类型、取值范围最容易出错。</p>
+  <p>讲义给出两组测试：输入 34 与 107，输出“19 元 7 角”；输入 20 与 22，输出“8 元 6 角”。测试数据要覆盖边界与随机值，而不只是刚好能跑通的那一组。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>四类错误的分期：语法错误在编译期、链接错误在链接期、运行时错误在运行期、算法错误在设计期。算法错误不能靠调试器发现，只能靠事先的检查与证明。</p>
+  </aside>
+  <p class="c-source">L02 p.25–26</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">3.8</span> 为什么需要过程抽象</h2>
+  <p>讲义从三个角度论证过程抽象的价值。</p>
+  <p>第一，它支持自顶向下设计：可以把问题分解成更小的子问题（<span class="c-term c-term--auto" data-term="divide-and-conquer" title="分治｜divide-and-conquer：把问题分成更小的同类子问题，分别求解后合并结果。">divide-and-conquer</span>），子问题比原问题简单；当子问题只是“同一个问题但规模更小”时，就自然引出<span class="c-term c-term--auto" data-term="recursion" title="递归｜recursion：把任务分解成更小的同类子任务，由函数调用自己完成。">递归</span>（recursion），这是一种很强的求解技术；子问题还可以分开解决——不同时间、不同人来做。</p>
+  <p>第二，对复杂子问题，它提供信息隐藏（information hiding）：把与主问题无关的细节藏起来，主程序因此易读、易改；整个模块/函数可以被替换，而不影响主程序代码。</p>
+  <p>第三，对频繁出现的子问题，它允许代码复用（code reuse）：只写一次，只有一处需要修改。</p>
+  <p>把这三点合起来看，过程抽象不是“把代码拆小”的排版技巧，而是控制复杂度的主要手段：人一次只能处理有限的信息，抽象把暂时不需要的信息挡在外面。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>分解（decomposition）是“把问题切成子问题”的动作；过程抽象是“把子问题封装成有接口的函数、暂时不写实现”的决定。前者是设计方法，后者是封装手段。</p>
+  </aside>
+  <p class="c-source">L02 p.28</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L02</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch02.html"><span>上一章</span>程序设计导论：IPO、语言与编译</a>
+          <a class="pager__next" href="ch04.html"><span>下一章</span>算法设计与 C/C++ 基础</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

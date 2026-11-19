@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE102 Java 程序设计 · 全科复习</title>
+  <meta name="description" content="Java 基础语法、数组与控制流、字符串、对象与继承、异常处理与 I/O。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-subject" data-subject="soe102" data-chapter="">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <span aria-current="page">SOE102</span>
+    </nav>
+
+    <header class="page-head">
+      <p class="kicker">SOE102</p>
+      <h1>Java 程序设计</h1>
+      <p class="page-head__en">Introduction to Programming in Java</p>
+      <p class="page-head__desc">Java 基础语法、数组与控制流、字符串、对象与继承、异常处理与 I/O。</p>
+      
+    </header>
+
+    <nav class="subject-switch" aria-label="学科切换">
+      <a href="../../subjects/bio103/index.html">BIO103</a>
+      <a href="../../subjects/bio105/index.html">BIO105</a>
+      <a href="../../subjects/che105/index.html">CHE105</a>
+      <a href="../../subjects/mth113/index.html">MTH113</a>
+      <a href="../../subjects/sci101/index.html">SCI101</a>
+      <a href="../../subjects/soe102/index.html" aria-current="page">SOE102</a>
+      <a href="../../subjects/soe105/index.html">SOE105</a>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="subject-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+      <div class="subject-body">
+<p class="lead">课程从位与字节、二进制换算、JVM 与第一个 Java 程序讲起，随后依次展开数据类型与运算符、数组与三种循环、字符串与静态方法、对象与封装、继承与多态，最后落到异常处理与流式 I/O。语法点以可运行的程序为落点：代码要在 IntelliJ IDEA 里写出、构建、运行，出错时用断点调试。</p>
+
+<section id="traps">
+  <h2>高频易错点</h2>
+  <ol class="trap-list">
+    <li><a href="ch01.html">声明 ≠ 赋值</a> — <code>int number1;</code> 之后变量还没有值，直接参与运算会编译报错；整数相除会丢掉小数部分，要小数结果就得把参与运算的变量声明成 <code>double</code>。</li>
+    <li><a href="ch02.html">强制类型转换是截断，不是四舍五入</a> — 把 <code>double</code> 强转成 <code>int</code> 只保留整数部分；溢出与下溢也不报错，而是静默地环绕到另一端。</li>
+    <li><a href="ch03.html">数组索引的最大值是 length − 1</a> — 合法范围是 0 到 <code>array.length - 1</code>，<code>length</code> 是字段、不带括号；而且必须先校验再访问，越界一旦发生，写在后面的提示语句根本执行不到。</li>
+    <li><a href="ch04.html">substring(start, end) 的 end 不包含在内</a> — 取 5 个字符写 <code>substring(0, 5)</code> 而不是 <code>substring(0, 4)</code>；比较内容用 <code>equals</code>，<code>==</code> 比的是引用。</li>
+    <li><a href="ch05.html">引用赋值复制的是地址</a> — <code>p2 = p1</code> 之后两个变量指向同一个对象，改一个另一个也看得见；基本类型赋值才复制值本身。</li>
+    <li><a href="ch06.html">super(...) 必须是子类构造器的第一条语句</a> — 放到后面会编译失败；重写要求方法名与参数列表都相同，只改返回类型或参数名不会产生新签名，也不构成重载。</li>
+    <li><a href="ch07.html">finally 里的 return 会覆盖 try 的返回值</a> — 它还会吞掉正在传播的异常；catch 必须从具体排到一般，父类写在前面是编译错误而不是运行错误。</li>
+    <li><a href="ch08.html">三种“结束”不是同一个值</a> — 字节流与字符流的 <code>read()</code> 到末尾返回 −1，<code>readLine()</code> 返回 null；另外 <code>write</code> 默认覆盖文件，追加要显式给 APPEND。</li>
+  </ol>
+</section>
+
+<section id="exam">
+  <h2>考点概览</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>按章节汇总；依据为讲义周次，资料未含 Week 7–8</caption>
+      <thead>
+        <tr><th scope="col">章节</th><th scope="col">核心考点</th><th scope="col">依据</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>01</td><td>位与字节、2<sup>n</sup> 种组合、二进制与十进制互换；源码经编译器和 JVM 跨平台运行；完整程序结构与 print/println 的差别</td><td>W1</td></tr>
+        <tr><td>02</td><td>八种基本类型与宽度；溢出/下溢的环绕；强制转换截断；float/double 精度与 Math 对象</td><td>W2</td></tr>
+        <tr><td>03</td><td>数组索引与 length；Scanner 输入先校验后访问；while/do-while/for 与嵌套循环；break/continue；循环追踪表</td><td>W3</td></tr>
+        <tr><td>04</td><td>char 与码元、代理对；String 的 equals、compareTo、substring、indexOf；不可变性与 StringBuilder；static 方法与重载签名</td><td>W4</td></tr>
+        <tr><td>05</td><td>栈与堆、引用赋值；类与构造器、this；private 字段加 public getter；static 与实例变量；toString 与对象数组</td><td>W5</td></tr>
+        <tr><td>06</td><td>extends 与 super()；重写与重载的判定；向上/向下转型；多态只对实例方法生效</td><td>W6</td></tr>
+        <tr><td>07</td><td>Throwable 家族；checked 与 unchecked；try/catch/finally 控制流；try-with-resources；throw、throws 与异常链</td><td>W9</td></tr>
+        <tr><td>08</td><td>字节流与字符流；包装流与缓冲；read() 与 readLine() 的结束标记；close/flush 与覆盖/追加；Path 与 Files</td><td>W10</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+        <nav class="quick-links" aria-label="本学科工具">
+          <a href="glossary.html">术语词典</a>
+          <a href="compare.html">对比速记</a>
+        </nav>
+      </div>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

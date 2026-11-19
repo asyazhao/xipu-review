@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 405" role="img" aria-label="Throwable 异常层次">
+<title>Throwable 异常层次</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">Throwable 异常层次</text>
+<rect x="330" y="70" width="140" height="48" rx="4" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="400" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">Throwable</text>
+<rect x="170" y="160" width="170" height="70" rx="4" fill="#FFFFFF" stroke="#8C4F45" stroke-width="1.3"/>
+<text x="255" y="184" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#8C4F45" text-anchor="middle" font-weight="700">Error</text>
+<text x="255" y="204" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">JVM 级故障</text>
+<text x="255" y="220" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#8C4F45" text-anchor="middle" font-weight="600">不要捕获</text>
+<rect x="460" y="160" width="230" height="70" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="575" y="184" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">Exception</text>
+<text x="575" y="204" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">程序要处理</text>
+<line x1="360" y1="118" x2="255" y2="156" stroke="#262624" stroke-width="1.2"/>
+<line x1="440" y1="118" x2="575" y2="156" stroke="#262624" stroke-width="1.2"/>
+<rect x="120" y="290" width="250" height="72" rx="4" fill="#FFFFFF" stroke="#A8894F" stroke-width="1.3"/>
+<text x="245" y="314" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#A8894F" text-anchor="middle" font-weight="700">RuntimeException（unchecked）</text>
+<text x="245" y="334" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8" fill="#5E5E58" text-anchor="middle" font-weight="400">NullPointer / IllegalArgument / Arithmetic</text>
+<text x="245" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#8C4F45" text-anchor="middle" font-weight="600">是 bug，应该预防</text>
+<rect x="430" y="290" width="290" height="72" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="575" y="314" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="700">checked exception</text>
+<text x="575" y="334" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8" fill="#5E5E58" text-anchor="middle" font-weight="400">IOException / SQLException / InterruptedException</text>
+<text x="575" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#2E4A6B" text-anchor="middle" font-weight="600">必须捕获或用 throws 声明</text>
+<line x1="575" y1="230" x2="575" y2="260" stroke="#262624" stroke-width="1.2"/>
+<line x1="245" y1="260" x2="575" y2="260" stroke="#262624" stroke-width="1.2"/>
+<line x1="245" y1="260" x2="245" y2="286" stroke="#262624" stroke-width="1.2"/>
+<line x1="575" y1="260" x2="575" y2="286" stroke="#262624" stroke-width="1.2"/>
+<circle cx="575" cy="260" r="2.5" fill="#5E5E58" stroke="none"/>
+<text x="40" y="390" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">判断 checked / unchecked 看继承位置：checked 继承 Exception 但不是 RuntimeException。</text>
+</svg>

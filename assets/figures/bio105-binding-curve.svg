@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-label="结合曲线与半饱和点">
+<title>结合曲线与半饱和点</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">结合曲线与半饱和点</text>
+<line x1="100" y1="80" x2="100" y2="300" stroke="#262624" stroke-width="1.4" marker-end="url(#arrowMuted)"/>
+<line x1="100" y1="300" x2="700" y2="300" stroke="#262624" stroke-width="1.4" marker-end="url(#arrowMuted)"/>
+<text x="82" y="90" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="600">Y</text>
+<text x="72" y="106" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">1.0</text>
+<text x="72" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">0</text>
+<text x="400.0" y="334" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="600">[L]</text>
+<line x1="96" y1="245.0" x2="100" y2="245.0" stroke="#5E5E58" stroke-width="1"/>
+<text x="88" y="249.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="end" font-weight="400">0.25</text>
+<line x1="96" y1="190.0" x2="100" y2="190.0" stroke="#5E5E58" stroke-width="1"/>
+<text x="88" y="194.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="end" font-weight="400">0.50</text>
+<line x1="96" y1="135.0" x2="100" y2="135.0" stroke="#5E5E58" stroke-width="1"/>
+<text x="88" y="139.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="end" font-weight="400">0.75</text>
+<path d="M 100.0 300.0 L 105.0 289.5 L 110.0 280.0 L 115.0 271.3 L 120.0 263.3 L 125.0 256.0 L 130.0 249.2 L 135.0 243.0 L 140.0 237.1 L 145.0 231.7 L 150.0 226.7 L 155.0 221.9 L 160.0 217.5 L 165.0 213.3 L 170.0 209.4 L 175.0 205.7 L 180.0 202.2 L 185.0 198.9 L 190.0 195.8 L 195.0 192.8 L 200.0 190.0 L 205.0 187.3 L 210.0 184.8 L 215.0 182.3 L 220.0 180.0 L 225.0 177.8 L 230.0 175.7 L 235.0 173.6 L 240.0 171.7 L 245.0 169.8 L 250.0 168.0 L 255.0 166.3 L 260.0 164.6 L 265.0 163.0 L 270.0 161.5 L 275.0 160.0 L 280.0 158.6 L 285.0 157.2 L 290.0 155.9 L 295.0 154.6 L 300.0 153.3 L 305.0 152.1 L 310.0 151.0 L 315.0 149.8 L 320.0 148.8 L 325.0 147.7 L 330.0 146.7 L 335.0 145.7 L 340.0 144.7 L 345.0 143.8 L 350.0 142.9 L 355.0 142.0 L 360.0 141.1 L 365.0 140.3 L 370.0 139.5 L 375.0 138.7 L 380.0 137.9 L 385.0 137.1 L 390.0 136.4 L 395.0 135.7 L 400.0 135.0 L 405.0 134.3 L 410.0 133.7 L 415.0 133.0 L 420.0 132.4 L 425.0 131.8 L 430.0 131.2 L 435.0 130.6 L 440.0 130.0 L 445.0 129.4 L 450.0 128.9 L 455.0 128.4 L 460.0 127.8 L 465.0 127.3 L 470.0 126.8 L 475.0 126.3 L 480.0 125.8 L 485.0 125.4 L 490.0 124.9 L 495.0 124.4 L 500.0 124.0 L 505.0 123.6 L 510.0 123.1 L 515.0 122.7 L 520.0 122.3 L 525.0 121.9 L 530.0 121.5 L 535.0 121.1 L 540.0 120.7 L 545.0 120.4 L 550.0 120.0 L 555.0 119.6 L 560.0 119.3 L 565.0 118.9 L 570.0 118.6 L 575.0 118.3 L 580.0 117.9 L 585.0 117.6 L 590.0 117.3 L 595.0 117.0 L 600.0 116.7 L 605.0 116.4 L 610.0 116.1 L 615.0 115.8 L 620.0 115.5 L 625.0 115.2 L 630.0 114.9 L 635.0 114.6 L 640.0 114.4 L 645.0 114.1 L 650.0 113.8 L 655.0 113.6 L 660.0 113.3 L 665.0 113.1 L 670.0 112.8 L 675.0 112.6 L 680.0 112.4 L 685.0 112.1 L 690.0 111.9 L 695.0 111.7 L 700.0 111.4" fill="none" stroke="#2E4A6B" stroke-width="2.4"/>
+<line x1="100" y1="190.0" x2="200.0" y2="190.0" stroke="#8C4F45" stroke-width="1.2" stroke-dasharray="4 4"/>
+<line x1="200.0" y1="190.0" x2="200.0" y2="300" stroke="#8C4F45" stroke-width="1.2" stroke-dasharray="4 4"/>
+<circle cx="200.0" cy="190.0" r="4" fill="#8C4F45" stroke="none"/>
+<text x="208.0" y="182.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#8C4F45" text-anchor="start" font-weight="400">半饱和 Y = 0.5</text>
+<text x="200.0" y="322" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8C4F45" text-anchor="middle" font-weight="600">Kd</text>
+<text x="470" y="110" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="start" font-weight="600">Y = [L] / ([L] + Kd)</text>
+<text x="470" y="136" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">Kd 越小，亲和力越高</text>
+<text x="470" y="160" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">曲线左移 → 更低浓度达到半饱和</text>
+<text x="40" y="340" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">横轴为配体浓度 [L]，纵轴为分数饱和度 Y；曲线是饱和型，不是直线。</text>
+</svg>

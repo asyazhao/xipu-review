@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 385" role="img" aria-label="决策树的分裂结构">
+<title>决策树的分裂结构</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">决策树的分裂结构</text>
+<rect x="320" y="80" width="160" height="54" rx="3" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="400.0" y="111.33333333333333" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">斑点 &gt; 4?</text>
+<rect x="170" y="190" width="160" height="54" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="250.0" y="221.33333333333334" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">湿度 &gt; 70%?</text>
+<rect x="490" y="190" width="120" height="54" rx="3" fill="#FFFFFF" stroke="#5F735F" stroke-width="1.5"/>
+<text x="550.0" y="221.33333333333334" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">健康</text>
+<rect x="80" y="300" width="120" height="46" rx="3" fill="#FFFFFF" stroke="#8C4F45" stroke-width="1.5"/>
+<text x="140.0" y="327.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="500">患病</text>
+<rect x="245" y="300" width="120" height="46" rx="3" fill="#FFFFFF" stroke="#5F735F" stroke-width="1.5"/>
+<text x="305.0" y="327.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="500">健康</text>
+<line x1="370" y1="136" x2="250" y2="185" stroke="#262624" stroke-width="1.4"/>
+<line x1="430" y1="136" x2="540" y2="185" stroke="#262624" stroke-width="1.4"/>
+<line x1="225" y1="246" x2="150" y2="295" stroke="#262624" stroke-width="1.4"/>
+<line x1="275" y1="246" x2="305" y2="295" stroke="#262624" stroke-width="1.4"/>
+<text x="292" y="158" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="start" font-weight="400">是</text>
+<text x="486" y="158" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="start" font-weight="400">否</text>
+<text x="176" y="268" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="start" font-weight="400">是</text>
+<text x="306" y="268" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="start" font-weight="400">否</text>
+<text x="500" y="92" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="start" font-weight="400">根节点</text>
+<text x="340" y="180" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="start" font-weight="400">内部节点</text>
+<text x="500" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="start" font-weight="400">叶节点</text>
+<text x="40" y="372" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">每次分裂选择使子集更纯的特征与阈值；深树容易过拟合，常用深度或叶节点最小样本数限制。</text>
+</svg>

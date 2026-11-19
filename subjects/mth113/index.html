@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 概率与统计 · 全科复习</title>
+  <meta name="description" content="描述统计、概率、随机变量、常见分布、抽样分布、置信区间与线性回归。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-subject" data-subject="mth113" data-chapter="">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <span aria-current="page">MTH113</span>
+    </nav>
+
+    <header class="page-head">
+      <p class="kicker">MTH113</p>
+      <h1>概率与统计</h1>
+      <p class="page-head__en">Introduction to Probability and Statistics</p>
+      <p class="page-head__desc">描述统计、概率、随机变量、常见分布、抽样分布、置信区间与线性回归。</p>
+      
+    </header>
+
+    <nav class="subject-switch" aria-label="学科切换">
+      <a href="../../subjects/bio103/index.html">BIO103</a>
+      <a href="../../subjects/bio105/index.html">BIO105</a>
+      <a href="../../subjects/che105/index.html">CHE105</a>
+      <a href="../../subjects/mth113/index.html" aria-current="page">MTH113</a>
+      <a href="../../subjects/sci101/index.html">SCI101</a>
+      <a href="../../subjects/soe102/index.html">SOE102</a>
+      <a href="../../subjects/soe105/index.html">SOE105</a>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="subject-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+      <div class="subject-body">
+<p class="lead">本课程从描述统计开始：先分清总体与样本、变量类型，用图表与数值概括分布的形状、中心与离散程度。随后用概率、随机变量与命名分布（二项、Poisson、几何、均匀、正态、指数）为随机现象建模，最后进入抽样分布、置信区间与简单线性回归，用样本对总体下结论。</p>
+
+<section id="traps">
+  <h2>高频易错点</h2>
+  <ol class="trap-list">
+    <li><a href="ch01.html">样本方差的分母是 n − 1，不是 n</a> — 偏差是相对同一条数据的样本均值算出的，平方偏差平均偏小，除以 n − 1 才纠正这一偏向；标准差是方差的平方根，单位与原数据相同。</li>
+    <li><a href="ch02.html">互斥 ≠ 独立</a> — 互斥是交集为空、用加法；独立是 P(A∩B) = P(A)P(B)、用乘法；有正概率的互斥事件一定不独立。</li>
+    <li><a href="ch03.html">离散上尾要退一位：P(X ≥ a) = 1 − F(a − 1)</a> — 写成 1 − F(a) 会把 X = a 这一项错误地排除在外。</li>
+    <li><a href="ch04.html">密度高度不是概率，可以大于 1</a> — 例如 (0, 0.2) 上的均匀密度为 5，但总面积为 1；概率必须落在 0 与 1 之间，密度不必。</li>
+    <li><a href="ch06.html">Poisson 的 λ 是“速率 × 区间长度”</a> — 给 6 次/小时、问 20 分钟时 λ = 2，不是 6；时间单位必须先统一再代入。</li>
+    <li><a href="ch07.html">Φ(−z) = 1 − Φ(z)，不是 −Φ(z)</a> — 累积分布函数恒为正，负 z 的查表值只能靠这条对称关系换算。</li>
+    <li><a href="ch09.html">95% 置信区间说的是方法的长期覆盖率</a> — 不能对已观测区间说“μ 在其中的概率是 95%”；区间由样本算出，宽度由标准误决定。</li>
+    <li><a href="ch10.html">R² 不是“预测正确率”</a> — R² = 1 − SSE/SST 表示 y 的变异中被线性关系解释的比例，预测好坏要看残差大小与残差标准误。</li>
+  </ol>
+</section>
+
+<section id="exam">
+  <h2>考点概览</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>按章节汇总；仅列资料可支撑的考点</caption>
+      <thead>
+        <tr><th scope="col">章节</th><th scope="col">核心考点</th><th scope="col">依据</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>01</td><td>变量类型判断；条形图 vs 直方图；均值/中位数/众数的选择；IQR 与 1.5 IQR 围栏；五数概括与 z 分数</td><td>W1</td></tr>
+        <tr><td>02</td><td>样本空间与事件运算；概率公理与补集；排列与组合的分界；条件概率；独立性与互斥；全概率公式与 Bayes 法则</td><td>W2</td></tr>
+        <tr><td>03</td><td>随机变量与支撑集；PMF 的两条检验与归一化常数；CDF 的三段写法与反推 PMF；期望、E[g(X)] 与线性性；方差与线性变换</td><td>W3</td></tr>
+        <tr><td>04</td><td>连续变量与 P(X = a) = 0；PDF 非负且积分为 1；面积即概率与均匀密度；连续 CDF 与区间概率；分位数、中位数、连续期望与方差</td><td>W4</td></tr>
+        <tr><td>05</td><td>Bernoulli 的 PMF、均值与方差；二项分布的四个条件与 PMF 推导；np 与 np(1−p)；上尾 1 − F(k−1)；10% 规则与模型检验</td><td>W5</td></tr>
+        <tr><td>06</td><td>Poisson 的四条假设与 PMF；λ = rt 的率缩放；Poisson 近似二项；可加性与按比例拆分；几何分布的 PMF、CDF、1/p 与无记忆性；模型选择</td><td>W6</td></tr>
+        <tr><td>07</td><td>均匀分布的 PDF、CDF、均值方差与分位数；正态密度与 μ、σ 的含义；标准化 Z = (X−μ)/σ；Φ(z) 查表与经验法则 68–95–99.7</td><td>W7</td></tr>
+        <tr><td>08</td><td>正态分位数 xp = μ + zpσ 与常用临界值；规格限与提高合格率的两条途径；指数分布的 PDF、CDF、生存函数；1/λ 与无记忆性；与 Poisson 过程的对应</td><td>W8</td></tr>
+        <tr><td>09</td><td>抽样分布与标准误 σ/√n；中心极限定理与 n 的经验规则；样本比例的 SE；置信区间的形式与正确解释；z 区间与 t 区间；误差范围与样本量</td><td>W9</td></tr>
+        <tr><td>10</td><td>散点图四词描述；协方差与相关系数 r；最小二乘的 b、a 与过均值点；斜率与 r 的关系；R²、SSE 与 se；残差图诊断；外推与相关不等于因果</td><td>W10</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+        <nav class="quick-links" aria-label="本学科工具">
+          <a href="glossary.html">术语词典</a>
+          <a href="compare.html">对比速记</a>
+        </nav>
+      </div>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

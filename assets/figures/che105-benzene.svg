@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" role="img" aria-label="苯的 π 体系与离域">
+<title>苯的 π 体系与离域</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">苯的 π 体系与离域</text>
+<polygon points="250.0,95.0 332.2724133595217,142.5 332.2724133595217,237.5 250.0,285.0 167.7275866404783,237.5 167.72758664047834,142.5" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.8"/>
+<circle cx="250" cy="190" r="58" fill="none" stroke="#2E4A6B" stroke-width="1.6"/>
+<circle cx="250.0" cy="95.0" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<circle cx="332.2724133595217" cy="142.5" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<circle cx="332.2724133595217" cy="237.5" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<circle cx="250.0" cy="285.0" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<circle cx="167.7275866404783" cy="237.5" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<circle cx="167.72758664047834" cy="142.5" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<text x="250" y="195" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" fill="#2E4A6B" text-anchor="middle" font-weight="700">6 π e−</text>
+<text x="250" y="220" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">离域</text>
+<ellipse cx="250.0" cy="61.0" rx="10" ry="22" fill="#E7EBF1" stroke="#A8894F" stroke-width="1.1" transform="rotate(-90 250.0 61.0)"/>
+<ellipse cx="361.7172770881926" cy="125.50000000000001" rx="10" ry="22" fill="#E7EBF1" stroke="#A8894F" stroke-width="1.1" transform="rotate(-30 361.7172770881926 125.50000000000001)"/>
+<ellipse cx="361.7172770881926" cy="254.5" rx="10" ry="22" fill="#E7EBF1" stroke="#A8894F" stroke-width="1.1" transform="rotate(30 361.7172770881926 254.5)"/>
+<ellipse cx="250.0" cy="319.0" rx="10" ry="22" fill="#E7EBF1" stroke="#A8894F" stroke-width="1.1" transform="rotate(90 250.0 319.0)"/>
+<ellipse cx="138.2827229118074" cy="254.5" rx="10" ry="22" fill="#E7EBF1" stroke="#A8894F" stroke-width="1.1" transform="rotate(150 138.2827229118074 254.5)"/>
+<ellipse cx="138.2827229118074" cy="125.49999999999999" rx="10" ry="22" fill="#E7EBF1" stroke="#A8894F" stroke-width="1.1" transform="rotate(210 138.2827229118074 125.49999999999999)"/>
+<text x="250" y="70" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#A8894F" text-anchor="middle" font-weight="600">p 轨道侧向重叠</text>
+<text x="470" y="110" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="start" font-weight="600">平面、环状、完全共轭</text>
+<text x="470" y="140" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="start" font-weight="600">4n + 2 = 6，n = 1</text>
+<text x="470" y="170" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">六个 p 轨道 → 三个成键 MO</text>
+<text x="470" y="194" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">电子占据成键轨道，能量降低</text>
+<text x="470" y="230" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="start" font-weight="600">芳香性判据：</text>
+<text x="470" y="252" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">环状、平面、完全共轭、4n+2</text>
+<text x="40" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">苯的 π 电子不固定在三个双键上，而是在整个环上离域；圆圈是离域的简写。</text>
+</svg>

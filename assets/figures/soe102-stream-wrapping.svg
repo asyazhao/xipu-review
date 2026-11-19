@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 365" role="img" aria-label="包装流的层层叠加">
+<title>包装流的层层叠加</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">包装流的层层叠加</text>
+<rect x="100" y="80" width="600" height="220" rx="6" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.6"/>
+<text x="120" y="108" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2E4A6B" text-anchor="start" font-weight="700">BufferedReader</text>
+<text x="120" y="128" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="start" font-weight="400">8 KB 缓冲；read() 一次返回一个字符</text>
+<rect x="170" y="150" width="460" height="120" rx="5" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="190" y="176" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="start" font-weight="700">InputStreamReader</text>
+<text x="190" y="196" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="start" font-weight="400">字节 → 字符；指定 UTF-8</text>
+<rect x="240" y="210" width="320" height="46" rx="4" fill="#FFFFFF" stroke="#A8894F" stroke-width="1.3"/>
+<text x="400" y="238" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#A8894F" text-anchor="middle" font-weight="600">FileInputStream：磁盘原始字节</text>
+<text x="40" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">包装不改变“流什么”，只增加“怎么流”的能力；关闭最外层即可关闭整条链。</text>
+<text x="40" y="354" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="start" font-weight="400">典型写法：new BufferedReader(new InputStreamReader(new FileInputStream(file), UTF_8))</text>
+</svg>

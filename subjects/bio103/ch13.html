@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIO103 翻译 · 全科复习</title>
+  <meta name="description" content="BIO103 第 13 章 翻译：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="bio103" data-chapter="13">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">BIO103</a>
+      <span>/</span>
+      <span aria-current="page">第 13 章 翻译</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>A 细胞生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">细胞的基本属性与原核/真核细胞</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">细胞周期、有丝分裂与减数分裂</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">核内过程与细胞骨架</span><span class="toc-src">L3–4</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">内膜系统与膜运输</span><span class="toc-src">L5–6</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">细胞间通讯</span><span class="toc-src">L7–8</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">线粒体与核糖体</span><span class="toc-src">L9–10</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">细胞生物学方法</span><span class="toc-src">L11</span></a></li>
+        </ol>
+      </details>
+      <details class="toc-group" open>
+        <summary>B 分子生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">核酸的结构与功能</span><span class="toc-src">Park L10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">DNA 复制</span><span class="toc-src">Park L11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">DNA 突变与修复</span><span class="toc-src">L12</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">转录：原核与真核</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">基因表达调控</span><span class="toc-src">L14–15</span></a></li>
+          <li><a href="ch13.html" class="is-current" aria-current="page"><span class="toc-num">13</span><span class="toc-title">翻译</span><span class="toc-src">L16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">蛋白质结构与功能</span><span class="toc-src">L17</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>A 细胞生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">细胞的基本属性与原核/真核细胞</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">细胞周期、有丝分裂与减数分裂</span><span class="toc-src">L1–2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">核内过程与细胞骨架</span><span class="toc-src">L3–4</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">内膜系统与膜运输</span><span class="toc-src">L5–6</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">细胞间通讯</span><span class="toc-src">L7–8</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">线粒体与核糖体</span><span class="toc-src">L9–10</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">细胞生物学方法</span><span class="toc-src">L11</span></a></li>
+        </ol>
+      </details>
+      <details class="toc-group" open>
+        <summary>B 分子生物学</summary>
+        <ol class="toc-list">
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">核酸的结构与功能</span><span class="toc-src">Park L10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">DNA 复制</span><span class="toc-src">Park L11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">DNA 突变与修复</span><span class="toc-src">L12</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">转录：原核与真核</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">基因表达调控</span><span class="toc-src">L14–15</span></a></li>
+          <li><a href="ch13.html" class="is-current" aria-current="page"><span class="toc-num">13</span><span class="toc-title">翻译</span><span class="toc-src">L16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">蛋白质结构与功能</span><span class="toc-src">L17</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">BIO103 · 第 13 章</p>
+          <h1>翻译</h1>
+          <p class="chapter-head__en">Translation</p>
+          <p class="chapter-head__meta">来源 L16 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">13.1 遗传密码：三联体与 64 个密码子</a></li>
+        <li><a href="#s2">13.2 遗传密码的特性与阅读框</a></li>
+        <li><a href="#s3">13.3 翻译机器与 tRNA 的适配器作用</a></li>
+        <li><a href="#s4">13.4 摆动配对与氨酰-tRNA 合成酶</a></li>
+        <li><a href="#s5">13.5 核糖体的功能与肽键形成</a></li>
+        <li><a href="#s6">13.6 起始：原核与真核的差异</a></li>
+        <li><a href="#s7">13.7 终止与释放因子</a></li>
+        <li><a href="#s8">13.8 原核与真核翻译的系统比较</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲从遗传密码的编排讲起，依次说明 tRNA 的适配器作用与摆动配对、核糖体的催化功能、起始与终止的机制，最后系统比较原核与真核的翻译。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>遗传密码是三联体密码：4 种碱基取 2 个只有 16 种组合，不足以编码 20 种氨基酸；取 3 个有 64 种，足够且有冗余。</li>
+    <li>AUG 是起始密码子并编码甲硫氨酸；UAA、UAG、UGA 是终止（无义）密码子。</li>
+    <li>密码子具有简并性、通用性、无逗号、不重叠四个特点；mRNA 有三个阅读框，通常只用其中一个。</li>
+    <li>tRNA 是 L 形适配器：反密码子与密码子互补，3′ 端接受氨基酸；摆动配对使 64 个密码子不需要 64 种 tRNA。</li>
+    <li>原核起始为 fMet、依赖 Shine-Dalgarno 序列、需 3 个起始因子；真核为 Met、依赖 5′ 帽扫描与 Kozak 序列、需十余个 eIF。</li>
+    <li>终止由释放因子识别终止密码子，水解肽酰-tRNA 释放多肽；翻译速率受起始步骤限制。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">13.1</span> 遗传密码：三联体与 64 个密码子</h2>
+  <p>遗传信息从 DNA 到 mRNA 再到蛋白质，字母表从 4 种碱基变成 20 种氨基酸。把 4 种碱基组合成氨基酸的规则就是<span class="c-term">遗传密码<span class="c-term__en">genetic code</span></span>。mRNA 被按<span class="c-term c-term--auto" data-term="nucleotide" title="核苷酸｜nucleotide：由含氮碱基、戊糖与磷酸组成的核酸单体。">核苷酸</span>三联体逐个阅读，每个三联体称为一个<span class="c-term">密码子<span class="c-term__en">codon</span></span>。</p>
+  <p>为什么必须是三碱基？讲义用组合数论证：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>碱基组合数与编码能力</caption>
+      <thead><tr><th scope="col">每个密码子的碱基数</th><th scope="col">组合数</th><th scope="col">是否够编码 20 种氨基酸</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>4</td><td>不够</td></tr>
+        <tr><td>2</td><td>4 × 4 = 16</td><td>不够</td></tr>
+        <tr><td>3</td><td>4 × 4 × 4 = 64</td><td>足够且有冗余</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>64 个密码子中，61 个编码氨基酸，3 个是终止信号。因此密码子数多于氨基酸数，必然出现“多个密码子编码同一氨基酸”的冗余，这正是简并性的来源。AUG 既编码甲硫氨酸，又是起始信号；在原核中还有少量替代起始密码子，例如 83% 用 AUG、14% 用 GUG、3% 用 UUG。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>“为什么是三联体”要答组合数：1 个碱基 4 种、2 个 16 种都不足 20，3 个 64 种才够。终止密码子是 UAA、UAG、UGA，又称无义密码子。</p>
+  </aside>
+  
+<!-- course-image:bio103-ch13-codon-table.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-bio103-ch13-codon-table">
+        <img class="c-course-figure__img" src="../../assets/course/bio103-ch13-codon-table.jpg" alt="遗传密码表" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 遗传密码表 <span class="c-course-figure__src">来源：L16 p.4</span></figcaption>
+      </figure>
+
+<p class="c-source">L16 p.2–4</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">13.2</span> 遗传密码的特性与阅读框</h2>
+  <p>遗传密码有四个基本特性：</p>
+  <ul>
+    <li><span class="c-term">简并性<span class="c-term__en">degeneracy</span></span>：多数氨基酸有多个密码子，编码同一氨基酸的密码子互为同义密码子（synonyms）。</li>
+    <li><span class="c-term">通用性<span class="c-term__en">universality</span></span>：一个物种中的密码子在另一物种中编码同一氨基酸，仅有少数例外（如人线粒体）。</li>
+    <li>无逗号（commaless）：密码子连续排列，中间没有分隔符。因此 ATGAAATCC 应读作 ATG AAA TCC，而不是 ATG, AAA, TCC 那样随意断句。</li>
+    <li>不重叠（non-overlapping）：相邻密码子不共享碱基，每个碱基只属于一个密码子。</li>
+  </ul>
+  <p>由于密码子不重叠且无逗号，同一段 mRNA 从不同起点开始读，会得到三个不同的<span class="c-term">阅读框<span class="c-term__en">reading frame</span></span>，翻译出三条完全不同的蛋白序列。除极少数例外，<span class="c-term c-term--auto" data-term="cell" title="细胞｜cell：生命的基本单位；所有生物由一个或多个细胞组成，细胞来自已有细胞。">细胞</span>只使用其中一个阅读框；蛋白质合成装置（rRNA）必须能够确定并使用正确的读框。若读框选错，得到的将是无意义的“nonsense”蛋白。</p>
+  <p>这解释了为什么<span class="c-term c-term--auto" data-term="frameshift-mutation" title="移码突变｜frameshift mutation：插入或缺失 1–2 个碱基使阅读框整体移位的突变。">移码突变</span>（插入或缺失非 3 倍数个碱基）后果严重：它把突变点之后的整个读框换掉，而不只是改变一个氨基酸。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“简并”指多个密码子对应同一氨基酸，不指密码子可以随意对应多个氨基酸。遗传密码的解读方向是固定的：一个密码子只指定一种氨基酸（终止信号除外）。</p>
+  </aside>
+  <p class="c-source">L16 p.5–6</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">13.3</span> 翻译机器与 tRNA 的适配器作用</h2>
+  <p>翻译需要七类组分：mRNA（模板）、20 种氨基酸（原料）、tRNA（搬运工具）、氨酰-tRNA 合成酶（给 tRNA 装载氨基酸）、核糖体（催化场所）、起始因子与延伸因子（辅助各阶段）、释放因子（终止）。</p>
+  <p>每种生物都有多种 tRNA；几种携带不同反密码子的 tRNA 可以携带同一种氨基酸。<span class="c-term">反密码子<span class="c-term__en">anticodon</span></span>与 mRNA 的密码子互补，因此 tRNA 决定了“哪个密码子对应哪个氨基酸”。所有 tRNA 都有碱基配对的区域与三个环，折叠成 L 形，充当氨基酸与密码子之间的<span class="c-term">适配器<span class="c-term__en">adaptor</span></span>：一端接受氨基酸，另一端用反密码子读取 mRNA。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 13-1 tRNA 作为密码子与氨基酸之间的适配器</span>
+      <button class="c-copy" type="button" data-copy="Clean vector schematic of tRNA function: an L-shaped tRNA with its anticodon loop base-paired to a codon on a horizontal mRNA, and its 3' acceptor end carrying a specific amino acid; a second panel shows aminoacyl-tRNA synthetase attaching the correct amino acid to the tRNA. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/bio103-trna-adaptor.svg" alt="tRNA 的 L 形结构与密码子—氨基酸适配器作用" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector schematic of tRNA function: an L-shaped tRNA with its anticodon loop base-paired to a codon on a horizontal mRNA, and its 3' acceptor end carrying a specific amino acid; a second panel shows aminoacyl-tRNA synthetase attaching the correct amino acid to the tRNA. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>tRNA 的双端分工：3′ 端（acceptor）接氨基酸，反密码子端读密码子；两者位于 L 形分子的两端，这个几何关系保证了“氨基酸”与“密码子”的对应。</p>
+  </aside>
+  <p class="c-source">L16 p.9–10</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">13.4</span> 摆动配对与氨酰-tRNA 合成酶</h2>
+  <p>如果每个密码子都需要一种专用 tRNA，细胞就要有 61 种 tRNA。实际数量远少于此，原因在于<span class="c-term">摆动配对<span class="c-term__en">wobble</span></span>：反密码子的第三位（即 5′ 端那一位）在空间上不受严格限制，可以“摆动”，与密码子第三位上<span class="c-term c-term--auto" data-term="purine" title="嘌呤｜purine：双环含氮碱基，包括腺嘌呤与鸟嘌呤。">嘌呤</span>或<span class="c-term c-term--auto" data-term="pyrimidine" title="嘧啶｜pyrimidine：单六元环含氮碱基，包括胞嘧啶、胸腺嘧啶与尿嘧啶。">嘧啶</span>中的任一成员配对。</p>
+  <p>例如反密码子上的 G（双环嘌呤）既可配对密码子上的 U，也可配对 C。某些摆动位点甚至可以与四种碱基中的任何一种配对。这样，一个 tRNA 就能识别多个同义密码子，使翻译只需少于 64 种 tRNA 即可完成。</p>
+  <p>第二项关键组分是<span class="c-term">氨酰-tRNA 合成酶<span class="c-term__en">aminoacyl-tRNA synthetase</span></span>。它负责把正确的氨基酸接到对应的 tRNA 上，形成氨酰-tRNA。这一步决定了“氨基酸身份”与“反密码子身份”的对应关系，是翻译保真的关键节点：若装载错误，核糖体无法察觉，会把错误的氨基酸掺入蛋白。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>摆动发生在反密码子的第三位（5′ 端），配对的正是密码子的第三位（3′ 端）。不要写成“密码子第一位摆动”。</p>
+  </aside>
+  <p class="c-source">L16 p.12–13</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">13.5</span> 核糖体的功能与<span class="c-term c-term--auto" data-term="peptide-bond" title="肽键｜peptide bond：两个氨基酸脱水缩合形成的共价键。">肽键</span>形成</h2>
+  <p>核糖体不是被动的支架，它承担五项功能：</p>
+  <ol>
+    <li>结合 mRNA，使密码子能与 tRNA 的反密码子高保真地配对。</li>
+    <li>在原核中，小亚基含有一段特定的 rRNA 序列，能结合起始密码子上游的序列，使进入的氨酰-tRNA 正确定位，从而起始翻译。</li>
+    <li>催化肽酰-tRNA 与进入的氨酰-tRNA 之间形成肽键。</li>
+    <li>催化移位（translocation）：把新延伸的肽酰-tRNA 与 mRNA 相对移动一个密码子，使核糖体能够依次读取下一个密码子。</li>
+    <li>介导非核糖体蛋白因子（起始、延伸、终止因子）与核糖体的相互作用。</li>
+  </ol>
+  <p>肽键形成的本质是肽酰-tRNA 上肽链的羧基与进入的氨酰-tRNA 上氨基酸的氨基发生缩合，释放水。催化活性来自核糖体大亚基的 rRNA，而不是核糖体蛋白——这说明核糖体的催化核心是 RNA。</p>
+  <p>肽酰-tRNA 结合在核糖体的 P 位；进入的氨酰-tRNA 到达相邻的位点，肽键形成后核糖体发生移位，使新延伸的肽酰-tRNA 占据 P 位，空载的 tRNA 随之离开。延伸循环就是“进入 → 成键 → 移位”的重复。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>肽键由大亚基 rRNA 催化，不是由核糖体蛋白催化；移位使核糖体相对 mRNA 移动一个密码子，使下一个密码子进入阅读位置。</p>
+  </aside>
+  
+<!-- course-image:bio103-ch13-polyribosome.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-bio103-ch13-polyribosome">
+        <img class="c-course-figure__img" src="../../assets/course/bio103-ch13-polyribosome.jpg" alt="多聚核糖体" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 多聚核糖体 <span class="c-course-figure__src">来源：L16 p.20</span></figcaption>
+      </figure>
+
+<p class="c-source">L16 p.14, p.19</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">13.6</span> 起始：原核与真核的差异</h2>
+  <p>起始是翻译的限速步骤，也是调控最集中的阶段。原核与真核在此差别最大。</p>
+  <p>原核的第一个氨基酸是<span class="c-term">甲酰甲硫氨酸<span class="c-term__en">formylmethionine (fMet)</span></span>：起始 tRNA 携带的甲硫氨酸被甲硫酰-tRNA 转化酶加上甲酰基。起始密码子为 AUG 时，核糖体小亚基通过 rRNA 与起始密码子上游的 <span class="c-term">Shine-Dalgarno 序列<span class="c-term__en">Shine-Dalgarno sequence</span></span>配对，把核糖体正确定位，因此原核选择“哪一个 AUG”取决于它与该序列的距离。</p>
+  <p>真核的第一个氨基酸是甲硫氨酸（Met）。真核 mRNA 没有 Shine-Dalgarno 序列，核糖体先结合 5′ 帽，再沿 mRNA 向 3′ 方向扫描，遇到第一个 AUG 即起始。该 AUG 通常处于一个优化序列环境，称为 <span class="c-term">Kozak 序列<span class="c-term__en">Kozak sequence</span></span>，可增强其被识别为起始位点的效率。</p>
+  <p>因子数量也不同：原核起始只需 3 个起始因子（IF1、IF2、IF3），真核需要十余个（eIF）。此外原核 mRNA 常为多顺反子，一条 mRNA 编码多个多肽；真核 mRNA 通常为单顺反子，只编码一条多肽。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 13-2 原核与真核的翻译起始</span>
+      <button class="c-copy" type="button" data-copy="Clean vector side-by-side diagram of translation initiation: left prokaryotic, small ribosomal subunit bound to the Shine-Dalgarno sequence upstream of AUG, initiator fMet-tRNA in the P site; right eukaryotic, small subunit bound to the 5' cap and scanning along the mRNA until the first AUG in a Kozak sequence, initiator Met-tRNA in the P site. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector side-by-side diagram of translation initiation: left prokaryotic, small ribosomal subunit bound to the Shine-Dalgarno sequence upstream of AUG, initiator fMet-tRNA in the P site; right eukaryotic, small subunit bound to the 5' cap and scanning along the mRNA until the first AUG in a Kozak sequence, initiator Met-tRNA in the P site. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>三个对照必背：起始氨基酸 fMet（原核）vs Met（真核）；定位方式 Shine-Dalgarno（原核）vs 5′ 帽扫描 + Kozak（真核）；起始因子 3 个 vs 十余个。</p>
+  </aside>
+  <p class="c-source">L16 p.16–18</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">13.7</span> 终止与释放因子</h2>
+  <p>当核糖体读到 UAA、UAG 或 UGA 时，没有对应的 tRNA 能进入 A 位，翻译进入终止阶段。此时<span class="c-term">释放因子<span class="c-term__en">release factor</span></span>识别终止密码子并结合到 A 位，触发肽酰转移酶中心水解肽酰-tRNA 与多肽之间的酯键，把完成的多肽从 P 位的 tRNA 上切下。</p>
+  <p>E. coli 有三种释放因子：</p>
+  <ul>
+    <li>RF1：识别 UAA 与 UAG；其作用方式模拟 tRNA，激活肽酰转移酶以水解已完成的多肽。</li>
+    <li>RF2：识别 UAA 与 UGA。</li>
+    <li>RF3（核糖体释放因子）：不识别任何终止密码子，但刺激随后的终止事件，使核糖体解离。</li>
+  </ul>
+  <p>注意 RF1 与 RF2 的识别范围有重叠：两者都识别 UAA，但分别识别 UAG 与 UGA。真核只需一个释放因子 eRF1 即可识别三个终止密码子。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>RF3 不识别终止密码子，它的作用是促进终止后的解离，不能把它与 RF1/RF2 并列成“识别终止密码子”的因子。</p>
+  </aside>
+  <p class="c-source">L16 p.21–23</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">13.8</span> 原核与真核翻译的系统比较</h2>
+  <p>把前面的差异汇总，可得到一张完整的对照表：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>原核与真核翻译的比较</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">原核</th><th scope="col">真核</th></tr></thead>
+      <tbody>
+        <tr><td>核糖体组成</td><td>70S（30S + 50S）</td><td>80S（40S + 60S）</td></tr>
+        <tr><td><span class="c-term c-term--auto" data-term="transcription" title="转录｜transcription：以 DNA 为模板合成 RNA 的过程。">转录</span>与翻译</td><td>可同时进行（同一区室）</td><td>被核膜分开，时间与空间上分离</td></tr>
+        <tr><td>mRNA 类型</td><td>多顺反子（来自<span class="c-term c-term--auto" data-term="operon" title="操纵子｜operon：由同一启动子转录、产生多顺反子 mRNA 的一组基因。">操纵子</span>）</td><td>单顺反子</td></tr>
+        <tr><td>起始密码子选择</td><td>位于核糖体结合序列下游</td><td>AUG 位置更可变，靠扫描与 Kozak 序列</td></tr>
+        <tr><td>起始因子</td><td>3 个（IF1、IF2、IF3）</td><td>多于 9 个（eIF）</td></tr>
+        <tr><td>起始 tRNA</td><td>tRNA-fMet</td><td>tRNA-Met</td></tr>
+        <tr><td>mRNA 初始结合</td><td>需要核糖体结合序列</td><td>需要 7-甲基鸟苷帽</td></tr>
+        <tr><td>终止因子</td><td>3 个（RF1、RF2、RF3）</td><td>1 个（eRF1）</td></tr>
+        <tr><td>翻译速率</td><td>15–20 aa/s</td><td>1–2 aa/s，较慢</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>为什么原核可以“边转录边翻译”？因为转录与翻译发生在同一细胞区室，且两者都沿 5′→3′ 方向进行，核糖体可以附着在尚未转录完的 mRNA 上立即开始翻译。真核则因核膜的存在，转录在核内、翻译在细胞质，必须先生成成熟 mRNA 并输出，两个过程在空间与时间上都被分开。</p>
+  <p>最后一点：蛋白质合成的速率由起始步骤控制。起始是四个阶段中最主要被调控的环节，因此改变起始因子的活性或可用性，就能整体改变细胞的蛋白合成水平。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>70S = 30S + 50S，80S = 40S + 60S（不是 40 + 60 = 100，S 是沉降系数，不可相加）。翻译速率原核快于真核，起始是限速步骤。</p>
+  </aside>
+  <p class="c-source">L16 p.24–27</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L16</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch12.html"><span>上一章</span>基因表达调控</a>
+          <a class="pager__next" href="ch14.html"><span>下一章</span>蛋白质结构与功能</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

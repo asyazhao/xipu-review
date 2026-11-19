@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 370" role="img" aria-label="内膜系统的囊泡运输通路">
+<title>内膜系统的囊泡运输通路</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">内膜系统的囊泡运输通路</text>
+<ellipse cx="105" cy="180" rx="62" ry="78" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.5"/>
+<ellipse cx="105" cy="180" rx="53" ry="68" fill="#FFFFFF" stroke="#7C93AC" stroke-width="1.1"/>
+<text x="105" y="184" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="600">细胞核</text>
+<text x="105" y="272" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="middle" font-weight="400">核被膜</text>
+<path d="M 205 120 C 225 108, 245 132, 265 120 S 305 108, 325 120" fill="none" stroke="#2E4A6B" stroke-width="1.8"/>
+<path d="M 205 146 C 225 134, 245 158, 265 146 S 305 134, 325 146" fill="none" stroke="#2E4A6B" stroke-width="1.8"/>
+<path d="M 205 172 C 225 160, 245 184, 265 172 S 305 160, 325 172" fill="none" stroke="#2E4A6B" stroke-width="1.8"/>
+<text x="265" y="96" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">内质网 ER</text>
+<path d="M 400 110 Q 440 92, 480 110" fill="none" stroke="#2E4A6B" stroke-width="2.0"/>
+<path d="M 400 132 Q 440 114, 480 132" fill="none" stroke="#2E4A6B" stroke-width="2.0"/>
+<path d="M 400 154 Q 440 136, 480 154" fill="none" stroke="#2E4A6B" stroke-width="2.0"/>
+<path d="M 400 176 Q 440 158, 480 176" fill="none" stroke="#2E4A6B" stroke-width="2.0"/>
+<text x="440" y="88" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">高尔基体 Golgi</text>
+<line x1="172" y1="180" x2="202" y2="160" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="332" y1="160" x2="395" y2="150" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<circle cx="365" cy="150" r="8" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.3"/>
+<circle cx="520" cy="150" r="8" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.3"/>
+<circle cx="600" cy="150" r="8" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.3"/>
+<line x1="486" y1="150" x2="512" y2="150" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="528" y1="150" x2="592" y2="150" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="608" y1="150" x2="735" y2="150" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<text x="560" y="130" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">转运囊泡</text>
+<line x1="742" y1="70" x2="742" y2="300" stroke="#2E4A6B" stroke-width="3"/>
+<text x="742" y="58" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">质膜</text>
+<line x1="440" y1="180" x2="440" y2="272" stroke="#A8894F" stroke-width="1.5" marker-end="url(#arrowGold)"/>
+<circle cx="440" cy="290" r="15" fill="#F5F1E7" stroke="#A8894F" stroke-width="1.4"/>
+<text x="440" y="326" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#A8894F" text-anchor="middle" font-weight="600">溶酶体</text>
+<text x="40" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">分泌方向：ER → Golgi → 分泌囊泡 → 质膜；胞吞方向相反。</text>
+</svg>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 数据基础、可视化与描述统计 · 全科复习</title>
+  <meta name="description" content="MTH113 第 1 章 数据基础、可视化与描述统计：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="mth113" data-chapter="01">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">MTH113</a>
+      <span>/</span>
+      <span aria-current="page">第 1 章 数据基础、可视化与描述统计</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html" class="is-current" aria-current="page"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html" class="is-current" aria-current="page"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">MTH113 · 第 1 章</p>
+          <h1>数据基础、可视化与描述统计</h1>
+          <p class="chapter-head__en">Basics of Data, Visualization &amp; Description</p>
+          <p class="chapter-head__meta">来源 W1 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">1.1 统计学、变异与数据分析流程</a></li>
+        <li><a href="#s2">1.2 总体、样本、变量、参数与统计量</a></li>
+        <li><a href="#s3">1.3 变量类型：分类、离散数值与连续数值</a></li>
+        <li><a href="#s4">1.4 频数表、相对频数与累积相对频数</a></li>
+        <li><a href="#s5">1.5 单变量图示：条形图、点图、直方图、茎叶图与箱线图</a></li>
+        <li><a href="#s6">1.6 分布的形状、中心、离散程度与异常值</a></li>
+        <li><a href="#s7">1.7 集中趋势：均值、中位数与众数</a></li>
+        <li><a href="#s8">1.8 离散程度：极差、四分位数、IQR、方差与标准差</a></li>
+        <li><a href="#s9">1.9 五数概括、箱线图与异常值围栏</a></li>
+        <li><a href="#s10">1.10 z 分数与相对位置</a></li>
+        <li><a href="#s11">1.11 描述统计的写作、两组比较与常见错误</a></li>
+        <li><a href="#s12">1.12 描述统计与推断统计</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲回答一个核心问题：如何把原始数据变成清晰、诚实、有用的信息。主线是“识别总体与样本 → 判断变量类型 → 选择图表 → 用形状、中心、离散程度与异常值四个维度描述分布 → 写出有上下文的结论”。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>统计学是在变异存在的前提下从数据中学习的科学；平均相同的两组数据可以有完全不同的离散程度。</li>
+    <li>总体、样本、变量、参数与统计量是描述数据来源的五个基本词，参数固定但未知，统计量随样本而变。</li>
+    <li>变量先分分类与数值，数值再分离散与连续；编号、邮编、学号是标签，不是可平均的量。</li>
+    <li>频数表、条形图、点图、直方图、茎叶图与箱线图各有适用场合，条形图的柱要分开，直方图的柱要相接。</li>
+    <li>描述数值分布看形状、中心、离散程度与异常值；右偏时中位数比均值更稳健。</li>
+    <li>样本方差除以 <i>n</i> − 1，自由度概念由此而来；四分位距 IQR 与 1.5 IQR 围栏用于识别异常值。</li>
+    <li>z 分数把不同尺度的观测值放到同一把“标准差尺子”上比较。</li>
+    <li>描述统计只总结已观测数据，推断统计才用样本对总体下结论；相关不等于因果。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">1.1</span> 统计学、变异与数据分析流程</h2>
+  <p><span class="c-term">统计学<span class="c-term__en">statistics</span></span>被讲义定义为“在存在变异的前提下从数据中学习的科学”。<span class="c-term">变异<span class="c-term__en">variability</span></span>指观测值并不完全相同。数据很少自己说话，我们需要方法来概括与解释它们，并判断哪些模式是真实的、哪些只是噪声。</p>
+  <p>讲义用两个班级说明变异的地位：两个班平均分都是 70，一个班分数紧贴 70，另一个班从 30 到 100。平均值相同，故事完全不同。因此只看一个中心指标不足以描述数据。</p>
+  <p>数据分析流程分四步，并可回到起点反复修正：提出清楚的问题（ask a clear question）→ 收集或获取数据（collect or obtain data）→ 概括与可视化（summarize and visualize）→ 解释与沟通（interpret and communicate）。好的统计分析不只做计算，它从情境出发、以清楚的信息结束。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>统计学的定义必须包含“变异”：没有变异就不需要统计推断。平均分相同不代表分布相同，必须同时报告离散程度。</p>
+  </aside>
+  <p class="c-source">W1 p.8–9</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">1.2</span> 总体、样本、变量、参数与统计量</h2>
+  <p>四个基础词要先分清。<span class="c-term">总体<span class="c-term__en">population</span></span>是我们想了解的全部个体或集合；<span class="c-term">样本<span class="c-term__en">sample</span></span>是实际被观测到的总体子集；<span class="c-term">变量<span class="c-term__en">variable</span></span>是每个个体或单位被记录下来的特征。</p>
+  <p>讲义例子：某大学从 15,000 名学生中调查 200 人是否支持改评分制度。总体是全部 15,000 名学生，样本是这 200 人，变量是对拟议评分制度的态度。</p>
+  <p>再进一步要区分参数与统计量。<span class="c-term">参数<span class="c-term__en">parameter</span></span>是对整个总体的数值概括，通常未知，例如全校学生真实平均分；<span class="c-term">统计量<span class="c-term__en">statistic</span></span>是由样本算出的数值概括，例如 80 名被抽中学生的平均分。推断统计后来做的事，就是用样本统计量估计总体参数。</p>
+  <p>数据矩阵的读法也要建立：每一行是一个个体或观测单位，每一列是一个变量。计算之前先确认每个变量的含义与测量方式。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>总体必须与问题匹配，不能条件反射地写“所有人”。参数用总体定义、通常未知；统计量由样本算出、随样本变化，两者不能混称。</p>
+  </aside>
+  <p class="c-source">W1 p.10、33–35</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">1.3</span> 变量类型：分类、离散数值与连续数值</h2>
+  <p>变量分类决定后面能画什么图、能算什么数。讲义分三类：</p>
+  <ul>
+    <li><span class="c-term">分类变量<span class="c-term__en">categorical variable</span></span>：取值是标签或组别，算术通常没有意义。例：品牌、性别、专业、等级类别、是/否回答。</li>
+    <li><span class="c-term">离散数值变量<span class="c-term__en">discrete numerical variable</span></span>：可数的数值，常为整数。例：学生人数、缺陷数、购买次数。</li>
+    <li><span class="c-term">连续数值变量<span class="c-term__en">continuous numerical variable</span></span>：在某个区间内可取任意值。例：体重、身高、时间、温度、价格。</li>
+  </ul>
+  <p>讲义特别提醒：数字不一定是数值数据。学生学号、邮编是标签，不是可以求平均的数量。另有一类<span class="c-term">有序分类变量<span class="c-term__en">ordinal categorical variable</span></span>，如满意度“差、一般、好、很好”，类别之间有顺序，但类别之间的差不一定数值相等。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>常见变量的类型判断</caption>
+      <thead><tr><th scope="col">变量</th><th scope="col">类型</th></tr></thead>
+      <tbody>
+        <tr><td>血型</td><td>分类</td></tr>
+        <tr><td>今天收到的邮件数</td><td>离散数值</td></tr>
+        <tr><td>完成在线测验的时间</td><td>连续数值</td></tr>
+        <tr><td>大学生学号</td><td>分类标签</td></tr>
+        <tr><td>满意度：差 / 一般 / 好 / 很好</td><td>有序分类</td></tr>
+        <tr><td>一批货中的次品数</td><td>离散数值</td></tr>
+        <tr><td>电池寿命（小时）</td><td>连续数值</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>0–10 的推荐评分按讲义归为离散数值，因为可能取值可数；血型、学号是分类。判断标准是“取值是计数/测量还是标签”，不是“看起来像不像数字”。</p>
+  </aside>
+  <p class="c-source">W1 p.11、38</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">1.4</span> 频数表、相对频数与累积相对频数</h2>
+  <p><span class="c-term">频数<span class="c-term__en">frequency</span></span>是某一类或某一组的观测个数；<span class="c-term">相对频数<span class="c-term__en">relative frequency</span></span>是频数除以观测总数。讲义用 20 个学生的期中成绩做贯穿例子，分组后：50–59 分 2 人（0.10），60–69 分 5 人（0.25），70–79 分 4 人（0.20），80–89 分 7 人（0.35），90–99 分 2 人（0.10），合计 20 人、相对频数合计 1.00。</p>
+  <p>由原始数据做数值频数表的步骤：找最小值与最大值 → 选一个合理的组数 → 建立互不重叠、覆盖整个范围的区间 → 数每组的观测数 → 除以样本量得相对频数。组数的一个常用起点是约 √<i>n</i> 组，但讲义强调情境与可读性比规则更重要。</p>
+  <p><span class="c-term">累积相对频数<span class="c-term__en">cumulative relative frequency</span></span>把相对频数逐组累加。讲义例子中累加到 70–79 组为 0.55，意思是约 55% 的成绩低于 80 分。累积相对频数是后面经验分布与分位数概念的雏形。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>组区间必须互不重叠且覆盖全部数据；相对频数之和必须为 1。累积相对频数 0.55 表示“低于该组上限”，不是“该组以内”。</p>
+  </aside>
+  <p class="c-source">W1 p.13、39–40</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">1.5</span> 单变量图示：条形图、点图、直方图、茎叶图与箱线图</h2>
+  <p>讲义按数据类型给出图示选择。一个分类变量：频数表、<span class="c-term">条形图<span class="c-term__en">bar chart</span></span>、饼图，评论最大/最小类别与比例。一个数值变量且样本较小：<span class="c-term">点图<span class="c-term__en">dotplot</span></span>或<span class="c-term">茎叶图<span class="c-term__en">stem-and-leaf display</span></span>，可看到聚类、间隙、具体数值与异常值。一个数值变量且样本较大：<span class="c-term">直方图<span class="c-term__en">histogram</span></span>或箱线图，评论形状、中心、离散程度与异常值。两个数值变量：<span class="c-term c-term--auto" data-term="scatterplot" title="散点图｜scatterplot：以每对 (x,y) 为点的二维图。">散点图</span>，评论方向、形式、强度与异常点。</p>
+  <p>条形图与直方图的区别是高频考点。条形图用于分类数据，柱之间要分开，因为类别是彼此独立的组，顺序可按字母、逻辑或频数<span class="c-term c-term--auto" data-term="permutation" title="排列｜permutation：有序选取对象，顺序不同算不同结果。">排列</span>；直方图用于按区间分组的数值数据，柱彼此相接，顺序沿数轴排列。讲义明确警告：不要用直方图画品牌、专业这类类别，也不要用分开的柱表示组区间。</p>
+  <p>点图对每个观测放一个点，适合小到中等数据集，因为个别数值仍然可见。茎叶图像直方图，但保留原始数值：讲义例子中键值“7 | 4 表示 74”。饼图表示一个整体的各部分，只在类别很少时可读，比较相近百分比（如 23%、25%、27%）时不如条形图。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 1-1 条形图与直方图的区别</span>
+      <button class="c-copy" type="button" data-copy="Clean vector comparison of two chart types side by side: left a bar chart for categorical data with four clearly separated bars labelled Math, Finance, CS, Business and a count axis; right a histogram for numerical score intervals 50-59 to 90-99 with touching bars and a relative frequency axis. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector comparison of two chart types side by side: left a bar chart for categorical data with four clearly separated bars labelled Math, Finance, CS, Business and a count axis; right a histogram for numerical score intervals 50-59 to 90-99 with touching bars and a relative frequency axis. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>直方图也可能误导：组数太少会掩盖结构，组数太多会出现噪声式图案，组宽不等时必须用密度而不是原始频数作高度。直方图的视觉印象取决于分组选择，要检查主要结论是否稳定。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>分类数据用条形图（柱分开），数值分组数据用直方图（柱相接）。饼图只在类别少时使用；茎叶图保留原始数值，适合小样本。</p>
+  </aside>
+  <p class="c-source">W1 p.14–17、25、41–44</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">1.6</span> 分布的形状、中心、离散程度与异常值</h2>
+  <p>描述一个数值分布，讲义要求四个维度：<span class="c-term">形状<span class="c-term__en">shape</span></span>、<span class="c-term">中心<span class="c-term__en">center</span></span>、<span class="c-term">离散程度<span class="c-term__en">spread</span></span>与异常观测（unusual observations）。形状词汇包括：对称（symmetric，左右大致镜像）、右偏（right-skewed，长尾向右，少数特别大的值）、左偏（left-skewed，长尾向左，少数特别小的值）、单峰（unimodal，一个主峰）、双峰（bimodal，两个主峰，可能提示两个子群体）。<span class="c-term">异常值<span class="c-term__en">outlier</span></span>是远离数据主体的观测。</p>
+  <p>讲义用送货时间分布做示范：形状右偏、长尾朝向较大的送货时间；中心大约在 20–39 分钟；范围约 10 到 69 分钟；60–69 分钟区间可能包含值得检查的延迟订单。好的统计写作要用一段话，而不是孤立地丢几个形容词。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 1-2 对称、右偏与左偏</span>
+      <button class="c-copy" type="button" data-copy="Clean vector row of three density curves on separate axes: symmetric unimodal curve, right-skewed curve with a long tail to the right, and left-skewed curve with a long tail to the left. Each panel labelled symmetric, right-skewed, left-skewed. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/mth113-skewness.svg" alt="对称、右偏与左偏分布及均值/中位数的位置" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector row of three density curves on separate axes: symmetric unimodal curve, right-skewed curve with a long tail to the right, and left-skewed curve with a long tail to the left. Each panel labelled symmetric, right-skewed, left-skewed. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p>双峰分布值得单独说明：两个峰可能意味着数据混合了两个子群体（例如两个班、两种机器），此时报告一个总体中心会掩盖结构。描述分布时若看到双峰，应先追问数据来源是否混杂。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“右偏”指长尾在右、少数大值把均值拉高，不是“数据集中在右边”。偏态方向看尾巴，不看峰的位置。</p>
+  </aside>
+  <p class="c-source">W1 p.15、45–47</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">1.7</span> 集中趋势：均值、中位数与众数</h2>
+  <p><span class="c-term">均值<span class="c-term__en">mean</span></span>使用全部观测，公式为</p>
+  <div class="c-formula"><i>x̄</i> = (1 / <i>n</i>) Σ<sub><i>i</i>=1</sub><sup><i>n</i></sup> <i>x<sub>i</sub></i></div>
+  <p>均值是数据的平衡点，但对极端观测敏感。<span class="c-term">中位数<span class="c-term__en">median</span></span>是排序后的中间值：<i>n</i> 为奇数取正中间一个，<i>n</i> 为偶数取中间两个的平均。它对极端观测稳健，适合偏态数据。<span class="c-term">众数<span class="c-term__en">mode</span></span>是出现最频繁的值或类别，适用于分类数据，但可能不存在或不唯一。</p>
+  <p>20 个成绩的例子：总和 1495，均值 74.75；排序后第 10、11 个值为 74 与 77，中位数 75.5；74 出现两次，众数为 74。均值与中位数接近，说明这组数据没有被极端值严重影响。</p>
+  <p>讲义用两组数据说明敏感性：A 组 2, 3, 4, 5, 6，均值与中位数都是 4；B 组 2, 3, 4, 5, 100，均值 22.8，中位数仍是 4。均值被 100 拉走，中位数仍能描述中心。另一个例子把 3, 4, 5, 6, 7 中的 7 换成 27，均值从 5 变成 9。</p>
+  <p>选择规则：大致对称、无强异常值时均值与中位数都可接受且应接近；偏态数据或有极端异常值时用中位数；分类数据用众数或比例。报告时必须带单位与情境，不能只写“mean = 74.75”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>均值对极端值敏感、中位数稳健；右偏分布通常均值大于中位数。偶数个观测的中位数必须取中间两个的平均，不能直接取其中一个。</p>
+  </aside>
+  <p class="c-source">W1 p.18–20、48–50</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">1.8</span> 离散程度：极差、四分位数、IQR、方差与标准差</h2>
+  <p><span class="c-term">极差<span class="c-term__en">range</span></span>是最大值减最小值，简单但对极端值非常敏感。<span class="c-term">四分位数<span class="c-term__en">quartile</span></span>把数据分成下上半：<i>Q</i><sub>1</sub> 约第 25 百分位，<i>Q</i><sub>3</sub> 约第 75 百分位。<span class="c-term">四分位距<span class="c-term__en">interquartile range</span></span>（IQR）= <i>Q</i><sub>3</sub> − <i>Q</i><sub>1</sub>，描述中间 50% 观测的跨度。</p>
+  <p>20 个成绩的排序结果为 52, 55, 63, 64, 67, 68, 69, 72, 74, 74, 77, 81, 82, 84, 85, 87, 88, 89, 91, 93。中位数是第 10、11 个值的平均 (74 + 77)/2 = 75.5。下半部分 10 个数为 52 到 74，<i>Q</i><sub>1</sub> 取其中第 5、6 个值的平均 (67 + 68)/2 = 67.5；上半部分 <i>Q</i><sub>3</sub> 取 (85 + 87)/2 = 86。于是 IQR = 86 − 67.5 = 18.5。</p>
+  <p><span class="c-term">样本方差<span class="c-term__en">sample variance</span></span>与<span class="c-term">样本标准差<span class="c-term__en">sample standard deviation</span></span>为</p>
+  <div class="c-formula"><i>s</i><sup>2</sup> = Σ (<i>x<sub>i</sub></i> − <i>x̄</i>)<sup>2</sup> / (<i>n</i> − 1)，&nbsp;&nbsp; <i>s</i> = √<i>s</i><sup>2</sup></div>
+  <p><i>x<sub>i</sub></i> − <i>x̄</i> 是第 <i>i</i> 个观测相对样本均值的偏差；平方可防止正负偏差相互抵消；<i>s</i> 用原单位，比 <i>s</i><sup>2</sup> 更好解释。这 20 个成绩的 <i>s</i> ≈ 11.87，意思是大多数成绩在均值 74.75 附近约 12 分内。</p>
+  <p>为什么除以 <i>n</i> − 1：偏差是相对同一条数据算出的样本均值度量的，平方偏差平均偏小；除以 <i>n</i> − 1 而不是 <i>n</i> 可纠正这一倾向。<i>n</i> − 1 称为样本方差的<span class="c-term">自由度<span class="c-term__en">degrees of freedom</span></span>。小例子 4, 6, 8：均值 6，平方偏差 4, 0, 4，<i>s</i><sup>2</sup> = 8/2 = 4，<i>s</i> = 2。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>样本方差除以 <i>n</i> − 1，不是 <i>n</i>；标准差是方差的平方根，单位与原数据相同。IQR 只用中间 50%，不会被极端值拉动，因此常与中位数配对使用。</p>
+  </aside>
+  <p class="c-source">W1 p.21–23、51–56</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">1.9</span> 五数概括、箱线图与异常值围栏</h2>
+  <p><span class="c-term">五数概括<span class="c-term__en">five-number summary</span></span>是最小值、<i>Q</i><sub>1</sub>、中位数、<i>Q</i><sub>3</sub>、最大值。20 个成绩的五个数是 52、67.5、75.5、86、93；极差 41，IQR 18.5，样本标准差 11.87。<span class="c-term">箱线图<span class="c-term__en">boxplot</span></span>把五数概括画成箱体与须。</p>
+  <p>异常值经验规则：低于 <i>Q</i><sub>1</sub> − 1.5 IQR 或高于 <i>Q</i><sub>3</sub> + 1.5 IQR 的值可标为潜在异常值。对这批成绩，下围栏 = 67.5 − 1.5(18.5) = 39.75，上围栏 = 86 + 1.5(18.5) = 113.75，没有观测落在围栏外。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 1-3 箱线图与五数概括</span>
+      <button class="c-copy" type="button" data-copy="Clean vector horizontal boxplot with a labelled axis from 50 to 95: whisker at minimum 52, box from Q1 67.5 to Q3 86, median line at 75.5, whisker at maximum 93, and small tick labels for the five-number summary. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector horizontal boxplot with a labelled axis from 50 to 95: whisker at minimum 52, box from Q1 67.5 to Q3 86, median line at 75.5, whisker at maximum 93, and small tick labels for the five-number summary. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>箱线图适合并排比较两组：讲义例子中参加辅导组的均值 78、标准差 8，未参加组均值 70、标准差 14；前者中心更高，后者更分散。但描述性比较不能证明辅导导致分差。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>五数概括与 1.5 IQR 围栏要会算。箱体宽度是 IQR，箱中线是中位数；须不一定延伸到最小/最大值，取决于是否采用围栏规则。</p>
+  </aside>
+  <p class="c-source">W1 p.23–24、52–53、60</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">1.10</span> z 分数与相对位置</h2>
+  <p><span class="c-term">z 分数<span class="c-term__en">z-score</span></span>定义为</p>
+  <div class="c-formula"><i>z</i> = (<i>x</i> − <i>x̄</i>) / <i>s</i></div>
+  <p>它表示一个观测值距离均值多少个标准差。z 为正表示在均值之上，为负表示在均值之下。z 分数把不同尺度的测量放到同一把尺子上，便于跨变量比较相对位置。</p>
+  <p>成绩例子中 <i>x</i> = 93、<i>x̄</i> = 74.75、<i>s</i> = 11.87，z ≈ 1.54，说明 93 分比均值高约 1.54 个标准差。若另一门课某学生 z = 1.54，则两门课中的相对位置相同，尽管原始分数完全不同。</p>
+  <p>z 分数也为后面的<span class="c-term c-term--auto" data-term="empirical-rule" title="经验法则｜empirical rule：正态下 μ±σ、±2σ、±3σ 约含 68/95/99.7%。">经验法则</span>与正态<span class="c-term c-term--auto" data-term="standardization" title="标准化｜standardization：用 Z=(X−μ)/σ 把正态变量变为标准正态。">标准化</span>埋下伏笔：在近似正态的数据中，|z| 大于 2 或 3 的观测值得特别关注；但本讲只要求会算与会解释相对位置，不涉及正态概率。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>z 分数没有单位；它衡量“相对位置”，不衡量“重要程度”。z 大不代表变量本身更重要，只代表该观测在本组中离均值更远。</p>
+  </aside>
+  <p class="c-source">W1 p.57</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">1.11</span> 描述统计的写作、两组比较与常见错误</h2>
+  <p>讲义给出描述性总结模板：对[情境]，[变量] 的分布是[形状]，中心约在[均值/中位数]，离散程度约[IQR/标准差/极差]，有/没有异常观测，这提示[实际解释]。示范：班级成绩分布中心约 75 分，样本标准差约 12 分，按 1.5 IQR 规则没有异常值，成绩最集中在 80–89 区间。</p>
+  <p>比较两组时，要同时报告中心与离散程度。讲义例子：参加辅导组均值 78、标准差 8，未参加组均值 70、标准差 14。前者中心更高，后者更分散。但讲义紧接着提醒：描述性比较不能自动证明辅导导致差异；出勤可能与动机、先前准备、时间安排等因素有关。描述统计能揭示<span class="c-term">相关<span class="c-term__en">association</span></span>，因果结论需要更强的研究设计。</p>
+  <p>讲义列出五类常见错误：对学号、邮编等标签求平均；不检查偏态与异常值就报告均值；类别过多仍用饼图；直方图组宽不等却不考虑密度；把样本结果直接说成证明了总体的某件事。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“相关”不是“因果”。即使两组均值差异明显，也可能存在隐藏变量同时影响分组与结果；描述统计只能说明观测到的模式。</p>
+  </aside>
+  <p class="c-source">W1 p.27、60–62</p>
+</section>
+
+<section id="s12">
+  <h2 id="s12"><span class="sec-num">1.12</span> 描述统计与推断统计</h2>
+  <p><span class="c-term">描述统计<span class="c-term__en">descriptive statistics</span></span>概括并传达已观测数据中的信息：表格、图形、平均数、离散程度指标。本讲主要停留在这里。</p>
+  <p><span class="c-term">推断统计<span class="c-term__en">inferential statistics</span></span>用样本数据对更大的总体下结论：<span class="c-term c-term--auto" data-term="confidence-interval" title="置信区间｜confidence interval：由样本给出的参数合理取值区间。">置信区间</span>、假设检验、预测、不确定性陈述。它从后面几周开始系统展开，第 9 周的<span class="c-term c-term--auto" data-term="sampling-distribution" title="抽样分布｜sampling distribution：重复抽样下统计量的概率分布。">抽样分布</span>与置信区间是核心工具。</p>
+  <p>两者的连接点是抽样：样本统计量随样本而变，这种<span class="c-term">抽样变异性<span class="c-term__en">sampling variability</span></span>正是推断统计要量化的对象。第 1 周先把数据看清、把变量分类、把分布描述准确，后面的概率模型才有可靠的输入。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>描述统计与推断统计的分工</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">描述统计</th><th scope="col">推断统计</th></tr></thead>
+      <tbody>
+        <tr><td>对象</td><td>已观测的样本数据</td><td>由样本推向总体</td></tr>
+        <tr><td>典型工具</td><td>频数表、直方图、均值、标准差</td><td>置信区间、假设检验、预测</td></tr>
+        <tr><td>是否含不确定性</td><td>不显式量化抽样误差</td><td>以概率陈述不确定性</td></tr>
+        <tr><td>本课程位置</td><td>第 1 周</td><td>第 9 周起重点展开</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>能各举一例并说明区别：描述统计说“这个样本是什么样”，推断统计说“总体可能是什么样、有多大把握”。</p>
+  </aside>
+  <p class="c-source">W1 p.31、35</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W1</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="index.html"><span>返回</span>学科主页</a>
+          <a class="pager__next" href="ch02.html"><span>下一章</span>概率基础</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

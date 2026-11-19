@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 365" role="img" aria-label="Person 继承层次">
+<title>Person 继承层次</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">Person 继承层次</text>
+<rect x="300" y="70" width="200" height="76" rx="4" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="400" y="96" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2E4A6B" text-anchor="middle" font-weight="700">Person</text>
+<text x="400" y="118" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">name · gender · city</text>
+<text x="400" y="134" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8" fill="#5E5E58" text-anchor="middle" font-weight="400">dateOfBirth · idNumber · getAge()</text>
+<rect x="80" y="240" width="160" height="76" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="160" y="266" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">Student</text>
+<text x="160" y="288" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">major · yearOfStudy</text>
+<line x1="160" y1="236" x2="360" y2="150" stroke="#262624" stroke-width="1.2"/>
+<polygon points="354,152 366,152 360,140" fill="#FFFFFF" stroke="#262624" stroke-width="1.1"/>
+<rect x="320" y="240" width="160" height="76" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="400" y="266" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">Professor</text>
+<text x="400" y="288" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">dept · coursesTaught</text>
+<line x1="400" y1="236" x2="400" y2="150" stroke="#262624" stroke-width="1.2"/>
+<polygon points="394,152 406,152 400,140" fill="#FFFFFF" stroke="#262624" stroke-width="1.1"/>
+<rect x="560" y="240" width="160" height="76" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.3"/>
+<text x="640" y="266" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">Admin</text>
+<text x="640" y="288" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">dept · jobTitle</text>
+<line x1="640" y1="236" x2="440" y2="150" stroke="#262624" stroke-width="1.2"/>
+<polygon points="434,152 446,152 440,140" fill="#FFFFFF" stroke="#262624" stroke-width="1.1"/>
+<text x="40" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">UML 空心三角箭头指向父类：Student / Professor / Admin 都是 Person（is-a）。</text>
+</svg>

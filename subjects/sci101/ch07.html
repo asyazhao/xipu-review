@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCI101 经典机器学习方法 · 全科复习</title>
+  <meta name="description" content="SCI101 第 7 章 经典机器学习方法：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="sci101" data-chapter="07">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SCI101</a>
+      <span>/</span>
+      <span aria-current="page">第 7 章 经典机器学习方法</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html" class="is-current" aria-current="page"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html" class="is-current" aria-current="page"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SCI101 · 第 7 章</p>
+          <h1>经典机器学习方法</h1>
+          <p class="chapter-head__en">Introduction to Machine Learning Methods</p>
+          <p class="chapter-head__meta">来源 L5 · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">7.1 计算建模 vs AI 驱动分析</a></li>
+        <li><a href="#s2">7.2 决策树：结构与直觉</a></li>
+        <li><a href="#s3">7.3 三个决策树实例</a></li>
+        <li><a href="#s4">7.4 随机森林：多棵树的投票</a></li>
+        <li><a href="#s5">7.5 SVM：最大间隔</a></li>
+        <li><a href="#s6">7.6 核技巧：把数据送到更高维</a></li>
+        <li><a href="#s7">7.7 梯度提升：从错误中学习</a></li>
+        <li><a href="#s8">7.8 四种方法的对比</a></li>
+        <li><a href="#s9">7.9 易错点与题型精讲</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲覆盖四类经典方法：决策树、随机森林、支持向量机与梯度提升。主线是同一个问题的四种回答方式——如何划分空间、如何组合多个模型、如何定义“最好的边界”、如何逐步修正错误。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>计算建模是理论优先、规则驱动、追求理解系统；AI 驱动分析是数据优先、学习驱动、追求发现模式；两者结合是物理信息机器学习。</li>
+    <li>决策树是流程图式的 if-else 提问，每次分裂追求纯度（如 Gini 不纯度），叶节点给出结果。</li>
+    <li>决策树是贪心算法：每个节点只选当前最优分裂，不考虑后续，可能得到次优整体结构。</li>
+    <li>随机森林用 <span class="c-term c-term--auto" data-term="bagging" title="装袋｜bagging：对数据取随机子集、并行训练多个模型再聚合的方法。">bagging</span> 训练多棵树，<span class="c-term c-term--auto" data-term="classification" title="分类｜classification：目标为类别的监督学习任务。">分类</span>投票、<span class="c-term c-term--auto" data-term="regression" title="回归｜regression：目标为连续数值的监督学习任务。">回归</span>平均，降低<span class="c-term c-term--auto" data-term="overfitting" title="过拟合｜overfitting：训练表现强而新数据表现下降，方差过大。">过拟合</span>。</li>
+    <li>SVM 找最大间隔超平面，靠支持向量定义边界；核技巧把数据映射到高维使线性可分。</li>
+    <li>梯度提升序列建树，每棵新树拟合前面模型的错误；随机森林则并行、独立。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">7.1</span> 计算建模 vs AI 驱动分析</h2>
+  <p>讲义开篇用一张对照表区分两种研究范式，这是理解“为什么需要机器学习”的入口：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>两种范式的目标、路径与产出</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">计算建模</th><th scope="col">AI 驱动分析</th></tr></thead>
+      <tbody>
+        <tr><td>目标</td><td>理解一个系统</td><td>在数据中找模式</td></tr>
+        <tr><td>路径</td><td>理论优先、基于规则</td><td>数据优先、基于学习</td></tr>
+        <tr><td>产出</td><td>仿真、预测</td><td>预测、分类</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>两者并非互斥：讲义指出“计算 + AI”就是<span class="c-term">物理信息机器学习<span class="c-term__en">physics-informed machine learning</span></span>，即把计算建模的物理约束与 AI 的数据驱动分析结合起来。</p>
+  <p class="c-source">L5 slide 10</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">7.2</span> 决策树：结构与直觉</h2>
+  <p><span class="c-term">决策树<span class="c-term__en">decision tree</span></span>是用于分类与回归的机器学习方法，形态像流程图：每个问题把数据切开，每条分支代表一个决策，每个叶节点代表一个结果。讲义把它比作“20 个问题”游戏——通过一连串是/否提问逐步缩小范围。</p>
+  <p>树的生长逻辑是“分裂后更纯”：每次选择某个特征与阈值，把当前数据分成两份，使子集的类别更一致。讲义在对比页把这一机制写作“基于特征值把数据切成子集，以最大化纯度（例如 Gini 不纯度）”。停止条件通常是树的深度、叶节点最小样本数等<span class="c-term c-term--auto" data-term="hyperparameter" title="超参数｜hyperparameter：训练前由人设定、不由数据直接学到的量，如学习率。">超参数</span>。</p>
+  
+<!-- course-image:sci101-ch07-decision-tree.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-sci101-ch07-decision-tree">
+        <img class="c-course-figure__img" src="../../assets/course/sci101-ch07-decision-tree.jpg" alt="决策树：用规则切分数据" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 决策树：用规则切分数据 <span class="c-course-figure__src">来源：L5 p.21</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 7-1 决策树的分裂结构</span>
+      <button class="c-copy" type="button" data-copy="Clean vector decision tree flowchart with a root question at the top splitting into two branches, each branch leading to another yes-no question, and four leaf boxes at the bottom labelled with class outcomes; branch edges labelled yes and no. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/sci101-decision-tree.svg" alt="决策树的根节点、内部节点与叶节点" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector decision tree flowchart with a root question at the top splitting into two branches, each branch leading to another yes-no question, and four leaf boxes at the bottom labelled with class outcomes; branch edges labelled yes and no. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p>讲义强调决策树的优点是“可解释”：学到的规则可以打印出来（export_text），人可以直接读懂，这对实验室与现场应用很重要。</p>
+  
+<p class="c-source">L5 slide 20–22</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">7.3</span> 三个决策树实例</h2>
+  <p>讲义用三个由浅入深的例子展示同一套流程：收集小数据集 → 划分训练/测试（如 80/20）→ 训练并限制深度 → 评估 → 读规则解释。</p>
+  <p><strong>实例一：水果分类。</strong>目标是从质量（g）、直径（cm）、颜色分（0–1）预测苹果/橙子/香蕉。之所以选树，是因为规则容易解释。代码用 max_depth = 3 避免过拟合，训练后在测试集上算准确率，再用 export_text 打印学到的规则，例如 color_score &gt; 0.7 很可能是苹果。</p>
+  <p><strong>实例二：水质安全（二分类）。</strong>目标是把水样判为安全/不安全，特征是 pH、浊度（NTU）、硝酸盐（mg/L）。判定规则来自标准区间：pH 应在 6.5–8.5，浊度小于 5，硝酸盐小于 10；三条都满足则安全，任一条违反即不安全。训练时限制深度与叶节点最小样本数，评估用准确率与<span class="c-term c-term--auto" data-term="confusion-matrix" title="混淆矩阵｜confusion matrix：按实际与预测类别交叉计数的 TP/FP/TN/FN 四格表。">混淆矩阵</span>，最后读规则向实验室解释判定依据。</p>
+  <p><strong>实例三：植物叶片诊断。</strong>目标是把叶片分为健康/患病，特征是斑点数量、湿度（%）、温度（°C）。讲义给的简单规则是：斑点 &gt; 4 且湿度 &gt; 70% 判为患病，否则健康。评估用 <span class="c-term c-term--auto" data-term="f1-score" title="F1 分数｜F1 score：精确率与召回率的调和平均，用于平衡二者。">F1 分数</span>，因为两类样本可能不平衡；规则可直接指导田间检查。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>三个实例的特征与判据要能对上号：水果看 color_score，水看 pH/浊度/硝酸盐三条阈值，叶片看“斑点 &gt; 4 且湿度 &gt; 70%”。</p>
+  </aside>
+  <p class="c-source">L5 slide 24–35</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">7.4</span> 随机森林：多棵树的投票</h2>
+  <p><span class="c-term">随机森林<span class="c-term__en">random forest</span></span>是一种<span class="c-term">集成方法<span class="c-term__en">ensemble method</span></span>，把许多棵决策树组合起来。每棵树在数据的随机样本上训练，最终预测由多数投票（分类）或平均（回归）产生。讲义用“问 100 个朋友这个水果是苹果还是橙子，取多数答案”作类比。</p>
+  <p>关键在于“随机”带来的多样性：单棵树容易对训练数据的小变化敏感（不稳定），多棵树平均后，个别树的偏差与噪声被抵消，因此比单棵树更准、更不易过拟合。讲义在优点里明确写“通过平均降低过拟合”“提供特征重要性”。</p>
+  <p>实例是动物三分类：特征为体温（°C）、是否产卵（0/1）、是否生活在咸水（0/1），目标为鱼/鸟/哺乳动物。鱼类体温约 12°C、产卵、咸水；哺乳类约 39°C、不产卵、非咸水；鸟类居中约 30°C、产卵、非咸水。训练用 RandomForestClassifier，n_estimators ≈ 200；数据含 240 个合成动物（各 80 个）。评估准确率并查看特征重要性，例如“哺乳动物约 37°C 且不产卵”就是模型学到的一条可解释规律。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>随机森林的“随机”有两层：样本随机（bagging）与特征随机（每次分裂只看部分特征）。只记住“很多树”不足以解释它为什么比单棵树稳。</p>
+  </aside>
+  <p class="c-source">L5 slide 36–45</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">7.5</span> SVM：最大间隔</h2>
+  <p><span class="c-term">支持向量机<span class="c-term__en">support vector machine</span></span>是<span class="c-term c-term--auto" data-term="supervised-learning" title="监督学习｜supervised learning：训练数据带标签、由标签提供学习信号的方法。">监督学习</span>算法，用于分类（也可用于回归）。它寻找能把类别分开的最佳边界，这个边界在二维是直线、在高维是<span class="c-term">超平面<span class="c-term__en">hyperplane</span></span>。与“任意一条能分开的线”不同，SVM 要求<span class="c-term">间隔<span class="c-term__en">margin</span></span>最大——即边界到最近数据点的距离尽可能宽。</p>
+  <p>讲义用“在沙地上画一条线分开猫和狗，希望两边留出最宽的空隙”作类比；把 SVM 比作“聪明的尺子”，不是随便画线，而是找那条让红绿点离得最远的线。决定这条线的不是所有点，而是离边界最近的几个点，它们叫<span class="c-term">支持向量<span class="c-term__en">support vectors</span></span>。</p>
+  
+<!-- course-image:sci101-ch07-svm.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-sci101-ch07-svm">
+        <img class="c-course-figure__img" src="../../assets/course/sci101-ch07-svm.jpg" alt="SVM 的最大间隔超平面" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> SVM 的最大间隔超平面 <span class="c-course-figure__src">来源：L5 p.48</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 7-2 SVM 的最大间隔与支持向量</span>
+      <button class="c-copy" type="button" data-copy="Clean vector 2D scatter plot with two classes of dots, a solid decision boundary line between them, two dashed parallel margin lines, the gap between margins shaded, and the nearest points circled and labelled support vectors. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector 2D scatter plot with two classes of dots, a solid decision boundary line between them, two dashed parallel margin lines, the gap between margins shaded, and the nearest points circled and labelled support vectors. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>实例一（线性核）把化合物分为有毒/无毒，特征为 logP（疏水性）与分子量，因为两类大致线性可分。流程是先缩放特征、划分数据，再训练 SVC(kernel='linear')，取得边界系数并查看支持向量，最后评估准确率。讲义特别提醒“先缩放”：SVM 依赖距离，量纲不同会扭曲间隔。</p>
+  
+<p class="c-source">L5 slide 46–57、72</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">7.6</span> 核技巧：把数据送到更高维</h2>
+  <p>当数据不是线性可分时（例如红点被绿点围成一圈），直线无能为力。讲义把<span class="c-term">核<span class="c-term__en">kernel</span></span>比作“魔法眼镜”：让 SVM 以一种新的方式看这些点，从而能用直线分开。严格的表述是：核把输入映射到更高维空间，在那里线性分离成为可能。</p>
+  <p>讲义给了两个非线性实例。其一是 RBF 核：目标是按两个显微特征（texture_score、reflectance）对矿物颗粒分类，类别呈环形分布，因此用 SVC(kernel='rbf')，并用 GridSearchCV 调 C 与 gamma（候选 C 为 0.5、1、2，gamma 为 scale、0.5、1）。其二是多项式核：由 peak_ratio 与 hardness 预测晶体结构 A/B，用 degree = 2 或 3 捕捉弯曲边界，并与线性核基线比较。</p>
+  <p>核的选择直接决定模型能力，也带来代价：讲义在缺点里写“性能高度依赖核与<span class="c-term c-term--auto" data-term="parameter" title="参数｜parameter：模型内部由训练学到的量，如权重与偏置。">参数</span>调优”“较难直观解释”“数据量大时计算昂贵、内存占用高”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>核函数的作用是“把输入变换到更高维空间，使线性可分”，不是“给特征加权”，也不是“减少支持向量个数”。</p>
+  </aside>
+  <p class="c-source">L5 slide 54–55、105–112</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">7.7</span> 梯度提升：从错误中学习</h2>
+  <p><span class="c-term">梯度提升<span class="c-term__en">gradient boosting</span></span>序列地建树，每一步改进上一次的错误。讲义用备考类比：普通学生只背简单事实（弱模型），聪明的学生会集中攻克上次做错的题——梯度提升就是这样，每棵新树拟合前面模型的残差。</p>
+  <p>流程是：先建一棵很简单的树（如树桩），测量它的误差；再建下一棵树去预测这些误差；重复并把所有树组合成一个强模型。讲义提到 XGBoost 是流行实现，并称这类方法在竞赛中极强。</p>
+  <p>回归实例是植物高度预测：特征为日照时数、水量、肥料量，用 GradientBoostingRegressor 训练，<span class="c-term c-term--auto" data-term="evaluation-metrics" title="评估指标｜evaluation metrics：课程主题之一，用于衡量模型预测性能的指标。">评估指标</span>是<span class="c-term c-term--auto" data-term="mae" title="平均绝对误差｜MAE：预测值与真实值绝对误差的平均值，越低越好。">平均绝对误差</span>：</p>
+  <div class="c-formula">MAE = (1/<i>n</i>) Σ |<i>y<sub>i</sub></i> − <i>ŷ<sub>i</sub></i>|</div>
+  <p>选择梯度提升的理由是“对带交互项的表格回归很强”：日照与肥料存在交互（肥料充足时日照的边际效果更大），树模型能自动捕捉这种非线性与交互，不必人工构造乘积项。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“提升（boosting）”是串行、每棵树纠正前序错误；“装袋（bagging）”是并行、各自独立再平均。随机森林属于后者。</p>
+  </aside>
+  <p class="c-source">L5 slide 58–64</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">7.8</span> 四种方法的对比</h2>
+  <p>讲义用两页大表做横向比较，这里压缩成一张可背诵的表：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>四种经典方法的核心差异</caption>
+      <thead><tr><th scope="col">方法</th><th scope="col">一句话定义</th><th scope="col">优势</th><th scope="col">短板</th></tr></thead>
+      <tbody>
+        <tr><td>决策树</td><td>按特征做层级 if-else 提问的树状模型</td><td>简单、直观、易可视化；无需特征缩放</td><td>深树易过拟合；数据小变动会改变树结构</td></tr>
+        <tr><td>随机森林</td><td>bagging 组合多棵树，投票或平均</td><td>比单树稳、准确率高、可给特征重要性</td><td>黑箱、难解释；大数据下内存密集</td></tr>
+        <tr><td>SVM</td><td>找最大间隔超平面分隔类别</td><td>高维有效；核技巧处理非线性；内存高效</td><td>性能依赖核与参数；解释性较弱</td></tr>
+        <tr><td>梯度提升</td><td>序列建树，每棵纠正前序错误</td><td>预测精度常达顶级；稳健处理复杂模式</td><td>易过拟合需调参；串行训练慢、计算贵</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义还给了一张“最适合场景”的对应：决策树适合小数据集与可解释性至上的任务（如业务规则）；随机森林是通用首选（first try）；SVM 适合精度比解释更重要、且间隔清晰的中等规模数据（文本分类、图像识别）；梯度提升适合竞赛与“榨干最后一点精度”的场合。四个类比也值得记：流程图、专家委员会投票、在两个社区之间修最宽的马路、专攻错题的备考学生。</p>
+  <p>生物学的对应例子是：决策树做植物病害诊断，随机森林做物种分类，SVM 做细胞健康分类，梯度提升做药物反应预测。</p>
+  <p class="c-source">L5 slide 65–67</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">7.9</span> 易错点与题型精讲</h2>
+  <p>讲义末尾的十道选择题，实际在反复考五个概念，逐个拆开即可：</p>
+  <ul>
+    <li><strong>结构</strong>：决策树是“问题与答案的流程图，把数据切开”，不是“多个模型投票”，也不是“线性方程”。</li>
+    <li><strong>训练/测试划分的目的</strong>：让模型在一部分数据上训练，在未见数据上评估性能；不是用测试集训练。</li>
+    <li><strong>贪心</strong>：决策树在当前节点选最优分裂，不考虑后续分裂，因此整体树可能次优；它不保证全局最优，也不要求目标变量正态。</li>
+    <li><strong>随机森林的优势</strong>：通过平均多棵树降低过拟合；不是“总是更快”，也不是“更易可视化”。</li>
+    <li><strong>SVM 与核</strong>：SVM 通过最大化间隔（边界到最近点的距离）找边界；核的作用是把输入映射到更高维空间使线性可分。</li>
+  </ul>
+  <p>梯度提升与随机森林的差别是最高频的一题：梯度提升串行，每棵树学习前面模型的错误；随机森林并行，各树独立。由此还可推出梯度提升“强大”的原因——它把计算集中在最难预测的训练样本上，而不是靠独立模型的“群体智慧”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>四句话总结：树看规则，森林看投票，SVM 看间隔，提升看残差。考场上先判断题目在问“结构/组合/边界/纠错”中的哪一个。</p>
+  </aside>
+  <p class="c-source">L5 slide 69–72</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L5</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch06.html"><span>上一章</span>感知机、激活函数与过拟合/欠拟合</a>
+          <a class="pager__next" href="ch08.html"><span>下一章</span>模型评估指标</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

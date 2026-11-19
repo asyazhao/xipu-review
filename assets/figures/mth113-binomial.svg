@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="二项 PMF 随 p 移动">
+<title>二项 PMF 随 p 移动</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">二项 PMF 随 p 移动（n = 10）</text>
+<text x="150.0" y="66" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">p = 0.2</text>
+<line x1="50" y1="240" x2="250" y2="240" stroke="#262624" stroke-width="1.2"/>
+<line x1="50" y1="90" x2="50" y2="240" stroke="#262624" stroke-width="1.2"/>
+<rect x="58.0" y="193.77777777777777" width="10" height="46.222222222222214" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<text x="63.0" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">0</text>
+<rect x="74.72727272727272" y="124.44444444444447" width="10" height="115.55555555555553" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="91.45454545454545" y="110.0" width="10" height="130.0" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="108.18181818181819" y="153.33333333333334" width="10" height="86.66666666666666" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="124.9090909090909" y="202.08333333333334" width="10" height="37.916666666666664" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="141.63636363636363" y="228.625" width="10" height="11.374999999999998" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<text x="146.63636363636363" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">5</text>
+<rect x="158.36363636363637" y="237.63020833333334" width="10" height="2.3697916666666665" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="175.0909090909091" y="239.66145833333334" width="10" height="0.33854166666666663" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="191.8181818181818" y="239.96826171875" width="10" height="0.03173828125" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="208.54545454545453" y="239.99823676215277" width="10" height="0.0017632378472222218" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="225.27272727272728" y="239.99995591905383" width="10" height="4.408094618055555e-05" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<text x="230.27272727272728" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">10</text>
+<text x="42" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">P</text>
+<text x="400.0" y="66" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">p = 0.5</text>
+<line x1="300" y1="240" x2="500" y2="240" stroke="#262624" stroke-width="1.2"/>
+<line x1="300" y1="90" x2="300" y2="240" stroke="#262624" stroke-width="1.2"/>
+<rect x="308.0" y="239.484126984127" width="10" height="0.5158730158730158" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<text x="313.0" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">0</text>
+<rect x="324.72727272727275" y="234.84126984126985" width="10" height="5.158730158730158" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="341.45454545454544" y="216.78571428571428" width="10" height="23.214285714285715" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="358.1818181818182" y="178.0952380952381" width="10" height="61.9047619047619" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="374.9090909090909" y="131.66666666666666" width="10" height="108.33333333333334" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="391.6363636363636" y="110.0" width="10" height="130.0" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<text x="396.6363636363636" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">5</text>
+<rect x="408.3636363636364" y="131.66666666666666" width="10" height="108.33333333333334" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="425.0909090909091" y="178.0952380952381" width="10" height="61.9047619047619" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="441.8181818181818" y="216.78571428571428" width="10" height="23.214285714285715" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="458.5454545454545" y="234.84126984126985" width="10" height="5.158730158730158" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="475.27272727272725" y="239.484126984127" width="10" height="0.5158730158730158" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<text x="480.27272727272725" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">10</text>
+<text x="292" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">P</text>
+<text x="650.0" y="66" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">p = 0.8</text>
+<line x1="550" y1="240" x2="750" y2="240" stroke="#262624" stroke-width="1.2"/>
+<line x1="550" y1="90" x2="550" y2="240" stroke="#262624" stroke-width="1.2"/>
+<rect x="558.0" y="239.99995591905383" width="10" height="4.408094618055545e-05" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<text x="563.0" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">0</text>
+<rect x="574.7272727272727" y="239.99823676215277" width="10" height="0.0017632378472222183" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="591.4545454545455" y="239.96826171875" width="10" height="0.03173828124999994" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="608.1818181818181" y="239.66145833333334" width="10" height="0.3385416666666662" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="624.9090909090909" y="237.63020833333334" width="10" height="2.369791666666664" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="641.6363636363636" y="228.625" width="10" height="11.37499999999999" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<text x="646.6363636363636" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">5</text>
+<rect x="658.3636363636364" y="202.08333333333337" width="10" height="37.91666666666664" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="675.0909090909091" y="153.33333333333337" width="10" height="86.66666666666663" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="691.8181818181818" y="110.0" width="10" height="130.0" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="708.5454545454545" y="124.44444444444443" width="10" height="115.55555555555557" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<rect x="725.2727272727273" y="193.77777777777777" width="10" height="46.222222222222236" rx="1" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="0.8"/>
+<text x="730.2727272727273" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">10</text>
+<text x="542" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">P</text>
+<text x="40" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">n 固定时，p 决定分布的位置与形状；p = 0.5 时对称，p 接近 0 或 1 时偏向一侧。</text>
+<text x="40" y="324" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">每根柱高为 P(X = k)，所有柱高之和为 1。</text>
+</svg>

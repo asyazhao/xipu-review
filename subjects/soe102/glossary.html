@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE102 术语词典 · 全科复习</title>
+  <meta name="description" content="SOE102 Java 程序设计术语表：中文释义与英文专业词对照。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-glossary" data-subject="soe102" data-chapter="">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html" aria-current="page">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE102</a>
+      <span>/</span>
+      <span aria-current="page">术语词典</span>
+    </nav>
+
+    <div class="search-page">
+      <header class="page-head">
+        <p class="kicker">SOE102</p>
+        <h1>术语词典</h1>
+        <p class="page-head__meta">Introduction to Programming in Java · 75 条</p>
+      </header>
+
+      <div class="toolbar" role="search">
+        <label class="visually-hidden" for="termFilter">搜索术语</label>
+        <input id="termFilter" type="search" placeholder="搜索术语（中文 / English）…" autocomplete="off">
+
+      </div>
+
+      <div class="table-scroll">
+        <table class="c-table glossary-table">
+          <caption>本学科 · 按章节顺序</caption>
+          <thead>
+            <tr>
+              <th scope="col">中文</th>
+              <th scope="col">English</th>
+              <th scope="col">释义</th>
+              <th scope="col">章节</th>
+            </tr>
+          </thead>
+          <tbody id="glossaryBody">
+            <tr id="assembly-language" data-subject="SOE102" data-search="汇编语言 assembly language 由简单助记符指令组成、直接操作内存与寄存器的低级语言。">
+              <td data-label="中文">汇编语言</td>
+              <td data-label="English">assembly language</td>
+              <td data-label="释义">由简单助记符指令组成、直接操作内存与寄存器的低级语言。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="bit" data-subject="SOE102" data-search="位 bit 一个二进制数位，取值 0 或 1，对应电路的通与断。">
+              <td data-label="中文">位</td>
+              <td data-label="English">bit</td>
+              <td data-label="释义">一个二进制数位，取值 0 或 1，对应电路的通与断。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="breakpoint" data-subject="SOE102" data-search="断点 breakpoint 让程序执行到该行时暂停的位置，用于调试。">
+              <td data-label="中文">断点</td>
+              <td data-label="English">breakpoint</td>
+              <td data-label="释义">让程序执行到该行时暂停的位置，用于调试。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="byte" data-subject="SOE102" data-search="字节 byte 8 位组成 1 字节，通常正好存放一个字符。">
+              <td data-label="中文">字节</td>
+              <td data-label="English">byte</td>
+              <td data-label="释义">8 位组成 1 字节，通常正好存放一个字符。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="compiler" data-subject="SOE102" data-search="编译器 compiler 把源码转换成可执行字节码的工具。">
+              <td data-label="中文">编译器</td>
+              <td data-label="English">compiler</td>
+              <td data-label="释义">把源码转换成可执行字节码的工具。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="escape-character" data-subject="SOE102" data-search="转义字符 escape character 反斜杠加字符组成的序列，用来表示换行、制表或引号。">
+              <td data-label="中文">转义字符</td>
+              <td data-label="English">escape character</td>
+              <td data-label="释义">反斜杠加字符组成的序列，用来表示换行、制表或引号。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="high-level-language" data-subject="SOE102" data-search="高级语言 high-level language 语法接近英语、便于人读写的语言，如 Java 与 C#。">
+              <td data-label="中文">高级语言</td>
+              <td data-label="English">high-level language</td>
+              <td data-label="释义">语法接近英语、便于人读写的语言，如 Java 与 C#。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="integrated-development-environment" data-subject="SOE102" data-search="集成开发环境 Integrated Development Environment 集编辑、构建、运行与调试于一体的开发工具。">
+              <td data-label="中文">集成开发环境</td>
+              <td data-label="English">Integrated Development Environment</td>
+              <td data-label="释义">集编辑、构建、运行与调试于一体的开发工具。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="java-virtual-machine" data-subject="SOE102" data-search="Java 虚拟机 Java Virtual Machine 运行在真实机器内的虚拟 PC，把 Java 指令翻译成本机指令。">
+              <td data-label="中文">Java 虚拟机</td>
+              <td data-label="English">Java Virtual Machine</td>
+              <td data-label="释义">运行在真实机器内的虚拟 PC，把 Java 指令翻译成本机指令。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="access-modifier" data-subject="SOE102" data-search="访问修饰符 access modifier 定义代码作用域、决定其他类能否访问的修饰符。">
+              <td data-label="中文">访问修饰符</td>
+              <td data-label="English">access modifier</td>
+              <td data-label="释义">定义代码作用域、决定其他类能否访问的修饰符。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="casting" data-subject="SOE102" data-search="强制类型转换 casting 在值前用圆括号写出目标类型，把值从一种类型转成另一种。">
+              <td data-label="中文">强制类型转换</td>
+              <td data-label="English">casting</td>
+              <td data-label="释义">在值前用圆括号写出目标类型，把值从一种类型转成另一种。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="data-type" data-subject="SOE102" data-search="数据类型 data type 说明数据是整数、小数、字符还是真假值，决定计算机如何处理。">
+              <td data-label="中文">数据类型</td>
+              <td data-label="English">data type</td>
+              <td data-label="释义">说明数据是整数、小数、字符还是真假值，决定计算机如何处理。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="floating-point-number" data-subject="SOE102" data-search="浮点数 floating point number 带小数部分的数，Java 用 float 或 double 表示。">
+              <td data-label="中文">浮点数</td>
+              <td data-label="English">floating point number</td>
+              <td data-label="释义">带小数部分的数，Java 用 float 或 double 表示。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="immutable" data-subject="SOE102" data-search="不可变 immutable 对象创建后内容不能修改，例如 String。">
+              <td data-label="中文">不可变</td>
+              <td data-label="English">immutable</td>
+              <td data-label="释义">对象创建后内容不能修改，例如 String。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="keyword" data-subject="SOE102" data-search="关键字 keyword Java 中有特定含义且区分大小写的保留词，如 public、class。">
+              <td data-label="中文">关键字</td>
+              <td data-label="English">keyword</td>
+              <td data-label="释义">Java 中有特定含义且区分大小写的保留词，如 public、class。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="overflow" data-subject="SOE102" data-search="溢出 overflow 存入超过最大值的数，计算结果跳回最小值。">
+              <td data-label="中文">溢出</td>
+              <td data-label="English">overflow</td>
+              <td data-label="释义">存入超过最大值的数，计算结果跳回最小值。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="primitive-type" data-subject="SOE102" data-search="基本类型 primitive type Java 八种最基础的数据类型，它们不是对象。">
+              <td data-label="中文">基本类型</td>
+              <td data-label="English">primitive type</td>
+              <td data-label="释义">Java 八种最基础的数据类型，它们不是对象。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="variable" data-subject="SOE102" data-search="变量 variable 具名的内存位置，用来存放可以改变的值。">
+              <td data-label="中文">变量</td>
+              <td data-label="English">variable</td>
+              <td data-label="释义">具名的内存位置，用来存放可以改变的值。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="wrapper-class" data-subject="SOE102" data-search="包装类 wrapper class 为每种基本类型提供的对应类，如 int 对应 Integer。">
+              <td data-label="中文">包装类</td>
+              <td data-label="English">wrapper class</td>
+              <td data-label="释义">为每种基本类型提供的对应类，如 int 对应 Integer。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="array" data-subject="SOE102" data-search="数组 array 存放一组同类型值、创建后长度固定的容器。">
+              <td data-label="中文">数组</td>
+              <td data-label="English">array</td>
+              <td data-label="释义">存放一组同类型值、创建后长度固定的容器。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="break" data-subject="SOE102" data-search="break break 立即结束当前这一层循环，跳到循环之后执行。">
+              <td data-label="中文">break</td>
+              <td data-label="English">break</td>
+              <td data-label="释义">立即结束当前这一层循环，跳到循环之后执行。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="continue" data-subject="SOE102" data-search="continue continue 跳过本次迭代剩余语句，直接进入下一次迭代。">
+              <td data-label="中文">continue</td>
+              <td data-label="English">continue</td>
+              <td data-label="释义">跳过本次迭代剩余语句，直接进入下一次迭代。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="do-while-loop" data-subject="SOE102" data-search="do-while 循环 do-while loop 先执行循环体再判断条件，因此循环体至少执行一次。">
+              <td data-label="中文">do-while 循环</td>
+              <td data-label="English">do-while loop</td>
+              <td data-label="释义">先执行循环体再判断条件，因此循环体至少执行一次。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="enhanced-for-loop" data-subject="SOE102" data-search="增强 for 循环 enhanced for loop 不使用下标、逐个取出元素值的遍历写法。">
+              <td data-label="中文">增强 for 循环</td>
+              <td data-label="English">enhanced for loop</td>
+              <td data-label="释义">不使用下标、逐个取出元素值的遍历写法。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="index" data-subject="SOE102" data-search="索引 index 数组中元素的位置编号，从 0 开始，最大为 length − 1。">
+              <td data-label="中文">索引</td>
+              <td data-label="English">index</td>
+              <td data-label="释义">数组中元素的位置编号，从 0 开始，最大为 length − 1。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="nested-loop" data-subject="SOE102" data-search="嵌套循环 nested loop 一个循环体内再写一个循环，外层走行、内层走列。">
+              <td data-label="中文">嵌套循环</td>
+              <td data-label="English">nested loop</td>
+              <td data-label="释义">一个循环体内再写一个循环，外层走行、内层走列。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="two-dimensional-array" data-subject="SOE102" data-search="二维数组 two-dimensional array 数组的数组，用行与列两个下标访问元素。">
+              <td data-label="中文">二维数组</td>
+              <td data-label="English">two-dimensional array</td>
+              <td data-label="释义">数组的数组，用行与列两个下标访问元素。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="while-loop" data-subject="SOE102" data-search="while 循环 while loop 每次迭代前先判断条件，条件一开始为假则不执行循环体。">
+              <td data-label="中文">while 循环</td>
+              <td data-label="English">while loop</td>
+              <td data-label="释义">每次迭代前先判断条件，条件一开始为假则不执行循环体。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="boxing" data-subject="SOE102" data-search="装箱 boxing 把基本类型值转换成对应的包装类对象。">
+              <td data-label="中文">装箱</td>
+              <td data-label="English">boxing</td>
+              <td data-label="释义">把基本类型值转换成对应的包装类对象。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="code-unit" data-subject="SOE102" data-search="码元 code unit UTF-16 中一个 16 位单元，一个 char 正好存一个码元。">
+              <td data-label="中文">码元</td>
+              <td data-label="English">code unit</td>
+              <td data-label="释义">UTF-16 中一个 16 位单元，一个 char 正好存一个码元。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="immutability" data-subject="SOE102" data-search="不可变性 immutability 对象创建后内容不变，任何修改操作都返回新对象。">
+              <td data-label="中文">不可变性</td>
+              <td data-label="English">immutability</td>
+              <td data-label="释义">对象创建后内容不变，任何修改操作都返回新对象。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="method" data-subject="SOE102" data-search="方法 method 类中具名、可复用的代码块，被调用时执行。">
+              <td data-label="中文">方法</td>
+              <td data-label="English">method</td>
+              <td data-label="释义">类中具名、可复用的代码块，被调用时执行。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="method-signature" data-subject="SOE102" data-search="方法签名 method signature 方法名加有序参数类型，用来区分重载。">
+              <td data-label="中文">方法签名</td>
+              <td data-label="English">method signature</td>
+              <td data-label="释义">方法名加有序参数类型，用来区分重载。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="overloading" data-subject="SOE102" data-search="重载 overloading 同一个类中方法名相同、参数列表不同的多个方法。">
+              <td data-label="中文">重载</td>
+              <td data-label="English">overloading</td>
+              <td data-label="释义">同一个类中方法名相同、参数列表不同的多个方法。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="reference" data-subject="SOE102" data-search="引用 reference 变量中保存的、指向堆上对象的内存地址。">
+              <td data-label="中文">引用</td>
+              <td data-label="English">reference</td>
+              <td data-label="释义">变量中保存的、指向堆上对象的内存地址。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="string-literal" data-subject="SOE102" data-search="字符串字面量 String literal 双引号包住的字符序列，其值不能改变，是表达式而非变量。">
+              <td data-label="中文">字符串字面量</td>
+              <td data-label="English">String literal</td>
+              <td data-label="释义">双引号包住的字符序列，其值不能改变，是表达式而非变量。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="string-pool" data-subject="SOE102" data-search="字符串池 string pool 相同字面量共享同一个 String 对象的机制。">
+              <td data-label="中文">字符串池</td>
+              <td data-label="English">string pool</td>
+              <td data-label="释义">相同字面量共享同一个 String 对象的机制。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="surrogate-pair" data-subject="SOE102" data-search="代理对 surrogate pair 用高低两个码元表示 U+FFFF 以上字符的组合。">
+              <td data-label="中文">代理对</td>
+              <td data-label="English">surrogate pair</td>
+              <td data-label="释义">用高低两个码元表示 U+FFFF 以上字符的组合。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="class" data-subject="SOE102" data-search="类 class 创建对象的模板，定义对象有哪些属性与行为。">
+              <td data-label="中文">类</td>
+              <td data-label="English">class</td>
+              <td data-label="释义">创建对象的模板，定义对象有哪些属性与行为。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="constructor" data-subject="SOE102" data-search="构造方法 constructor 与类同名、无返回类型、在 new 时运行并为字段赋初值的方法。">
+              <td data-label="中文">构造方法</td>
+              <td data-label="English">constructor</td>
+              <td data-label="释义">与类同名、无返回类型、在 new 时运行并为字段赋初值的方法。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="controller-class" data-subject="SOE102" data-search="控制类 controller class 含 main、负责创建并驱动数据对象的类。">
+              <td data-label="中文">控制类</td>
+              <td data-label="English">controller class</td>
+              <td data-label="释义">含 main、负责创建并驱动数据对象的类。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="encapsulation" data-subject="SOE102" data-search="封装 encapsulation 隐藏字段与内部实现，只通过 public 方法访问。">
+              <td data-label="中文">封装</td>
+              <td data-label="English">encapsulation</td>
+              <td data-label="释义">隐藏字段与内部实现，只通过 public 方法访问。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="getter" data-subject="SOE102" data-search="getter getter 返回 private 字段值的 public 方法。">
+              <td data-label="中文">getter</td>
+              <td data-label="English">getter</td>
+              <td data-label="释义">返回 private 字段值的 public 方法。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="heap" data-subject="SOE102" data-search="堆 heap 存放对象、按需动态分配与释放的内存区域。">
+              <td data-label="中文">堆</td>
+              <td data-label="English">heap</td>
+              <td data-label="释义">存放对象、按需动态分配与释放的内存区域。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="instance-variable" data-subject="SOE102" data-search="实例变量 instance variable 每个对象各自一份的字段，保存该对象的状态。">
+              <td data-label="中文">实例变量</td>
+              <td data-label="English">instance variable</td>
+              <td data-label="释义">每个对象各自一份的字段，保存该对象的状态。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="object" data-subject="SOE102" data-search="对象 object 把相关的数据（状态）与处理（行为）封装在一起的实体。">
+              <td data-label="中文">对象</td>
+              <td data-label="English">object</td>
+              <td data-label="释义">把相关的数据（状态）与处理（行为）封装在一起的实体。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="stack" data-subject="SOE102" data-search="栈 stack 存放方法调用顺序与局部变量（含基本类型值）的内存区域。">
+              <td data-label="中文">栈</td>
+              <td data-label="English">stack</td>
+              <td data-label="释义">存放方法调用顺序与局部变量（含基本类型值）的内存区域。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="downcasting" data-subject="SOE102" data-search="向下转型 downcasting 把父类引用显式强制转换成子类类型。">
+              <td data-label="中文">向下转型</td>
+              <td data-label="English">downcasting</td>
+              <td data-label="释义">把父类引用显式强制转换成子类类型。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="final" data-subject="SOE102" data-search="final final 修饰字段时表示初始化后不能再修改，改动会编译报错。">
+              <td data-label="中文">final</td>
+              <td data-label="English">final</td>
+              <td data-label="释义">修饰字段时表示初始化后不能再修改，改动会编译报错。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="inheritance" data-subject="SOE102" data-search="继承 inheritance 子类获得父类实例变量与实例方法的机制，用于代码复用。">
+              <td data-label="中文">继承</td>
+              <td data-label="English">inheritance</td>
+              <td data-label="释义">子类获得父类实例变量与实例方法的机制，用于代码复用。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="overriding" data-subject="SOE102" data-search="重写 overriding 子类用相同的方法名与参数列表重新实现父类方法。">
+              <td data-label="中文">重写</td>
+              <td data-label="English">overriding</td>
+              <td data-label="释义">子类用相同的方法名与参数列表重新实现父类方法。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="polymorphism" data-subject="SOE102" data-search="多态 polymorphism 父类引用指向子类对象时，调用被重写的方法执行子类版本。">
+              <td data-label="中文">多态</td>
+              <td data-label="English">polymorphism</td>
+              <td data-label="释义">父类引用指向子类对象时，调用被重写的方法执行子类版本。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="subclass" data-subject="SOE102" data-search="子类 subclass 通过 extends 继承另一个类的类。">
+              <td data-label="中文">子类</td>
+              <td data-label="English">subclass</td>
+              <td data-label="释义">通过 extends 继承另一个类的类。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="super" data-subject="SOE102" data-search="super super 子类构造器中调用父类构造器的关键字，必须是第一条语句。">
+              <td data-label="中文">super</td>
+              <td data-label="English">super</td>
+              <td data-label="释义">子类构造器中调用父类构造器的关键字，必须是第一条语句。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="superclass" data-subject="SOE102" data-search="父类 superclass 被其他类继承的类，提供共享的字段与方法。">
+              <td data-label="中文">父类</td>
+              <td data-label="English">superclass</td>
+              <td data-label="释义">被其他类继承的类，提供共享的字段与方法。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="upcasting" data-subject="SOE102" data-search="向上转型 upcasting 把子类引用赋给父类变量，编译器隐式完成。">
+              <td data-label="中文">向上转型</td>
+              <td data-label="English">upcasting</td>
+              <td data-label="释义">把子类引用赋给父类变量，编译器隐式完成。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="checked-exception" data-subject="SOE102" data-search="checked 异常 checked exception 继承 Exception 且非 RuntimeException，编译器强制捕获或声明。">
+              <td data-label="中文">checked 异常</td>
+              <td data-label="English">checked exception</td>
+              <td data-label="释义">继承 Exception 且非 RuntimeException，编译器强制捕获或声明。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="exception" data-subject="SOE102" data-search="异常 exception 表示异常情况并打断正常指令流的对象。">
+              <td data-label="中文">异常</td>
+              <td data-label="English">exception</td>
+              <td data-label="释义">表示异常情况并打断正常指令流的对象。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="exception-chaining" data-subject="SOE102" data-search="异常链 exception chaining 包装新异常时把原异常作为 cause 传入，保留故障现场。">
+              <td data-label="中文">异常链</td>
+              <td data-label="English">exception chaining</td>
+              <td data-label="释义">包装新异常时把原异常作为 cause 传入，保留故障现场。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="finally" data-subject="SOE102" data-search="finally finally 无论正常结束还是异常传播都会执行的清理块。">
+              <td data-label="中文">finally</td>
+              <td data-label="English">finally</td>
+              <td data-label="释义">无论正常结束还是异常传播都会执行的清理块。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="stack-trace" data-subject="SOE102" data-search="栈轨迹 stack trace 记录导致失败的调用链，最上面一帧是真正的抛出点。">
+              <td data-label="中文">栈轨迹</td>
+              <td data-label="English">stack trace</td>
+              <td data-label="释义">记录导致失败的调用链，最上面一帧是真正的抛出点。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="throw" data-subject="SOE102" data-search="throw throw 在运行期创建并抛出异常对象的语句。">
+              <td data-label="中文">throw</td>
+              <td data-label="English">throw</td>
+              <td data-label="释义">在运行期创建并抛出异常对象的语句。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="throwable" data-subject="SOE102" data-search="Throwable Throwable 所有可抛出对象的根类，下分 Error 与 Exception。">
+              <td data-label="中文">Throwable</td>
+              <td data-label="English">Throwable</td>
+              <td data-label="释义">所有可抛出对象的根类，下分 Error 与 Exception。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="throws" data-subject="SOE102" data-search="throws throws 方法签名中声明该方法可能抛出哪些异常的子句。">
+              <td data-label="中文">throws</td>
+              <td data-label="English">throws</td>
+              <td data-label="释义">方法签名中声明该方法可能抛出哪些异常的子句。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="try-with-resources" data-subject="SOE102" data-search="try-with-resources try-with-resources 在 try 括号中声明资源并自动关闭的语法。">
+              <td data-label="中文">try-with-resources</td>
+              <td data-label="English">try-with-resources</td>
+              <td data-label="释义">在 try 括号中声明资源并自动关闭的语法。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="unchecked-exception" data-subject="SOE102" data-search="unchecked 异常 unchecked exception 继承 RuntimeException，属程序缺陷，编译器不作要求。">
+              <td data-label="中文">unchecked 异常</td>
+              <td data-label="English">unchecked exception</td>
+              <td data-label="释义">继承 RuntimeException，属程序缺陷，编译器不作要求。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="autocloseable" data-subject="SOE102" data-search="AutoCloseable AutoCloseable 使对象能用于 try-with-resources 并被自动关闭的接口。">
+              <td data-label="中文">AutoCloseable</td>
+              <td data-label="English">AutoCloseable</td>
+              <td data-label="释义">使对象能用于 try-with-resources 并被自动关闭的接口。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="buffering" data-subject="SOE102" data-search="缓冲 buffering 一次读写一大块数据，以减少系统调用次数的机制。">
+              <td data-label="中文">缓冲</td>
+              <td data-label="English">buffering</td>
+              <td data-label="释义">一次读写一大块数据，以减少系统调用次数的机制。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="byte-stream" data-subject="SOE102" data-search="字节流 byte stream 以 8 位字节为单位读写的流，适用于二进制数据。">
+              <td data-label="中文">字节流</td>
+              <td data-label="English">byte stream</td>
+              <td data-label="释义">以 8 位字节为单位读写的流，适用于二进制数据。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="character-stream" data-subject="SOE102" data-search="字符流 character stream 以 Unicode 字符为单位读写的流，适用于文本。">
+              <td data-label="中文">字符流</td>
+              <td data-label="English">character stream</td>
+              <td data-label="释义">以 Unicode 字符为单位读写的流，适用于文本。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="decorator" data-subject="SOE102" data-search="装饰器 decorator 包装已有流以追加缓冲等能力、保持接口不变的写法。">
+              <td data-label="中文">装饰器</td>
+              <td data-label="English">decorator</td>
+              <td data-label="释义">包装已有流以追加缓冲等能力、保持接口不变的写法。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="mojibake" data-subject="SOE102" data-search="乱码 mojibake 用错误字符集解码文本时出现的错误字符。">
+              <td data-label="中文">乱码</td>
+              <td data-label="English">mojibake</td>
+              <td data-label="释义">用错误字符集解码文本时出现的错误字符。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="serialization" data-subject="SOE102" data-search="序列化 serialization 把对象字段转换成字节，以便保存或传输。">
+              <td data-label="中文">序列化</td>
+              <td data-label="English">serialization</td>
+              <td data-label="释义">把对象字段转换成字节，以便保存或传输。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="standardopenoption" data-subject="SOE102" data-search="StandardOpenOption StandardOpenOption 控制文件打开方式（创建、追加、清空）的枚举。">
+              <td data-label="中文">StandardOpenOption</td>
+              <td data-label="English">StandardOpenOption</td>
+              <td data-label="释义">控制文件打开方式（创建、追加、清空）的枚举。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="stream" data-subject="SOE102" data-search="流 stream 一段有序的数据序列，是 Java 读写外界的统一模型。">
+              <td data-label="中文">流</td>
+              <td data-label="English">stream</td>
+              <td data-label="释义">一段有序的数据序列，是 Java 读写外界的统一模型。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="glossaryEmpty" class="glossary-empty" hidden>未找到，试试英文术语或更短的关键词。</p>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+  <script src="../../assets/js/search.js" defer></script>
+</body>
+</html>

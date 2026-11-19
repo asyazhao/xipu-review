@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" role="img" aria-label="溴对烯烃的两步亲电加成">
+<title>溴对烯烃的两步亲电加成</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">溴对烯烃的两步亲电加成</text>
+<text x="40" y="56" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">第一步：π 电子进攻 Br2，形成三元环溴鎓离子；第二步：Br− 从背面开环。</text>
+<text x="90" y="170" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#262624" text-anchor="middle" font-weight="700">C</text>
+<text x="170" y="170" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#262624" text-anchor="middle" font-weight="700">C</text>
+<line x1="102" y1="170" x2="158" y2="170" stroke="#262624" stroke-width="2"/>
+<line x1="90" y1="160" x2="90" y2="180" stroke="#262624" stroke-width="1.5"/>
+<line x1="170" y1="160" x2="170" y2="180" stroke="#262624" stroke-width="1.5"/>
+<text x="90" y="140" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">H2C</text>
+<text x="170" y="140" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">CH2</text>
+<text x="130" y="210" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">烯烃</text>
+<text x="130" y="250" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">Br2</text>
+<line x1="205" y1="170" x2="265" y2="170" stroke="#2E4A6B" stroke-width="1.6" marker-end="url(#arrowBlue)"/>
+<polygon points="312,198 350,136 388,198" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.6"/>
+<text x="350" y="134" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">Br+</text>
+<text x="312" y="214" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="700">C</text>
+<text x="388" y="214" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="700">C</text>
+<line x1="312" y1="198" x2="388" y2="198" stroke="#262624" stroke-width="1.5"/>
+<text x="350" y="248" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="middle" font-weight="600">溴鎓离子</text>
+<text x="350" y="266" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">bromonium ion</text>
+<line x1="410" y1="170" x2="470" y2="170" stroke="#A8894F" stroke-width="1.6" marker-end="url(#arrowGold)"/>
+<text x="440" y="154" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#A8894F" text-anchor="middle" font-weight="600">Br−</text>
+<text x="545" y="170" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#262624" text-anchor="middle" font-weight="700">C</text>
+<text x="625" y="170" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#262624" text-anchor="middle" font-weight="700">C</text>
+<line x1="557" y1="170" x2="613" y2="170" stroke="#262624" stroke-width="2"/>
+<text x="545" y="220" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">Br</text>
+<line x1="545" y1="184" x2="545" y2="208" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="625" y="120" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">Br</text>
+<line x1="625" y1="156" x2="625" y2="132" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="585" y="260" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="middle" font-weight="600">反式加成产物</text>
+<text x="585" y="278" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">anti addition</text>
+<text x="40" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">溴鎓离子阻止 Br− 从同侧进攻，因此两个 Br 加在双键的两侧。</text>
+</svg>

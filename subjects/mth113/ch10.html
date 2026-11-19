@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 简单线性回归与相关 · 全科复习</title>
+  <meta name="description" content="MTH113 第 10 章 简单线性回归与相关：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="mth113" data-chapter="10">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">MTH113</a>
+      <span>/</span>
+      <span aria-current="page">第 10 章 简单线性回归与相关</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html" class="is-current" aria-current="page"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html" class="is-current" aria-current="page"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">MTH113 · 第 10 章</p>
+          <h1>简单线性回归与相关</h1>
+          <p class="chapter-head__en">Simple Linear Regression &amp; Correlation</p>
+          <p class="chapter-head__meta">来源 W10 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">10.1 回归的问题与变量角色</a></li>
+        <li><a href="#s2">10.2 散点图与四词描述</a></li>
+        <li><a href="#s3">10.3 协方差：方向的数量化</a></li>
+        <li><a href="#s4">10.4 相关系数：无单位的线性强度</a></li>
+        <li><a href="#s5">10.5 回归直线与残差</a></li>
+        <li><a href="#s6">10.6 最小二乘原理与公式</a></li>
+        <li><a href="#s7">10.7 斜率与相关的关系、截距的谨慎解释</a></li>
+        <li><a href="#s8">10.8 实例计算、预测与外推</a></li>
+        <li><a href="#s9">10.9 拟合值、残差表、SSE、R2 与 se</a></li>
+        <li><a href="#s10">10.10 残差图、模型诊断与异常点</a></li>
+        <li><a href="#s11">10.11 相关不等于因果、计算技巧与结果报告</a></li>
+        <li><a href="#s12">10.12 常见错误与公式总结</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲处理两个数值变量之间的关系：先用散点图与相关系数描述线性关联的强弱与方向，再用最小二乘拟合回归直线，解释斜率、截距、残差与 <i>R</i><sup>2</sup>，最后用残差图检查模型并警惕外推与因果误读。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>回归区分响应变量 <i>y</i> 与解释变量 <i>x</i>；相关不区分，但回归的 <i>x</i>、<i>y</i> 角色不能随意互换。</li>
+    <li>散点图用方向、形式、强度、异常特征四个词描述；相关只捕捉线性关系。</li>
+    <li>样本协方差 <i>s<sub>xy</sub></i> 有单位、受量纲影响；相关系数 <i>r</i> = <i>s<sub>xy</sub></i>/(<i>s<sub>x</sub>s<sub>y</sub></i>) 无单位，−1 ≤ <i>r</i> ≤ 1。</li>
+    <li>最小二乘直线 <i>ŷ</i> = <i>a</i> + <i>bx</i> 使残差平方和最小；<i>b</i> = <i>S<sub>xy</sub></i>/<i>S<sub>xx</sub></i>，<i>a</i> = <i>ȳ</i> − <i>b x̄</i>，直线必过 (<i>x̄</i>, <i>ȳ</i>)。</li>
+    <li>斜率 <i>b</i> = <i>r s<sub>y</sub></i>/<i>s<sub>x</sub></i>，与 <i>r</i> 同号；斜率有单位，相关无单位。</li>
+    <li><i>R</i><sup>2</sup> = 1 − <i>SSE</i>/<i>SST</i> 是解释<span class="c-term c-term--auto" data-term="variability" title="变异｜variability：观测值并不完全相同的性质。">变异</span>比例；简单线性回归中 <i>R</i><sup>2</sup> = <i>r</i><sup>2</sup>。</li>
+    <li>残差<span class="c-term c-term--auto" data-term="standard-error" title="标准误｜standard error：统计量抽样分布的标准差。">标准误</span> <i>s<sub>e</sub></i> = √[<i>SSE</i>/(<i>n</i>−2)]，<span class="c-term c-term--auto" data-term="degrees-of-freedom" title="自由度｜degrees of freedom：估计中可自由变动的信息数目，t 区间为 n−1。">自由度</span> <i>n</i>−2 来自估计了两个<span class="c-term c-term--auto" data-term="parameter" title="参数｜parameter：对整个总体的数值概括，通常未知。">参数</span>。</li>
+    <li>高 <i>R</i><sup>2</sup> 不能替代散点图与残差图；外推、异常点、影响点与因果误读是常见陷阱。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">10.1</span> 回归的问题与变量角色</h2>
+  <p>许多实际问题关心两个数值变量之间的关系：学习时间是否预测考试成绩？广告支出是否预测销售额？温度升高是否增加用电？配送距离是否增加配送时间？<span class="c-term">回归<span class="c-term__en">regression</span></span>是用一个或多个解释变量描述并预测响应变量平均值的方法。</p>
+  <p>两个角色要分清。<span class="c-term">解释变量<span class="c-term__en">explanatory variable</span></span> <i>x</i> 用来解释或预测另一个变量，例如学习时间、营销支出、距离；<span class="c-term">响应变量<span class="c-term__en">response variable</span></span> <i>y</i> 是被解释或预测的变量，例如考试分数、销售额、配送时间。回归中 <i>x</i> 与 <i>y</i> 的角色重要；相关中角色不重要，<i>r</i>(<i>x</i>,<i>y</i>) = <i>r</i>(<i>y</i>,<i>x</i>)。</p>
+  <p>讲义例：公司记录每周营销支出 <i>x</i>（千元）与销售额 <i>y</i>（千件）。数据为 <i>x</i> = 2,3,4,5,6,8,9,10,12,14；<i>y</i> = 21,24,26,29,31,35,39,42,46,50。问题是：销售额能否用支出的直线关系描述？这组数据将贯穿整讲。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>回归有方向：用 <i>x</i> 预测 <i>y</i>。把 <i>x</i> 与 <i>y</i> 对调会得到另一条直线，斜率与截距都不同；相关则对调不变。</p>
+  </aside>
+  <p class="c-source">W10 p.5–7</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">10.2</span> 散点图与四词描述</h2>
+  <p>两个数值变量的第一件工具是<span class="c-term">散点图<span class="c-term__en">scatterplot</span></span>：每个个体是一个点 (<i>x<sub>i</sub></i>, <i>y<sub>i</sub></i>)。营销数据画出后呈现强正相关、近似线性的形态，没有明显极端离群点。</p>
+  <p>描述散点图用四个词：</p>
+  <ol>
+    <li><b>方向</b>：正、负或无明显方向。正方向指 <i>x</i> 增大时 <i>y</i> 倾向增大；负方向相反。</li>
+    <li><b>形式</b>：线性、弯曲、聚集或不定形。</li>
+    <li><b>强度</b>：弱、中等或强，指点围绕一条直线的紧密程度。</li>
+    <li><b>异常特征</b>：离群点或影响点。</li>
+  </ol>
+  <p>四类典型图形要能识别：正线性（<i>x</i> 增大 <i>y</i> 增大）、负线性（<i>x</i> 增大 <i>y</i> 减小）、弯曲（相关可能很小但关系很强）、无明显关联（知道 <i>x</i> 对 <i>y</i> 帮助很小）。讲义特别提醒：弯曲关系可能被相关系数漏掉，因为 <i>r</i> 只衡量线性。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 10-1 营销支出与销售额散点图</span>
+      <button class="c-copy" type="button" data-copy="Clean vector scatterplot of marketing spend on the x axis from 0 to 16 thousand RMB against sales on the y axis from 20 to 50 thousand units, ten points rising in a strong approximately linear positive pattern, with axes labelled Marketing spend x and Sales y. Flat 2D, thin 1.5 px strokes, muted slate blue points and warm grey axes, white background, English labels only, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/mth113-regression.svg" alt="营销支出与销售额的散点图、拟合线与残差" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector scatterplot of marketing spend on the x axis from 0 to 16 thousand RMB against sales on the y axis from 20 to 50 thousand units, ten points rising in a strong approximately linear positive pattern, with axes labelled Marketing spend x and Sales y. Flat 2D, thin 1.5 px strokes, muted slate blue points and warm grey axes, white background, English labels only, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>只报 <i>r</i> 不看图会漏掉弯曲、分群与异常点。<i>r</i> = 0 只说明“无线性关系”，不说明“无关系”；一条完美的抛物线可以有 <i>r</i> ≈ 0。</p>
+  </aside>
+  <p class="c-source">W10 p.8–13</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">10.3</span> 协方差：方向的数量化</h2>
+  <p>散点图是第一步，但还需要一个数值衡量“<i>x</i> 与 <i>y</i> 是否一起偏离均值”。对每个观测定义中心化值 <i>x<sub>i</sub></i> − <i>x̄</i> 与 <i>y<sub>i</sub></i> − <i>ȳ</i>，看乘积的符号：</p>
+  <ul>
+    <li><i>x</i> 高于均值、<i>y</i> 也高于均值：乘积为正，贡献正相关。</li>
+    <li><i>x</i> 低于均值、<i>y</i> 也低于均值：乘积为正，贡献正相关。</li>
+    <li><i>x</i> 高于均值、<i>y</i> 低于均值：乘积为负，贡献负相关。</li>
+    <li><i>x</i> 低于均值、<i>y</i> 高于均值：乘积为负，贡献负相关。</li>
+  </ul>
+  <p><span class="c-term">样本协方差<span class="c-term__en">sample covariance</span></span>把这些乘积平均：</p>
+  <div class="c-formula"><i>s<sub>xy</sub></i> = [1/(<i>n</i>−1)] Σ (<i>x<sub>i</sub></i> − <i>x̄</i>)(<i>y<sub>i</sub></i> − <i>ȳ</i>)</div>
+  <p><i>s<sub>xy</sub></i> &gt; 0 表示正线性倾向，&lt; 0 表示负线性倾向，≈ 0 表示线性倾向很弱。营销数据的 <i>s<sub>xy</sub></i> 为正，符合图上正相关。</p>
+  <p>协方差的局限：它依赖测量单位。把 <i>x</i> 从元改成万元，<i>s<sub>xy</sub></i> 会成比例变化，因此难以跨变量、跨情境比较。相关系数正是为解决这个问题而设计的。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>协方差衡量“共同变动的方向与幅度”，但幅度受单位影响；相关系数把协方差<span class="c-term c-term--auto" data-term="standardization" title="标准化｜standardization：用 Z=(X−μ)/σ 把正态变量变为标准正态。">标准化</span>，只保留方向与线性强度。</p>
+  </aside>
+  <p class="c-source">W10 p.14–16</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">10.4</span> 相关系数：无单位的线性强度</h2>
+  <p><span class="c-term">Pearson 相关系数<span class="c-term__en">Pearson correlation coefficient</span></span>定义为</p>
+  <div class="c-formula"><i>r</i> = Σ(<i>x<sub>i</sub></i>−<i>x̄</i>)(<i>y<sub>i</sub></i>−<i>ȳ</i>) / √[Σ(<i>x<sub>i</sub></i>−<i>x̄</i>)<sup>2</sup> Σ(<i>y<sub>i</sub></i>−<i>ȳ</i>)<sup>2</sup>] = <i>s<sub>xy</sub></i>/(<i>s<sub>x</sub>s<sub>y</sub></i>)</div>
+  <p>性质：−1 ≤ <i>r</i> ≤ 1；符号给方向；绝对值给线性强度；<i>r</i> 无单位。</p>
+  <p>解释尺度（讲义示意）：接近 −1 强负，接近 −0.5 中等负，接近 0 弱，接近 0.5 中等正，接近 1 强正。但讲义明确警告：没有“强/弱”的通用截断值，必须结合散点图与情境判断。</p>
+  <p><span class="c-term">无单位<span class="c-term__en">unit-free</span></span>是 <i>r</i> 的关键优势：身高用厘米或米记录，<i>r</i> 不变；金额用元或千元记录，<i>r</i> 也不变。因为分子分母的单位同时抵消。营销数据的 <i>r</i> = 348.10/√(142.10 × 856.10) ≈ 0.9980，线性关系极强。</p>
+  <p>四种常见误读：<i>r</i> = 0 不代表“无关系”，只代表“无线性关系”；<i>r</i> 接近 ±1 不证明因果；一个离群点可以大幅改变 <i>r</i>；<i>r</i> 不适用于两个<span class="c-term c-term--auto" data-term="categorical-variable" title="分类变量｜categorical variable：取值为标签或组别、算术通常无意义的变量。">分类变量</span>。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p><i>r</i> 的符号与 <i>b</i> 的符号一致；<i>r</i> 无单位，<i>b</i> 有单位。计算 <i>r</i> 时分子分母都用中心化平方和，不要漏掉根号。</p>
+  </aside>
+  <p class="c-source">W10 p.17–20</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">10.5</span> 回归直线与残差</h2>
+  <p>用一条直线从 <i>x</i> 预测 <i>y</i>：</p>
+  <div class="c-formula"><i>ŷ</i> = <i>a</i> + <i>bx</i></div>
+  <p><i>ŷ</i> 是预测值或拟合值，<i>a</i> 是估计截距，<i>b</i> 是估计斜率。斜率解释：<i>x</i> 每增加一个单位，<i>y</i> 的预测值平均改变 <i>b</i> 个单位。</p>
+  <p><span class="c-term">残差<span class="c-term__en">residual</span></span>定义为</p>
+  <div class="c-formula"><i>e<sub>i</sub></i> = <i>y<sub>i</sub></i> − <i>ŷ<sub>i</sub></i></div>
+  <p>正残差表示实际值在直线上方，负残差表示在下方；残差大小衡量该观测的预测误差。回归选线的原则就是让残差在某种数学意义下尽量小。</p>
+  <p>残差与“预测误差”相关但不同：残差是已观测数据点相对拟合线的偏差；预测误差是未来观测值与预测值之差。后者需要额外的预测区间公式，本讲只介绍拟合值。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>残差是 <i>y</i> − <i>ŷ</i>，不是 <i>ŷ</i> − <i>y</i>。符号决定“在线上方还是下方”，写反会使残差图整体上下颠倒。</p>
+  </aside>
+  
+<!-- course-image:mth113-ch10-regression-line.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-mth113-ch10-regression-line">
+        <img class="c-course-figure__img" src="../../assets/course/mth113-ch10-regression-line.jpg" alt="散点图与最小二乘拟合直线" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 散点图与最小二乘拟合直线 <span class="c-course-figure__src">来源：Week 10 p.30</span></figcaption>
+      </figure>
+
+<p class="c-source">W10 p.21–22、53</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">10.6</span> 最小二乘原理与公式</h2>
+  <p>对候选直线 <i>ŷ</i> = <i>a</i> + <i>bx</i>，定义残差平方和</p>
+  <div class="c-formula"><i>Q</i>(<i>a</i>,<i>b</i>) = Σ(<i>y<sub>i</sub></i> − <i>a</i> − <i>bx<sub>i</sub></i>)<sup>2</sup></div>
+  <p><span class="c-term">最小二乘直线<span class="c-term__en">least-squares line</span></span>是使 <i>Q</i>(<i>a</i>,<i>b</i>) 最小的直线。平方的作用有二：防止正负误差相消；给大误差更大惩罚。</p>
+  <p>对 <i>a</i> 与 <i>b</i> 分别求偏导并令其为 0，得正规方程：</p>
+  <div class="c-formula">∂<i>Q</i>/∂<i>a</i> = −2Σ(<i>y<sub>i</sub></i> − <i>a</i> − <i>bx<sub>i</sub></i>) = 0</div>
+  <div class="c-formula">∂<i>Q</i>/∂<i>b</i> = −2Σ<i>x<sub>i</sub></i>(<i>y<sub>i</sub></i> − <i>a</i> − <i>bx<sub>i</sub></i>) = 0</div>
+  <p>定义中心化平方和与交叉和：</p>
+  <div class="c-formula"><i>S<sub>xx</sub></i> = Σ(<i>x<sub>i</sub></i>−<i>x̄</i>)<sup>2</sup>，<i>S<sub>yy</sub></i> = Σ(<i>y<sub>i</sub></i>−<i>ȳ</i>)<sup>2</sup>，<i>S<sub>xy</sub></i> = Σ(<i>x<sub>i</sub></i>−<i>x̄</i>)(<i>y<sub>i</sub></i>−<i>ȳ</i>)</div>
+  <p>解得</p>
+  <div class="c-formula"><i>b</i> = <i>S<sub>xy</sub></i>/<i>S<sub>xx</sub></i>，&nbsp;&nbsp; <i>a</i> = <i>ȳ</i> − <i>b x̄</i></div>
+  <p>由 <i>a</i> 的表达式可知，拟合直线必过点 (<i>x̄</i>, <i>ȳ</i>)。这是一个很好的检查：把 <i>x̄</i> 代入 <i>ŷ</i> 应得到 <i>ȳ</i>。</p>
+  <p>手算时可用原始和公式：<i>S<sub>xx</sub></i> = Σ<i>x<sub>i</sub></i><sup>2</sup> − (Σ<i>x<sub>i</sub></i>)<sup>2</sup>/<i>n</i>，<i>S<sub>yy</sub></i> = Σ<i>y<sub>i</sub></i><sup>2</sup> − (Σ<i>y<sub>i</sub></i>)<sup>2</sup>/<i>n</i>，<i>S<sub>xy</sub></i> = Σ<i>x<sub>i</sub>y<sub>i</sub></i> − (Σ<i>x<sub>i</sub></i>)(Σ<i>y<sub>i</sub></i>)/<i>n</i>。这些公式便于用电子表格核对。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>先算 <i>b</i> 再算 <i>a</i>，顺序不能反。<i>a</i> = <i>ȳ</i> − <i>b x̄</i> 保证直线过均值点；若代回不成立，说明 <i>b</i> 或均值算错。</p>
+  </aside>
+  <p class="c-source">W10 p.23–25、50</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">10.7</span> 斜率与相关的关系、截距的谨慎解释</h2>
+  <p>斜率还可以写成</p>
+  <div class="c-formula"><i>b</i> = <i>r</i> · (<i>s<sub>y</sub></i>/<i>s<sub>x</sub></i>)</div>
+  <p>因此 <i>b</i> 与 <i>r</i> 永远同号。<i>r</i> 衡量无单位的线性强度与方向；<i>b</i> 衡量“<i>x</i> 每增加一个单位，<i>y</i> 平均改变多少”，带 <i>y</i>/<i>x</i> 的单位。预测时斜率更有用，比较线性强度时相关更有用。</p>
+  <p>截距 <i>a</i> 是 <i>x</i> = 0 时的预测值：<i>ŷ</i> = <i>a</i> + <i>b</i>(0) = <i>a</i>。它有时有意义，例如产量为 0 时的固定成本；有时只是直线的数学锚点。若 <i>x</i> = 0 落在观测范围之外，截距的解释要非常谨慎，甚至不该解释。</p>
+  <p>例：配送时间回归 <i>ŷ</i> = 1.8 + 0.035<i>x</i>，<i>x</i> 为公里、<i>y</i> 为小时。斜率 0.035 表示每多 1 公里，预测配送时间增加约 0.035 小时，即 2.1 分钟。截距 1.8 是距离为 0 时的预测时间，可解释为固定处理时间，但前提是 0 公里在情境中有意义。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>斜率的单位是“<i>y</i> 的单位 / <i>x</i> 的单位”，解释时必须带单位。说“斜率是 2.45”没有信息；说“每多 1 千元支出，预测销售增加约 2.45 千件”才是完整解释。</p>
+  </aside>
+  <p class="c-source">W10 p.26–27、54–55</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">10.8</span> 实例计算、预测与外推</h2>
+  <p>营销数据的汇总量：<i>x̄</i> = 7.3，<i>ȳ</i> = 34.3，<i>S<sub>xx</sub></i> = 142.10，<i>S<sub>yy</sub></i> = 856.10，<i>S<sub>xy</sub></i> = 348.10。于是</p>
+  <div class="c-formula"><i>b</i> = 348.10/142.10 ≈ 2.4497，&nbsp; <i>a</i> = 34.3 − 2.4497(7.3) ≈ 16.4173</div>
+  <div class="c-formula"><i>ŷ</i> = 16.417 + 2.450<i>x</i></div>
+  <p>斜率解释：营销支出每增加 1 千元，预测销售额平均增加约 2.45 千件。注意“预测”“平均”“伴随”这些词，不要写成“导致”。</p>
+  <p>预测 <i>x</i> = 11 千元时的销售：<i>ŷ</i> = 16.417 + 2.450(11) ≈ 43.367 千件。11 落在观测范围 2 到 14 之内，属于<span class="c-term">内插<span class="c-term__en">interpolation</span></span>，通常较安全。</p>
+  <p><span class="c-term">外推<span class="c-term__en">extrapolation</span></span>是预测远离观测范围的值。若用 <i>x</i> = 30 预测，就假设“同样的线性关系在 30 处仍成立”，但数据只支持 2 到 14。除非有强情境依据，否则不要外推。外推的风险不是计算错误，而是模型假设在范围外失效。</p>
+  <p>活动：<i>n</i> = 8，<i>x̄</i> = 9.375，<i>ȳ</i> = 64.375，<i>S<sub>xx</sub></i> = 115.875，<i>S<sub>xy</sub></i> = 336.875。则 <i>b</i> = 336.875/115.875 ≈ 2.9072，<i>a</i> = 64.375 − 2.9072(9.375) ≈ 37.1197，拟合线 <i>ŷ</i> = 37.120 + 2.907<i>x</i>，且过点 (9.375, 64.375)。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>判断内插/外推看 <i>x</i> 是否落在观测最小值与最大值之间。外推即使数值算得对，结论也可能不可信。</p>
+  </aside>
+  <p class="c-source">W10 p.28–32、56–57</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">10.9</span> 拟合值、残差表、<i>SSE</i>、<i>R</i><sup>2</sup> 与 <i>s<sub>e</sub></i></h2>
+  <p>营销数据的拟合值与残差：<i>x</i> = 2 时 <i>ŷ</i> = 21.317，<i>e</i> = −0.317；<i>x</i> = 3 时 <i>ŷ</i> = 23.766，<i>e</i> = 0.234；<i>x</i> = 4 时 <i>ŷ</i> = 26.216，<i>e</i> = −0.216；<i>x</i> = 5 时 <i>ŷ</i> = 28.666，<i>e</i> = 0.334；<i>x</i> = 6 时 <i>ŷ</i> = 31.115，<i>e</i> = −0.115；<i>x</i> = 8 时 <i>ŷ</i> = 36.015，<i>e</i> = −1.015；<i>x</i> = 9 时 <i>ŷ</i> = 38.464，<i>e</i> = 0.536；<i>x</i> = 10 时 <i>ŷ</i> = 40.914，<i>e</i> = 1.086；<i>x</i> = 12 时 <i>ŷ</i> = 45.814，<i>e</i> = 0.186；<i>x</i> = 14 时 <i>ŷ</i> = 50.713，<i>e</i> = −0.713。</p>
+  <p>残差平方和 <i>SSE</i> = Σ<i>e<sub>i</sub></i><sup>2</sup> ≈ 3.365。总平方和 <i>SST</i> = Σ(<i>y<sub>i</sub></i>−<i>ȳ</i>)<sup>2</sup> = <i>S<sub>yy</sub></i> = 856.10。于是</p>
+  <div class="c-formula"><i>R</i><sup>2</sup> = 1 − <i>SSE</i>/<i>SST</i> = 1 − 3.365/856.10 ≈ 0.9961</div>
+  <p>解释：销售额观测变异的约 99.61% 可由与营销支出的线性关系解释。简单线性回归中 <i>R</i><sup>2</sup> = <i>r</i><sup>2</sup>；这里 <i>r</i> ≈ 0.9980，平方即 0.9961。<i>R</i><sup>2</sup> 非负，只衡量解释比例；方向由 <i>r</i> 的符号给出。</p>
+  <p>残差标准误为</p>
+  <div class="c-formula"><i>s<sub>e</sub></i> = √[<i>SSE</i>/(<i>n</i>−2)] = √(3.365/8) ≈ 0.649</div>
+  <p>典型观测值偏离拟合线约 0.65 千件。自由度是 <i>n</i>−2，因为回归估计了两个参数 <i>a</i> 与 <i>b</i>；样本<span class="c-term c-term--auto" data-term="standard-deviation" title="标准差｜standard deviation：方差的平方根，单位与原变量相同。">标准差</span>只估计一个均值，所以用 <i>n</i>−1。这是自由度概念在回归中的延伸。</p>
+  <p>变异分解：<i>SST</i> = <i>SSR</i> + <i>SSE</i>，其中 <i>SSR</i> = Σ(<i>ŷ<sub>i</sub></i>−<i>ȳ</i>)<sup>2</sup> 是解释变异，<i>SSE</i> 是未解释变异。总变异 = 解释变异 + 未解释变异。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><i>R</i><sup>2</sup> = 0.9961 不表示“99.61% 的预测正确”。它表示“<i>y</i> 的变异中约 99.61% 被线性关系解释”。预测是否正确要看残差大小与 <i>s<sub>e</sub></i>。</p>
+  </aside>
+  <p class="c-source">W10 p.33–40、51–52</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">10.10</span> 残差图、模型诊断与异常点</h2>
+  <p>判断线性拟合好坏有三种方式：散点图看关系是否线性；<i>R</i><sup>2</sup> 看 <i>y</i> 的变异被解释多少；残差图与 <i>s<sub>e</sub></i> 看误差是否小且无图案。高 <i>R</i><sup>2</sup> 不足以单独证明模型好，必须同时看散点图与残差图。</p>
+  <p>残差图的三种典型形态：</p>
+  <ul>
+    <li>残差随机散布在 0 附近：支持线性模型。</li>
+    <li>残差呈弯曲图案：说明直线漏掉了非线性结构，应考虑曲线或变换。</li>
+    <li>残差随 <i>x</i> 增大而扩散：说明方差不恒定（异方差），线性模型的标准误与区间会受影响。</li>
+  </ul>
+  <p>回归的正式假设预览：线性（<i>Y</i> 的均值是 <i>x</i> 的线性函数）；独立；方差恒定；给定 <i>x</i> 时误差近似正态。散点图与残差图是这些假设的实用检查工具。第 11 周会用这些假设做正式检验。</p>
+  <p><span class="c-term">离群点<span class="c-term__en">outlier</span></span>是 <i>y</i> 方向远离直线的点，残差大；<span class="c-term">影响点<span class="c-term__en">influential point</span></span>是删除后会显著改变拟合直线的点，通常 <i>x</i> 方向也很极端。实务原则：不要自动删除点；先判断它是数据错误还是有意义的特殊案例。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 10-2 三种残差图形态</span>
+      <button class="c-copy" type="button" data-copy="Clean vector row of three residual plots with x on the horizontal axis and residual on the vertical axis: first random scatter around zero, second a clear U-shaped curve, third a fan shape with increasing spread to the right. Each panel labelled random, curved, nonconstant variance. Flat 2D, thin 1.5 px strokes, muted slate blue points and warm grey zero line, white background, English labels only, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector row of three residual plots with x on the horizontal axis and residual on the vertical axis: first random scatter around zero, second a clear U-shaped curve, third a fan shape with increasing spread to the right. Each panel labelled random, curved, nonconstant variance. Flat 2D, thin 1.5 px strokes, muted slate blue points and warm grey zero line, white background, English labels only, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>残差图“随机”支持线性；“弯曲”提示模型形式错；“喇叭形”提示方差不等。三种图案对应三类不同问题，不能都归为“异常值”。</p>
+  </aside>
+  <p class="c-source">W10 p.41–48</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">10.11</span> 相关不等于因果、计算技巧与结果报告</h2>
+  <p>回归直线描述<span class="c-term">相关<span class="c-term__en">association</span></span>，不自动证明改变 <i>x</i> 会导致 <i>y</i> 改变。讲义列出三类替代解释：混杂变量可能同时影响 <i>x</i> 与 <i>y</i>；影响方向可能相反；样本可能不代表目标<span class="c-term c-term--auto" data-term="population" title="总体｜population：我们想了解的全部个体或集合。">总体</span>。谨慎的措辞是“与…相关/伴随”，除非研究设计支持因果。</p>
+  <p>计算技巧：用原始和公式可减少逐步中心化的舍入误差；<i>S<sub>xx</sub></i>、<i>S<sub>yy</sub></i>、<i>S<sub>xy</sub></i> 三个量足够支撑斜率、截距、相关与 <i>R</i><sup>2</sup>。软件命令只作核对：R 用 <code>lm(y ~ x)</code> 与 <code>cor(x,y)</code>，Excel 用 <code>=SLOPE</code>、<code>=INTERCEPT</code>、<code>=CORREL</code>、<code>=RSQ</code>，并注意哪个范围是 <i>x</i>、哪个是 <i>y</i>。</p>
+  <p>好的回归报告包含：响应与解释变量；散点图描述；拟合方程；斜率解释；<i>R</i><sup>2</sup> 与残差标准误；必要的外推或异常点警告。讲义示范：10 周数据中销售与营销支出呈强正、近似线性关系，拟合线为 sales = 16.417 + 2.450(spend)；每多 1 千元支出，预测销售增加约 2.45 千件；模型解释约 99.61% 的销售变异，典型偏离约 0.65 千件；预测应限制在 2 到 14 千元的观测范围内。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>把 <i>R</i><sup>2</sup> 高当成“模型正确”是常见误读。一个错误的模型（例如把弯曲关系硬拟合直线）在局部也可能有高 <i>R</i><sup>2</sup>；残差图才是发现模型形式错误的关键。</p>
+  </aside>
+  <p class="c-source">W10 p.49、58–61</p>
+</section>
+
+<section id="s12">
+  <h2 id="s12"><span class="sec-num">10.12</span> 常见错误与公式总结</h2>
+  <p>讲义列出六类错误：回归中把 <i>x</i> 与 <i>y</i> 对调；把相关解释为因果；因为有 <i>r</i> 就跳过散点图；把直线外推到观测范围之外；把 <i>R</i><sup>2</sup> 当成“预测正确的百分比”；解释斜率与 <i>s<sub>e</sub></i> 时忘记单位。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>Week 10 核心公式</caption>
+      <thead><tr><th scope="col">量</th><th scope="col">公式</th></tr></thead>
+      <tbody>
+        <tr><td>样本协方差</td><td><i>s<sub>xy</sub></i> = Σ(<i>x<sub>i</sub></i>−<i>x̄</i>)(<i>y<sub>i</sub></i>−<i>ȳ</i>)/(<i>n</i>−1)</td></tr>
+        <tr><td>相关系数</td><td><i>r</i> = <i>S<sub>xy</sub></i>/√(<i>S<sub>xx</sub>S<sub>yy</sub></i>) = <i>s<sub>xy</sub></i>/(<i>s<sub>x</sub>s<sub>y</sub></i>)</td></tr>
+        <tr><td>斜率</td><td><i>b</i> = <i>S<sub>xy</sub></i>/<i>S<sub>xx</sub></i> = <i>r s<sub>y</sub></i>/<i>s<sub>x</sub></i></td></tr>
+        <tr><td>截距</td><td><i>a</i> = <i>ȳ</i> − <i>b x̄</i></td></tr>
+        <tr><td>残差</td><td><i>e<sub>i</sub></i> = <i>y<sub>i</sub></i> − <i>ŷ<sub>i</sub></i></td></tr>
+        <tr><td><span class="c-term c-term--auto" data-term="coefficient-of-determination" title="决定系数｜coefficient of determination：R²=1−SSE/SST，解释变异占总变异的比例。">决定系数</span></td><td><i>R</i><sup>2</sup> = 1 − <i>SSE</i>/<i>SST</i> = <i>r</i><sup>2</sup></td></tr>
+        <tr><td>残差标准误</td><td><i>s<sub>e</sub></i> = √[<i>SSE</i>/(<i>n</i>−2)]</td></tr>
+        <tr><td>变异分解</td><td><i>SST</i> = <i>SSR</i> + <i>SSE</i></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>一句话收束：先用散点图看形状，再用 <i>r</i> 量线性强度，用最小二乘拟合直线，用残差与 <i>R</i><sup>2</sup> 判断拟合，最后把结论限制在观测范围与相关（而非因果）的语言内。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>考试常把“计算”和“解释”分开问：算 <i>b</i>、<i>a</i>、<i>r</i>、<i>R</i><sup>2</sup> 是算术；解释斜率、截距、<i>R</i><sup>2</sup>、<i>s<sub>e</sub></i> 必须带变量、单位与“平均/预测/相关”的限定词。</p>
+  </aside>
+  <p class="c-source">W10 p.62–64</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W10</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch09.html"><span>上一章</span>抽样分布与置信区间</a>
+          <a class="pager__next" href="index.html"><span>返回</span>学科主页</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

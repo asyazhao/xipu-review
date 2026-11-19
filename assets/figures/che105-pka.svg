@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 345" role="img" aria-label="pKa 标尺">
+<title>pKa 标尺</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">pKa 标尺</text>
+<line x1="70" y1="190" x2="740" y2="190" stroke="#262624" stroke-width="1.8"/>
+<line x1="70.0" y1="185" x2="70.0" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="70.0" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">-10</text>
+<line x1="125.83333333333333" y1="185" x2="125.83333333333333" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="125.83333333333333" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">-5</text>
+<line x1="181.66666666666666" y1="185" x2="181.66666666666666" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="181.66666666666666" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">0</text>
+<line x1="237.5" y1="185" x2="237.5" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="237.5" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">5</text>
+<line x1="293.3333333333333" y1="185" x2="293.3333333333333" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="293.3333333333333" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">10</text>
+<line x1="349.1666666666667" y1="185" x2="349.1666666666667" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="349.1666666666667" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">15</text>
+<line x1="405.0" y1="185" x2="405.0" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="405.0" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">20</text>
+<line x1="460.83333333333337" y1="185" x2="460.83333333333337" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="460.83333333333337" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">25</text>
+<line x1="516.6666666666666" y1="185" x2="516.6666666666666" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="516.6666666666666" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">30</text>
+<line x1="572.5" y1="185" x2="572.5" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="572.5" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">35</text>
+<line x1="628.3333333333334" y1="185" x2="628.3333333333334" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="628.3333333333334" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">40</text>
+<line x1="684.1666666666666" y1="185" x2="684.1666666666666" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="684.1666666666666" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">45</text>
+<line x1="740.0" y1="185" x2="740.0" y2="195" stroke="#5E5E58" stroke-width="1"/>
+<text x="740.0" y="212" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">50</text>
+<line x1="700" y1="75" x2="120" y2="75" stroke="#8C4F45" stroke-width="1.4" marker-end="url(#arrowRed)"/>
+<text x="410" y="62" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#8C4F45" text-anchor="middle" font-weight="600">酸性增强 ←</text>
+<circle cx="70.0" cy="190" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<line x1="70.0" y1="156" x2="70.0" y2="184" stroke="#5E5E58" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="70.0" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">HI</text>
+<circle cx="81.16666666666667" cy="190" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<line x1="81.16666666666667" y1="131" x2="81.16666666666667" y2="184" stroke="#5E5E58" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="81.16666666666667" y="125" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">HBr</text>
+<circle cx="107.96666666666667" cy="190" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<line x1="107.96666666666667" y1="106" x2="107.96666666666667" y2="184" stroke="#5E5E58" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="107.96666666666667" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">HCl</text>
+<circle cx="217.4" cy="190" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<line x1="217.4" y1="131" x2="217.4" y2="184" stroke="#5E5E58" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="217.4" y="125" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">HF</text>
+<circle cx="234.70833333333331" cy="190" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<line x1="234.70833333333331" y1="156" x2="234.70833333333331" y2="184" stroke="#5E5E58" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="234.70833333333331" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">醋酸</text>
+<circle cx="284.8466666666667" cy="190" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<line x1="284.8466666666667" y1="156" x2="284.8466666666667" y2="184" stroke="#5E5E58" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="284.8466666666667" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">NH4+</text>
+<circle cx="356.98333333333335" cy="190" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<line x1="356.98333333333335" y1="156" x2="356.98333333333335" y2="184" stroke="#5E5E58" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="356.98333333333335" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">水</text>
+<circle cx="740.0" cy="190" r="4" fill="#2E4A6B" stroke="none" stroke-width="1.5"/>
+<line x1="740.0" y1="156" x2="740.0" y2="184" stroke="#5E5E58" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="740.0" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">甲烷</text>
+<text x="40" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">pKa 越小，酸性越强；每个刻度是 10 倍。强酸的 pKa 可以为负。</text>
+<text x="40" y="324" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">数据取自讲义 L8 的 pKa 页；未列出的酸不要凭印象补值。</text>
+</svg>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 指针与动态内存 · 全科复习</title>
+  <meta name="description" content="SOE105 第 13 章 指针与动态内存：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="13">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 13 章 指针与动态内存</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html" class="is-current" aria-current="page"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html" class="is-current" aria-current="page"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 13 章</p>
+          <h1>指针与动态内存</h1>
+          <p class="chapter-head__en">Pointers &amp; Dynamic Objects</p>
+          <p class="chapter-head__meta">来源 L15–16 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">13.1 内存模型：堆与栈</a></li>
+        <li><a href="#s2">13.2 变量与地址：& 运算符</a></li>
+        <li><a href="#s3">13.3 指针变量：声明、取址与解引用</a></li>
+        <li><a href="#s4">13.4 一个星号，两种任务</a></li>
+        <li><a href="#s5">13.5 用指针交换：与传引用对照</a></li>
+        <li><a href="#s6">13.6 指针的指针</a></li>
+        <li><a href="#s7">13.7 指针与数组：数组名是首元素地址</a></li>
+        <li><a href="#s8">13.8 nullptr 与二维数组的降维</a></li>
+        <li><a href="#s9">13.9 动态内存：new、delete 与两类错误</a></li>
+        <li><a href="#s10">13.10 动态二维数组与 C 的 malloc/free</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本章从“<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：有名字、有类型、可存放一个值的存储单元。">变量</span>其实是内存中的一格”讲起：用 &amp; 取地址、用 * 解引用，理解指针与<span class="c-term c-term--auto" data-term="array" title="数组｜array：同一类型元素的线性集合，存于连续内存。">数组</span>名的关系，最后用 new/delete 在堆上分配对象，并处理悬空指针与内存泄漏这两类典型错误。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>运行中的程序有堆（heap）与栈（stack）：堆放全局数据并供动态分配，栈放活动函数的局部数据。</li>
+    <li>每个变量占据一块内存槽，槽的大小由类型决定；&amp; 取地址，* 解引用。</li>
+    <li>指针是存地址的变量，有类型之分；指针的大小取决于机器架构，与所指内容无关。</li>
+    <li>数组名是指向首<span class="c-term c-term--auto" data-term="element" title="元素｜element：数组中的一个数据项，由下标定位。">元素</span>的指针常量，*(a + n) 等价于 a[n]；指针算术以元素为单位。</li>
+    <li>nullptr 表示空指针，解引用它是错误；<span class="c-term c-term--auto" data-term="two-dimensional-array" title="二维数组｜two-dimensional array：本质是数组的数组，按行与列记元素。">二维数组</span>可用指针逐层降为一维。</li>
+    <li>new/delete 在堆上分配与释放，必须配对；delete 之后原指针失效（悬空指针），丢失指针则内存泄漏。</li>
+    <li>C 用 malloc/free，C++ 用 new/delete；前者按字节、返回 void*、失败返回 NULL。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">13.1</span> 内存模型：堆与栈</h2>
+  <p>讲义先给出一张程序内存的全局图：每个正在执行的程序都有一块<span class="c-term">堆<span class="c-term__en">heap</span></span>和一块<span class="c-term">栈<span class="c-term__en">stack</span></span>。堆是一池空闲的全局内存，用来存放全局数据/对象，并提供可动态分配与释放的额外内存；栈是一叠局部内存，用来存放活动函数的局部数据/对象。</p>
+  <p>图的右侧画的是栈的生长方式：main() 在最下面，调用 foo1() 就压上一层 foo1()，foo1() 里再调 foo1() 又压一层，再调 foo2() 再压一层。讲义在这里加了一句提醒——“回想一下每次<span class="c-term c-term--auto" data-term="recursion" title="递归｜recursion：把任务分解成更小的同类子任务，由函数调用自己完成。">递归</span>调用会发生什么”——递归之所以能在回代时保住每一层的 n，靠的就是这种一层层叠起来的局部存储。</p>
+  
+<!-- course-image:soe105-ch13-memory-model.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe105-ch13-memory-model">
+        <img class="c-course-figure__img" src="../../assets/course/soe105-ch13-memory-model.jpg" alt="程序内存：栈、堆与全局区" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 程序内存：栈、堆与全局区 <span class="c-course-figure__src">来源：L16 p.3</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 13-1 程序内存布局</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of a running program's memory layout: a tall block on the left labelled heap, a pool of free global memory; a stacked column on the right labelled stack with four stacked frames from bottom to top named main(), foo1(), foo1(), foo2(); arrows showing allocation into the heap and frames pushed onto the stack. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram of a running program's memory layout: a tall block on the left labelled heap, a pool of free global memory; a stacked column on the right labelled stack with four stacked frames from bottom to top named main(), foo1(), foo1(), foo2(); arrows showing allocation into the heap and frames pushed onto the stack. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>这张图是后面所有内容的地图：普通局部变量在栈上，new 出来的对象在堆上，全局变量在全局区。指针之所以有用，就是因为它能“指向”这三处中的任意一处——代价是它也可能指向不该指的地方。</p>
+  
+<p class="c-source">L15 p.2–3</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">13.2</span> 变量与地址：&amp; 运算符</h2>
+  <p>讲义给了一个朴素但关键的定义：变量事实上是内存中用来存放某个确定值的一块区域；每个变量被分配到一格内存槽（大小取决于<span class="c-term c-term--auto" data-term="data-type" title="数据类型｜data type：刻画数据本质的基本抽象，决定内存占用与运算规则。">数据类型</span>），变量的数据就存在那里。幻灯片画了一张带地址的表：float y = 12.5 存在 1001，int temperature = 32 存在 1003 附近，<span class="c-term c-term--auto" data-term="char" title="字符类型｜char：用来存放单个字符的数据类型，字面量用单引号。">char</span> letter = 'c' 占一格，int number 只声明未赋值。</p>
+  <p><span class="c-term">取地址运算符<span class="c-term__en">address-of operator</span></span>写作 &amp;，用法是 &amp;变量名，返回该变量的内存地址。讲义的例子：a = 100 存在 1008，b = 123.45 存在 1016；cout &lt;&lt; a 打印 100，cout &lt;&lt; &amp;a 打印 1008。同一个变量，加不加 &amp;，一个是“里面的值”，一个是“它在哪里”。</p>
+  <p>讲义特意留了一句提醒：不要把它和引用类型（函数参数里的 type &amp;）搞混。两者用的是同一个符号，但一个是“取地址”的运算，一个是“给已有变量起别名”的声明——出现的位置不同，含义就不同。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>&amp;a 不是“a 的引用”，而是“a 的地址”，它的类型是 int*。把它赋给 int 变量会编译失败；要接住它，左边必须是指针。</p>
+  </aside>
+  <p class="c-source">L15 p.3–6</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">13.3</span> 指针变量：声明、取址与解引用</h2>
+  <p>讲义对指针的定义有三条：它是一种基本数据类型；它是一个用来存放某个内存单元地址的变量；它可以用来引用这个内存单元。C/C++ 为每一种对象类型都准备了对应的指针类型——指向 int 的指针、指向 char 的指针、指向用户自定义对象（如 RationalNumber）的指针，甚至指向指针的指针。</p>
+  <p>声明写作 type* pointer_name; 或 type *pointer_name;，其中 type 是“被指向的数据”的类型。要访问指针所指的对象，就用<span class="c-term">解引用<span class="c-term__en">dereference</span></span>：读值写 *pointer_name，改值写 *pointer_name = ...。</p>
+<pre class="c-code"><code>int a = 20;
+int *p = &amp;a;
+
+cout &lt;&lt; "a :" &lt;&lt; a &lt;&lt; endl;    // value of a          -> 20
+cout &lt;&lt; "&amp;a:" &lt;&lt; &amp;a &lt;&lt; endl;   // address of a        -> 1008
+cout &lt;&lt; "p :" &lt;&lt; p &lt;&lt; endl;    // value of p = &amp;a     -> 1008
+cout &lt;&lt; "*p:" &lt;&lt; *p &lt;&lt; endl;   // dereference         -> 20
+cout &lt;&lt; "&amp;p:" &lt;&lt; &amp;p &lt;&lt; endl;   // address of p itself -> 1024</code></pre>
+  <p>这五行输出把“指针也是一只盒子”讲透了：p 自己的地址是 1024，p 里存的内容是 1008（也就是 a 的地址），而 *p 取的是 1008 那一格里的值 20。地址 1008 与 1024 都是讲义示例中的编号，实际运行时每次可能不同，但“两层地址”的结构不变。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 13-2 指针与它所指向的变量</span>
+      <button class="c-copy" type="button" data-copy="Clean vector memory diagram showing two labelled boxes on an address grid: box a at address 1008 holding 20, box p at address 1024 holding an arrow that points to box a; labels above the boxes read a and p, small captions read value of a, value of p is the address of a, dereference of p gives 20. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/soe105-pointer.svg" alt="指针变量保存地址并指向 x 的关系" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector memory diagram showing two labelled boxes on an address grid: box a at address 1008 holding 20, box p at address 1024 holding an arrow that points to box a; labels above the boxes read a and p, small captions read value of a, value of p is the address of a, dereference of p gives 20. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p>类型之所以不能省，是因为 *p 要知道“读几个字节、按什么格式解释”。指向 int 的指针解引用读 4 个字节，指向 char 的指针只读 1 个；把 char* 当成 int* 用，读到的是拼起来的四个字节。</p>
+  <p class="c-source">L15 p.4–10</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">13.4</span> 一个星号，两种任务</h2>
+  <p>讲义专门用一页讲“别搞混”：声明 int *p; 时，星号是声明的一部分，意思是“p 是个指针”；而 *p = 5; 里的星号是解引用运算符，意思是“p 指向的那一格”。两个任务用了同一个符号，读代码时要靠位置判断——出现在类型后面是声明，出现在表达式里是取值。</p>
+<pre class="c-code"><code>int a = 100, b = 88, c = 8;
+int *p1 = &amp;a, *p2, *p3 = &amp;c;
+
+p2 = &amp;b;      // p2 points to b
+p2 = p1;      // p2 points to a
+b = *p3;      // assign c to b
+*p2 = *p3;    // assign c to a
+cout &lt;&lt; a &lt;&lt; b &lt;&lt; c;   // output: 888</code></pre>
+  <p>逐行看：p2 先指向 b，再改指向 a；b = *p3 把 c 的值 8 赋给 b，b 变成 8；*p2 = *p3 把 c 的值赋给 p2 所指的 a，a 也变成 8。三个变量最后都是 8，输出正是 888。注意 p2 = p1 改变的是“指向谁”，*p2 = *p3 改变的是“指向的那格里的值”——前者动指针，后者动数据。</p>
+  <p>讲义还给了 sizeof 的例子，用来看清“指针的大小”与“所指对象的大小”是两件事。在讲义那台机器上：sizeof(pa) = 8、sizeof(*pa) = 4、sizeof(&amp;pa) = 8；pd 是 8/8/8；pc 是 8/1/8；ps 是 8/24/8。四个指针自身都是 8 字节，而它们指向的 int、double、char、string 分别是 4、8、1、24 字节。</p>
+  <p>讲义的结论值得原样记住：指针的大小取决于计算机架构，而不是它存放的内容。同一台机器上所有指针一样大，无论指向 int 还是指向一个很大的对象。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>sizeof(p) 是指针本身的大小（示例中恒为 8），sizeof(*p) 是所指对象的大小（int 为 4、char 为 1）。看到“指针占几字节”就问架构，看到“*p 占几字节”才问类型。</p>
+  </aside>
+  <p class="c-source">L15 p.9–12</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">13.5</span> 用指针<span class="c-term c-term--auto" data-term="swap" title="交换｜swap：借助一个临时变量互换两个变量的值。">交换</span>：与<span class="c-term c-term--auto" data-term="pass-by-reference" title="传引用｜pass by reference：把实参的地址交给函数，形参改变会反映到调用者。">传引用</span>对照</h2>
+  <p>指针最传统的用法是把地址传进函数，让函数改到调用者的变量。讲义的 indirectSwap(char *ptr1, char *ptr2) 用三行完成交换：temp = *ptr1; *ptr1 = *ptr2; *ptr2 = temp;。主程序调用时写 indirectSwap(&amp;a, &amp;b)，把两个变量的地址交出去；函数里改的是“地址所指的格子”，所以 a 与 b 真的换了。</p>
+<pre class="c-code"><code>void indirectSwap(char *ptr1, char *ptr2) {
+    char temp = *ptr1;
+    *ptr1 = *ptr2;
+    *ptr2 = temp;
+}
+
+int main() {
+    char a = 'y';
+    char b = 'n';
+    indirectSwap(&amp;a, &amp;b);       // pass addresses
+    // after swap: a=n, b=y
+}</code></pre>
+  <p>讲义把指针版与引用版并排放：引用版写作 indirectSwap(char &amp;ptr1, char &amp;ptr2)，调用时写 indirectSwap(a, b)，函数体里直接用 ptr1、ptr2，不必加星号。两种写法达到同一个效果，差别在“谁来做解引用”：指针版由程序员在函数体里写 *，引用版由编译器隐式完成。</p>
+  <p>指针版有一条硬要求：调用处的实参类型必须与定义一致。定义收的是 char*，就必须传 &amp;a 这种地址；传 a 会类型不符，传 int 的地址也不行。讲义在示例旁标注“must be consistent with the definition”，说的就是这件事。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>指针参数本身是按值传递的：函数收到的是“地址的副本”。但副本指向同一块内存，所以通过 * 能改到原变量；如果在函数里让 ptr1 指向别处，调用者的指针不受影响。</p>
+  </aside>
+  <p class="c-source">L15 p.11–14</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">13.6</span> 指针的指针</h2>
+  <p>既然指针也是变量，它自己也有地址，于是就有“指向指针的指针”。声明 int **q; 表示 q 指向一个“指向 int 的指针”。讲义的例子是 a = 50、p = &amp;a、q = &amp;p，然后分别打印 a、*p、**q，三个结果都是 50。</p>
+<pre class="c-code"><code>int a = 50;
+int *p = &amp;a;      // pointer to integer
+int **q = &amp;p;     // pointer to pointer to integer
+
+cout &lt;&lt; "a: " &lt;&lt; a &lt;&lt; endl;     // 50
+cout &lt;&lt; "p: " &lt;&lt; *p &lt;&lt; endl;    // 50
+cout &lt;&lt; "q: " &lt;&lt; **q &lt;&lt; endl;   // 50</code></pre>
+  <p>**q 的读法是“q 所指地址里的内容，再取那个内容所指地址里的内容”：第一层 * 从 q 走到 p，第二层 * 从 p 走到 a。讲义在图上标注得很清楚，这也是理解多级指针的唯一办法——一层一层剥。</p>
+  <p>讲义接着给了一道“哪里非法”的练习：a 是 int，p 是 int*，q 是 int**，r 是 int***，s 是 int****。语句 q = &amp;a; 非法，因为 &amp;a 的类型是 int*，而 q 要 int**；语句 s = &amp;q; 也非法，因为 &amp;q 是 int***，而 s 要 int****。多一级少一级都不行，指针的层级必须严格对齐。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>int** 与 int* 是两个不同的类型，不能互相赋值。少写一个星号不会“自动升级”，只会编译失败；反过来多写一个星号，解引用时就会把地址当成数据。</p>
+  </aside>
+  <p class="c-source">L15 p.13–16</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">13.7</span> 指针与数组：数组名是首元素地址</h2>
+  <p>讲义的核心结论只有一句：数组名只指向第一个元素，而不是整个数组；数组名是一个指向首元素的<span class="c-term">指针常量<span class="c-term__en">pointer constant</span></span>。所以 &amp;a[0] 与 a 打印出来是同一个地址，幻灯片上两者都显示 1004。</p>
+  <p>由此得到一串等价写法。对 int a[] = {2, 3, 5, 7, 9, 11}; 来说，a[0]、*a、*(&amp;a[0]) 都是 2；一般地，*(a + n) 与 a[n] 完全相同。讲义在图上把 a+0 到 a+4 与 a[0] 到 a[4] 一一对应地标了出来。</p>
+<pre class="c-code"><code>int a[] = {1, 3, 5, 7, 9};
+int *p = a;              // p points to a[0]
+
+cout &lt;&lt; a[1] &lt;&lt; " " &lt;&lt; *(a + 1) &lt;&lt; " " &lt;&lt; *(p + 1) &lt;&lt; endl;  // 3 3 3
+cout &lt;&lt; a[1] &lt;&lt; " " &lt;&lt; p[1] &lt;&lt; endl;                          // 3 3</code></pre>
+  <p><span class="c-term">指针算术<span class="c-term__en">pointer arithmetic</span></span>的规则是：给定指针 p，p + n 指向从 p 偏移 n 个元素的位置——单位是元素，不是字节。p 指向 a[1] 时，p[0] 是 a[1]、p[-1] 是 a[0]、p[1] 是 a[2]，讲义的<span class="c-term c-term--auto" data-term="subscript" title="下标｜subscript：用方括号给出元素位置的写法。">下标</span>示例正是这么写的。负下标能用，正说明下标运算本质上就是“地址加偏移再解引用”。</p>
+  <p>讲义还区分了两个容易混的声明：int *p; p = list; 是“指向数组的指针”，p 一次只指一个元素；int *p[5]; 是“指针的数组”，p 是 5 个指针组成的数组，p[0]、p[1]、p[2] 可以分别指向不同的变量。前者的重点在“指”，后者的重点在“数组”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>*(a + n) 等价于 a[n]；指针加 1 是“跳一个元素”，跳过的字节数等于所指类型的大小。对 int* 来说加 1 前进 4 字节，对 char* 来说只前进 1 字节。</p>
+  </aside>
+  <p class="c-source">L15 p.17–23</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">13.8</span> nullptr 与二维数组的降维</h2>
+  <p><span class="c-term">空指针<span class="c-term__en">nullptr</span></span>是一个特殊值，表示“不指向任何地方”。讲义的例子：int *p; p = 0; 此时 cout &lt;&lt; p 打印 0，cout &lt;&lt; &amp;p 打印 p 自己的地址，而 cout &lt;&lt; *p 是错误——解引用一个空指针等于访问不存在的内存。</p>
+  <p>二维数组转一<span class="c-term c-term--auto" data-term="dimension" title="维数｜dimension：数组能存放的元素个数。">维数</span>组是讲义的一个综合练习。先算维度：nRows = sizeof(twoD) / sizeof(*twoD)，nCols = sizeof(twoD[0]) / sizeof(**twoD)。再用双重<span class="c-term c-term--auto" data-term="loop" title="循环｜loop：重复执行一段语句的控制结构，又称迭代。">循环</span>按下标搬运：oneD[i * nCols + j] = twoD[i][j];。指针版把同一件事写成 *(oneD + i * nCols + j) = *(*(twoD + i) + j);，讲义在旁注明“same as twoD[i][j]”。</p>
+  <p>要读懂这一行，得把二维数组拆成五层。第一层 twoD 是指向第一行的指针；第二层 twoD + i 是第 i 行的地址；第三层 *(twoD + i) 取出这一行，也就是该行首元素的地址；第四层 *(twoD + i) + j 是第 i 行第 j 格的地址；第五层 *(*(twoD + i) + j) 才是那一格的内容。少剥一层得到的是地址，多剥一层就越界。</p>
+  <p>讲义最后给了一条相当克制的建议：指针很危险——既然指针可以指向任何内存位置，一个坏指针就可能意外修改或破坏数据，必须小心使用；如果可能，不要用指针去访问数组。这句话不是否定指针，而是说“能用下标就用下标”，把指针留给真正需要它的场合（比如动态内存）。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>二维数组名不是 int**。twoD 的类型是“指向含 4 个 int 的数组”的指针，所以 twoD + 1 跳过一整行（4 个 int），而不是跳过 4 个字节。把二维数组直接赋给 int** 会编译失败。</p>
+  </aside>
+  <p class="c-source">L15 p.22–29</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">13.9</span> 动态内存：new、delete 与两类错误</h2>
+  <p>讲义把内存分配分成两种。<span class="c-term">静态分配<span class="c-term__en">static allocation</span></span>用声明与定义完成，例如块内的 int a[200];：内存在编译期、程序开始运行前就分配好，变量的大小与类型必须在编译期已知，整个运行期间固定不变，由编译器自动管理——对象进入<span class="c-term c-term--auto" data-term="scope" title="作用域｜scope：一个声明有效的代码块范围，出了块名字就失效。">作用域</span>时自动获得，离开作用域时自动归还。</p>
+  <p><span class="c-term">动态分配<span class="c-term__en">dynamic allocation</span></span>用预定义函数 new 与 delete：内存在运行期分配，取自堆区；程序发出分配请求（new）获得内存，发出释放请求（delete）归还内存；动态对象可以活过分配它的函数；访问这些块必须通过指针。</p>
+<pre class="c-code"><code>int *p = new int;      // one int on the heap, uninitialized
+*p = 10;
+delete p;              // storage returned to the free store
+
+int *q = new int[200]; // array of 200 ints
+delete[] q;            // array form must match</code></pre>
+  <p>单个对象用 new SomeType 与 delete ptr，数组用 new SomeType[size] 与 delete[] ptr。讲义特别标注：delete 之后 p 变成未定义——那块存储已经还给自由存储区，p 里还留着旧地址，但它不再有效。还有一条注释：被 delete 的指针必须指向此前由对应的 new 分配的内存，不能拿一个随便的地址去 delete。</p>
+  <p>动态分配解决的是“编译期不知道大小”的问题。讲义的例子是 char *grades = new char[n];：先问用户有多少学生，再按 n 分配数组。同一讲还给了一个动态列表的实现：addElement 新建一个 size + 1 的数组、把旧元素逐个复制过去、delete[] 掉旧数组、把新值放在末尾并把 size 加一；deleteFirst 反过来新建 size − 1 的数组、从第二个元素开始复制、删除旧数组。</p>
+  <p>两类典型错误由此而来。<span class="c-term">悬空指针<span class="c-term__en">dangling pointer</span></span>：让两个指针 A、B 指向同一块动态数组，释放之后 A 不再有效，而 B 仍指着那块已经归还的内存，此时写 B[0] 就是非法写入——那片位置已经不属于这个程序。<span class="c-term">内存泄漏<span class="c-term__en">memory leak</span></span>：A 先 new 出一块数组，随后又让 A 指向新 new 的另一块，第一块的地址被覆盖，程序再也找不到它，也无法释放。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 13-3 悬空指针与内存泄漏</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram with two panels: left panel labelled dangling pointer, two pointers A and B pointing to one heap block, then delete A leaves B pointing at a crossed-out freed block marked not owned by the program; right panel labelled memory leak, pointer A reassigned to a second heap block while the first block stays allocated but unreachable, marked inaccessible. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram with two panels: left panel labelled dangling pointer, two pointers A and B pointing to one heap block, then delete A leaves B pointing at a crossed-out freed block marked not owned by the program; right panel labelled memory leak, pointer A reassigned to a second heap block while the first block stays allocated but unreachable, marked inaccessible. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>new 与 delete 必须配对，数组必须用 delete[]。delete 之后指针值未定义，继续用就是悬空指针；指针被重新赋值而旧内存未释放，就是内存泄漏。两种错误都不会报错，只会悄悄破坏数据或耗尽内存。</p>
+  </aside>
+  <p class="c-source">L16 p.2–13</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">13.10</span> 动态二维数组与 C 的 malloc/free</h2>
+  <p>二维数组本质上是“数组的数组”，所以动态创建它要分两层：先分配一个指针数组，再为每一行分配一个数组。讲义的模式是 int **table; table = new int *[m]; 然后循环 table[i] = new int[n]; 并在内层把每个元素<span class="c-term c-term--auto" data-term="initialization" title="初始化｜initialization：在声明时用列表给数组元素赋初值。">初始化</span>为 0；释放时顺序相反——先逐行 delete[] table[i]，最后 delete[] table。</p>
+<pre class="c-code"><code>int **table;
+table = new int *[m];
+for (int i = 0; i &lt; m; i++) {
+    table[i] = new int[n];
+    for (int j = 0; j &lt; n; j++)
+        table[i][j] = 0;
+}
+
+for (int i = 0; i &lt; m; i++)
+    delete[] table[i];
+delete[] table;</code></pre>
+  <p>这种结构还有一个静态二维数组做不到的好处：每一行可以申请不同的长度。讲义展示了一张各行长度不一的表（5、6、3、4 列），并说明当并非所有行都填满时，这样可以节省空间。代价是分配与释放都要逐行处理，任何一行漏掉都会泄漏，顺序写反则会用到已释放的指针。</p>
+  <p>讲义用一页备注总结这类代码的三条纪律：用指针创建数组对象时，必须逐个单独声明下一层的子数组；可能需要检查申请的内存是否真的分配成功；结束时必须逐个释放内存，以免出现悬空指针或内存泄漏。</p>
+  <p>C 语言的写法在 &lt;stdlib.h&gt; 里：malloc(size) 分配指定字节数的内存块，free() 释放先前分配的内存、把它还给堆。讲义的例子是 ptr = (int *) malloc(n * sizeof(int));，随后检查 if (NULL == ptr) 并报错；用完调用 free(ptr);。两个细节：malloc 的返回值是 void*，必须强制转换成目标类型；大小要自己按字节算，n 个 int 就是 n * sizeof(int)。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>C++ 的 new/delete 与 C 的 malloc/free</caption>
+      <thead>
+        <tr><th scope="col">维度</th><th scope="col">C++</th><th scope="col">C</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>分配与释放</td><td>new 与 delete</td><td>malloc 与 free</td></tr>
+        <tr><td>内存来自</td><td>自由存储区（free store）</td><td>堆（heap）</td></tr>
+        <tr><td>构造/析构函数</td><td>会调用</td><td>不会调用</td></tr>
+        <tr><td>返回类型</td><td>完整类型的指针</td><td>void* 指针</td></tr>
+        <tr><td>失败时</td><td>抛出异常，不返回 nullptr</td><td>返回 NULL</td></tr>
+        <tr><td>所需大小</td><td>编译器计算</td><td>必须按字节指定</td></tr>
+        <tr><td>数组支持</td><td>有专门的数组形式</td><td>需要手工计算</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>这张表把两种风格的差异压缩成七行。最实用的三行是“返回类型”“失败时”“所需大小”：它们解释了为什么 C 代码里到处是强制转换、NULL 检查与 sizeof，而 C++ 代码里这些都由编译器代劳。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>new 失败时抛出异常，malloc 失败时返回 NULL；因此 C 代码必须检查返回值，C++ 代码则要用异常处理接住。两者不能混用：new 出来的内存要用 delete 释放，malloc 出来的要用 free。</p>
+  </aside>
+  <p class="c-source">L16 p.13–22</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L15–16</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch12.html"><span>上一章</span>文件 I/O 与流</a>
+          <a class="pager__next" href="index.html"><span>返回</span>学科主页</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCI101 感知机、激活函数与过拟合/欠拟合 · 全科复习</title>
+  <meta name="description" content="SCI101 第 6 章 感知机、激活函数与过拟合/欠拟合：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="sci101" data-chapter="06">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SCI101</a>
+      <span>/</span>
+      <span aria-current="page">第 6 章 感知机、激活函数与过拟合/欠拟合</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html" class="is-current" aria-current="page"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html" class="is-current" aria-current="page"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SCI101 · 第 6 章</p>
+          <h1>感知机、激活函数与过拟合/欠拟合</h1>
+          <p class="chapter-head__en">Perceptron, Activation Functions, Overfitting &amp; Underfitting</p>
+          <p class="chapter-head__meta">来源 L3 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">6.1 从生物神经元到感知机</a></li>
+        <li><a href="#s2">6.2 感知机作为线性分类器</a></li>
+        <li><a href="#s3">6.3 多层感知机与复杂区域</a></li>
+        <li><a href="#s4">6.4 全连接层 vs 卷积层</a></li>
+        <li><a href="#s5">6.5 为什么需要平滑激活：阶跃函数的问题</a></li>
+        <li><a href="#s6">6.6 Sigmoid 神经元</a></li>
+        <li><a href="#s7">6.7 激活函数家族</a></li>
+        <li><a href="#s8">6.8 数据预处理：清洗、集成、归约、变换</a></li>
+        <li><a href="#s9">6.9 偏差、方差与过拟合/欠拟合</a></li>
+        <li><a href="#s10">6.10 治过拟合与治欠拟合</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲分三块：感知机如何用一条直线做二<span class="c-term c-term--auto" data-term="classification" title="分类｜classification：目标为类别的监督学习任务。">分类</span>、为什么必须用平滑的<span class="c-term c-term--auto" data-term="activation-function" title="激活函数｜activation function：对加权和做非线性变换、决定神经元输出的函数。">激活函数</span>替代阶跃、以及<span class="c-term c-term--auto" data-term="overfitting" title="过拟合｜overfitting：训练表现强而新数据表现下降，方差过大。">过拟合</span>与<span class="c-term c-term--auto" data-term="underfitting" title="欠拟合｜underfitting：训练与验证表现都弱，偏差过大。">欠拟合</span>的判据与六种对策；中间穿插数据预处理，因为“垃圾进、垃圾出”决定了模型上限。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>感知机由 Rosenblatt 于 1958 年提出：多输入、单二值输出，本质是线性分类器。</li>
+    <li>单个感知机只能画一条直线；多层感知机通过组合多个感知机可以围出复杂区域，NAND 是通用逻辑门。</li>
+    <li>全连接层每个输入神经元连到每个输出神经元；卷积层只连局部区域，用于提取边缘、纹理等空间特征。</li>
+    <li>阶跃激活的致命问题是“小改权重可能毫无变化，也可能突变”，因此需要 Sigmoid 这类平滑、可导的函数。</li>
+    <li>常见激活：linear、sigmoid、tanh、<span class="c-term c-term--auto" data-term="relu" title="ReLU｜ReLU：max(0, x)，正区间线性、负区间为零的激活函数。">ReLU</span>、Leaky ReLU、GELU、ELU、SELU、LogSigmoid、ReLU6、<span class="c-term c-term--auto" data-term="softmax" title="Softmax｜softmax：把向量转成 0–1 且总和为 1 的概率分布的激活函数。">softmax</span>、softmin。</li>
+    <li>过拟合：训练好、新数据差，偏差小方差大；欠拟合：训练与测试都差，偏差大。</li>
+    <li>治过拟合：L1/<span class="c-term c-term--auto" data-term="l2-regularization" title="L2 正则化｜L2 regularization：在损失中加入权重平方和，抑制过大的权重。">L2 正则</span>、<span class="c-term c-term--auto" data-term="dropout" title="Dropout｜dropout：训练时以概率 p 随机关闭神经元以抑制过拟合的方法。">dropout</span>、<span class="c-term c-term--auto" data-term="early-stopping" title="早停｜early stopping：在验证误差达到最小时停止训练的做法。">早停</span>、数据增强；治欠拟合：更复杂模型、特征工程、更长训练。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">6.1</span> 从生物神经元到感知机</h2>
+  <p>讲义先用一组数字做类比：人脑平均重 3.3 磅、体积约 1260 立方厘米，含约 1000 亿个神经元与 100 万亿个连接。人工神经网络并非复制大脑，而是借用“多个输入汇聚成一个输出”的结构。</p>
+  <p><span class="c-term">感知机<span class="c-term__en">perceptron</span></span>由 Rosenblatt 于 1958 年提出，定义是：接收若干输入，给出一个二值输出（决策）。讲义用“今晚要不要去看电影”举例：三个二值输入分别乘以权重 4、2、2，减去偏置 5，若结果为负则不去（0×4 + 1×2 + 1×2 − 5 &lt; 0 → No），若为正则去（1×4 + 1×2 + 0×2 − 5 &gt; 0 → Yes）。这个例子说明：权重决定每个输入的重要性，偏置决定“多容易”才判为正。</p>
+  <p class="c-source">L3 p.2–9</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">6.2</span> 感知机作为线性分类器</h2>
+  <p>把感知机画在二维平面上，判决条件是 −2x₁ − 2x₂ + 3 = 0 这条直线：直线一侧 z &gt; 0，输出 a = 1；另一侧 z ≤ 0，输出 a = 0。因此单个感知机的能力边界很清楚——它只能实现<span class="c-term">线性可分<span class="c-term__en">linearly separable</span></span>的划分。</p>
+  <p>讲义用 NAND 门验证这一点。设输入为二值 0/1，真值表是：(0,0)→1、(0,1)→1、(1,0)→1、(1,1)→0。这四个点可以被一条直线分开，所以单个感知机能实现 NAND。而 NAND 是<span class="c-term">通用逻辑门<span class="c-term__en">universal logic gate</span></span>——任何逻辑函数都可由 NAND 组合而成，这为“多层感知机可表达任意逻辑”埋下伏笔。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>NAND 真值表</caption>
+      <thead><tr><th scope="col">x₁</th><th scope="col">x₂</th><th scope="col">a</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">L3 p.10–13</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">6.3</span> 多层感知机与复杂区域</h2>
+  <p>讲义给了一个二维分类难题：三角形与圆点交错分布，任何一条直线都无法把它们分开。解法是用四条直线围出一个区域：−x₁ − x₂ + 7 = 0、2x₁ + 2x₂ − 6 = 0、2x₁ − 2x₂ + 6 = 0、5x₁ − 2x₂ − 20 = 0。每个线性边界对应一个感知机，四个感知机在阴影区域内都输出 1。</p>
+  <p>第二层再用一个感知机做“与”运算：四个权重都设为 2、偏置设为 −7，则只有当四个输入全为 1 时，2+2+2+2−7 = 1 &gt; 0，输出才为 1。于是整个网络实现了“同时满足四个不等式”的判定，围出了一个凸区域。讲义据此下结论：<span class="c-term">多层感知机<span class="c-term__en">multi-layer perceptron</span></span> 可以成为复杂的分类器。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 6-1 四条线性边界围成的区域</span>
+      <button class="c-copy" type="button" data-copy="Clean vector 2D scatter plot with triangle and dot classes, four straight decision lines labelled minus x1 minus x2 plus 7, 2x1 plus 2x2 minus 6, 2x1 minus 2x2 plus 6, 5x1 minus 2x2 minus 20, and the enclosed feasible region shaded light grey. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector 2D scatter plot with triangle and dot classes, four straight decision lines labelled minus x1 minus x2 plus 7, 2x1 plus 2x2 minus 6, 2x1 minus 2x2 plus 6, 5x1 minus 2x2 minus 20, and the enclosed feasible region shaded light grey. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>网络结构上，第二、三层是隐藏层：第二层的输出作为第三层感知机的输入；输出层通常只有一个感知机，其输出即分类结果；若应用需要多个输出，输出层就放多个感知机。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>单层感知机 = 线性分类器；多层感知机靠“线性边界 + 与门”组合出非线性区域。四个权重 2、偏置 −7 是“与”运算的典型<span class="c-term c-term--auto" data-term="parameter" title="参数｜parameter：模型内部由训练学到的量，如权重与偏置。">参数</span>。</p>
+  </aside>
+  <p class="c-source">L3 p.14–20、p.23</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">6.4</span> 全连接层 vs 卷积层</h2>
+  <p>讲义用一页对照两类层，这是卷积网络与全连接网络的分水岭：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>两类网络层的<span class="c-term c-term--auto" data-term="linkage" title="连接方式｜linkage：定义簇与簇之间距离的规则，如 single、complete、average。">连接方式</span></caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">全连接层（Dense）</th><th scope="col">卷积层</th></tr></thead>
+      <tbody>
+        <tr><td>连接</td><td>每个输入神经元连到每个输出神经元</td><td>并非所有输入都连到输出</td></tr>
+        <tr><td>作用</td><td>整合上一层全部神经元的输出</td><td>用滤波器作用于局部区域，提取边缘、纹理等空间特征</td></tr>
+        <tr><td>连接规模</td><td>输入数 × 输出数，全部相连</td><td>只连局部区域，连接更少</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义对全连接层的定义是“每个输入神经元都连到每个输出神经元，每个神经元接收上一层所有神经元的输入”；对卷积层的定义是“对输入的局部区域施加滤波器以提取空间特征”。这也解释了第 2 章“架构跟随数据结构”：图像有局部空间结构，所以用卷积；表格没有空间邻接，所以用全连接。</p>
+  <p class="c-source">L3 p.21–22</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">6.5</span> 为什么需要平滑激活：阶跃函数的问题</h2>
+  <p>训练网络时，我们希望“权重或偏置的小改变，能让激活值朝期望方向小改变”。阶跃函数做不到这一点。设 z 变化 Δz = Δw₁·x₁，则激活的变化只有两种：仍为 0，或突然变成 1。也就是说，微调权重可能完全没有效果，越过阈值又会突变——网络无法获得“往哪个方向调、调多少”的梯度信息。</p>
+  <p>讲义把这种输入输出关系画成指示函数（indicator function），并据此提出动机：需要更平滑的激活函数（smoother activation）。这是本章从“感知机”转向“Sigmoid 神经元”的逻辑桥梁，也是反向传播能工作的前提——激活必须可导。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>问题不在阶跃函数“不够准”，而在它不可导：导数几乎处处为零、阈值处不存在，<span class="c-term c-term--auto" data-term="gradient-descent" title="梯度下降｜gradient descent：沿负梯度方向小步调整参数以降低损失的优化方法。">梯度下降</span>拿不到方向。</p>
+  </aside>
+  <p class="c-source">L3 p.25–29</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">6.6</span> Sigmoid 神经元</h2>
+  <p>Sigmoid 的常用形式是 logistic 函数：</p>
+  <div class="c-formula"><i>σ</i>(<i>x</i>) = 1 / (1 + <i>e</i><sup>−<i>x</i></sup>)</div>
+  <p>讲义列出四条性质，每一条都可直接出选择题：定义域是全体实数，任何实数输入都产生有效输出；有水平渐近线，x → +∞ 时 σ(x) → 1，x → −∞ 时 σ(x) → 0，函数永远达不到 0 或 1，只能任意接近；单调递增；处处可导，因此可以在训练中计算梯度。</p>
+  <p>把同样的“微调权重”实验搬到 Sigmoid 神经元上，结果就变平滑了：原激活 0.12，权重往负方向改后 Δa = −0.13；原激活 0.41 时 Δa = +0.16；原激活 0.81 时 Δa = +0.56。激活值随输入连续变化，网络因此能感知“改一点点”的效果。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>Sigmoid 的四性质（定义域、渐近线、单调、可导）与“输出不为零中心”是两个常考点；后者正是 tanh 与 sigmoid 的关键差别。</p>
+  </aside>
+  <p class="c-source">L3 p.30–33</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">6.7</span> 激活函数家族</h2>
+  <p>讲义用六页把常见激活函数排成一张谱系表，每种都给出公式、取值范围与一个典型缺陷：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>常见激活函数的公式、范围与问题</caption>
+      <thead><tr><th scope="col">名称</th><th scope="col">公式</th><th scope="col">范围/特点</th></tr></thead>
+      <tbody>
+        <tr><td>Linear</td><td>c·x（c 为常数）</td><td>梯度恒定；更新与输入变化无关</td></tr>
+        <tr><td>Sigmoid</td><td>1/(1+e<sup>−x</sup>)</td><td>0–1，S 形，非零中心，梯度平滑但有消失问题</td></tr>
+        <tr><td>Tanh</td><td>(e<sup>x</sup>−e<sup>−x</sup>)/(e<sup>x</sup>+e<sup>−x</sup>)</td><td>−1–1，Sigmoid 的缩放版，零中心，仍有梯度消失</td></tr>
+        <tr><td>ReLU</td><td>max(0, x)</td><td>0–∞，非零中心，存在 dying ReLU</td></tr>
+        <tr><td>Leaky ReLU</td><td>max(0.01x, x)</td><td>缓解 dying ReLU，计算高效</td></tr>
+        <tr><td>GELU</td><td>x·Φ(x)</td><td>Φ 为高斯分布累积分布函数，引入概率意味</td></tr>
+        <tr><td>ELU</td><td>α(e<sup>x</sup>−1)（x≤0）；x（x&gt;0）</td><td>逐元素，输出可为负，α 的选择关键</td></tr>
+        <tr><td>SELU</td><td>λα(e<sup>x</sup>−1)（x≤0）；λx（x&gt;0）</td><td>对特定网络是稳健选择</td></tr>
+        <tr><td>LogSigmoid</td><td>log(1/(1+e<sup>−x</sup>))</td><td>逐元素作用</td></tr>
+        <tr><td>ReLU6</td><td>min(max(0, x), 6)</td><td>饱和激活，防止数值过大导致不稳定</td></tr>
+        <tr><td>Softmax</td><td>e<sup>x<sub>i</sub></sup> / Σ<sub>j</sub> e<sup>x<sub>j</sub></sup></td><td>0–1 且和为 1，多分类输出层常用</td></tr>
+        <tr><td>Softmin</td><td>e<sup>−x<sub>i</sub></sup> / Σ<sub>j</sub> e<sup>−x<sub>j</sub></sup></td><td>0–1 且和为 1，偏好小值</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 6-2 五种激活函数曲线</span>
+      <button class="c-copy" type="button" data-copy="Clean vector panel of five small plots side by side showing activation curves: sigmoid S-curve between 0 and 1, tanh S-curve between minus 1 and 1, ReLU flat at zero then linear, Leaky ReLU with slight negative slope, and softmax bar output summing to one. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector panel of five small plots side by side showing activation curves: sigmoid S-curve between 0 and 1, tanh S-curve between minus 1 and 1, ReLU flat at zero then linear, Leaky ReLU with slight negative slope, and softmax bar output summing to one. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>两条横向线索可以帮助记忆：零中心（zero-centered）——tanh 是，sigmoid 与 ReLU 不是；梯度消失——sigmoid 与 tanh 有，ReLU 家族用正区间斜率恒为 1 来缓解，但代价是负区间梯度为零（dying ReLU），Leaky ReLU 用 0.01 的负斜率补上这一块。</p>
+  <p class="c-source">L3 p.34–40</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">6.8</span> 数据预处理：清洗、集成、归约、变换</h2>
+  <p>讲义在进入过拟合之前插入四类预处理，因为模型拟合的是数据，数据脏则模型必然歪。四类是：<span class="c-term">数据清洗<span class="c-term__en">data cleaning</span></span>（填补缺失值、平滑噪声、识别或删除离群点、解决不一致）；数据集成（整合多个数据库、数据立方或文件）；数据归约（降维、数量归约、数据压缩）；数据变换与离散化（归一化、概念层级生成）。</p>
+  <p>“脏数据”被分为三种：不完整（缺属性值、缺关注的属性、只有聚合数据）；有噪声（含误差或离群点，如 Salary = −10）；不一致（编码或名称不一致，如 Age = 42 而生日为 03/07/2010；评分从 1、2、3 改为 A、B、C；重复记录冲突；以及故意的伪装缺失，例如把 1 月 1 日当作所有人的生日）。</p>
+  <p>缺失值的处理有五种：忽略该元组（分类任务中类别标签缺失时常用）、人工填写（繁琐且不可行）、用全局常量填充（如“unknown”，可作为新类别）、用属性均值填充、用同类样本的均值填充（更聪明）、用最可能的值填充（基于贝叶斯公式或<span class="c-term c-term--auto" data-term="decision-tree" title="决策树｜decision tree：按特征做层级 if-else 提问、叶节点给出结果的模型。">决策树</span>的推断）。噪声处理有四种：分箱（排序后分成等频箱，用箱均值、箱中位数或箱边界平滑）、<span class="c-term c-term--auto" data-term="regression" title="回归｜regression：目标为连续数值的监督学习任务。">回归</span>（拟合回归函数平滑）、<span class="c-term c-term--auto" data-term="clustering" title="聚类｜clustering：按相似性把无标签样本分成若干簇的技术。">聚类</span>（检测并删除离群点）、计算机与人工联合检查。</p>
+  <p>数据变换中的<span class="c-term">归一化<span class="c-term__en">normalization</span></span>有三个公式，讲义都给了算例：</p>
+  <div class="c-formula">min-max：<i>v</i>′ = (<i>v</i> − min<sub>A</sub>)/(max<sub>A</sub> − min<sub>A</sub>) × (new_max<sub>A</sub> − new_min<sub>A</sub>) + new_min<sub>A</sub></div>
+  <div class="c-formula">z-score：<i>v</i>′ = (<i>v</i> − <i>μ</i>)/<i>σ</i></div>
+  <div class="c-formula">decimal scaling：<i>v</i>′ = <i>v</i> / 10<sup><i>j</i></sup>，<i>j</i> 为使 max|v′| &lt; 1 的最小整数</div>
+  <p>算例：收入区间 12,000–98,000 归一化到 [0, 1]，73,600 映射为 0.716；若 μ = 54,000、σ = 16,000，则 73,600 的 z-score 为 1.225。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>min-max 的 0.716 与 z-score 的 1.225 是两个可复算的算例；归一化的目的是消除量纲，使距离类方法不被大范围特征主导。</p>
+  </aside>
+  <p class="c-source">L3 p.42–50</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">6.9</span> 偏差、方差与过拟合/欠拟合</h2>
+  <p>讲义先用两个定义把误差拆开：<span class="c-term">偏差<span class="c-term__en">bias</span></span> 是模型无法<span class="c-term c-term--auto" data-term="representation" title="表示｜representation：把每个观测转换成模型可处理形式的方式。">表示</span>真实概念所造成的误差；<span class="c-term">方差<span class="c-term__en">variance</span></span> 是学习算法对训练数据中微小变化（噪声）反应过度所造成的误差。总损失可写成 Bias + Variance（外加噪声）。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>过拟合与欠拟合的对照</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">欠拟合</th><th scope="col">过拟合</th></tr></thead>
+      <tbody>
+        <tr><td>本质</td><td>学到的真实概念太少，模型过简单</td><td>拟合得太好，记住了细节但不能泛化</td></tr>
+        <tr><td>误差结构</td><td>偏差过大</td><td>方差过大</td></tr>
+        <tr><td>表现</td><td>训练与测试都差</td><td>训练近乎完美，新数据明显变差</td></tr>
+        <tr><td>常见原因</td><td>特征没抓住概念；搜索不足</td><td>特征含噪声或与概念无关；模型过于敏感；参数/层数过多；搜索过度</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义给的过拟合例子有三个：小数据集上的医学影像诊断模型记住了训练图像的噪声与伪影，新图像表现差；客户流失模型纳入过多细粒度人口统计特征，难以跨人群泛化；股价模型用参数很多的复杂网络，学到的是历史数据中的随机波动而非趋势。欠拟合的例子同样三个：只用面积预测房价的线性回归；用很浅的决策树区分猫狗；只用平均气温与湿度预测降雨。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“训练准确率高”不能证明模型好。过拟合的定义性特征是训练与测试的差距；欠拟合的定义性特征是两者都低。</p>
+  </aside>
+  <p class="c-source">L3 p.51–57</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">6.10</span> 治过拟合与治欠拟合</h2>
+  <p>讲义给出四类治过拟合的手段，核心都是“给模型加约束或加数据”：</p>
+  <ul>
+    <li><strong>L1/L2 正则</strong>：在代价函数中加惩罚项。<span class="c-term c-term--auto" data-term="l1-regularization" title="L1 正则化｜L1 regularization：在损失中加入权重绝对值之和，使权重稀疏。">L1（LASSO）</span>加权重绝对值之和，促使权重变为 0，得到稀疏模型；L2（ridge）加权重平方和，对大权重惩罚更重，权重更小且分布更均匀、稀疏性较弱。强度由<span class="c-term c-term--auto" data-term="hyperparameter" title="超参数｜hyperparameter：训练前由人设定、不由数据直接学到的量，如学习率。">超参数</span> λ 控制：λ 过强会低估权重导致欠拟合，λ 过弱则允许过拟合。</li>
+    <li><strong>Dropout</strong>：每一步训练中，每个神经元以概率 p 失活，p 称 dropout rate；推断时输入需乘以保留概率 (1 − p)。</li>
+    <li><strong>早停（early stopping）</strong>：验证误差达到最小时停止学习。</li>
+    <li><strong>数据增强（data augmentation）</strong>：对数据点做翻转、旋转、调整饱和度/色调、转黑白等变换，等价于喂入更多数据。</li>
+  </ul>
+  <p>治欠拟合则朝相反方向：提高模型复杂度以捕捉底层模式（但若不正则化，复杂度上去又会过拟合）；做特征工程与特征选择，加入交互项、多项式特征或对类别变量编码；增加训练时间（更多 epoch）与训练集规模，让模型见到更多样的模式。</p>
+  <div class="c-formula">L1：<i>L</i> + <i>λ</i>Σ|<i>w<sub>i</sub></i>| &nbsp;&nbsp;&nbsp; L2：<i>L</i> + <i>λ</i>Σ<i>w<sub>i</sub></i><sup>2</sup></div>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>L1 → 稀疏（可做特征选择）；L2 → 权重小而不稀疏；λ 过强欠拟合、过弱过拟合；dropout 的保留概率是 (1 − p)。</p>
+  </aside>
+  <p class="c-source">L3 p.58–66</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L3</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch05.html"><span>上一章</span>机器学习数学基础</a>
+          <a class="pager__next" href="ch07.html"><span>下一章</span>经典机器学习方法</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCI101 模型评估指标 · 全科复习</title>
+  <meta name="description" content="SCI101 第 8 章 模型评估指标：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="sci101" data-chapter="08">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SCI101</a>
+      <span>/</span>
+      <span aria-current="page">第 8 章 模型评估指标</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html" class="is-current" aria-current="page"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html" class="is-current" aria-current="page"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SCI101 · 第 8 章</p>
+          <h1>模型评估指标</h1>
+          <p class="chapter-head__en">Model Evaluation Metrics</p>
+          <p class="chapter-head__meta">来源 Metrics · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">8.1 为什么需要“成绩单”</a></li>
+        <li><a href="#s2">8.2 混淆矩阵：四个格子</a></li>
+        <li><a href="#s3">8.3 四个分类指标与算例</a></li>
+        <li><a href="#s4">8.4 何时用精确率、何时用召回率</a></li>
+        <li><a href="#s5">8.5 概率输出与阈值</a></li>
+        <li><a href="#s6">8.6 构造 ROC 曲线</a></li>
+        <li><a href="#s7">8.7 AUC 与 PR 曲线</a></li>
+        <li><a href="#s8">8.8 ROC-AUC 还是 PR：选择规则</a></li>
+        <li><a href="#s9">8.9 回归指标：MAE、MSE、RMSE、R²</a></li>
+        <li><a href="#s10">8.10 聚类指标：轮廓系数与 ARI</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲把“模型好不好”拆成三套指标：<span class="c-term c-term--auto" data-term="classification" title="分类｜classification：目标为类别的监督学习任务。">分类</span>（准确率、精确率、召回率、F1、ROC-AUC、PR 曲线）、<span class="c-term c-term--auto" data-term="regression" title="回归｜regression：目标为连续数值的监督学习任务。">回归</span>（<span class="c-term c-term--auto" data-term="mae" title="平均绝对误差｜MAE：预测值与真实值绝对误差的平均值，越低越好。">MAE</span>、MSE、RMSE、<span class="c-term c-term--auto" data-term="r" title="决定系数｜R²：1 − 残差平方和/总平方和，越高表示解释力越强。">R²</span>）、<span class="c-term c-term--auto" data-term="clustering" title="聚类｜clustering：按相似性把无标签样本分成若干簇的技术。">聚类</span>（轮廓系数、ARI），并对每个指标给出可复算的算例。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li><span class="c-term c-term--auto" data-term="confusion-matrix" title="混淆矩阵｜confusion matrix：按实际与预测类别交叉计数的 TP/FP/TN/FN 四格表。">混淆矩阵</span>的四格是 TP、FP、TN、FN，全部指标都由这四格推出。</li>
+    <li>Accuracy = (TP+TN)/总数；Precision = TP/(TP+FP)；Recall = TP/(TP+FN)；F1 是二者的调和平均。</li>
+    <li>假警报代价高时选精确率；漏检代价高时选召回率；类别不平衡时用 F1 或 PR 曲线。</li>
+    <li>概率输出需先设阈值才变成类别；阈值移动会同时改变 TPR 与 FPR，描出 <span class="c-term c-term--auto" data-term="roc-curve" title="ROC 曲线｜ROC curve：以 FPR 为横轴、TPR 为纵轴、随阈值移动描出的曲线。">ROC 曲线</span>。</li>
+    <li>AUC 是 ROC 曲线下面积，随机猜测对应对角线 TPR = FPR，AUC = 0.5。</li>
+    <li>回归看 MAE/MSE/RMSE（越低越好）与 R²（越高越好）；聚类看轮廓系数与 ARI。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">8.1</span> 为什么需要“成绩单”</h2>
+  <p>讲义从“这张图是猫还是狗”开始：把图片特征送入模型，模型输出类别，这就是分类问题。分类被比作一台分拣机——给它输入（图片特征），它把样本放进某个类别。但分拣机好不好，需要一张<span class="c-term">性能报告卡<span class="c-term__en">performance card</span></span>：准确率（Accuracy）、精确率（Precision）、召回率（Recall）与 <span class="c-term c-term--auto" data-term="f1-score" title="F1 分数｜F1 score：精确率与召回率的调和平均，用于平衡二者。">F1 分数</span>。</p>
+  <p>报告卡的必要性在于：单看“对了多少”会被数据分布欺骗。讲义在 PR 曲线一节给出极端例子——1000 人中只有 10 人患病，若对所有人一律猜“没病”，准确率高达 99%，但模型毫无用处。因此需要能分别衡量“抓到了多少”和“报对了多少”的指标。</p>
+  <p class="c-source">Metrics slide 3–4</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">8.2</span> 混淆矩阵：四个格子</h2>
+  <p>讲义约定：猫为正类（positive），狗为负类（negative）。四个格子的含义由此展开：</p>
+  <ul>
+    <li><strong>TP（true positive）</strong>：实际是猫，模型也说猫；</li>
+    <li><strong>FN（false negative）</strong>：实际是猫，模型说狗——漏检；</li>
+    <li><strong>FP（false positive）</strong>：实际是狗，模型说猫——假警报；</li>
+    <li><strong>TN（true negative）</strong>：实际是狗，模型也说狗。</li>
+  </ul>
+  <p>讲义给的完整算例是 102 张图片，其中 62 张猫、40 张狗。矩阵为：预测猫/实际猫 50，预测猫/实际狗 10，预测狗/实际猫 12，预测狗/实际狗 30。行列合计可自检：50 + 12 = 62（实际猫），10 + 30 = 40（实际狗）。</p>
+  
+<!-- course-image:sci101-ch08-confusion-matrix.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-sci101-ch08-confusion-matrix">
+        <img class="c-course-figure__img" src="../../assets/course/sci101-ch08-confusion-matrix.jpg" alt="混淆矩阵：TP、FP、TN、FN" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 混淆矩阵：TP、FP、TN、FN <span class="c-course-figure__src">来源：Model Evaluation p.10</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 8-1 二分类混淆矩阵</span>
+      <button class="c-copy" type="button" data-copy="Clean vector two by two confusion matrix table with rows labelled actual cat and actual dog, columns labelled predicted cat and predicted dog, cells filled with counts 50, 10, 12, 30, and each cell annotated TP, FP, FN, TN respectively in small text. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/sci101-confusion-matrix.svg" alt="二分类混淆矩阵：TP、FP、FN、TN 与指标公式" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector two by two confusion matrix table with rows labelled actual cat and actual dog, columns labelled predicted cat and predicted dog, cells filled with counts 50, 10, 12, 30, and each cell annotated TP, FP, FN, TN respectively in small text. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p>要点是“正类可以任选，但选定后不能中途改”：讲义明确写“你可以假设任何一类为正”，一旦把猫定为正类，FN 就只能是“实际是猫却判成狗”。换正类会让精确率与召回率互换，这一点在做题时必须先看清题目定义。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>FP 与 FN 的方向最易混：FP 是“报了但没中”（假警报），FN 是“中了但没报”（漏检）。记忆锚点是字母顺序——先看预测是 Positive 还是 Negative，再看与事实是否一致。</p>
+  </aside>
+  
+<p class="c-source">Metrics slide 5–10</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">8.3</span> 四个分类指标与算例</h2>
+  <p>用上节矩阵的四个数（TP=50、FP=10、FN=12、TN=30），四个指标逐一算出：</p>
+  <div class="c-formula">Accuracy = (TP + TN) / 总数 = (50 + 30) / 102 ≈ 0.784</div>
+  <div class="c-formula">Precision = TP / (TP + FP) = 50 / (50 + 10) ≈ 0.833</div>
+  <div class="c-formula">Recall = TP / (TP + FN) = 50 / (50 + 12) ≈ 0.806</div>
+  <div class="c-formula">F1 = 2 × (P × R) / (P + R) ≈ 2 × 0.833 × 0.806 / 1.639 ≈ 0.820</div>
+  <p>讲义的原文把 Accuracy 记为 0.80、Precision 与 Recall 都记为 0.833、F1 也记为 0.833；按上表逐项代入，Recall 应为 50/62 ≈ 0.806，F1 ≈ 0.820，Accuracy 应为 80/102 ≈ 0.784。差异来自讲义对 Recall 的取值沿用了 Precision 的数字。复习时以公式为准，考试若给同样的四个格子，按公式重算。</p>
+  <p>三个指标的含义分别是：Accuracy 回答“总体上多常是对的”；Precision 回答“当它说是猫时，有多常是对的”；Recall 回答“实际是猫的样本中，它找到了多少”；F1 是精确率与召回率的调和平均，给出一个平衡的单一分数。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>四个指标的定义与回答的问题</caption>
+      <thead><tr><th scope="col">指标</th><th scope="col">公式</th><th scope="col">回答</th></tr></thead>
+      <tbody>
+        <tr><td>Accuracy</td><td>(TP+TN)/全部</td><td>整体正确率</td></tr>
+        <tr><td>Precision</td><td>TP/(TP+FP)</td><td>报警中有多少是真的</td></tr>
+        <tr><td>Recall</td><td>TP/(TP+FN)</td><td>真目标中抓到了多少</td></tr>
+        <tr><td>F1</td><td>2PR/(P+R)</td><td>精确与召回的平衡</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>F1 用调和平均而非算术平均，是因为调和平均对小值更敏感：只要精确率或召回率有一个很低，F1 就会被拉低。</p>
+  </aside>
+  <p class="c-source">Metrics slide 11</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">8.4</span> 何时用精确率、何时用召回率</h2>
+  <p>讲义用两个真实场景说明指标选择取决于“错误的代价”，而不是数学上的优劣。</p>
+  <p><strong>场景一：飞机零件裂纹检测（重精确率）。</strong>100 个零件中 95 个完好、5 个有裂纹，定义正类为“有裂纹”。矩阵为 TN=92、FN=1、FP=3、TP=4。精确率 = 4/(4+3) = 4/7 ≈ 0.57，意味着模型说“有裂纹”时约 43% 是假警报；后果是 3 个完好零件被错误拒收，浪费钱并带来不必要的返工。</p>
+  <p><strong>场景二：癌症筛查（重召回率）。</strong>200 人中 180 人健康、20 人患癌，定义正类为“患癌”。矩阵为 TN=175、FN=3、FP=5、TP=17。召回率 = 17/(17+3) = 0.85，即 15% 的癌症病例被漏掉；后果是 3 位病人得不到及时治疗，可能危及生命。</p>
+  <p>讲义把选择规则写成一句口诀：假警报代价高时选精确率；漏检危险时选召回率；数据不平衡且两者都要顾及时用 F1。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>癌症筛查讲义正文写“Number of samples: 100”，但矩阵中 175+5 = 180 名健康、3+17 = 20 名患者，合计 200，与题干“200 patients”一致；以矩阵为准。</p>
+  </aside>
+  <p class="c-source">Metrics slide 12–14</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">8.5</span> 概率输出与阈值</h2>
+  <p>有些模型不直接给类别，而给概率：例如“这张图是猫的概率 90%”。这时不能直接与真实标签比较，必须先用<span class="c-term">阈值<span class="c-term__en">threshold</span></span>把概率转成类别。</p>
+  <p>讲义的五人算例：A（实际感染，0.92）、B（健康，0.75）、C（感染，0.60）、D（健康，0.40）、E（健康，0.10）。正类为感染，故 P = 2（A、C），N = 3（B、D、E）。取阈值 ≥ 0.92 时，只有 A 被判为感染：TP = 1、FP = 0、TN = 3、FN = 1（C 被漏掉）。</p>
+  <p>若把阈值降到 0.60，A 与 C 都判为感染，TP 变为 2、FN 变为 0；同时 B（概率 0.75）也越过阈值被判为感染，FP 变为 1。这体现一条基本规律：阈值越低，被判为正类的样本越多，召回率上升、精确率通常下降。讲义在 p.19 的思考题正是此意——若目标是“几乎找出所有感染者，即使让部分未感染者接受不必要的抗生素”，应把阈值设得很低（如 0.10）。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>降低阈值 → 更多正类 → 召回率↑、假警报↑；提高阈值 → 更保守 → 精确率↑、漏检↑。ROC 曲线就是把这个过程的所有阈值描出来。</p>
+  </aside>
+  <p class="c-source">Metrics slide 15–22</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">8.6</span> 构造 ROC 曲线</h2>
+  <p>讲义把 ROC 拆成三个词解释：Receiver = AI，Operating = 设置（阈值），Characteristic = AI 的输出。纵轴是真正率 TPR = TP/P（即召回率），横轴是假正率 FPR = FP/N。</p>
+  <p>对五人数据逐个阈值计算，得到五个点：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>阈值、混淆矩阵与 ROC 坐标</caption>
+      <thead><tr><th scope="col">阈值</th><th scope="col">TP</th><th scope="col">FP</th><th scope="col">TN</th><th scope="col">FN</th><th scope="col">TPR</th><th scope="col">FPR</th></tr></thead>
+      <tbody>
+        <tr><td>&gt;0.92</td><td>1</td><td>0</td><td>3</td><td>1</td><td>0.50</td><td>0.00</td></tr>
+        <tr><td>&gt;0.75</td><td>1</td><td>1</td><td>2</td><td>1</td><td>0.50</td><td>0.33</td></tr>
+        <tr><td>&gt;0.60</td><td>2</td><td>1</td><td>2</td><td>0</td><td>1.00</td><td>0.33</td></tr>
+        <tr><td>&gt;0.40</td><td>2</td><td>2</td><td>1</td><td>0</td><td>1.00</td><td>0.67</td></tr>
+        <tr><td>&gt;0.10</td><td>2</td><td>3</td><td>0</td><td>0</td><td>1.00</td><td>1.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>把这些点按 FPR 排序连线即得 ROC 曲线。左上角（FPR=0、TPR=1）是理想点；对角线 TPR = FPR 代表<span class="c-term">随机猜测<span class="c-term__en">random guessing</span></span>——讲义的原题正是问这条虚线代表什么，答案是 TPR = FPR。</p>
+  
+<!-- course-image:sci101-ch08-roc.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-sci101-ch08-roc">
+        <img class="c-course-figure__img" src="../../assets/course/sci101-ch08-roc.jpg" alt="ROC 曲线：阈值与 TPR/FPR" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> ROC 曲线：阈值与 TPR/FPR <span class="c-course-figure__src">来源：Model Evaluation p.24</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 8-2 由五个阈值点连成的 ROC 曲线</span>
+      <button class="c-copy" type="button" data-copy="Clean vector ROC plot with false positive rate on the horizontal axis from 0 to 1 and true positive rate on the vertical axis from 0 to 1, five labelled points at coordinates (0,0.5), (0.33,0.5), (0.33,1), (0.67,1), (1,1) connected by a stepped line, plus a dashed diagonal line labelled random guessing. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector ROC plot with false positive rate on the horizontal axis from 0 to 1 and true positive rate on the vertical axis from 0 to 1, five labelled points at coordinates (0,0.5), (0.33,0.5), (0.33,1), (0.67,1), (1,1) connected by a stepped line, plus a dashed diagonal line labelled random guessing. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  
+<p class="c-source">Metrics slide 23–24</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">8.7</span> AUC 与 PR 曲线</h2>
+  <p><span class="c-term">AUC<span class="c-term__en">area under curve</span></span> 是 ROC 曲线下的面积。讲义用梯形法手算得到 0.8333，并给出解读：AUC 越高，识别感染者的机会越大。它把整条曲线压缩成一个数，因此不受单一阈值影响；0.5 相当于随机，1.0 是完美。</p>
+  <p>但 ROC 在不平衡数据上会“过于乐观”。讲义的例子是 1000 人中仅 10 人患病（1%）：全猜“没病”就有 99% 准确率，ROC 曲线也可能看起来不错，因为 FPR 的分母是 990 个健康人，少量假警报被稀释。此时应改用 <span class="c-term">PR 曲线<span class="c-term__en">precision-recall curve</span></span>：横轴是召回率，纵轴是精确率，全部注意力集中在正类（病人）上。</p>
+  <p>PR 曲线的两个极端都要理解：高精确率意味着“说某人是病人时基本正确”，假警报会造成恐慌与医疗资源浪费；高召回率意味着“病人基本都被找到”，漏检则延误治疗。曲线展示的正是这一权衡。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“准确率 99%”在 1% 阳性率的数据上可能毫无意义。判断指标是否合适，先看类别比例，再决定用 ROC-AUC 还是 PR。</p>
+  </aside>
+  <p class="c-source">Metrics slide 25–31</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">8.8</span> ROC-AUC 还是 PR：选择规则</h2>
+  <p>讲义把选择写成两条对称的规则，可直接背：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>两种曲线的适用条件</caption>
+      <thead><tr><th scope="col">条件</th><th scope="col">用 ROC-AUC</th><th scope="col">用 PR 曲线</th></tr></thead>
+      <tbody>
+        <tr><td>类别比例</td><td>大致平衡（如 50% 健康、50% 感染）</td><td>明显不平衡（如 99% 健康、1% 患病）</td></tr>
+        <tr><td>关注点</td><td>同等看待“抓到正类”与“避免假警报”</td><td>更关心把罕见的那一类找对</td></tr>
+        <tr><td>回答</td><td>整体排序能力</td><td>正类上的精确—召回权衡</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义强调两条曲线都“帮助你理解单一阈值之外的表现”，也就是说它们不是替代某个指标，而是提供全局视角：一个模型可以在某阈值下精确率很高，但整体曲线很差。</p>
+  <p class="c-source">Metrics slide 32</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">8.9</span> 回归指标：MAE、MSE、RMSE、R²</h2>
+  <p>回归的算例来自材料科学：用碳含量与热处理温度预测合金的抗拉强度（MPa）。五个样本的实测值为 520、610、700、560、640，预测值为 510、590、730、550、660，误差分别为 +10、+20、−30、+10、−20。</p>
+  <div class="c-formula">MAE = (1/<i>n</i>) Σ |<i>y<sub>i</sub></i> − <i>ŷ<sub>i</sub></i>| = 90/5 = 18.00 MPa</div>
+  <div class="c-formula">MSE = (1/<i>n</i>) Σ (<i>y<sub>i</sub></i> − <i>ŷ<sub>i</sub></i>)² = 1900/5 = 380.00 (MPa)²</div>
+  <div class="c-formula">RMSE = √MSE = 19.49 MPa</div>
+  <div class="c-formula"><i>R</i>² = 1 − Σ(<i>y<sub>i</sub></i> − <i>ŷ<sub>i</sub></i>)² / Σ(<i>y<sub>i</sub></i> − <i>ȳ</i>)² = 0.903</div>
+  <p>四者的解读分别是：MAE 回答“平均差多少 MPa，忽略符号”；MSE 把误差平方，使大误差受更重惩罚，单位变成 (MPa)²；RMSE 取平方根回到 MPa，便于与原始量纲比较；R² 是决定系数，越高越好，0.903 <span class="c-term c-term--auto" data-term="representation" title="表示｜representation：把每个观测转换成模型可处理形式的方式。">表示</span>模型解释了约 90.3% 的变异。前三个都是越低越好。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>MSE 的单位是原单位的平方，所以报告结果时通常用 RMSE；MAE 对离群点不敏感，MSE/RMSE 对大误差敏感——这是选择二者的关键。</p>
+  </aside>
+  <p class="c-source">Metrics slide 33–35</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">8.10</span> 聚类指标：轮廓系数与 ARI</h2>
+  <p>聚类的评估分两类：无真实标签时看“簇内紧、簇间远”；有真实标签时看“聚类结果与真实分组的一致程度”。</p>
+  <p><span class="c-term">轮廓系数<span class="c-term__en">silhouette score</span></span> 对每个样本问两个问题：a(i) 是我离自己组内同伴有多近（越低越好，表示簇紧）；b(i) 是我离另一组最近的同伴有多近（越高越好，表示离别人远）。讲义给出的六病人例（白细胞计数、C 反应蛋白、体温）算出整体轮廓系数 0.82，解读为“每个病人都离自己组更近，聚类形状很好”。取值判读是：接近 1 很好；接近 0 在边界上；为负可能分错了组。讲义的 s(i) 公式以图给出、未被文本化，复习时按“b 越大、a 越小则分数越高”把握方向即可。</p>
+  <p><span class="c-term">调整兰德指数<span class="c-term__en">adjusted Rand index</span></span>（ARI）在有真实分组时使用，衡量你的分组与真实分组的一致程度，并对“运气”做校正。讲义的四个孩子例子：老师的分组是 {1,2} 与 {3,4}，你的分组是 {1,3} 与 {2,4}；六对关系中只有 (1,4) 与 (2,3) 两边都“分开”，一致率为 RI = 2/6 = 0.333。ARI 的判断是：这 0.333 主要是运气，校正后接近 0。取值范围是 1 = 完全一致、0 ≈ 随机、负值 = 比随机更差。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>轮廓系数不需要真实标签（内部指标），ARI 需要真实标签（外部指标）。把 ARI 当成“无监督也能算”的指标是常见错误。</p>
+  </aside>
+  <p class="c-source">Metrics slide 36–41</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">Metrics</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch07.html"><span>上一章</span>经典机器学习方法</a>
+          <a class="pager__next" href="ch09.html"><span>下一章</span>聚类</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

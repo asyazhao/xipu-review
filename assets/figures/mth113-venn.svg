@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 345" role="img" aria-label="并、交、补的韦恩图">
+<title>并、交、补的韦恩图</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">并、交、补的韦恩图</text>
+<rect x="40" y="70" width="220" height="210" rx="2" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1"/>
+<circle cx="120" cy="175" r="50" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.4"/>
+<circle cx="180" cy="175" r="50" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="102" y="180" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">A</text>
+<text x="198" y="180" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">B</text>
+<text x="150" y="262" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">A ∪ B</text>
+<text x="150" y="282" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">并集：A 或 B</text>
+<rect x="290" y="70" width="220" height="210" rx="2" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1"/>
+<circle cx="370" cy="175" r="50" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.4"/>
+<circle cx="430" cy="175" r="50" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="352" y="180" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">A</text>
+<text x="448" y="180" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">B</text>
+<ellipse cx="400" cy="175" rx="27" ry="48" fill="#7C93AC" opacity="0.55"/>
+<text x="400" y="262" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">A ∩ B</text>
+<text x="400" y="282" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">交集：A 且 B</text>
+<rect x="540" y="70" width="220" height="210" rx="2" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1"/>
+<rect x="565" y="95" width="170" height="160" rx="2" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="645" cy="175" r="58" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="645" y="180" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2E4A6B" text-anchor="middle" font-weight="700">A</text>
+<text x="715" y="225" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">Aᶜ</text>
+<text x="650" y="262" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">Aᶜ</text>
+<text x="650" y="282" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">补集：不属于 A</text>
+<text x="40" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">韦恩图只表示集合关系，面积不按概率比例；互斥事件的两个圆不重叠。</text>
+</svg>

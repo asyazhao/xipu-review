@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 作用域与递归 · 全科复习</title>
+  <meta name="description" content="SOE105 第 10 章 作用域与递归：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="10">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 10 章 作用域与递归</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html" class="is-current" aria-current="page"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html" class="is-current" aria-current="page"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 10 章</p>
+          <h1>作用域与递归</h1>
+          <p class="chapter-head__en">Functions: Scopes &amp; Recursion</p>
+          <p class="chapter-head__meta">来源 L12a–b · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">10.1 块作用域：一个编译错误</a></li>
+        <li><a href="#s2">10.2 全局声明与局部声明</a></li>
+        <li><a href="#s3">10.3 同名与遮蔽：这段代码里的 y 是谁</a></li>
+        <li><a href="#s4">10.4 全局变量的风险：一个反例</a></li>
+        <li><a href="#s5">10.5 全局变量练习：五段输出的推演</a></li>
+        <li><a href="#s6">10.6 单独测试：driver 与 stub</a></li>
+        <li><a href="#s7">10.7 递归：一个函数调用自己</a></li>
+        <li><a href="#s8">10.8 递归与迭代：同一件事的两种写法</a></li>
+        <li><a href="#s9">10.9 递归写法模板与五个例子</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本章接上函数的两个“看不见的维度”：<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：有名字、有类型、可存放一个值的存储单元。">变量</span>在哪些代码里有效（作用域），以及函数调用自己（递归）。作用域决定一个名字指向哪块存储，递归则把“调用自己”变成一种<span class="c-term c-term--auto" data-term="decomposition" title="分解｜decomposition：把大问题划分为更小的子问题。">分解</span>任务的方法。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>声明的作用域是<span class="c-term c-term--auto" data-term="identifier" title="标识符｜identifier：变量、常量、函数等对象的名字。">标识符</span>有效的代码块；块内声明的变量出了块就不存在。</li>
+    <li>全局声明在所有函数体之外，局部声明在函数体内；同名标识符可以在程序不同位置重复声明。</li>
+    <li>函数内的同名局部变量会遮蔽全局变量，函数里读到的是局部那一份。</li>
+    <li>滥用全局变量会让调试变难；需要写回结果时，优先把局部变量按引用传给函数。</li>
+    <li>函数可以单独测试：driver 驱动它跑多组输入，stub 用同样的接口先顶替未完成的函数。</li>
+    <li>递归要有“更小的同类子问题”和“最小规模的非递归解”，缺一不可。</li>
+    <li>递归写法可简化为“<span class="c-term c-term--auto" data-term="stopping-condition" title="终止条件｜stopping condition：递归中不再调用自己、直接返回值的条件。">终止条件</span> + 终止返回值 + 用修正参数调用自己”。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">10.1</span> 块作用域：一个编译错误</h2>
+  <p>讲义用一个很小的程序开场：main 里先声明 int i = 2 并打印，然后进入一对花括号，在块内声明 double d = atof("12.34") 并打印，出了块再打印一次 d。幻灯片上标着“Error here! Why??”，指的就是块外那次打印。</p>
+<pre class="c-code"><code>int main()
+{
+    int i = 2;
+    cout &lt;&lt; "i=" &lt;&lt; i &lt;&lt; endl;
+    {
+        double d = atof("12.34");
+        cout &lt;&lt; "d=" &lt;&lt; d &lt;&lt; endl;
+    }
+    cout &lt;&lt; "d=" &lt;&lt; d &lt;&lt; endl;   // Error here!
+    return 0;
+}</code></pre>
+  <p>原因就是<span class="c-term">作用域<span class="c-term__en">scope</span></span>：一个声明的作用域，是这个标识符可以被有效使用的代码块。d 的声明发生在内层花括号里，它的作用域就是这个块；一旦离开这对花括号，d 这个名字不再有效，编译器找不到它，于是报错。i 声明在 main 的块里，所以后面还能用。</p>
+  <p>这也解释了为什么“变量什么时候被创建”与“变量在哪里能用”是两件相关但不同的事：块结束时，块内声明的变量随之消失；而它的名字从声明点开始、到块结束为止才有效。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>作用域由“声明所在的那对花括号”决定，不由缩进决定。同一对花括号内的代码都能用这个变量，出了这对括号就一律无效。</p>
+  </aside>
+  <p class="c-source">L12a p.1–3</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">10.2</span> 全局声明与局部声明</h2>
+  <p>讲义把声明分成两类。<span class="c-term">全局声明<span class="c-term__en">global declaration</span></span>写在我们所有函数体之外、主程序之外；按惯例，它和其它全局声明放在一起，摆在程序<span class="c-term c-term--auto" data-term="file" title="文件｜file：存放在二级存储上的永久数据集合，读取前必须先打开。">文件</span>的开头。<span class="c-term">局部声明<span class="c-term__en">local declaration</span></span>写在函数体内部；局部声明的变量不能在声明它的函数之外被访问。</p>
+  <p>允许在不同位置声明同名标识符，这是 C/C++ 的一条基本规则，也是理解后面“遮蔽”现象的前提。讲义用一张作用域示意图把一段程序的每个区域标了出来：全局变量 y 有自己的作用域，全局<span class="c-term c-term--auto" data-term="function-declaration" title="函数声明｜function declaration：只给出返回类型、名字与参数类型的声明。">函数声明</span> f 有它的作用域，main 有自己的作用域，f 也有自己的作用域；main 里的 a 覆盖整个 main，while 块里的 b 只覆盖那个块；f 里的 m、n 覆盖整个 f，o 只覆盖声明之后的部分，而 f 里又声明了一个 y，它只覆盖 f 内声明之后的部分。</p>
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 10-1 嵌套作用域示意</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of nested scopes in a C++ program: a tall outer rectangle labelled global scope containing y; inside it two separate rectangles labelled scope of main() and scope of f(); inside main a smaller rectangle labelled scope of b nested in the while block; inside f a small rectangle labelled scope of o; a second small box labelled local y drawn inside f and shaded to show it hides the global y. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram of nested scopes in a C++ program: a tall outer rectangle labelled global scope containing y; inside it two separate rectangles labelled scope of main() and scope of f(); inside main a smaller rectangle labelled scope of b nested in the while block; inside f a small rectangle labelled scope of o; a second small box labelled local y drawn inside f and shaded to show it hides the global y. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>这张图值得照着画一遍：每个矩形代表一段“名字有效”的区域，矩形可以嵌套，但不会交叉。判断一个名字指向谁，就看从使用点往外找，最先遇到哪个声明。</p>
+  <p class="c-source">L12a p.3–5</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">10.3</span> 同名与遮蔽：这段代码里的 y 是谁</h2>
+  <p>讲义的作用域示例程序里有两个 y：文件开头有全局的 int y = 38;，函数 f 里又有局部的 int y = 27;。幻灯片在代码旁连问两句“这个 y 指哪一个？那这个呢？”，考的正是<span class="c-term">遮蔽<span class="c-term__en">shadowing</span></span>。</p>
+<pre class="c-code"><code>int y = 38;                 // global
+void f(int m, int n);
+
+int main() {
+    int a = 53;
+    while (a &lt; 100) {
+        int b = 90;
+        a += b++;
+        a++;
+    }
+    y = 2 * a;              // refers to the global y
+    f(2, 3);
+    return 0;
+}
+
+void f(int m, int n) {
+    int o = 12;
+    m = n + o;
+    int y = 27;             // local y hides the global y
+    m += y;
+}</code></pre>
+  <p>规则只有一条：在某个作用域内，如果存在同名的局部声明，那么该作用域内（从声明点之后）出现的这个名字都指向局部那一份，全局的那一份被“挡住”。所以 main 里的 y = 2 * a 改的是全局 y；f 里的 m += y 用的是局部 y = 27，与全局 y 无关。f 结束时局部 y 消失，全局 y 仍是 2 * a 的值。</p>
+  <p>讲义还留了一个细节：while 块里声明了 b，每次进入块都会重新创建 b 并赋值为 90；a 在块外声明，所以它能跨轮次保留累加的结果。这正是“块作用域”与“函数作用域”的差别在<span class="c-term c-term--auto" data-term="loop" title="循环｜loop：重复执行一段语句的控制结构，又称迭代。">循环</span>里的体现。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>遮蔽不是“覆盖赋值”。局部 y 只是让名字在 f 内改指另一块存储，全局 y 的值一直原封不动；f 返回后，全局 y 仍然是原来的数。</p>
+  </aside>
+  <p class="c-source">L12a p.4–5</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">10.4</span> 全局变量的风险：一个反例</h2>
+  <p>讲义用 counter 演示了全局变量最容易踩的坑。程序里声明全局 int counter;，函数写成 void <span class="c-term c-term--auto" data-term="increment" title="自增｜increment：把变量加一；++k 先加后用，k++ 先用后加。">increment</span>(int counter)，main 里先 counter = 1，再调用 increment(counter)，最后打印 counter。</p>
+<pre class="c-code"><code>int counter;
+void increment(int counter) {   // parameter hides the global
+    counter += 1;
+    cout &lt;&lt; counter &lt;&lt; endl;
+    counter++;
+}
+
+int main() {
+    counter = 1;
+    increment(counter);         // pass by value
+    cout &lt;&lt; counter &lt;&lt; endl;
+    return 0;
+}</code></pre>
+  <p>结果是：函数里打印 2，main 里打印 1。两件事同时发生——形参 counter 遮蔽了全局 counter，而且它是按值传递的副本，函数里的两次自增都作用在副本上，全局的那一份从头到尾没被碰过。</p>
+  <p>讲义给出的改进是把形参改成引用：void increment(int &amp;counter)。这样形参不再是副本，而是全局 counter 的另一个名字；函数里 counter += 1 让它变成 2 并打印 2，counter++ 让它变成 3，回到 main 打印 3。程序的输出变成 2 和 3。</p>
+  <p>但讲义真正的建议不是“用引用去改全局变量”，而是：无节制地使用全局变量会导致混乱、让调试变困难；与其在函数里直接用全局变量，不如把局部变量按引用传进去。前者把依赖藏在函数体里，读<span class="c-term c-term--auto" data-term="signature" title="签名｜signature：由参数的类型与个数决定的函数标识，用于区分重载。">签名</span>看不出来；后者把依赖写在参数表上，一眼可见。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>判断输出时按顺序问三件事：这个名字在函数内有没有同名局部声明（遮蔽）？参数是按值还是按引用（是否改到实参）？改的是全局还是局部（作用域）？</p>
+  </aside>
+  <p class="c-source">L12a p.6–7</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">10.5</span> 全局变量练习：五段输出的推演</h2>
+  <p>讲义给了一道综合题：四个全局变量 A、B、C、D，函数 Two(int A, int B, int &amp;D) 把 B 改成 21、把 D 改成 23 后打印四个值；函数 One(int A, int B, int &amp;C) 里另有一个局部 int D，把 A、B、C、D 分别赋成 10、11、12、13 后打印，再调用 Two(A, B, C)。main 先把全局赋成 1、2、3、4，调用 One，打印，再调用 Two，再打印。</p>
+<pre class="c-code"><code>int A, B, C, D;
+
+void Two(int A, int B, int &amp;D) {
+    B = 21; D = 23;
+    cout &lt;&lt; A &lt;&lt; " " &lt;&lt; B &lt;&lt; " " &lt;&lt; C &lt;&lt; " " &lt;&lt; D &lt;&lt; endl;
+}
+
+void One(int A, int B, int &amp;C) {
+    int D;                       // local variable
+    A = 10; B = 11; C = 12; D = 13;
+    cout &lt;&lt; A &lt;&lt; " " &lt;&lt; B &lt;&lt; " " &lt;&lt; C &lt;&lt; " " &lt;&lt; D &lt;&lt; endl;
+    Two(A, B, C);
+}</code></pre>
+  <p>逐段推：One 内部第一行打印 10 11 12 13。注意 One 的 C 是引用，绑定到 main 的全局 C，所以 C = 12 已经把全局 C 改成了 12；而 One 的 D 是局部变量，赋值 13 只影响自己。</p>
+  <p>接着 Two(A, B, C)：Two 的 A、B 按值收到 10 与 11，D 按引用绑定到 One 的 C（也就是全局 C）。函数里 B 改成 21、D 改成 23——全局 C 随之变成 23。打印时 A 是 10、B 是 21、C 是全局的 23、D 也是 23，得到 10 21 23 23。</p>
+  <p>回到 main 打印全局四个值：A = 1、B = 2 没被动过，C = 23，D = 4，得到 1 2 23 4。再调用 Two(A, B, C)：A、B 按值收到 1 与 2，D 绑定全局 C；函数里 B 改成 21、C 改成 23，打印 1 21 23 23。最后一次打印仍是 1 2 23 4。</p>
+  <p>讲义给出的五段输出依次是：10 11 12 13、10 21 23 23、1 2 23 4、1 21 23 23、1 2 23 4。能独立推出这五行，说明遮蔽、<span class="c-term c-term--auto" data-term="pass-by-value" title="传值｜pass by value：把实参的值复制给形参，形参改变不影响实参。">传值</span>与<span class="c-term c-term--auto" data-term="pass-by-reference" title="传引用｜pass by reference：把实参的地址交给函数，形参改变会反映到调用者。">传引用</span>三件事已经串起来了。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>Two 里打印的 C 没有形参，它用的是全局 C；而 D 是形参（引用），改 D 就是改全局 C。两个名字指向同一块存储，打印出来自然都是 23——这不是打印错，而是别名。</p>
+  </aside>
+  <p class="c-source">L12a p.7–8</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">10.6</span> 单独测试：driver 与 stub</h2>
+  <p>函数的一个主要优势是可以脱离程序其余部分单独设计与测试。讲义给了两个工具。第一个是<span class="c-term">驱动程序<span class="c-term__en">driver program</span></span>：写一个只负责调用的小 main，用多组输入反复调用待测函数。它的例子是用 for 循环让 i 从 1 走到 13，每次调用 printCard(i) 并换行，一屏就能看出 13 种输入是否都被正确处理。</p>
+<pre class="c-code"><code>void main() {
+    int i;
+    for (i = 1; i &lt;= 13; i++) {
+        printCard(i);
+        cout &lt;&lt; " " &lt;&lt; endl;
+    }
+}</code></pre>
+  <p>第二个是<span class="c-term">桩<span class="c-term__en">stub</span></span>：当测试某个程序时需要一个“还没写”的函数，就用桩先顶上。桩与原函数有相同的接口，但没有完整实现；通常只包含一个简单的 return 或一句 cout。讲义的例子是 void printcard(int i) { cout &lt;&lt; i; }——它不打印牌面，只把数字吐出来，足以验证调用链是否通了、参数有没有传对。</p>
+  <p>这两个工具的价值在于把“接口是否正确”与“实现是否正确”分开检查。先让桩通过编译与调用，再逐步把桩换成真实现，每换一个就重跑 driver；一旦输出变了，问题一定在刚换的那一段。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>driver 是“调用者”，stub 是“被调用者”。driver 用来喂输入、看输出；stub 用来占位、让上层代码先跑起来。两者常常同时使用：driver 调上层函数，上层函数调到的下层还是 stub。</p>
+  </aside>
+  <p class="c-source">L12a p.8–10</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">10.7</span> 递归：一个函数调用自己</h2>
+  <p>讲义用一段没有注释的程序提问“这段程序做什么”：foo(n) 在 n &lt;= 1 时返回 1，否则返回 n * foo(n - 1)。答案就是阶乘——foo(3) 等于 6。它先展示了一次手算的展开过程：foo(3) 判断 3 &lt;= 1 不成立，于是要算 3 * foo(2)；foo(2) 又要算 2 * foo(1)；foo(1) 满足 1 &lt;= 1，直接返回 1；然后逐层回代，2 * 1 = 2，3 * 2 = 6。</p>
+<!-- course-image:soe105-ch10-recursion-stack.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe105-ch10-recursion-stack">
+        <img class="c-course-figure__img" src="../../assets/course/soe105-ch10-recursion-stack.jpg" alt="递归调用栈：foo(3) 的展开" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 递归调用栈：foo(3) 的展开 <span class="c-course-figure__src">来源：L12b p.5</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 10-2 递归调用与回代</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of a recursive call trace for foo(3): three stacked call boxes foo(3) with 3 times foo(2), foo(2) with 2 times foo(1), foo(1) returning 1; downward arrows on the left labelled call, upward arrows on the right labelled return with values 1, 2, 6; a side note that each call has its own parameter n. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/soe105-recursion.svg" alt="factorial(4) 的递归调用栈与回代" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector diagram of a recursive call trace for foo(3): three stacked call boxes foo(3) with 3 times foo(2), foo(2) with 2 times foo(1), foo(1) returning 1; downward arrows on the left labelled call, upward arrows on the right labelled return with values 1, 2, 6; a side note that each call has its own parameter n. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p><span class="c-term">递归<span class="c-term__en">recursion</span></span>被讲义定义为一种把任务分解成更小任务的方法，并且要求三件事同时成立：至少有一个子任务是“同一个任务的更小实例”；最小规模的那个实例有非递归的解法；每次调用都朝这个最小实例靠近。用阶乘写出来就是分段定义：n &gt; 1 时 n! = n × (n − 1)!，n = 1 时 n! = 1。</p>
+  <p>每次递归调用都是一次真正的函数调用，形参 n 各自独立：foo(3) 的 n 是 3，foo(2) 的 n 是 2，互不干扰。回代时上一层的 n 还在，所以 3 * 2 才能算成 6。这一点与上一章的传值规则完全一致。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>递归的两个必备部件：终止条件（这里是 n &lt;= 1）与向终止条件靠近的递归调用（这里是 n - 1）。缺前者会无限调用下去，缺后者永远到不了终止条件。</p>
+  </aside>
+  
+<p class="c-source">L12b p.1–6</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">10.8</span> 递归与迭代：同一件事的两种写法</h2>
+  <p>讲义把同一道阶乘题用循环写了一遍：n &lt;= 1 时直接返回 1，否则令 product = 1，用 for 让 i 从 1 走到 n，每次 product *= i，最后返回 product。这就是<span class="c-term">迭代<span class="c-term__en">iteration</span></span>写法。</p>
+<pre class="c-code"><code>int factorial_iterative(int n) {
+    if (n &lt;= 1) return 1;
+    int product = 1;
+    for (int i = 1; i &lt;= n; i++) {
+        product *= i;
+    }
+    return product;
+}</code></pre>
+  <p>讲义对两种写法给了两条判断：递归写法一旦习惯，可能比非递归写法更容易写；但递归解法不一定和同问题的非递归解法一样高效。它没有展开“为什么不高效”，只留下这个结论——这在做作业选型时够用了：先求写对，再考虑要不要改成循环。</p>
+  <p>讲义还列了其它递归应用。<span class="c-term">斐波那契数<span class="c-term__en">Fibonacci numbers</span></span>：0、1、1、2、3、5、8、13、21、34……每个数是前两个数之和，递归定义为 F(0) = 0、F(1) = 1、其余 F(n) = F(n − 1) + F(n − 2)。<span class="c-term c-term--auto" data-term="binary-search" title="二分查找｜binary search：每次与中间元素比较并排除一半区间；只能用于有序数组。">二分查找</span>也能写成递归：把待查<span class="c-term c-term--auto" data-term="element" title="元素｜element：数组中的一个数据项，由下标定位。">元素</span>与<span class="c-term c-term--auto" data-term="array" title="数组｜array：同一类型元素的线性集合，存于连续内存。">数组</span>中间元素比较，相等就停止并返回；否则在“可能存在”的那一半（若非空）上继续做二分查找。</p>
+  <p>把二分查找写成递归，恰好说明递归不限于数学公式：只要能把问题描述成“在更小的区间上做同一件事”，就能递归。第 8 章的循环版本与这里的递归版本解决的是同一个问题，区别只在“缩小搜索范围”是靠改 lower/upper 还是靠再调用一次自己。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>递归不是“函数里出现循环”，迭代也不是“不能有递归”。判断标准是：函数体里有没有直接调用自己，以及问题规模是否真的在缩小。</p>
+  </aside>
+  <p class="c-source">L12b p.6–9</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">10.9</span> 递归写法模板与五个例子</h2>
+  <p>讲义把递归的骨架抽成一个通用形式：先写 if (终止条件) return 终止值；如果有第二个终止条件，也在这里补上；最后 return 一个值，或者 return 一次“用修正参数调用自己”的结果（也可能是两次递归调用相加）。</p>
+<pre class="c-code"><code>int rec(&lt;some parameters&gt;) {
+    if (&lt;stopping condition&gt;)
+        return &lt;stopping value&gt;;
+    // second stopping condition and return value, if any
+    return value or rec(&lt;revised parameters&gt;)
+           (+ rec(&lt;revised parameters&gt;));
+}</code></pre>
+  <p>例一是幂：xʸ 在 y = 0 时为 1，否则为 x · xʸ⁻¹。写成 int exp(int x, int y) { if (y == 0) return 1; return x * exp(x, y - 1); }——终止条件是 y == 0，修正参数是 y - 1。</p>
+  <p>例二、例三是数组求和与求积。求和的分段定义是：size = 0 时为 0，否则为 Sum(A, size − 1) + A[size − 1]；求积把 0 换成 1、加号换成乘号。代码只有两行，思路都是“把最后一个元素摘出来，剩下的交给下一次调用”。</p>
+<pre class="c-code"><code>double asum(int a[], int size) {
+    if (0 == size) return 0;
+    return asum(a, size - 1) + a[size - 1];
+}
+
+double aproduct(int a[], int size) {
+    if (0 == size) return 1;
+    return aproduct(a, size - 1) * a[size - 1];
+}</code></pre>
+  <p>例四数零：统计一个非负整数里数字 0 的个数，zeros(10200) 应返回 3。讲义用了三个分支：n == 0 返回 1（0 本身算一个零）；n &lt; 10 返回 0（一位非零数没有零）；n % 10 == 0 返回 1 + zeros(n / 10)；否则返回 zeros(n / 10)。</p>
+  <p>例五数因子：判断 n 里含有几个因子 m，例如 n = 48、m = 4 时结果为 2（48 = 4 × 4 × 3）。代码是 if (n % m != 0) return 0; 否则 return 1 + factors(n / m, m);——不能整除就停，能整除就记一个并继续除以 m。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>终止值要按“空情形”来定，不能一律写 0：求和的空间情形是 0，求积的空情形必须是 1，否则结果永远是 0。数零的 n == 0 返回 1 也是同一个道理——空情形不等于答案为零。</p>
+  </aside>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>写递归先写两行：终止条件与终止返回值；再写一行：用“更小/更短/更接近终止”的参数调用自己。三行齐了，中间的计算才有意义。</p>
+  </aside>
+  <p class="c-source">L12b p.9–15</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L12a–b</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch09.html"><span>上一章</span>函数：抽象、传值与传引用</a>
+          <a class="pager__next" href="ch11.html"><span>下一章</span>字符与字符串</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

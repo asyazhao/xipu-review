@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHE105 有机反应机理：电荷、HOMO–LUMO 与箭头 · 全科复习</title>
+  <meta name="description" content="CHE105 第 5 章 有机反应机理：电荷、HOMO–LUMO 与箭头：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="che105" data-chapter="05">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">CHE105</a>
+      <span>/</span>
+      <span aria-current="page">第 5 章 有机反应机理：电荷、HOMO–LUMO 与箭头</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">有机化学导论：从“生命力”到尿素合成</span><span class="toc-src">L1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">有机分子的结构、命名与异构</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">有机反应类型与官能团</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">分子结构：原子轨道、分子轨道与杂化</span><span class="toc-src">L4</span></a></li>
+          <li><a href="ch05.html" class="is-current" aria-current="page"><span class="toc-num">05</span><span class="toc-title">有机反应机理：电荷、HOMO–LUMO 与箭头</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">羰基的亲核加成</span><span class="toc-src">L6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">离域与共轭：芳香性</span><span class="toc-src">L7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">酸性、碱性与 pKa</span><span class="toc-src">L8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">立体化学</span><span class="toc-src">L9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">有机金属试剂构建 C–C 键</span><span class="toc-src">L10</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">羰基的亲核取代：酸衍生物</span><span class="toc-src">L11</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">羰基氧的取代：缩醛、亚胺与 Wittig</span><span class="toc-src">L12</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">有机化学导论：从“生命力”到尿素合成</span><span class="toc-src">L1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">有机分子的结构、命名与异构</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">有机反应类型与官能团</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">分子结构：原子轨道、分子轨道与杂化</span><span class="toc-src">L4</span></a></li>
+          <li><a href="ch05.html" class="is-current" aria-current="page"><span class="toc-num">05</span><span class="toc-title">有机反应机理：电荷、HOMO–LUMO 与箭头</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">羰基的亲核加成</span><span class="toc-src">L6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">离域与共轭：芳香性</span><span class="toc-src">L7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">酸性、碱性与 pKa</span><span class="toc-src">L8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">立体化学</span><span class="toc-src">L9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">有机金属试剂构建 C–C 键</span><span class="toc-src">L10</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">羰基的亲核取代：酸衍生物</span><span class="toc-src">L11</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">羰基氧的取代：缩醛、亚胺与 Wittig</span><span class="toc-src">L12</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">CHE105 · 第 5 章</p>
+          <h1>有机反应机理：电荷、HOMO–LUMO 与箭头</h1>
+          <p class="chapter-head__en">Organic Reactions: Charge, HOMO–LUMO &amp; Curly Arrows</p>
+          <p class="chapter-head__meta">来源 L5 · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">5.1 为什么分子通常不反应</a></li>
+        <li><a href="#s2">5.2 电荷与部分电荷</a></li>
+        <li><a href="#s3">5.3 亲核试剂与亲电试剂</a></li>
+        <li><a href="#s4">5.4 HOMO–LUMO：反应的能量学</a></li>
+        <li><a href="#s5">5.5 反应的两个条件</a></li>
+        <li><a href="#s6">5.6 弯箭头到底表示什么</a></li>
+        <li><a href="#s7">5.7 箭头规则与四个常见错误</a></li>
+        <li><a href="#s8">5.8 画机理的八步法</a></li>
+        <li><a href="#s9">5.9 实例一：SN2 与质子转移</a></li>
+        <li><a href="#s10">5.10 实例二：溴对烯烃的亲电加成</a></li>
+        <li><a href="#s11">5.11 实例三：羰基上的加成与取代</a></li>
+        <li><a href="#s12">5.12 亲电的 σ 键：为什么溴不与烷烃反应</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">前四章讲"分子长什么样"，这一章讲"它为什么会变"。核心只有一句话：电子从填满的高能轨道流向空着的低能轨道；而弯箭头（curly arrow）就是这句话的书写方式。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>分子之间天然排斥，因为外层都是电子；有机反应靠电荷、偶极与轨道重叠来"抵消"这种排斥。</li>
+    <li>亲核试剂（Nu）提供电子，进攻缺电子中心；亲电试剂（E）接受电子，是电子的去处。</li>
+    <li>反应能否发生取决于 HOMO 与 LUMO 的能量差：能级越接近、重叠越好，能量降幅越大。</li>
+    <li>除能量外还需要正确的取向：取向不对，轨道无法有效重叠，碰撞无效。</li>
+    <li>弯箭头表示<strong>一对电子</strong>的移动，尾是来源（HOMO），头是去向（LUMO）。</li>
+    <li>箭头只能从孤对、负电荷、π 键或 σ 键出发；不能从正电荷或没有孤对的原子出发。</li>
+    <li>电荷在反应中守恒；与不带电的 H、C、N、O 成键时，必须在同一步断一根键。</li>
+    <li>画机理有固定流程：读条件 → 对比反应物与产物 → 找亲核/亲电中心 → 画箭头 → 检查价与电荷。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">5.1</span> 为什么分子通常不反应</h2>
+  <p>讲义先泼了一盆冷水：并不是所有分子碰撞都会发生化学变化。原因很朴素——每个分子的外层都包着一层电子，两个分子靠近时，电子云先互相排斥。要让反应发生，必须有一股吸引力先克服这股排斥。</p>
+  <p>在无机化学里，这股吸引力常常是正负离子之间的静电吸引，很强、很直接。但在<span class="c-term c-term--auto" data-term="organic-chemistry" title="有机化学｜organic chemistry：研究含碳化合物及其多样性的化学分支。">有机化学</span>里，完整的正负离子相遇是少数情况；更常见的是中性分子之间的相互作用，吸引力弱得多，所以有机反应往往需要加热或催化剂。</p>
+  <p>讲义把可能的吸引力归为三个层次：<strong>电荷</strong>（真正带电的离子）、<strong>部分电荷</strong>（偶极）、以及<strong>轨道重叠</strong>（HOMO 与 LUMO 的相互作用）。前两个解释"为什么靠近"，第三个解释"靠近之后电子往哪里流"。</p>
+  <p class="c-source">L5 p.5–7、p.20</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">5.2</span> 电荷与部分电荷</h2>
+  <p>最直接的情形是带电试剂进攻一个中性但极化的分子。讲义举的例子是阴离子进攻带有偶极矩的有机分子：阴离子带完整的负电荷，分子的一端因<span class="c-term c-term--auto" data-term="electronegativity" title="电负性｜electronegativity：原子吸引电子的量度，决定键的极性方向。">电负性</span>差异带部分正电（δ+），两者相互吸引，反应由此启动。</p>
+  <p>更精细的情形发生在<span class="c-term c-term--auto" data-term="carbonyl-group" title="羰基｜carbonyl group：C=O 基团，高度极化，易发生亲核加成。">羰基</span>上。C=O 键中氧的电负性大于碳，电子被拉向氧，于是氧带部分负电、碳带部分正电。这个偶极能让羰基与两类物种作用：与富电子的 NH<sub>3</sub>（氮上有孤对）作用时，氨扮演电子给体，进攻缺电子的碳；与缺电子的 BF<sub>3</sub>（硼上有一个空 p 轨道）作用时，角色反过来——羰基氧上的孤对电子流向硼的空轨道。</p>
+  <p>同一个羰基，既能接受电子，也能提供电子，取决于对手是谁。这一点很重要：它说明"亲核"与"亲电"不是分子的固有标签，而是<strong>在某一具体反应中的角色</strong>。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>羰基的两面性要能各举一例：对 NH<sub>3</sub> 它是亲电试剂（碳被进攻）；对 BF<sub>3</sub> 它是亲核试剂（氧的孤对流向硼的空 p 轨道）。判断依据永远是"谁提供电子对"。</p>
+  </aside>
+  <p class="c-source">L5 p.8–12</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">5.3</span> 亲核试剂与亲电试剂</h2>
+  <p><span class="c-term">亲核试剂<span class="c-term__en">nucleophile</span></span>（Nu）是电子的<strong>来源</strong>。它至少有一对可以给出的电子，形式可以是孤对、负电荷、π 键，或者一根连在电正性原子上的 σ 键。常见的有带孤对的 N、O、S 物种，<span class="c-term c-term--auto" data-term="carbanion" title="碳负离子｜carbanion：碳上带负电的物种，碳氢酸的共轭碱，多不稳定。">碳负离子</span>，以及烯烃的 π 键。</p>
+  <p><span class="c-term">亲电试剂<span class="c-term__en">electrophile</span></span>（E）是电子的<strong>去处</strong>。它必须有一个可以接受电子对的空轨道，形式可以是正电荷、中性分子上的空 p 轨道、π 键（其 π* 反键轨道可接受电子），或者一根连在电负性原子上的 σ 键（其 σ* 反键轨道可接受电子）。质子 H<sup>+</sup>、BF<sub>3</sub>、羰基碳、<span class="c-term c-term--auto" data-term="haloalkane" title="卤代烷｜haloalkane：含碳–卤素键的化合物，可发生取代与消除。">卤代烷</span>的碳都是常见的亲电中心。</p>
+  <p>讲义特别提醒了一种"看起来该反应、实际不反应"的情形：<span class="c-term">无效排列<span class="c-term__en">unproductive arrangement</span></span>。亲核试剂与亲电试剂确实靠近了，但两者的轨道取向不对，重叠为零，电子无法流动，碰撞白费。这解释了为什么"浓度高、温度高"并不总能提高反应速率——取向不对，能量再多也没用。</p>
+  
+<!-- course-image:che105-ch05-electrostatic.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-che105-ch05-electrostatic">
+        <img class="c-course-figure__img" src="../../assets/course/che105-ch05-electrostatic.jpg" alt="C=O 偶极与带电试剂的静电吸引" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> C=O 偶极与带电试剂的静电吸引 <span class="c-course-figure__src">来源：L5 p.10</span></figcaption>
+      </figure>
+
+<p class="c-source">L5 p.13–16、p.21–31</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">5.4</span> HOMO–LUMO：反应的能量学</h2>
+  <p>把亲核/亲电的语言翻译成轨道语言，就是 <span class="c-term">HOMO<span class="c-term__en">highest occupied molecular orbital</span></span> 与 <span class="c-term">LUMO<span class="c-term__en">lowest unoccupied molecular orbital</span></span>。HOMO 是"已填充电子里能量最高的那个"，也就是最容易被拿出来的电子；LUMO 是"空轨道里能量最低的那个"，也就是最容易接受电子的位置。</p>
+  <p>反应是否有利，看两件事：两个轨道的<strong>能量是否接近</strong>，以及<strong>重叠是否有效</strong>。能量越接近，混合后成键轨道的能量降得越多；重叠越好，混合越充分。讲义用"能量降幅最大"来定义有利的排列——最稳定的产物来自最大的能量下降，而不是来自"最强"的试剂。</p>
+  <p>反过来说，如果两个轨道的能量差太大，即使产物本身很稳定，电子也难以流动——这就是"惰性分子"的轨道解释。碳与氢之间的 σ 键正是如此：它的 σ* 反键轨道能量太高，没有可接受电子的空位，所以 C–H 键在多数反应中只是"旁观者"。</p>
+  
+<!-- course-image:che105-ch05-electrons-go.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-che105-ch05-electrons-go">
+        <img class="c-course-figure__img" src="../../assets/course/che105-ch05-electrons-go.jpg" alt="电子去哪里：亲核体到亲电体" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 电子去哪里：亲核体到亲电体 <span class="c-course-figure__src">来源：L5 p.13</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 5-1 HOMO–LUMO 相互作用与能量降</span>
+      <button class="c-copy" type="button" data-copy="Clean vector orbital energy diagram with two vertical columns: left column shows a filled HOMO of the nucleophile, right column shows an empty LUMO of the electrophile at higher energy, with two curved arrows showing electron flow from the filled orbital into the empty orbital; below, a single lower-energy bonding orbital is drawn to show the energy drop, annotated largest energy drop for the best-matched pair. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector orbital energy diagram with two vertical columns: left column shows a filled HOMO of the nucleophile, right column shows an empty LUMO of the electrophile at higher energy, with two curved arrows showing electron flow from the filled orbital into the empty orbital; below, a single lower-energy bonding orbital is drawn to show the energy drop, annotated largest energy drop for the best-matched pair. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>HOMO 与 LUMO 是"分子"的轨道，不是"原子"的轨道。说"这个分子的 HOMO 进攻那个分子的 LUMO"是对的；说"这个原子的 HOMO"则要看语境，因为<span class="c-term c-term--auto" data-term="atomic-orbital" title="原子轨道｜atomic orbital：描述电子在核周围出现概率的波函数。">原子轨道</span>与分子轨道不是一回事。</p>
+  </aside>
+  <p class="c-source">L5 p.17–20</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">5.5</span> 反应的两个条件</h2>
+  <p>讲义把前面所有内容收成一句话：为了让反应发生，两个分子必须以正确的方式靠近——<strong>有足够的能量克服排斥</strong>，<strong>有正确的取向利用吸引</strong>。两条缺一不可。</p>
+  <p>能量条件对应"能不能翻过能垒"，取向条件对应"翻了能不能落到正确的位置"。升温让更多分子具备翻越能垒的能量，但取向不对的碰撞仍然无效；增浓让碰撞次数增加，但无效碰撞的比例不变。</p>
+  <p>这也是"分子形状决定反应性"的真正含义。形状不是外观问题，它决定了分子的 HOMO 与 LUMO 在空间中的分布；分布决定了从哪个方向进攻才有效。第五章之后讲的所有机理，本质上都是在回答"哪个轨道、从哪个方向、流向哪个轨道"。</p>
+  
+<!-- course-image:che105-ch05-collision.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-che105-ch05-collision">
+        <img class="c-course-figure__img" src="../../assets/course/che105-ch05-collision.jpg" alt="分子碰撞与有效碰撞" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 分子碰撞与有效碰撞 <span class="c-course-figure__src">来源：L5 p.6</span></figcaption>
+      </figure>
+
+<p class="c-source">L5 p.20</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">5.6</span> 弯箭头到底表示什么</h2>
+  <p><span class="c-term">弯箭头<span class="c-term__en">curly arrow</span></span>是有机化学的"操作系统"：每一个机理、每一个共振结构、每一段电子流叙述，都用它书写。它表示的不是原子在动，也不是"反应往这边走"，而是<strong>一对电子</strong>的移动。</p>
+  <p>箭头的<strong>尾部</strong>标出这对电子的<strong>来源</strong>，也就是亲核试剂的 HOMO。合法的起点有四类：孤对电子、负电荷、π 键、以及连在电正性原子上的 σ 键。箭头的<strong>头部</strong>标出这对电子的<strong>去向</strong>，也就是亲电试剂的 LUMO。合法的终点包括：正电荷、带空 p 轨道的中性分子、π 键、以及连在电负性原子上的 σ 键。</p>
+  <p>两条铁律必须背下来。第一，<strong>电荷守恒</strong>：反应前后总电荷不变；如果箭头画完电荷对不上，箭头一定错了。第二，<strong>与不带电的 H、C、N、O 成键时，必须在同一步断一根键</strong>——因为这些原子没有可用的空轨道，无法在保持原配位数的同时接受一对新电子；要让它们多接一根键，就必须同时松开另一根。</p>
+  
+<!-- course-image:che105-ch05-curly-arrows.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-che105-ch05-curly-arrows">
+        <img class="c-course-figure__img" src="../../assets/course/che105-ch05-curly-arrows.jpg" alt="弯箭头：一对电子的移动" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 弯箭头：一对电子的移动 <span class="c-course-figure__src">来源：L5 p.27</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 5-2 弯箭头的头与尾</span>
+      <button class="c-copy" type="button" data-copy="Clean vector explanatory diagram of a single curved arrow: the tail starts at a lone pair drawn as two dots on a nitrogen atom labeled source, a filled HOMO; the head points to a carbon atom bearing a partial positive charge labeled destination, an empty LUMO; a side legend lists valid sources as lone pair, negative charge, pi bond, sigma bond, and valid destinations as positive charge, empty p orbital, pi star, sigma star. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector explanatory diagram of a single curved arrow: the tail starts at a lone pair drawn as two dots on a nitrogen atom labeled source, a filled HOMO; the head points to a carbon atom bearing a partial positive charge labeled destination, an empty LUMO; a side legend lists valid sources as lone pair, negative charge, pi bond, sigma bond, and valid destinations as positive charge, empty p orbital, pi star, sigma star. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>判断一个箭头画得对不对，只问三句：起点有没有电子对？终点有没有空轨道？整步反应电荷守恒吗？三问全过，箭头基本正确；任一不过，回去重画。</p>
+  </aside>
+  
+<p class="c-source">L5 p.27–29；Master Curly Arrows p.3</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">5.7</span> 箭头规则与四个常见错误</h2>
+  <p>Master Curly Arrows 那份材料把规则拆得更细。除了"从头到尾表示一对电子"之外，还有两条关于"合法性"的要求。</p>
+  <p><strong>起点必须真的拥有电子。</strong>合法的起点是：原子上的孤对、带负电的原子、双键或三键中的 π 键、以及反应中的 σ 键。常见的错误起点有两个：从一个孤零零的正电荷出发（正电荷表示"缺电子"，那里没有电子对可给），以及从一个既没有孤对也没有 π 键的普通原子出发。</p>
+  <p><strong>终点必须能容纳这对电子。</strong>箭头落在某个原子上，要么形成一根新键，要么成为该原子上的一对孤对；如果落点会让该原子超过八隅体，这个箭头就是错的。换句话说，箭头不能"凭空多画一根键"。</p>
+  <p>把这两条与电荷守恒合起来，就得到一套可以机械执行的自检流程：画完箭头后，逐个原子数键数与孤对数，看是否满足价层要求；再算总电荷，看是否与反应物一致。任何一处不符，箭头需要修改——而不是"把产物改一改让它看起来合理"。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>"箭头从正电荷出发"是最常见的错误。正电荷是电子<em>不足</em>的标志，箭头应当指向它，而不是从它出发。同理，箭头也不能从 C–H 键的氢端出发去形成 C–H 键。</p>
+  </aside>
+  <p class="c-source">Master Curly Arrows p.3–6</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">5.8</span> 画机理的八步法</h2>
+  <p>讲义给了一套完整的操作流程，值得逐条照做——它是把"看懂机理"变成"写出机理"的桥。</p>
+  <ol>
+    <li>按给定条件（酸、碱、溶剂）把试剂画成真实存在的结构，而不是只写分子式。</li>
+    <li>对比反应物与产物：找出新形成的键、断裂的键、移动的键、新增的基团、离去的基团。</li>
+    <li>找出亲核中心与亲电中心，判断哪一个最活泼。</li>
+    <li>如果两者的结合能给出目标产物，就把反应物画出来、标上电荷、按轨道要求摆到"能成键的距离"。</li>
+    <li>从亲核试剂的电子来源（键、电荷或孤对）画一根箭头，指向亲电试剂的空轨道——箭头头部落在新键的位置。</li>
+    <li>检查是否有原子"键太多"；若有，就从那根键的中心再画一根箭头，把电子对送到合适的地方（通常是电负性原子）。</li>
+    <li>按箭头指示写出产物：断掉箭头起点的键，形成箭头终点的键，然后核对电荷。若结构不对，说明箭头错了，回去改箭头而不是改产物。</li>
+    <li>重复第 5–7 步，直到得到稳定产物。</li>
+  </ol>
+  <p>这套流程的关键在第六步：<strong>"键太多"是发现隐藏断键的信号</strong>。初学者常犯的错是只画"形成新键"的箭头，忘了同时画"断开旧键"的箭头，结果产物中某个碳变成五价。只要养成"形成一根就检查一次价"的习惯，这类错误会立刻暴露。</p>
+  <p class="c-source">L5 p.46</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">5.9</span> 实例一：S<sub>N</sub>2 与质子转移</h2>
+  <p><strong>S<sub>N</sub>2 <span class="c-term c-term--auto" data-term="nucleophilic-substitution" title="亲核取代｜nucleophilic substitution：亲核体替换羰基上的取代基，经加成—消除完成。">亲核取代</span>。</strong>以硫醇负离子（thiolate）进攻带部分正电的碳为例。第一步也是唯一一步：硫上的孤对电子作为 HOMO，箭头从硫出发，指向那个碳；同时，碳与溴之间的 σ 键断裂，另一根箭头从 C–Br 键的中心出发，指向溴。两根箭头同时画出，表示"成键与断键同步发生"。结果是硫接到碳上、溴带着电子对离去，碳的构型发生<span class="c-term">翻转<span class="c-term__en">inversion</span></span>——因为亲核试剂只能从<span class="c-term c-term--auto" data-term="leaving-group" title="离去基团｜leaving group：带着一对电子离开分子的基团，碱性越弱越易离去。">离去基团</span>的背面进攻，像伞被吹翻一样。</p>
+  <p><strong>酸碱质子转移。</strong>以羰基化合物在酸中的质子转移为例，分两根箭头。第一根：羰基氧上的孤对电子进攻酸性质子，形成 O–H 键。第二根：相邻碳上的 C–H σ 键断裂，两个电子全部流向碳，碳由此获得一对孤对。这里第二根箭头的起点是 σ 键而不是原子——这正是"σ 键可以作为箭头起点"的典型用法。</p>
+  <p>两个例子对照：S<sub>N</sub>2 的两根箭头同时画（协同），质子转移的两根一前一后（先质子化，再去质子）。箭头分几步画，就表示反应分几步走。</p>
+  <p class="c-source">Master Curly Arrows p.8–9、p.15</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">5.10</span> 实例二：溴对烯烃的亲电加成</h2>
+  <p>烯烃的 π 键是富电子的，遇到溴这类亲电试剂就会被进攻。这个反应分两步，两步之间有一个明确的中间体，因此箭头分两组画。</p>
+  <p><strong>第一步：</strong>π 键作为电子来源，箭头从 C=C 的中间出发，指向溴原子；同时 Br–Br 的 σ 键断裂，另一根箭头从 Br–Br 键的中心指向另一个溴，让它带着电子对离去（成为 Br<sup>−</sup>）。结果是：一个碳与溴成键，另一个碳失去了 π 键的共享电子，变成缺电子的<span class="c-term">碳正离子<span class="c-term__en">carbocation</span></span>。</p>
+  <p><strong>第二步：</strong>第一步离去的溴离子作为亲核试剂，用它的孤对电子进攻碳正离子，箭头从 Br<sup>−</sup> 出发指向那个缺电子的碳，形成第二根 C–Br 键。产物是邻二溴化物。</p>
+  <p>这个例子的教学价值在于它展示了"中间体"的概念：碳正离子不是过渡态，而是一个真实存在、可以短暂存活的物种；第二步的箭头之所以能画，是因为第一步确实留下了一个带正电的碳。把两步合成一步画，虽然有时能得到同样的产物，但机理上是错的。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 5-3 溴对烯烃的两步亲电加成</span>
+      <button class="c-copy" type="button" data-copy="Clean vector two-step mechanism diagram: step one shows ethene pi bond attacking a bromine molecule with a curved arrow from the C=C midpoint to Br and a second curved arrow breaking the Br-Br bond, giving a bromonium-like carbocation intermediate labeled carbocation; step two shows the bromide ion lone pair attacking the electron-deficient carbon with a curved arrow, giving 1,2-dibromoethane. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette with one warm accent for bromine, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/che105-bromonium.svg" alt="溴对烯烃的两步亲电加成与溴鎓离子" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector two-step mechanism diagram: step one shows ethene pi bond attacking a bromine molecule with a curved arrow from the C=C midpoint to Br and a second curved arrow breaking the Br-Br bond, giving a bromonium-like carbocation intermediate labeled carbocation; step two shows the bromide ion lone pair attacking the electron-deficient carbon with a curved arrow, giving 1,2-dibromoethane. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette with one warm accent for bromine, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>亲电加成的通用模式：π 键先攻亲电试剂 → 生成碳正离子（或三元环中间体）→ 亲核试剂再补上第二步。只要记住"先 electrophile 后 nucleophile"，就不会把两步顺序画反。</p>
+  </aside>
+  <p class="c-source">Master Curly Arrows p.10–11；L5 p.32–34</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">5.11</span> 实例三：羰基上的加成与取代</h2>
+  <p><strong><span class="c-term c-term--auto" data-term="cyanohydrin" title="氰醇｜cyanohydrin：CN⁻ 加到羰基上生成的含 –OH 与 –CN 的产物。">氰醇</span>形成。</strong>氰离子（CN<sup>−</sup>）是良好的亲核试剂，用碳上的孤对进攻羰基碳，箭头从 CN<sup>−</sup> 的碳出发指向 C=O 的碳；同时 C=O 的 π 键断裂，两个电子流向氧，生成<span class="c-term c-term--auto" data-term="alkoxide" title="烷氧负离子｜alkoxide：亲核进攻羰基后生成、氧上带负电的四面体中间体。">烷氧负离子</span>。第二步是质子化：氧上的负电荷接受一个质子，得到羟基。产物是<span class="c-term">羟腈<span class="c-term__en">hydroxynitrile</span></span>，也叫氰醇（cyanohydrin）。</p>
+  <p>讲义在这里附带了一条实验室安全提示：HCN 剧毒，因此反应物通常不是直接取用 HCN，而是向氰化钠溶液中加入稀酸现场生成；这一步<strong>必须在通风橱中完成</strong>。这条提示在考试中常作为背景信息出现，但它也解释了为什么教材偏好"现场生成"而不是"直接使用"。</p>
+  <p><strong>氢负离子加成。</strong>C=O 是极性键，氧的电负性更大，因此碳缺电子。氢负离子（H<sup>−</sup>）进攻这个碳，箭头从 H<sup>−</sup> 出发指向羰基碳，π 键电子流向氧，生成烷氧负离子；烷氧负离子再接受质子，得到醇。常用试剂是 NaBH<sub>4</sub>，需要更强条件时用 LiAlH<sub>4</sub>，后者要求无水环境。</p>
+  <p><strong>酰胺形成与<span class="c-term c-term--auto" data-term="acid-chloride" title="酰氯｜acid chloride：羧酸衍生物，通式 RCOCl，反应性最高的常见酸衍生物。">酰氯</span>水解。</strong>酰氯的羰基碳连着氯，氯是良好的离去基团。氨作为亲核试剂进攻羰基碳，C=O 的 π 键电子流向氧形成烷氧负离子；氧上的负电荷随后回推，把氯以 Cl<sup>−</sup> 的形式赶走，形成酰胺。水解走同一套路，只是第一步的亲核试剂换成了水：水先加成到羰基上，形成一个<span class="c-term c-term--auto" data-term="tetrahedral-intermediate" title="四面体中间体｜tetrahedral intermediate：亲核体加成羰基碳后形成的 sp³ 中间体，酰基取代必经。">四面体中间体</span>，随后氯离去、质子转移，得到<span class="c-term c-term--auto" data-term="carboxylic-acid" title="羧酸｜carboxylic acid：含 –COOH 的弱酸，能与强碱成盐。">羧酸</span>。</p>
+  <p>这四组例子合起来说明一件事：<strong>羰基的反应几乎都从"亲核试剂进攻碳、π 电子流向氧"开始</strong>。后续的差别只在于"氧上的负电荷接下来干什么"——接受质子（加成产物），还是把某个基团赶走（取代产物）。这条分岔是第六章与第十一章的分界线。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>第一步箭头总是"到碳"而不是"到氧"。氧虽然带部分负电，但它是富电子的，不会接受亲核试剂；亲核试剂进攻的是缺电子的羰基碳。画反了方向，整个机理就颠倒了。</p>
+  </aside>
+  <p class="c-source">Master Curly Arrows p.12–18；L5 p.12</p>
+</section>
+
+<section id="s12">
+  <h2 id="s12"><span class="sec-num">5.12</span> 亲电的 σ 键：为什么溴不与<span class="c-term c-term--auto" data-term="alkane" title="烷烃｜alkane：只含单键的饱和烃，通式 CₙH₂ₙ₊₂。">烷烃</span>反应</h2>
+  <p>讲义用最后一组页面对比了一个容易混淆的现象：溴与亲核试剂反应很积极，但与烷烃不反应。原因在于"亲电性"的来源不同。</p>
+  <p>Br<sub>2</sub> 分子中，两个溴之间是一根 σ 键，但这根 σ 键的<span class="c-term">σ* 反键轨道<span class="c-term__en">σ* antibonding orbital</span></span>能量很低、很容易接受电子——所以 Br<sub>2</sub> 本身就是一个亲电试剂，可以被亲核试剂进攻，Br–Br 键随之断裂。而烷烃的 C–C 与 C–H σ 键的 σ* 轨道能量很高，没有可接受电子的空位，也没有极性可言。亲核试剂找不到进攻点，烷烃因此表现出惰性。</p>
+  <p>这条对比把"亲电试剂"的定义补全了：亲电性不只来自正电荷或空 p 轨道，也可以来自一根<strong>容易断裂的 σ 键</strong>。卤素分子、酰氯的 C–Cl 键、质子化醇的 C–O 键，都属于这一类。</p>
+  <p>至此工具箱已齐：电荷与偶极解释"为什么靠近"，HOMO–LUMO 解释"电子往哪里流"，弯箭头负责把它写下来。下一章直接用在羰基上。</p>
+  <p class="c-source">L5 p.32–34</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L5</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch04.html"><span>上一章</span>分子结构：原子轨道、分子轨道与杂化</a>
+          <a class="pager__next" href="ch06.html"><span>下一章</span>羰基的亲核加成</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

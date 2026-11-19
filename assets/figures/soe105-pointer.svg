@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 325" role="img" aria-label="指针与它所指向的变量">
+<title>指针与它所指向的变量</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">指针与它所指向的变量</text>
+<rect x="120" y="150" width="170" height="64" rx="4" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="205" y="178" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#262624" text-anchor="middle" font-weight="700">x = 42</text>
+<text x="205" y="200" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">地址 A</text>
+<rect x="470" y="150" width="180" height="64" rx="4" fill="#FFFFFF" stroke="#A8894F" stroke-width="1.4"/>
+<text x="560" y="178" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#A8894F" text-anchor="middle" font-weight="700">p = A</text>
+<text x="560" y="200" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">指针变量</text>
+<line x1="466" y1="182" x2="294" y2="182" stroke="#8C4F45" stroke-width="1.6" marker-end="url(#arrowRed)"/>
+<text x="380" y="168" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8C4F45" text-anchor="middle" font-weight="400">指向</text>
+<text x="205" y="250" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="400">&amp;x 取地址</text>
+<text x="560" y="250" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#A8894F" text-anchor="middle" font-weight="400">*p 解引用 → 42</text>
+<text x="40" y="310" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">指针变量存放的是地址；*p 访问该地址上的值，&amp;x 取得 x 的地址。</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="二维数组的行与列">
+<title>二维数组的行与列</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">二维数组的行与列</text>
+<text x="260.0" y="98" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">列 0</text>
+<text x="340.0" y="98" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">列 1</text>
+<text x="420.0" y="98" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">列 2</text>
+<text x="500.0" y="98" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">列 3</text>
+<text x="580.0" y="98" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">列 4</text>
+<text x="208" y="135.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">行 0</text>
+<rect x="220" y="110" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="260.0" y="135.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">00</text>
+<rect x="300" y="110" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="340.0" y="135.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">01</text>
+<rect x="380" y="110" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="420.0" y="135.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">02</text>
+<rect x="460" y="110" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="500.0" y="135.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">03</text>
+<rect x="540" y="110" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="580.0" y="135.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">04</text>
+<text x="208" y="177.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">行 1</text>
+<rect x="220" y="152" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="260.0" y="177.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">10</text>
+<rect x="300" y="152" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="340.0" y="177.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">11</text>
+<rect x="380" y="152" width="80" height="42" rx="0" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<text x="420.0" y="177.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">12</text>
+<rect x="460" y="152" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="500.0" y="177.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">13</text>
+<rect x="540" y="152" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="580.0" y="177.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">14</text>
+<text x="208" y="219.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">行 2</text>
+<rect x="220" y="194" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="260.0" y="219.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">20</text>
+<rect x="300" y="194" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="340.0" y="219.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">21</text>
+<rect x="380" y="194" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="420.0" y="219.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">22</text>
+<rect x="460" y="194" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="500.0" y="219.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">23</text>
+<rect x="540" y="194" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="580.0" y="219.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">24</text>
+<text x="208" y="261.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">行 3</text>
+<rect x="220" y="236" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="260.0" y="261.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">30</text>
+<rect x="300" y="236" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="340.0" y="261.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">31</text>
+<rect x="380" y="236" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="420.0" y="261.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">32</text>
+<rect x="460" y="236" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="500.0" y="261.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">33</text>
+<rect x="540" y="236" width="80" height="42" rx="0" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1.2"/>
+<text x="580.0" y="261.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">34</text>
+<text x="420.0" y="195.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">a[1][2]</text>
+<text x="40" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">第一个下标是行，第二个下标是列；Java 的二维数组是“数组的数组”。</text>
+<text x="40" y="324" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">按行优先存储：同一行的元素在内存中相邻。</text>
+</svg>

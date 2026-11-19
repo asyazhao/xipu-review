@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE102 Java 入门与开发环境 · 全科复习</title>
+  <meta name="description" content="SOE102 第 1 章 Java 入门与开发环境：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe102" data-chapter="01">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE102</a>
+      <span>/</span>
+      <span aria-current="page">第 1 章 Java 入门与开发环境</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html" class="is-current" aria-current="page"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html" class="is-current" aria-current="page"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE102 · 第 1 章</p>
+          <h1>Java 入门与开发环境</h1>
+          <p class="chapter-head__en">Introduction to Java &amp; IDE</p>
+          <p class="chapter-head__meta">来源 W1 · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">1.1 计算机、程序与编译器</a></li>
+        <li><a href="#s2">1.2 位、字节与二进制</a></li>
+        <li><a href="#s3">1.3 二进制与十进制的换算</a></li>
+        <li><a href="#s4">1.4 从机器码到高级语言，再到 JVM</a></li>
+        <li><a href="#s5">1.5 数据、变量与第一个 Java 程序</a></li>
+        <li><a href="#s6">1.6 文本、布尔与转义字符</a></li>
+        <li><a href="#s7">1.7 一个完整 Java 程序的结构</a></li>
+        <li><a href="#s8">1.8 控制台输出：print 与 println</a></li>
+        <li><a href="#s9">1.9 IntelliJ IDEA：安装与第一个项目</a></li>
+        <li><a href="#s10">1.10 断点调试与 Lab 1 任务</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲从“计算机是什么”出发，建立位与字节、二进制换算、高低级语言与 JVM 的基本图景，然后写出第一个 Java 程序，并在 IntelliJ IDEA 中创建、运行和调试它。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>计算机按“输入 → 处理 → 输出 → 存储”工作，程序是告诉计算机做什么的指令集合。</li>
+    <li>1 bit 是一位二进制数，8 bit = 1 byte；n 位可表示 2<sup>n</sup> 种组合。</li>
+    <li>二进制与十进制可以按位权互相换算，讲义用 10110110 与 121 各演示一次。</li>
+    <li>语言分为二进制、汇编（低级）与 Java/C#（高级）三层，一条高级指令可能对应多条低级指令。</li>
+    <li>JVM 把 Java 字节码翻译成各操作系统自己的指令，因此同一份 Java 程序可以跨平台运行。</li>
+    <li>Java 用 int 表示整数、double 表示小数、String 表示文本、boolean 表示真假。</li>
+    <li>一个完整程序由 package、class、main <span class="c-term c-term--auto" data-term="method" title="方法｜method：类中具名、可复用的代码块，被调用时执行。">方法</span>、语句与成对的花括号组成，每条语句以分号结束。</li>
+    <li>IntelliJ IDEA 负责创建项目、编译、运行与断点调试，输出显示在底部面板。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">1.1</span> 计算机、程序与编译器</h2>
+  <p>讲义先把计算机拆成四个动作：接收某种<span class="c-term">输入数据<span class="c-term__en">input data</span></span>、处理数据、产生某种输出（信息）、存储数据；整个过程中它被一个或多个程序控制。程序则是“告诉计算机究竟该做什么”的一组指令，用人类可读写的语言写成，例如 Java 或 C#。</p>
+  <p>人写的源码不能直接被机器执行。<span class="c-term">编译器<span class="c-term__en">compiler</span></span>把源码转换成可执行的字节码（bytecode），计算机才能读写它。讲义强调，不同操作系统需要由不同语言产出的不同可执行文件：iPhone 的 iOS 应用用 Objective-C 写，Android 应用用 Java 写。这意味着同一个程序常常要准备好几个版本，而 Java 程序理论上可以跑在所有计算机上——原因在 1.4 节的 JVM。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>“程序”是给人写的指令集合，“可执行文件”是编译后的产物；讲义中 bytecode 与 .exe 被并称为可执行产物，考试按讲义措辞作答，不要把两者当成同一层概念。</p>
+  </aside>
+  <p class="c-source">W1 slide 30–33</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">1.2</span> 位、字节与二进制</h2>
+  <p>对现代计算机来说，一切都是二进制。1 <span class="c-term">位<span class="c-term__en">bit</span></span> 就是 1 个二进制数位，取值 0 或 1，对应电路的 ON 与 OFF。每增加一位，可表示的总量翻倍：1 位 2 种、2 位 4 种、3 位 8 种、4 位 16 种、5 位 32 种、6 位 64 种、7 位 128 种、8 位 256 种。数学表达是：n 位产生 2<sup>n</sup> 种模式。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>位数与可表示的不同取值个数</caption>
+      <thead><tr><th scope="col">位数</th><th scope="col">取值</th><th scope="col">不同取值个数</th></tr></thead>
+      <tbody>
+        <tr><td>1 bit</td><td>0, 1</td><td>2</td></tr>
+        <tr><td>2 bits</td><td>00, 01, 10, 11</td><td>4</td></tr>
+        <tr><td>3 bits</td><td>000 至 111</td><td>8</td></tr>
+        <tr><td>8 bits</td><td>00000000 至 11111111</td><td>256</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>8 位称为 1 个<span class="c-term">字节<span class="c-term__en">byte</span></span>，通常正好存放 1 个字符（如 “a”）。往上按 1024 进位：1024 bytes = 1 kilobyte（几段文字），1024 KB = 1 Megabyte（约 200 页文本），1024 MB = 1 Gigabyte（256 个 MP3），1024 GB = 1 Terabyte（40 部大电影）。位数越多，能存的东西越多：指令更长、数据更多、文件质量更好。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>n 位 = 2<sup>n</sup> 种组合；8 位 = 1 字节 = 256 种取值；存储单位之间按 1024 而不是 1000 进位。</p>
+  </aside>
+  <p class="c-source">W1 slide 36–39</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">1.3</span> 二进制与十进制的换算</h2>
+  <p>换算的工具是一张位权表：从右到左依次是 2<sup>0</sup>=1、2<sup>1</sup>=2、2<sup>2</sup>=4、2<sup>3</sup>=8、2<sup>4</sup>=16、2<sup>5</sup>=32、2<sup>6</sup>=64、2<sup>7</sup>=128。二进制转十进制就是“把为 1 的那些位权加起来”。讲义用 10110110 演示：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>10110110 的位权展开</caption>
+      <thead><tr><th scope="col">位权</th><th scope="col">2<sup>7</sup></th><th scope="col">2<sup>6</sup></th><th scope="col">2<sup>5</sup></th><th scope="col">2<sup>4</sup></th><th scope="col">2<sup>3</sup></th><th scope="col">2<sup>2</sup></th><th scope="col">2<sup>1</sup></th><th scope="col">2<sup>0</sup></th></tr></thead>
+      <tbody>
+        <tr><td>十进制值</td><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+        <tr><td>二进制位</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>把为 1 的位权相加：128 + 32 + 16 + 4 + 2 = 182，所以 10110110 = 182。讲义逐位写出乘积（0×2<sup>0</sup>=0、1×2<sup>1</sup>=2、1×2<sup>2</sup>=4、0×2<sup>3</sup>=0、1×2<sup>4</sup>=16、1×2<sup>5</sup>=32、0×2<sup>6</sup>=0、1×2<sup>7</sup>=128）再求和，结果相同。</p>
+  <p>反方向（十进制转二进制）讲义用“从高位开始试减”的方法，把 121 转成二进制：2<sup>7</sup>=128 大于 121，该位记 0，余数仍为 121；2<sup>6</sup>=64 ≤ 121，记 1，余数 121−64=57；2<sup>5</sup>=32 ≤ 57，记 1，余数 25；2<sup>4</sup>=16 ≤ 25，记 1，余数 9；2<sup>3</sup>=8 ≤ 9，记 1，余数 1；2<sup>2</sup>=4 与 2<sup>1</sup>=2 都大于 1，两位记 0；2<sup>0</sup>=1 ≤ 1，记 1，余数 0。于是 121 = 01111001。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>试减法每步比较的是“当前余数”，不是原始数字；写答案时要从 2<sup>7</sup> 写到 2<sup>0</sup>，高位补 0（121 的答案以 0 开头），漏掉前导 0 会得到 7 位而不是 8 位。</p>
+  </aside>
+  <p>讲义还用位深解释图像与游戏机：1 bit 只有黑白，位深越高越能通过混合得到灰阶与彩色；1980 年代 NES 是 8 位主机、54 色，SNES 是 16 位、256 色，PlayStation 是 32 位、16,777,216 色。</p>
+  <p class="c-source">W1 slide 40–58</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">1.4</span> 从机器码到高级语言，再到 JVM</h2>
+  <p>计算机只认二进制，但人不能在 0 和 1 的洪流里编程，因此语言分层。最低层是二进制（如 1000110100111010100100100111）；往上是<span class="c-term">汇编语言<span class="c-term__en">assembly language</span></span>，指令极简单（加、减、复制、删除），一条命令后跟数值，直接操作内存与寄存器，例如 <code>TAD I Z STPTR</code>、<code>SNA</code>、<code>HLT</code>、<code>TLS</code>；它比二进制好写，但仍然难读——讲义的原话是 “Difficult to read and follow!”。</p>
+  <p>再往上是<span class="c-term">高级语言<span class="c-term__en">high-level language</span></span>：语法接近英语，人容易读、容易写，种类很多（Java、C、C#、C++、Python）。代价是抽象：一条高级指令可能被翻译成好几条低级指令。讲义用同一件事对比三种写法——二进制一长串 0/1、汇编四行助记符、Java 一行 <code>System.out.println("Hello World!");</code>。</p>
+  <p>那么 Java 程序为什么能跑在 Windows、macOS、Unix、Linux 上？因为每个操作系统都有自己的 <span class="c-term">Java 虚拟机<span class="c-term__en">Java Virtual Machine, JVM</span></span>——“运行在真实 PC 里的虚拟 PC”。JVM 把 Java 指令翻译成该操作系统自己的指令，并能运行用 Java 写出的字节码。讲义把这套机制概括为：源码 → 字节码 → 各平台 JVM → 本机指令。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 1-1 从源码到运行的编译链路</span>
+      <button class="c-copy" type="button" data-copy="Clean vector flow diagram, left to right: a source file box labelled HelloWorld.java, an arrow labelled compiler, a bytecode box labelled HelloWorld.class, then three parallel branches into three JVM boxes labelled Windows JVM, macOS JVM and Linux JVM, each with an arrow to a matching native machine. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/soe102-compile-chain.svg" alt="Java 从源码、javac、字节码到 JVM 的编译链路" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector flow diagram, left to right: a source file box labelled HelloWorld.java, an arrow labelled compiler, a bytecode box labelled HelloWorld.class, then three parallel branches into three JVM boxes labelled Windows JVM, macOS JVM and Linux JVM, each with an arrow to a matching native machine. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>跨平台的不是“Java 源码”本身，而是“字节码 + 各平台自己的 JVM”；JVM 在真实机器内部模拟一台虚拟 PC，负责把 Java 指令翻译成本机指令。</p>
+  </aside>
+  <p class="c-source">W1 slide 59–69</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">1.5</span> 数据、<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：具名的内存位置，用来存放可以改变的值。">变量</span>与第一个 Java 程序</h2>
+  <p>讲义把程序拆成两半：数据，以及处理数据的指令。数据用变量（variable）与常量（constant）谈论，指令用方法与函数（method / function）谈论。数据存在内存里，我们把数据赋给一个变量：<code>x = 8;</code>、<code>y = 4;</code>。</p>
+  <p>所有数字数据在机器里都是二进制，那么 1000110110001 到底是什么意思？取决于上下文——它可能是数字、文本、图像、mp3。这正是<span class="c-term">数据类型<span class="c-term__en">data type</span></span>存在的原因：告诉计算机该如何处理这段数据。讲义先用一段伪代码（不是 Java）演示“声明 → 赋值 → 计算 → 输出”四步：</p>
+<pre class="c-code"><code>//Declare the data:
+Number number1;
+Number number2;
+Number answer;
+
+//Input values:
+number1 = 10;
+number2 = 7;
+
+//Process data:
+answer = number1 + number2;
+
+//Output answer:
+print(answer);</code></pre>
+  <p>声明（declare）只说明类型与名字，此时变量还没有值；赋值（initialise，讲义写作 initialising）才把 10 交给 number1。同样的四步换成 Java，整数用 <code>int</code>，小数用 <code>double</code>：</p>
+<pre class="c-code"><code>int number1;
+int number2;
+int answer;
+
+number1 = 7;
+number2 = 12;
+
+answer = number1 + number2;
+System.out.println("Answer = " + answer);</code></pre>
+  <p>除法要用 double 才有小数结果：<code>double number1 = 1.0;</code>、<code>double number2 = 2.0;</code>、<code>answer = number1 / number2;</code>。讲义明确：整数（whole numbers）与小数（fractional numbers）在内存中的存法不同，所以数据类型也不同，主要两种是 int 与 double。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>声明不等于赋值。<code>int number1;</code> 之后直接参与运算会编译报错，必须先 <code>number1 = 7;</code> 初始化；另外整数相除会丢掉小数部分，要小数结果就把参与运算的变量声明为 double。</p>
+  </aside>
+  <p class="c-source">W1 slide 70–80</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">1.6</span> 文本、布尔与转义字符</h2>
+  <p>文本用 <span class="c-term">String</span> 表示，这是最常见的方式：<code>String myName = "Andy";</code>。String 可以拼接，例如把 firstName 与 secondName 相加得到 fullName。讲义还提醒：String 的引号、变量名都要写对，漏分号或漏引号是最常见的错误。</p>
+  <p>真假值用 <span class="c-term">boolean</span>，只有 true / false 两个取值，本质是二进制数据，除此之外什么都存不了，非常适合检查条件是否满足：<code>boolean bool = false;</code>、<code>boolean labThisWeek = true;</code>。它的长度是可变的：只用到 1 bit，却可能占用多达 32 bit 的内存。</p>
+  <p>想在字符串里放特殊字符，需要<span class="c-term">转义字符<span class="c-term__en">escape character</span></span>，即在前面加反斜杠。讲义列举的完整清单是：<code>\t</code> 制表符、<code>\b</code> 退格、<code>\n</code> 换行、<code>\'</code> 单引号、<code>\"</code> 双引号、<code>\\</code> 反斜杠。例如想显示引号要写 <code>String s = "\"Hello\"";</code>，想换行写 <code>String s = "Hello \n Everyone";</code>，写 Windows 路径要写 <code>String s = "C\\files\\java.exe";</code>。不转义会直接破坏程序——引号会提前关闭字符串。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>六个转义序列要能默写：<code>\t</code> <code>\b</code> <code>\n</code> <code>\'</code> <code>\"</code> <code>\\</code>；反斜杠自身也必须转义，所以一个反斜杠在源码里写两个。</p>
+  </aside>
+  <p class="c-source">W1 slide 81–85</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">1.7</span> 一个完整 Java 程序的结构</h2>
+  <p>前面只是零散语句，完整程序要复杂一些。Java 每条语句以分号结束，必须遵守语法规则；代码块用一对花括号包住，开了就必须关。讲义给出完整的加法程序：</p>
+<pre class="c-code"><code>package week1;
+
+public class Week1 {
+
+    public static void main(String[] args) {
+        int number1;
+        int number2;
+        int answer;
+
+        number1 = 7;
+        number2 = 12;
+
+        answer = number1 + number2;
+        System.out.println("Answer = " + answer);
+    }
+}</code></pre>
+  <p>逐层看结构：<code>package week1;</code> 是包声明；<code>public class Week1</code> 定义类，类名与文件名一致，第一个花括号开启类体，最后一个花括号结束类 Week1；<code>public static void main(String[] args)</code> 是主方法，是“所有 Java 程序的入口点”，它自己的花括号结束 main。讲义把 class 称为“你正在处理的东西的起点”，把方法称为“一组可以被<span class="c-term c-term--auto" data-term="reference" title="引用｜reference：变量中保存的、指向堆上对象的内存地址。">引用</span>的指令，用花括号包住”——这两者后面几周会详细展开，现在只需认得出。</p>
+  <p>Java 的<span class="c-term c-term--auto" data-term="keyword" title="关键字｜keyword：Java 中有特定含义且区分大小写的保留词，如 public、class。">关键字</span>区分大小写：<code>public</code> 与 <code>Public</code> 是两回事。讲义在 Week 2 进一步说明 <code>public</code> 是<span class="c-term c-term--auto" data-term="access-modifier" title="访问修饰符｜access modifier：定义代码作用域、决定其他类能否访问的修饰符。">访问修饰符</span>（access modifier），<code>static</code> 是让 JVM 能找到这个方法，<code>void</code> 表示方法不返回任何值，圆括号里的参数是向方法传递信息的方式。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>花括号必须成对：main 的 <code>}</code> 结束 main，类的 <code>}</code> 结束类，少一个就会编译失败；类名大小写要与文件名一致，<code>class Week1</code> 不能放进 <code>week1.java</code>。</p>
+  </aside>
+  <p class="c-source">W1 slide 86–91</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">1.8</span> 控制台输出：print 与 println</h2>
+  <p>把信息显示给用户靠 <code>System.out.println()</code>：括号里的内容会作为程序输出打印出来。它既能打印字面量（<code>System.out.println("Andrew");</code> 显示 Andrew），也能打印变量，还能把变量与文本混在一起。<code>int out = 33;</code> 时 <code>System.out.println("Result" + out);</code> 显示 <code>Result33</code>——注意这里没有自动加空格。</p>
+  <p>多个变量可以一起拼：<code>int out = 35;</code> 配合 <code>System.out.println("Andy is " + out + " years old");</code> 显示 “Andy is 35 years old”，空格要自己写在字符串里。</p>
+  <p><code>println()</code> 与 <code>print()</code> 的唯一区别是前者输出后换到新的一行，后者不换行。连续两次 <code>print("Result")</code> 得到 <code>ResultResult</code>；一次 <code>println("Result")</code> 再跟一次 <code>print("Result")</code> 得到两行 “Result”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>拼接只发生在有 String 参与时：<code>"Result" + 33</code> 得到文本 “Result33”，而不是数值相加；<code>println</code> 换行、<code>print</code> 不换行。</p>
+  </aside>
+  <p class="c-source">W1 slide 92–93</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">1.9</span> IntelliJ IDEA：安装与第一个项目</h2>
+  <p>讲义把 IntelliJ IDEA 定义为 “一个用于 Java 的集成开发环境（<span class="c-term">IDE<span class="c-term__en">Integrated Development Environment</span></span>）”，由 JetBrains 开发维护，特点是功能丰富、能加快开发速度并提升代码质量。它有两个版本：<span class="c-term">社区版<span class="c-term__en">Community Edition</span></span>开源免费，<span class="c-term">终极版<span class="c-term__en">Ultimate Edition</span></span>是商业版、提供 30 天免费试用；课程使用 Ultimate 版。</p>
+  <p>两个版本的差异讲义列了五栏：许可（开源免费 / 商业 + 30 天试用）、技术与框架支持（社区版支持 Android、Ant、JavaFX、JUnit、TestNG、Gradle；终极版额外支持 EJB、Spring、Struts、Node.js、Django、OSGi 等）、语言支持（两者都支持 Java、Kotlin、Groovy、Perl、Python、XML、Go、Scala，终极版多出 HTML、XHTML、CSS、php、SQL、Ruby、JavaScript）、部署（都通过插件支持 Docker 与 Docker Compose，终极版多出 JBoss、WebLogic、Tomcat、Glassfish 等）、版本控制（社区版 GitHub/Git/CVS，终极版多出 ClearCase、Perforce）、构建工具（社区版 Maven/Gradle/Ant/SBT，终极版多出 Npm、Webpack、Gulp、Grunt）。</p>
+  <p>讲义强调的 IDE 特性包括：<span class="c-term">智能代码补全<span class="c-term__en">smart code completion</span></span>（按当前上下文给出最相关的符号）、链式补全（列出方法或 <span class="c-term c-term--auto" data-term="getter" title="getter｜getter：返回 private 字段值的 public 方法。">getter</span> 返回<span class="c-term c-term--auto" data-term="object" title="对象｜object：把相关的数据（状态）与处理（行为）封装在一起的实体。">对象</span>上可用的符号）、静态成员补全（自动补 import 以避免编译错误）、重复代码检测、以编辑器为中心的环境（弹窗查看信息而不离开当前上下文）、检查与快速修复（在可能出错的行上亮起小灯泡，点开是建议列表）、几乎所有操作都有快捷键、以及内联调试器。</p>
+  <p>用 IDEA 写第一个程序的步骤是：打开 IDEA → Create New Project → 左侧选择项目类型 Java → 勾选 “Create project from template” → 指定项目名、位置与包名 → Finish。模板会生成 Main.java，里面有 Main 类与 main 方法，把 <code>System.out.println("Hello,World!!");</code> 放进去。然后先 Build 构建项目（状态栏会显示构建完成），再 Run 运行，输出出现在 IDE 底部面板。安装本身是六步向导：双击安装包、Next、选择目标文件夹、选择安装选项（桌面快捷方式、文件关联等）、选择开始菜单文件夹、Install，完成后按需重启系统。</p>
+  <p>讲义还提到 JDK 文档的用法：JDK 可以从 Oracle 下载，课程不教 JDK 本身，但教你用浏览器更快地查类说明；课程覆盖 Java 11 或更高版本，版本更旧就要更新。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>社区版与终极版的核心差别是许可与框架/语言支持范围；课程用 Ultimate 版。项目要先 Build 再 Run，输出在底部面板而不是弹窗里。</p>
+  </aside>
+  <p class="c-source">W1 Lab p.1–13</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">1.10</span> 断点调试与 Lab 1 任务</h2>
+  <p>调试（debugging）让你追踪正在运行的代码、查看代码所处的状态、观察执行流程。IDEA 的内联调试器支持：在任意点停止执行、step in / step out 进入或跳出函数、设置断点、检查并监视变量、求值表达式。</p>
+  <p><span class="c-term">断点<span class="c-term__en">breakpoint</span></span>让程序在特定位置停下，当执行到达设有断点的那一行时触发；在编辑器里表现为行号旁的红圈。设置方式是从 Run 菜单选择 toggle breakpoint，或按 <code>Ctrl+F8</code>；启动调试是从 Run 菜单选 Debug，或按 <code>Alt+Shift+F8</code>，也可以点工具栏的调试按钮。启动后会出现 debugger 标签窗口，可以检查变量值、求值表达式、step into、step out、停止与恢复调试。</p>
+  <p>Lab 1 的两个任务把上面的知识落到手上。Task 1：创建项目，增加 4 条 <code>System.out</code> 语句打印更多 hello 信息，观察结果变化；把 <code>System.out.print</code> 改成 <code>System.out.println</code> 并解释差别；再让程序打印自己的名字、学校、家乡、年龄与学号，控制台输出类似 “Name: Andy, Age: 32, Student number: 12345678”。</p>
+  <p>Task 2：新建 Java 类并命名为 <code>Calculations</code>，在类的花括号里补上 <code>public static void main(String[] args){ }</code>，加一条 <code>System.out</code> 测试。讲义提醒一个真实坑：项目里现在有两个 main 类，运行时可能仍在跑另一个程序；解决办法是在工具栏的 customize 里找到 main class 旁的浏览按钮，选中刚创建的类。之后用整数变量改写算式，例如 <code>int num1 = 5;</code>，再用 <code>+</code> 把变量与文本拼接（如 <code>num1 + " * " + num2</code>），并新增一个变量真正执行计算：<code>int calculation = num1 * num2 + num3 - num4 / num5;</code>。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>只把数字换成变量、却不写计算表达式时，打印出来的仍是原样文本而不是运算结果；另外项目里有多个 main 类时必须显式指定要运行哪一个，否则跑的是旧程序。</p>
+  </aside>
+  <p class="c-source">W1 Lab p.13–17</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W1</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="index.html"><span>返回</span>学科主页</a>
+          <a class="pager__next" href="ch02.html"><span>下一章</span>数据类型、变量、方法与运算符</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

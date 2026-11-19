@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 370" role="img" aria-label="机器学习六步工作流">
+<title>机器学习六步工作流</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">机器学习六步工作流</text>
+<rect x="50" y="80" width="190" height="74" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="145.0" y="112.33333333333333" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">1</text>
+<text x="145.0" y="130.33333333333331" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">定义科学目标</text>
+<rect x="300" y="80" width="190" height="74" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="395.0" y="112.33333333333333" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">2</text>
+<text x="395.0" y="130.33333333333331" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">理解并清洗数据</text>
+<rect x="550" y="80" width="190" height="74" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="645.0" y="112.33333333333333" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">3</text>
+<text x="645.0" y="130.33333333333331" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">划分数据、保护测试集</text>
+<rect x="550" y="220" width="190" height="74" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="645.0" y="252.33333333333334" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">4</text>
+<text x="645.0" y="270.33333333333337" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">训练与调参</text>
+<rect x="300" y="220" width="190" height="74" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="395.0" y="252.33333333333334" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">5</text>
+<text x="395.0" y="270.33333333333337" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">测量泛化</text>
+<rect x="50" y="220" width="190" height="74" rx="3" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="145.0" y="252.33333333333334" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">6</text>
+<text x="145.0" y="270.33333333333337" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#262624" text-anchor="middle" font-weight="500">连接科学问题</text>
+<line x1="242" y1="117" x2="296" y2="117" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="492" y1="117" x2="546" y2="117" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="645" y1="156" x2="645" y2="216" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="546" y1="257" x2="492" y2="257" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="296" y1="257" x2="242" y2="257" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<path d="M 145 216 C 120 190, 120 150, 145 156" fill="none" stroke="#5E5E58" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrowMuted)"/>
+<text x="400" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8C4F45" text-anchor="start" font-weight="400">测试集必须始终留在模型选择之外，否则会产生数据泄漏与过于乐观的估计。</text>
+<text x="40" y="356" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">六步不是一次性直线：结果与科学问题不匹配时，回到目标或数据阶段迭代。</text>
+</svg>

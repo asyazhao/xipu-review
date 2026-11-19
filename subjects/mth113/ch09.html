@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 抽样分布与置信区间 · 全科复习</title>
+  <meta name="description" content="MTH113 第 9 章 抽样分布与置信区间：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="mth113" data-chapter="09">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">MTH113</a>
+      <span>/</span>
+      <span aria-current="page">第 9 章 抽样分布与置信区间</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html" class="is-current" aria-current="page"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html" class="is-current" aria-current="page"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">MTH113 · 第 9 章</p>
+          <h1>抽样分布与置信区间</h1>
+          <p class="chapter-head__en">Sampling Distributions &amp; Confidence Intervals</p>
+          <p class="chapter-head__meta">来源 W9 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">9.1 从概率模型到统计推断</a></li>
+        <li><a href="#s2">9.2 三种分布：总体、样本与抽样</a></li>
+        <li><a href="#s3">9.3 抽样变异性与 i.i.d. 假设</a></li>
+        <li><a href="#s4">9.4 样本均值的期望与标准误</a></li>
+        <li><a href="#s5">9.5 正态总体与中心极限定理</a></li>
+        <li><a href="#s6">9.6 CLT 应用与“n 多大才够”</a></li>
+        <li><a href="#s7">9.7 样本比例的抽样分布</a></li>
+        <li><a href="#s8">9.8 置信区间的形式与置信水平的正确含义</a></li>
+        <li><a href="#s9">9.9 均值的 z 区间（σ 已知）</a></li>
+        <li><a href="#s10">9.10 σ 未知与 t 区间</a></li>
+        <li><a href="#s11">9.11 比例的置信区间与误差范围</a></li>
+        <li><a href="#s12">9.12 样本量、常见误读与报告</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲是概率模型走向统计推断的桥梁：先区分<span class="c-term c-term--auto" data-term="population" title="总体｜population：我们想了解的全部个体或集合。">总体</span>分布、<span class="c-term c-term--auto" data-term="sample" title="样本｜sample：实际被观测到的总体子集。">样本</span>分布与<span class="c-term c-term--auto" data-term="sampling-distribution" title="抽样分布｜sampling distribution：重复抽样下统计量的概率分布。">抽样分布</span>，推出样本均值的<span class="c-term c-term--auto" data-term="expected-value" title="期望｜expected value：取值的概率加权平均，描述分布中心。">期望</span>与标准误，用中心极限定理近似 <i>X̄</i> 的分布，再用同样的抽样分布构造均值与比例的<span class="c-term c-term--auto" data-term="confidence-interval" title="置信区间｜confidence interval：由样本给出的参数合理取值区间。">置信区间</span>。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>参数固定但未知，统计量在观测前是<span class="c-term c-term--auto" data-term="random-variable" title="随机变量｜random variable：把样本空间每个结果映射为数值的函数。">随机变量</span>；统计量的分布叫抽样分布。</li>
+    <li><i>E</i>(<i>X̄</i>) = <i>μ</i>，<i>Var</i>(<i>X̄</i>) = <i>σ</i><sup>2</sup>/<i>n</i>，标准误 <i>SE</i>(<i>X̄</i>) = <i>σ</i>/√<i>n</i>。</li>
+    <li>正态总体下 <i>X̄</i> 精确正态；非正态总体下中心极限定理在 <i>n</i> 大时给出近似正态。</li>
+    <li>标准误减半需要样本量变为 4 倍；<i>n</i> ≥ 30 只是经验起点，强偏态需要更大 <i>n</i>。</li>
+    <li><span class="c-term c-term--auto" data-term="sample-proportion" title="样本比例｜sample proportion：p̂=X/n，样本中成功数除以样本量。">样本比例</span> <i>p̂</i> 的 <i>E</i> = <i>p</i>，<i>SE</i> = √[<i>p</i>(1−<i>p</i>)/<i>n</i>]；正态近似要求<span class="c-term c-term--auto" data-term="success" title="成功｜success：概率模型中被计数的那个事件，不一定是好事。">成功</span>与失败计数都足够大。</li>
+    <li>置信区间形如“估计值 ± 误差范围”，误差范围 = 临界值 × 标准误。</li>
+    <li>95% 置信区间的正确含义是“方法长期覆盖率约 95%”，不是“这个已观测区间有 95% 概率包含 <i>μ</i>”。</li>
+    <li><i>σ</i> 已知用 z 区间；<i>σ</i> 未知用 t 区间，<span class="c-term c-term--auto" data-term="degrees-of-freedom" title="自由度｜degrees of freedom：估计中可自由变动的信息数目，t 区间为 n−1。">自由度</span> <i>n</i>−1。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">9.1</span> 从概率模型到统计推断</h2>
+  <p>第 1 到 8 周研究的是“已知模型，求数据出现的概率”。从本讲开始反过来：“已观测一组数据，能对未知总体说什么，有多大不确定性”。这就是<span class="c-term">统计推断<span class="c-term__en">statistical inference</span></span>。</p>
+  <p>讲义用电池寿命贯穿：某公司想估计本月生产的笔记本电池平均寿命。总体是本月该厂生产的全部电池；感兴趣的参数是真实平均寿命 <i>μ</i>；样本是实验室测试的 <i>n</i> = 64 块电池；统计量是样本均值 <i>X̄</i>。关键问题是：不同的随机样本会给出不同的 <i>X̄</i>，置信区间正是用来量化这种抽样变异性的。</p>
+  <p>参数与统计量的区别要再次强调：<span class="c-term">参数<span class="c-term__en">parameter</span></span> <i>θ</i> 是总体的固定数值，通常未知；<span class="c-term">统计量<span class="c-term__en">statistic</span></span> <i>T</i> = <i>T</i>(<i>X</i><sub>1</sub>, …, <i>X<sub>n</sub></i>) 由样本算出，在观测前是随机变量。既然统计量是随机变量，它就有概率分布，这个分布叫抽样分布。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>“统计量是随机变量”是本章的出发点。样本均值随样本变化，所以 <i>X̄</i> 有分布、有期望、有<span class="c-term c-term--auto" data-term="variance" title="方差｜variance：偏差平方的概率加权平均，衡量离散程度。">方差</span>；参数没有分布，它是固定的未知常数。</p>
+  </aside>
+  <p class="c-source">W9 p.5–7</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">9.2</span> 三种分布：总体、样本与抽样</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>三种分布的区别</caption>
+      <thead><tr><th scope="col">名称</th><th scope="col">什么在变</th><th scope="col">典型记号</th></tr></thead>
+      <tbody>
+        <tr><td>总体分布</td><td>总体中的个体取值</td><td><i>X</i></td></tr>
+        <tr><td>样本分布</td><td>一个样本中的观测值</td><td><i>x</i><sub>1</sub>, …, <i>x<sub>n</sub></i></td></tr>
+        <tr><td>抽样分布</td><td>重复抽样下的统计量</td><td><i>X̄</i>, <i>p̂</i></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>抽样分布是理论分布：它描述“在相同设计下反复抽样，统计量会怎样变化”。它不等于你手上那一个样本的<span class="c-term c-term--auto" data-term="histogram" title="直方图｜histogram：用相接的柱表示数值数据各区间频数的图。">直方图</span>，也不等于总体分布。</p>
+  <p>讲义的小例子：总体为 2, 4, 6, 8，用有放回简单随机抽样取 <i>n</i> = 2，计算 <i>X̄</i>。样本 (2,2) 给出 2，(2,4) 给出 3，(2,6) 给出 4，…，(8,8) 给出 8。同一总体、不同样本，统计量的值不同，这直观说明 <i>X̄</i> 是随机变量。</p>
+  <p>三种分布的“离散程度”也不同：总体分布由 <i>σ</i> 描述；样本分布的经验离散程度是 <i>s</i>；抽样分布的<span class="c-term c-term--auto" data-term="standard-deviation" title="标准差｜standard deviation：方差的平方根，单位与原变量相同。">标准差</span>是 <i>σ</i>/√<i>n</i>，通常远小于 <i>σ</i>。把三者混为一谈，就会在置信区间里用错分母。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>样本标准差 <i>s</i> 描述“个体值之间”的离散程度；标准误 <i>s</i>/√<i>n</i> 描述“样本均值之间”的离散程度。置信区间用后者，不是前者。</p>
+  </aside>
+  <p class="c-source">W9 p.8–9、18</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">9.3</span> 抽样变异性与 i.i.d. 假设</h2>
+  <p><span class="c-term">抽样变异性<span class="c-term__en">sampling variability</span></span>是统计量从一个随机样本到另一个随机样本的自然波动。样本越大，估计通常越稳定；总体变异越小，估计也越稳定。抽样变异性不是测量误差，也不是数据质量差；它是随机抽样本身带来的不确定性。</p>
+  <p>本讲大多数公式假设 <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>, …, <i>X<sub>n</sub></i> 是<span class="c-term">独立同分布<span class="c-term__en">independent and identically distributed</span></span>（i.i.d.）的随机变量，来自期望 <i>μ</i>、方差 <i>σ</i><sup>2</sup> 的总体。独立保证方差可加，同分布保证每个观测有相同的 <i>μ</i> 与 <i>σ</i><sup>2</sup>。</p>
+  <p>实践提醒：数学上正确的置信区间，可能因为样本选择有偏而完全失效。便利抽样、自愿响应、缺失数据都会破坏“随机样本”的前提，此时公式的覆盖率保证不再成立。统计方法的有效性依赖研究设计。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>“大样本”不能修复“坏样本”。有偏抽样即使 <i>n</i> 很大，估计仍可能系统性偏离总体；置信区间只量化随机误差，不量化偏差。</p>
+  </aside>
+  <p class="c-source">W9 p.10–11</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">9.4</span> 样本均值的期望与标准误</h2>
+  <p>样本均值定义为 <i>X̄</i> = (1/<i>n</i>)Σ<i>X<sub>i</sub></i>。由期望线性性，</p>
+  <div class="c-formula"><i>E</i>(<i>X̄</i>) = (1/<i>n</i>)Σ<i>E</i>(<i>X<sub>i</sub></i>) = (1/<i>n</i>)(<i>nμ</i>) = <i>μ</i></div>
+  <p>所以 <i>X̄</i> 是 <i>μ</i> 的<span class="c-term">无偏估计<span class="c-term__en">unbiased estimator</span></span>：反复抽样时，样本均值的平均等于总体均值。</p>
+  <p>若各观测独立、方差为 <i>σ</i><sup>2</sup>，则</p>
+  <div class="c-formula"><i>Var</i>(<i>X̄</i>) = (1/<i>n</i><sup>2</sup>)Σ<i>Var</i>(<i>X<sub>i</sub></i>) = <i>nσ</i><sup>2</sup>/<i>n</i><sup>2</sup> = <i>σ</i><sup>2</sup>/<i>n</i></div>
+  <div class="c-formula"><i>SD</i>(<i>X̄</i>) = <i>σ</i>/√<i>n</i> = <i>SE</i>(<i>X̄</i>)</div>
+  <p>抽样分布的标准差叫<span class="c-term">标准误<span class="c-term__en">standard error</span></span>。它比总体标准差小 √<i>n</i> 倍：平均把独立的噪声抵消了一部分。</p>
+  <p>为什么是 √<i>n</i>：若 <i>σ</i> = 12，<i>n</i> = 4 时 <i>SE</i> = 6；<i>n</i> = 16 时 <i>SE</i> = 3；<i>n</i> = 64 时 <i>SE</i> = 1.5。标准误减半需要样本量变为 4 倍，这是样本量规划的“平方根法则”。</p>
+  
+<!-- course-image:mth113-ch09-sampling.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-mth113-ch09-sampling">
+        <img class="c-course-figure__img" src="../../assets/course/mth113-ch09-sampling.jpg" alt="样本均值的抽样分布" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 样本均值的抽样分布 <span class="c-course-figure__src">来源：Week 9 p.17</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 9-1 总体分布与样本均值的抽样分布</span>
+      <button class="c-copy" type="button" data-copy="Clean vector two-panel figure: left a wide population distribution of individual values with standard deviation sigma; right a narrower sampling distribution of the sample mean with standard deviation sigma over square root of n, both centred at the same mu. Arrows show that the centre stays at mu while the spread shrinks. Axes labelled x and density. Flat 2D, thin strokes, muted slate blue and warm grey, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/mth113-clt.svg" alt="总体分布与样本均值抽样分布的中心极限定理示意" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector two-panel figure: left a wide population distribution of individual values with standard deviation sigma; right a narrower sampling distribution of the sample mean with standard deviation sigma over square root of n, both centred at the same mu. Arrows show that the centre stays at mu while the spread shrinks. Axes labelled x and density. Flat 2D, thin strokes, muted slate blue and warm grey, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p><i>E</i>(<i>X̄</i>) = <i>μ</i> 与 <i>SE</i>(<i>X̄</i>) = <i>σ</i>/√<i>n</i> 必须成对记忆。样本量增大只改变离散程度，不改变中心。</p>
+  </aside>
+  
+<p class="c-source">W9 p.12–14</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">9.5</span> 正态总体与中心极限定理</h2>
+  <p>若 <i>X</i><sub>1</sub>, …, <i>X<sub>n</sub></i> 独立同分布于 N(<i>μ</i>, <i>σ</i><sup>2</sup>)，则样本均值精确服从</p>
+  <div class="c-formula"><i>X̄</i> ~ N(<i>μ</i>, <i>σ</i><sup>2</sup>/<i>n</i>)，&nbsp;&nbsp; <i>Z</i> = (<i>X̄</i> − <i>μ</i>)/(<i>σ</i>/√<i>n</i>) ~ N(0, 1)</div>
+  <p>正态总体下不需要大样本近似，任何 <i>n</i> 都成立。</p>
+  <p>例：个人完成时间 N(50, 12<sup>2</sup>)，取 <i>n</i> = 36，则 <i>X̄</i> ~ N(50, 12<sup>2</sup>/36) = N(50, 2<sup>2</sup>)。求 <i>P</i>(48 &lt; <i>X̄</i> &lt; 52)：<span class="c-term c-term--auto" data-term="standardization" title="标准化｜standardization：用 Z=(X−μ)/σ 把正态变量变为标准正态。">标准化</span>得 <i>P</i>(−1 &lt; <i>Z</i> &lt; 1) ≈ 0.6826。</p>
+  <p><span class="c-term">中心极限定理<span class="c-term__en">Central Limit Theorem</span></span>（CLT）：若 <i>X</i><sub>1</sub>, …, <i>X<sub>n</sub></i> 独立同分布，均值 <i>μ</i>、标准差 <i>σ</i>，则 <i>n</i> 大时</p>
+  <div class="c-formula">(<i>X̄</i> − <i>μ</i>)/(<i>σ</i>/√<i>n</i>) ≈ N(0, 1)</div>
+  <p>总体分布不必正态。近似随 <i>n</i> 增大而改善；总体越偏，所需的 <i>n</i> 通常越大。</p>
+  <p>CLT 改变什么、不改变什么：中心始终是 <i>μ</i>；离散程度按 <i>σ</i>/√<i>n</i> 缩小；形状越来越接近正态；总体分布本身不变。CLT 描述的是样本均值的分布，不是个体观测的分布。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>CLT 不会把原始数据变成正态，也不会让 <i>X̄</i> 的均值改变。它只说“重复抽样的样本均值近似正态”，标准误仍是 <i>σ</i>/√<i>n</i>。</p>
+  </aside>
+  <p class="c-source">W9 p.15–17、21–22</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">9.6</span> CLT 应用与“<i>n</i> 多大才够”</h2>
+  <p>偏态总体例：服务成本的总体右偏，<i>μ</i> = 500，<i>σ</i> = 160，取 <i>n</i> = 64。则 <i>E</i>(<i>X̄</i>) = 500，<i>SE</i> = 160/8 = 20。由 CLT，<i>X̄</i> ≈ N(500, 20<sup>2</sup>)，<i>P</i>(460 &lt; <i>X̄</i> &lt; 540) ≈ <i>P</i>(−2 &lt; <i>Z</i> &lt; 2) ≈ 0.9544。尽管个体成本右偏，64 个观测的平均已相当接近正态。</p>
+  <p>“<i>n</i> 多大才够”没有统一临界值。总体正态时任何 <i>n</i> 都可以；总体大致对称时中等 <i>n</i> 可能够；总体强偏或重尾时需要更大 <i>n</i>。入门课程常把 <i>n</i> ≥ 30 当作经验起点，但讲义明确说它只是 guideline，不是保证，必须同时考虑偏态与异常值。</p>
+  <p>有限总体与<span class="c-term c-term--auto" data-term="independence" title="独立性｜independence：一个事件发生不改变另一个事件概率的性质。">独立性</span>：不放回抽样时观测不完全独立。若样本量小于总体约 10%，独立性近似可接受：</p>
+  <div class="c-formula"><i>n</i>/<i>N</i> ≤ 0.10</div>
+  <p>这条<span class="c-term">10% 条件<span class="c-term__en">10% condition</span></span>在比例与调查抽样中尤其重要。若超过 10%，标准误公式需要有限总体修正，本课程不展开。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p><i>n</i> ≥ 30 是经验规则，不是定理。题目若给出强偏态总体与 <i>n</i> = 12，不能仅凭“小于 30”就断言不正态，也不能仅凭“大于 30”就断言一定正态。</p>
+  </aside>
+  <p class="c-source">W9 p.23–25</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">9.7</span> 样本比例的抽样分布</h2>
+  <p>设 <i>X</i> 是 <i>n</i> 次独立 <span class="c-term c-term--auto" data-term="bernoulli-trial" title="Bernoulli 试验｜Bernoulli trial：恰有两个结果（成功/失败）的随机试验。">Bernoulli 试验</span>中的成功数，<i>X</i> ~ Bin(<i>n</i>, <i>p</i>)，样本比例 <i>p̂</i> = <i>X</i>/<i>n</i>。则</p>
+  <div class="c-formula"><i>E</i>(<i>p̂</i>) = <i>p</i>，&nbsp; <i>Var</i>(<i>p̂</i>) = <i>p</i>(1−<i>p</i>)/<i>n</i>，&nbsp; <i>SE</i>(<i>p̂</i>) = √[<i>p</i>(1−<i>p</i>)/<i>n</i>]</div>
+  <p>当 <i>n</i> 大时，<i>p̂</i> ≈ N(<i>p</i>, <i>p</i>(1−<i>p</i>)/<i>n</i>)。正态近似通常要求</p>
+  <div class="c-formula"><i>np</i> ≥ 10 且 <i>n</i>(1−<i>p</i>) ≥ 10</div>
+  <p>因为 <i>p</i> 未知，实践中常用 <i>np̂</i> ≥ 10 与 <i>n</i>(1−<i>p̂</i>) ≥ 10 检查。条件要求“期望成功数与期望失败数都足够大”，否则<span class="c-term c-term--auto" data-term="binomial-distribution" title="二项分布｜binomial distribution：固定 n 次独立试验中成功次数的分布。">二项分布</span>太偏，正态近似很差。</p>
+  <p>例：<i>p</i> = 0.32 的顾客偏好在线支持，<i>n</i> = 200。<i>E</i>(<i>p̂</i>) = 0.32，<i>SE</i>(<i>p̂</i>) = √[0.32(0.68)/200] ≈ 0.03298。求 <i>P</i>(0.28 &lt; <i>p̂</i> &lt; 0.36)：</p>
+  <div class="c-formula"><i>P</i>((0.28−0.32)/0.03298 &lt; <i>Z</i> &lt; (0.36−0.32)/0.03298) = <i>P</i>(−1.21 &lt; <i>Z</i> &lt; 1.21) ≈ 0.774</div>
+  <p>注意 <i>p̂</i> 的标准误含 <i>p</i>，而 <i>p</i> 未知；区间估计时要用 <i>p̂</i> 替代，得到估计标准误。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><i>SE</i>(<i>p̂</i>) 的分母是 <i>n</i>，根号内是 <i>p</i>(1−<i>p</i>)。不要写成 <i>p</i>(1−<i>p</i>)/√<i>n</i>，也不要把 <i>n</i> 开根号后放到分子。</p>
+  </aside>
+  <p class="c-source">W9 p.26–28</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">9.8</span> 置信区间的形式与<span class="c-term c-term--auto" data-term="confidence-level" title="置信水平｜confidence level：方法长期覆盖真实参数的比率。">置信水平</span>的正确含义</h2>
+  <p><span class="c-term">点估计<span class="c-term__en">point estimate</span></span>用一个数估计参数，例如 <i>x̄</i> = 12.8 估计 <i>μ</i>。<span class="c-term">区间估计<span class="c-term__en">interval estimate</span></span>给出一段合理取值，例如 (11.3, 14.3)。区间比单点更诚实地表达不确定性。</p>
+  <p>本课程大多数置信区间形如</p>
+  <div class="c-formula">估计值 ± 误差范围，&nbsp;&nbsp; 误差范围 = 临界值 × 标准误</div>
+  <p>临界值由抽样分布与置信水平决定；标准误衡量估计量的抽样变异性。</p>
+  <p>置信水平的正确解释是本章最重要的概念。95% 置信区间不表示“这个已观测区间包含 <i>μ</i> 的概率是 95%”。数据观测后，区间固定、<i>μ</i> 固定，概率只能是 0 或 1。正确说法：若反复使用同样的抽样方法与区间公式，长期约有 95% 的区间会包含真实参数。95% 描述的是方法的长期覆盖率。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 9-2 重复抽样下置信区间的覆盖率</span>
+      <button class="c-copy" type="button" data-copy="Clean vector plot showing twenty horizontal confidence intervals stacked vertically against a vertical dashed line at the fixed population mean mu; about nineteen intervals cross the line and one misses it, illustrating long-run coverage. Intervals drawn as thin horizontal segments with a centre dot. Axes labelled parameter scale and sample number. Flat 2D, thin strokes, muted slate blue and warm grey, one interval highlighted in muted terracotta, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector plot showing twenty horizontal confidence intervals stacked vertically against a vertical dashed line at the fixed population mean mu; about nineteen intervals cross the line and one misses it, illustrating long-run coverage. Intervals drawn as thin horizontal segments with a centre dot. Axes labelled parameter scale and sample number. Flat 2D, thin strokes, muted slate blue and warm grey, one interval highlighted in muted terracotta, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>常用临界值：90% 用 1.645，95% 用 1.960，99% 用 2.576。置信水平越高，临界值越大，区间越宽。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>会说三句话：区间由样本算出；95% 指方法的长期覆盖率；不能对已观测区间说“<i>μ</i> 在其中的概率是 95%”。</p>
+  </aside>
+  <p class="c-source">W9 p.32–36</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">9.9</span> 均值的 z 区间（<i>σ</i> 已知）</h2>
+  <p>若 <i>X̄</i> 近似正态且总体标准差 <i>σ</i> 已知，则</p>
+  <div class="c-formula">(<i>X̄</i> − <i>μ</i>)/(<i>σ</i>/√<i>n</i>) ≈ N(0, 1)</div>
+  <p>由 <i>P</i>(−<i>z</i><sub><i>α</i>/2</sub> &lt; <i>Z</i> &lt; <i>z</i><sub><i>α</i>/2</sub>) = 1 − <i>α</i> 反解，得 100(1−<i>α</i>)% 置信区间</p>
+  <div class="c-formula"><i>x̄</i> ± <i>z</i><sub><i>α</i>/2</sub> · <i>σ</i>/√<i>n</i></div>
+  <p>条件：简单随机样本；总体正态或 <i>n</i> 大；<i>σ</i> 已知。</p>
+  <p>例：<i>n</i> = 100 名机组人员，平均辐射暴露 <i>x̄</i> = 219 mrem，已知 <i>σ</i> = 35 mrem。95% 区间：</p>
+  <div class="c-formula">219 ± 1.96(35/10) = 219 ± 6.86 &nbsp;⇒&nbsp; (212.14, 225.86)</div>
+  <p>解释：我们以 95% 的把握认为，所关心总体的真实年平均辐射暴露在 212.14 到 225.86 mrem 之间；这里的 95% 指所用方法的长期覆盖率。</p>
+  <p>推导的关键是“随机区间”而非“已观测区间”：在抽样前，<i>X̄</i> 随机，区间 <i>X̄</i> ± 1.96<i>σ</i>/√<i>n</i> 以 0.95 的概率覆盖固定的 <i>μ</i>；抽样后代入具体 <i>x̄</i>，区间变成固定数，概率陈述随之转为置信度陈述。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>不要把 <i>σ</i> 和 <i>σ</i>/√<i>n</i> 混用。区间宽度由标准误决定；若误用 <i>σ</i>，区间会宽 √<i>n</i> 倍，精度被严重低估。</p>
+  </aside>
+  <p class="c-source">W9 p.37–40</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">9.10</span> <i>σ</i> 未知与 t 区间</h2>
+  <p>实际中总体标准差很少已知，通常用样本标准差 <i>s</i> 估计。标准化统计量变为</p>
+  <div class="c-formula"><i>T</i> = (<i>X̄</i> − <i>μ</i>)/(<i>s</i>/√<i>n</i>)</div>
+  <p>若总体正态，则 <i>T</i> 服从自由度 <i>df</i> = <i>n</i> − 1 的 <span class="c-term">t 分布<span class="c-term__en">t distribution</span></span>。用 <i>s</i> 替代 <i>σ</i> 引入了额外不确定性，所以 t 分布尾部比标准正态更厚；<i>df</i> 越大，t 分布越接近 N(0,1)。</p>
+  <p>t 分布对称、中心为 0，由自由度索引。小样本时尾部厚的影响明显；大样本时 t 与 z 几乎相同。</p>
+  <p>100(1−<i>α</i>)% 的 t 区间为</p>
+  <div class="c-formula"><i>x̄</i> ± <i>t</i><sub><i>α</i>/2, <i>n</i>−1</sub> · <i>s</i>/√<i>n</i></div>
+  <p>条件：简单随机样本；总体近似正态或 <i>n</i> 大；小样本时不能有严重异常值。</p>
+  <p>例：<i>n</i> = 25，<i>x̄</i> = 12.8 分钟，<i>s</i> = 3.6 分钟，95% 区间，<i>df</i> = 24，<i>t</i><sub>0.025,24</sub> = 2.064：</p>
+  <div class="c-formula">12.8 ± 2.064(3.6/5) = 12.8 ± 1.49 &nbsp;⇒&nbsp; (11.31, 14.29)</div>
+  <p>另一个综合例：<i>n</i> = 49，<i>x̄</i> = 27.4，<i>s</i> = 5.2，<i>t</i><sub>0.025,48</sub> ≈ 2.01，区间 27.4 ± 2.01(5.2/7) = 27.4 ± 1.49 = (25.91, 28.89)。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>z 区间与 t 区间的选择</caption>
+      <thead><tr><th scope="col">情形</th><th scope="col">方法</th><th scope="col">区间</th></tr></thead>
+      <tbody>
+        <tr><td><i>σ</i> 已知，总体正态或 <i>n</i> 大</td><td>z</td><td><i>x̄</i> ± <i>z</i><sub><i>α</i>/2</sub><i>σ</i>/√<i>n</i></td></tr>
+        <tr><td><i>σ</i> 未知，总体正态或 <i>n</i> 大</td><td>t</td><td><i>x̄</i> ± <i>t</i><sub><i>α</i>/2,<i>n</i>−1</sub><i>s</i>/√<i>n</i></td></tr>
+        <tr><td>小样本且强偏/异常值</td><td>两者都不稳妥</td><td>改用其他方法或收集更多数据</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p><i>σ</i> 未知就用 t，自由度 <i>n</i>−1。小样本时 t 临界值明显大于 1.96，区间更宽；不要在所有情形都写 1.96。</p>
+  </aside>
+  <p class="c-source">W9 p.41–45</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">9.11</span> 比例的置信区间与误差范围</h2>
+  <p>对大样本、满足正态近似条件的比例，近似 100(1−<i>α</i>)% 置信区间为</p>
+  <div class="c-formula"><i>p̂</i> ± <i>z</i><sub><i>α</i>/2</sub> √[<i>p̂</i>(1−<i>p̂</i>)/<i>n</i>]</div>
+  <p>条件：随机样本；独立或 10% 条件；成功与失败计数都至少 10。</p>
+  <p>例：<i>n</i> = 200 名顾客中 86 人偏好在线支持，<i>p̂</i> = 86/200 = 0.43。95% 区间：</p>
+  <div class="c-formula"><i>SE</i>(<i>p̂</i>) = √[0.43(0.57)/200] ≈ 0.0350</div>
+  <div class="c-formula">0.43 ± 1.96(0.0350) = 0.43 ± 0.0687 &nbsp;⇒&nbsp; (0.361, 0.499)</div>
+  <p>解释：我们以 95% 的把握认为，全体顾客中偏好在线支持的真实比例在 0.361 到 0.499 之间。参数是总体比例，区间基于一个观测样本，95% 描述方法的长期可靠性。</p>
+  <p><span class="c-term">误差范围<span class="c-term__en">margin of error</span></span>是区间的半宽：<i>ME</i> = 临界值 × 标准误。均值（<i>σ</i> 已知）时为 <i>z</i><sub><i>α</i>/2</sub><i>σ</i>/√<i>n</i>；比例时为 <i>z</i><sub><i>α</i>/2</sub>√[<i>p̂</i>(1−<i>p̂</i>)/<i>n</i>]。</p>
+  <p>什么使区间变宽：置信水平更高；总体/样本变异更大；样本量更小；小样本用 t 而非 z。样本量增大使区间变窄，但精度与置信度在固定 <i>n</i> 下互相牵制。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>比例的区间用 <i>p̂</i>(1−<i>p̂</i>) 估计方差，不是用 <i>p</i>(1−<i>p</i>)（<i>p</i> 未知）。若题目给了 <i>p</i> 的计划值，样本量公式才用它。</p>
+  </aside>
+  <p class="c-source">W9 p.46–50</p>
+</section>
+
+<section id="s12">
+  <h2 id="s12"><span class="sec-num">9.12</span> 样本量、常见误读与报告</h2>
+  <p>估计均值时，若希望误差范围不超过 <i>E</i>，解 <i>E</i> = <i>z</i><sub><i>α</i>/2</sub><i>σ</i>/√<i>n</i>：</p>
+  <div class="c-formula"><i>n</i> = (<i>z</i><sub><i>α</i>/2</sub><i>σ</i> / <i>E</i>)<sup>2</sup></div>
+  <p>结果一律向上取整。例：95% 置信、<i>σ</i> = 10、<i>E</i> = 2，<i>n</i> = [1.96(10)/2]<sup>2</sup> = 96.04，取 97。</p>
+  <p>估计比例时，</p>
+  <div class="c-formula"><i>n</i> = <i>z</i><sub><i>α</i>/2</sub><sup>2</sup> <i>p</i>*(1−<i>p</i>*) / <i>E</i><sup>2</sup></div>
+  <p>若有计划值 <i>p</i>* 就用它；没有则用 <i>p</i>* = 0.5，因为 0.5 使 <i>p</i>*(1−<i>p</i>*) 最大，给出最保守（最大）的样本量。例：95%、<i>E</i> = 0.04、无先验估计，<i>n</i> = 1.96<sup>2</sup>(0.25)/0.04<sup>2</sup> = 600.25，取 601。</p>
+  <p>四种常见误读：说“95% 的样本数据落在区间内”；说“固定参数落在这个已观测区间的概率是 95%”；说“区间越宽数据越好”；说“置信区间消除了全部不确定性”。置信区间只描述参数的合理取值，不描述个体观测的分布。</p>
+  <p>好的报告包含：估计的参数；样本统计量与样本量；置信水平；区间与单位；结合情境的解释；条件或局限。模板：“基于容量为 <i>n</i> 的随机样本，总体均值/比例的 95% 置信区间为 …”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>样本量公式要开平方、向上取整；比例无先验时用 0.5。报告必须写单位与参数，不能只丢一个区间。</p>
+  </aside>
+  <p class="c-source">W9 p.51–55</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W9</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch08.html"><span>上一章</span>正态应用与指数分布</a>
+          <a class="pager__next" href="ch10.html"><span>下一章</span>简单线性回归与相关</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

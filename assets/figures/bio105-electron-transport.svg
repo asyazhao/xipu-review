@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 395" role="img" aria-label="呼吸链四复合体与质子泵送">
+<title>呼吸链四复合体与质子泵送</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">呼吸链四复合体与质子泵送</text>
+<text x="40" y="58" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">膜间隙（P 侧，正电）</text>
+<text x="40" y="378" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">线粒体基质（N 侧，负电）</text>
+<rect x="40" y="190" width="720" height="58" rx="0" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.0"/>
+<text x="700" y="236" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="end" font-weight="400">线粒体内膜</text>
+<rect x="140" y="170" width="58" height="92" rx="5" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="169" y="210" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" fill="#2E4A6B" text-anchor="middle" font-weight="700">I</text>
+<rect x="300" y="170" width="58" height="92" rx="5" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="329" y="210" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" fill="#2E4A6B" text-anchor="middle" font-weight="700">II</text>
+<rect x="450" y="170" width="58" height="92" rx="5" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="479" y="210" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" fill="#2E4A6B" text-anchor="middle" font-weight="700">III</text>
+<rect x="580" y="170" width="58" height="92" rx="5" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="609" y="210" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" fill="#2E4A6B" text-anchor="middle" font-weight="700">IV</text>
+<rect x="690" y="170" width="44" height="92" rx="5" fill="#FFFFFF" stroke="#5F735F" stroke-width="1.5"/>
+<text x="712" y="208" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5F735F" text-anchor="middle" font-weight="700">ATP</text>
+<text x="712" y="224" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5F735F" text-anchor="middle" font-weight="700">合酶</text>
+<text x="169" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5E5E58" text-anchor="middle" font-weight="400">I  NADH 脱氢酶</text>
+<text x="329" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5E5E58" text-anchor="middle" font-weight="400">II  琥珀酸脱氢酶</text>
+<text x="479" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5E5E58" text-anchor="middle" font-weight="400">III  bc1 复合体</text>
+<text x="609" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5E5E58" text-anchor="middle" font-weight="400">IV  cyt c 氧化酶</text>
+<text x="712" y="300" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9.5" fill="#5E5E58" text-anchor="middle" font-weight="400">ATP 合酶</text>
+<text x="80" y="145" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="middle" font-weight="600">NADH</text>
+<line x1="80" y1="152" x2="166" y2="166" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<text x="270" y="145" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="middle" font-weight="600">琥珀酸</text>
+<line x1="300" y1="152" x2="329" y2="166" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<path d="M 198 184 C 245 158, 350 158, 396 198" fill="none" stroke="#A8894F" stroke-width="1.8" marker-end="url(#arrowGold)"/>
+<text x="296" y="154" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#A8894F" text-anchor="middle" font-weight="400">e−</text>
+<line x1="358" y1="210" x2="392" y2="210" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="405" y="210" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#A8894F" text-anchor="middle" font-weight="700">Q</text>
+<line x1="418" y1="210" x2="446" y2="210" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<line x1="508" y1="210" x2="545" y2="210" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="526" y="197" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#A8894F" text-anchor="middle" font-weight="400">cyt c</text>
+<line x1="550" y1="210" x2="576" y2="210" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<line x1="638" y1="205" x2="700" y2="150" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="716" y="142" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#2E4A6B" text-anchor="middle" font-weight="600">O2</text>
+<line x1="169" y1="168" x2="169" y2="105" stroke="#8C4F45" stroke-width="1.4" marker-end="url(#arrowRed)"/>
+<text x="178" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8C4F45" text-anchor="start" font-weight="400">H+</text>
+<line x1="479" y1="168" x2="479" y2="105" stroke="#8C4F45" stroke-width="1.4" marker-end="url(#arrowRed)"/>
+<text x="488" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8C4F45" text-anchor="start" font-weight="400">H+</text>
+<line x1="609" y1="168" x2="609" y2="105" stroke="#8C4F45" stroke-width="1.4" marker-end="url(#arrowRed)"/>
+<text x="618" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#8C4F45" text-anchor="start" font-weight="400">H+</text>
+<line x1="712" y1="105" x2="712" y2="166" stroke="#5F735F" stroke-width="1.4" marker-end="url(#arrowGreen)"/>
+<text x="722" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5F735F" text-anchor="start" font-weight="400">H+ 回流</text>
+<text x="712" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5F735F" text-anchor="middle" font-weight="600">ADP + Pi → ATP</text>
+<text x="40" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#8C4F45" text-anchor="start" font-weight="400">复合体 I 与 II 都把电子交给泛醌 Q；复合体 II 不跨膜泵质子。</text>
+<text x="40" y="352" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">电子沿氧化还原电位阶梯下行；质子被泵向膜间隙，形成质子动力。</text>
+</svg>

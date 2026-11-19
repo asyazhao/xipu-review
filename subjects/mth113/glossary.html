@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 术语词典 · 全科复习</title>
+  <meta name="description" content="MTH113 概率与统计术语表：中文释义与英文专业词对照。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-glossary" data-subject="mth113" data-chapter="">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html" aria-current="page">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">MTH113</a>
+      <span>/</span>
+      <span aria-current="page">术语词典</span>
+    </nav>
+
+    <div class="search-page">
+      <header class="page-head">
+        <p class="kicker">MTH113</p>
+        <h1>术语词典</h1>
+        <p class="page-head__meta">Introduction to Probability and Statistics · 81 条</p>
+      </header>
+
+      <div class="toolbar" role="search">
+        <label class="visually-hidden" for="termFilter">搜索术语</label>
+        <input id="termFilter" type="search" placeholder="搜索术语（中文 / English）…" autocomplete="off">
+
+      </div>
+
+      <div class="table-scroll">
+        <table class="c-table glossary-table">
+          <caption>本学科 · 按章节顺序</caption>
+          <thead>
+            <tr>
+              <th scope="col">中文</th>
+              <th scope="col">English</th>
+              <th scope="col">释义</th>
+              <th scope="col">章节</th>
+            </tr>
+          </thead>
+          <tbody id="glossaryBody">
+            <tr id="categorical-variable" data-subject="MTH113" data-search="分类变量 categorical variable 取值为标签或组别、算术通常无意义的变量。">
+              <td data-label="中文">分类变量</td>
+              <td data-label="English">categorical variable</td>
+              <td data-label="释义">取值为标签或组别、算术通常无意义的变量。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="histogram" data-subject="MTH113" data-search="直方图 histogram 用相接的柱表示数值数据各区间频数的图。">
+              <td data-label="中文">直方图</td>
+              <td data-label="English">histogram</td>
+              <td data-label="释义">用相接的柱表示数值数据各区间频数的图。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="interquartile-range" data-subject="MTH113" data-search="四分位距 interquartile range Q3 与 Q1 之差，描述中间 50% 数据的跨度。">
+              <td data-label="中文">四分位距</td>
+              <td data-label="English">interquartile range</td>
+              <td data-label="释义">Q3 与 Q1 之差，描述中间 50% 数据的跨度。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="median" data-subject="MTH113" data-search="中位数 median 排序后位于中间的观测值，对极端值稳健。">
+              <td data-label="中文">中位数</td>
+              <td data-label="English">median</td>
+              <td data-label="释义">排序后位于中间的观测值，对极端值稳健。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="parameter" data-subject="MTH113" data-search="参数 parameter 对整个总体的数值概括，通常未知。">
+              <td data-label="中文">参数</td>
+              <td data-label="English">parameter</td>
+              <td data-label="释义">对整个总体的数值概括，通常未知。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="population" data-subject="MTH113" data-search="总体 population 我们想了解的全部个体或集合。">
+              <td data-label="中文">总体</td>
+              <td data-label="English">population</td>
+              <td data-label="释义">我们想了解的全部个体或集合。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="sample" data-subject="MTH113" data-search="样本 sample 实际被观测到的总体子集。">
+              <td data-label="中文">样本</td>
+              <td data-label="English">sample</td>
+              <td data-label="释义">实际被观测到的总体子集。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="statistic" data-subject="MTH113" data-search="统计量 statistic 由样本数据算出的数值概括。">
+              <td data-label="中文">统计量</td>
+              <td data-label="English">statistic</td>
+              <td data-label="释义">由样本数据算出的数值概括。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="statistics" data-subject="MTH113" data-search="统计学 statistics 在存在变异的前提下从数据中学习的科学。">
+              <td data-label="中文">统计学</td>
+              <td data-label="English">statistics</td>
+              <td data-label="释义">在存在变异的前提下从数据中学习的科学。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="variability" data-subject="MTH113" data-search="变异 variability 观测值并不完全相同的性质。">
+              <td data-label="中文">变异</td>
+              <td data-label="English">variability</td>
+              <td data-label="释义">观测值并不完全相同的性质。</td>
+              <td data-label="章节"><a href="ch01.html">01</a></td>
+            </tr>
+            <tr id="bayes-rule" data-subject="MTH113" data-search="Bayes 法则 Bayes&#x27; rule 由证据反推原因、更新先验概率的公式。">
+              <td data-label="中文">Bayes 法则</td>
+              <td data-label="English">Bayes&#x27; rule</td>
+              <td data-label="释义">由证据反推原因、更新先验概率的公式。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="combination" data-subject="MTH113" data-search="组合 combination 无序选取对象，顺序不同不算新结果。">
+              <td data-label="中文">组合</td>
+              <td data-label="English">combination</td>
+              <td data-label="释义">无序选取对象，顺序不同不算新结果。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="complement" data-subject="MTH113" data-search="补事件 complement A 不发生，即样本空间中不属于 A 的结果。">
+              <td data-label="中文">补事件</td>
+              <td data-label="English">complement</td>
+              <td data-label="释义">A 不发生，即样本空间中不属于 A 的结果。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="conditional-probability" data-subject="MTH113" data-search="条件概率 conditional probability 已知 B 发生时 A 发生的概率。">
+              <td data-label="中文">条件概率</td>
+              <td data-label="English">conditional probability</td>
+              <td data-label="释义">已知 B 发生时 A 发生的概率。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="event" data-subject="MTH113" data-search="事件 event 样本空间的子集，包含使事件发生的结果。">
+              <td data-label="中文">事件</td>
+              <td data-label="English">event</td>
+              <td data-label="释义">样本空间的子集，包含使事件发生的结果。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="independence" data-subject="MTH113" data-search="独立性 independence 一个事件发生不改变另一个事件概率的性质。">
+              <td data-label="中文">独立性</td>
+              <td data-label="English">independence</td>
+              <td data-label="释义">一个事件发生不改变另一个事件概率的性质。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="law-of-total-probability" data-subject="MTH113" data-search="全概率公式 law of total probability 按互斥完备划分对各路径概率加权求和。">
+              <td data-label="中文">全概率公式</td>
+              <td data-label="English">law of total probability</td>
+              <td data-label="释义">按互斥完备划分对各路径概率加权求和。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="mutually-exclusive-events" data-subject="MTH113" data-search="互斥事件 mutually exclusive events 不能同时发生的事件，交集为空集。">
+              <td data-label="中文">互斥事件</td>
+              <td data-label="English">mutually exclusive events</td>
+              <td data-label="释义">不能同时发生的事件，交集为空集。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="permutation" data-subject="MTH113" data-search="排列 permutation 有序选取对象，顺序不同算不同结果。">
+              <td data-label="中文">排列</td>
+              <td data-label="English">permutation</td>
+              <td data-label="释义">有序选取对象，顺序不同算不同结果。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="sample-space" data-subject="MTH113" data-search="样本空间 sample space 随机试验全部可能结果构成的集合。">
+              <td data-label="中文">样本空间</td>
+              <td data-label="English">sample space</td>
+              <td data-label="释义">随机试验全部可能结果构成的集合。</td>
+              <td data-label="章节"><a href="ch02.html">02</a></td>
+            </tr>
+            <tr id="cumulative-distribution-function" data-subject="MTH113" data-search="累积分布函数 cumulative distribution function F(x)=P(X≤x)，累积到 x 的概率。">
+              <td data-label="中文">累积分布函数</td>
+              <td data-label="English">cumulative distribution function</td>
+              <td data-label="释义">F(x)=P(X≤x)，累积到 x 的概率。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="expected-value" data-subject="MTH113" data-search="期望 expected value 取值的概率加权平均，描述分布中心。">
+              <td data-label="中文">期望</td>
+              <td data-label="English">expected value</td>
+              <td data-label="释义">取值的概率加权平均，描述分布中心。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="indicator-random-variable" data-subject="MTH113" data-search="指示变量 indicator random variable 事件发生时取 1、否则取 0 的随机变量。">
+              <td data-label="中文">指示变量</td>
+              <td data-label="English">indicator random variable</td>
+              <td data-label="释义">事件发生时取 1、否则取 0 的随机变量。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="probability-mass-function" data-subject="MTH113" data-search="概率质量函数 probability mass function 给出离散随机变量各取值概率的函数。">
+              <td data-label="中文">概率质量函数</td>
+              <td data-label="English">probability mass function</td>
+              <td data-label="释义">给出离散随机变量各取值概率的函数。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="random-variable" data-subject="MTH113" data-search="随机变量 random variable 把样本空间每个结果映射为数值的函数。">
+              <td data-label="中文">随机变量</td>
+              <td data-label="English">random variable</td>
+              <td data-label="释义">把样本空间每个结果映射为数值的函数。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="standard-deviation" data-subject="MTH113" data-search="标准差 standard deviation 方差的平方根，单位与原变量相同。">
+              <td data-label="中文">标准差</td>
+              <td data-label="English">standard deviation</td>
+              <td data-label="释义">方差的平方根，单位与原变量相同。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="support" data-subject="MTH113" data-search="支撑集 support 随机变量以正概率取到的全部值。">
+              <td data-label="中文">支撑集</td>
+              <td data-label="English">support</td>
+              <td data-label="释义">随机变量以正概率取到的全部值。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="variance" data-subject="MTH113" data-search="方差 variance 偏差平方的概率加权平均，衡量离散程度。">
+              <td data-label="中文">方差</td>
+              <td data-label="English">variance</td>
+              <td data-label="释义">偏差平方的概率加权平均，衡量离散程度。</td>
+              <td data-label="章节"><a href="ch03.html">03</a></td>
+            </tr>
+            <tr id="continuous-random-variable" data-subject="MTH113" data-search="连续随机变量 continuous random variable 可能取值填满一个区间的随机变量。">
+              <td data-label="中文">连续随机变量</td>
+              <td data-label="English">continuous random variable</td>
+              <td data-label="释义">可能取值填满一个区间的随机变量。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="density-curve" data-subject="MTH113" data-search="密度曲线 density curve 面积表示概率的光滑曲线。">
+              <td data-label="中文">密度曲线</td>
+              <td data-label="English">density curve</td>
+              <td data-label="释义">面积表示概率的光滑曲线。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="normalizing-constant" data-subject="MTH113" data-search="归一化常数 normalizing constant 使密度全轴积分为 1 的乘数。">
+              <td data-label="中文">归一化常数</td>
+              <td data-label="English">normalizing constant</td>
+              <td data-label="释义">使密度全轴积分为 1 的乘数。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="probability-density-function" data-subject="MTH113" data-search="概率密度函数 probability density function 曲线下面积给出区间概率的函数。">
+              <td data-label="中文">概率密度函数</td>
+              <td data-label="English">probability density function</td>
+              <td data-label="释义">曲线下面积给出区间概率的函数。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="quantile" data-subject="MTH113" data-search="分位数 quantile 使累积概率达到 p 的取值。">
+              <td data-label="中文">分位数</td>
+              <td data-label="English">quantile</td>
+              <td data-label="释义">使累积概率达到 p 的取值。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="service-level" data-subject="MTH113" data-search="服务水平 service level 需求不超过备货量的目标概率。">
+              <td data-label="中文">服务水平</td>
+              <td data-label="English">service level</td>
+              <td data-label="释义">需求不超过备货量的目标概率。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="uniform-distribution" data-subject="MTH113" data-search="均匀分布 uniform distribution 区间上密度恒定、等长区间等概率的分布。">
+              <td data-label="中文">均匀分布</td>
+              <td data-label="English">uniform distribution</td>
+              <td data-label="释义">区间上密度恒定、等长区间等概率的分布。</td>
+              <td data-label="章节"><a href="ch04.html">04</a></td>
+            </tr>
+            <tr id="acceptance-sampling" data-subject="MTH113" data-search="验收抽样 acceptance sampling 从批次中抽检若干件以判断质量的程序。">
+              <td data-label="中文">验收抽样</td>
+              <td data-label="English">acceptance sampling</td>
+              <td data-label="释义">从批次中抽检若干件以判断质量的程序。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="bernoulli-random-variable" data-subject="MTH113" data-search="Bernoulli 随机变量 Bernoulli random variable 成功取 1、失败取 0 的 0/1 变量。">
+              <td data-label="中文">Bernoulli 随机变量</td>
+              <td data-label="English">Bernoulli random variable</td>
+              <td data-label="释义">成功取 1、失败取 0 的 0/1 变量。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="bernoulli-trial" data-subject="MTH113" data-search="Bernoulli 试验 Bernoulli trial 恰有两个结果（成功/失败）的随机试验。">
+              <td data-label="中文">Bernoulli 试验</td>
+              <td data-label="English">Bernoulli trial</td>
+              <td data-label="释义">恰有两个结果（成功/失败）的随机试验。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="binomial-distribution" data-subject="MTH113" data-search="二项分布 binomial distribution 固定 n 次独立试验中成功次数的分布。">
+              <td data-label="中文">二项分布</td>
+              <td data-label="English">binomial distribution</td>
+              <td data-label="释义">固定 n 次独立试验中成功次数的分布。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="binomial-experiment" data-subject="MTH113" data-search="二项试验 binomial experiment 满足固定 n、两结果、独立、p 恒定的试验。">
+              <td data-label="中文">二项试验</td>
+              <td data-label="English">binomial experiment</td>
+              <td data-label="释义">满足固定 n、两结果、独立、p 恒定的试验。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="mode" data-subject="MTH113" data-search="众数 mode 概率质量函数最大的取值，即最可能值。">
+              <td data-label="中文">众数</td>
+              <td data-label="English">mode</td>
+              <td data-label="释义">概率质量函数最大的取值，即最可能值。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="success" data-subject="MTH113" data-search="成功 success 概率模型中被计数的那个事件，不一定是好事。">
+              <td data-label="中文">成功</td>
+              <td data-label="English">success</td>
+              <td data-label="释义">概率模型中被计数的那个事件，不一定是好事。</td>
+              <td data-label="章节"><a href="ch05.html">05</a></td>
+            </tr>
+            <tr id="geometric-distribution" data-subject="MTH113" data-search="几何分布 geometric distribution 直到第一次成功的试验次数的分布。">
+              <td data-label="中文">几何分布</td>
+              <td data-label="English">geometric distribution</td>
+              <td data-label="释义">直到第一次成功的试验次数的分布。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="memoryless-property" data-subject="MTH113" data-search="无记忆性 memoryless property 已等待 s 后剩余等待分布与原来相同的性质。">
+              <td data-label="中文">无记忆性</td>
+              <td data-label="English">memoryless property</td>
+              <td data-label="释义">已等待 s 后剩余等待分布与原来相同的性质。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="overdispersion" data-subject="MTH113" data-search="过离散 overdispersion 观测方差远大于均值、Poisson 模型不适的情形。">
+              <td data-label="中文">过离散</td>
+              <td data-label="English">overdispersion</td>
+              <td data-label="释义">观测方差远大于均值、Poisson 模型不适的情形。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="poisson-approximation" data-subject="MTH113" data-search="Poisson 近似 Poisson approximation n 大 p 小时用 Pois(np) 近似二项分布。">
+              <td data-label="中文">Poisson 近似</td>
+              <td data-label="English">Poisson approximation</td>
+              <td data-label="释义">n 大 p 小时用 Pois(np) 近似二项分布。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="poisson-distribution" data-subject="MTH113" data-search="Poisson 分布 Poisson distribution 固定区间内事件计数的分布，均值和方差均为 λ。">
+              <td data-label="中文">Poisson 分布</td>
+              <td data-label="English">Poisson distribution</td>
+              <td data-label="释义">固定区间内事件计数的分布，均值和方差均为 λ。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="poisson-process" data-subject="MTH113" data-search="Poisson 过程 Poisson process 事件按恒定平均速率独立随机发生的计数过程。">
+              <td data-label="中文">Poisson 过程</td>
+              <td data-label="English">Poisson process</td>
+              <td data-label="释义">事件按恒定平均速率独立随机发生的计数过程。</td>
+              <td data-label="章节"><a href="ch06.html">06</a></td>
+            </tr>
+            <tr id="empirical-rule" data-subject="MTH113" data-search="经验法则 empirical rule 正态下 μ±σ、±2σ、±3σ 约含 68/95/99.7%。">
+              <td data-label="中文">经验法则</td>
+              <td data-label="English">empirical rule</td>
+              <td data-label="释义">正态下 μ±σ、±2σ、±3σ 约含 68/95/99.7%。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="inverse-cdf" data-subject="MTH113" data-search="反 CDF inverse CDF 由累积概率 p 反求取值 xp=F⁻¹(p)。">
+              <td data-label="中文">反 CDF</td>
+              <td data-label="English">inverse CDF</td>
+              <td data-label="释义">由累积概率 p 反求取值 xp=F⁻¹(p)。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="normal-distribution" data-subject="MTH113" data-search="正态分布 normal distribution 由均值 μ 与标准差 σ 决定的对称钟形分布。">
+              <td data-label="中文">正态分布</td>
+              <td data-label="English">normal distribution</td>
+              <td data-label="释义">由均值 μ 与标准差 σ 决定的对称钟形分布。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="standard-normal-distribution" data-subject="MTH113" data-search="标准正态分布 standard normal distribution 均值 0、方差 1 的正态分布，记 N(0,1)。">
+              <td data-label="中文">标准正态分布</td>
+              <td data-label="English">standard normal distribution</td>
+              <td data-label="释义">均值 0、方差 1 的正态分布，记 N(0,1)。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="standardization" data-subject="MTH113" data-search="标准化 standardization 用 Z=(X−μ)/σ 把正态变量变为标准正态。">
+              <td data-label="中文">标准化</td>
+              <td data-label="English">standardization</td>
+              <td data-label="释义">用 Z=(X−μ)/σ 把正态变量变为标准正态。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="survival-function" data-subject="MTH113" data-search="生存函数 survival function S(x)=P(X&gt;x)=1−F(x)，右尾概率。">
+              <td data-label="中文">生存函数</td>
+              <td data-label="English">survival function</td>
+              <td data-label="释义">S(x)=P(X&gt;x)=1−F(x)，右尾概率。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="z-score" data-subject="MTH113" data-search="z 分数 z-score 观测值距均值多少个标准差。">
+              <td data-label="中文">z 分数</td>
+              <td data-label="English">z-score</td>
+              <td data-label="释义">观测值距均值多少个标准差。</td>
+              <td data-label="章节"><a href="ch07.html">07</a></td>
+            </tr>
+            <tr id="exponential-distribution" data-subject="MTH113" data-search="指数分布 exponential distribution 用率 λ 描述等待时间、密度 λe^(−λx) 的分布。">
+              <td data-label="中文">指数分布</td>
+              <td data-label="English">exponential distribution</td>
+              <td data-label="释义">用率 λ 描述等待时间、密度 λe^(−λx) 的分布。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="hazard-rate" data-subject="MTH113" data-search="风险率 hazard rate 已存活到 x 时的瞬时失败率；指数下恒为 λ。">
+              <td data-label="中文">风险率</td>
+              <td data-label="English">hazard rate</td>
+              <td data-label="释义">已存活到 x 时的瞬时失败率；指数下恒为 λ。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="normal-probability-plot" data-subject="MTH113" data-search="正态概率图 normal probability plot 检查数据是否近似正态的图，点应大致成直线。">
+              <td data-label="中文">正态概率图</td>
+              <td data-label="English">normal probability plot</td>
+              <td data-label="释义">检查数据是否近似正态的图，点应大致成直线。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="normal-quantile" data-subject="MTH113" data-search="正态分位数 normal quantile 满足 Φ(zp)=p 后由 μ+zpσ 得到的临界值。">
+              <td data-label="中文">正态分位数</td>
+              <td data-label="English">normal quantile</td>
+              <td data-label="释义">满足 Φ(zp)=p 后由 μ+zpσ 得到的临界值。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="scale-parameter" data-subject="MTH113" data-search="尺度参数 scale parameter 指数分布的均值参数 β=1/λ。">
+              <td data-label="中文">尺度参数</td>
+              <td data-label="English">scale parameter</td>
+              <td data-label="释义">指数分布的均值参数 β=1/λ。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="specification-limit" data-subject="MTH113" data-search="规格限 specification limit 产品合格与否的上下限。">
+              <td data-label="中文">规格限</td>
+              <td data-label="English">specification limit</td>
+              <td data-label="释义">产品合格与否的上下限。</td>
+              <td data-label="章节"><a href="ch08.html">08</a></td>
+            </tr>
+            <tr id="central-limit-theorem" data-subject="MTH113" data-search="中心极限定理 Central Limit Theorem n 大时样本均值近似正态的定理。">
+              <td data-label="中文">中心极限定理</td>
+              <td data-label="English">Central Limit Theorem</td>
+              <td data-label="释义">n 大时样本均值近似正态的定理。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="confidence-interval" data-subject="MTH113" data-search="置信区间 confidence interval 由样本给出的参数合理取值区间。">
+              <td data-label="中文">置信区间</td>
+              <td data-label="English">confidence interval</td>
+              <td data-label="释义">由样本给出的参数合理取值区间。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="confidence-level" data-subject="MTH113" data-search="置信水平 confidence level 方法长期覆盖真实参数的比率。">
+              <td data-label="中文">置信水平</td>
+              <td data-label="English">confidence level</td>
+              <td data-label="释义">方法长期覆盖真实参数的比率。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="degrees-of-freedom" data-subject="MTH113" data-search="自由度 degrees of freedom 估计中可自由变动的信息数目，t 区间为 n−1。">
+              <td data-label="中文">自由度</td>
+              <td data-label="English">degrees of freedom</td>
+              <td data-label="释义">估计中可自由变动的信息数目，t 区间为 n−1。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="margin-of-error" data-subject="MTH113" data-search="误差范围 margin of error 置信区间的半宽，临界值乘标准误。">
+              <td data-label="中文">误差范围</td>
+              <td data-label="English">margin of error</td>
+              <td data-label="释义">置信区间的半宽，临界值乘标准误。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="sample-proportion" data-subject="MTH113" data-search="样本比例 sample proportion p̂=X/n，样本中成功数除以样本量。">
+              <td data-label="中文">样本比例</td>
+              <td data-label="English">sample proportion</td>
+              <td data-label="释义">p̂=X/n，样本中成功数除以样本量。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="sampling-distribution" data-subject="MTH113" data-search="抽样分布 sampling distribution 重复抽样下统计量的概率分布。">
+              <td data-label="中文">抽样分布</td>
+              <td data-label="English">sampling distribution</td>
+              <td data-label="释义">重复抽样下统计量的概率分布。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="standard-error" data-subject="MTH113" data-search="标准误 standard error 统计量抽样分布的标准差。">
+              <td data-label="中文">标准误</td>
+              <td data-label="English">standard error</td>
+              <td data-label="释义">统计量抽样分布的标准差。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="t-distribution" data-subject="MTH113" data-search="t 分布 t distribution σ 未知时标准化均值的分布，尾部较厚。">
+              <td data-label="中文">t 分布</td>
+              <td data-label="English">t distribution</td>
+              <td data-label="释义">σ 未知时标准化均值的分布，尾部较厚。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="unbiased-estimator" data-subject="MTH113" data-search="无偏估计 unbiased estimator 重复抽样下期望等于被估参数的估计量。">
+              <td data-label="中文">无偏估计</td>
+              <td data-label="English">unbiased estimator</td>
+              <td data-label="释义">重复抽样下期望等于被估参数的估计量。</td>
+              <td data-label="章节"><a href="ch09.html">09</a></td>
+            </tr>
+            <tr id="coefficient-of-determination" data-subject="MTH113" data-search="决定系数 coefficient of determination R²=1−SSE/SST，解释变异占总变异的比例。">
+              <td data-label="中文">决定系数</td>
+              <td data-label="English">coefficient of determination</td>
+              <td data-label="释义">R²=1−SSE/SST，解释变异占总变异的比例。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+            <tr id="correlation-coefficient" data-subject="MTH113" data-search="相关系数 correlation coefficient 标准化协方差，−1 到 1，衡量线性强度。">
+              <td data-label="中文">相关系数</td>
+              <td data-label="English">correlation coefficient</td>
+              <td data-label="释义">标准化协方差，−1 到 1，衡量线性强度。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+            <tr id="covariance" data-subject="MTH113" data-search="协方差 covariance 中心化乘积的平均，衡量共同变动方向。">
+              <td data-label="中文">协方差</td>
+              <td data-label="English">covariance</td>
+              <td data-label="释义">中心化乘积的平均，衡量共同变动方向。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+            <tr id="explanatory-variable" data-subject="MTH113" data-search="解释变量 explanatory variable 用来解释或预测 y 的变量 x。">
+              <td data-label="中文">解释变量</td>
+              <td data-label="English">explanatory variable</td>
+              <td data-label="释义">用来解释或预测 y 的变量 x。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+            <tr id="extrapolation" data-subject="MTH113" data-search="外推 extrapolation 在观测范围之外用回归线预测。">
+              <td data-label="中文">外推</td>
+              <td data-label="English">extrapolation</td>
+              <td data-label="释义">在观测范围之外用回归线预测。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+            <tr id="influential-point" data-subject="MTH113" data-search="影响点 influential point 删除后显著改变拟合直线的观测。">
+              <td data-label="中文">影响点</td>
+              <td data-label="English">influential point</td>
+              <td data-label="释义">删除后显著改变拟合直线的观测。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+            <tr id="least-squares-line" data-subject="MTH113" data-search="最小二乘直线 least-squares line 使残差平方和最小的拟合直线。">
+              <td data-label="中文">最小二乘直线</td>
+              <td data-label="English">least-squares line</td>
+              <td data-label="释义">使残差平方和最小的拟合直线。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+            <tr id="residual" data-subject="MTH113" data-search="残差 residual 观测值与拟合值之差 y−ŷ。">
+              <td data-label="中文">残差</td>
+              <td data-label="English">residual</td>
+              <td data-label="释义">观测值与拟合值之差 y−ŷ。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+            <tr id="response-variable" data-subject="MTH113" data-search="响应变量 response variable 被解释或被预测的变量 y。">
+              <td data-label="中文">响应变量</td>
+              <td data-label="English">response variable</td>
+              <td data-label="释义">被解释或被预测的变量 y。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+            <tr id="scatterplot" data-subject="MTH113" data-search="散点图 scatterplot 以每对 (x,y) 为点的二维图。">
+              <td data-label="中文">散点图</td>
+              <td data-label="English">scatterplot</td>
+              <td data-label="释义">以每对 (x,y) 为点的二维图。</td>
+              <td data-label="章节"><a href="ch10.html">10</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="glossaryEmpty" class="glossary-empty" hidden>未找到，试试英文术语或更短的关键词。</p>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+  <script src="../../assets/js/search.js" defer></script>
+</body>
+</html>

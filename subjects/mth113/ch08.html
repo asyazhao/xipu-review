@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 正态应用与指数分布 · 全科复习</title>
+  <meta name="description" content="MTH113 第 8 章 正态应用与指数分布：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="mth113" data-chapter="08">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">MTH113</a>
+      <span>/</span>
+      <span aria-current="page">第 8 章 正态应用与指数分布</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html" class="is-current" aria-current="page"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html" class="is-current" aria-current="page"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">MTH113 · 第 8 章</p>
+          <h1>正态应用与指数分布</h1>
+          <p class="chapter-head__en">Normal Applications &amp; Exponential Distribution</p>
+          <p class="chapter-head__meta">来源 W8 · 术语 6 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">8.1 从概率到分位数：反标准化</a></li>
+        <li><a href="#s2">8.2 正态分位数的典型应用</a></li>
+        <li><a href="#s3">8.3 规格限与过程改进</a></li>
+        <li><a href="#s4">8.4 正态模型是否合适：图与判断</a></li>
+        <li><a href="#s5">8.5 指数分布：等待时间的密度</a></li>
+        <li><a href="#s6">8.6 指数 CDF 与生存函数</a></li>
+        <li><a href="#s7">8.7 指数均值、方差与两种参数化</a></li>
+        <li><a href="#s8">8.8 指数分位数、无记忆性与风险率</a></li>
+        <li><a href="#s9">8.9 与 Poisson 过程的联系</a></li>
+        <li><a href="#s10">8.10 均匀、正态与指数的比较</a></li>
+        <li><a href="#s11">8.11 综合案例与常见错误</a></li>
+        <li><a href="#s12">8.12 离散与连续等待时间的对照</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲把正态计算从“给区间求概率”反过来变成“给概率求临界值”，用于<span class="c-term c-term--auto" data-term="quantile" title="分位数｜quantile：使累积概率达到 p 的取值。">分位数</span>、<span class="c-term c-term--auto" data-term="specification-limit" title="规格限｜specification limit：产品合格与否的上下限。">规格限</span>与服务目标；随后引入指数分布描述等待时间，掌握其 CDF、<span class="c-term c-term--auto" data-term="survival-function" title="生存函数｜survival function：S(x)=P(X&gt;x)=1−F(x)，右尾概率。">生存函数</span>、均值与无记忆性。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li><span class="c-term c-term--auto" data-term="normal-quantile" title="正态分位数｜normal quantile：满足 Φ(zp)=p 后由 μ+zpσ 得到的临界值。">正态分位数</span>：<i>x<sub>p</sub></i> = <i>μ</i> + <i>z<sub>p</sub></i><i>σ</i>，其中 <i>z<sub>p</sub></i> = <i>Φ</i><sup>−1</sup>(<i>p</i>)。</li>
+    <li>常用临界值：<i>z</i><sub>0.90</sub> = 1.282，<i>z</i><sub>0.95</sub> = 1.645，<i>z</i><sub>0.975</sub> = 1.960，<i>z</i><sub>0.99</sub> = 2.326。</li>
+    <li>上尾问题先转成下尾：<i>P</i>(<i>X</i> &gt; <i>c</i>) = 0.01 等价于 <i>P</i>(<i>X</i> &lt; <i>c</i>) = 0.99。</li>
+    <li>中间 95% 区间为 <i>μ</i> ± 1.96<i>σ</i>；减小 <i>σ</i> 或把 <i>μ</i> 移到规格中心都能提高合格率。</li>
+    <li>指数分布 <i>f</i>(<i>x</i>) = <i>λe</i><sup>−<i>λx</i></sup>（<i>x</i> ≥ 0），<i>F</i>(<i>x</i>) = 1 − <i>e</i><sup>−<i>λx</i></sup>，<i>S</i>(<i>x</i>) = <i>e</i><sup>−<i>λx</i></sup>。</li>
+    <li><i>E</i>(<i>X</i>) = 1/<i>λ</i>，<i>Var</i>(<i>X</i>) = 1/<i>λ</i><sup>2</sup>；注意区分率参数 <i>λ</i> 与均值参数 <i>β</i> = 1/<i>λ</i>。</li>
+    <li>指数分布无记忆：<i>P</i>(<i>X</i> &gt; <i>s</i>+<i>t</i> | <i>X</i> &gt; <i>s</i>) = <i>P</i>(<i>X</i> &gt; <i>t</i>)，风险率恒为 <i>λ</i>。</li>
+    <li><span class="c-term c-term--auto" data-term="poisson-process" title="Poisson 过程｜Poisson process：事件按恒定平均速率独立随机发生的计数过程。">Poisson 过程</span>的<span class="c-term c-term--auto" data-term="event" title="事件｜event：样本空间的子集，包含使事件发生的结果。">事件</span>计数与等待时间互为两面：<i>N</i>(<i>t</i>) ~ Pois(<i>λt</i>)，首次事件等待时间 ~ Exp(<i>λ</i>)。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">8.1</span> 从概率到分位数：反<span class="c-term c-term--auto" data-term="standardization" title="标准化｜standardization：用 Z=(X−μ)/σ 把正态变量变为标准正态。">标准化</span></h2>
+  <p>第 7 周做的是“已知 <i>x</i> 求概率”：<i>P</i>(<i>X</i> &lt; <i>x</i>) = <i>Φ</i>((<i>x</i>−<i>μ</i>)/<i>σ</i>)。本讲反过来：“已知概率 <i>p</i> 求临界值 <i>c</i>”。若 <i>X</i> ~ N(<i>μ</i>, <i>σ</i><sup>2</sup>) 且 <i>P</i>(<i>X</i> &lt; <i>c</i>) = <i>p</i>，分两步：</p>
+  <ol>
+    <li>找 <i>z<sub>p</sub></i> 使 <i>Φ</i>(<i>z<sub>p</sub></i>) = <i>p</i>。</li>
+    <li>反标准化：<i>c</i> = <i>μ</i> + <i>z<sub>p</sub></i><i>σ</i>。</li>
+  </ol>
+  <p>因此第 <i>p</i> 分位数为</p>
+  <div class="c-formula"><i>x<sub>p</sub></i> = <i>μ</i> + <i>z<sub>p</sub></i><i>σ</i>，&nbsp;&nbsp; <i>z<sub>p</sub></i> = <i>Φ</i><sup>−1</sup>(<i>p</i>)</div>
+  <p>常用临界值要记：<i>z</i><sub>0.90</sub> = 1.282，<i>z</i><sub>0.95</sub> = 1.645，<i>z</i><sub>0.975</sub> = 1.960，<i>z</i><sub>0.99</sub> = 2.326。下尾的 <i>z</i><sub>0.10</sub> = −1.282，<i>z</i><sub>0.05</sub> = −1.645，由对称性得到。</p>
+  <p>上尾问题先转下尾。若要求 <i>P</i>(<i>X</i> &gt; <i>c</i>) = 0.01，则 <i>P</i>(<i>X</i> &lt; <i>c</i>) = 0.99，用 <i>z</i><sub>0.99</sub> = 2.326。若直接对 0.01 查表而忘记取补，会得到负的临界值，位置完全错误。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>“只有 1% 超过”是上尾 0.01，对应下尾 0.99；临界值是 <i>μ</i> + 2.326<i>σ</i>，不是 <i>μ</i> − 2.326<i>σ</i>。</p>
+  </aside>
+  <p class="c-source">W8 p.5–7</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">8.2</span> 正态分位数的典型应用</h2>
+  <p>例 1（上尾）：注册时间 <i>X</i> ~ N(12, 2<sup>2</sup>) 分钟，求只有 1% 学生超过的时间。<i>P</i>(<i>X</i> &gt; <i>c</i>) = 0.01 ⇒ <i>P</i>(<i>X</i> &lt; <i>c</i>) = 0.99，<i>z</i><sub>0.99</sub> = 2.326，<i>c</i> = 12 + 2.326(2) = 16.652 分钟。</p>
+  <p>例 2（下尾）：考试成绩 <i>X</i> ~ N(70, 12<sup>2</sup>)，求最低 10% 的临界值。<i>z</i><sub>0.10</sub> = −1.282，<i>c</i> = 70 + (−1.282)(12) = 54.616。约 10% 的成绩低于 54.6。</p>
+  <p>例 3（中间区间）：<i>X</i> ~ N(<i>μ</i>, <i>σ</i><sup>2</sup>) 的中间 95% 为 <i>μ</i> ± 1.96<i>σ</i>。若 <i>X</i> ~ N(500, 20<sup>2</sup>)，则 500 ± 1.96(20) = 500 ± 39.2，即约 (460.8, 539.2)。</p>
+  <p>例 4（规格限）：零件长度 <i>X</i> ~ N(50, 0.3<sup>2</sup>) mm，合格范围 49.5 &lt; <i>X</i> &lt; 50.4。<i>z</i><sub>L</sub> = (49.5−50)/0.3 = −1.667，<i>z</i><sub>U</sub> = (50.4−50)/0.3 = 1.333。<i>P</i> = <i>Φ</i>(1.333) − <i>Φ</i>(−1.667) ≈ 0.9088 − 0.0478 = 0.8610。约 86.1% 合格。</p>
+  <p>例 5（等级线）：成绩 <i>X</i> ~ N(72, 9<sup>2</sup>)，前 15% 得 A。要求 <i>P</i>(<i>X</i> &gt; <i>c</i>) = 0.15，即 <i>P</i>(<i>X</i> &lt; <i>c</i>) = 0.85，<i>z</i><sub>0.85</sub> ≈ 1.036，<i>c</i> = 72 + 1.036(9) ≈ 81.324。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 8-1 正态分位数与尾部面积</span>
+      <button class="c-copy" type="button" data-copy="Clean vector normal density curve with mean 12 and standard deviation 2, with the right tail beyond 16.65 shaded and labelled top 1 percent, and a dashed vertical line at the cutoff. A small arrow shows converting the upper tail 0.01 to the lower cumulative 0.99. Axes labelled x and f(x). Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector normal density curve with mean 12 and standard deviation 2, with the right tail beyond 16.65 shaded and labelled top 1 percent, and a dashed vertical line at the cutoff. A small arrow shows converting the upper tail 0.01 to the lower cumulative 0.99. Axes labelled x and f(x). Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels only, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>分位数公式里的 <i>z<sub>p</sub></i> 要和累积方向一致。上尾 5% 对应 <i>z</i><sub>0.95</sub> = 1.645，不是 <i>z</i><sub>0.05</sub>。先把“超过/低于/中间”画成尾部，再选 z。</p>
+  </aside>
+  <p class="c-source">W8 p.8–11、56</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">8.3</span> 规格限与过程改进</h2>
+  <p>制造场景中，规格限给出合格区间，正态模型把合格率转成两个 z 之间的面积。若目标 50 mm、合格范围 49.5 到 50.5，提高合格率有两条路：</p>
+  <ol>
+    <li>把过程中心移到目标：让 <i>μ</i> 更接近 50。</li>
+    <li>减小<span class="c-term c-term--auto" data-term="variability" title="变异｜variability：观测值并不完全相同的性质。">变异</span>：降低 <i>σ</i>。</li>
+  </ol>
+  <p>数学效果不同。移动 <i>μ</i> 使两个标准化限同时向同一方向平移，可能改善一侧却恶化另一侧；减小 <i>σ</i> 使两个限离 0 更远，中心面积增大，通常同时降低两侧超规概率。</p>
+  <p>讲义强调“模型判断”：正态曲线是模型，不是保证。若过程有偏移、刀具磨损或混批，单峰正态可能不够；此时应先分层或改用其他模型，而不是硬套公式。合格率计算只在该模型成立的条件下有效。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>“中心对准”与“降低变异”是两种能力：前者是准确性（accuracy），后者是精密度（precision）。合格率同时受两者影响。</p>
+  </aside>
+  <p class="c-source">W8 p.11–12</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">8.4</span> 正态模型是否合适：图与判断</h2>
+  <p>正态模型最适合“受许多小的独立变异源影响的连续测量”。不太合适的情形：数据强偏态；变量不能为负且大量聚集在 0 附近；存在多个峰；尾部远厚于正态。</p>
+  <p>图形检查三件套：<span class="c-term c-term--auto" data-term="histogram" title="直方图｜histogram：用相接的柱表示数值数据各区间频数的图。">直方图</span>是否大致对称单峰；箱线图是否有强偏或大量异常值；<span class="c-term c-term--auto" data-term="normal-probability-plot" title="正态概率图｜normal probability plot：检查数据是否近似正态的图，点应大致成直线。">正态概率图</span>（normal probability plot）上的点是否大致成直线。小<span class="c-term c-term--auto" data-term="sample" title="样本｜sample：实际被观测到的总体子集。">样本</span>即使来自正态<span class="c-term c-term--auto" data-term="population" title="总体｜population：我们想了解的全部个体或集合。">总体</span>也可能看起来不规则，因此要结合样本量与情境判断，不能只看一张图就下结论。</p>
+  <p>讲义还给出模型选择的练习：班车每 12 分钟一班、乘客随机到达，等车时间用均匀；机器生产的螺栓直径用正态；安静时段下一单在线订单的等待时间用指数；软件生成的 0 到 1 随机数用均匀。选择依据是“<span class="c-term c-term--auto" data-term="support" title="支撑集｜support：随机变量以正概率取到的全部值。">支撑集</span> + 形状 + 生成机制”，不是“哪个公式背得熟”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>判断正态性要看图形与情境，不能只看均值<span class="c-term c-term--auto" data-term="variance" title="方差｜variance：偏差平方的概率加权平均，衡量离散程度。">方差</span>。若变量有硬下界 0 且右偏，指数或对数正态通常比正态更合理。</p>
+  </aside>
+  <p class="c-source">W8 p.14–16、32</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">8.5</span> 指数分布：等待时间的密度</h2>
+  <p><span class="c-term">指数分布<span class="c-term__en">exponential distribution</span></span>常用于建模直到某事件发生的等待时间：下一位顾客到达的时间、恒定失效率下元件的寿命、下一次服务来电的时间、Poisson 过程中事件之间的间隔。Poisson 计数“区间内有多少事件”，指数建模“到下一次事件要等多久”。</p>
+  <p>使用率参数 <i>λ</i> &gt; 0，密度为</p>
+  <div class="c-formula"><i>f</i>(<i>x</i>) = <i>λe</i><sup>−<i>λx</i></sup>，<i>x</i> ≥ 0；&nbsp; <i>x</i> &lt; 0 时为 0</div>
+  <p>记 <i>X</i> ~ Exponential(<i>λ</i>)。密度在 0 处最高，随等待时间增加而指数衰减，因此分布右偏、长尾向右。</p>
+  <p>合法性检验：∫<sub>0</sub><sup>∞</sup><i>λe</i><sup>−<i>λx</i></sup><i>dx</i> = [−<i>e</i><sup>−<i>λx</i></sup>]<sub>0</sub><sup>∞</sup> = 0 − (−1) = 1，且 <i>f</i>(<i>x</i>) ≥ 0，所以是合法 PDF。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 8-2 指数密度随 λ 变化</span>
+      <button class="c-copy" type="button" data-copy="Clean vector plot of three exponential densities on x greater than or equal to zero for lambda = 0.25, 0.5 and 1, all starting at their maximum at x = 0 and decaying to the right, drawn in three muted tones. Axes labelled x and f(x), legend lambda = 0.25, lambda = 0.5, lambda = 1. Flat 2D, thin 1.5 px strokes, muted slate blue, warm grey and sand palette, white background, English labels only, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector plot of three exponential densities on x greater than or equal to zero for lambda = 0.25, 0.5 and 1, all starting at their maximum at x = 0 and decaying to the right, drawn in three muted tones. Axes labelled x and f(x), legend lambda = 0.25, lambda = 0.5, lambda = 1. Flat 2D, thin 1.5 px strokes, muted slate blue, warm grey and sand palette, white background, English labels only, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>指数分布的支撑集是 [0, ∞)，不是整条实轴。写 PDF 时必须在 <i>x</i> &lt; 0 处补 0，否则积分不为 1。</p>
+  </aside>
+  <p class="c-source">W8 p.17–19</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">8.6</span> 指数 CDF 与生存函数</h2>
+  <p>对 <i>x</i> ≥ 0，</p>
+  <div class="c-formula"><i>F</i>(<i>x</i>) = ∫<sub>0</sub><sup><i>x</i></sup><i>λe</i><sup>−<i>λt</i></sup><i>dt</i> = 1 − <i>e</i><sup>−<i>λx</i></sup></div>
+  <p>完整写法：<i>F</i>(<i>x</i>) = 0（<i>x</i> &lt; 0），1 − <i>e</i><sup>−<i>λx</i></sup>（<i>x</i> ≥ 0）。</p>
+  <p>生存函数特别简洁：</p>
+  <div class="c-formula"><i>S</i>(<i>x</i>) = <i>P</i>(<i>X</i> &gt; <i>x</i>) = 1 − <i>F</i>(<i>x</i>) = <i>e</i><sup>−<i>λx</i></sup></div>
+  <p>右尾计算因此只需一次指数运算。例 <i>λ</i> = 0.2，<i>P</i>(<i>X</i> &gt; 10) = <i>e</i><sup>−0.2(10)</sup> = <i>e</i><sup>−2</sup> ≈ 0.1353。</p>
+  <p>区间概率也有简洁形式：<i>P</i>(<i>a</i> &lt; <i>X</i> &lt; <i>b</i>) = (1−<i>e</i><sup>−<i>λb</i></sup>) − (1−<i>e</i><sup>−<i>λa</i></sup>) = <i>e</i><sup>−<i>λa</i></sup> − <i>e</i><sup>−<i>λb</i></sup>。例 <i>λ</i> = 0.5，<i>P</i>(2 &lt; <i>X</i> &lt; 6) = <i>e</i><sup>−1</sup> − <i>e</i><sup>−3</sup> ≈ 0.3679 − 0.0498 = 0.3181。</p>
+  <p>指数 CDF 的“1 减指数”结构使它与<span class="c-term c-term--auto" data-term="geometric-distribution" title="几何分布｜geometric distribution：直到第一次成功的试验次数的分布。">几何分布</span>形成离散/连续的对应：几何用 (1−<i>p</i>)<sup><i>k</i></sup>，指数用 <i>e</i><sup>−<i>λx</i></sup>，两者都有无记忆性。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>“超过 <i>t</i>”直接用 <i>e</i><sup>−<i>λt</i></sup>；“小于 <i>t</i>”用 1 − <i>e</i><sup>−<i>λt</i></sup>；“介于 <i>a</i> 与 <i>b</i>”用 <i>e</i><sup>−<i>λa</i></sup> − <i>e</i><sup>−<i>λb</i></sup>。三个公式都由同一条 CDF 推出，不要分别死记。</p>
+  </aside>
+  <p class="c-source">W8 p.20–21、26</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">8.7</span> 指数均值、方差与两种参数化</h2>
+  <p>若 <i>X</i> ~ Exponential(<i>λ</i>)，则</p>
+  <div class="c-formula"><i>E</i>(<i>X</i>) = 1/<i>λ</i>，&nbsp; <i>Var</i>(<i>X</i>) = 1/<i>λ</i><sup>2</sup>，&nbsp; <i>SD</i>(<i>X</i>) = 1/<i>λ</i></div>
+  <p>平均等待时间是 1/<i>λ</i>；事件率越大，平均等待越短。注意均值与<span class="c-term c-term--auto" data-term="standard-deviation" title="标准差｜standard deviation：方差的平方根，单位与原变量相同。">标准差</span>相等，这是指数分布的特征。</p>
+  <p>有些书用均值/<span class="c-term">尺度参数<span class="c-term__en">scale parameter</span></span> <i>β</i> = 1/<i>λ</i>：<i>f</i>(<i>x</i>) = (1/<i>β</i>)<i>e</i><sup>−<i>x</i>/<i>β</i></sup>，此时 <i>E</i>(<i>X</i>) = <i>β</i>，<i>Var</i>(<i>X</i>) = <i>β</i><sup>2</sup>。读题时先确认参数是率还是均值；把 <i>λ</i> 与 <i>β</i> 混用会使答案整体取倒数。</p>
+  <p>顾客到达例：平均每小时 3 人，<i>X</i> 为到下一位顾客的小时数，<i>X</i> ~ Exponential(3)。<i>P</i>(<i>X</i> &gt; 1/3) = <i>e</i><sup>−3(1/3)</sup> = <i>e</i><sup>−1</sup> ≈ 0.3679；<i>E</i>(<i>X</i>) = 1/3 小时 = 20 分钟。</p>
+  <p>元件寿命例：<i>X</i> ~ Exponential(0.25) 年。<i>E</i>(<i>X</i>) = 4 年；<i>P</i>(<i>X</i> &gt; 5) = <i>e</i><sup>−1.25</sup> ≈ 0.2865；<i>P</i>(<i>X</i> &lt; 2) = 1 − <i>e</i><sup>−0.5</sup> ≈ 0.3935。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><i>λ</i> 是率、1/<i>λ</i> 是均值。若题目给“平均等待 15 分钟”，则每分钟的 <i>λ</i> = 1/15；若给“每小时 4 次”，则 <i>λ</i> = 4（以小时计）。</p>
+  </aside>
+  <p class="c-source">W8 p.22–25</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">8.8</span> 指数分位数、无记忆性与风险率</h2>
+  <p>解 <i>F</i>(<i>x<sub>p</sub></i>) = <i>p</i>：1 − <i>e</i><sup>−<i>λx<sub>p</sub></i></sup> = <i>p</i> ⇒ <i>e</i><sup>−<i>λx<sub>p</sub></i></sup> = 1−<i>p</i>，取对数得</p>
+  <div class="c-formula"><i>x<sub>p</sub></i> = −ln(1 − <i>p</i>) / <i>λ</i></div>
+  <p><span class="c-term c-term--auto" data-term="median" title="中位数｜median：排序后位于中间的观测值，对极端值稳健。">中位数</span>为 ln(2)/<i>λ</i>。例 <i>λ</i> = 0.4，中位数 = ln2/0.4 ≈ 1.733。</p>
+  <p><span class="c-term">无记忆性<span class="c-term__en">memoryless property</span></span>：</p>
+  <div class="c-formula"><i>P</i>(<i>X</i> &gt; <i>s</i>+<i>t</i> | <i>X</i> &gt; <i>s</i>) = <i>e</i><sup>−<i>λ</i>(<i>s</i>+<i>t</i>)</sup>/<i>e</i><sup>−<i>λs</i></sup> = <i>e</i><sup>−<i>λt</i></sup> = <i>P</i>(<i>X</i> &gt; <i>t</i>)</div>
+  <p>已经存活 <i>s</i> 之后，剩余寿命的分布与一开始相同。例 <i>λ</i> = 0.08 月<sup>−1</sup>，已知已用 12 个月，求再用至少 6 个月：<i>P</i>(<i>X</i> &gt; 18 | <i>X</i> &gt; 12) = <i>P</i>(<i>X</i> &gt; 6) = <i>e</i><sup>−0.08(6)</sup> = <i>e</i><sup>−0.48</sup> ≈ 0.6188。</p>
+  <p>无记忆性何时合理：事件率近似恒定。电子元件在有效寿命期内的失效、稳定队列中的随机到达、罕见独立事件之间的时间，都可以近似。人体衰老、机械磨损、季节性需求、学习效应会违反恒定率，指数模型不合适。</p>
+  <p><span class="c-term">风险率<span class="c-term__en">hazard rate</span></span>是“已存活到 <i>x</i> 的条件下瞬时失效率”。指数分布的 <i>h</i>(<i>x</i>) = <i>λ</i> 恒定，这从另一角度解释了无记忆：失败率不随年龄上升或下降。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>无记忆性写成 <i>P</i>(<i>X</i> &gt; <i>s</i>+<i>t</i> | <i>X</i> &gt; <i>s</i>) = <i>P</i>(<i>X</i> &gt; <i>t</i>)，条件是“已经活了 <i>s</i>”。计算时直接把 <i>s</i> 消掉，不要重新算总概率。</p>
+  </aside>
+  <p class="c-source">W8 p.27–29、44、46</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">8.9</span> 与 Poisson 过程的联系</h2>
+  <p>若事件按速率 <i>λ</i>（每单位时间）的 Poisson 过程发生，则：</p>
+  <ul>
+    <li>时间 <i>t</i> 内的事件数 <i>N</i>(<i>t</i>) ~ Pois(<i>λt</i>)；</li>
+    <li>到第一次事件的等待时间 <i>X</i> ~ Exponential(<i>λ</i>)。</li>
+  </ul>
+  <p>两者由同一个等式连接：</p>
+  <div class="c-formula"><i>P</i>(<i>X</i> &gt; <i>t</i>) = <i>P</i>(<i>N</i>(<i>t</i>) = 0) = <i>e</i><sup>−<i>λt</i></sup></div>
+  <p>“等待超过 <i>t</i>”意味着“<i>t</i> 内一个事件都没有”。计数与等待是同一过程的两个视角：问“一小时内有几次”用 Poisson，问“下一次要等多久”用指数。</p>
+  <p>例：服务台每小时 4 次请求。未来 10 分钟（1/6 小时）内至少一次请求的概率，可以用 Poisson <i>λ</i> = 4/6 = 0.6667，<i>P</i>(<i>N</i> ≥ 1) = 1 − <i>e</i><sup>−0.6667</sup> ≈ 0.4866；也可以直接用指数 <i>P</i>(<i>X</i> &lt; 1/6) = 1 − <i>e</i><sup>−4/6</sup> ≈ 0.4866。两条路答案相同，因为它们描述同一件事。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>Poisson 的 <i>λ</i> 是“每单位时间的事件数”，指数的 <i>λ</i> 是“事件发生的率”。数值相同但角色不同：前者进入计数均值，后者进入等待时间的倒数。</p>
+  </aside>
+  <p class="c-source">W8 p.30</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">8.10</span> 均匀、正态与指数的比较</h2>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>三种连续模型的适用边界</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">均匀</th><th scope="col">正态</th><th scope="col">指数</th></tr></thead>
+      <tbody>
+        <tr><td>支撑集</td><td>有限区间</td><td>整条实轴</td><td>[0, ∞)</td></tr>
+        <tr><td>形状</td><td>平坦</td><td>对称钟形</td><td>右偏衰减</td></tr>
+        <tr><td>典型用途</td><td>等可能取值</td><td>围绕均值的测量</td><td>等待时间/寿命</td></tr>
+        <tr><td>参数</td><td><i>a</i>, <i>b</i></td><td><i>μ</i>, <i>σ</i></td><td><i>λ</i></td></tr>
+        <tr><td>均值</td><td>(<i>a</i>+<i>b</i>)/2</td><td><i>μ</i></td><td>1/<i>λ</i></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>选择模型看三件事：支撑集是否匹配、形状是否匹配、生成机制是否匹配。<span class="c-term c-term--auto" data-term="normal-distribution" title="正态分布｜normal distribution：由均值 μ 与标准差 σ 决定的对称钟形分布。">正态分布</span>支撑整条实轴，若用它建模等待时间，会给负时间赋予正概率；虽然 <i>μ</i> 远大于 <i>σ</i> 时这个概率很小，但模型假设仍然不对。指数分布支撑 [0, ∞)，适合恒定率的等待；若等待时间有固定上限或明显非单调风险，指数也不合适。</p>
+  <p>模型选择练习：班车每 12 分钟一班、随机到达 → 均匀；机器生产螺栓直径 → 正态；安静时段下一单在线订单的等待 → 指数；软件生成 0 到 1 随机数 → 均匀。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>“等待时间”优先想指数；“围绕目标值的测量”优先想正态；“等长区间等可能”想均匀。三者不能仅凭“看起来像钟形”互换。</p>
+  </aside>
+  <p class="c-source">W8 p.31–32、52</p>
+</section>
+
+<section id="s11">
+  <h2 id="s11"><span class="sec-num">8.11</span> 综合案例与常见错误</h2>
+  <p>服务目标例：帮助台请求率 <i>λ</i> = 6 次/小时。管理层要求“等待超过 <i>t</i> 分钟的概率至多 5%”：</p>
+  <div class="c-formula"><i>P</i>(<i>X</i> &gt; <i>t</i>/60) = <i>e</i><sup>−6<i>t</i>/60</sup> ≤ 0.05 &nbsp;⇒&nbsp; −6<i>t</i>/60 ≤ ln(0.05) &nbsp;⇒&nbsp; <i>t</i> ≥ −10 ln(0.05) ≈ 29.96</div>
+  <p>约 30 分钟即为 95 百分位等待时间。</p>
+  <p>保修例：元件寿命 <i>X</i> ~ Exponential(0.08)（月）。保修 12 个月，索赔概率 <i>P</i>(<i>X</i> &lt; 12) = 1 − <i>e</i><sup>−0.96</sup> ≈ 0.6171。若售出 1,000 件，<span class="c-term c-term--auto" data-term="expected-value" title="期望｜expected value：取值的概率加权平均，描述分布中心。">期望</span>索赔约 617.1 件。模型批评：若早期缺陷或磨损重要，恒定失效率过于简单。</p>
+  <p>讲义列出五类错误：混淆 <i>σ</i><sup>2</sup> 与 <i>σ</i>；不标准化就用 <i>Φ</i>(<i>z</i>)；忘记 <i>P</i>(<i>X</i> &gt; <i>t</i>) = <i>e</i><sup>−<i>λt</i></sup>；混淆率 <i>λ</i> 与均值 1/<i>λ</i>；把无记忆性套到非指数寿命模型。</p>
+  <p>解题清单：识别<span class="c-term c-term--auto" data-term="random-variable" title="随机变量｜random variable：把样本空间每个结果映射为数值的函数。">随机变量</span>与单位 → 选模型并写参数 → 用记号写出所求概率或分位数 → 画密度并阴影区域 → 用 CDF、生存函数、标准化或反公式 → 回到情境解释数值。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“均值 15 分钟”要转成率 <i>λ</i> = 1/15 每分钟，或 4 每小时；直接把 15 代入 <i>e</i><sup>−15<i>t</i></sup> 会把率和均值弄反。</p>
+  </aside>
+  <p class="c-source">W8 p.33、53–55、59</p>
+</section>
+
+<section id="s12">
+  <h2 id="s12"><span class="sec-num">8.12</span> 离散与连续等待时间的对照</h2>
+  <p>几何分布与指数分布处理同一类直觉问题——“还要等多久才<span class="c-term c-term--auto" data-term="success" title="成功｜success：概率模型中被计数的那个事件，不一定是好事。">成功</span>/才发生”，但一个数试验次数，一个数连续时间。把两者并排看，能避免把 PMF 与密度、把 (1−<i>p</i>)<sup><i>k</i></sup> 与 <i>e</i><sup>−<i>λt</i></sup> 混用。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>几何分布与指数分布的对应关系</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">几何（离散）</th><th scope="col">指数（连续）</th></tr></thead>
+      <tbody>
+        <tr><td>随机变量</td><td>直到第一次成功的试验次数</td><td>直到下一次事件的等待时间</td></tr>
+        <tr><td>取值</td><td>1, 2, 3, …</td><td>[0, ∞)</td></tr>
+        <tr><td>概率函数</td><td><i>P</i>(<i>X</i>=<i>x</i>)=(1−<i>p</i>)<sup><i>x</i>−1</sup><i>p</i></td><td><i>f</i>(<i>x</i>)=<i>λe</i><sup>−<i>λx</i></sup></td></tr>
+        <tr><td>CDF</td><td>1−(1−<i>p</i>)<sup><i>k</i></sup></td><td>1−<i>e</i><sup>−<i>λx</i></sup></td></tr>
+        <tr><td>均值</td><td>1/<i>p</i></td><td>1/<i>λ</i></td></tr>
+        <tr><td>无记忆性</td><td>已失败 <i>s</i> 次后剩余等待不变</td><td>已存活 <i>s</i> 后剩余寿命分布不变</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>对照的关键是“参数角色”：几何的 <i>p</i> 是每次试验的成功概率，指数的 <i>λ</i> 是单位时间的事件率。两者都取倒数得到平均等待，但 <i>p</i> 无量纲，<i>λ</i> 有“每单位时间”的量纲，所以 1/<i>λ</i> 才带时间单位。</p>
+  <p>无记忆性的表述也要随情形改写：几何说“已经失败 <i>s</i> 次，接下来再等 <i>t</i> 次的分布与一开始相同”；指数说“已经存活 <i>s</i> 小时，接下来再存活 <i>t</i> 小时的概率与从 0 开始相同”。两者成立的前提都是恒定成功率/恒定风险率，一旦磨损或学习效应使率变化，无记忆性就不再适用。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>几何的“第 <i>x</i> 次成功”是单点概率，指数在单点的概率为 0；问指数“第 <i>x</i> 小时发生”没有意义，只能问区间。这是离散与连续最根本的差别。</p>
+  </aside>
+  <p class="c-source">W6 p.25–33；W8 p.17–29</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W8</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch07.html"><span>上一章</span>均匀与正态分布</a>
+          <a class="pager__next" href="ch09.html"><span>下一章</span>抽样分布与置信区间</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

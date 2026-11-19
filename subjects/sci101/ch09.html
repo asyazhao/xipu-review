@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCI101 聚类 · 全科复习</title>
+  <meta name="description" content="SCI101 第 9 章 聚类：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="sci101" data-chapter="09">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SCI101</a>
+      <span>/</span>
+      <span aria-current="page">第 9 章 聚类</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html" class="is-current" aria-current="page"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html" class="is-current" aria-current="page"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SCI101 · 第 9 章</p>
+          <h1>聚类</h1>
+          <p class="chapter-head__en">An Introduction to Clustering for Science</p>
+          <p class="chapter-head__meta">来源 Qing Mu · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">9.1 什么是聚类</a></li>
+        <li><a href="#s2">9.2 在科学中为什么有用</a></li>
+        <li><a href="#s3">9.3 特征、相似性与距离</a></li>
+        <li><a href="#s4">9.4 三类主要方法</a></li>
+        <li><a href="#s5">9.5 K-Means：三步循环</a></li>
+        <li><a href="#s6">9.6 选 K、优缺点与两个案例</a></li>
+        <li><a href="#s7">9.7 层次聚类：一棵可以剪的树</a></li>
+        <li><a href="#s8">9.8 DBSCAN：按密度连通</a></li>
+        <li><a href="#s9">9.9 另两种思路：GMM 与谱聚类</a></li>
+        <li><a href="#s10">9.10 怎么选、怎么用、怎么负责</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲回答一个无标签问题：如何把相似的东西放在一起。主线是三种思路——按中心划分（K-Means）、按层级合并（层次聚类）、按密度连通（DBSCAN），最后给出选择算法与评估结果的实践准则。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>聚类是<span class="c-term c-term--auto" data-term="unsupervised-learning" title="无监督学习｜unsupervised learning：在没有标签的数据中寻找结构或表示的方法。">无监督学习</span>：没有预定义标签，目标是按特征相似性把样本分组，使簇内相似、簇间不同。</li>
+    <li>相似性用距离度量：欧氏（直线）、余弦（方向夹角）、曼哈顿（城市街区绝对值之和）。</li>
+    <li>K-Means 三步循环：选 K 与初始质心 → 分配到最近质心 → 质心移到簇均值，直到收敛。</li>
+    <li>K-Means 需预先给定 K，对初始质心、离群点与特征尺度敏感，且假设簇为球形。</li>
+    <li>层次聚类用树状图（dendrogram）表达关系，不需预先给 K，靠“剪树”决定簇数；连接方式（single/complete/average）显著影响结果。</li>
+    <li>DBSCAN 用 ε 与 MinPts 定义密度，能找任意形状并识别噪声，但<span class="c-term c-term--auto" data-term="parameter" title="参数｜parameter：模型内部由训练学到的量，如权重与偏置。">参数</span>敏感、难以处理密度差异大的数据。</li>
+    <li>GMM 做软分配（概率），谱聚类用图与特征值处理非凸结构。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">9.1</span> 什么是聚类</h2>
+  <p><span class="c-term">聚类<span class="c-term__en">clustering</span></span>属于无监督学习：没有预定义的标签或“答案”，我们在发现结构。讲义用四个要素概括它：</p>
+  <ul>
+    <li><strong>目标</strong>：按特征把相似的数据点分到一组；</li>
+    <li><strong>相似性</strong>：同簇内的点比不同簇的点更相似；</li>
+    <li><strong>输出</strong>：揭示数据中自然模式的若干簇；</li>
+    <li><strong>前提</strong>：没有标签，算法自己判断“像不像”。</li>
+  </ul>
+  <p>讲义用“原始数据 → 聚类后”的两张图说明：看似无结构的一团点，聚类后显现出分组。<span class="c-term c-term--auto" data-term="classification" title="分类｜classification：目标为类别的监督学习任务。">分类</span>的类别由人给定，聚类的类别由数据给出。</p>
+  <p class="c-source">Clustering slide 3</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">9.2</span> 在科学中为什么有用</h2>
+  <p>讲义按三个学科给出应用，每个都配了具体例子：</p>
+  <ul>
+    <li><strong>化学</strong>：识别反应性、毒性或光谱指纹相似的化合物群，对药物发现与材料设计至关重要；例子是把数千种化合物聚类，找出具有相似治疗性质的候选药物。</li>
+    <li><strong>生物学</strong>：按蛋白标志物分类细胞类型，把表达模式相似的基因分组，识别不同细菌株；例子是基因表达分析——把在不同实验条件下表达相似的基因聚在一起，以发现功能关系。</li>
+    <li><strong>环境科学</strong>：按污染水平给区域分类，按栖息地偏好给物种分组，识别不同土壤类型以做针对性干预；例子是污染监测——找出污染物谱相似的地区，优化修复策略与资源分配。</li>
+  </ul>
+  <p>三者的共同点是：<strong>标签昂贵或不存在，但“相似”可由测量值定义</strong>。这正是聚类适用的场景。</p>
+  <p class="c-source">Clustering slide 4</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">9.3</span> 特征、相似性与距离</h2>
+  <p><span class="c-term">特征<span class="c-term__en">features</span></span>是数据点可测量的属性，例如化学中的分子量、溶解度、pH；生物中的基因表达水平、细胞大小；环境中的温度、污染物浓度。讲义强调：特征就是用于比较的那些列。</p>
+  <p>相似性用距离量化，原则是“高相似 = 低距离”。三种常用度量：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>三种距离度量的几何含义</caption>
+      <thead><tr><th scope="col">度量</th><th scope="col">定义</th><th scope="col">几何直觉</th></tr></thead>
+      <tbody>
+        <tr><td>欧氏距离</td><td>两点间的直线距离</td><td>“直线飞过去”</td></tr>
+        <tr><td>余弦相似度</td><td>两个向量的夹角</td><td>衡量方向的相似性</td></tr>
+        <tr><td>曼哈顿距离</td><td>各维绝对差之和</td><td>“城市街区”距离</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义的水样例子给出三列特征：pH、温度（°C）、溶解氧（mg/L），三个样本分别为 (6.8, 22.5, 8.2)、(7.2, 23.1, 7.9)、(8.5, 18.4, 5.3)。注意第三个数在 pH 上最高、温度与溶氧最低——它与其他两个样本的距离会明显更大，这正是聚类要捕捉的结构。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>距离对量纲敏感：pH 变化 1 与温度变化 1°C 的“分量”完全不同。做距离聚类前必须标准化，否则数值范围大的特征会主导结果。</p>
+  </aside>
+  <p class="c-source">Clustering slide 5</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">9.4</span> 三类主要方法</h2>
+  <p>讲义按“如何定义簇”把方法分成三类，另加“其他”：</p>
+  <ul>
+    <li><strong>划分方法（partitioning，如 K-Means）</strong>：把数据分成预先给定数量的、互不重叠的簇，每个点恰好属于一个簇。</li>
+    <li><strong>层次方法（hierarchical，如凝聚式）</strong>：构建树状结构（dendrogram），允许灵活的簇数，并揭示簇之间的关系。</li>
+    <li><strong>密度方法（density-based，如 DBSCAN）</strong>：把簇定义为高密度区域，与稀疏区域和噪声分开。</li>
+    <li><strong>其他</strong>：基于模型（如高斯混合模型 GMM）、谱聚类等更专门的方法。</li>
+  </ul>
+  <p>讲义用四幅示意图对应四类结果：K-Means 的划分、带树状图的层次聚类、带<span class="c-term c-term--auto" data-term="noise-point" title="噪声点｜noise point：既非核心也非边界、不属于任何簇的孤立点。">噪声点</span>的密度聚类、以及处理重叠或复杂边界的 GMM/谱聚类。看图时注意每类方法“画出的边界”长什么样，这是最直观的辨识依据。</p>
+  <p class="c-source">Clustering slide 6–7</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">9.5</span> K-Means：三步循环</h2>
+  <p><span class="c-term">K-Means</span> 的目标是把数据分成 K 个互不重叠的簇，每个点分配给<span class="c-term">质心<span class="c-term__en">centroid</span></span>最近的簇。K 是用户必须事先给定的参数。应用包括市场细分、文档分类、图像压缩与科学数据分析。</p>
+  <p>算法分三步：</p>
+  <ol>
+    <li><strong>初始化</strong>：决定 K，从数据中随机选 K 个点作为初始质心。不同初始质心可能得到不同结果，因此常多次运行取最优。</li>
+    <li><strong>分配</strong>：对每个点计算到所有 K 个质心的距离（通常用欧氏距离），把它分给最近的质心。结果是每个点恰好属于一个簇。</li>
+    <li><strong>更新</strong>：把每个质心移到其簇内所有点的均值位置——对每个特征求平均。“K-Means”的“Means”正来自这一步。</li>
+  </ol>
+  <p>重复分配与更新，直到满足收敛条件之一：质心不再显著移动；簇分配不再变化；达到最大迭代次数。每次迭代簇都会更精细、更稳定。</p>
+  
+<!-- course-image:sci101-ch09-kmeans.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-sci101-ch09-kmeans">
+        <img class="c-course-figure__img" src="../../assets/course/sci101-ch09-kmeans.jpg" alt="K-Means 的簇中心与划分" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> K-Means 的簇中心与划分 <span class="c-course-figure__src">来源：Clustering p.9</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 9-1 K-Means 的分配与更新</span>
+      <button class="c-copy" type="button" data-copy="Clean vector three-panel diagram of K-Means with K equals 3: left panel unlabelled points with three random centroids, middle panel points coloured by nearest centroid with assignment lines, right panel centroids moved to the mean of each coloured group with refined boundaries. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/sci101-kmeans.svg" alt="K-Means 的初始化、分配与质心更新三阶段" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector three-panel diagram of K-Means with K equals 3: left panel unlabelled points with three random centroids, middle panel points coloured by nearest centroid with assignment lines, right panel centroids moved to the mean of each coloured group with refined boundaries. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p>讲义提示：对复杂数据集，可能需要多次随机初始化才能找到较优聚类，这与“不同初始质心可能得到不同结果”的说明一致。</p>
+  
+<p class="c-source">Clustering slide 8–13</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">9.6</span> 选 K、优缺点与两个案例</h2>
+  <p>K 必须事先给定，但最优 K 未知，讲义给出<span class="c-term">肘部法<span class="c-term__en">elbow method</span></span>：对 K = 1 到 10 分别跑 K-Means，计算每个 K 的误差平方和（SSE）；把 SSE 对 K 作图，找“下降明显变缓”的拐点。拐点<span class="c-term c-term--auto" data-term="representation" title="表示｜representation：把每个观测转换成模型可处理形式的方式。">表示</span>再增加簇带来的收益递减，是拟合与复杂度之间的平衡点。讲义的示例拐点在 K = 4。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>K-Means 的优缺点</caption>
+      <thead><tr><th scope="col">优点</th><th scope="col">局限</th></tr></thead>
+      <tbody>
+        <tr><td>简单、易理解，大数据上较快</td><td>必须预先给定 K</td></tr>
+        <tr><td>计算效率高</td><td>对初始质心敏感，不同随机起点结果不同</td></tr>
+        <tr><td>簇较紧凑时适用于多种数据</td><td>假设球形簇，难以处理复杂形状</td></tr>
+        <tr><td>科学界熟悉、软件支持广泛</td><td>对离群点与特征尺度敏感；范围大的特征会主导</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>案例一是水质分类：测量 pH、溶解氧、浊度、硝酸盐（<span class="c-term c-term--auto" data-term="normalization" title="归一化｜normalization：把特征缩放到指定范围或统一尺度，如 min-max、z-score。">归一化</span>后），用肘部法确定 K = 3，得到三簇——优质（高溶氧、中等 pH、低浊度与低硝酸盐）、中等、劣质（低溶氧、异常 pH、高浊度与高硝酸盐）。讲义还给出三类的数值区间：优质 pH 7.2–8.0、DO 8.5–12 mg/L；中等 pH 6.5–8.5、DO 5.0–8.4；劣质 pH &lt;6.5 或 &gt;8.5、DO &lt;5.0。</p>
+  <p>案例二是基因表达：按不同细胞类型与实验条件下的表达谱聚类，得到共表达基因群，这些群常对应生物通路或过程。讲义点出一个生物学意义：把功能相关的基因归入同一转录单元，可用一个“开关”协同控制整簇基因。图中还展示了早期、中期、晚期三簇的时间表达模式。</p>
+  <p class="c-source">Clustering slide 14–17</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">9.7</span> 层次聚类：一棵可以剪的树</h2>
+  <p><span class="c-term">层次聚类<span class="c-term__en">hierarchical clustering</span></span> 构建一棵树（<span class="c-term">树状图<span class="c-term__en">dendrogram</span></span>）来表达数据点之间的关系。与 K-Means 不同，它不要求预先给定簇数——你在不同高度“剪树”来决定簇数。两种策略是凝聚式（agglomerative，自下而上，从单点开始逐步合并，本讲重点）与分裂式（divisive，自上而下，从一个大簇开始逐步拆分）。</p>
+  <p>凝聚式的步骤：每个点起初自成一簇；反复找最近的两个簇合并，直到所有点归为一簇。合并顺序构成树状图，分支高度表示簇间的不相似度。</p>
+  <p>“最近”需要定义簇与簇之间的距离，这就是<span class="c-term">连接方式<span class="c-term__en">linkage</span></span>：</p>
+  <ul>
+    <li><strong>单连接（single）</strong>：两簇中最近两点之间的距离；容易形成“链状”细长簇。</li>
+    <li><strong>完全连接（complete）</strong>：两簇中最远两点之间的距离；偏好紧凑、球形的簇。</li>
+    <li><strong>平均连接（average）</strong>：两簇所有点对距离的平均；介于两者之间，是较好的折中。</li>
+  </ul>
+  <p>讲义强调连接方式的选择会显著影响最终的层级结构，因此报告结果时必须写明用了哪种连接与距离。</p>
+  
+<!-- course-image:sci101-ch09-dendrogram.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-sci101-ch09-dendrogram">
+        <img class="c-course-figure__img" src="../../assets/course/sci101-ch09-dendrogram.jpg" alt="层次聚类树状图" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 层次聚类树状图 <span class="c-course-figure__src">来源：Clustering p.21</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 9-2 树状图的读法与剪枝</span>
+      <button class="c-copy" type="button" data-copy="Clean vector dendrogram with individual observations along the horizontal axis and dissimilarity on the vertical axis, branches merging at increasing heights, one horizontal dashed cut line crossing three vertical branches and labelled cut here for three clusters. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector dendrogram with individual observations along the horizontal axis and dissimilarity on the vertical axis, branches merging at increasing heights, one horizontal dashed cut line crossing three vertical branches and labelled cut here for three clusters. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>读图规则：横轴是个体观测；纵轴是距离/不相似度；分支表示哪些簇在什么距离合并；合并在较低高度的簇更相似；竖线越高说明两簇越不同。剪枝规则：在某一高度做水平切，切到几条竖线就得到几个簇；上下移动切线会改变簇数。</p>
+  <p>优缺点同样对称：优点是无需预设 K、提供完整层级、可视化好、可在分析后决定簇数；局限是计算量大（可达 O(n³) 或 O(n²)）、合并不可撤销、对噪声与离群点敏感、结果高度依赖距离与连接方式。</p>
+  <p>两个案例：药物化合物按分子量、LogP、氢键供体/受体与生物活性聚类，得到“化学系列”，剪树可得更宽或更细的组；植物标本按叶形、花色、茎高等形态特征聚类，树状图展示表型相似性，有助于物种分类与保护——讲义特别说明它与系统发生树概念相似，但依据的是观测相似性，不是演化历史。</p>
+  
+<p class="c-source">Clustering slide 18–25</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">9.8</span> DBSCAN：按密度连通</h2>
+  <p><span class="c-term">DBSCAN</span> 把簇定义为被稀疏区域隔开的高密度区域，不需要预先给定簇数，能发现任意形状的簇，并自动把离群点标为噪声。</p>
+  <p>两个参数：ε（epsilon）是邻域搜索的最大半径，回答“我看多远找邻居”；MinPts 是 ε 半径内形成稠密区所需的最少点数，回答“多少邻居才算稠密”。据此把点分为三类：</p>
+  <ul>
+    <li><strong><span class="c-term c-term--auto" data-term="core-point" title="核心点｜core point：ε 邻域内至少有 MinPts 个点（含自身）的点。">核心点</span>（core point）</strong>：ε 内至少有 MinPts 个点（含自身），是簇的“种子”；</li>
+    <li><strong>边界点（border point）</strong>：ε 内点数不足 MinPts，但落在某个核心点的 ε 范围内；</li>
+    <li><strong>噪声点（noise point）</strong>：既非核心也非边界，是孤立点。</li>
+  </ul>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 9-3 DBSCAN 的核心点、边界点与噪声</span>
+      <button class="c-copy" type="button" data-copy="Clean vector scatter plot illustrating DBSCAN: large filled dots labelled core points each surrounded by a dashed epsilon circle containing several neighbours, smaller dots labelled border points on the edge of a circle, and isolated dots far away labelled noise; one dense cluster and one sparse outlier shown. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector scatter plot illustrating DBSCAN: large filled dots labelled core points each surrounded by a dashed epsilon circle containing several neighbours, smaller dots labelled border points on the edge of a circle, and isolated dots far away labelled noise; one dense cluster and one sparse outlier shown. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>算法流程：任取一个未访问点 → 找它的 ε 邻域 → 若点数 ≥ MinPts，则它是核心点，新建一簇并把邻域内的点加入 → 对每个新加入的核心点递归扩展其邻居 → 若点数不足，先标为噪声（之后可能被其他核心点“认领”为边界点）→ 直到所有点处理完。</p>
+  <p>参数选择是 DBSCAN 的难点：ε 太小会把大量点判为噪声，太大会让不同簇合并；MinPts 的经验规则是 ≥ 维度 + 1，常用 2×维度（二维数据取 4），值越大要求越密。讲义推荐用 <span class="c-term">k-距离图<span class="c-term__en">k-distance graph</span></span> 选 ε：把所有点到第 k 近邻的距离排序后作图，找曲线急剧上升的“肘点”。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>DBSCAN 的优缺点</caption>
+      <thead><tr><th scope="col">优点</th><th scope="col">局限</th></tr></thead>
+      <tbody>
+        <tr><td>可发现任意形状的簇</td><td>性能高度依赖 ε 与 MinPts</td></tr>
+        <tr><td>有效识别并标记噪声/离群点</td><td>簇的密度差异很大时表现差</td></tr>
+        <tr><td>不需要预先指定簇数</td><td>高维数据困难（维度灾难）</td></tr>
+        <tr><td>自然识别被稀疏区隔开的高密度区</td><td>边界点归属受处理顺序影响</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>两个案例：污染热点——用 GPS 坐标与污染物浓度，ε 定义局部邻近、MinPts 定义热点密度，空间上连片的簇即高污染区，孤立测量是背景值或假阳性，可用于精准干预；细胞结构——对显微图像中检测到的物体坐标聚类，得到细胞器聚集体，孤立点是成像噪声，有助于量化细胞组织与疾病状态变化。</p>
+  <p class="c-source">Clustering slide 26–33</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">9.9</span> 另两种思路：GMM 与谱聚类</h2>
+  <p><span class="c-term">高斯混合模型<span class="c-term__en">Gaussian mixture model</span></span>（GMM）假设数据由若干个均值与协方差不同的高斯分布混合生成。它与 K-Means 的关键差别是<span class="c-term">软分配<span class="c-term__en">soft assignment</span></span>：每个点以一定概率属于每个簇，而不是被硬性分到唯一簇。因此 GMM 能处理重叠的簇、给出不确定性度量，并适应不同大小与形状的簇。适用场合是：簇可能重叠、形状各异，或需要概率估计而非确定归属。</p>
+  <p><span class="c-term">谱聚类<span class="c-term__en">spectral clustering</span></span>基于图论把数据变换到另一个空间，使簇更易线性分开。三步是：在数据点之间构造相似度图；用特征值做降维；在新空间中用简单聚类（如 K-Means）。它擅长处理非凸、任意形状且连通关系复杂的簇——讲义用同心圆说明：传统聚类会把内外圈混在一起，谱聚类能正确分开。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>K-Means 是硬分配 + 球形假设；GMM 是软分配 + 高斯假设；谱聚类不假设形状，但依赖图构造与特征值分解。</p>
+  </aside>
+  <p class="c-source">Clustering slide 34–35</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">9.10</span> 怎么选、怎么用、怎么负责</h2>
+  <p>讲义给了一张决策图，可按三个问题走：是否知道 K？需要识别噪声/离群点？期望的簇形状是球形还是任意？知道 K 且不需要噪声识别、簇为球形 → K-Means；知道 K 但需要噪声识别或形状任意 → DBSCAN；不知道 K 且需要灵活簇数 → 层次聚类（靠树状图选）；不知道 K 且要处理复杂非球形 → DBSCAN 或谱聚类。附加考虑：数据集大小（K-Means 在大数据上最快）、是否需要层级关系（层次聚类能揭示）、科学背景与领域知识。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>三种主流方法的取舍</caption>
+      <thead><tr><th scope="col">方法</th><th scope="col">是否需要 K</th><th scope="col">形状假设</th><th scope="col">噪声处理</th></tr></thead>
+      <tbody>
+        <tr><td>K-Means</td><td>需要</td><td>球形、紧凑</td><td>敏感，离群点会拉动质心</td></tr>
+        <tr><td>层次聚类</td><td>不需要（剪树决定）</td><td>由连接方式决定</td><td>敏感，会扭曲合并顺序</td></tr>
+        <tr><td>DBSCAN</td><td>不需要</td><td>任意形状</td><td>显式标记为噪声</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>实践准则有四组。预处理：对距离类方法必须缩放特征；妥善处理缺失值（插补或删除）；检测并处理离群点；高维数据先降维。特征工程：选与本学科问题相关的特征；做特征提取得到有意义的表示；可按领域知识给特征加权。评估：做稳定性测试（换初始化重跑）；用内部指标（<span class="c-term c-term--auto" data-term="silhouette-score" title="轮廓系数｜silhouette score：衡量簇内紧密度与簇间分离度的指标，接近 1 最好。">轮廓系数</span>、Davies-Bouldin 指数）并做二维/三维可视化检查；记住没有唯一“正确”的聚类，取决于目标。领域知识：用专业判断解释结果，尽可能用已知信息验证，把聚类当作发现工具而非绝对真理。</p>
+  <p>讲义最后提出伦理考量：数据本身带有历史偏见时，聚类会延续甚至放大它；聚类患者记录、个人环境暴露等敏感数据要注意隐私与匿名化（即便“匿名”，聚类也可能暴露敏感模式）；不要过度解释——聚类展示的是相关，不是因果；还要考虑结果对个人、群体与环境政策的现实影响。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>三条最稳的判断：K-Means 要 K 且假设球形；层次聚类靠剪树定 K、合并不可逆；DBSCAN 用 ε 与 MinPts、能识别噪声但参数敏感。</p>
+  </aside>
+  <p class="c-source">Clustering slide 36–38</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">Qing Mu</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch08.html"><span>上一章</span>模型评估指标</a>
+          <a class="pager__next" href="index.html"><span>返回</span>学科主页</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 370" role="img" aria-label="两亲性脂质的三种组装形态">
+<title>两亲性脂质的三种组装形态</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">两亲性脂质的三种组装形态</text>
+<text x="40" y="56" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2E4A6B" text-anchor="start" font-weight="600">胶束 micelle</text>
+<text x="40" y="74" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">疏水尾向内，亲水头向外</text>
+<text x="300" y="56" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2E4A6B" text-anchor="start" font-weight="600">双分子层 bilayer</text>
+<text x="300" y="74" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">两层磷脂相对，中间为疏水核心</text>
+<text x="560" y="56" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" fill="#2E4A6B" text-anchor="start" font-weight="600">脂质体 liposome</text>
+<text x="560" y="74" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">闭合双层，内部为水性腔</text>
+<circle cx="145" cy="175" r="58" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.4"/>
+<line x1="203.0" y1="175.0" x2="173.0" y2="175.0" stroke="#8A8F98" stroke-width="1.6"/>
+<circle cx="203.0" cy="175.0" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="186.01219330881975" y1="216.01219330881975" x2="164.79898987322332" y2="194.79898987322332" stroke="#8A8F98" stroke-width="1.6"/>
+<circle cx="186.01219330881975" cy="216.01219330881975" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="145.0" y1="233.0" x2="145.0" y2="203.0" stroke="#8A8F98" stroke-width="1.6"/>
+<circle cx="145.0" cy="233.0" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="103.98780669118025" y1="216.01219330881975" x2="125.20101012677668" y2="194.79898987322332" stroke="#8A8F98" stroke-width="1.6"/>
+<circle cx="103.98780669118025" cy="216.01219330881975" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="87.0" y1="175.0" x2="117.0" y2="175.0" stroke="#8A8F98" stroke-width="1.6"/>
+<circle cx="87.0" cy="175.0" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="103.98780669118023" y1="133.98780669118025" x2="125.20101012677667" y2="155.20101012677668" stroke="#8A8F98" stroke-width="1.6"/>
+<circle cx="103.98780669118023" cy="133.98780669118025" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="145.0" y1="117.0" x2="145.0" y2="147.0" stroke="#8A8F98" stroke-width="1.6"/>
+<circle cx="145.0" cy="117.0" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="186.01219330881975" y1="133.98780669118023" x2="164.79898987322332" y2="155.20101012677668" stroke="#8A8F98" stroke-width="1.6"/>
+<circle cx="186.01219330881975" cy="133.98780669118023" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<text x="145" y="179" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">疏水尾</text>
+<circle cx="315" cy="145" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="315" cy="205" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="315" y1="151" x2="315" y2="169" stroke="#8A8F98" stroke-width="1.2"/>
+<line x1="315" y1="199" x2="315" y2="181" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="342" cy="145" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="342" cy="205" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="342" y1="151" x2="342" y2="169" stroke="#8A8F98" stroke-width="1.2"/>
+<line x1="342" y1="199" x2="342" y2="181" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="369" cy="145" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="369" cy="205" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="369" y1="151" x2="369" y2="169" stroke="#8A8F98" stroke-width="1.2"/>
+<line x1="369" y1="199" x2="369" y2="181" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="396" cy="145" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="396" cy="205" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="396" y1="151" x2="396" y2="169" stroke="#8A8F98" stroke-width="1.2"/>
+<line x1="396" y1="199" x2="396" y2="181" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="423" cy="145" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="423" cy="205" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="423" y1="151" x2="423" y2="169" stroke="#8A8F98" stroke-width="1.2"/>
+<line x1="423" y1="199" x2="423" y2="181" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="450" cy="145" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="450" cy="205" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="450" y1="151" x2="450" y2="169" stroke="#8A8F98" stroke-width="1.2"/>
+<line x1="450" y1="199" x2="450" y2="181" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="477" cy="145" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="477" cy="205" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="477" y1="151" x2="477" y2="169" stroke="#8A8F98" stroke-width="1.2"/>
+<line x1="477" y1="199" x2="477" y2="181" stroke="#8A8F98" stroke-width="1.2"/>
+<text x="430" y="178" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">疏水核心</text>
+<circle cx="660" cy="175" r="84" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.4"/>
+<circle cx="660" cy="175" r="58" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.4"/>
+<circle cx="744.0" cy="175.0" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="718.0" cy="175.0" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="744.0" y1="175.0" x2="718.0" y2="175.0" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="724.3477332219942" cy="228.9941592136693" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="704.4305777009007" cy="212.28168136181927" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="724.3477332219942" y1="228.9941592136693" x2="704.4305777009007" y2="212.28168136181927" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="674.5864469240222" cy="257.7238512530255" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="670.071594304682" cy="232.11884967470806" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="674.5864469240222" y1="257.7238512530255" x2="670.071594304682" y2="232.11884967470806" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="618.0" cy="247.74613391789285" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="631.0" cy="225.22947341949745" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="618.0" y1="247.74613391789285" x2="631.0" y2="225.22947341949745" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="581.0658198539837" cy="203.7296920393562" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="605.4978279944173" cy="194.8371683128888" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="581.0658198539837" y1="203.7296920393562" x2="605.4978279944173" y2="194.8371683128888" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="581.0658198539837" cy="146.27030796064383" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="605.4978279944173" cy="155.1628316871112" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="581.0658198539837" y1="146.27030796064383" x2="605.4978279944173" y2="155.1628316871112" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="618.0" cy="102.25386608210718" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="631.0" cy="124.77052658050258" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="618.0" y1="102.25386608210718" x2="631.0" y2="124.77052658050258" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="674.5864469240221" cy="92.27614874697451" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="670.071594304682" cy="117.88115032529193" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="674.5864469240221" y1="92.27614874697451" x2="670.071594304682" y2="117.88115032529193" stroke="#8A8F98" stroke-width="1.2"/>
+<circle cx="724.3477332219941" cy="121.00584078633068" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<circle cx="704.4305777009007" cy="137.7183186381807" r="6" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<line x1="724.3477332219941" y1="121.00584078633068" x2="704.4305777009007" y2="137.7183186381807" stroke="#8A8F98" stroke-width="1.2"/>
+<text x="660" y="179" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">水性内腔</text>
+<circle cx="42" cy="315" r="5" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.2"/>
+<text x="54" y="320" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">亲水头</text>
+<line x1="112" y1="315" x2="138" y2="315" stroke="#8A8F98" stroke-width="2"/>
+<text x="146" y="320" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">疏水尾</text>
+<text x="40" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">同一类两亲分子，在不同浓度与几何条件下形成不同组装体。</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 365" role="img" aria-label="Z 方案的电位图">
+<title>Z 方案的电位图</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">Z 方案的电位图</text>
+<line x1="90" y1="80" x2="90" y2="340" stroke="#262624" stroke-width="1.4" marker-end="url(#arrowMuted)"/>
+<text x="90" y="66" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">氧化还原电位（V）</text>
+<line x1="86" y1="80" x2="96" y2="80" stroke="#5E5E58" stroke-width="1"/>
+<text x="80" y="84" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">-1.0</text>
+<line x1="86" y1="210.0" x2="96" y2="210.0" stroke="#5E5E58" stroke-width="1"/>
+<text x="80" y="214.0" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">0</text>
+<line x1="86" y1="340" x2="96" y2="340" stroke="#5E5E58" stroke-width="1"/>
+<text x="80" y="344" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="end" font-weight="400">+1.0</text>
+<rect x="200" y="250" width="80" height="50" rx="5" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="240" y="272" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">PSII</text>
+<text x="240" y="291" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">P680</text>
+<rect x="200" y="160" width="80" height="40" rx="5" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="240" y="185" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">P680*</text>
+<line x1="240" y1="248" x2="240" y2="202" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="250" y="236" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#A8894F" text-anchor="start" font-weight="400">光</text>
+<rect x="520" y="180" width="80" height="48" rx="5" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="560" y="201" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="700">PSI</text>
+<text x="560" y="219" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">P700</text>
+<rect x="520" y="95" width="80" height="38" rx="5" fill="#E7EBF1" stroke="#2E4A6B" stroke-width="1.5"/>
+<text x="560" y="119" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">P700*</text>
+<line x1="560" y1="178" x2="560" y2="135" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="570" y="166" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#A8894F" text-anchor="start" font-weight="400">光</text>
+<text x="145" y="282" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="600">H2O</text>
+<line x1="145" y1="290" x2="196" y2="278" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<text x="145" y="316" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">O2</text>
+<line x1="280" y1="180" x2="330" y2="198" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="310" y="183" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#A8894F" text-anchor="middle" font-weight="400">PQ</text>
+<line x1="330" y1="198" x2="400" y2="205" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="365" y="191" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#A8894F" text-anchor="middle" font-weight="400">Cyt b6f</text>
+<line x1="400" y1="205" x2="470" y2="195" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="435" y="185" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#A8894F" text-anchor="middle" font-weight="400">PC</text>
+<line x1="470" y1="195" x2="516" y2="190" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<line x1="600" y1="114" x2="650" y2="112" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="625" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#A8894F" text-anchor="middle" font-weight="400">Fd</text>
+<line x1="650" y1="112" x2="710" y2="140" stroke="#A8894F" stroke-width="1.7" marker-end="url(#arrowGold)"/>
+<text x="716" y="150" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">NADP+</text>
+<text x="716" y="166" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#2E4A6B" text-anchor="middle" font-weight="600">→ NADPH</text>
+<text x="40" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">两次光激发把电子从低能位置推到高能位置；电子在两次激发之间沿载体链下行。</text>
+</svg>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCI101 生成式 AI · 全科复习</title>
+  <meta name="description" content="SCI101 第 4 章 生成式 AI：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="sci101" data-chapter="04">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SCI101</a>
+      <span>/</span>
+      <span aria-current="page">第 4 章 生成式 AI</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html" class="is-current" aria-current="page"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html" class="is-current" aria-current="page"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SCI101 · 第 4 章</p>
+          <h1>生成式 AI</h1>
+          <p class="chapter-head__en">Generative AI</p>
+          <p class="chapter-head__meta">来源 Wang · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">4.1 什么是生成式 AI</a></li>
+        <li><a href="#s2">4.2 判别式 vs 生成式：一条主线</a></li>
+        <li><a href="#s3">4.3 生成式 AI 的训练与输出：五步</a></li>
+        <li><a href="#s4">4.4 GAN：生成器与判别器的对抗</a></li>
+        <li><a href="#s5">4.5 VAE：编码、采样、解码</a></li>
+        <li><a href="#s6">4.6 Transformer：编码器—解码器与自注意力</a></li>
+        <li><a href="#s7">4.7 扩散模型：先破坏，再复原</a></li>
+        <li><a href="#s8">4.8 四类模型的分工与常见工具</a></li>
+        <li><a href="#s9">4.9 判别要点与练习</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲先给出生成式 AI 的定义与它在 AI 谱系中的位置，再用“判别式学边界、生成式学分布”这一条主线，串起 GAN、VAE、Transformer 与扩散模型四类模型，最后落到训练五步与常见工具。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>生成式 AI 用已有内容（文本、音频、图像、代码）生成新的、看起来像真的内容。</li>
+    <li>它属于无监督、自监督与半<span class="c-term c-term--auto" data-term="supervised-learning" title="监督学习｜supervised learning：训练数据带标签、由标签提供学习信号的方法。">监督学习</span>算法的范畴，而不是单纯的监督<span class="c-term c-term--auto" data-term="classification" title="分类｜classification：目标为类别的监督学习任务。">分类</span>。</li>
+    <li>判别式模型学 P(y|x)（边界），回答“这是什么”；生成式模型学 P(x) 或 P(x|y)（分布），回答“我怎么造出这个”。</li>
+    <li>训练五步：数据收集与预处理、训练、模式与上下文识别、微调优化、生成输出。</li>
+    <li>四类模型：GAN（生成器对抗判别器）、VAE（编码器—解码器 + 潜在变量）、Transformer（编码器—解码器 + 自注意力）、扩散模型（加噪再逐步去噪）。</li>
+    <li>判别式依赖大量标注数据；生成式可利用大量未标注数据。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">4.1</span> 什么是生成式 AI</h2>
+  <p>讲义的定义是：<span class="c-term">生成式 AI<span class="c-term__en">generative AI</span></span> 是一类根据已有内容所学到的东西来创造新内容的人工智能。更具体地说，它指无监督（unsupervised）、自监督（self-supervised）与半监督（semi-supervised）的机器学习算法，使计算机能够利用文本、音频、视频、图像甚至代码等已有内容，生成新的可能内容；核心目标是产出“看起来像真的”的原创作品。</p>
+  <p>讲义把它放进四层谱系里对比：人工智能是让机器更像人的更广概念（例：IBM Watson、自主机器人、国际象棋引擎）；机器学习是从结构化数据学模式以做预测或决策（例：垃圾邮件过滤、信用卡欺诈检测）；深度学习是用多层神经网络从非结构化数据自动提取复杂特征（例：人脸识别）；生成式 AI 则是“有意义且智能地生成新内容”的子集（例：Midjourney、ChatGPT）。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>生成式 AI 不等于“深度学习”的同义词，也不等于“<span class="c-term c-term--auto" data-term="unsupervised-learning" title="无监督学习｜unsupervised learning：在没有标签的数据中寻找结构或表示的方法。">无监督学习</span>”。讲义明确它横跨无监督、自监督与半监督三类算法。</p>
+  </aside>
+  <p class="c-source">Wang slide 74–75</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">4.2</span> 判别式 vs 生成式：一条主线</h2>
+  <p>这是全章最重要的一组对照。讲义的原话是：</p>
+  <ul>
+    <li><span class="c-term">判别式模型<span class="c-term__en">discriminative model</span></span> 学习边界 P(y | x)，回答“这是什么？”；</li>
+    <li><span class="c-term">生成式模型<span class="c-term__en">generative model</span></span> 学习数据分布 P(x) 或 P(x | y)，回答“我怎么把它造出来？”。</li>
+  </ul>
+  <p>讲义用“猫 vs 豚鼠”的二分类任务说明判别式：设 X 为输入特征向量（提取的视觉模式或像素矩阵），Y 为真实类别标签；只取两个特征画散点，蓝点是豚鼠、橙点是猫，判别式模型学到的那条线就是<span class="c-term">决策边界<span class="c-term__en">decision boundary</span></span>——它把两类分开，但不描述每类内部长什么样。</p>
+  <p>生成式的思路相反：不是“给定特征预测标签”，而是“给定标签预测特征”。讲义用一句话概括两者的关注点：判别式算法关心 X 与 Y 之间的关系；生成式模型关心如何从 Y 得到 X。因此判别式擅长分类（如肿瘤 vs 正常），输出通常是标签、类别或连续值，代价是需要大量标注数据；生成式能合成全新的、未见过的样本，输出是图像、文本、序列等复杂数据，且可以利用海量未标注数据。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>判别式与生成式的四个差别</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">判别式</th><th scope="col">生成式</th></tr></thead>
+      <tbody>
+        <tr><td>学什么</td><td>P(y | x)，类别边界</td><td>P(x) 或 P(x | y)，数据分布</td></tr>
+        <tr><td>回答的问题</td><td>这是什么？</td><td>我能造出这个吗？</td></tr>
+        <tr><td>输出</td><td>标签、类别、连续值</td><td>图像、文本、序列</td></tr>
+        <tr><td>数据需求</td><td>大量标注数据</td><td>可利用大量未标注数据</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="c-source">Wang slide 73、80–84</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">4.3</span> 生成式 AI 的训练与输出：五步</h2>
+  <p>讲义把从数据到输出的过程拆成五步，每一步都有可考点：</p>
+  <ol>
+    <li><strong>数据收集与预处理</strong>：模型需要大规模数据。文本模型（如 ChatGPT）训练于书籍、文章与网络内容；图像模型（如 MidJourney）学习大量图像库；音乐生成模型（如 Suno AI）研究成千上万的作曲。数据要清洗并结构化，去除不一致以保证学习质量。</li>
+    <li><strong>训练模型</strong>：主要用深度神经网络。最常见的生成式架构是 Google 于 2017 年提出的 <span class="c-term">Transformer</span>；模型以无监督方式学习语言模式、句子结构与创作要素，并用<span class="c-term c-term--auto" data-term="rlhf" title="基于人类反馈的强化学习｜RLHF：用人类反馈做强化学习，使生成输出对齐人的期望。">基于人类反馈的强化学习</span>（RLHF）提升质量。</li>
+    <li><strong>模式识别与上下文理解</strong>：模型学习词、图像或声音之间的相互关系。文本上就是学习词序列的概率——“advancements in” 后面更可能是 “artificial intelligence”，而不是 “banana technology”；图像上则识别颜色模式、纹理与物体位置。</li>
+    <li><strong>微调与优化</strong>：训练完成后做微调以提升准确性；开发者用<span class="c-term c-term--auto" data-term="reinforcement-learning" title="强化学习｜reinforcement learning：通过动作与奖励/惩罚的序列学习策略的方法。">强化学习</span>或监督式调优，让输出对齐真实世界的期望。</li>
+    <li><strong>生成输出</strong>：给定提示（prompt），模型处理输入并预测最可能的回应；文本生成段落、补句或答问，图像按文字描述生成写实或艺术画面，音乐按学到的模式作曲。</li>
+  </ol>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>Transformer 的提出年份（2017）与提出者（Google）、RLHF 的位置（训练/微调阶段用于对齐人类反馈）是两个常考细节。</p>
+  </aside>
+  <p class="c-source">Wang slide 85–89</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">4.4</span> GAN：生成器与判别器的对抗</h2>
+  <p><span class="c-term">生成对抗网络<span class="c-term__en">generative adversarial network</span></span>（GAN）由两个部分组成：</p>
+  <ul>
+    <li><strong>生成器（generator）</strong>：分析数据模式，按用户输入创造新数据；</li>
+    <li><strong>判别器（discriminator）</strong>：评估数据是真实还是伪造。</li>
+  </ul>
+  <p>工作流程是：生成器从<span class="c-term">潜在空间<span class="c-term__en">latent space</span></span>采样一个随机噪声向量，尝试生成全新的合成数据（例如一张不存在的人脸）；判别器接收一个输入——或来自真实数据集的真样本，或来自生成器的假样本——并判断“真/假”。判别器的反馈让算法调整生成器的<span class="c-term c-term--auto" data-term="parameter" title="参数｜parameter：模型内部由训练学到的量，如权重与偏置。">参数</span>、改进输出；这个过程持续到生成器产出的数据与输入信息无法区分。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 4-1 GAN 训练回路</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of a generative adversarial network training loop: random noise vector from latent space enters the generator, generator outputs a fake sample, both real samples from the dataset and fake samples enter the discriminator, discriminator outputs real or fake, and a feedback arrow returns to update the generator. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram of a generative adversarial network training loop: random noise vector from latent space enters the generator, generator outputs a fake sample, both real samples from the dataset and fake samples enter the discriminator, discriminator outputs real or fake, and a feedback arrow returns to update the generator. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>注意判别器本身做的是<strong>分类</strong>（真/假），但整个 GAN 系统的目的是<strong>生成</strong>。这个区分在练习页被直接考到：“GAN 的判别器分辨真假图像，这是分类还是<span class="c-term c-term--auto" data-term="regression" title="回归｜regression：目标为连续数值的监督学习任务。">回归</span>？”答案是分类。</p>
+  <p class="c-source">Wang slide 90–91</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">4.5</span> VAE：编码、采样、解码</h2>
+  <p><span class="c-term">变分自编码器<span class="c-term__en">variational autoencoder</span></span>（VAE）包含两个神经网络：编码器（encoder）与解码器（decoder）。训练时，编码器先把输入数据压缩成有意义的<span class="c-term">潜在变量<span class="c-term__en">latent variables</span></span>，这些变量捕捉数据最显著的特征；解码器再学习从该空间采样的点还原成逼真的数据输出。</p>
+  <p>关键在于“一定程度的随机性”：解码器不是只还原原样本，而是从潜在空间中采样，因此能生成新的、多样的、又与原始输入相似的输出。这使 VAE 在保真度（fidelity）与多样性（diversity）之间取得平衡——讲义在总结页把它概括为“把压缩与概率采样结合起来做创造性重建”。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>GAN 靠判别器的对抗信号改进生成器；VAE 靠重建误差加潜在空间的概率采样。前者追求逼真，后者强调“可采样、有多样性”。</p>
+  </aside>
+  <p class="c-source">Wang slide 92、97</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">4.6</span> Transformer：编码器—解码器与自注意力</h2>
+  <p><span class="c-term">Transformer</span> 是一类用于多种自然语言处理任务的神经网络，例如机器翻译、文本摘要与语言理解；它主要支撑各类大语言模型（LLM），而 LLM 是生成式 AI 的基础。讲义把结构说得很简洁：模型由编码器与解码器两个主要部分组成，编码器处理输入序列，解码器生成输出序列。</p>
+  <p>总结页补充了它为何主导自然语言处理：靠<span class="c-term">自注意力<span class="c-term__en">self-attention</span></span>机制，使上下文感知的文本与代码生成成为可能。这一点与第 2 章“架构跟随数据结构”相呼应——序列与文本的次序和长程依赖，正需要注意力来建模。</p>
+  <p class="c-source">Wang slide 93–94、97</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">4.7</span> 扩散模型：先破坏，再复原</h2>
+  <p><span class="c-term">扩散模型<span class="c-term__en">diffusion model</span></span>通过“逆转一个损坏过程”来生成高保真合成数据。前向过程取真实数据样本，逐步加入噪声，破坏其结构直至无法辨认；然后训练一个大型神经网络，在细粒度步骤中逐步去除噪声，最终生成与原始真实数据相似的全新样本。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 4-2 扩散模型的前向加噪与反向去噪</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram with two horizontal rows: top row shows a clear image progressively corrupted by added noise in five steps from left to right labelled forward diffusion; bottom row shows a network removing noise step by step from pure noise back to a clear generated image labelled reverse denoising. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram with two horizontal rows: top row shows a clear image progressively corrupted by added noise in five steps from left to right labelled forward diffusion; bottom row shows a network removing noise step by step from pure noise back to a clear generated image labelled reverse denoising. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>练习页有一道相关判断题：“扩散模型逐步去噪生成图像，这最像哪个更早的概念——回归还是<span class="c-term c-term--auto" data-term="clustering" title="聚类｜clustering：按相似性把无标签样本分成若干簇的技术。">聚类</span>？”按讲义脉络应选回归：去噪是一个逐像素/逐特征的数值预测任务，而不是分组。</p>
+  <p class="c-source">Wang slide 95–96、104</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">4.8</span> 四类模型的分工与常见工具</h2>
+  <p>讲义的总结页用一句话概括四类模型各自的机制：Transformer 靠自注意力主导自然语言处理，实现上下文感知的文本与代码生成；扩散模型逆转噪声模式，合成高质量数据与媒体；GAN 用生成器—判别器的竞争动态产出逼真结果；VAE 把压缩与概率采样结合，做兼顾保真与多样的创造性重建。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>四类生成模型的机制与侧重</caption>
+      <thead><tr><th scope="col">模型</th><th scope="col">核心机制</th><th scope="col">擅长</th></tr></thead>
+      <tbody>
+        <tr><td>GAN</td><td>生成器与判别器对抗</td><td>逼真图像、快速采样</td></tr>
+        <tr><td>VAE</td><td>编码器压缩到潜在变量，解码器采样重建</td><td>多样输出、潜在空间操作</td></tr>
+        <tr><td>Transformer</td><td>编码器—解码器 + 自注意力</td><td>文本、代码、长程依赖</td></tr>
+        <tr><td>扩散模型</td><td>加噪破坏，再逐步去噪复原</td><td>高保真图像与媒体</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>工具层面，讲义按媒介分类：文本生成（AI 聊天机器人、内容创作、代码生成、创意写作，如 ChatGPT、Deepseek）；图像生成（AI 艺术、平面设计、品牌与产品设计，如 DALL·E、MidJourney）；音乐与音频（AI 作曲、声音克隆、音效，如 AIVA、ElevenLabs）；视频与动画（AI 视频、深度伪造、虚拟主播，如 Runway ML、Synthesia）；代码与软件开发（AI 辅助编码、调试、低代码/无代码，如 Codex、Copilot）；3D 建模与游戏开发（AI 生成游戏资产、虚拟世界，如 NVIDIA GANverse3D）。</p>
+  <p>应用层面覆盖六个领域：医疗（合成医学图像用于训练、药物分子设计，后者常与强化学习结合）、教育（个性化辅导、出题、反馈）、软件（代码补全、修 bug、生成测试）、商业（需求预测 + 合成情景生成）、科学（蛋白质折叠 AlphaFold、材料发现）、创意（营销文案、设计、音乐、视频）。</p>
+  <p class="c-source">Wang slide 77–79、97</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">4.9</span> 判别要点与练习</h2>
+  <p>讲义末尾的练习集中考察“用哪条判据归类”。可归纳为三条：</p>
+  <ol>
+    <li><strong>看目标</strong>：输出是类别或连续值 → 判别式；输出是新的复杂数据（图像、文本、序列）→ 生成式。</li>
+    <li><strong>看标签来源</strong>：需要大量人工标注 → 监督式判别模型；利用数据自身的下一个词、下一像素作为信号 → 自监督生成模型。</li>
+    <li><strong>看是否有“采样—生成”环节</strong>：从潜在空间或噪声采样再解码/去噪 → 生成式。</li>
+  </ol>
+  <p>按这三条可解讲义的四道题：模型从一万张风景照生成从未存在过的逼真风景 → 生成式；ChatGPT 预测下一个词 → <span class="c-term c-term--auto" data-term="self-supervised-learning" title="自监督学习｜self-supervised learning：从数据自身构造监督信号（如预测下一个词）的学习方式。">自监督学习</span>；GAN 判别器分辨真伪 → 分类；扩散模型逐步去噪 → 最接近回归。</p>
+  <p>讲义最后补充了弱监督的现实背景，也解释了生成式为何诱人：从互联网获取海量图像很容易，但由于人工成本，只有一小部分能被标注；通常只有图像级标签而非对象级标签；标注者粗心、疲倦，或某些图像本身就难以归类，都会让标签不理想。生成式模型能利用大量未标注数据，正是对这一困境的回应。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>“P(y|x) 是判别、P(x) 是生成”是最稳的一条判据；其次记住 GAN 的判别器做分类、扩散模型的去噪近似回归。</p>
+  </aside>
+  <p class="c-source">Wang slide 98–105</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">Wang</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch03.html"><span>上一章</span>机器学习的类型</a>
+          <a class="pager__next" href="ch05.html"><span>下一章</span>机器学习数学基础</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCI101 机器学习的类型 · 全科复习</title>
+  <meta name="description" content="SCI101 第 3 章 机器学习的类型：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="sci101" data-chapter="03">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SCI101</a>
+      <span>/</span>
+      <span aria-current="page">第 3 章 机器学习的类型</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html" class="is-current" aria-current="page"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论：AI for Science</span><span class="toc-src">L1a</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">AI 与机器学习：概念与区别</span><span class="toc-src">L1b + Wang</span></a></li>
+          <li><a href="ch03.html" class="is-current" aria-current="page"><span class="toc-num">03</span><span class="toc-title">机器学习的类型</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">生成式 AI</span><span class="toc-src">Wang</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">机器学习数学基础</span><span class="toc-src">L2</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">感知机、激活函数与过拟合/欠拟合</span><span class="toc-src">L3</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">经典机器学习方法</span><span class="toc-src">L5</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">模型评估指标</span><span class="toc-src">Metrics</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">聚类</span><span class="toc-src">Qing Mu</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SCI101 · 第 3 章</p>
+          <h1>机器学习的类型</h1>
+          <p class="chapter-head__en">Types of Machine Learning</p>
+          <p class="chapter-head__meta">来源 Wang · 术语 8 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">3.1 类型总览</a></li>
+        <li><a href="#s2">3.2 监督学习：标签就是学习信号</a></li>
+        <li><a href="#s3">3.3 回归：预测连续值</a></li>
+        <li><a href="#s4">3.4 分类：预测类别</a></li>
+        <li><a href="#s5">3.5 线性回归 vs 逻辑回归</a></li>
+        <li><a href="#s6">3.6 无监督学习与聚类</a></li>
+        <li><a href="#s7">3.7 强化学习</a></li>
+        <li><a href="#s8">3.8 弱监督学习</a></li>
+        <li><a href="#s9">3.9 总结与题型训练</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲按“有没有标签、标签有多完整”把机器学习分成四大类：监督学习（回归与分类）、无监督学习（聚类）、强化学习、弱监督学习，并给出每类在科学研究中的具体例子。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>机器学习四大类：监督、无监督、强化、弱监督；监督学习再分为回归与分类。</li>
+    <li>监督学习的训练数据带标签，标签提供学习信号；回归预测连续值，分类预测类别。</li>
+    <li>无监督学习没有标签，目标是发现结构：聚类按相似度分组，降维用更少维度保留结构。</li>
+    <li>强化学习通过“动作—奖励/惩罚”序列学习策略，要素是 agent、environment、state、action、reward。</li>
+    <li>弱监督学习的三种不完整：不完整监督、不精确监督、不准确监督。</li>
+    <li>判断任务类型先看目标 y：有 y 且为类别是分类，有 y 且为数值是回归，无 y 找分组是聚类。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">3.1</span> 类型总览</h2>
+  <p>讲义用一张<span class="c-term c-term--auto" data-term="dendrogram" title="树状图｜dendrogram：层次聚类中表示合并顺序与不相似度的树状图。">树状图</span>给出全貌：<span class="c-term">机器学习<span class="c-term__en">machine learning</span></span> 分为<span class="c-term">监督学习<span class="c-term__en">supervised learning</span></span>、<span class="c-term">无监督学习<span class="c-term__en">unsupervised learning</span></span>、<span class="c-term">强化学习<span class="c-term__en">reinforcement learning</span></span> 与<span class="c-term">弱监督学习<span class="c-term__en">weakly supervised learning</span></span>；其中监督学习再分为回归（regression）与分类（classification），无监督学习下列出聚类（clustering）。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 3-1 机器学习类型树</span>
+      <button class="c-copy" type="button" data-copy="Clean vector tree diagram with Machine Learning at the root branching into four children: Supervised Learning, Unsupervised Learning, Reinforcement Learning, Weakly Supervised Learning; Supervised Learning further branches into Regression and Classification, Unsupervised Learning branches into Clustering. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector tree diagram with Machine Learning at the root branching into four children: Supervised Learning, Unsupervised Learning, Reinforcement Learning, Weakly Supervised Learning; Supervised Learning further branches into Regression and Classification, Unsupervised Learning branches into Clustering. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>这张图是本章的骨架，也是期末选择题的高频出处：题目常给一个场景，问“这属于哪一类”。判据只有一个——<strong>训练时有没有目标值，目标值是什么形态</strong>。</p>
+  <p class="c-source">Wang slide 11</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">3.2</span> 监督学习：标签就是学习信号</h2>
+  <p>监督学习用“标注良好”的数据训练，也就是每条样本都已经打上正确答案（label）。讲义把它画成“样本 + 标签”的组合：多张车的图片标为 CAR，多张自行车图片标为 BIKE，构成训练数据集。模型从这些配对中学习，再对新样本给出预测。</p>
+  <p>讲义的门诊例子最能说明流程：数据包含病人的性别与年龄，每位病人标为 healthy 或 sick。训练后，当一位 50 岁男性就诊时，模型根据学到的模式判断他健康或生病。这里要注意：监督学习学到的是“特征 → 标签”的映射，不是“标签 → 特征”。</p>
+  <p>监督学习适用于两类任务：分类与回归。两者的分界线是目标变量的类型，而不是输入的类型——输入可以是数值也可以是类别，决定任务的是输出。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“有标签”不等于“分类”。有标签且标签是连续数值时仍是监督学习，但任务是回归。</p>
+  </aside>
+  <p class="c-source">Wang slide 12–14</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">3.3</span> 回归：预测连续值</h2>
+  <p><span class="c-term">回归<span class="c-term__en">regression</span></span>在输入与输出之间存在关系时使用，目标是预测连续变量，例如天气预报与市场趋势。讲义给出的典型算法清单包括：简单线性回归、多元线性回归、多项式回归、<span class="c-term c-term--auto" data-term="support-vector" title="支持向量｜support vector：离决策边界最近、决定间隔的数据点。">支持向量</span>回归（SVR）、<span class="c-term c-term--auto" data-term="decision-tree" title="决策树｜decision tree：按特征做层级 if-else 提问、叶节点给出结果的模型。">决策树</span>回归、<span class="c-term c-term--auto" data-term="random-forest" title="随机森林｜random forest：用随机样本训练多棵树、以投票或平均给出预测的集成方法。">随机森林</span>回归等。</p>
+  <p>股票预测例子展示了完整的特征设计：用今日价格、RSI、50 日移动平均、VIX 指数、科技板块新闻情绪，预测明日价格。讲义给出的线性模型是：</p>
+  <div class="c-formula">Price<sub>tomorrow</sub> = 0.9·Price<sub>today</sub> + 5.2·RSI − 2.1·MA<sub>50</sub> − 0.5·VIX + 8.0·Sentiment + 25</div>
+  <p>代入 Price=150、RSI=62、MA=145、VIX=18、Sentiment=−0.5，讲义给出的输出是 $147.50。这里有一个必须指出的细节：按上式逐项计算为 135 + 322.4 − 304.5 − 9 − 4 + 25 = 164.90，与 147.50 不符，说明讲义印刷的系数或示例数值存在不一致。复习时应记住方法（加权求和 + 截距），计算题按题目给出的系数重算。</p>
+  <p>回归的商业案例是某零售商为 500 家门店预测某产品的周销量（Weekly_Units_Sold）。特征被分为六类：历史销量（上周销量、去年同期、4 周滚动均值）、时间（月份、周序、是否节假日周、距节假日天数、是否发薪周）、促销（是否促销、折扣率、广告投入、是否首页推荐）、产品与门店（品类、门店规模、城乡、区域）、外部宏观（失业率、气温、天气、竞品价格）、价格（现价、与竞品价格比）。算法上，讲义把<span class="c-term c-term--auto" data-term="gradient-boosting" title="梯度提升｜gradient boosting：序列建树、每棵新树拟合前序模型误差的集成方法。">梯度提升</span>机（XGBoost、LightGBM、CatBoost）称为业界标准，随机森林回归稳健，深度学习较少用、适合百万级记录。</p>
+  <p class="c-source">Wang slide 16–28</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">3.4</span> 分类：预测类别</h2>
+  <p><span class="c-term">分类<span class="c-term__en">classification</span></span>在输出变量是类别时使用，例如是/否、男/女、真/假。讲义给的三个科学场景层层递进：</p>
+  <ul>
+    <li>图像识别动物：数据集含大象与老虎的标注图片，模型学会判断新图片是哪一种。</li>
+    <li>医学诊断：把皮肤病变图像分类为恶性（malignant）或良性（benign）。</li>
+    <li>水质分类：根据理化与生物测量，把河流或湖泊水样分为 Clean、Polluted、Highly Polluted 三类。</li>
+  </ul>
+  <p>水质例子的特征清单值得记住，它展示了“同一任务可以有几十个特征”：pH（酸碱度）、溶解氧 DO（过低指示污染）、生化需氧量 BOD（高值指示有机污染，如污水）、化学需氧量 COD（可氧化污染物）、浊度（浑浊程度）、电导率（总溶解离子）、营养盐（硝酸盐 NO₃⁻ 与磷酸盐 PO₄³⁻，会导致富营养化）、粪大肠菌群（污水污染指示）、重金属浓度（铅、汞、砷）。</p>
+  <p>常用分类算法：逻辑回归、K 近邻（KNN）、<span class="c-term c-term--auto" data-term="support-vector-machine" title="支持向量机｜support vector machine：寻找最大间隔超平面以分隔类别的监督学习算法。">支持向量机</span>、决策树分类、随机森林分类等。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>判断分类还是回归只看目标变量：类别 → 分类，连续数值 → 回归。输入特征可以是数值型，这不影响判断。</p>
+  </aside>
+  <p class="c-source">Wang slide 30–35</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">3.5</span> 线性回归 vs 逻辑回归</h2>
+  <p>这一对最容易被名字误导：<strong>逻辑回归是分类算法</strong>，尽管名字里有“回归”。讲义的说法是：线性回归用于回归问题，逻辑回归用于分类问题。</p>
+  <p>线性回归的形式是</p>
+  <div class="c-formula"><i>y</i> = <i>a</i><sub>0</sub> + <i>a</i><sub>1</sub><i>x</i> + <i>ε</i></div>
+  <p>目标是找到最佳拟合直线，使它对连续因变量的预测尽量准确；a₀、a₁ 是系数，ε 是误差项。只有一个自变量时称简单线性回归，有两个以上自变量时称多元线性回归。讲义用“学习时长 vs 考试成绩”的散点说明：点大致呈直线趋势，画出最佳拟合线后，就可以预测学习 3、5、8 小时的成绩。</p>
+  <p>逻辑回归把输入的加权和通过一个<span class="c-term c-term--auto" data-term="activation-function" title="激活函数｜activation function：对加权和做非线性变换、决定神经元输出的函数。">激活函数</span>压到 0 与 1 之间，这个函数是 <span class="c-term">S 型函数<span class="c-term__en">sigmoid function</span></span>，曲线称 S 曲线：</p>
+  <div class="c-formula"><i>p</i> = 1 / (1 + <i>e</i><sup>−<i>z</i></sup>)，&nbsp; <i>z</i> = <i>w</i><sup>T</sup><i>x</i> + <i>b</i></div>
+  <p>因此逻辑回归的输出只能在 0 到 1 之间，可解释为概率；它基于最大似然估计（Maximum Likelihood estimation），即让观测到的数据成为最可能出现的结果。讲义的两个例子都是二分类：预测候选人是否胜选（预测变量为竞选花费、负面竞选时间、是否现任；结果为赢/输），以及预测研究生录取（预测变量为 GRE、GPA、本科院校声望；结果为录取/不录取）。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>逻辑回归 = 分类；线性回归 = 回归。逻辑回归的输出是 0–1 的概率，需要再取阈值才变成类别。</p>
+  </aside>
+  <p class="c-source">Wang slide 36–43</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">3.6</span> 无监督学习与聚类</h2>
+  <p>讲义用“整理一座所有书都没有标签的图书馆”比喻无监督学习：机器不被告知答案，必须自己探索数据、寻找相似性并据此分组。用病人数据说明时，数据集只有性别与年龄，没有健康状态标签；算法可能按年龄或性别把病人分成“较年轻的健康人群”“年长病人”之类，而它并不知道真实的健康状态。</p>
+  <p><span class="c-term">聚类<span class="c-term__en">clustering</span></span>被定义为“在数据中寻找相似组（cluster）”的技术：彼此相似（相近）的样本归入同一簇，差异很大（相距很远）的样本归入不同簇。讲义用一个含三个自然分组的散点图说明“自然簇”的含义。</p>
+  <p>聚类的现实用途讲义列了五个：按体型把人群分为小/中/大号做 T 恤（量身定制太贵，一刀切不合身）；按购买行为、人口统计或浏览习惯给客户分群；推荐系统把相似用户或相似物品聚在一起；营销中的客户细分；按内容相似度整理文本集合。</p>
+  <p>判断是否该用聚类分析，讲义给出一句话标准：当你想按相似性把数据分段或归类，但<strong>并不确定这些组应该是什么</strong>时，用聚类。</p>
+  <p class="c-source">Wang slide 44–57、60</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">3.7</span> 强化学习</h2>
+  <p><span class="c-term">强化学习<span class="c-term__en">reinforcement learning</span></span>训练模型基于奖励与反馈做出一系列决策：机器在复杂而不确定的环境中学习达成目标，每达成一次就被奖励一次。讲义用婴儿学步说明“试错”：站住了得到赞许，倾斜过度就摔倒，经过数百次微调后能骑完整条车道。</p>
+  <p>强化学习框架的五个要素必须能对号入座：agent（智能体）、environment（环境）、state（状态）、action（动作）、reward（奖励，含惩罚）。讲义给了三个科学场景：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>强化学习框架在三个科学问题中的映射</caption>
+      <thead><tr><th scope="col">要素</th><th scope="col">药物分子设计</th><th scope="col">濒危物种保护</th></tr></thead>
+      <tbody>
+        <tr><td>Agent</td><td>分子设计 AI</td><td>保护管理系统</td></tr>
+        <tr><td>Environment</td><td>化学空间与生物活性预测模型</td><td>含种群、栖息地与人类活动的生态系统</td></tr>
+        <tr><td>State</td><td>当前分子结构及其预测性质</td><td>种群规模、栖息地质量、偷猎程度、资源可得性</td></tr>
+        <tr><td>Action</td><td>增删改官能团、键或环</td><td>反偷猎巡逻、生态廊道、栖息地管理、控制入侵物种</td></tr>
+        <tr><td>Reward</td><td>疗效、溶解度、安全性提升为 +；毒性、吸收差、代谢不稳定为 −</td><td>种群与生物多样性增长为 +；种群下降或栖息地破坏为 −</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>经典案例是 AlphaGo Zero：只用强化学习，通过自我对弈从零学围棋；自我训练 40 天后，它的水平超过了曾击败世界第一柯洁的 AlphaGo Master 版本。讲义还给出神经科学场景：agent 是模拟的动物或人脑模型，state 是神经活动模式与感官输入，action 是行为选择（转向、等待等）。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 3-2 强化学习回路</span>
+      <button class="c-copy" type="button" data-copy="Clean vector reinforcement learning loop diagram: an agent box on the left sends an action arrow to an environment box on the right, the environment returns a state and a reward arrow back to the agent, with labels agent, action, environment, state, reward. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector reinforcement learning loop diagram: an agent box on the left sends an action arrow to an environment box on the right, the environment returns a state and a reward arrow back to the agent, with labels agent, action, environment, state, reward. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p class="c-source">Wang slide 61–69</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">3.8</span> 弱监督学习</h2>
+  <p><span class="c-term">弱监督学习<span class="c-term__en">weakly supervised learning</span></span>处理“标签不理想”的情形，讲义列出三种：</p>
+  <ul>
+    <li><strong>不完整监督（incomplete supervision）</strong>：只有一部分训练数据带标签；</li>
+    <li><strong>不精确监督（inexact supervision）</strong>：标签粒度较粗，只给到粗略层级；</li>
+    <li><strong>不准确监督（inaccurate supervision）</strong>：给定的标签不总是真实值。</li>
+  </ul>
+  <p>自动驾驶的例子属于第一种：要让车识别“夜间有鹿横穿”“球滚入街道”这类罕见但关键的场景，为几百万个罕见事件逐一标注不可行。肿瘤定位的例子属于第二种：分割任务需要像素级边界，但放射科医生的像素级标注极其昂贵，实际只有图像级标签（整张扫描“含肿瘤/不含肿瘤”）。解决办法是<span class="c-term">多示例学习<span class="c-term__en">multiple instance learning</span></span>（MIL）：把图像切成许多小 patch（实例），只要一个 patch 含肿瘤，整袋（bag）就标为正；模型学习判断哪些 patch 最可能含肿瘤，从而在从未获得位置标签的情况下完成定位。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>三种弱监督的辨析是高频题：标签少 = 不完整；标签粗 = 不精确；标签错 = 不准确。MIL 是“不精确监督”的典型解法。</p>
+  </aside>
+  <p class="c-source">Wang slide 70–72、105</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">3.9</span> 总结与题型训练</h2>
+  <p>讲义用两页总结收束全章。第一，分类与回归的差别在目标值：回归的目标是连续值（年龄、温度、海拔、股价、房价），分类的目标是类别（邮件是/不是垃圾，答案为真/假）；输入都可能是连续或类别型。第二，聚类用于“想分段但不知道组是什么”的场合。</p>
+  <p>练习页给出的五个场景可作为自测，判断依据始终是“有没有标签、标签是什么”：</p>
+  <ol>
+    <li>老师给计算机许多带“猫/狗/马”标签的动物图片，之后让它猜新图片——监督学习（分类）。</li>
+    <li>高峰时段交通摄像头记录数百万车辆移动，无人标注，系统自己发现存在五种交通流模式——无监督学习（聚类）。</li>
+    <li>植物学家测量 200 株植物的叶长与叶宽，每株已有“喜阳/喜阴”标签，用来判断新幼苗——监督学习（分类）。</li>
+    <li>租车公司有 200 次行程的行驶距离与耗油量，想预测 300 km 行程的耗油——监督学习（回归）。</li>
+    <li>孩子学滑板，站住得到赞许、倾斜过度就摔倒，数百次微调后学会——强化学习。</li>
+  </ol>
+  <p>另有两道概念题值得注意：模型从一万张风景照学会生成一张从未存在过的逼真风景，属于生成式（generative）而非判别式；ChatGPT 预测下一个词，属于自监督（self-supervised）学习——它从文本自身构造监督信号。</p>
+  <p class="c-source">Wang slide 58–59、98–104</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">Wang</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch02.html"><span>上一章</span>AI 与机器学习：概念与区别</a>
+          <a class="pager__next" href="ch04.html"><span>下一章</span>生成式 AI</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

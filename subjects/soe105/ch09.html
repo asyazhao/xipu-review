@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 函数：抽象、传值与传引用 · 全科复习</title>
+  <meta name="description" content="SOE105 第 9 章 函数：抽象、传值与传引用：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="09">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 9 章 函数：抽象、传值与传引用</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html" class="is-current" aria-current="page"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html" class="is-current" aria-current="page"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 9 章</p>
+          <h1>函数：抽象、传值与传引用</h1>
+          <p class="chapter-head__en">Functions: Abstraction, Pass by Value &amp; Reference</p>
+          <p class="chapter-head__meta">来源 L10–11 · 术语 8 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">9.1 分解与抽象：把代码变成黑箱</a></li>
+        <li><a href="#s2">9.2 函数：黑箱的代码形态</a></li>
+        <li><a href="#s3">9.3 自顶向下：函数如何组织一个程序</a></li>
+        <li><a href="#s4">9.4 调用：实参与形参的一一对应</a></li>
+        <li><a href="#s5">9.5 传值：内存里发生了什么</a></li>
+        <li><a href="#s6">9.6 传值的用法与边界</a></li>
+        <li><a href="#s7">9.7 传引用：把地址交给函数</a></li>
+        <li><a href="#s8">9.8 数组传参：元素、整体与多维</a></li>
+        <li><a href="#s9">9.9 重载与“不要相信任何函数”</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本章回答两个问题：怎样把一个复杂程序拆成可复用的部件（分解与抽象），以及函数被调用时数据到底发生了什么（传值与传引用）。理解内存里两块独立的数据区，是后续学<span class="c-term c-term--auto" data-term="array" title="数组｜array：同一类型元素的线性集合，存于连续内存。">数组</span>、<span class="c-term c-term--auto" data-term="pointer" title="指针｜pointer：存放内存地址的变量，可通过该地址引用对应存储。">指针</span>与<span class="c-term c-term--auto" data-term="recursion" title="递归｜recursion：把任务分解成更小的同类子任务，由函数调用自己完成。">递归</span>的基础。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>分解把程序拆成自包含、可复用的部件；抽象隐藏细节，只保留“做什么”。</li>
+    <li>函数是黑箱：接口（签名/原型）说明输入输出，定义藏起实现，二者可以分开写。</li>
+    <li>函数必须先声明后使用；定义写在 main 之前时可以省掉原型。</li>
+    <li>传值把实参的值复制给形参，两块数据区互不影响，修改形参不会改动调用者。</li>
+    <li>传引用把地址交给函数，形参与实参是同一块存储，因此可以带回多个结果。</li>
+    <li>整个数组传参时自动按引用传递，只需首<span class="c-term c-term--auto" data-term="element" title="元素｜element：数组中的一个数据项，由下标定位。">元素</span>地址与维度；多<span class="c-term c-term--auto" data-term="dimension" title="维数｜dimension：数组能存放的元素个数。">维数</span>组除第一维外都必须写明。</li>
+    <li>同名函数靠参数的类型与个数（签名）区分，这叫函数重载。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">9.1</span> 分解与抽象：把代码变成黑箱</h2>
+  <p>讲义先盘点已经学过的语言机制：基础类型（primitives）、复杂表达式、分支（if-else、if-else if、switch）与<span class="c-term c-term--auto" data-term="loop" title="循环｜loop：重复执行一段语句的控制结构，又称迭代。">循环</span>（for、while、do-while）。按讲义的说法，原理上这些已经足够完成任何可计算的任务，但还缺两个最重要的概念——<span class="c-term">分解<span class="c-term__en">decomposition</span></span>与<span class="c-term">抽象<span class="c-term__en">abstraction</span></span>。</p>
+  <p>分解要解决的问题是：怎样把程序切成若干个自包含（self-contained）的部分，并且能组合起来解决当前问题。讲义对“自包含”给了一个可操作的定义——这些部分只使用传给它的输入和“基本”操作来完成计算；理想情况下，这些部分还能被别的程序复用。它用圆面积做例子：先写 pi = 3.14、r = 2.5，再算 area = pi * r²。把“算圆面积”独立出来，就是一次最小的分解。</p>
+  <p>抽象要解决的问题是：怎样忽略不必要的细节。讲义把它概括为一句话——把“它做什么”（what）与“它实际怎么做”（how）分开。创建部件并把细节抽走，才能写出复杂的代码而不被复杂度淹没；否则每读一行都要同时想着十件无关的事。</p>
+  <p>两者合起来就是讲义反复强调的大图景：用<span class="c-term">黑箱<span class="c-term__en">black box</span></span>的方式做抽象，用拆成自包含部分的方式做分解。写代码的人负责细节并设计接口，用代码的人只需要接口，不需要也不想看细节；黑箱还可以在程序的不同位置重复使用，从而不必复制粘贴。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 9-1 函数作为黑箱</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram of a function as a black box: a rounded rectangle labelled Function with three input arrows on the left labelled Input1, Input2, Inputn, one output arrow on the right labelled Output, and a small internal box labelled Storage; above the box a label reads what is done, below it a label reads how it is done hidden. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram of a function as a black box: a rounded rectangle labelled Function with three input arrows on the left labelled Input1, Input2, Inputn, one output arrow on the right labelled Output, and a small internal box labelled Storage; above the box a label reads what is done, below it a label reads how it is done hidden. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p class="c-source">L10 p.2–8</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">9.2</span> 函数：黑箱的代码形态</h2>
+  <p><span class="c-term">函数<span class="c-term__en">function</span></span>在别的语言里也叫方法（method）或过程（procedure）。讲义提醒，其实早就用过函数了——<span class="c-term c-term--auto" data-term="initialization" title="初始化｜initialization：在声明时用列表给数组元素赋初值。">初始化</span>随机数发生器的 srand(time(0)) 就是一次函数调用。函数让我们把一段代码装进黑箱：它捕获达成某个计算目标所需的操作序列，用指定的输入产生输出，同时把“怎么算”的细节藏起来。</p>
+  <p>每个函数都有一份<span class="c-term">规格说明<span class="c-term__en">specification</span></span>，在 C/C++ 里用注释表达（可选但推荐）。规格的含义是：只要使用者提供的输入满足所述条件，函数就按规格产生输出，包括注明的副作用。讲义给的例子用文档注释写清了参数 ch 的含义与返回 true/false 的条件。</p>
+  <p>函数靠<span class="c-term">签名<span class="c-term__en">signature</span></span>被识别，签名又叫<span class="c-term c-term--auto" data-term="function-prototype" title="函数原型｜function prototype：声明返回类型、函数名与参数类型，不含函数体。">函数原型</span>（function prototype），它声明接口——输入与输出参数——而把实现留给定义。一般形式是“返回类型 + 函数名 + 参数表”，参数可以有 0 个或多个：</p>
+<pre class="c-code"><code>bool isAlphaNumeric(char ch);   // returns bool, takes one char
+void printCard(int);            // void function: returns no value</code></pre>
+  <p>第二行说明了两点：参数表里可以只写类型不写名字；返回类型为 void 表示这个函数不返回值，只做事（比如打印一张牌）。讲义另外给出一条放置规则：函数的定义可以放在程序中任何位置，只要在原型之后；如果定义直接写在 main() 之前，就不必再提供原型，因为函数在<i>使用之前</i>已经被定义。反过来，函数必须先声明后使用，定义的细节可以晚一点再给。</p>
+  <p>C++ 程序通常的组织形式因此是固定的四段：include 语句、函数原型、main() 函数、用户自定义函数。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>原型与定义的区别：原型只有返回类型、函数名与参数类型，以分号结束；定义带函数体。编译器只需要看到原型就能检查调用的写法是否正确。</p>
+  </aside>
+  <p class="c-source">L10 p.9–13</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">9.3</span> 自顶向下：函数如何组织一个程序</h2>
+  <p>有了黑箱抽象，就可以把一个复杂问题拆成若干更小的子问题，子问题再拆成子子问题，每个都能单独求解——讲义把这种思路叫<span class="c-term">自顶向下编程<span class="c-term__en">top-down programming</span></span>。它画出的是一棵树：根是问题，往下是子问题，再往下是子子问题。</p>
+  <p>每个问题或子问题都用一个函数（或一个类，讲义说后面再讲）来解决。讲义把函数的用处归成四条：把代码分成逻辑块；把概念（做什么）与实现（怎么做）分开；让程序更容易理解和修改；同一个函数可以在同一程序里被调用多次，从而复用代码。最后一句是关键：分解依赖抽象，才能用简单函数搭出复杂应用。</p>
+  <p>C/C++ 允许同时使用内部（用户自定义）函数与外部函数。外部函数通常按主题收进专门的库，例如 iostream、cstdlib、cmath；讲义提到常用库函数的清单放在 Learning Mall 上。库函数就是别人写好的黑箱——可以直接调用，但也意味着它的行为要靠文档和测试来确认。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>分解与抽象不是同一件事：分解回答“切成几块”，抽象回答“每块对外露出什么”。只有分解没有抽象，切出来的仍然是彼此纠缠的代码；只有抽象没有分解，黑箱里会塞进整座程序。</p>
+  </aside>
+  <p class="c-source">L10 p.8–14</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">9.4</span> 调用：实参与形参的一一对应</h2>
+  <p>函数调用（invoke）的语法是“函数名 + 括号里的参数表 + 分号”。讲义强调一条硬性要求：调用中的<span class="c-term">实参<span class="c-term__en">actual argument</span></span>与定义中的<span class="c-term">形参<span class="c-term__en">formal parameter</span></span>必须一一对应——个数、类型、顺序都要对得上。</p>
+  <p>以打印扑克牌为例：先声明 void printCard(int num);，然后在 main() 里对五张牌各调用一次。每次调用把一张牌的点数交给同一个函数，函数内部按 1、2–10、11、12、13 分别输出 A、数字、J、Q、K，其它值则向 cerr 报错。五次调用共用一份代码，这正是“复用”最直观的样子。</p>
+<pre class="c-code"><code>void printCard(int num);
+
+int main() {
+    int c1, c2, c3, c4, c5;
+    // pick cards ...
+    printCard(c1);
+    printCard(c2);
+    printCard(c3);
+    printCard(c4);
+    printCard(c5);
+    return 0;
+}</code></pre>
+  <p>实参不一定是<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：有名字、有类型、可存放一个值的存储单元。">变量</span>，也可以是表达式。讲义的绝对值例子写的是 diff = absolute(x - y);：先算出 x − y 的值，把这个值作为实参传进去，函数返回的结果再赋给 diff。函数定义里用三元运算符写成一行——num &lt; 0 ? -num : num，等价于一个 if-else。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>调用写的是实参的“值”，不是形参的名字。printCard(c1) 与定义 void printCard(int num) 中的 num 没有任何名称上的联系，名字可以完全不同，能对上的是位置与类型。</p>
+  </aside>
+  <p class="c-source">L10 p.14–17</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">9.5</span> 传值：内存里发生了什么</h2>
+  <p>讲义用一张内存图解释调用过程。调用者 main() 的数据区里有 x = 4、y = 5、diff；被调用者 absoluteNum() 的数据区里有形参 num 与局部变量 result；此外还有一块临时变量（讲义记作 temp.xxxx）用来保存 x − y 的值 −1。整个过程分三步：把值传进去、在函数里计算、把结果返回。</p>
+  <p>关键在于两个数据区彼此独立。函数里对 num 或 result 的任何修改，都只发生在被调用者的数据区；调用者的 x、y 一个字节都没变。讲义用一句话点明：它们使用的是不同的内存位置（different memory locations）。这种参数传递方式就叫<span class="c-term">传值<span class="c-term__en">pass by value</span></span>。</p>
+  
+<!-- course-image:soe105-ch09-pass-by-value.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe105-ch09-pass-by-value">
+        <img class="c-course-figure__img" src="../../assets/course/soe105-ch09-pass-by-value.jpg" alt="传值调用：实参与形参的内存" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 传值调用：实参与形参的内存 <span class="c-course-figure__src">来源：L10 p.22</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 9-2 传值调用的内存数据区</span>
+      <button class="c-copy" type="button" data-copy="Clean vector memory diagram with two separate panels: left panel labelled caller main() data area containing x = 4, y = 5, diff = empty; right panel labelled callee data area containing num and result; a temporary box labelled temp holding minus 1 between them; three numbered arrows showing pass value, after computation, return result. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector memory diagram with two separate panels: left panel labelled caller main() data area containing x = 4, y = 5, diff = empty; right panel labelled callee data area containing num and result; a temporary box labelled temp holding minus 1 between them; three numbered arrows showing pass value, after computation, return result. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>讲义用一个小程序检验这件事：sum(int a, int b) 里执行 a = a + b 再返回 a，主程序令 x = 3、y = 5、z = sum(x, y)。程序结束时 x、y、z 分别是 3、5、8。a 被改成了 8，但 x 仍是 3——形参是副本。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>传值的三条结论：实参的值被复制给形参；形参的改变不影响实参；函数内声明的局部变量在函数结束时全部丢失，唯一能带出函数的信息是 return 语句的返回值。</p>
+  </aside>
+  
+<p class="c-source">L10 p.18–21</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">9.6</span> 传值的用法与边界</h2>
+  <p>传值并不是缺陷，而是默认行为。讲义给了两个正常使用的例子。第一个是 print_sum_average(double a, double b)：把两个数传进去，函数内部算 sum 与 average 并直接打印；因为结果通过屏幕输出，不需要带回调用者，void 加传值就够了。</p>
+<pre class="c-code"><code>void print_sum_average(double a, double b) {
+    double sum, average;
+    sum = a + b;
+    average = sum / 2;
+    cout &lt;&lt; "Sum: " &lt;&lt; sum &lt;&lt; endl;
+    cout &lt;&lt; "Average: " &lt;&lt; average &lt;&lt; endl;
+}</code></pre>
+  <p>第二个是英寸换算：int feet(int inches) 返回 inches / 12，int rinches(int inches) 返回 inches % 12。两个函数各算一件事，主程序一次调用就拼出“几英尺几英寸”。这里能看出分解的好处——整数除法与取余被分别封进两个黑箱，主程序不必关心换算细节。</p>
+  <p>但传值有一条硬边界：它只能带回一个值（return 的那一个）。如果想让函数同时给出和与平均值、同时<span class="c-term c-term--auto" data-term="swap" title="交换｜swap：借助一个临时变量互换两个变量的值。">交换</span>两个变量、同时返回最大值和它的<span class="c-term c-term--auto" data-term="subscript" title="下标｜subscript：用方括号给出元素位置的写法。">下标</span>，仅靠传值做不到。讲义正是用这个问题引出下一章的传引用：<b>一个函数怎样才能返回多于一个数据对象？</b></p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>在传值函数里改形参，回到 main 后再打印实参，看到的仍是原值。把“函数里明明改了”当成程序错误去查，往往查错了地方——要检查的是这个参数到底按值还是按引用传递。</p>
+  </aside>
+  <p class="c-source">L10 p.19–24</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">9.7</span> 传引用：把地址交给函数</h2>
+  <p>要让函数带回多个结果，就要用<span class="c-term">传引用<span class="c-term__en">pass by reference</span></span>。讲义的定义很直接：传给函数的是参数的引用（也就是地址），而不是它的值；如果函数改变了参数的值，这个改变会反映到调用它的程序里（调用者叫 caller，被调用者叫 callee）。语法只在类型后面加一个 &amp;：</p>
+<pre class="c-code"><code>void increment(int &amp;n) {   // pass by reference
+    n++;
+    cout &lt;&lt; "n at function: " &lt;&lt; n &lt;&lt; endl;
+}</code></pre>
+  <p>与传值版本对照最清楚：主程序里 num = 10，调用 <span class="c-term c-term--auto" data-term="increment" title="自增｜increment：把变量加一；++k 先加后用，k++ 先用后加。">increment</span>(num)。若形参写成 int n，输出是“n at function: 11”和“num at main: 10”；若写成 int &amp;n，输出是“11”和“num at main: 11”。同一份函数体，只差一个 &amp;，主程序里的 num 就从 10 变成了 11。</p>
+  <p>更实用的例子是一次算两个结果。讲义声明 void sumAndAverage(double n1, double n2, double &amp;sum, double &amp;average);：前两个参数按值传（只需要读），后两个按引用传（需要写回）。函数体只有两行：sum = n1 + n2; average = sum / 2;。主程序调用后直接打印 sum 与 average，输入 1.1 与 2.2 时得到 3.3 与 1.65。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 9-3 传值与传引用并存的内存图</span>
+      <button class="c-copy" type="button" data-copy="Clean vector memory diagram of a function call with mixed parameter passing: caller data area holding x = 1.1, y = 2.2, sum, average; callee data area holding n1, n2 as independent copies and sum, average as arrows pointing back to the caller cells; numbered arrows labelled pass value for n1 and n2 and pass address for sum and average. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector memory diagram of a function call with mixed parameter passing: caller data area holding x = 1.1, y = 2.2, sum, average; callee data area holding n1, n2 as independent copies and sum, average as arrows pointing back to the caller cells; numbered arrows labelled pass value for n1 and n2 and pass address for sum and average. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>讲义还给了排序三个数的例子：写一个 void swap(int &amp;x, int &amp;y) 交换两个整数，主程序只需三次比较与最多三次 swap，就能把 first、second、third 排好。交换这件事必须按引用做——按值交换只会交换两个副本，调用者的变量纹丝不动。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>同一个函数可以混用两种传递方式：只读的输入按值传，需要写回的结果按引用传。看到参数表里有 &amp;，就要意识到这个实参可能被函数改写。</p>
+  </aside>
+  <p class="c-source">L11 p.2–8</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">9.8</span> 数组传参：元素、整体与多维</h2>
+  <p>数组元素是个普通变量，可以按值传，也可以按引用传。讲义对比了两段代码：printCard(cards[n]) 把一张牌的值复制进函数，函数改不到数组；swap(a[3], a[6]) 把两个元素按引用传进去，函数内部的交换直接作用在数组上，输出从 {1, 4, 6, 72, 46, 73, 21, 35} 变成 {1, 4, 6, 21, 46, 73, 72, 35}。</p>
+  <p>整个数组传参则是另一套规则：只需要数组首元素的地址与数组的维度，其余部分会自动按引用传递。讲义的原话是“the remainder of the array will be passed by reference automatically”，所以形参写成 int cards[] 时不必再加 &amp;。</p>
+<pre class="c-code"><code>void shuffleCards(int cards[], const int numOfCards, const int numOfSwap) {
+    for (int i = 0; i &lt; numOfSwap; i++) {
+        int first = rand() % numOfCards;
+        int second = rand() % numOfCards;
+        int temp = cards[first];
+        cards[first] = cards[second];
+        cards[second] = temp;
+    }
+}</code></pre>
+  <p>这段洗牌代码里有两种参数修饰：cards[] 没有 const，因为它要被改写；numOfCards 与 numOfSwap 前面加了 const，表示它们是<span class="c-term c-term--auto" data-term="constant" title="常量｜constant：声明时赋值、之后不可修改的永久值。">常量</span>、函数内不能改。这是一个很实用的习惯——把“只读”写进签名，让编译器帮忙拦住误改。</p>
+  <p>输出型数组同样按引用传。讲义的 addArray 声明为 void addArray(const int size, const double a[], const double b[], double c[])：a、b 标了 const 只读，c 没有 const，函数把 a[i] + b[i] 写进 c[i]，调用者的 c 数组被填满。</p>
+  <p>多维数组的规则更严：只有第一维的大小可以省略，第二维起必须写明。原型写作 void displayBoard(int b[][4]);，定义可以写成 int b[][4] 或 int b[4][4]，但绝不能写 b[][]。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“数组自动按引用传递”不等于“数组元素也自动按引用传递”。传整个数组时不用 &amp;，是因为传的本来就是首地址；但单独传一个元素 a[3] 时，它仍按普通变量规则处理，要写 &amp; 才能改到原元素。</p>
+  </aside>
+  <p class="c-source">L11 p.9–16</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">9.9</span> 重载与“不要相信任何函数”</h2>
+  <p>讲义在结尾给了几条关于函数的提醒。第一条：函数只有在被调用时才有用，写而不调等于没写。第二条：同一个类里可以有两个以上同名函数，只要它们的签名不同——参数的类型与个数不同即可区分，这叫<span class="c-term">函数重载<span class="c-term__en">function overloading</span></span>。讲义给的例子是 <span class="c-term c-term--auto" data-term="bool" title="布尔类型｜bool：只有 true 与 false 两个值的类型。">bool</span> isEven(int num) 与 bool isEven(string str)：一个判断整数奇偶，一个先把字符串转成整数（atoi(str.c_str())）再判断。</p>
+  <p>第三条也是最重要的一条：要验证结果，尤其是使用别人写的函数时。讲义的原话是“不要假设你用的任何函数是正确的”，连语言自带的函数也一样；它甚至给了一个“<span class="c-term c-term--auto" data-term="binary-search" title="二分查找｜binary search：每次与中间元素比较并排除一半区间；只能用于有序数组。">二分查找</span>里的 bug”的视频链接作为反面教材。这正好呼应第 8 章：二分查找的边界写错一位，代码能编译、能跑，却会在某些输入上给出错误答案。</p>
+  <p>讲义把这一节的忠告压缩成三句：不要一上来就写代码；验证你用到的每一个函数；经常测试，用打印来调试。配合第 12a 讲的 driver 与 stub，这几句话就变成了可执行的流程——先写一个只会打印参数的空壳，确认调用链通了，再往里填真正的计算。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>重载看的是签名（参数的类型与个数），不是返回类型。两个函数只有返回类型不同、参数完全相同，不构成重载，编译器无法在调用处区分它们。</p>
+  </aside>
+  <p class="c-source">L10 p.23–28</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L10–11</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch08.html"><span>上一章</span>数组：查找与排序</a>
+          <a class="pager__next" href="ch10.html"><span>下一章</span>作用域与递归</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

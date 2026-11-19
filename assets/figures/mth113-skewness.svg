@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 345" role="img" aria-label="对称、右偏与左偏">
+<title>对称、右偏与左偏</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">对称、右偏与左偏</text>
+<text x="40" y="58" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="start" font-weight="600">对称 symmetric</text>
+<text x="40" y="76" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">mean ≈ median</text>
+<line x1="50" y1="250" x2="260" y2="250" stroke="#262624" stroke-width="1.2"/>
+<line x1="50" y1="100" x2="50" y2="250" stroke="#262624" stroke-width="1.2"/>
+<path d="M 50 250 C 120 240 120 130 155 130 C 190 130 190 240 260 250" fill="none" stroke="#2E4A6B" stroke-width="2.2"/>
+<line x1="155" y1="110" x2="155" y2="250" stroke="#5E5E58" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="155" y="92" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">均值 = 中位数</text>
+<text x="290" y="58" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="start" font-weight="600">右偏 right-skewed</text>
+<text x="290" y="76" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">mean &gt; median</text>
+<line x1="300" y1="250" x2="510" y2="250" stroke="#262624" stroke-width="1.2"/>
+<line x1="300" y1="100" x2="300" y2="250" stroke="#262624" stroke-width="1.2"/>
+<path d="M 300 250 C 335 240 335 135 370 135 C 420 135 450 230 510 250" fill="none" stroke="#2E4A6B" stroke-width="2.2"/>
+<line x1="370" y1="110" x2="370" y2="250" stroke="#5E5E58" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="388" y1="110" x2="388" y2="250" stroke="#8C4F45" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="370" y="92" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">中位数</text>
+<text x="388" y="76" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#8C4F45" text-anchor="middle" font-weight="400">均值</text>
+<text x="540" y="58" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="start" font-weight="600">左偏 left-skewed</text>
+<text x="540" y="76" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">mean &lt; median</text>
+<line x1="550" y1="250" x2="760" y2="250" stroke="#262624" stroke-width="1.2"/>
+<line x1="550" y1="100" x2="550" y2="250" stroke="#262624" stroke-width="1.2"/>
+<path d="M 550 250 C 610 230 640 135 690 135 C 725 135 725 240 760 250" fill="none" stroke="#2E4A6B" stroke-width="2.2"/>
+<line x1="690" y1="110" x2="690" y2="250" stroke="#5E5E58" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="672" y1="110" x2="672" y2="250" stroke="#8C4F45" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="690" y="92" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#5E5E58" text-anchor="middle" font-weight="400">中位数</text>
+<text x="672" y="76" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="9" fill="#8C4F45" text-anchor="middle" font-weight="400">均值</text>
+<text x="40" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">偏度看长尾方向：右偏的长尾在右，均值被拉向右侧；左偏相反。</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" role="img" aria-label="营销支出与销售额的散点图">
+<title>营销支出与销售额的散点图</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">营销支出与销售额的散点图</text>
+<line x1="90" y1="290" x2="710" y2="290" stroke="#262624" stroke-width="1.2"/>
+<line x1="90" y1="80" x2="90" y2="290" stroke="#262624" stroke-width="1.2"/>
+<text x="400.0" y="318" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#262624" text-anchor="middle" font-weight="600">营销支出 x</text>
+<text x="70" y="90" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="end" font-weight="400">销售额 y</text>
+<line x1="121.0" y1="241.7" x2="697.6" y2="124.1" stroke="#2E4A6B" stroke-width="2.2"/>
+<circle cx="139.6" cy="248.0" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="139.6" y1="248.0" x2="139.6" y2="237.92000000000002" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="189.2" cy="222.8" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="189.2" y1="222.8" x2="189.2" y2="227.83999999999997" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="238.79999999999998" cy="231.2" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="238.79999999999998" y1="231.2" x2="238.79999999999998" y2="217.76" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="288.4" cy="195.5" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="288.4" y1="195.5" x2="288.4" y2="207.68" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="338.0" cy="210.2" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="338.0" y1="210.2" x2="338.0" y2="197.6" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="387.59999999999997" cy="174.5" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="387.59999999999997" y1="174.5" x2="387.59999999999997" y2="187.51999999999998" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="437.20000000000005" cy="185.0" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="437.20000000000005" y1="185.0" x2="437.20000000000005" y2="177.44" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="486.8" cy="151.4" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="486.8" y1="151.4" x2="486.8" y2="167.35999999999999" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="536.4" cy="164.0" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="536.4" y1="164.0" x2="536.4" y2="157.28" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="586.0" cy="126.19999999999999" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="586.0" y1="126.19999999999999" x2="586.0" y2="147.20000000000002" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="635.6" cy="138.8" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="635.6" y1="138.8" x2="635.6" y2="137.12" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<circle cx="672.8" cy="109.4" r="4" fill="#2E4A6B" stroke="none"/>
+<line x1="672.8" y1="109.4" x2="672.8" y2="129.56" stroke="#8C4F45" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="500" y="100" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="start" font-weight="600">ŷ = a + bx</text>
+<text x="500" y="124" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#8C4F45" text-anchor="start" font-weight="400">残差 e = y − ŷ</text>
+<text x="500" y="148" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="start" font-weight="400">最小二乘：使 Σe² 最小</text>
+<text x="40" y="330" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">纵轴为销售额，横轴为营销支出；红色竖线是每个观测点的残差。</text>
+</svg>

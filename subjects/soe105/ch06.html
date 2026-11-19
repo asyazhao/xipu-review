@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 控制流：循环与循环设计 · 全科复习</title>
+  <meta name="description" content="SOE105 第 6 章 控制流：循环与循环设计：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="06">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 6 章 控制流：循环与循环设计</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html" class="is-current" aria-current="page"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html" class="is-current" aria-current="page"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 6 章</p>
+          <h1>控制流：循环与循环设计</h1>
+          <p class="chapter-head__en">Control Flows: Repetitions &amp; Loop Design</p>
+          <p class="chapter-head__meta">来源 L06–08a · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">6.1 快捷赋值与自增自减</a></li>
+        <li><a href="#s2">6.2 循环的四要素</a></li>
+        <li><a href="#s3">6.3 while 语句</a></li>
+        <li><a href="#s4">6.4 for 语句</a></li>
+        <li><a href="#s5">6.5 for 与 while 的分工</a></li>
+        <li><a href="#s6">6.6 do-while 语句</a></li>
+        <li><a href="#s7">6.7 如何选择循环</a></li>
+        <li><a href="#s8">6.8 常见循环错误</a></li>
+        <li><a href="#s9">6.9 嵌套循环</a></li>
+        <li><a href="#s10">6.10 循环设计模式：哨兵控制与标志控制</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲从快捷赋值与<span class="c-term c-term--auto" data-term="increment" title="自增｜increment：把变量加一；++k 先加后用，k++ 先用后加。">自增</span>自减入手，系统讲三种循环：while、for、do-while，比较它们的入口/出口条件与适用场合，并给出循环设计的两种经典模式——哨兵控制与标志控制。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>快捷赋值 +=、-=、*=、/=、%= 把“运算 + 存回”合成一步。</li>
+    <li>++k 先自增再使用，k++ 先使用再自增，差别只在表达式取值时显现。</li>
+    <li>循环四要素：<span class="c-term c-term--auto" data-term="initialization" title="初始化｜initialization：在声明时用列表给数组元素赋初值。">初始化</span>、条件判断、循环体、状态更新。</li>
+    <li>for 适合次数已知的循环，while 适合次数未知或依赖输入的循环。</li>
+    <li>while 是入口控制，可能一次都不执行；do-while 是出口控制，至少执行一次。</li>
+    <li><span class="c-term c-term--auto" data-term="loop-counter" title="循环计数器｜loop counter：记录循环已执行次数的变量。">循环计数器</span>初始化错、漏更新、条件写错都会导致无限循环。</li>
+    <li>嵌套循环中内层循环完整跑完，外层才推进一步。</li>
+    <li>哨兵循环用特殊值终止，标志循环用布尔<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：有名字、有类型、可存放一个值的存储单元。">变量</span>记录“该停了”。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">6.1</span> 快捷赋值与自增自减</h2>
+  <p>C/C++ 提供一组<span class="c-term">快捷赋值<span class="c-term__en">shortcut assignment</span></span>运算符，把“对变量做运算、再把结果存回该变量”合并为一步：+=、-=、*=、/=、%=。例如 i += 4 等价于 i = i + 4；a *= 2 等价于 a = a * 2；change %= 100 等价于 change = change % 100。</p>
+<pre class="c-code"><code>int i = 3;
+i += 4;              // i = i + 4, now 7
+double a = 3.2;
+a *= 2;              // a = a * 2, now 6.4
+int change = 1265;
+change %= 100;       // change = change % 100, now 65</code></pre>
+  <p>自增 ++ 与自减 -- 把变量加一或减一。真正的考点是前置与后置的差别：++k 先自增，表达式取到的是自增后的值；k++ 先取表达式的值，再自增。</p>
+<pre class="c-code"><code>int k = 4;
+k++;                 // k = 5
+++k;                 // k = 6
+int i = k++;         // i is 6, k is 7
+int j = ++k;         // j is 8, k is 8</code></pre>
+  <p>把这条规则放进条件里，结果会不同：int x = 5, y = 6; 若写 if (++x == y)，x 先变 6，条件为真；若写 if (x++ == y)，比较用的是 5，条件为假，但 x 之后仍变成 6。</p>
+  <p>与<span class="c-term c-term--auto" data-term="short-circuit-evaluation" title="短路求值｜short circuit evaluation：逻辑表达式的值一旦确定就停止求值。">短路求值</span>相遇时更要注意。if (++x &lt; y &amp;&amp; y-- &gt; 8) 中，第一项成立（6 &lt; 10），第二项用 y 的原值 10 比较（10 &gt; 8 成立），之后 y 才减为 9；而 if (x++ == 5 || ++y == 11) 中第一项已为真，++y 根本不会被求值，y 保持 10。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>不要在同一个表达式中对同一变量多次自增/自减（如 x++ + ++x），也不要依赖短路来判断“某个自增一定发生”——左侧为真时右侧根本不会执行。</p>
+  </aside>
+  <p class="c-source">L06–07 p.4–8</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">6.2</span> 循环的四要素</h2>
+  <p><span class="c-term">循环<span class="c-term__en">loop</span></span>（又称<span class="c-term c-term--auto" data-term="iteration" title="迭代｜iteration：用循环重复执行同一段代码，而不是调用自己。">迭代</span>结构）提供“控制一段语句执行多少次”的能力。三种构造是 while、do-while、for，但它们的骨架相同，都包含四件事：</p>
+  <ol>
+    <li><b>初始化</b>变量（计数器、累加器、标志）；</li>
+    <li><b>条件判断</b>：为真则继续；</li>
+    <li><b>执行动作</b>（循环体）；</li>
+    <li><b>更新状态</b>，使条件最终会变为假。</li>
+  </ol>
+  <p>第 4 条是循环能停下来的唯一保证。讲义把这一模式画成一个环：初始化 → 判断 → 动作 → 更新 → 再判断，直到条件为假才离开。三种循环的差别，只在于这四件事分别写在哪里、判断在动作之前还是之后。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 6-1 循环的四要素</span>
+      <button class="c-copy" type="button" data-copy="Clean vector cycle diagram of a loop: a vertical entry arrow into a box labelled Initialization, then a diamond labelled Condition?, a true branch into a box labelled Action(s), then a box labelled Update, and an arrow looping back to the condition diamond; the false branch exits to the right labelled Exit loop. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector cycle diagram of a loop: a vertical entry arrow into a box labelled Initialization, then a diamond labelled Condition?, a true branch into a box labelled Action(s), then a box labelled Update, and an arrow looping back to the condition diamond; the false branch exits to the right labelled Exit loop. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>任何循环都必须有“使条件最终为假”的更新语句；缺了它，循环不会终止。写循环前先确定四要素，是避免死循环的最有效方法。</p>
+  </aside>
+  <p class="c-source">L06–07 p.11</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">6.3</span> while 语句</h2>
+  <p>while 的语法是 while (Condition) { Action }。条件为真就执行动作，然后重新判断，直到条件为假。动作可以是单条语句，也可以是花括号内的一组语句。</p>
+  <p>求阶乘是最典型的例子：factorial 初始化为 1，n 初始化为 1，循环条件 n &lt;= number，循环体做 factorial *= n 与 n++。</p>
+<pre class="c-code"><code>int number, factorial, n;
+cout &lt;&lt; "Enter number: ";
+cin &gt;&gt; number;
+
+factorial = 1;
+n = 1;
+while (n &lt;= number) {
+    factorial *= n;
+    n++;
+}
+cout &lt;&lt; "The factorial of " &lt;&lt; number
+     &lt;&lt; " is " &lt;&lt; factorial &lt;&lt; endl;</code></pre>
+  <p>同样的骨架可以求 2 的幂：result 初始化为 1，循环体做 result *= 2，n++。差别只在累乘的因子。</p>
+  <p>while 还能处理“事先不知道有多少个输入”的情形，靠输入操作本身的真假作条件：while (cin &gt; value) 在成功读入时继续，遇到<span class="c-term c-term--auto" data-term="end-of-file" title="文件结束｜end-of-file：输入流已无字符可读的状态，用 eof() 检测。">文件结束</span>（CTRL-D）时停止。循环结束后再用 listSize &gt; 0 判断是否真的读到过数据，避免除以零。</p>
+<pre class="c-code"><code>int listSize = 0;
+int value;
+double sum = 0.0;
+cout &lt;&lt; "Provide a list of numbers (CTRL-D to stop)" &lt;&lt; endl;
+while (cin &gt;&gt; value) {
+    sum += value;
+    listSize++;
+}
+if (listSize &gt; 0) {
+    cout &lt;&lt; "Sum: " &lt;&lt; sum &lt;&lt; endl;
+    double average = sum / listSize;
+    cout &lt;&lt; "Average: " &lt;&lt; average &lt;&lt; endl;
+} else {
+    cout &lt;&lt; "No list to average!" &lt;&lt; endl;
+}</code></pre>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>while (cin &gt; value) 中的输入操作本身有值：读成功为真、失败为假。忘记这一点，就会写出“先读一个数再判断是否等于某个哨兵”的冗长版本。</p>
+  </aside>
+  
+<!-- course-image:soe105-ch06-while.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe105-ch06-while">
+        <img class="c-course-figure__img" src="../../assets/course/soe105-ch06-while.jpg" alt="while 循环的条件与循环体" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> while 循环的条件与循环体 <span class="c-course-figure__src">来源：L6-7 p.12</span></figcaption>
+      </figure>
+
+<p class="c-source">L06–07 p.12–15</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">6.4</span> for 语句</h2>
+  <p>for 把四要素压进一行：for (ForInit; ForCondition; PostExpression) { Action }。执行顺序是：先执行 ForInit 一次；当 ForCondition 为真时执行 Action，再执行 PostExpression，然后回到条件判断。</p>
+<pre class="c-code"><code>int i;
+for (i = 0; i &lt;= 20; i++) {
+    cout &lt;&lt; "i is " &lt;&lt; i &lt;&lt; endl;
+}</code></pre>
+  <p>用 for 重写阶乘，初始化 n = 1 移入 ForInit，n++ 移入 PostExpression，循环体只剩 factorial *= n：</p>
+<pre class="c-code"><code>factorial = 1;
+for (n = 1; n &lt;= number; n++) {
+    factorial *= n;
+}</code></pre>
+  <p>这个对照说明 for 与 while 可以互相改写：for 的三段分别对应 while 的“循环前初始化”“循环条件”“循环体末尾的更新”。改写的对应关系，是读懂两种写法的钥匙。</p>
+  <p>for 也支持空条件写成 for (;;)，表示无限循环，靠循环体里的 break 退出——处理未知长度的输入时常用这种写法，把读入失败作为退出条件。</p>
+<pre class="c-code"><code>for (;;) {
+    if (!(cin &gt;&gt; value)) {
+        break;
+    }
+    sum += value;
+    listSize++;
+}</code></pre>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>for 的执行顺序：初始化一次 → 判断 → 循环体 → 更新 → 再判断。循环体执行次数等于条件成立的次数，更新语句在循环体之后执行。</p>
+  </aside>
+  <p class="c-source">L06–07 p.16–21</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">6.5</span> for 与 while 的分工</h2>
+  <p>讲义用一张对照表区分两者，要点可以归为四组：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>for 循环与 while 循环的比较</caption>
+      <thead><tr><th scope="col">维度</th><th scope="col">for</th><th scope="col">while</th></tr></thead>
+      <tbody>
+        <tr><td>使用场合</td><td>迭代次数已知</td><td>迭代次数未知</td></tr>
+        <tr><td>初始化位置</td><td>可在循环语句内或外</td><td>总在循环外</td></tr>
+        <tr><td>状态更新</td><td>循环体执行后统一更新</td><td>可在循环体前或后更新</td></tr>
+        <tr><td>条件形式</td><td>通常是关系表达式</td><td>可以是表达式或非零值</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>两者都是<span class="c-term">入口控制循环<span class="c-term__en">entry controlled loop</span></span>：条件在循环体之前检查，因此循环体可能一次都不执行。这一点与 do-while 相反。</p>
+  <p>选择上的经验是：求和、求积、计数这类“次数由范围决定”的循环用 for；依赖用户输入、读到某个值才停的循环用 while。前者的三段式让“起点、终点、步长”一目了然，后者把“读入—判断”写在条件里更自然。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>“for 一定比 while 快”是误解：两者编译后的<span class="c-term c-term--auto" data-term="control-flow" title="控制流｜control flow：描述执行如何从一条命令进行到下一条。">控制流</span>等价。差别在可读性与适用场合，不在性能。</p>
+  </aside>
+  <p class="c-source">L06–07 p.19</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">6.6</span> do-while 语句</h2>
+  <p>do-while 的语法是 do { Action } while (Condition);，注意结尾的分号。执行顺序是：先执行一次动作，再判断条件；为真则回到动作，为假则退出。</p>
+<pre class="c-code"><code>factorial = 1;
+n = 1;
+do {
+    factorial *= n;
+    n++;
+} while (n &lt;= number);</code></pre>
+  <p>它被称为<span class="c-term">出口控制循环<span class="c-term__en">exit controlled loop</span></span>：条件在循环体之后检查，因此循环体至少执行一次。与 while 的差别可以用一个边界情形检验——若初始条件就为假（例如 number = 0），while 版本一次都不执行，do-while 版本会先执行一遍，再退出。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 6-2 while 与 do-while 的控制流</span>
+      <button class="c-copy" type="button" data-copy="Clean vector side-by-side comparison of two loop flowcharts. Left: while loop with Condition? diamond before the Action box, true branch back to the condition, false branch exiting, labelled entry controlled. Right: do-while loop with Action box first, then Condition? diamond, true branch back to the action, false branch exiting, labelled exit controlled. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/soe105-loops.svg" alt="while 与 do-while 的控制流与循环回边" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector side-by-side comparison of two loop flowcharts. Left: while loop with Condition? diamond before the Action box, true branch back to the condition, false branch exiting, labelled entry controlled. Right: do-while loop with Action box first, then Condition? diamond, true branch back to the action, false branch exiting, labelled exit controlled. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p>讲义还指出一个细节：while 循环中条件里的变量必须在循环之前初始化；do-while 中该变量可以在循环之前初始化，也可以在循环体内初始化，因为首次判断发生在动作之后。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>while 可能执行 0 次，do-while 至少执行 1 次；两者都是“条件为真继续”，区别只在判断时机。</p>
+  </aside>
+  <p class="c-source">L06–07 p.22–25</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">6.7</span> 如何选择循环</h2>
+  <p>讲义给出三条选择原则：</p>
+  <ul>
+    <li><b>for</b>：通常最适合求和、求积与计数循环，因为次数由范围直接决定；</li>
+    <li><b>while</b>：想重复一个动作但不知道确切次数时；处理用户输入时；存在“动作不应被执行”的情形时；</li>
+    <li><b>do-while</b>：动作至少应执行一次时；其余场合与 while 类似。</li>
+  </ul>
+  <p>判断“该不该用 do-while”的一个实用问题：如果第一次判断就可能为假，这个动作还需不需要做？需要，就用 do-while；不需要，就用 while。</p>
+  <p>讲义还给出停止循环的两条路径：循环前就知道迭代次数，用 for；需要在每次迭代前或后测试用户控制的条件，用 while 或 do-while。</p>
+  <p class="c-source">L06–07 p.27–29</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">6.8</span> 常见循环错误</h2>
+  <p>讲义列出几类典型错误，每一类都对应一个具体的失效机制。</p>
+  <p>第一类是浮点比较导致的<span class="c-term">无限循环<span class="c-term__en">infinite loop</span></span>：while (balance != 0.0) { balance = balance - amount; } 中，balance 可能因为浮点误差永远不精确等于 0.0，循环永不结束。</p>
+  <p>第二类是计数器初始化错误：求和变量应初始化为 0，求积变量应初始化为 1。把乘积初始化为 0，无论乘什么都是 0；把和初始化为 1，结果会多出 1。</p>
+  <p>第三类是漏更新：循环体里没有改变条件中出现的变量，条件永远为真。</p>
+  <p>第四类是边界写错：n &lt; 10 与 n &lt;= 10 相差一次迭代，处理<span class="c-term c-term--auto" data-term="array" title="数组｜array：同一类型元素的线性集合，存于连续内存。">数组</span><span class="c-term c-term--auto" data-term="subscript" title="下标｜subscript：用方括号给出元素位置的写法。">下标</span>时这一差异直接决定是否越界。</p>
+  <p>讲义在“迭代要点”中把预防措施归纳为三句：循环要有明确目的（确实需要重复执行的事）；正确初始化循环计数器；确保存在最终能停止循环的语句。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>用 != 比较浮点数作为循环条件是危险的；应改用 &gt; 0.000001 之类的容差判断，或改用整数计数。</p>
+  </aside>
+  <p class="c-source">L06–07 p.28–30</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">6.9</span> 嵌套循环</h2>
+  <p><span class="c-term">嵌套循环<span class="c-term__en">nested loop</span></span>是循环里再放循环，原理与嵌套 if 类似。执行规则是：外层每推进一步，内层都要完整跑完一轮。</p>
+  <p>乘法表的例子最能说明这一点：外层 i 从 1 到 10 控制行数，内层 j 从 1 到 10 打印每行的 10 个数，内层结束后输出一个换行，外层才进入下一行。</p>
+<pre class="c-code"><code>int i;   // outer loop counter
+int j;   // inner loop counter
+for (i = 1; i &lt;= 10; i++) {
+    for (j = 1; j &lt;= 10; j++) {
+        cout &lt;&lt; i * j &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;   // newline at the end of each row
+}</code></pre>
+  <p>另一个例子是“计算每个学生 8 次实验的平均分”：外层用 do-while 遍历学生（问“还有下一个吗”），内层用 for 累加 8 次成绩。关键细节是 tscore 必须在外层循环内部、内层循环之前重置为 0——若放在外层之外，分数会跨学生累加。</p>
+  <p>讲义最后给出一个打印菱形图案的挑战题，只用星号与空格，靠嵌套循环控制每行的空格数与星号数。这类题考的不是语法，而是“把图形规律翻译成两个计数器的范围”。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>嵌套循环的总迭代次数是各层次数之积（10 × 10 = 100）；累加器必须在使用它的那一层循环内初始化。</p>
+  </aside>
+  <p class="c-source">L06–07 p.32–35</p>
+</section>
+
+<section id="s10">
+  <h2 id="s10"><span class="sec-num">6.10</span> 循环设计模式：哨兵控制与标志控制</h2>
+  <p>讲义最后转向“怎么设计一个循环”，而不是“怎么写出循环语法”。开篇是一个游泳者的例子：她每划一次把与目标的距离缩短 2/3 个身长，直到近到能触到目标，要求每次划水后打印距离。循环设计写成三步：初始化距离；当条件仍成立时，打印距离并更新距离。这里的重点不是公式，而是“先初始化、再判断、在循环体内更新”这一固定骨架。</p>
+  <p><b>哨兵控制循环</b>（sentinel-controlled loop）：用一个特殊值表示“输入结束”。设计步骤是：先读第一个值；当该值不等于哨兵时，处理它，再读下一个值。</p>
+<pre class="c-code"><code>const int sentinel = -1;
+int sum = 0, score;
+cout &lt;&lt; "Enter the first score: " &lt;&lt; endl;
+cin &gt;&gt; score;
+while (score != sentinel) {
+    sum += score;
+    cout &lt;&lt; "Enter next score: " &lt;&lt; endl;
+    cin &gt;&gt; score;
+}
+cout &lt;&lt; "Sum = " &lt;&lt; sum &lt;&lt; endl;</code></pre>
+  <p>结构上有两个易错点：第一次读入必须在循环之前（否则没有值可判断）；循环体内必须再读一次（否则条件永远不变）。</p>
+  <p><b>标志控制循环</b>（flag-controlled loop）：当<span class="c-term c-term--auto" data-term="stopping-condition" title="终止条件｜stopping condition：递归中不再调用自己、直接返回值的条件。">终止条件</span>不止一个、且不能在同一时刻检查时，用一个布尔<span class="c-term">标志<span class="c-term__en">flag</span></span>记录“是否该停”。设计步骤是：把标志初始化为 false；当标志仍为 false 时处理；一旦某个终止条件出现，就把标志置为 true。</p>
+  <p>讲义的例子是从<span class="c-term c-term--auto" data-term="terminal" title="终端｜terminal：与计算机交互的文本界面，又称 console 或命令提示符。">终端</span>读一个十进制数，遇到非数字字符或读到数字 0 就停。两个条件发生的时机不同，无法写成一个判断，于是用 terminate 标志：读到非数字就置 1；读到数字则先换算并入 num = num * 10 + digitValue，若该字符是 '0' 再置 1。</p>
+<pre class="c-code"><code>int num = 0, digitValue, terminate = 0;  // 0 means false
+char ch;
+while (!terminate) {
+    cin &gt;&gt; ch;
+    if (isdigit(ch)) {                   // from ctype.h
+        digitValue = int(ch) - int('0');
+        num = num * 10 + digitValue;
+        if (ch == '0')
+            terminate = 1;               // true
+    } else {
+        terminate = 1;                   // true
+    }
+}
+cout &lt;&lt; "num: " &lt;&lt; num &lt;&lt; endl;</code></pre>
+  <p>两种模式的共同点是“把终止判断集中到一个地方”：哨兵把终止编码进数据值，标志把终止编码进状态变量。前者适合“输入里有明确的结束标记”，后者适合“有多个互不相同的结束原因”。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p><span class="c-term c-term--auto" data-term="sentinel-value" title="哨兵值｜sentinel value：标记输入结束的特殊数据值。">哨兵值</span>本身是数据的一部分，必须选一个不会与正常数据混淆的值；标志是控制变量，与数据无关。两者都能终止循环，但语义不同。</p>
+  </aside>
+  <p class="c-source">L08a p.3–10</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L06–08a</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch05.html"><span>上一章</span>控制流：顺序与选择</a>
+          <a class="pager__next" href="ch07.html"><span>下一章</span>数组基础</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

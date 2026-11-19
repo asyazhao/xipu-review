@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE105 数组基础 · 全科复习</title>
+  <meta name="description" content="SOE105 第 7 章 数组基础：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe105" data-chapter="07">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE105</a>
+      <span>/</span>
+      <span aria-current="page">第 7 章 数组基础</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html" class="is-current" aria-current="page"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">课程导论与实验环境</span><span class="toc-src">L00</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">程序设计导论：IPO、语言与编译</span><span class="toc-src">L01</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">程序开发过程与过程抽象</span><span class="toc-src">L02</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">算法设计与 C/C++ 基础</span><span class="toc-src">L03–04a</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">控制流：顺序与选择</span><span class="toc-src">L04b–05</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">控制流：循环与循环设计</span><span class="toc-src">L06–08a</span></a></li>
+          <li><a href="ch07.html" class="is-current" aria-current="page"><span class="toc-num">07</span><span class="toc-title">数组基础</span><span class="toc-src">L08b</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">数组：查找与排序</span><span class="toc-src">L09</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">函数：抽象、传值与传引用</span><span class="toc-src">L10–11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">作用域与递归</span><span class="toc-src">L12a–b</span></a></li>
+          <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
+          <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
+          <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE105 · 第 7 章</p>
+          <h1>数组基础</h1>
+          <p class="chapter-head__en">Arrays: Introduction</p>
+          <p class="chapter-head__meta">来源 L08b · 术语 9 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">7.1 为什么需要数组</a></li>
+        <li><a href="#s2">7.2 数组的声明</a></li>
+        <li><a href="#s3">7.3 一维数组与下标</a></li>
+        <li><a href="#s4">7.4 多维数组与行主序</a></li>
+        <li><a href="#s5">7.5 元素访问与下标表达式</a></li>
+        <li><a href="#s6">7.6 数组初始化</a></li>
+        <li><a href="#s7">7.7 读入与输出一个列表</a></li>
+        <li><a href="#s8">7.8 找最小值：两版算法</a></li>
+        <li><a href="#s9">7.9 数组的常见错误</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲引入数组：用一块连续内存存放同类型的多个<span class="c-term c-term--auto" data-term="element" title="元素｜element：数组中的一个数据项，由下标定位。">元素</span>，用下标访问其中任意一个；内容包括一维与多维数组的声明、内存布局、<span class="c-term c-term--auto" data-term="initialization" title="初始化｜initialization：在声明时用列表给数组元素赋初值。">初始化</span>、整表读写，以及“找最小值”这一经典数组<span class="c-term c-term--auto" data-term="algorithm" title="算法｜algorithm：为解决特定问题而设的一系列指令或过程性步骤。">算法</span>的两版写法。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>数组是同一<span class="c-term c-term--auto" data-term="data-type" title="数据类型｜data type：刻画数据本质的基本抽象，决定内存占用与运算规则。">数据类型</span>的元素的线性集合，用一块连续内存存放。</li>
+    <li>声明语法 element_type array_name[dimension]，维数必须是正的整型<span class="c-term c-term--auto" data-term="constant" title="常量｜constant：声明时赋值、之后不可修改的永久值。">常量</span>或常量表达式。</li>
+    <li>数组大小在创建后不能改变；声明时不会初始化元素。</li>
+    <li>下标从 0 开始，到 n−1 结束；<span class="c-term c-term--auto" data-term="incorrect-indexing" title="下标错误｜incorrect indexing：使用超出 0 到 n−1 范围的下标。">下标错误</span>是常见 bug。</li>
+    <li><span class="c-term c-term--auto" data-term="two-dimensional-array" title="二维数组｜two-dimensional array：本质是数组的数组，按行与列记元素。">二维数组</span>本质是“数组的数组”，内存按行主序排列。</li>
+    <li>初始化列表的元素个数可以少于维数，未填的元素仍需先赋值再使用。</li>
+    <li>遍历数组的标准写法是 for (i = 0; i &lt; n; i++)，上界用 &lt; 而非 &lt;=。</li>
+    <li>找最小值应把首元素作为初始候选，<span class="c-term c-term--auto" data-term="loop" title="循环｜loop：重复执行一段语句的控制结构，又称迭代。">循环</span>从下标 1 开始。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">7.1</span> 为什么需要数组</h2>
+  <p>讲义的开篇问题很直接：读入一百个数，求平均值，再统计有多少个数高于平均值。如果不借助数组，程序必须在读入的同时决定“存哪儿”——一百个<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：有名字、有类型、可存放一个值的存储单元。">变量</span>显然不现实；而要先算平均值、再回头比较，就必须把所有数保留下来。</p>
+  <p><span class="c-term">数组<span class="c-term__en">array</span></span>解决的正是这个问题：它是一个线性的数据元素集合，所有元素属于同一数据类型（例如一组整数、一组字符、一组实数）。讲义用“有许多抽屉的中药柜”和“邮局信箱”作类比——每个抽屉有编号，按编号取放；数组也一样，用一个名字代表整组，用下标定位其中一格。</p>
+  <p>数组的两项好处：给一个集合起一个名字；能引用其中任意一个元素。前者让代码表达“这一整组数据”，后者让循环遍历成为可能。</p>
+  <p>讲义列出三类典型应用：给出一组成绩求最大值与最小值（选择，selection）；读入学生姓名并按字母序重排（排序，sorting）；给出全班身高，输出高于平均身高的学生姓名（筛选，filtering）。这三类都要求“先保存、再处理”，因此都离不开数组。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>数组存在的理由是“需要在下标与数据之间建立对应，并保留已读入的数据”。若每个数据只用一次、用完即弃，不必用数组。</p>
+  </aside>
+  <p class="c-source">L08b p.1–4</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">7.2</span> 数组的声明</h2>
+  <p>声明语法为 element_type array_name[dimension]。数组元素都是 element_type 类型的值；数组的大小（能存多少个值）由 dimension 给出。</p>
+  <p>关键限制：dimension 必须是正的整型常量或常量表达式。也就是说，数组的大小在创建后不能改变——它在编译时就被固定，运行时不能“长大”。这与后面要讲的动态内存分配形成对照。</p>
+  <p>数组可以有多维，语法为 element_type array_name[dim1][dim2]…[dimn]，其中每个 dimi 都是正整数。</p>
+  <p>讲义给出一维与二维的声明示例：int A[10]; 声明 10 个整数；int A[10][15]; 声明 10 行 15 列的整数。声明只是让编译器预留空间，并不写入任何值。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>int n = 10; int A[n]; 在标准 C++ 中不是合法的数组声明，因为 n 是变量而非常量表达式。要使用变量长度，应改用常量或<span class="c-term c-term--auto" data-term="dynamic-allocation" title="动态分配｜dynamic allocation：运行期用 new 从堆上取得内存，用 delete 归还。">动态分配</span>。</p>
+  </aside>
+  <p class="c-source">L08b p.7–9</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">7.3</span> 一维数组与下标</h2>
+  <p>int A[10]; 告诉编译器预留（allocate）一块连续内存来存 10 个整数，并把这块内存命名为 A。要访问单个元素，必须对 A 施加<span class="c-term">下标<span class="c-term__en">subscript</span></span>：下标是方括号里的表达式，方括号里的值称为<span class="c-term">索引<span class="c-term__en">index</span></span>。</p>
+  <p>索引从 0 开始，到 n−1 结束，n 是数组的<span class="c-term">维数<span class="c-term__en">dimension</span></span>。因此 A[10] 的合法下标是 0 到 9，A[10] 本身就越界。A[0] = 3; 把 3 写入第一个元素。</p>
+  <p>讲义用一张内存图强调两件事：元素按下标依次排列，彼此相邻；元素在预留时<b>不会</b>被初始化（Elements are NOT initialized）。图中每个格子标着“未初始化”的符号，直到程序显式赋值。</p>
+  
+<!-- course-image:soe105-ch07-array-memory.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe105-ch07-array-memory">
+        <img class="c-course-figure__img" src="../../assets/course/soe105-ch07-array-memory.jpg" alt="一维数组的声明与内存布局" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 一维数组的声明与内存布局 <span class="c-course-figure__src">来源：L8b p.8</span></figcaption>
+      </figure>
+
+<figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图 7-1 一维数组的内存布局</span>
+      <button class="c-copy" type="button" data-copy="Clean vector memory layout diagram of a one-dimensional integer array A[10]: ten contiguous cells stacked vertically, labelled A[0] through A[9] with their index on the left, each cell marked uninitialized, and a bracket on the right indicating one consecutive block of memory named A. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+        <img class="c-figure__img" src="../../assets/figures/soe105-array-memory.svg" alt="一维数组的连续内存布局与下标" loading="lazy" decoding="async">
+    <details class="c-figure__prompt-wrap">
+      <summary>绘图提示词</summary>
+      <p class="c-figure__prompt">Clean vector memory layout diagram of a one-dimensional integer array A[10]: ten contiguous cells stacked vertically, labelled A[0] through A[9] with their index on the left, each cell marked uninitialized, and a bracket on the right indicating one consecutive block of memory named A. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+    </details>
+  </figure>
+  <p>“连续”这一点决定了数组的两个性质：可以用“首地址 + 下标 × 元素大小”直接算出任一元素的地址，所以访问是常数时间；也正因为连续，越界写入会踩到相邻的内存，后果不可预测。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>合法下标范围是 0 到 n−1。声明 int A[10] 时，A[10] 已越界；C/C++ 不检查下标，越界不会报错，只会破坏数据。</p>
+  </aside>
+  
+<p class="c-source">L08b p.8</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">7.4</span> 多维数组与行主序</h2>
+  <p>多维数组本质上是“数组的数组”（an array of arrays）。int A[10][15]; 创建 10 行 15 列的数组，概念上像一张表格：行号 0–9，列号 0–14，元素记为 A[i][j]。</p>
+  <p>但它并不是“表格”存储在内存里，而是一维展开的：第一行 15 个元素先排完，接着第二行，依此类推。这种排布叫<span class="c-term">行主序<span class="c-term__en">row-major ordering</span></span>。因此 A[1][0] 紧跟在 A[0][14] 之后，而不是“另起一行”。</p>
+  <p>与一维数组一样，多维数组在预留时也不会初始化任何元素。这一点在调试时很关键：打印出来的“随机值”不是编译器出错，而是那块内存里原本的残留数据。</p>
+  <figure class="c-figure">
+    <div class="c-figure__head">
+      <span class="c-figure__cap">图示提示词 · 图 7-2 二维数组的行主序</span>
+      <button class="c-copy" type="button" data-copy="Clean vector diagram showing a 10 by 15 two-dimensional array A[10][15] on the left as a grid with row and column indices, and on the right the same elements flattened into one continuous horizontal strip in row-major order, with arrows showing row 0 elements followed by row 1 elements and a label row-major ordering. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.">复制</button>
+    </div>
+    <p class="c-figure__prompt">Clean vector diagram showing a 10 by 15 two-dimensional array A[10][15] on the left as a grid with row and column indices, and on the right the same elements flattened into one continuous horizontal strip in row-major order, with arrows showing row 0 elements followed by row 1 elements and a label row-major ordering. Flat 2D, thin 1.5 px strokes, muted slate blue and warm grey palette, white background, English labels, no cartoon, no gradient, no shadow.</p>
+  </figure>
+  <p>行主序解释了为什么“按行遍历”比“按列遍历”更缓存友好：按行访问时，内存地址是连续递增的。讲义没有展开性能讨论，但给出了排布事实，这就够判断地址顺序了。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>二维数组的“行”与“列”是给人看的记号；内存里只有一条连续的元素序列。行主序决定了下标到地址的换算顺序。</p>
+  </aside>
+  <p class="c-source">L08b p.9</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">7.5</span> 元素访问与下标表达式</h2>
+  <p>下标不限于字面量，可以是变量，也可以是表达式。讲义给出一段需要逐步跟踪的代码：</p>
+<pre class="c-code"><code>int A[10], i = 7, j = 2, k = 4;
+A[0] = 1;
+A[i] = 5;              // A[7] = 5
+A[j] = A[i] + 3;       // A[2] = 5 + 3 = 8
+A[j+1] = A[i] + A[0];  // A[3] = 5 + 1 = 6
+A[A[j]] = 12;          // A[8] = 12
+cout &lt;&lt; A[k];          // A[4], input value 3</code></pre>
+  <p>逐行看：A[0] 得 1；A[7] 得 5；A[2] 取 A[7] 的值加 3 得 8；A[3] 取 A[7] 与 A[0] 之和得 6；最绕的是 A[A[j]]——先算内层 A[j]，此时 j = 2，A[2] = 8，于是外层变成 A[8] = 12。最后输出 A[4]，其值是运行时输入的 3。</p>
+  <p>这段代码说明两件事：下标表达式会先被求值，再用于定位；“嵌套下标”是从内向外算的。它也说明数组元素可以被读、被写、被当作另一个下标使用。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>A[A[j]] 不是“A 的 A[j] 次方”，也不是两维下标；它是“用 A[j] 的值作为 A 的下标”。跟踪这类表达式必须先把内层算清。</p>
+  </aside>
+  <p class="c-source">L08b p.11</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">7.6</span> 数组初始化</h2>
+  <p>用初始化列表可以在声明时给元素赋值：int A[10] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};。只要元素个数不超过数组大小，声明就是合法的；少于大小也合法，未列出的元素保持未初始化，使用前仍需赋值。</p>
+<pre class="c-code"><code>int A[10] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};  // valid
+int A[10] = {7, 6, 5, 4, 3, 2, 1, 0};         // valid, last two uninitialized
+int A[10] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2};  // invalid: too many</code></pre>
+  <p>“元素个数少于维数”这一点常被误解为“其余元素自动为 0”。讲义的处理是明确的：未填的元素仍然需要在使用前初始化。也就是说，初始化列表只负责它列出的那些位置。</p>
+  <p>正确的做法是：能一次给全就给全；给不全时，用循环把剩余元素显式赋值，或在遍历时只访问已赋值的下标范围（用 n 记录实际元素个数）。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>初始化列表元素个数 ≤ 维数才合法；超过维数是编译错误。少于维数时，剩余元素不因列表而获得确定的值。</p>
+  </aside>
+  <p class="c-source">L08b p.12</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">7.7</span> 读入与输出一个列表</h2>
+  <p>数组最常见的用法是“读入不定个数的数据，再统一处理”。讲义的标准写法用一个常量定容量、一个计数器记实际个数：</p>
+<pre class="c-code"><code>const int max_size = 1000;
+int array[max_size];
+int n = 0;
+int current_input;
+
+cout &lt;&lt; "Enter a number (Press Ctrl-D to end): ";
+while (n &lt; max_size &amp;&amp; cin &gt;&gt; current_input) {
+    array[n] = current_input;
+    n++;
+    cout &lt;&lt; "Enter a number (Press Ctrl-D to end): ";
+}
+
+cout &lt;&lt; "\nInputted list:" &lt;&lt; endl;
+for (int i = 0; i &lt; n; i++) {
+    cout &lt;&lt; array[i] &lt;&lt; " ";
+}
+cout &lt;&lt; endl;</code></pre>
+  <p>循环条件有两个子条件，顺序不能颠倒：n &lt; max_size 先保证不越界，cin &gt;&gt; current_input 再保证读入成功。若把读入放在前面，一旦数组已满又读入成功，就会写到 array[max_size] 之外。</p>
+  <p>这正是上一章“<span class="c-term c-term--auto" data-term="short-circuit-evaluation" title="短路求值｜short circuit evaluation：逻辑表达式的值一旦确定就停止求值。">短路求值</span>”的实际用途：左边的边界检查为假时，右边的读入不会执行。输出时用 i &lt; n 而不是 i &lt; max_size，只打印真正读到的元素，避免输出一堆未初始化的垃圾值。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>读入循环的标准条件写作 n &lt; max_size &amp;&amp; cin &gt;&gt; x，边界检查在前；输出循环的边界是 n，不是数组容量。</p>
+  </aside>
+  <p class="c-source">L08b p.14</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">7.8</span> 找最小值：两版算法</h2>
+  <p>问题：在一组整数中找最小值。输入是一组整数与一个表示个数的值；输出是最小值；约束是“找完之后列表保持不变”。</p>
+  <p>设计思路是“记录目前见过的最小候选”：用循环逐个考察元素，若当前元素比已记录的最小值更小，就更新记录；考察完所有元素后，记录值就是全局最小值。</p>
+  <p>第一版把“是不是第一个元素”的判断放进了循环：</p>
+<pre class="c-code"><code>for (i = 0; i &lt; N; i++) {
+    if (i == 0) {                 // set to the first element
+        smallestValue = A[i];
+    } else {
+        if (A[i] &lt; smallestValue)
+            smallestValue = A[i];
+    }
+}</code></pre>
+  <p>它能工作，但 i == 0 这个测试要执行 N 次，而实际上只需要判断一次。改进版把初始化移到循环外，循环从下标 1 开始：</p>
+<pre class="c-code"><code>smallestValue = A[0];             // initial candidate outside the loop
+for (i = 1; i &lt; N; i++) {
+    if (A[i] &lt; smallestValue) {
+        smallestValue = A[i];
+    }
+}</code></pre>
+  <p>改进点有三处：初始候选在循环外设定；循环起点改为 1（首元素已作为候选，不必与自己比较）；循环体内只剩一次比较。功能不变，判断次数从 N 次降到 N−1 次，代码也更清楚。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>若把 smallestValue 初始化为 0 再找最小值，当所有元素都为正时会得到错误的 0。正确做法是用首元素作初始候选，而不是用“0”或“一个很大的数”这类与数据无关的值。</p>
+  </aside>
+  <p class="c-source">L08b p.15–18</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">7.9</span> 数组的常见错误</h2>
+  <p>把本章的规则反过来读，就是一张错误清单。</p>
+  <ul>
+    <li><b>下标越界</b>：声明 int A[10] 却访问 A[10]。C/C++ 不做边界检查，越界写入会破坏相邻内存。</li>
+    <li><b>忘记下标从 0 开始</b>：想存 10 个数却写成 for (i = 1; i &lt;= 10; i++)，既漏掉 A[0]，又越界写 A[10]。</li>
+    <li><b>用变量作维数</b>：int n = 10; int A[n]; 不是标准 C++ 的合法声明，维数必须是常量表达式。</li>
+    <li><b>假设元素已初始化</b>：声明只预留空间，不写值；未赋值就读取，得到的是残留数据。</li>
+    <li><b>混淆容量与实际个数</b>：遍历时用 max_size 而不是 n，会把未使用的槽位也打印或参与计算。</li>
+  </ul>
+  <p>这些错误的共同点是“不会报错”：编译器不检查下标，运行时也不一定崩溃，程序只是给出错误结果。因此数组代码必须靠人工审查边界——每一处下标都要能说出它的取值范围。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“程序没崩”不等于“没有越界”。越界读写常常静默地改坏别的变量，症状出现在很远的地方，这也是数组 bug 难查的原因。</p>
+  </aside>
+  <p class="c-source">L08b p.7–14</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">L08b</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch06.html"><span>上一章</span>控制流：循环与循环设计</a>
+          <a class="pager__next" href="ch08.html"><span>下一章</span>数组：查找与排序</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

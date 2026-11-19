@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 335" role="img" aria-label="编译与链接流程">
+<title>编译与链接流程</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">编译与链接流程</text>
+<rect x="50" y="110" width="150" height="64" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="125" y="136" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">源文件 .cpp</text>
+<text x="125" y="158" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">预处理 / 编译</text>
+<rect x="260" y="110" width="140" height="64" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="330" y="136" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">目标文件 .o</text>
+<text x="330" y="158" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">机器码</text>
+<rect x="260" y="230" width="140" height="58" rx="4" fill="#FFFFFF" stroke="#A8894F" stroke-width="1.4"/>
+<text x="330" y="254" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#A8894F" text-anchor="middle" font-weight="700">库 / 其他 .o</text>
+<rect x="470" y="160" width="130" height="64" rx="4" fill="#FFFFFF" stroke="#2E4A6B" stroke-width="1.4"/>
+<text x="535" y="186" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#2E4A6B" text-anchor="middle" font-weight="700">链接器</text>
+<text x="535" y="208" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10" fill="#5E5E58" text-anchor="middle" font-weight="400">linker</text>
+<rect x="650" y="160" width="110" height="64" rx="4" fill="#FFFFFF" stroke="#5F735F" stroke-width="1.4"/>
+<text x="705" y="186" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5F735F" text-anchor="middle" font-weight="700">可执行文件</text>
+<line x1="200" y1="142" x2="256" y2="142" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="400" y1="142" x2="466" y2="180" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="400" y1="248" x2="466" y2="204" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<line x1="600" y1="192" x2="646" y2="192" stroke="#2E4A6B" stroke-width="1.7" marker-end="url(#arrowBlue)"/>
+<text x="40" y="320" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">编译把单个源文件变成目标文件；链接把目标文件与库合并为可执行文件。</text>
+</svg>

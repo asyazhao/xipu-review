@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 410" role="img" aria-label="K-Means 的分配与更新">
+<title>K-Means 的分配与更新</title>
+<defs>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E4A6B"/></marker>
+  <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E5E58"/></marker>
+  <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8C4F45"/></marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F735F"/></marker>
+  <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A8894F"/></marker>
+</defs>
+<text x="40" y="30" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" fill="#262624" text-anchor="start" font-weight="600">K-Means 的分配与更新（K = 3）</text>
+<rect x="30" y="70" width="220" height="240" rx="2" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1"/>
+<text x="140" y="94" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="600">①</text>
+<circle cx="60" cy="140" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="90" cy="165" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="50" cy="185" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="110" cy="195" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="160" cy="140" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="190" cy="165" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="150" cy="185" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="210" cy="195" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="85" cy="250" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="115" cy="275" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="65" cy="285" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="145" cy="250" r="4" fill="#5E5E58" stroke="none"/>
+<circle cx="85" cy="165" r="9" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.8"/>
+<line x1="79" y1="165" x2="91" y2="165" stroke="#2E4A6B" stroke-width="1.4"/>
+<line x1="85" y1="159" x2="85" y2="171" stroke="#2E4A6B" stroke-width="1.4"/>
+<circle cx="180" cy="165" r="9" fill="#F5F1E7" stroke="#A8894F" stroke-width="1.8"/>
+<line x1="174" y1="165" x2="186" y2="165" stroke="#A8894F" stroke-width="1.4"/>
+<line x1="180" y1="159" x2="180" y2="171" stroke="#A8894F" stroke-width="1.4"/>
+<circle cx="100" cy="265" r="9" fill="#F5F1E7" stroke="#5F735F" stroke-width="1.8"/>
+<line x1="94" y1="265" x2="106" y2="265" stroke="#5F735F" stroke-width="1.4"/>
+<line x1="100" y1="259" x2="100" y2="271" stroke="#5F735F" stroke-width="1.4"/>
+<text x="140" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">初始化：随机选 3 个质心</text>
+<rect x="280" y="70" width="220" height="240" rx="2" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1"/>
+<text x="390" y="94" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="600">②</text>
+<circle cx="310" cy="140" r="4" fill="#2E4A6B" stroke="none"/>
+<circle cx="340" cy="165" r="4" fill="#2E4A6B" stroke="none"/>
+<circle cx="300" cy="185" r="4" fill="#2E4A6B" stroke="none"/>
+<circle cx="360" cy="195" r="4" fill="#2E4A6B" stroke="none"/>
+<circle cx="410" cy="140" r="4" fill="#A8894F" stroke="none"/>
+<circle cx="440" cy="165" r="4" fill="#A8894F" stroke="none"/>
+<circle cx="400" cy="185" r="4" fill="#A8894F" stroke="none"/>
+<circle cx="460" cy="195" r="4" fill="#A8894F" stroke="none"/>
+<circle cx="335" cy="250" r="4" fill="#5F735F" stroke="none"/>
+<circle cx="365" cy="275" r="4" fill="#5F735F" stroke="none"/>
+<circle cx="315" cy="285" r="4" fill="#5F735F" stroke="none"/>
+<circle cx="395" cy="250" r="4" fill="#5F735F" stroke="none"/>
+<circle cx="335" cy="165" r="9" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.8"/>
+<line x1="329" y1="165" x2="341" y2="165" stroke="#2E4A6B" stroke-width="1.4"/>
+<line x1="335" y1="159" x2="335" y2="171" stroke="#2E4A6B" stroke-width="1.4"/>
+<circle cx="430" cy="165" r="9" fill="#F5F1E7" stroke="#A8894F" stroke-width="1.8"/>
+<line x1="424" y1="165" x2="436" y2="165" stroke="#A8894F" stroke-width="1.4"/>
+<line x1="430" y1="159" x2="430" y2="171" stroke="#A8894F" stroke-width="1.4"/>
+<circle cx="350" cy="265" r="9" fill="#F5F1E7" stroke="#5F735F" stroke-width="1.8"/>
+<line x1="344" y1="265" x2="356" y2="265" stroke="#5F735F" stroke-width="1.4"/>
+<line x1="350" y1="259" x2="350" y2="271" stroke="#5F735F" stroke-width="1.4"/>
+<text x="390" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">分配：每个点归最近质心</text>
+<rect x="530" y="70" width="220" height="240" rx="2" fill="#FFFFFF" stroke="#D9D3C6" stroke-width="1"/>
+<text x="640" y="94" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#2E4A6B" text-anchor="middle" font-weight="600">③</text>
+<circle cx="560" cy="140" r="4" fill="#2E4A6B" stroke="none"/>
+<circle cx="590" cy="165" r="4" fill="#2E4A6B" stroke="none"/>
+<circle cx="550" cy="185" r="4" fill="#2E4A6B" stroke="none"/>
+<circle cx="610" cy="195" r="4" fill="#2E4A6B" stroke="none"/>
+<circle cx="660" cy="140" r="4" fill="#A8894F" stroke="none"/>
+<circle cx="690" cy="165" r="4" fill="#A8894F" stroke="none"/>
+<circle cx="650" cy="185" r="4" fill="#A8894F" stroke="none"/>
+<circle cx="710" cy="195" r="4" fill="#A8894F" stroke="none"/>
+<circle cx="585" cy="250" r="4" fill="#5F735F" stroke="none"/>
+<circle cx="615" cy="275" r="4" fill="#5F735F" stroke="none"/>
+<circle cx="565" cy="285" r="4" fill="#5F735F" stroke="none"/>
+<circle cx="645" cy="250" r="4" fill="#5F735F" stroke="none"/>
+<circle cx="577" cy="171" r="9" fill="#F5F1E7" stroke="#2E4A6B" stroke-width="1.8"/>
+<line x1="571" y1="171" x2="583" y2="171" stroke="#2E4A6B" stroke-width="1.4"/>
+<line x1="577" y1="165" x2="577" y2="177" stroke="#2E4A6B" stroke-width="1.4"/>
+<circle cx="677" cy="171" r="9" fill="#F5F1E7" stroke="#A8894F" stroke-width="1.8"/>
+<line x1="671" y1="171" x2="683" y2="171" stroke="#A8894F" stroke-width="1.4"/>
+<line x1="677" y1="165" x2="677" y2="177" stroke="#A8894F" stroke-width="1.4"/>
+<circle cx="602" cy="265" r="9" fill="#F5F1E7" stroke="#5F735F" stroke-width="1.8"/>
+<line x1="596" y1="265" x2="608" y2="265" stroke="#5F735F" stroke-width="1.4"/>
+<line x1="602" y1="259" x2="602" y2="271" stroke="#5F735F" stroke-width="1.4"/>
+<text x="640" y="350" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#5E5E58" text-anchor="middle" font-weight="400">更新：质心移到簇均值</text>
+<line x1="252" y1="190" x2="278" y2="190" stroke="#5E5E58" stroke-width="1.3" marker-end="url(#arrowMuted)"/>
+<line x1="502" y1="190" x2="528" y2="190" stroke="#5E5E58" stroke-width="1.3" marker-end="url(#arrowMuted)"/>
+<text x="40" y="392" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#5E5E58" text-anchor="start" font-weight="400">重复“分配—更新”，直到质心不再移动、簇分配不变或达到最大迭代次数。</text>
+</svg>
