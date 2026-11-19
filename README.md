@@ -5,9 +5,9 @@
 
 欢迎来到我的课程笔记仓库。
 
-我是西交利物浦大学（XJTLU）生物信息学专业学生。这个仓库把我本科阶段七门课的复习内容整理成一个可以直接打开的静态复习站：左边按学科和章节阅读，正文里保留课件原图，术语带释义，考前可以搜索、对照和打印。
+我是西交利物浦大学（XJTLU）生物信息学专业学生。这个仓库把我**大二上**的七门课复习内容整理成一个可以直接打开的静态复习站：左边按学科和章节阅读，正文里保留课件原图，术语带释义，考前可以搜索、对照和打印。
 
-Welcome! This is my personal, exam-oriented review site for seven undergraduate modules in Bioinformatics at XJTLU. It is a static, offline-friendly site built from my lecture notes, with courseware figures placed in the relevant sections, annotated terminology, full-text search, and per-subject export.
+Welcome! This is my personal, exam-oriented review site for seven Year 2 Semester 1 modules in Bioinformatics at XJTLU. It is a static, offline-friendly site built from my lecture notes, with courseware figures placed in the relevant sections, annotated terminology, full-text search, and per-subject export.
 
 **在线复习站：** [打开复习站](https://zhihezhao25.github.io/xipu-review/)
 
@@ -36,7 +36,7 @@ Welcome! This is my personal, exam-oriented review site for seven undergraduate 
 
 ## 涵盖课程
 
-本科课程（Undergraduate modules）
+大二上（Year 2 Semester 1）
 
 | 课程代码 | 课程 | 章节 | 主要内容 |
 |---|---|---:|---|
