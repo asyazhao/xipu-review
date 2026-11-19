@@ -9,7 +9,7 @@
 
 Welcome! This is my personal, exam-oriented review site for seven Year 2 Semester 1 modules in Bioinformatics at XJTLU. It is a static, offline-friendly site built from my lecture notes, with courseware figures placed in the relevant sections, annotated terminology, full-text search, and per-subject export.
 
-**在线复习站：** [打开复习站](https://zhihezhao25.github.io/xipu-review/)
+**在线复习站：** https://asyazhao.github.io/xipu-review/
 
 > 这不是课程官方资料，也不能替代课堂、教材和老师的讲解。内容以我拿到的课件为准；课件没有覆盖的地方会明确标注，不自行编造。
 
@@ -143,7 +143,7 @@ Welcome! This is my personal, exam-oriented review site for seven Year 2 Semeste
 
 ### 在线访问
 
-[打开复习站](https://zhihezhao25.github.io/xipu-review/)
+https://asyazhao.github.io/xipu-review/
 
 不依赖本机进程，电脑关机后仍然可以打开。站点由 GitHub Pages 从公开仓库的 `main` 分支发布。
 
