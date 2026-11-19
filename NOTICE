@@ -1,0 +1,31 @@
+# Third-Party Materials Notice
+
+This repository contains two categories of material with different licensing.
+
+## 1. Source code — MIT
+
+The build scripts, templates, CSS, JavaScript, and other software in this
+repository are licensed under the MIT License. See [LICENSE](LICENSE).
+
+## 2. Original notes and written content — CC BY-NC-SA 4.0
+
+The original notes, explanations, comparison tables, and other written content
+are licensed under CC BY-NC-SA 4.0. See [LICENSE-CONTENT.md](LICENSE-CONTENT.md).
+
+## 3. Course materials — excluded from both licenses
+
+Courseware images in `assets/course/`, lecture slides, diagrams, course titles,
+and any other material created by course instructors or XJTLU remain the
+property of their respective copyright holders. They are included in this
+repository only for personal, non-commercial study and are **not** licensed
+under MIT or CC BY-NC-SA 4.0.
+
+If you are a course instructor or copyright holder and believe that a
+particular item should not be publicly available, please open an issue or
+contact the repository owner so that it can be removed.
+
+## 4. No warranty
+
+The notes are personal study material, not official course documentation. They
+are provided "as is", without warranty of any kind. Always verify against the
+official lecture materials and course guidance.
