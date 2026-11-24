@@ -87,6 +87,8 @@
           <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
           <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
           <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">抽象数据类型与结构体</span><span class="toc-src">L17</span></a></li>
+          <li><a href="ch15.html"><span class="toc-num">15</span><span class="toc-title">链表与简单算法</span><span class="toc-src">L18–19</span></a></li>
         </ol>
       </details>
       <div class="toc-links">
@@ -114,6 +116,8 @@
           <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
           <li><a href="ch12.html"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
           <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">抽象数据类型与结构体</span><span class="toc-src">L17</span></a></li>
+          <li><a href="ch15.html"><span class="toc-num">15</span><span class="toc-title">链表与简单算法</span><span class="toc-src">L18–19</span></a></li>
         </ol>
       </details>
       <div class="toc-links">
@@ -380,7 +384,7 @@ for (i = 1; i &lt;= 10; i++) {
     }
     cout &lt;&lt; endl;   // newline at the end of each row
 }</code></pre>
-  <p>另一个例子是“计算每个学生 8 次实验的平均分”：外层用 do-while 遍历学生（问“还有下一个吗”），内层用 for 累加 8 次成绩。关键细节是 tscore 必须在外层循环内部、内层循环之前重置为 0——若放在外层之外，分数会跨学生累加。</p>
+  <p>另一个例子是“计算每个学生 8 次实验的平均分”：外层用 do-while <span class="c-term c-term--auto" data-term="traversal" title="遍历｜traversal：从 head 出发沿 next 指针依次访问每个节点。">遍历</span>学生（问“还有下一个吗”），内层用 for 累加 8 次成绩。关键细节是 tscore 必须在外层循环内部、内层循环之前重置为 0——若放在外层之外，分数会跨学生累加。</p>
   <p>讲义最后给出一个打印菱形图案的挑战题，只用星号与空格，靠嵌套循环控制每行的空格数与星号数。这类题考的不是语法，而是“把图形规律翻译成两个计数器的范围”。</p>
   <aside class="c-callout c-callout--exam">
     <p class="c-callout__label">考点</p>

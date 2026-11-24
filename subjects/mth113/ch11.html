@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTH113 假设检验与回归斜率 · 全科复习</title>
+  <meta name="description" content="MTH113 第 11 章 假设检验与回归斜率：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="mth113" data-chapter="11">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">MTH113</a>
+      <span>/</span>
+      <span aria-current="page">第 11 章 假设检验与回归斜率</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch11.html" class="is-current" aria-current="page"><span class="toc-num">11</span><span class="toc-title">假设检验与回归斜率</span><span class="toc-src">W11</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">数据基础、可视化与描述统计</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">概率基础</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">离散随机变量</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">连续随机变量</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">Bernoulli 与二项分布</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">Poisson 与几何分布</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">均匀与正态分布</span><span class="toc-src">W7</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">正态应用与指数分布</span><span class="toc-src">W8</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">抽样分布与置信区间</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">简单线性回归与相关</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch11.html" class="is-current" aria-current="page"><span class="toc-num">11</span><span class="toc-title">假设检验与回归斜率</span><span class="toc-src">W11</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">MTH113 · 第 11 章</p>
+          <h1>假设检验与回归斜率</h1>
+          <p class="chapter-head__en">Hypothesis Testing &amp; Regression Slopes</p>
+          <p class="chapter-head__meta">来源 W11 · 术语 10 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">11.1 假设是关于总体的陈述</a></li>
+        <li><a href="#s2">11.2 两类错误与显著性水平</a></li>
+        <li><a href="#s3">11.3 比例的 z 检验：零分布与条件</a></li>
+        <li><a href="#s4">11.4 P 值、判定规则与尾数</a></li>
+        <li><a href="#s5">11.5 九步流程与两个比例实例</a></li>
+        <li><a href="#s6">11.6 均值的 z 检验与 t 检验</a></li>
+        <li><a href="#s7">11.7 统计显著性与实际显著性；power 与样本量</a></li>
+        <li><a href="#s8">11.8 报告与解释陷阱</a></li>
+        <li><a href="#s9">11.9 回归斜率 β1 的检验与置信区间</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲把前三周的<span class="c-term c-term--auto" data-term="sampling-distribution" title="抽样分布｜sampling distribution：重复抽样下统计量的概率分布。">抽样分布</span>与<span class="c-term c-term--auto" data-term="confidence-interval" title="置信区间｜confidence interval：由样本给出的参数合理取值区间。">置信区间</span>接到“决策”上：先把研究问题写成 <i>H</i><sub>0</sub> 与 <i>H</i><sub>a</sub>，用<span class="c-term c-term--auto" data-term="sample" title="样本｜sample：实际被观测到的总体子集。">样本</span>判断证据是否足够强，再把同一套 t 检验逻辑延伸到<span class="c-term c-term--auto" data-term="regression-slope-1" title="回归斜率｜regression slope (β1)：总体回归直线中 x 每增加一个单位时 y 的平均变化量。">回归斜率</span> <i>β</i><sub>1</sub>。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>假设针对<span class="c-term c-term--auto" data-term="population" title="总体｜population：我们想了解的全部个体或集合。">总体</span><span class="c-term c-term--auto" data-term="parameter" title="参数｜parameter：对整个总体的数值概括，通常未知。">参数</span>（<i>μ</i>、<i>p</i>），不针对样本<span class="c-term c-term--auto" data-term="statistic" title="统计量｜statistic：由样本数据算出的数值概括。">统计量</span>；写成 <i>H</i><sub>0</sub>: <i>μ</i> = 100，不能写 <i>H</i><sub>0</sub>: <i>x̄</i> = 100。</li>
+    <li><i>H</i><sub>0</sub> 一律用等号；单尾检验在边界值处计算，隐含的零假设包含“更极端”的一侧。</li>
+    <li><i>α</i> = P(拒绝 <i>H</i><sub>0</sub> | <i>H</i><sub>0</sub> 真)，<i>β</i> = P(不拒绝 <i>H</i><sub>0</sub> | 指定备择为真)；<i>α</i> 定得越小，<i>β</i> 一般越大。</li>
+    <li><span class="c-term c-term--auto" data-term="test-for-a-proportion" title="比例检验｜test for a proportion：用样本比例 p̂ 检验总体比例 p 是否等于某基准值，常用大样本 z 检验。">比例检验</span>的零<span class="c-term c-term--auto" data-term="standard-error" title="标准误｜standard error：统计量抽样分布的标准差。">标准误</span>用 <i>p</i><sub>0</sub> 计算；条件为随机样本、<i>np</i><sub>0</sub> ≥ 10、<i>n</i>(1−<i>p</i><sub>0</sub>) ≥ 10、10% 条件。</li>
+    <li>P 值是在 <i>H</i><sub>0</sub> 与模型成立时，统计量至少与观测值一样不利于 <i>H</i><sub>0</sub> 的概率；<i>P</i> ≤ <i>α</i> 则拒绝。</li>
+    <li><i>σ</i> 已知用 z，<i>σ</i> 未知用 t（<i>df</i> = <i>n</i>−1）；大样本不会把 <i>s</i> 变成已知的总体值。</li>
+    <li>power = 1 − <i>β</i>，随真实值远离 <i>H</i><sub>0</sub>、<i>α</i> 增大、<i>n</i> 增大而升高，随总体<span class="c-term c-term--auto" data-term="variability" title="变异｜variability：观测值并不完全相同的性质。">变异</span>增大而降低。</li>
+    <li>斜率检验 <i>H</i><sub>0</sub>: <i>β</i><sub>1</sub> = 0，<i>t</i> = <i>b</i><sub>1</sub>/<i>SE</i>(<i>b</i><sub>1</sub>)，<i>df</i> = <i>n</i>−2；置信区间不含 0 与<span class="c-term c-term--auto" data-term="two-tailed-test" title="双尾检验｜two-tailed test：备择假设为“不等于”时，P 值同时计入分布两侧尾部。">双尾检验</span>的拒绝结论一致。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">11.1</span> 假设是关于总体的陈述</h2>
+  <p>推断的对象是总体参数：均值 <i>μ</i>、比例 <i>p</i>。样本只提供 <i>x̄</i> 与 <i>p̂</i> = <i>X</i>/<i>n</i> 作为证据。所以假设必须写成 <i>H</i><sub>0</sub>: <i>μ</i> = 100，而不是 <i>H</i><sub>0</sub>: <i>x̄</i> = 100。检验的任务，是在承认抽样变异的前提下，评估两个互相竞争的总体陈述。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>研究问题与备择假设的方向</caption>
+      <thead><tr><th scope="col">研究问题</th><th scope="col"><i>H</i><sub>0</sub></th><th scope="col"><i>H</i><sub>a</sub></th></tr></thead>
+      <tbody>
+        <tr><td>均值是否改变？</td><td><i>μ</i> = <i>μ</i><sub>0</sub></td><td><i>μ</i> ≠ <i>μ</i><sub>0</sub></td></tr>
+        <tr><td>均值是否增大？</td><td><i>μ</i> = <i>μ</i><sub>0</sub></td><td><i>μ</i> &gt; <i>μ</i><sub>0</sub></td></tr>
+        <tr><td>均值是否减小？</td><td><i>μ</i> = <i>μ</i><sub>0</sub></td><td><i>μ</i> &lt; <i>μ</i><sub>0</sub></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><span class="c-term">零假设<span class="c-term__en">null hypothesis</span></span> <i>H</i><sub>0</sub> 给出初始参照陈述，证据针对它评估；<span class="c-term">备择假设<span class="c-term__en">alternative hypothesis</span></span> <i>H</i><sub>a</sub> 是研究设计要检出的偏离。两者必须针对同一特征与同一参照值。</p>
+  <p>方向必须在看数据之前确定。问题问“是否有任何改变”，用双尾；问“是否改善”或“是否降低”，用单尾——但“改善”指哪个方向，要先在情境中定义清楚。</p>
+  <p>等号约定：<i>H</i><sub>0</sub> 一律用等号写。对 <i>H</i><sub>a</sub>: <i>μ</i> &lt; <i>μ</i><sub>0</sub>，隐含的零假设其实包含 <i>μ</i> ≥ <i>μ</i><sub>0</sub>，检验在边界 <i>μ</i> = <i>μ</i><sub>0</sub> 处计算。观测估计若落在相反方向，不能因此改写备择假设。</p>
+  <p>两个结论刻意不对称。拒绝 <i>H</i><sub>0</sub>：样本提供了足够有说服力的证据反对零假设、支持所述备择（在假定成立的前提下）。不拒绝 <i>H</i><sub>0</sub>：样本没有提供足够有说服力的证据；这<b>不</b>等于证明 <i>H</i><sub>0</sub> 为真。小样本或噪声大的样本可能漏掉重要偏离，要把“没有强证据”与“证据表明相等”分开。</p>
+  <p>三类研究问题的写法可以对照：灌装线检查平均装量是否偏离 500 mL → <i>H</i><sub>0</sub>: <i>μ</i> = 500，<i>H</i><sub>a</sub>: <i>μ</i> ≠ 500，双尾；新界面希望把平均完成时间降到 8 分钟以下 → <i>H</i><sub>a</sub>: <i>μ</i> &lt; 8，下尾；大学问是否超过 60% 学生偏好电子笔记 → <i>H</i><sub>a</sub>: <i>p</i> &gt; 0.60，上尾。</p>
+  <p>讲义还点出一对错误写法：<i>H</i><sub>0</sub>: <i>p̂</i> = 0.60 与 <i>H</i><sub>a</sub>: <i>p</i> &gt; 0.70。两处毛病——<i>p̂</i> 描述样本而非总体；零假设与备择必须使用同一参照值。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>看到 <i>x̄</i>、<i>p̂</i> 出现在假设里就是错的：它们是统计量，随样本变化。假设只能写总体参数与一个固定参照值。</p>
+  </aside>
+  <p class="c-source">W11 p.4–9</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">11.2</span> 两类错误与显著性水平</h2>
+  <p>决策只有两种，真实状态也只有两种，于是构成 2×2 表：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>假设检验的四种结果</caption>
+      <thead><tr><th scope="col">决策</th><th scope="col"><i>H</i><sub>0</sub> 为真</th><th scope="col">指定的 <i>H</i><sub>a</sub> 为真</th></tr></thead>
+      <tbody>
+        <tr><td>拒绝 <i>H</i><sub>0</sub></td><td><span class="c-term">Type I 错误<span class="c-term__en">Type I error</span></span>，概率 <i>α</i></td><td>正确检出，概率 1−<i>β</i>（power）</td></tr>
+        <tr><td>不拒绝 <i>H</i><sub>0</sub></td><td>正确决策，概率 1−<i>α</i></td><td><span class="c-term">Type II 错误<span class="c-term__en">Type II error</span></span>，概率 <i>β</i></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>四个概率都以“真实状态”为条件：</p>
+  <div class="c-formula"><i>α</i> = P(拒绝 <i>H</i><sub>0</sub> | <i>H</i><sub>0</sub> 为真)，&nbsp;&nbsp; <i>β</i> = P(不拒绝 <i>H</i><sub>0</sub> | 指定的备择为真)</div>
+  <p>我们观测到的是决策，一般并不知道哪个总体陈述为真；单次检验本身无法指出某个决策是错误。</p>
+  <p>讲义的情境例：供应商声称 2% 元件有缺陷，检验 <i>H</i><sub>0</sub>: <i>p</i> = 0.02 对 <i>H</i><sub>a</sub>: <i>p</i> &gt; 0.02，超标则退货。Type I 错误是边界零假设为真却判为超标，合格批次被退回；Type II 错误是真实次品率高于 0.02 却没检出，劣质批次继续使用。供应商承担不必要退货的成本，客户承担漏检的后果——可接受的错误风险应随情境而定。</p>
+  <p><span class="c-term">显著性水平<span class="c-term__en">significance level</span></span> <i>α</i> 是事前选择的错误风险：要在考虑错误后果之后、查看数据之前确定。讲义的上尾正态图在 <i>α</i> = 0.05 时临界值为 1.645；在边界零假设下，重复抽样中约 5% 会拒绝。大样本检验只是近似达到这个比例。</p>
+  <p><i>α</i> 与 <i>β</i> 互相牵制：<i>α</i> 更小意味着要求更强的证据，在其他条件固定时，指定备择处的 <i>β</i> 一般会增大，power 相应下降。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p><i>α</i> 是“冤枉好人”的概率，<i>β</i> 是“放过坏人”的概率。两者都给定真实状态的条件下才谈得上；<i>α</i> 由研究者事先选定，<i>β</i> 还取决于真实值、<i>n</i> 与变异。</p>
+  </aside>
+  <!-- course-image:mth113-ch11-errors.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-mth113-ch11-errors">
+        <img class="c-course-figure__img" src="../../assets/course/mth113-ch11-errors.jpg" alt="假设检验的两类错误与正确决策" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 假设检验的两类错误与正确决策 <span class="c-course-figure__src">来源：W11 p.10</span></figcaption>
+      </figure>
+
+<p class="c-source">W11 p.10–13</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">11.3</span> 比例的 z 检验：零分布与条件</h2>
+  <p>设 <i>X</i> 为 <i>n</i> 次独立试验中的<span class="c-term c-term--auto" data-term="success" title="成功｜success：概率模型中被计数的那个事件，不一定是好事。">成功</span>数，每次成功概率为 <i>p</i>，<span class="c-term c-term--auto" data-term="sample-proportion" title="样本比例｜sample proportion：p̂=X/n，样本中成功数除以样本量。">样本比例</span> <i>p̂</i> = <i>X</i>/<i>n</i>。在 <i>H</i><sub>0</sub>: <i>p</i> = <i>p</i><sub>0</sub> 下，</p>
+  <div class="c-formula"><i>E</i>(<i>p̂</i>) = <i>p</i><sub>0</sub>，&nbsp;&nbsp; <i>SE</i><sub>0</sub>(<i>p̂</i>) = √[<i>p</i><sub>0</sub>(1−<i>p</i><sub>0</sub>)/<i>n</i>]</div>
+  <p>样本足够大时，</p>
+  <div class="c-formula"><i>Z</i> = (<i>p̂</i> − <i>p</i><sub>0</sub>) / √[<i>p</i><sub>0</sub>(1−<i>p</i><sub>0</sub>)/<i>n</i>] ≈ N(0, 1)</div>
+  <p>分母用 <i>p</i><sub>0</sub> 而不是 <i>p̂</i>：我们是在“零假设为真”的前提下评估抽样变异，标准误必须用假设值计算。这与第 9 周构造置信区间时用 <i>p̂</i> 估计标准误正好相反。</p>
+  <p>大样本比例检验有三个条件：</p>
+  <ol>
+    <li><i>p̂</i> 来自随机样本，或设计上可视为有代表性且观测独立；</li>
+    <li>两个零<span class="c-term c-term--auto" data-term="expected-value" title="期望｜expected value：取值的概率加权平均，描述分布中心。">期望</span>计数都足够大：<i>np</i><sub>0</sub> ≥ 10 且 <i>n</i>(1−<i>p</i><sub>0</sub>) ≥ 10；</li>
+    <li>不放回抽样时，样本不超过总体的 10%。</li>
+  </ol>
+  <p>讲义例：2006 年调查 1003 名随机抽取的美国成年人，582 人报告经常查看营养标签。<i>p̂</i> = 582/1003 = 0.580259。设 <i>p</i> 为该调查目标总体中经常查看者的比例，<i>H</i><sub>0</sub>: <i>p</i> = 0.50，<i>H</i><sub>a</sub>: <i>p</i> &gt; 0.50。零期望计数为 1003(0.5) = 501.5，两类都满足。</p>
+  <div class="c-formula"><i>SE</i><sub>0</sub> = √[0.5(0.5)/1003] = 0.0157877，&nbsp; <i>z</i> = (0.580259 − 0.50)/0.0157877 = 5.08365</div>
+  <p>观测比例在 0.50 之上约 5.08 个零标准误。若先把 <i>p̂</i> 舍入成 0.58、标准误舍入成 0.016，会得到 <i>z</i> = 5.00——结论不变，但过程中应保留原始计数与样本量。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>零标准误的分子是 <i>p</i><sub>0</sub>(1−<i>p</i><sub>0</sub>)、分母是 <i>n</i>；用 <i>p̂</i> 算零标准误是最常见的错误，会同时破坏统计量与 P 值。</p>
+  </aside>
+  <!-- course-image:mth113-ch11-null-distribution.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-mth113-ch11-null-distribution">
+        <img class="c-course-figure__img" src="../../assets/course/mth113-ch11-null-distribution.jpg" alt="原假设下样本比例的抽样分布" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> <span class="c-term c-term--auto" data-term="null-hypothesis-h0" title="原假设｜null hypothesis (H0)：关于总体参数的基准 claim，通常表示“没有差异”或“没有效应”。">原假设</span>下样本比例的抽样分布 <span class="c-course-figure__src">来源：W11 p.14</span></figcaption>
+      </figure>
+
+<p class="c-source">W11 p.14–17</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">11.4</span> P 值、判定规则与尾数</h2>
+  <p>定义：在 <i>H</i><sub>0</sub> 与统计模型成立的条件下，<span class="c-term">P 值<span class="c-term__en">P-value</span></span>是检验统计量至少与观测值一样不利于 <i>H</i><sub>0</sub> 的概率，方向由 <i>H</i><sub>a</sub> 决定。</p>
+  <p>营养标签例中备择为上尾，故 <i>P</i> = P(<i>Z</i> ≥ 5.08365) ≈ 1.85 × 10<sup>−7</sup>。它极小，但不是字面上的 0。P 值也叫观测显著性水平（observed significance level），与检验前选定的 <i>α</i> 不是同一个东西。</p>
+  <p>判定规则：</p>
+  <div class="c-formula"><i>P</i> ≤ <i>α</i> ⇒ 拒绝 <i>H</i><sub>0</sub>；&nbsp;&nbsp; <i>P</i> &gt; <i>α</i> ⇒ 不拒绝 <i>H</i><sub>0</sub></div>
+  <p>取 <i>α</i> = 0.05，上例拒绝，结论是：有说服力的证据表明目标总体中超过一半的人经常查看营养标签。</p>
+  <p>解释必须带条件：P 值不是“<i>H</i><sub>0</sub> 为真的概率”，它描述的是“若零模型成立，出现这样或更极端统计量的概率”。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>三种备择对应的 P 值（Φ 为标准正态 CDF）</caption>
+      <thead><tr><th scope="col">备择假设</th><th scope="col">P 值</th></tr></thead>
+      <tbody>
+        <tr><td><i>p</i> &gt; <i>p</i><sub>0</sub></td><td>1 − Φ(<i>z</i>)</td></tr>
+        <tr><td><i>p</i> &lt; <i>p</i><sub>0</sub></td><td>Φ(<i>z</i>)</td></tr>
+        <tr><td><i>p</i> ≠ <i>p</i><sub>0</sub></td><td>2{1 − Φ(|<i>z</i>|)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>双尾要把两侧同样极端的面积都算上。以 <i>z</i> = 2 为例：上尾 <i>P</i> ≈ 0.0228；下尾 <i>z</i> = −2 同样是 0.0228；双尾为 0.0455。</p>
+  <p>一个容易忽略的细节：若方向性统计量指向备择假设的反方向，其 P 值可以大于 0.5。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>双尾忘记乘 2 会把 0.0455 报成 0.0228，直接改变 5% 水平下的结论。单尾与双尾的 P 值不能混用，因为“至少一样极端”的定义不同。</p>
+  </aside>
+  <p class="c-source">W11 p.18–21</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">11.5</span> 九步流程与两个比例实例</h2>
+  <p>讲义把一次完整检验拆成九步。前四步属于“理解情境、制定计划”：</p>
+  <ol>
+    <li>用情境语言定义总体特征；</li>
+    <li>写出零假设 <i>H</i><sub>0</sub>；</li>
+    <li>写出备择假设 <i>H</i><sub>a</sub>；</li>
+    <li>选定显著性水平 <i>α</i>。</li>
+  </ol>
+  <p>这四步要在用样本做判定之前完成：它们确定问题、证据方向与可容忍的 I 类错误风险。后五步是“执行与结论”：</p>
+  <ol start="5">
+    <li>写出所用统计量，并代入零假设值；</li>
+    <li>检查该程序所需的假定；</li>
+    <li>计算样本量与统计量；</li>
+    <li>求对应的 P 值；</li>
+    <li>给出决策，并用情境语言回答研究问题，包含所用显著性水平。</li>
+  </ol>
+  <p>实例一（下尾）：某县开展节水活动后，随机抽取 500 户，其中 220 户用水减少，<i>p̂</i> = 0.440。设 <i>p</i> 为全县用水减少户的比例，<i>H</i><sub>0</sub>: <i>p</i> = 0.50，<i>H</i><sub>a</sub>: <i>p</i> &lt; 0.50，取 <i>α</i> = 0.01。零期望计数为 250 与 250；假定 500 户不超过全县户数的 10%。</p>
+  <div class="c-formula"><i>SE</i><sub>0</sub> = √[0.5(0.5)/500] = 0.0223607，&nbsp; <i>z</i> = (0.440 − 0.50)/0.0223607 = −2.68328</div>
+  <div class="c-formula"><i>P</i> = Φ(−2.68328) = 0.003645</div>
+  <p>0.003645 &lt; 0.01，拒绝 <i>H</i><sub>0</sub>：有证据表明全县不到一半的家庭减少了用水。把 <i>z</i> 舍入到 −2.68 查表得 <i>P</i> ≈ 0.0037，决策不变。</p>
+  <p>实例二（双尾）：某大学 250 名学生的随机样本中 145 人偏好格式 A。检验 <i>H</i><sub>0</sub>: <i>p</i> = 0.50 对 <i>H</i><sub>a</sub>: <i>p</i> ≠ 0.50，<i>α</i> = 0.05。<i>p̂</i> = 145/250 = 0.58，<i>np</i><sub>0</sub> = <i>n</i>(1−<i>p</i><sub>0</sub>) = 125。</p>
+  <div class="c-formula"><i>z</i> = (0.58 − 0.50)/√[0.50(0.50)/250] = 2.5298</div>
+  <div class="c-formula"><i>P</i> = 2{1 − Φ(2.5298)} ≈ 0.01141</div>
+  <p>在 <i>α</i> = 0.05 下拒绝 <i>H</i><sub>0</sub>：有证据表明偏好 A 的总体比例不等于 0.50，样本估计偏高。估计差异为 0.08，即 8 个百分点。注意标准误里用 <i>p</i><sub>0</sub> = 0.50，而不是 <i>p̂</i> = 0.58。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>报告比例差异用“百分点”（percentage points）：0.08 是 8 个百分点，不是“8%”。同理，比例的标准误不能写成百分数混用。</p>
+  </aside>
+  <p class="c-source">W11 p.22–27</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">11.6</span> 均值的 z 检验与 t 检验</h2>
+  <p>对 <i>H</i><sub>0</sub>: <i>μ</i> = <i>μ</i><sub>0</sub>，统计量取决于 <i>σ</i> 是否已知：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>均值检验的两种情形</caption>
+      <thead><tr><th scope="col">信息</th><th scope="col">统计量</th><th scope="col">零参照分布</th></tr></thead>
+      <tbody>
+        <tr><td><i>σ</i> 已知</td><td><i>z</i> = (<i>x̄</i> − <i>μ</i><sub>0</sub>)/(<i>σ</i>/√<i>n</i>)</td><td>N(0, 1)</td></tr>
+        <tr><td><i>σ</i> 未知</td><td><i>t</i> = (<i>x̄</i> − <i>μ</i><sub>0</sub>)/(<i>s</i>/√<i>n</i>)</td><td><i>t</i><sub><i>n</i>−1</sub></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>t 的情形更重要，因为总体 <i>σ</i> 几乎不会已知。大样本不会把样本<span class="c-term c-term--auto" data-term="standard-deviation" title="标准差｜standard deviation：方差的平方根，单位与原变量相同。">标准差</span> <i>s</i> 变成已知的总体值——这句话是本章的常考点。</p>
+  <p>条件：随机或有代表性、观测独立的样本；正态总体才能保证精确的正态/t 参照；小样本要先看图形是否存在明显偏态与离群点；<i>n</i> ≥ 30 只是常用的大样本经验值，严重偏态、重尾、偏倚或相依仍需处理。<span class="c-term c-term--auto" data-term="histogram" title="直方图｜histogram：用相接的柱表示数值数据各区间频数的图。">直方图</span>能帮助判断形状，但不能证明抽样随机或观测独立。</p>
+  <p>例（<i>σ</i> 已知）：某过程总体标准差 <i>σ</i> = 9 分钟，36 次独立运行的随机样本给出 <i>x̄</i> = 96.8 分钟，假定正态模型合理。<i>H</i><sub>0</sub>: <i>μ</i> = 100，<i>H</i><sub>a</sub>: <i>μ</i> &lt; 100，<i>α</i> = 0.05。</p>
+  <div class="c-formula"><i>SE</i> = 9/√36 = 1.5，&nbsp; <i>z</i> = (96.8 − 100)/1.5 = −2.1333</div>
+  <p>下尾概率 <i>P</i> = 0.01645，拒绝 <i>H</i><sub>0</sub>：数据提供证据表明总体均值低于 100 分钟。</p>
+  <p>为什么估计 <i>σ</i> 会导致 t：统计量 <i>T</i> = (<i>X̄</i> − <i>μ</i><sub>0</sub>)/(<i>S</i>/√<i>n</i>) 中，<i>X̄</i> 与 <i>S</i> 都随样本变化，估计分母额外引入了不确定性。因此 <span class="c-term">t 分布<span class="c-term__en">t distribution</span></span>尾部比标准正态更厚，<span class="c-term c-term--auto" data-term="degrees-of-freedom" title="自由度｜degrees of freedom：估计中可自由变动的信息数目，t 区间为 n−1。">自由度</span>越小越明显；<i>df</i> 增大时曲线趋近正态。独立正态观测下，零分布精确为 <i>t</i><sub><i>n</i>−1</sub>。</p>
+  <div class="c-formula"><i>H</i><sub>a</sub>: <i>μ</i> &gt; <i>μ</i><sub>0</sub> → <i>P</i> = 1 − <i>F</i><sub><i>n</i>−1</sub>(<i>t</i>)；&nbsp; <i>μ</i> &lt; <i>μ</i><sub>0</sub> → <i>P</i> = <i>F</i><sub><i>n</i>−1</sub>(<i>t</i>)；&nbsp; <i>μ</i> ≠ <i>μ</i><sub>0</sub> → <i>P</i> = 2{1 − <i>F</i><sub><i>n</i>−1</sub>(|<i>t</i>|)}</div>
+  <p>上尾 t 表列出的是统计量右侧的概率；负统计量用对称性处理，双尾把尾面积乘 2。</p>
+  <p>例（<i>σ</i> 未知，小样本）：10 名员工的每日非工作任务时间（分钟）为 108, 112, 117, 130, 111, 131, 113, 113, 105, 128。问本公司均值是否低于 120 分钟的基准。<i>H</i><sub>0</sub>: <i>μ</i> = 120，<i>H</i><sub>a</sub>: <i>μ</i> &lt; 120，<i>α</i> = 0.05。<i>n</i> = 10，<i>x̄</i> = 116.8，<i>s</i> = 9.44928。</p>
+  <div class="c-formula"><i>SE</i> = 9.44928/√10 = 2.98812，&nbsp; <i>t</i> = (116.8 − 120)/2.98812 = −1.07091，&nbsp; <i>df</i> = 9</div>
+  <div class="c-formula"><i>P</i> = P(<i>T</i><sub>9</sub> ≤ −1.07091) = 0.15604</div>
+  <p>0.15604 &gt; 0.05，不拒绝 <i>H</i><sub>0</sub>：数据不足以证明该公司总体均值低于 120 分钟。估计差异是 −3.2 分钟。“没有足够证据表明下降”不等于“证明等于基准”。</p>
+  <p>小样本检查：这 10 个观测有些不对称，但没有孤立的极端值；继续计算需要接受“总体近似正态”的假定，而 10 个观测无法证明正态。<span class="c-term c-term--auto" data-term="independence" title="独立性｜independence：一个事件发生不改变另一个事件概率的性质。">独立性</span>与代表性仍是设计假定。</p>
+  <p>查表与软件：把 <i>t</i> 舍入到 −1.1 得下尾 <i>P</i> ≈ 0.150；用完整数据得 0.15604。两者在 <i>α</i> = 0.05 下决策相同。计算保留全精度，只在报告时舍入；软件显示 0.000 只是舍入约定，应报告一个上界或科学计数，而不是写 <i>P</i> = 0。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“大样本所以可以用 z”不成立：只要 <i>σ</i> 是从样本估的，参照分布就是 t。<i>n</i> 大只让 t 接近 z，不改变它名义上是 t 的事实。</p>
+  </aside>
+  <p class="c-source">W11 p.28–36</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">11.7</span> 统计显著性与实际显著性；power 与样本量</h2>
+  <p>例（双尾 t，边界结果）：16 个元件的独立随机样本给出 <i>x̄</i> = 3.42 mm，<i>s</i> = 0.80 mm，假定总体近似正态且无严重离群点。检验 <i>H</i><sub>0</sub>: <i>μ</i> = 3.00 对 <i>H</i><sub>a</sub>: <i>μ</i> ≠ 3.00，<i>α</i> = 0.05。</p>
+  <div class="c-formula"><i>t</i> = (3.42 − 3.00)/(0.80/√16) = 2.10，&nbsp; <i>df</i> = 15</div>
+  <div class="c-formula"><i>P</i> = 2P(<i>T</i><sub>15</sub> ≥ 2.10) ≈ 0.05306 &gt; 0.05</div>
+  <p>不拒绝 <i>H</i><sub>0</sub>：5% 水平下证据不足。刚刚越过阈值的结果不能证明相等。</p>
+  <p>与置信区间的连接：用 <i>t</i><sub>0.975,15</sub> = 2.13145，匹配的 95% 区间为</p>
+  <div class="c-formula">3.42 ± 2.13145(0.20) = (2.99371, 3.84629) mm</div>
+  <p>区间包含 3.00，与双尾 t 检验的结论一致。这正是第 9 周均值推断的回归。</p>
+  <p>例（大样本、实际意义小）：某地区考试成绩样本 <i>n</i> = 2500，<i>x̄</i> = 101.0，<i>s</i> = 15.0。检验 <i>H</i><sub>0</sub>: <i>μ</i> = 100 对 <i>H</i><sub>a</sub>: <i>μ</i> &gt; 100，<i>α</i> = 0.001。</p>
+  <div class="c-formula"><i>t</i> = (101.0 − 100)/(15/√2500) = 3.3333，&nbsp; <i>df</i> = 2499</div>
+  <p>上尾 <i>P</i> ≈ 0.000435，拒绝 <i>H</i><sub>0</sub>。但估计的增幅只有 1 分：统计显著并不说明这 1 分在教育上有意义，需要实际基准来判断。</p>
+  <p><span class="c-term">power</span> 的定义：对指定的真实值 <i>θ</i>，Power(<i>θ</i>) = P<sub><i>θ</i></sub>(拒绝 <i>H</i><sub>0</sub>)。当该值属于备择时，Power(<i>θ</i>) = 1 − <i>β</i>(<i>θ</i>)。它回答的是：一个固定的检验程序，检测到指定偏离的频率有多高。</p>
+  <p>真实参数未知，所以只能对若干“如果”值计算。报告 power 时必须同时说明备择值、样本量、显著性水平与变异性假定。</p>
+  <p>什么改变 power（其他相关条件固定）：真实值沿 <i>H</i><sub>a</sub> 方向偏离越大，power 越大；<i>α</i> 越大，power 越大，但 I 类错误也增大；<i>n</i> 越大，标准误越小，power 越大且不提高 <i>α</i>；总体变异越大，固定均值差下的 power 越小。</p>
+  <p>例（航空客服等待时间）：公司声称平均等待 1.5 分钟，用 36 通独立电话检验 <i>H</i><sub>0</sub>: <i>μ</i> = 1.5 对 <i>H</i><sub>a</sub>: <i>μ</i> &gt; 1.5，假定 <i>σ</i> = 0.20 分钟已知，<i>α</i> = 0.01。</p>
+  <div class="c-formula"><i>SE</i> = 0.20/√36 = 0.0333333，&nbsp; <i>z</i><sub>0.99</sub> = 2.32635</div>
+  <div class="c-formula">拒绝域：<i>X̄</i> &gt; <i>c</i> = 1.5 + 2.32635(0.0333333) = 1.577545</div>
+  <p>若真实均值为 1.60，则 <i>X̄</i> ~ N(1.60, 0.0333333<sup>2</sup>)：</p>
+  <div class="c-formula"><i>β</i>(1.60) = P<sub>1.60</sub>(<i>X̄</i> ≤ 1.577545) = Φ((1.577545 − 1.60)/0.0333333) = Φ(−0.673652) ≈ 0.250266</div>
+  <div class="c-formula">Power(1.60) = 1 − 0.250266 = 0.749734</div>
+  <p>同一拒绝域在真实均值 1.65 时 power 为 0.985134；若 <i>n</i> 从 36 增到 64（讲义图示），power 从 0.750 升到 0.953。</p>
+  <p>若把 <i>σ</i> 改为从同一样本估计，以上计算不再精确：估计变异性要走 t 程序，power 需要对应方法与假定的总体变异。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>“提高 power 而不提高 <i>α</i>”的唯一常用做法是增大 <i>n</i>。增大 <i>α</i> 也能提高 power，但那是以更高的 I 类错误为代价。</p>
+  </aside>
+  <!-- course-image:mth113-ch11-power.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-mth113-ch11-power">
+        <img class="c-course-figure__img" src="../../assets/course/mth113-ch11-power.jpg" alt="一个临界值、两个抽样分布与检验功效" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 一个临界值、两个抽样分布与检验功效 <span class="c-course-figure__src">来源：W11 p.44</span></figcaption>
+      </figure>
+
+<p class="c-source">W11 p.37–46</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">11.8</span> 报告与解释陷阱</h2>
+  <p>清晰报告有四个成分：</p>
+  <ol>
+    <li><b>假设</b>：用情境语言指出总体特征与两个竞争陈述；</li>
+    <li><b>程序</b>：点名所用检验，并说明其假定为何合理；</li>
+    <li><b>数值证据</b>：报告统计量、适用时的自由度与 P 值；</li>
+    <li><b>结论</b>：回答原问题，并写明所用显著性水平。</li>
+  </ol>
+  <p>报告 P 值的作用是让读者自行判断：换一个显著性水平，决策会不会改变。读软件输出要当论证看，而不是当判决：确认检验的是哪个参数与参照值；确认是上尾、下尾还是双尾；确认程序（正态近似与精确二项计算不必给出相同的 P 值）；检查假定与数据所能支持的总体；最后把统计量与概率翻译回原问题的结论。</p>
+  <p>讲义给出一段反面示例：“样本给出 <i>P</i> = 0.053，所以总体均值正好是 3 mm，检验证明生产正确。”改进版是：16 个元件的独立随机样本，平均厚度 3.42 mm、样本标准差 0.80 mm；假定总体近似正态，对 <i>H</i><sub>0</sub>: <i>μ</i> = 3.00 对 <i>H</i><sub>a</sub>: <i>μ</i> ≠ 3.00 做双尾单样本 t 检验，得 <i>t</i>(15) = 2.10，<i>P</i> = 0.0531；在计划的 5% 水平下，数据不足以证明总体均值不同于 3.00 mm；结果既不能证明精确相等，也不能证明所有生产要求都满足；估计值与匹配区间 (2.994, 3.846) mm 应与有意义的制造公差比较。</p>
+  <p>四条解释警告：</p>
+  <ol>
+    <li>不拒绝不确立 <i>H</i><sub>0</sub>——要问样本是否有能力检出有意义的偏离；</li>
+    <li>普查会改变问题——若目标总体的特征已知，描述该总体不需要抽样推断；</li>
+    <li>统计显著与实际显著不同——要评估效应大小及其后果；</li>
+    <li>推广到观测总体之外或未来结果，是另一个推断问题；小 P 值本身也不建立因果解释。</li>
+  </ol>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>第 10 章核心公式</caption>
+      <thead><tr><th scope="col">情形</th><th scope="col">公式</th></tr></thead>
+      <tbody>
+        <tr><td>比例</td><td><i>z</i> = (<i>p̂</i> − <i>p</i><sub>0</sub>)/√[<i>p</i><sub>0</sub>(1−<i>p</i><sub>0</sub>)/<i>n</i>]，<i>Z</i> ≈ N(0,1)</td></tr>
+        <tr><td>均值，<i>σ</i> 已知</td><td><i>z</i> = (<i>x̄</i> − <i>μ</i><sub>0</sub>)/(<i>σ</i>/√<i>n</i>)，<i>Z</i> ~ N(0,1)</td></tr>
+        <tr><td>均值，<i>σ</i> 未知</td><td><i>t</i> = (<i>x̄</i> − <i>μ</i><sub>0</sub>)/(<i>s</i>/√<i>n</i>)，<i>T</i> ~ <i>t</i><sub><i>n</i>−1</sub></td></tr>
+        <tr><td>判定</td><td><i>P</i> ≤ <i>α</i> 拒绝；<i>P</i> &gt; <i>α</i> 不拒绝</td></tr>
+        <tr><td>power</td><td>指定备择处 Power = 1 − <i>β</i></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“<i>P</i> = 0.053，所以均值等于 3.00”是双重错误：不拒绝不等于相等；<i>P</i> = 0.053 只是“若 <i>H</i><sub>0</sub> 真，出现这样结果的概率约 5.3%”，不是 <i>H</i><sub>0</sub> 为真的概率。</p>
+  </aside>
+  <p class="c-source">W11 p.47–52</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">11.9</span> 回归斜率 <i>β</i><sub>1</sub> 的检验与置信区间</h2>
+  <p>有定量<span class="c-term c-term--auto" data-term="explanatory-variable" title="解释变量｜explanatory variable：用来解释或预测 y 的变量 x。">解释变量</span>时，总体模型为</p>
+  <div class="c-formula"><i>Y</i><sub><i>i</i></sub> = <i>β</i><sub>0</sub> + <i>β</i><sub>1</sub><i>x</i><sub><i>i</i></sub> + <i>ε</i><sub><i>i</i></sub>，&nbsp;&nbsp; <i>E</i>(<i>Y</i><sub><i>i</i></sub> | <i>x</i><sub><i>i</i></sub>) = <i>β</i><sub>0</sub> + <i>β</i><sub>1</sub><i>x</i><sub><i>i</i></sub></div>
+  <p>样本直线 <i>ŷ</i><sub><i>i</i></sub> = <i>b</i><sub>0</sub> + <i>b</i><sub>1</sub><i>x</i><sub><i>i</i></sub> 估计总体直线。<i>β</i><sub>1</sub> 是 <i>x</i> 每增加一个单位，<i>Y</i> 的总体平均改变量；<i>b</i><sub>1</sub> 随样本变化，斜率检验正是为这种抽样变异留出余地。注意 <i>β</i><sub>1</sub>（总体斜率）与 <i>β</i>（II 类错误概率）是两个不同的符号。</p>
+  <p>斜率推断的四个假定（在给定观测 <i>x</i> 的条件下）：</p>
+  <ol>
+    <li><b>线性均值</b>：<i>E</i>(<i>Y</i> | <i>x</i>) = <i>β</i><sub>0</sub> + <i>β</i><sub>1</sub><i>x</i>，即每个 <i>x</i> 处误差均值为 0；</li>
+    <li><b><span class="c-term c-term--auto" data-term="variance" title="方差｜variance：偏差平方的概率加权平均，衡量离散程度。">方差</span>恒定</b>：误差标准差 <i>σ</i> 在每个 <i>x</i> 处相同；</li>
+    <li><b>正态误差</b>：每个固定 <i>x</i> 处误差分布为正态；</li>
+    <li><b>独立误差</b>：不同观测的误差相互独立。</li>
+  </ol>
+  <p>用研究设计与<span class="c-term c-term--auto" data-term="residual" title="残差｜residual：观测值与拟合值之差 y−ŷ。">残差</span>诊断评估这些条件。解释变量 <i>x</i> 本身不必服从正态。</p>
+  <p>斜率的不确定性由两个量刻画：</p>
+  <div class="c-formula"><i>S</i><sub><i>xx</i></sub> = Σ(<i>x</i><sub><i>i</i></sub> − <i>x̄</i>)<sup>2</sup>，&nbsp; <i>SSE</i> = Σ(<i>y</i><sub><i>i</i></sub> − <i>ŷ</i><sub><i>i</i></sub>)<sup>2</sup></div>
+  <div class="c-formula"><i>s</i><sub><i>e</i></sub> = √[<i>SSE</i>/(<i>n</i> − 2)]，&nbsp;&nbsp; <i>SE</i>(<i>b</i><sub>1</sub>) = <i>s</i><sub><i>e</i></sub> / √<i>S</i><sub><i>xx</i></sub></div>
+  <p><i>s</i><sub><i>e</i></sub> 衡量残差散布，<i>SE</i>(<i>b</i><sub>1</sub>) 衡量斜率不确定性。拟合截距与斜率用掉两个自由度，故剩 <i>n</i>−2。其他条件固定时，残差越小或 <i>x</i> 分布越宽，斜率越精确。</p>
+  <p>检验的零假设通常是 <i>H</i><sub>0</sub>: <i>β</i><sub>1</sub> = 0：</p>
+  <div class="c-formula"><i>t</i><sub>obs</sub> = <i>b</i><sub>1</sub> / <i>SE</i>(<i>b</i><sub>1</sub>)，&nbsp;&nbsp; <i>T</i> ~ <i>t</i><sub><i>n</i>−2</sub></div>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>斜率检验的 P 值</caption>
+      <thead><tr><th scope="col">备择假设</th><th scope="col">P 值</th></tr></thead>
+      <tbody>
+        <tr><td><i>H</i><sub>a</sub>: <i>β</i><sub>1</sub> &gt; 0</td><td>P(<i>T</i> ≥ <i>t</i><sub>obs</sub>)</td></tr>
+        <tr><td><i>H</i><sub>a</sub>: <i>β</i><sub>1</sub> &lt; 0</td><td>P(<i>T</i> ≤ <i>t</i><sub>obs</sub>)</td></tr>
+        <tr><td><i>H</i><sub>a</sub>: <i>β</i><sub>1</sub> ≠ 0</td><td>2P(<i>T</i> ≥ |<i>t</i><sub>obs</sub>|)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>双尾检验也叫<span class="c-term">模型效用检验<span class="c-term__en">model utility test</span></span>：它问的是“这条直线是否比水平线解释得更多”。备择与 <i>α</i> 必须在看结果前确定；若零假设是某个非零值 <i>β</i><sub>1,0</sub>，把分子换成 <i>b</i><sub>1</sub> − <i>β</i><sub>1,0</sub>。</p>
+  <p>例：12 名学生的随机样本记录每周练习小时 <i>x</i> 与任务得分 <i>y</i>，拟合线 <i>ŷ</i> = 42 + 1.8<i>x</i>，<i>S</i><sub><i>xx</i></sub> = 50 h<sup>2</sup>，<i>SSE</i> = 100 分<sup>2</sup>。假定模型条件合理，计划 <i>α</i> = 0.05 的双尾检验，<i>H</i><sub>0</sub>: <i>β</i><sub>1</sub> = 0，<i>H</i><sub>a</sub>: <i>β</i><sub>1</sub> ≠ 0。</p>
+  <div class="c-formula"><i>s</i><sub><i>e</i></sub> = √[100/(12 − 2)] = 3.1623 分，&nbsp; <i>SE</i>(<i>b</i><sub>1</sub>) = √10/√50 = 0.4472</div>
+  <div class="c-formula"><i>t</i><sub>obs</sub> = (1.8 − 0)/0.4472 = 4.0249，&nbsp; <i>df</i> = 12 − 2 = 10</div>
+  <div class="c-formula"><i>P</i> = 2P(<i>T</i><sub>10</sub> ≥ 4.0249) = 0.002419 ≈ 0.0024</div>
+  <p><i>P</i> &lt; 0.05，拒绝 <i>H</i><sub>0</sub>：数据提供证据表明练习小时与任务得分之间存在正的总体线性关联。估计的平均得分差是每多一小时练习 1.8 分。</p>
+  <p>这是观察性关联，不建立因果；统计显著也不保证对个别学生的预测准确。</p>
+  <p>同一组假定下，总体斜率的 100(1−<i>α</i>)% 置信区间为</p>
+  <div class="c-formula"><i>b</i><sub>1</sub> ± <i>t</i><sub>1−<i>α</i>/2, <i>n</i>−2</sub> · <i>SE</i>(<i>b</i><sub>1</sub>)</div>
+  <div class="c-formula">1.8 ± 2.22814 × 0.4472 ≈ 1.8 ± 0.9965 ≈ (0.8035, 2.7965)</div>
+  <p>解释：我们有 95% 的信心认为，每多一周小时练习，总体平均得分差在 0.80 到 2.80 分之间。区间不含 0，与匹配的双尾 5% 检验一致。实际重要性要结合效应大小、区间与课程情境判断。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>斜率的单位是“<i>y</i> 的单位 / <i>x</i> 的单位”，解释时必须带单位并说“平均”“伴随”，不能说“导致”。自由度是 <i>n</i>−2，不是 <i>n</i>−1。</p>
+  </aside>
+  <!-- course-image:mth113-ch11-slope-test.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-mth113-ch11-slope-test">
+        <img class="c-course-figure__img" src="../../assets/course/mth113-ch11-slope-test.jpg" alt="回归斜率 β1 的 t 检验" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 回归斜率 β1 的 t 检验 <span class="c-course-figure__src">来源：W11 p.56</span></figcaption>
+      </figure>
+
+<p class="c-source">W11 p.53–59</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W11</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch10.html"><span>上一章</span>简单线性回归与相关</a>
+          <a class="pager__next" href="index.html"><span>返回</span>学科主页</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

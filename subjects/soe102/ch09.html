@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE102 交互式程序与 ArrayList · 全科复习</title>
+  <meta name="description" content="SOE102 第 9 章 交互式程序与 ArrayList：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe102" data-chapter="09">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE102</a>
+      <span>/</span>
+      <span aria-current="page">第 9 章 交互式程序与 ArrayList</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch09.html" class="is-current" aria-current="page"><span class="toc-num">09</span><span class="toc-title">交互式程序与 ArrayList</span><span class="toc-src">W11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">递归与多线程</span><span class="toc-src">W12</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch09.html" class="is-current" aria-current="page"><span class="toc-num">09</span><span class="toc-title">交互式程序与 ArrayList</span><span class="toc-src">W11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">递归与多线程</span><span class="toc-src">W12</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE102 · 第 9 章</p>
+          <h1>交互式程序与 ArrayList</h1>
+          <p class="chapter-head__en">Interactive Programs &amp; ArrayList</p>
+          <p class="chapter-head__meta">来源 W11 · 术语 4 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">9.1 交互式程序：等一次输入，做一个动作</a></li>
+        <li><a href="#s2">9.2 四条需求与五个可检查的任务</a></li>
+        <li><a href="#s3">9.3 三个类各管一件事</a></li>
+        <li><a href="#s4">9.4 菜单循环：一个 running 变量控制整台程序</a></li>
+        <li><a href="#s5">9.5 一个 Scanner 与 readInt：解析和校验是两件事</a></li>
+        <li><a href="#s6">9.6 数组的已用部分：add、findByName、listStudents</a></li>
+        <li><a href="#s7">9.7 删除一条记录：搬移、收缩、清尾</a></li>
+        <li><a href="#s8">9.8 ArrayList 取代数组：长度会自己长</a></li>
+        <li><a href="#s9">9.9 遍历、删除陷阱与代码评审清单</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲把“用户按一下、程序做一件事”的交互程序拆成三层：Student 保存一条记录，StudentStore 管理一组记录，InteractiveProgram 负责菜单与<span class="c-term c-term--auto" data-term="input-validation" title="输入校验｜input validation：在继续处理前检查用户输入是否满足类型、范围与业务规则。">输入校验</span>；最后用 <span class="c-term c-term--auto" data-term="arraylist" title="ArrayList｜ArrayList：java.util 中可自动扩容的有序列表，用 add/get/set/remove/size 等方法操作。">ArrayList</span> 换掉定长<span class="c-term c-term--auto" data-term="array" title="数组｜array：存放一组同类型值、创建后长度固定的容器。">数组</span>，让列表自己长大。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>交互式程序在运行期间等待输入并作出响应，一个动作做完必须能回到菜单。</li>
+    <li>R1–R4 定义保存、查找、删除、纠错四条需求；合法输入是 name 有文本、Year 1–4、gender M/F、age 1–120。</li>
+    <li>Student 保存四个已校验的值，StudentStore 是唯一改动数据的地方，InteractiveProgram 只和用户说话。</li>
+    <li>菜单由 while (running) 驱动：<span class="c-term c-term--auto" data-term="break" title="break｜break：立即结束当前这一层循环，跳到循环之后执行。">break</span> 只离开 switch，只有 running = false 才结束循环。</li>
+    <li>一个 Scanner 贯穿全程，统一 nextLine() 再 parseInt；解析与范围校验是两道独立关卡。</li>
+    <li>定长数组要自己维护 size：0 到 size−1 是已用部分，之后是 null 空位，遍历必须用 i &lt; size。</li>
+    <li>删除要搬移后续记录、size 减一、清空旧的最后一格；只置 null 会留下空洞。</li>
+    <li>ArrayList 自动扩容，add/get/set/remove/size 取代手写搬移；get、set、remove 的下标必须小于 size。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">9.1</span> 交互式程序：等一次输入，做一个动作</h2>
+  <p>讲义把程序分成两类：一类跑完就退出，另一类在运行期间停下来等用户。后者叫<span class="c-term">交互式程序<span class="c-term__en">interactive program</span></span>，定义只有一句：An interactive program waits for input and responds while it runs。ATM 上选 Check balance，屏幕显示余额并给出下一个动作；自助结账机上移除一件已扫描的商品，购物篮与总价一起更新；学生管理系统里添加一名学生，程序保存细节并给出确认。三个例子的结构完全相同：一个用户动作、一个程序响应、然后回到“还能继续”的状态。</p>
+  <p>讲义在 Part 1 的扉页把设计目标写成一句英文：one user action at a time, with a clear way back to the menu。这句话解释了后面的几乎所有代码——菜单为什么要循环、每个任务为什么写成一个<span class="c-term c-term--auto" data-term="method" title="方法｜method：类中具名、可复用的代码块，被调用时执行。">方法</span>、错误输入为什么必须重新提问而不是直接退出。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>判断一个程序是否“交互式”，看它是否在运行中等待输入、处理完还能继续等待下一个输入；只在启动时读一次参数、跑完就结束的程序不属于这一类。</p>
+  </aside>
+  <p class="c-source">W11 p.2、13–14</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">9.2</span> 四条需求与五个可检查的任务</h2>
+  <p>写代码之前，讲义先把需求钉死。四条需求描述“这个系统必须做到什么”，每一条都带一个能当场验证的场景：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>学生管理系统的四条需求</caption>
+      <thead><tr><th scope="col">编号</th><th scope="col">要求</th><th scope="col">讲义给的验收场景</th></tr></thead>
+      <tbody>
+        <tr><td>R1</td><td>保存一条完整的学生记录</td><td>Lucy, Year 1, F, age 20 只有在每个字段都合法之后才被保存</td></tr>
+        <tr><td>R2</td><td>查找并显示已保存的记录</td><td>找到第一个同名精确匹配，或带下标列出全部记录</td></tr>
+        <tr><td>R3</td><td>删除选中的记录</td><td>按下标删除 Ben，其余记录保持原来的顺序</td></tr>
+        <tr><td>R4</td><td>改正错误并继续工作</td><td>非法输入后重新提问；记录不变，菜单再次出现</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>R4 下面那行小字是全部校验的依据：Valid input: name has text, Year 1–4, gender M/F, age 1–120。它同时说明了四件事——名字不能是空串，年份只能是 1 到 4，性别只有 M 与 F，年龄落在 1 到 120。后面 readInt 的每个 min、max 参数都来自这里。</p>
+  <p>需求再拆成开发任务。讲义给 task 的定义是“一件工作，加上一个能检查的结果”：不是“写一个方法”，而是“输错时问题会重问”“Lucy 被保存后 size 变成 1”。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>五个开发任务与它们的 Java 落点</caption>
+      <thead><tr><th scope="col">任务</th><th scope="col">做什么</th><th scope="col">完成标志</th><th scope="col">Java 代码</th></tr></thead>
+      <tbody>
+        <tr><td>T1</td><td>读取并校验每个字段</td><td>输错就重问同一个问题</td><td><code>readInt(in, ..., 1, 120)</code></td></tr>
+        <tr><td>T2</td><td>创建并保存一条 Student</td><td>Lucy 被保存，size 变成 1</td><td><code>new Student(...)</code>、<code>store.add(student)</code></td></tr>
+        <tr><td>T3</td><td>按名字搜索、列出记录</td><td>Lucy 或完整清单出现</td><td><code>findByName(name)</code>、<code>listStudents(store)</code></td></tr>
+        <tr><td>T4</td><td>检查下标并删除</td><td>选中的记录消失</td><td><code>store.removeAt(index)</code></td></tr>
+        <tr><td>T5</td><td>执行一个任务后回到菜单</td><td>只有 choice 0 结束循环</td><td><code>switch (choice)</code>、<code>while (running)</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>需求与任务是两层：需求说“必须做到什么”，任务说“做完哪一件可以检查”。T1 同时服务 R1 与 R4，T5 只服务 R4——一个任务可以覆盖多条需求，一条需求也可能拆成几个任务。</p>
+  </aside>
+  <p class="c-source">W11 p.15–18</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">9.3</span> 三个类各管一件事</h2>
+  <p>讲义先做一次翻译：学生信息表里一行是一名学生，一列是学生的一项信息；到了 Java 里，一行变成一个 Student <span class="c-term c-term--auto" data-term="object" title="对象｜object：把相关的数据（状态）与处理（行为）封装在一起的实体。">对象</span>，整张表交给 StudentStore 保管。于是程序被切成三个类，职责互不重叠：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>三个类的职责划分</caption>
+      <thead><tr><th scope="col">任务</th><th scope="col">类</th><th scope="col">在程序里的工作</th></tr></thead>
+      <tbody>
+        <tr><td>T2：表示一条记录</td><td>Student</td><td>保存四个已经校验过的值</td></tr>
+        <tr><td>T2–T4：管理记录</td><td>StudentStore</td><td>增加、查找、读取、删除</td></tr>
+        <tr><td>T1、T5：处理交互</td><td>InteractiveProgram</td><td>校验输入、运行菜单</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Student 只做一件事：把四个值捆在一起。字段全是 private <span class="c-term c-term--auto" data-term="final" title="final｜final：修饰字段时表示初始化后不能再修改，改动会编译报错。">final</span>，构造器一次写入；getName() 供查找时比较文本；toString() 决定一条记录打印出来是什么样子。</p>
+<pre class="c-code"><code>public class Student {
+    private final String name;
+    private final int year;
+    private final String gender;
+    private final int age;
+
+    public Student(String name, int year, String gender, int age) {
+        this.name = name;
+        this.year = year;
+        this.gender = gender;
+        this.age = age;
+    }
+
+    public String getName() { return name; }
+
+    @Override
+    public String toString() {
+        return name + ", Year " + year + ", " + gender + ", " + age;
+    }
+}</code></pre>
+  <p>因为<span class="c-term c-term--auto" data-term="overriding" title="重写｜overriding：子类用相同的方法名与参数列表重新实现父类方法。">重写</span>了 toString，打印一个 Student 就直接得到 <code>Lucy, Year 1, F, 20</code>。演示里那行 <code>0: Lucy, Year 1, F, 20</code> 前面的 0 是 listStudents 加的下标，不是 toString 的一部分——读输出时要分清哪部分来自对象、哪部分来自列表。</p>
+  <p>StudentStore 是唯一改动数据的地方：add、findByName、removeAt、size、get。InteractiveProgram 只和用户说话：读输入、校验、调用 store、打印结果。这样分工之后，出错时定位很快——输入有问题改交互层，记录不对改 store。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>不要在交互层直接操作数组：addStudent 里只调用 <code>store.add(student)</code>，不碰 <code>students[size]</code>。一旦 UI 自己改存储，删除时“搬移 + 收缩 + 清尾”这套规则就会在多个地方重复，迟早漏掉一步。</p>
+  </aside>
+  <p class="c-source">W11 p.16、20–21</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">9.4</span> <span class="c-term c-term--auto" data-term="menu-loop" title="菜单循环｜menu loop：反复显示选项、读取选择并调用相应方法，直到用户选择退出。">菜单循环</span>：一个 running <span class="c-term c-term--auto" data-term="variable" title="变量｜variable：具名的内存位置，用来存放可以改变的值。">变量</span>控制整台程序</h2>
+  <p>菜单的骨架是一个布尔状态加一个 while：状态记住“程序还要不要继续”，循环每轮做三件事——打印菜单、读一个选项、把选项分派给对应的方法。</p>
+<pre class="c-code"><code>Scanner input = new Scanner(System.in);
+StudentStore store = new StudentStore(10);
+boolean running = true;
+
+while (running) {
+    printMenu();
+    int choice = readInt(input, "Choice (0-4): ", 0, 4);
+    switch (choice) {
+        case 1: addStudent(input, store); break;
+        case 2: removeStudent(input, store); break;
+        case 3: searchStudent(input, store); break;
+        case 4: listStudents(store); break;
+        case 0: running = false; break;
+    }
+}
+System.out.println("Goodbye.");
+input.close();</code></pre>
+  <p>逐句读：Scanner 只建一次；StudentStore 建在循环之外；running 初值为 true；每轮先 printMenu() 再读 0 到 4 的选项；switch 把选项分派给四个 helper；case 0 把 running 置 false。一个选项只跑一个任务，跑完回到 while 的条件判断，菜单再次出现。</p>
+  <p>为什么 case 0 不能只写 break？因为 break 只离开 switch，执行点立刻回到 while 的条件判断，而 running 仍是 true，菜单会马上再出现。讲义把这做成了 exit check 的第一问：Why does break in case 0 need running = false?</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>三种“离开”的作用范围</caption>
+      <thead><tr><th scope="col">写法</th><th scope="col">作用范围</th><th scope="col">在本程序里的效果</th></tr></thead>
+      <tbody>
+        <tr><td><code>break</code></td><td>当前 switch（或循环）</td><td>一个 case 执行完，回到 while 判断</td></tr>
+        <tr><td><code>return</code></td><td>当前方法</td><td>helper 结束，main 继续自己的循环</td></tr>
+        <tr><td><code>running = false</code></td><td>循环条件</td><td>下一次 while 测试为 false，程序收尾</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>还有一条容易被忽略：store 必须在循环之前创建。讲义在 p.24 的注里写得很直接：Create the store before the menu loop so it keeps the records between tasks。如果把 <code>new StudentStore()</code> 放进 case 1，每次添加都会得到一只空列表，R1 永远无法累积。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>菜单循环的三个标志物：循环外创建的 store（数据能跨任务保留）、循环条件 running（唯一的终止开关）、case 0 里对 running 的赋值（不是 break）。缺任何一个，程序要么丢数据，要么退不出去。</p>
+  </aside>
+  <!-- course-image:soe102-ch09-menu-control.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe102-ch09-menu-control">
+        <img class="c-course-figure__img" src="../../assets/course/soe102-ch09-menu-control.jpg" alt="break、return 与菜单循环条件" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> break、return 与菜单循环条件 <span class="c-course-figure__src">来源：W11 p.27</span></figcaption>
+      </figure>
+
+<p class="c-source">W11 p.19、24–27</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">9.5</span> 一个 Scanner 与 readInt：解析和校验是两件事</h2>
+  <p>讲义规定输入只有一个入口：main 建一个 Scanner，作为参数传给每个 helper，循环结束后关闭。这样不会出现“几个方法各自 new Scanner(System.in)、抢同一股输入”的问题——p.58 的代码评审把这条列为四个待修问题之一。</p>
+  <p>读取方式统一为 nextLine() 再 parseInt：先读整行，再把文本转成数字。讲义在附录里解释了原因：<code>nextInt()</code> 只取走数字，行尾的回车还留在<span class="c-term c-term--auto" data-term="buffering" title="缓冲｜buffering：一次读写一大块数据，以减少系统调用次数的机制。">缓冲</span>区，紧接着的 <code>nextLine()</code> 会读到空串。全部用 nextLine() 就不存在这个残留。</p>
+<pre class="c-code"><code>static int readInt(Scanner in, String prompt,
+                   int min, int max) {
+    while (true) {
+        System.out.print(prompt);
+        try {
+            int value = Integer.parseInt(in.nextLine());
+            if (value &gt;= min &amp;&amp; value &lt;= max) {
+                return value;
+            }
+            System.out.println("Out of range: " + min + " to " + max);
+        } catch (NumberFormatException e) {
+            System.out.println("Enter a whole number.");
+        }
+    }
+}</code></pre>
+  <p>这个方法把两件事分开做：parse 负责“文本能不能变成整数”，range 负责“这个数允不允许”。parseInt 抛 NumberFormatException 就走 catch，提示重输；解析成功但超出范围就打印 Out of range；两个检查都通过才 return。因此它“只在用户输入了合法值之后才返回”，调用方拿到的必然是可用的数字。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>输入文本的两种失败</caption>
+      <thead><tr><th scope="col">输入</th><th scope="col">能解析成 int 吗</th><th scope="col">值合法吗</th></tr></thead>
+      <tbody>
+        <tr><td><code>"20"</code></td><td>能，值是 20</td><td>合法，年龄在 1–120</td></tr>
+        <tr><td><code>"-2"</code></td><td>能，值是 −2</td><td>不合法，低于 1</td></tr>
+        <tr><td><code>"abc"</code></td><td>不能，NumberFormatException</td><td>重新输入一个整数</td></tr>
+        <tr><td><code>"999999999999"</code></td><td>不能，超出 int 的范围</td><td>重新输入一个整数</td></tr>
+        <tr><td><code>""</code>（只按回车）</td><td>不能，这一行没有字符</td><td>重新输入一个整数</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>关键后果在 p.31–32：年龄输错时，Lucy 的记录根本没有被创建，列表仍是 size 0；只有四个值全部通过校验、执行到 <code>store.add</code> 那一行，列表才变成 [Lucy], size 1。也就是说“输入错误不会污染数据”，因为对象是在校验之后才 new 的——这正是讲义用整页表强调的“记录何时被保存”。</p>
+  <p>文本与性别由附录的两个小 helper 负责：readText 循环到非空为止（<code>text.isEmpty()</code> 为 false 才返回），readGender 用 <code>equalsIgnoreCase</code> 接受 m/M/f/F，否则提示 Enter M or F。</p>
+  <p>讲义还给了输入结束的处理：readLine helper 在 <code>!in.hasNextLine()</code> 时抛 <code>NoSuchElementException("Input ended")</code>，外层 catch 打印 Input ended. Goodbye. 并在 <span class="c-term c-term--auto" data-term="finally" title="finally｜finally：无论正常结束还是异常传播都会执行的清理块。">finally</span> 里 close。这样输入流被关掉（例如重定向的文件读完）时程序能优雅收场，而不是崩在 nextLine 上。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>不要把 parseInt 写在校验之后：文本可能是 "abc"，必须先解析、再比较范围。反过来，解析成功也不代表值合法——"-2" 能被 parseInt 读出来，但年龄不允许。两个检查缺一不可。</p>
+  </aside>
+  <p class="c-source">W11 p.28–32、55–57</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">9.6</span> 数组的已用部分：add、findByName、listStudents</h2>
+  <p>定长数组的 StudentStore 有一条看不见的分界线：size 之前的格子是“已用”，之后是“空位”。讲义用一张快照说明：length 是 5，前三个格子放 Lucy、Ben、Chen，后两个是 null；<code>size = 3</code>，<code>students.length = 5</code>。null 的含义是“这一格没有对象”，不是“有一个叫 null 的学生”。</p>
+  <p>所以所有遍历都必须写 <code>i &lt; size</code>，不能写 <code>i &lt; students.length</code>。findByName 就是标准写法：</p>
+<pre class="c-code"><code>public Student findByName(String name) {
+    for (int i = 0; i &lt; size; i++) {
+        if (students[i].getName().equals(name)) {
+            return students[i];
+        }
+    }
+    return null;
+}</code></pre>
+  <p>equals 比较文本，找到第一个精确匹配就 return；循环走完没有匹配则 return null，由 UI 决定是否打印 No student found.。讲义特别注明 "Lucy" 与 "ana" 是两条不同的记录——findByName 只做精确匹配，不做模糊匹配。</p>
+  <p>listStudents 打印时带上下标，用户才有办法挑一条删除：</p>
+<pre class="c-code"><code>static void listStudents(StudentStore store) {
+    if (store.size() == 0) {
+        System.out.println("No students yet.");
+        return;
+    }
+    for (int i = 0; i &lt; store.size(); i++) {
+        System.out.println(i + ": " + store.get(i));
+    }
+}</code></pre>
+  <p>空列表要先拦：size 为 0 时打印 No students yet. 并 return，否则用户看到的是一片空白，不知道为什么没有行。</p>
+  <p>Add 的顺序不能颠倒：先查 <code>isFull()</code>，再读四个字段，最后才 new Student 并 store.add。讲义在 T1/T2 的任务计划里把这条写成四步，第一步就是 Check space for T2——数组满时直接提示 Storage is full. 并返回，避免写越界。</p>
+<pre class="c-code"><code>static void addStudent(Scanner in, StudentStore store) {
+    if (store.isFull()) {
+        System.out.println("Storage is full.");
+        return;
+    }
+    String name = readText(in, "Name: ");
+    int year = readInt(in, "Year (1-4): ", 1, 4);
+    String gender = readGender(in);
+    int age = readInt(in, "Age (1-120): ", 1, 120);
+
+    Student student = new Student(name, year, gender, age);
+    if (store.add(student)) {
+        System.out.println("Student added.");
+    }
+}</code></pre>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>StudentStore 的五个方法</caption>
+      <thead><tr><th scope="col">方法</th><th scope="col">返回什么</th><th scope="col">改变什么</th></tr></thead>
+      <tbody>
+        <tr><td><code>boolean add(Student s)</code></td><td>加入返回 true，满了返回 false</td><td>在末尾加一条记录</td></tr>
+        <tr><td><code>Student findByName(String name)</code></td><td>第一个精确匹配，或 null</td><td>不改动</td></tr>
+        <tr><td><code>boolean removeAt(int index)</code></td><td>下标有效返回 true</td><td>后面的记录整体左移</td></tr>
+        <tr><td><code>int size()</code> / <code>Student get(int i)</code></td><td>记录数 / 一条记录</td><td>不改动</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>add 返回 false 表示“没加进去（满了）”，所以确认信息 Student added. 要放在 if 里面，不能无条件打印。讲义在 p.24 用一张前后对照表记录了每条动作对列表的影响：搜索与列出只读，Add 与 Remove 才改数据。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>遍历用 size、不用 length；findByName 找不到返回 null；add 的返回值表示成功与否；listStudents 的下标是给 remove 用的。这四点几乎覆盖数组版 store 的全部笔试题。</p>
+  </aside>
+  <p class="c-source">W11 p.22–23、33–36</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">9.7</span> 删除一条记录：搬移、收缩、清尾</h2>
+  <p>删除是数组版本里唯一需要搬数据的操作。讲义用 Lucy、Ben、Chen 演示删掉下标 1 的 Ben：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>删除下标 1 的三步状态</caption>
+      <thead><tr><th scope="col">状态</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">size</th></tr></thead>
+      <tbody>
+        <tr><td>删除前</td><td>Lucy</td><td>Ben</td><td>Chen</td><td>null</td><td>3</td></tr>
+        <tr><td>左移之后</td><td>Lucy</td><td>Chen</td><td>Chen</td><td>null</td><td>3</td></tr>
+        <tr><td>清空旧末位</td><td>Lucy</td><td>Chen</td><td>null</td><td>null</td><td>2</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>三步缺一不可：把后面的记录逐个左移（<code>students[i] = students[i + 1]</code>），size 减一，再把原来的最后一格置 null。如果只写 <code>students[index] = null</code>，中间会留下一个洞，size 也没变，随后 listStudents 仍会打印这个洞——讲义在代码评审里把它列为四个问题之一。</p>
+<pre class="c-code"><code>public boolean removeAt(int index) {
+    if (index &lt; 0 || index &gt;= size) {
+        return false;
+    }
+    for (int i = index; i &lt; size - 1; i++) {
+        students[i] = students[i + 1];
+    }
+    size--;
+    students[size] = null;
+    return true;
+}</code></pre>
+  <p>循环的边界是 <code>i &lt; size - 1</code>：最后一次读的是 <code>students[size - 1]</code>，正好是最后一条记录；写成 <code>i &lt; size</code> 会在 i 等于 size−1 时读 <code>students[size]</code>，越界。清尾那一行也依赖 size 已经减一——此时 <code>students[size]</code> 正指向那个被搬空的旧末位。</p>
+  <p>交互层的 removeStudent 负责“让用户选对下标”：空列表先提示并返回；先 listStudents 打印带下标的清单；再用 readInt 读 −1 到 size−1（−1 表示取消）；最后调用 removeAt 并确认。</p>
+<pre class="c-code"><code>static void removeStudent(Scanner in, StudentStore store) {
+    if (store.size() == 0) {
+        System.out.println("No students to remove.");
+        return;
+    }
+    listStudents(store);
+    int index = readInt(in, "Index (-1 cancels): ",
+                        -1, store.size() - 1);
+    if (index == -1) {
+        System.out.println("Cancelled.");
+        return;
+    }
+    if (store.removeAt(index)) {
+        System.out.println("Student removed.");
+    }
+}</code></pre>
+  <p>把 −1 放进 readInt 的合法区间，是让“取消”也走同一条校验路径的技巧：不需要额外读字符串判断，用户输错仍然会被重问。R3 要求“其余记录保持顺序”，左移恰好满足——被删项之后的所有记录整体前移一格，相对次序不变。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>删除的最低下标是 0、最高是 size−1；用户看到的编号也是这个范围。别把“第 1 个学生”当成下标 1——讲义演示里 Lucy 的下标是 0，所以删 Lucy 要输入 0。</p>
+  </aside>
+  <p class="c-source">W11 p.37–38、41</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">9.8</span> ArrayList 取代数组：长度会自己长</h2>
+  <p>数组版的上限是硬的：十个格子存满十名学生后，第十一个就没有位置。讲义列出两条出路——造一个更大的数组并把记录复制过去，或者报告 full。ArrayList 把第一件事做掉了，所以菜单不用改。</p>
+  <p>讲义用四个问题对比两种存储：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>Student[] 与 ArrayList&lt;Student&gt; 的对照</caption>
+      <thead><tr><th scope="col">问题</th><th scope="col">Student[]</th><th scope="col">ArrayList&lt;Student&gt;</th></tr></thead>
+      <tbody>
+        <tr><td>还能再加位置吗</td><td>长度固定</td><td>需要时自动变大</td></tr>
+        <tr><td>现在有多少条</td><td>自己维护一个 size 变量</td><td>调用 <code>size()</code></td></tr>
+        <tr><td>怎么在末尾添加</td><td>查空位、赋值、size 加一</td><td>调用 <code>add(student)</code></td></tr>
+        <tr><td>怎么删除一项</td><td>搬移记录、减 size、清空末位</td><td>调用 <code>remove(index)</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>创建时注意三件事：<span class="c-term c-term--auto" data-term="generics" title="泛型｜generics：用类型参数（如 ArrayList&lt;Student&gt;）让容器在编译期检查元素类型。">泛型</span>写元素类型（<code>ArrayList&lt;Student&gt;</code>、<code>ArrayList&lt;String&gt;</code>）；int 这类<span class="c-term c-term--auto" data-term="primitive-type" title="基本类型｜primitive type：Java 八种最基础的数据类型，它们不是对象。">基本类型</span>要换成<span class="c-term c-term--auto" data-term="wrapper-class" title="包装类｜wrapper class：为每种基本类型提供的对应类，如 int 对应 Integer。">包装类</span> <code>Integer</code>；<code>new ArrayList&lt;&gt;(10)</code> 只是“预留十个位置”，列表仍然是空的——size() 为 0，isEmpty() 为 true。</p>
+<pre class="c-code"><code>ArrayList&lt;Student&gt; students = new ArrayList&lt;&gt;();
+ArrayList&lt;String&gt; names = new ArrayList&lt;&gt;();
+ArrayList&lt;Integer&gt; ages = new ArrayList&lt;&gt;();
+
+System.out.println(students.size());     // 0
+System.out.println(students.isEmpty());  // true</code></pre>
+  <p>常用方法只有五个动作：add 加、get 读、set 换、remove 删、size/isEmpty/clear 查。下标规则要背下来：get、set、remove 要求 0 ≤ <span class="c-term c-term--auto" data-term="index" title="索引｜index：数组中元素的位置编号，从 0 开始，最大为 length − 1。">index</span> &lt; size；在下标处插入的 <code>add(i, s)</code> 允许 0 ≤ index ≤ size，因为可以追加到末尾。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>ArrayList 的常用方法</caption>
+      <thead><tr><th scope="col">工作</th><th scope="col">方法</th><th scope="col">发生什么</th></tr></thead>
+      <tbody>
+        <tr><td>末尾添加 / 指定位置插入</td><td><code>add(s)</code> / <code>add(i, s)</code></td><td>加入一项，后面的元素可能后移</td></tr>
+        <tr><td>读取一项</td><td><code>get(i)</code></td><td>返回该项，列表不变</td></tr>
+        <tr><td>替换一项</td><td><code>set(i, s)</code></td><td>返回旧项，size 不变</td></tr>
+        <tr><td>删除一项</td><td><code>remove(i)</code></td><td>返回被删项，后面的元素左移</td></tr>
+        <tr><td>计数 / 判空 / 清空</td><td><code>size()</code>、<code>isEmpty()</code>、<code>clear()</code></td><td>取数量、判断是否为空、删除全部</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>换实现时，StudentStore 的公开方法一个都不变，只把内部字段换成 ArrayList：</p>
+<pre class="c-code"><code>private final ArrayList&lt;Student&gt; students = new ArrayList&lt;&gt;();
+
+public int size() { return students.size(); }
+public Student get(int index) { return students.get(index); }
+
+public boolean add(Student student) {
+    return students.add(student);
+}
+
+public boolean removeAt(int index) {
+    if (index &lt; 0 || index &gt;= students.size()) return false;
+    students.remove(index);
+    return true;
+}</code></pre>
+  <p>这就是分层的回报：InteractiveProgram 只调 store.add、removeAt、get、size，所以 UI 侧只要把 <code>new StudentStore(10)</code> 改成 <code>new StudentStore()</code>、删掉固定容量的检查，菜单一行都不用重写。讲义的原话是：The user can see the same menu even when we change how the list is stored.</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>ArrayList 的长度是 size()，不是 length；扩容是它自己做的，不需要你复制数组；泛型不能写 int，要写 Integer；set 返回旧值、remove 返回被删值，这两个返回值常被拿来出追踪题。</p>
+  </aside>
+  <!-- course-image:soe102-ch09-array-vs-arraylist.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe102-ch09-array-vs-arraylist">
+        <img class="c-course-figure__img" src="../../assets/course/soe102-ch09-array-vs-arraylist.jpg" alt="数组与 ArrayList 的容量和操作对比" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 数组与 ArrayList 的容量和操作对比 <span class="c-course-figure__src">来源：W11 p.46</span></figcaption>
+      </figure>
+
+<p class="c-source">W11 p.45–48、51</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">9.9</span> 遍历、删除陷阱与代码评审清单</h2>
+  <p>先看一段可以逐步追踪的序列：</p>
+<pre class="c-code"><code>ArrayList&lt;String&gt; names = new ArrayList&lt;&gt;();
+names.add("Lucy");        // true          → [Lucy]
+names.add("Ben");         // true          → [Lucy, Ben]
+names.add(1, "Chen");     // void          → [Lucy, Chen, Ben]
+names.set(0, "Ava");      // 返回 "Lucy"   → [Ava, Chen, Ben]
+names.remove(1);          // 返回 "Chen"   → [Ava, Ben]
+names.get(1);             // "Ben"</code></pre>
+  <p>两条规律：<code>add(i, s)</code> 是“插入”，原来的 Ben 被挤到后面；<code>remove(i)</code> 返回被删的元素，后面的元素左移。set 返回旧值而不是新值，这一点在追踪题里最容易写反。删完之后只剩 0、1 两个下标，再调 <code>get(2)</code> 就越界。</p>
+  <p>遍历有三种写法，选哪种取决于“要不要下标”：</p>
+<pre class="c-code"><code>for (Student s : students) {              // 只关心每一项
+    System.out.println(s);
+}
+for (int i = 0; i &lt; students.size(); i++) {  // 还需要下标
+    System.out.println(i + ": " + students.get(i));
+}
+for (Student s : students) {              // 按名字搜索
+    if (s.getName().equals(name)) {
+        return s;
+    }
+}
+return null;</code></pre>
+  <p>for-each 适合“每条都处理”；带下标的 for 适合“打印编号”或“按下标删除”；按名字搜索仍然是找到第一个就 return，走完 return null。三者都不需要自己维护 size——ArrayList 的 size() 随时是最新的。</p>
+  <p>两个删除陷阱（p.59）。第一，remove 有两个<span class="c-term c-term--auto" data-term="overloading" title="重载｜overloading：同一个类中方法名相同、参数列表不同的多个方法。">重载</span>：<code>remove(1)</code> 删的是下标 1（值 20），<code>remove(Integer.valueOf(10))</code> 删的是值为 10 的那个元素。传 int 就是下标，传 Integer 对象才是值。第二，不要在 for-each 里边遍历边增删；要删一条，先记下它的下标，循环结束后再 remove。</p>
+  <p>最后用讲义的代码评审清单收尾，四条都是前面出现过的结构问题：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>四个必须修掉的写法</caption>
+      <thead><tr><th scope="col">问题</th><th scope="col">为什么有害</th><th scope="col">正确做法</th></tr></thead>
+      <tbody>
+        <tr><td>if/else 与 switch 同时决定跑哪个任务</td><td>两套代码可能给出不同答案</td><td>只留一个 switch</td></tr>
+        <tr><td>好几个方法各自 new Scanner</td><td>多个读取器共享同一股输入会出问题</td><td>一个 Scanner 传进每个方法</td></tr>
+        <tr><td>添加前不检查是否有空位</td><td>数组下标可能越界</td><td>先调 isFull() 再添加</td></tr>
+        <tr><td>删除时只把该格置 null</td><td>留下空洞，size 也不对</td><td>搬移、减 size、清空末位</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义还留了一句提醒：ArrayList 把记录放在内存里，程序一重启就全没了。要留住记录，下一步就是加载时从文件逐条读入、校验后再 add，保存时把每条记录写回文件——这也是“学生管理系统”这个名字里“系统”二字的真正含义。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><code>remove(1)</code> 与 <code>remove(Integer.valueOf(1))</code> 在 <code>ArrayList&lt;Integer&gt;</code> 上含义不同：前者删下标，后者删值。看到 remove 先问“参数是 int 还是 Integer”。</p>
+  </aside>
+  <p class="c-source">W11 p.49–50、58–60</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W11</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch08.html"><span>上一章</span>Java I/O：流与文件</a>
+          <a class="pager__next" href="ch10.html"><span>下一章</span>递归与多线程</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>

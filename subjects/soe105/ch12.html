@@ -87,6 +87,8 @@
           <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
           <li><a href="ch12.html" class="is-current" aria-current="page"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
           <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">抽象数据类型与结构体</span><span class="toc-src">L17</span></a></li>
+          <li><a href="ch15.html"><span class="toc-num">15</span><span class="toc-title">链表与简单算法</span><span class="toc-src">L18–19</span></a></li>
         </ol>
       </details>
       <div class="toc-links">
@@ -114,6 +116,8 @@
           <li><a href="ch11.html"><span class="toc-num">11</span><span class="toc-title">字符与字符串</span><span class="toc-src">L13</span></a></li>
           <li><a href="ch12.html" class="is-current" aria-current="page"><span class="toc-num">12</span><span class="toc-title">文件 I/O 与流</span><span class="toc-src">L14</span></a></li>
           <li><a href="ch13.html"><span class="toc-num">13</span><span class="toc-title">指针与动态内存</span><span class="toc-src">L15–16</span></a></li>
+          <li><a href="ch14.html"><span class="toc-num">14</span><span class="toc-title">抽象数据类型与结构体</span><span class="toc-src">L17</span></a></li>
+          <li><a href="ch15.html"><span class="toc-num">15</span><span class="toc-title">链表与简单算法</span><span class="toc-src">L18–19</span></a></li>
         </ol>
       </details>
       <div class="toc-links">
@@ -252,7 +256,7 @@ int main() {
 
 <section id="s5">
   <h2 id="s5"><span class="sec-num">12.5</span> 两个读写示例：<span class="c-term c-term--auto" data-term="array" title="数组｜array：同一类型元素的线性集合，存于连续内存。">数组</span>反转与字符统计</h2>
-  <p>第一个例子演示 &gt;&gt; 与 &lt;&lt; 在文件上同样好用。程序打开 file1.dat，用 for <span class="c-term c-term--auto" data-term="loop" title="循环｜loop：重复执行一段语句的控制结构，又称迭代。">循环</span>把四个整数读进数组 A；关闭输入流后打开 file2.dat，再倒着遍历数组把四个数写出去。文件里 1 2 3 4 变成 4 3 2 1，代码与“从键盘读、往屏幕写”几乎没有差别。</p>
+  <p>第一个例子演示 &gt;&gt; 与 &lt;&lt; 在文件上同样好用。程序打开 file1.dat，用 for <span class="c-term c-term--auto" data-term="loop" title="循环｜loop：重复执行一段语句的控制结构，又称迭代。">循环</span>把四个整数读进数组 A；关闭输入流后打开 file2.dat，再倒着<span class="c-term c-term--auto" data-term="traversal" title="遍历｜traversal：从 head 出发沿 next 指针依次访问每个节点。">遍历</span>数组把四个数写出去。文件里 1 2 3 4 变成 4 3 2 1，代码与“从键盘读、往屏幕写”几乎没有差别。</p>
 <pre class="c-code"><code>ifstream fin;
 int A[4], r;
 fin.open("file1.dat");

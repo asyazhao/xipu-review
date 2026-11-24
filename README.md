@@ -41,14 +41,14 @@ Welcome! This is my personal, exam-oriented review site for seven Year 2 Semeste
 | 课程代码 | 课程 | 章节 | 主要内容 |
 |---|---|---:|---|
 | **BIO103** | 细胞与分子生物学<br>Cellular & Molecular Biology | 14 | 细胞结构、细胞周期、内膜系统、膜运输、细胞信号、线粒体与核糖体、DNA 复制/转录/翻译、蛋白质结构与实验方法 |
-| **BIO105** | 生命的化学原理<br>Chemical Principles of Life | 9 | 原子与分子轨道、水与弱相互作用、热力学、酶动力学、呼吸链、光合作用、受体与结合曲线、神经与肌肉 |
+| **BIO105** | 生命的化学原理<br>Chemical Principles of Life | 10 | 原子与分子轨道、水与弱相互作用、热力学、酶动力学、呼吸链、光合作用、受体与结合曲线、神经、药理与药代动力学 |
 | **CHE105** | 有机化学导论（非化学专业）<br>Introductory Organic Chemistry for Non-Chemists | 12 | 成键与杂化、立体化学、亲核取代与消除、羰基化学、羧酸衍生物、胺与含氮化合物、典型反应机理 |
-| **MTH113** | 概率与统计<br>Introduction to Probability and Statistics | 10 | 概率空间、随机变量、常见分布、抽样分布、参数估计、假设检验、回归与相关 |
+| **MTH113** | 概率与统计<br>Introduction to Probability and Statistics | 11 | 概率空间、随机变量、常见分布、抽样分布、参数估计、假设检验、功效与回归斜率 |
 | **SCI101** | 科学人工智能<br>Artificial Intelligence for Science | 9 | Python 数据处理、回归、分类、聚类、模型评估、正则化、交叉验证与科研中的 AI 伦理 |
-| **SOE102** | Java 程序设计<br>Introduction to Programming in Java | 8 | Java 基础语法、类与对象、继承与多态、接口、异常处理、集合与文件 I/O |
-| **SOE105** | C/C++ 程序设计<br>C/C++ Programming | 13 | 类型与控制流、函数、数组、指针与动态内存、文件 I/O、程序开发与调试 |
+| **SOE102** | Java 程序设计<br>Introduction to Programming in Java | 10 | Java 基础语法、类与对象、继承与多态、接口、异常处理、I/O、ArrayList、递归与多线程 |
+| **SOE105** | C/C++ 程序设计<br>C/C++ Programming | 15 | 类型与控制流、函数、数组、指针与动态内存、文件 I/O、结构体、链表与 ADT |
 
-合计：**7 门课程 / 75 章 / 101 个 HTML 页面**。
+合计：**7 门课程 / 81 章 / 107 个 HTML 页面**。
 
 ### 课程之间的连接
 
@@ -62,11 +62,11 @@ Welcome! This is my personal, exam-oriented review site for seven Year 2 Semeste
 | 内容 | 规模 | 说明 |
 |---|---:|---|
 | 学科 | 7 | BIO103、BIO105、CHE105、MTH113、SCI101、SOE102、SOE105 |
-| 章节 | 75 | 每章有本章目录、正文、来源页和上下章导航 |
-| HTML 页面 | 101 | 75 个章节页 + 学科索引 + 首页、术语、速记、搜索、图示 |
-| 课件原图 | 111 张 | 从老师 PDF/PPTX 提取或整页渲染，按小节插入正文 |
+| 章节 | 81 | 每章有本章目录、正文、来源页和上下章导航 |
+| HTML 页面 | 107 | 81 个章节页 + 学科索引 + 首页、术语、速记、搜索、图示 |
+| 课件原图 | 130 张 | 从老师 PDF/PPTX 提取或整页渲染，按小节插入正文 |
 | 矢量示意图 | 43 张 | 用于补充流程、结构、统计和程序内存示意 |
-| 术语 | 671 条 | 正文首次出现时用虚线下划线标注，悬停看中英文与释义 |
+| 术语 | 710 条 | 正文首次出现时用虚线下划线标注，悬停看中英文与释义 |
 | 对比表 | 40 张 | 按学科汇总易混概念，统一放在“速记”专栏 |
 | 搜索 | 全站 | 构建时生成本地索引，离线也能搜 |
 | 主题 | 浅色 / 暗色 | 米白纸墨与深灰夜间阅读 |
@@ -96,8 +96,8 @@ Welcome! This is my personal, exam-oriented review site for seven Year 2 Semeste
 ```text
 复习网站/
 ├─ content/                     # 内容源文件
-│  ├─ outline.json              # 7 学科 / 75 章的唯一事实源
-│  ├─ course_images.json        # 111 张课件原图的清单与落点
+│  ├─ outline.json              # 7 学科 / 81 章的唯一事实源
+│  ├─ course_images.json        # 130 张课件原图的清单与落点
 │  ├─ bio103/
 │  │  ├─ index.html             # 学科首页
 │  │  ├─ ch01.html … ch14.html  # 章节正文片段
@@ -118,7 +118,7 @@ Welcome! This is my personal, exam-oriented review site for seven Year 2 Semeste
 │  ├─ css/                      # tokens / base / layout / components / print
 │  ├─ js/                       # theme / search / copy
 │  ├─ figures/                  # 43 张 SVG 示意图
-│  └─ course/                   # 111 张课件原图
+│  └─ course/                   # 130 张课件原图
 ├─ tools/                       # 零依赖构建与维护脚本
 │  ├─ build.py
 │  ├─ check_content.py
@@ -183,7 +183,7 @@ python3 tools/export.py bio103
 
 ```bash
 python3 tools/check_content.py   # 内容自检：片段结构、术语、图片引用
-python3 tools/build.py           # 全站构建：生成 101 个 HTML 页面与搜索索引
+python3 tools/build.py           # 全站构建：生成 107 个 HTML 页面与搜索索引
 python3 tools/verify.py          # 检查断链、缺失锚点和页面数量
 python3 tools/report.py          # 输出内容密度报告
 ```

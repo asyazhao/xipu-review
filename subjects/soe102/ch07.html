@@ -82,6 +82,8 @@
           <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
           <li><a href="ch07.html" class="is-current" aria-current="page"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
           <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">交互式程序与 ArrayList</span><span class="toc-src">W11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">递归与多线程</span><span class="toc-src">W12</span></a></li>
         </ol>
       </details>
       <div class="toc-links">
@@ -104,6 +106,8 @@
           <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
           <li><a href="ch07.html" class="is-current" aria-current="page"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
           <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">交互式程序与 ArrayList</span><span class="toc-src">W11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">递归与多线程</span><span class="toc-src">W12</span></a></li>
         </ol>
       </details>
       <div class="toc-links">
@@ -138,7 +142,7 @@
         </details>
 
         <div class="prose">
-<p class="lead">本讲围绕“程序出错时会发生什么”展开：异常是<span class="c-term c-term--auto" data-term="object" title="对象｜object：把相关的数据（状态）与处理（行为）封装在一起的实体。">对象</span>，沿调用栈向上传递，被匹配的 catch 接住；据此区分 checked 与 unchecked，学会 try/catch/finally、try-with-resources、throw 与 <span class="c-term c-term--auto" data-term="throws" title="throws｜throws：方法签名中声明该方法可能抛出哪些异常的子句。">throws</span>，并设计自己的异常。</p>
+<p class="lead">本讲围绕“程序出错时会发生什么”展开：异常是<span class="c-term c-term--auto" data-term="object" title="对象｜object：把相关的数据（状态）与处理（行为）封装在一起的实体。">对象</span>，沿<span class="c-term c-term--auto" data-term="call-stack" title="调用栈｜call stack：保存每次方法调用的参数、局部变量与返回位置的后进先出结构。">调用栈</span>向上传递，被匹配的 catch 接住；据此区分 checked 与 unchecked，学会 try/catch/finally、try-with-resources、throw 与 <span class="c-term c-term--auto" data-term="throws" title="throws｜throws：方法签名中声明该方法可能抛出哪些异常的子句。">throws</span>，并设计自己的异常。</p>
 
 <div class="keypoints">
   <h2>本章要点</h2>
@@ -156,7 +160,7 @@
 
 <section id="s1">
   <h2 id="s1"><span class="sec-num">7.1</span> 一次崩溃：异常是什么</h2>
-  <p>讲义从一段会崩的程序开始：<code>String raw = "ten";</code> 之后调用 <code>Integer.parseInt(raw)</code>。parseInt 发现 "ten" 不是整数，就创建并抛出一个 <span class="c-term">NumberFormatException</span> 对象；第 5 行的打印语句立刻不再执行；由于没有任何处理器接住它，JVM 的默认处理器接手，打印栈轨迹并终止这个线程。</p>
+  <p>讲义从一段会崩的程序开始：<code>String raw = "ten";</code> 之后调用 <code>Integer.parseInt(raw)</code>。parseInt 发现 "ten" 不是整数，就创建并抛出一个 <span class="c-term">NumberFormatException</span> 对象；第 5 行的打印语句立刻不再执行；由于没有任何处理器接住它，JVM 的默认处理器接手，打印栈轨迹并终止这个<span class="c-term c-term--auto" data-term="thread" title="线程｜thread：程序内部独立执行的指令流；Java 用 Thread 或 Runnable 创建。">线程</span>。</p>
 <pre class="c-code"><code>public class CrashDemo {
     public static void main(String[] args) {
         String raw = "ten";
@@ -177,7 +181,7 @@
   <h2 id="s2"><span class="sec-num">7.2</span> Throwable 家族树</h2>
   <p>所有能被抛出的东西都继承自 <span class="c-term">Throwable</span>。它下面分两支：<span class="c-term">Error</span> 与 <span class="c-term">Exception</span>。</p>
   <ul>
-    <li>Error 是 JVM 级故障，例如 OutOfMemoryError、StackOverflowError（内存耗尽、无限递归）。讲义的态度很明确：一般无法恢复，<strong>不要捕获</strong>，要么修根因，要么重启。</li>
+    <li>Error 是 JVM 级故障，例如 OutOfMemoryError、StackOverflowError（内存耗尽、无限<span class="c-term c-term--auto" data-term="recursion" title="递归｜recursion：方法调用自身来解决规模更小的同类问题，必须有可达的基准情形。">递归</span>）。讲义的态度很明确：一般无法恢复，<strong>不要捕获</strong>，要么修根因，要么重启。</li>
     <li>Exception 下的 <span class="c-term">checked exception</span> 包括 IOException、FileNotFoundException、SQLException、ClassNotFoundException、InterruptedException——必须捕获或声明。</li>
     <li>Exception 下的 <span class="c-term">RuntimeException</span> 是 unchecked：NullPointerException、IllegalArgumentException、IllegalStateException、IndexOutOfBoundsException、ArithmeticException、NumberFormatException、ClassCastException。</li>
   </ul>

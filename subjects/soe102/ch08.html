@@ -82,6 +82,8 @@
           <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
           <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
           <li><a href="ch08.html" class="is-current" aria-current="page"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">交互式程序与 ArrayList</span><span class="toc-src">W11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">递归与多线程</span><span class="toc-src">W12</span></a></li>
         </ol>
       </details>
       <div class="toc-links">
@@ -104,6 +106,8 @@
           <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
           <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
           <li><a href="ch08.html" class="is-current" aria-current="page"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">交互式程序与 ArrayList</span><span class="toc-src">W11</span></a></li>
+          <li><a href="ch10.html"><span class="toc-num">10</span><span class="toc-title">递归与多线程</span><span class="toc-src">W12</span></a></li>
         </ol>
       </details>
       <div class="toc-links">
@@ -156,7 +160,7 @@
 
 <section id="s1">
   <h2 id="s1"><span class="sec-num">8.1</span> 程序是一座孤岛：流模型</h2>
-  <p>到目前为止，所有数据都活在内存里：<code>int score = 82;</code>、<code>String name = "Ada";</code>、一个 ArrayList。程序一退出，这些全部消失。文件则能活过进程——<code>Files.writeString(Path.of("scores.txt"), "82");</code> 写下的内容明天还在。讲义把 I/O 定义为“通往 JVM 之外一切的桥”，并列出三条通道：磁盘（文件与文件夹：配置、数据、报告、图片）、控制台（键盘 System.in 与终端 System.out）、网络（套接字、HTTP，其字节与文件一模一样）。</p>
+  <p>到目前为止，所有数据都活在内存里：<code>int score = 82;</code>、<code>String name = "Ada";</code>、一个 <span class="c-term c-term--auto" data-term="arraylist" title="ArrayList｜ArrayList：java.util 中可自动扩容的有序列表，用 add/get/set/remove/size 等方法操作。">ArrayList</span>。程序一退出，这些全部消失。文件则能活过进程——<code>Files.writeString(Path.of("scores.txt"), "82");</code> 写下的内容明天还在。讲义把 I/O 定义为“通往 JVM 之外一切的桥”，并列出三条通道：磁盘（文件与文件夹：配置、数据、报告、图片）、控制台（键盘 System.in 与终端 System.out）、网络（套接字、HTTP，其字节与文件一模一样）。</p>
   <p>统一它们的比喻是<span class="c-term">流<span class="c-term__en">stream</span></span>：一段有序的数据，流入（input）或流出（output）。文件、键盘、网络套接字都用同一套<span class="c-term c-term--auto" data-term="method" title="方法｜method：类中具名、可复用的代码块，被调用时执行。">方法</span>读写——“学一次模型，到处适用”。这句话是本章的总纲：后面出现的几十个类，都只是这条模型的不同实现。</p>
   <aside class="c-callout c-callout--note">
     <p class="c-callout__label">辨析</p>
@@ -351,7 +355,7 @@ try (Stream&lt;Path&gt; s = Files.walk(Path.of("project"))) {
   <p>最后是<span class="c-term">序列化<span class="c-term__en">serialization</span></span>：让类 <code>implements Serializable</code>（一个没有方法的标记接口，等于授权 JVM 把对象字段转成字节），声明 <code>serialVersionUID</code>，再用 ObjectOutputStream 的 <code>writeObject</code> 写出、ObjectInputStream 的 <code>readObject</code> 读回（返回 Object，需要强转）。被<span class="c-term c-term--auto" data-term="reference" title="引用｜reference：变量中保存的、指向堆上对象的内存地址。">引用</span>的对象也会一起序列化，它们同样必须可序列化或被标记为 transient。讲义的态度是：必须能读懂序列化代码，但新系统应避免使用——它对类结构变化很脆弱、其他语言读不了，readObject 还有已知的安全风险；优先用 JSON、CSV 这类文本格式，显式写出字段。</p>
   <aside class="c-callout c-callout--note">
     <p class="c-callout__label">辨析</p>
-    <p>Files.list 只看一层，Files.walk 递归所有层；两者都必须关闭。readString 适合小文件，walk 适合批量处理——它们解决的是不同规模的问题。</p>
+    <p>Files.list 只看一层，Files.walk <span class="c-term c-term--auto" data-term="recursion" title="递归｜recursion：方法调用自身来解决规模更小的同类问题，必须有可达的基准情形。">递归</span>所有层；两者都必须关闭。readString 适合小文件，walk 适合批量处理——它们解决的是不同规模的问题。</p>
   </aside>
   <p class="c-source">W10 slide 18–21</p>
 </section>
@@ -392,7 +396,7 @@ try (Stream&lt;Path&gt; s = Files.walk(Path.of("project"))) {
           <p class="c-source">W10</p>
           <nav class="pager" aria-label="章节翻页">
           <a class="pager__prev" href="ch07.html"><span>上一章</span>异常处理</a>
-          <a class="pager__next" href="index.html"><span>返回</span>学科主页</a>
+          <a class="pager__next" href="ch09.html"><span>下一章</span>交互式程序与 ArrayList</a>
           </nav>
         </footer>
       </article>

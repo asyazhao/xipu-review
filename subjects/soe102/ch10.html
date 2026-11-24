@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOE102 递归与多线程 · 全科复习</title>
+  <meta name="description" content="SOE102 第 10 章 递归与多线程：章节要点、术语与图示提示词。">
+  <script>
+  (function () {
+    try {
+      var t = localStorage.getItem('xipu.theme');
+      var q = new URLSearchParams(window.location.search).get('theme');
+      if (q === 'light' || q === 'dark') t = q;
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = t;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/print.css" media="print">
+</head>
+<body class="page-chapter" data-subject="soe102" data-chapter="10">
+  <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">
+        <span class="brand__name">全科复习</span>
+        <span class="brand__sub">XJTLU · 大二上</span>
+      </a>
+
+      <nav class="global-nav" aria-label="全站导航">
+        <a href="../../index.html#subjects">学科</a>
+        <a href="../../glossary.html">术语</a>
+        <a href="../../compare.html">速记</a>
+        <a href="../../gallery.html">图示</a>
+      </nav>
+
+      <form class="header-search" action="../../search.html" method="get" role="search">
+        <label class="visually-hidden" for="header-q">搜索</label>
+        <input id="header-q" name="q" type="search" placeholder="搜索章节、术语、考点…" autocomplete="off">
+      </form>
+
+      <details class="mobile-menu">
+        <summary aria-label="打开菜单">菜单</summary>
+        <nav aria-label="移动端导航">
+          <a href="../../index.html#subjects">学科</a>
+          <a href="../../glossary.html">术语</a>
+          <a href="../../compare.html">速记</a>
+          <a href="../../gallery.html">图示</a>
+          <a href="../../search.html">搜索</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <a href="index.html">SOE102</a>
+      <span>/</span>
+      <span aria-current="page">第 10 章 递归与多线程</span>
+    </nav>
+
+    <details class="mobile-toc">
+      <summary>本学科目录</summary>
+      <div class="subject-toc">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">交互式程序与 ArrayList</span><span class="toc-src">W11</span></a></li>
+          <li><a href="ch10.html" class="is-current" aria-current="page"><span class="toc-num">10</span><span class="toc-title">递归与多线程</span><span class="toc-src">W12</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </div>
+    </details>
+
+    <div class="chapter-layout">
+      <aside class="subject-toc" aria-label="本学科目录">
+      <details class="toc-group" open>
+        <summary>全部章节</summary>
+        <ol class="toc-list">
+          <li><a href="ch01.html"><span class="toc-num">01</span><span class="toc-title">Java 入门与开发环境</span><span class="toc-src">W1</span></a></li>
+          <li><a href="ch02.html"><span class="toc-num">02</span><span class="toc-title">数据类型、变量、方法与运算符</span><span class="toc-src">W2</span></a></li>
+          <li><a href="ch03.html"><span class="toc-num">03</span><span class="toc-title">数组、输入与控制流</span><span class="toc-src">W3</span></a></li>
+          <li><a href="ch04.html"><span class="toc-num">04</span><span class="toc-title">字符串与静态方法</span><span class="toc-src">W4</span></a></li>
+          <li><a href="ch05.html"><span class="toc-num">05</span><span class="toc-title">对象入门</span><span class="toc-src">W5</span></a></li>
+          <li><a href="ch06.html"><span class="toc-num">06</span><span class="toc-title">对象与继承</span><span class="toc-src">W6</span></a></li>
+          <li><a href="ch07.html"><span class="toc-num">07</span><span class="toc-title">异常处理</span><span class="toc-src">W9</span></a></li>
+          <li><a href="ch08.html"><span class="toc-num">08</span><span class="toc-title">Java I/O：流与文件</span><span class="toc-src">W10</span></a></li>
+          <li><a href="ch09.html"><span class="toc-num">09</span><span class="toc-title">交互式程序与 ArrayList</span><span class="toc-src">W11</span></a></li>
+          <li><a href="ch10.html" class="is-current" aria-current="page"><span class="toc-num">10</span><span class="toc-title">递归与多线程</span><span class="toc-src">W12</span></a></li>
+        </ol>
+      </details>
+      <div class="toc-links">
+        <a href="glossary.html">术语词典</a>
+        <a href="compare.html">对比速记</a>
+      </div>
+      </aside>
+
+      <article class="chapter">
+        <header class="chapter-head">
+          <p class="kicker">SOE102 · 第 10 章</p>
+          <h1>递归与多线程</h1>
+          <p class="chapter-head__en">Recursion &amp; Multithreading</p>
+          <p class="chapter-head__meta">来源 W12 · 术语 6 个</p>
+          <p class="chapter-term-note">虚线下划线为术语；悬停查看中文、英文与释义，完整词典见“术语”。</p>
+        </header>
+
+        <details class="chapter-toc" open>
+          <summary>本章目录</summary>
+          <ol>
+        <li><a href="#s1">10.1 递归：一摞书与四个组成部分</a></li>
+        <li><a href="#s2">10.2 factorial：一条规则与它的 Java 写法</a></li>
+        <li><a href="#s3">10.3 调用栈：先下去，再回来</a></li>
+        <li><a href="#s4">10.4 调用前后的打印：in 自上而下，out 自下而上</a></li>
+        <li><a href="#s5">10.5 停不下来的递归：base case 必须可达</a></li>
+        <li><a href="#s6">10.6 子序列：每个字母 skip 或 keep</a></li>
+        <li><a href="#s7">10.7 递归树：打印顺序与 2ⁿ 条路径</a></li>
+        <li><a href="#s8">10.8 线程：Thread 与 Runnable 两种写法</a></li>
+        <li><a href="#s9">10.9 start、run、join 与共享数据的竞争</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+<p class="lead">本讲分两部分：先用书堆、factorial 与子序列说明递归的四个组成部分、调用栈与回代顺序；再说明如何用 <span class="c-term c-term--auto" data-term="thread" title="线程｜thread：程序内部独立执行的指令流；Java 用 Thread 或 Runnable 创建。">Thread</span> 或 Runnable 启动独立任务，用 start/run/join 区分“开线程”与“普通调用”，并看清共享数据被交错执行时的竞争。</p>
+
+<div class="keypoints">
+  <h2>本章要点</h2>
+  <ul>
+    <li>递归<span class="c-term c-term--auto" data-term="method" title="方法｜method：类中具名、可复用的代码块，被调用时执行。">方法</span>由四部分组成：方法契约、<span class="c-term c-term--auto" data-term="base-case" title="基准情形｜base case：递归中不再调用自身、直接返回结果的条件。">base case</span>、递归步、合并；更小的输入必须朝 base case 移动。</li>
+    <li>fact(n) = n × fact(n − 1)、fact(0) = 1；每一层有自己的 n，回代时逐层乘回去。</li>
+    <li>调用栈后进先出：最后开始的调用最先返回，下去的待办与回来的顺序相反。</li>
+    <li>递归调用之后的语句要等那一层返回才执行，所以 in 自上而下、out 自下而上。</li>
+    <li>base case 必须可达；输入远离停止条件时栈会一直长，直到 StackOverflowError。</li>
+    <li>子序列对每个字母 skip / keep 二选一，helper 带 prefix 与 rest，rest 为空即打印。</li>
+    <li>递归树每层分两支，n 个字母有 2ⁿ 条路径；同一子问题被多条路径到达时会被重复计算。</li>
+    <li>Thread 与 Runnable 是两种写法；start() 才开线程，run() 只是普通调用，join() 让 main 等。</li>
+    <li>count++ 是读、算、写三步，两个线程交错执行会丢掉一次自增。</li>
+  </ul>
+</div>
+
+<section id="s1">
+  <h2 id="s1"><span class="sec-num">10.1</span> 递归：一摞书与四个组成部分</h2>
+  <p>讲义用一个生活问题开场：这摞书有多少本？不必一次数完，只做三步——拿走最上面一本，问“剩下的还有几本”，再把这一本加回去。空stack 是 0 本；非空就是 1 加上下面那摞的数量。</p>
+  <p>这就是<span class="c-term">递归<span class="c-term__en">recursion</span></span>：方法在解决一个更小的问题时调用自己。讲义把它拆成四部分，缺任何一块都不成立：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>递归方法的四个组成部分</caption>
+      <thead><tr><th scope="col">部分</th><th scope="col">做什么</th><th scope="col">书堆里的样子</th></tr></thead>
+      <tbody>
+        <tr><td>方法契约</td><td>说明一次调用承诺什么</td><td>返回剩下的书的数量</td></tr>
+        <tr><td>base case</td><td>不再调用自己就给出答案</td><td>空stack 返回 0</td></tr>
+        <tr><td>递归步</td><td>用更小的输入调用自己</td><td>数去掉最上面一本之后的那摞</td></tr>
+        <tr><td>合并</td><td>用小答案完成本层的答案</td><td>给最上面一本加 1</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>四部分里最容易被跳过的是最后那句硬要求：The smaller input must move toward a base case。递归步必须让输入真的变小、真的靠近停止条件；否则前三条写得再漂亮，调用也会无限加深。</p>
+  <p>理解这四个部分之后，“写递归”就变成一个固定的自问顺序：这个方法返回什么？哪一种输入可以不调用自己就回答？我把它交给哪个更小的输入？拿到小答案之后，本层要做什么运算？讲义后面每个例子——factorial、糖果、子序列——都是这一套问答的重复。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>检查一个递归方法，按四问走：契约写清了吗？哪一行不调用自己？递归调用收到的是不是更小的输入？返回时怎么把小答案拼成本层答案？少答一问，方法就不完整。</p>
+  </aside>
+  <p class="c-source">W12 p.8–9</p>
+</section>
+
+<section id="s2">
+  <h2 id="s2"><span class="sec-num">10.2</span> factorial：一条规则与它的 Java 写法</h2>
+  <p>讲义用排座位解释阶乘：4 个人 4 个座位，第一个座位有 4 种选择，接着是 3、2、1，所以 4! = 4 × 3 × 2 × 1 = 24；5 个座位先选谁坐第一个，再安排剩下的四个，于是 5! = 5 × 4! = 120。</p>
+  <p>由此得到两条规则，正好对应递归的两半：<code>fact(0) = 1</code>（一个人都不安排，只有一种方式，这是 base case）；<code>fact(n) = n × fact(n − 1)</code>（先选第一个人，再安排其余的人，这是递归步加合并）。讲义注明这条数学规则只适用于非负整数。</p>
+<pre class="c-code"><code>static long fact(int n) {
+    if (n &lt; 0 || n &gt; 20) {
+        throw new IllegalArgumentException("Use 0 to 20");
+    }
+    if (n == 0) {
+        return 1;
+    }
+    return n * fact(n - 1);
+}</code></pre>
+  <p>三个细节值得单独记。第一，上界 20 来自 long 的容量：20! 装得下，21! 装不下，所以方法先用 IllegalArgumentException 把 0 到 20 之外的值挡在递归之前。第二，<code>n == 0</code> 是唯一的 base case，直接返回 1，不再调用。第三，最后一行同时完成递归步与合并：先取到 <code>fact(n - 1)</code> 的答案，再乘本层的 n。</p>
+  <p>返回类型是 long：讲义注明 20! 装得下、21! 装不下，这正是方法要把输入限制在 0 到 20 的原因。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p><code>fact(0)</code> 返回 1，不是 0。写成 <code>return 0</code> 会让整条回代链全部变成 0：1×0=0，2×0=0，最后所有阶乘都输出 0。记住“空排列也算一种排列”。</p>
+  </aside>
+  <p class="c-source">W12 p.10–12</p>
+</section>
+
+<section id="s3">
+  <h2 id="s3"><span class="sec-num">10.3</span> 调用栈：先下去，再回来</h2>
+  <p>fact(3) 的执行分两段。下去时每一层都在等：fact(3) 等 fact(2) 的答案好乘 3，fact(2) 等 fact(1) 好乘 2，fact(1) 等 fact(0) 好乘 1，fact(0) 不需要再等，直接返回 1。</p>
+  <p>回来时顺序相反：fact(1) 拿到 1，算出 1 × 1 = 1；fact(2) 拿到 1，算出 2 × 1 = 2；fact(3) 拿到 2，算出 3 × 2 = 6。讲义把这两段画成左右两列：左边“calls go deeper”，右边“answers come back”，中间那句总结是 the last call to start is the first call to return。</p>
+  <p>支撑这一切的是<span class="c-term">调用栈<span class="c-term__en">call stack</span></span>。讲义画了最深处的栈：从顶到底依次是 fact(0)、fact(1)、fact(2)、fact(3)、main。每一帧都有自己的 n，所以三个 n 同时存在、互不覆盖；一个调用结束就离开栈，下面那一层接着算。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>最深处的调用栈（栈顶在上）</caption>
+      <thead><tr><th scope="col">栈帧</th><th scope="col">此刻的状态</th></tr></thead>
+      <tbody>
+        <tr><td>fact(0)</td><td>n = 0，第一个返回，值是 1</td></tr>
+        <tr><td>fact(1)</td><td>n = 1，等着做乘法</td></tr>
+        <tr><td>fact(2)</td><td>n = 2，等着做乘法</td></tr>
+        <tr><td>fact(3)</td><td>n = 3，等着做乘法</td></tr>
+        <tr><td>main</td><td>等着最终答案</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>“后进先出”是这一节的全部内容：最后压入的 fact(0) 最先弹出，最先压入的 fact(3) 最后完成。追踪递归题时，画一张这样的栈表，把每层“待办”写在旁边（这里是要乘的 n），就不会把 6 直接写出来而漏掉中间过程。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>每层有独立的 n；下去的顺序是 n、n−1、…、0，回代的顺序是 0、1、…、n；最后开始的调用最先返回。只写结果不写栈，过程分拿不到。</p>
+  </aside>
+  <!-- course-image:soe102-ch10-call-stack.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe102-ch10-call-stack">
+        <img class="c-course-figure__img" src="../../assets/course/soe102-ch10-call-stack.jpg" alt="fact(3) 的调用栈与回代" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> fact(3) 的调用栈与回代 <span class="c-course-figure__src">来源：W12 p.15</span></figcaption>
+      </figure>
+
+<p class="c-source">W12 p.13–15</p>
+</section>
+
+<section id="s4">
+  <h2 id="s4"><span class="sec-num">10.4</span> 调用前后的打印：in 自上而下，out 自下而上</h2>
+  <p>讲义用一个只负责打印的 show 方法，检验“递归调用之后的代码什么时候执行”：</p>
+<pre class="c-code"><code>static void show(int n) {
+    if (n == 0) return;
+    System.out.println("in " + n);
+    show(n - 1);
+    System.out.println("out " + n);
+}</code></pre>
+  <p>show(2) 的输出是 in 2、in 1、out 1、out 2。原因只有一条：递归调用之前的语句在“下去”时执行，递归调用之后的语句要等那一层返回才执行。show(2) 打完 in 2 就卡在 show(1)；show(1) 打完 in 1 卡在 show(0)；show(0) 是 base case，直接 return，什么都不打；然后 show(1) 才轮到 out 1，show(2) 才轮到 out 2。</p>
+  <p>把这段执行分三段看最清楚：下去段自上而下打印 in 2、in 1；到底段在 base case 处什么都不打印；回来段自下而上打印 out 1、out 2。两段的顺序正好相反，中间被 base case 隔开。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>看到“递归调用前后各有打印”的题，先分段：调用前 = 下去时自上而下，调用后 = 回来时自下而上。两段顺序相反，base case 本身通常不产生输出。</p>
+  </aside>
+  <p>这条规则也解释了 10.3 的乘法为什么能算对：<code>return n * fact(n - 1)</code> 里的乘法发生在调用返回之后，所以每个 n 都在自己那一层等着，直到更小的答案送到手里才动。</p>
+  <p class="c-source">W12 p.16–17</p>
+</section>
+
+<section id="s5">
+  <h2 id="s5"><span class="sec-num">10.5</span> 停不下来的递归：base case 必须可达</h2>
+  <p>base case 写错有两种：根本没写；或者写了，但输入永远走不到它。讲义用 broken 演示第二种：</p>
+<pre class="c-code"><code>static int broken(int n) {
+    if (n == 1000) return 1;
+    return n * broken(n - 1);
+}
+
+// In main:
+broken(10);</code></pre>
+  <p>调用 broken(10)，n 依次变成 10、9、8、7……离 1000 越来越远。每次调用都继续加深，栈一直长，直到 <span class="c-term">StackOverflowError</span>。讲义要求检查两件事：停止条件写对了吗？每个新输入确实在靠近它吗？</p>
+  <p>这也是递归与循环的第一层区别。讲义用一张表对照 factorial 的两种写法：递归版每层收到 n−1，循环版更新一个累乘<span class="c-term c-term--auto" data-term="variable" title="变量｜variable：具名的内存位置，用来存放可以改变的值。">变量</span>；递归在 <code>n == 0</code> 停，循环在 <code>i &gt; n</code> 停；两者的算术量都是 O(n)，但递归要 O(n) 的调用栈空间，循环只要 O(1)。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>factorial：递归版与循环版</caption>
+      <thead><tr><th scope="col">问题</th><th scope="col">递归版</th><th scope="col">循环版</th></tr></thead>
+      <tbody>
+        <tr><td>什么在变</td><td>每次调用收到 n − 1</td><td>一个累乘变量被更新</td></tr>
+        <tr><td>何时停</td><td><code>n == 0</code></td><td><code>i &gt; n</code></td></tr>
+        <tr><td>工作量</td><td>O(n) 次调用</td><td>O(n) 次迭代</td></tr>
+        <tr><td>额外的栈空间</td><td>O(n)</td><td>O(1)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>结论不是“递归更差”，而是“递归的代价记在栈上”：层数深、或每层还要保存局部变量时，栈空间才是限制；同样的计算用循环写，额外空间是常数。factorial 这种每层只做一次乘法的场景，两种写法算术量相近，差别就在这 O(n) 与 O(1)。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>“有 if 就是有 base case”是错的：broken 里确实有 <code>if (n == 1000)</code>，但 n 每次减一，永远碰不到 1000。判断标准不是“有没有 if”，而是“新输入是否在靠近这个条件”。</p>
+  </aside>
+  <p class="c-source">W12 p.18–19</p>
+</section>
+
+<section id="s6">
+  <h2 id="s6"><span class="sec-num">10.6</span> 子序列：每个字母 skip 或 keep</h2>
+  <p>子序列是递归的第二个例子。讲义先给定义：<span class="c-term">子序列<span class="c-term__en">subsequence</span></span>保留原来的字母顺序，可以跳过一些字母；<span class="c-term">子串<span class="c-term__en">substring</span></span>必须连续。从 "abc" 出发，"ac" 是子序列（跳过 b），"abc" 是（三个都要），空串也是（三个都跳），"ca" 不是（原文里 a 排在 c 前面）。</p>
+  <p>递归的看法很简单：对第一个字母只有两个选择。跳过 a，答案就是 "bc" 的全部子序列；保留 a，就把 a 放在 "bc" 每个子序列的前面。两个分支的剩余字母都少一个，所以一定会收敛到空串。</p>
+  <p>helper 带两个参数：prefix 是已经保留的字母，rest 是还没决定的字母。初始调用是 prefix 为空串、rest 是整个单词；base case 是 rest 为空——没有字母可决定了，打印 <code>[prefix]</code> 并返回。方括号是为了让空结果也能在屏幕上看见。</p>
+<pre class="c-code"><code>static void printSubsequences(String prefix, String rest) {
+    if (rest.isEmpty()) {
+        System.out.println("[" + prefix + "]");
+        return;
+    }
+    char first = rest.charAt(0);
+    String remaining = rest.substring(1);
+
+    printSubsequences(prefix, remaining);          // skip
+    printSubsequences(prefix + first, remaining);  // keep
+}</code></pre>
+  <p>四行是核心：取首字母、取剩余串、先 skip 再 keep。顺序决定输出顺序——先递归 skip 分支，所以所有“不要 a”的结果先打印完，才开始“要 a”的分支。两个分支传下去的 remaining 相同，差别只在 prefix 有没有加上 first。</p>
+  <p>对外只暴露一个入口 <code>subsequences(word)</code>，它把空 prefix 补上再调用 helper。讲义把这个结构叫 wrapper + helper：调用者只需要给单词，递归的细节藏在私有方法里；helper 也可以被声明为 private。</p>
+  <aside class="c-callout c-callout--trap">
+    <p class="c-callout__label">易错</p>
+    <p>base case 必须在 <code>charAt(0)</code> 之前判断。如果先取首字母再检查 rest 是否为空，处理到空串时会越界；讲义把 isEmpty 的判断放在方法第一行，正是这个原因。</p>
+  </aside>
+  <!-- course-image:soe102-ch10-skip-keep.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe102-ch10-skip-keep">
+        <img class="c-course-figure__img" src="../../assets/course/soe102-ch10-skip-keep.jpg" alt="子序列的 skip / keep 决策树" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> 子序列的 skip / keep 决策树 <span class="c-course-figure__src">来源：W12 p.29</span></figcaption>
+      </figure>
+
+<p class="c-source">W12 p.24–28、30</p>
+</section>
+
+<section id="s7">
+  <h2 id="s7"><span class="sec-num">10.7</span> 递归树：打印顺序与 2ⁿ 条路径</h2>
+  <p>把 "ab" 的两个选择画成树，每个节点写 (prefix, rest)：根是 ("", "ab")；skip a 得到 ("", "b")，keep a 得到 ("a", "b")；再各自分两支，四个叶子依次是 ("", "")、("b", "")、("a", "")、("ab", "")，对应打印 []、[b]、[a]、[ab]。</p>
+  <p>打印顺序的规则是“一个分支彻底做完，才轮到它的兄弟”：skip 分支的整棵子树打完，才开始 keep 分支。所以读输出要按“先左子树、再右子树”的顺序走。讲义把这条写成一句操作提示：Finish the skip branch before the matching keep branch。</p>
+  <p>"abc" 的八个结果是：[]、[c]、[b]、[bc]、[a]、[ac]、[ab]、[abc]。前四个来自“跳过 a”，后四个来自“保留 a”；每个四组内部又是“跳过 b”在前、“保留 b”在后。讲义用两列表格呈现：先读左列（skip a 的四个），再读右列（keep a 的四个）。</p>
+  <p>数量增长是指数级的：每个字母二选一，n 个字母就是 2 的 n 次方个叶子。讲义给了三个数据点：3 个字母 8 条路径，10 个字母 1024 条，20 个字母 1,048,576 条。</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>输入长度与 skip/keep 路径数</caption>
+      <thead><tr><th scope="col">字母数</th><th scope="col">路径数</th></tr></thead>
+      <tbody>
+        <tr><td>3</td><td>8</td></tr>
+        <tr><td>10</td><td>1,024</td></tr>
+        <tr><td>20</td><td>1,048,576</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义另注一句：重复字母会产生重复的结果——同一棵树仍然走 2ⁿ 条路径，但打印出来的字符串可能相同。这是“路径数”与“不同结果数”的差别。</p>
+  <p>附录的 fib 是同一现象的另一种表现：<code>fib(n) = fib(n − 1) + fib(n − 2)</code>，两个 base case 是 fib(0) = 0、fib(1) = 1；fib(5) 会两次请求 fib(3)，同一棵子树被反复计算。讲义给的序列是 0、1、1、2、3、5、8。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>递归树有两个常考结论：叶子数等于“分支数”的深度次方（子序列是 2ⁿ）；同一个子问题若被多条路径到达，就会被重复计算（fib 里 fib(3) 被算两次）。</p>
+  </aside>
+  <p class="c-source">W12 p.29、31–34、53</p>
+</section>
+
+<section id="s8">
+  <h2 id="s8"><span class="sec-num">10.8</span> 线程：Thread 与 Runnable 两种写法</h2>
+  <p>线程部分从一个厨房开始：一个厨师可以在等汤的时候去拌沙拉（轮流做），两个厨师可以同时一个煮汤一个拌沙拉（同时做）。讲义给了一组定义：轮流是 <span class="c-term">并发<span class="c-term__en">concurrent</span></span>，同一瞬间同时做是 <span class="c-term">并行<span class="c-term__en">parallel</span></span>；而共用的炉子需要协调——两个任务都要用，就只能排队。</p>
+  <p>程序要满足三条：R1 汤和沙拉作为两个独立任务运行，各自打印自己的 worker 名字；R2 main 在 worker 运行期间继续打印，消息顺序可以变化；R3 main 等两个任务都结束，Dinner is ready 永远最后打印。讲义补了一句物理基础：每条线程有自己的调用栈——这正是每个任务能独立推进的原因，也是递归与线程在“栈”上的分野。</p>
+  <p>写法一，<span class="c-term c-term--auto" data-term="inheritance" title="继承｜inheritance：子类获得父类实例变量与实例方法的机制，用于代码复用。">继承</span> Thread。CookingTask 是一种 Thread，工作写在 run() 里，创建后调 start()：</p>
+<pre class="c-code"><code>class CookingTask extends Thread {
+    private final String task;
+
+    CookingTask(String task) {
+        this.task = task;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(task + " by "
+            + Thread.currentThread().getName());
+    }
+}
+
+// In main:
+new CookingTask("Soup").start();</code></pre>
+  <p>写法二，实现 Runnable。CookingJob 只描述“要做什么”，再把它交给一个 Thread <span class="c-term c-term--auto" data-term="object" title="对象｜object：把相关的数据（状态）与处理（行为）封装在一起的实体。">对象</span>，顺便给线程起名 Cook-A：</p>
+<pre class="c-code"><code>class CookingJob implements Runnable {
+    private final String task;
+
+    CookingJob(String task) {
+        this.task = task;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(task + " by "
+            + Thread.currentThread().getName());
+    }
+}
+
+// In main:
+new Thread(new CookingJob("Soup"), "Cook-A").start();</code></pre>
+  <p>两种写法的区别在职责：继承版里“任务”和“线程”是同一个对象；Runnable 版里作业与线程是两个对象，作业只说明工作内容，线程负责执行。讲义把这一点写成 Separate roles——the job and the thread are different objects。也正因如此，run() 里要问“是谁在跑”，答案来自 <code>Thread.currentThread().getName()</code>，而不是对象自己的字段。</p>
+  <p>线程的生命周期在附录里给了六个状态：NEW（已创建未启动）、RUNNABLE（可运行或正在运行）、BLOCKED（等监视器锁）、WAITING（无超时等待，例如 join）、TIMED_WAITING（限时等待，例如 sleep）、TERMINATED（已结束）。Java 没有单独的 RUNNING 值；结束的线程不能重启。</p>
+  <aside class="c-callout c-callout--note">
+    <p class="c-callout__label">辨析</p>
+    <p>继承 Thread 得到的是“一种线程”，实现 Runnable 得到的是“一件工作”。前者把工作写进线程类，后者把工作交给线程执行——讲义的演示两种都能跑，区别在任务与线程是否分开。</p>
+  </aside>
+  <p class="c-source">W12 p.35–39、54</p>
+</section>
+
+<section id="s9">
+  <h2 id="s9"><span class="sec-num">10.9</span> start、run、join 与共享数据的竞争</h2>
+  <p>三个方法只差几个字母，行为完全不同：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>run、start、join 的分工</caption>
+      <thead><tr><th scope="col">调用</th><th scope="col">在哪个线程执行</th><th scope="col">效果</th></tr></thead>
+      <tbody>
+        <tr><td><code>t.run()</code></td><td>main</td><td>当成普通方法调用，不开新线程</td></tr>
+        <tr><td><code>t.start()</code></td><td>新的 worker</td><td>启动线程，worker 可与 main 并行</td></tr>
+        <tr><td><code>t.join()</code></td><td>main 等待</td><td>等 t 结束；要声明或捕获 InterruptedException</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义用一段演示把 run 与 start 的差别摆在同一个控制台上：同一个 Thread 对象先 <code>cook.run()</code> 再 <code>cook.start()</code>，第一次打印 Soup by main，第二次打印 Soup by Cook-A。方法体一模一样，变的只是“谁在执行它”。</p>
+  <p>两个 worker 的输出顺序不确定：<code>a.start(); b.start();</code> 之后 main 打印 Main continues，这一次可能是 Soup、Main continues、Salad，下一次可能是 Main continues、Salad、Soup。讲义的态度很清楚：A sample run is only one schedule——一次运行只能证明“可能这样”，不能证明“一定这样”。</p>
+  <p>要保证顺序就得 join。四行代码的顺序是固定的：</p>
+<pre class="c-code"><code>a.start();
+b.start();
+a.join();
+b.join();
+System.out.println("Dinner is ready");</code></pre>
+  <p>两个 start 都必须在前，否则 join 时线程还没开始；两个 join 都必须在最后一行之前，否则 main 可能先跑完。讲义用时间轴画了这一点：两个 worker 谁先结束都行，但 join 返回意味着那一条线程已经结束，所以两个 join 都返回之后，Dinner is ready 一定在两条 worker 消息之后。</p>
+  <p>最后是共享数据。count++ 看着是一条语句，实际是三步：读 count、加一、写回。两个 worker 同时做，就可能都读到 0、都算出 1、都写 1，两次自增只剩一次：</p>
+  <div class="table-scroll">
+    <table class="c-table">
+      <caption>两次 count++ 交错执行</caption>
+      <thead><tr><th scope="col">操作</th><th scope="col">Worker A</th><th scope="col">Worker B</th></tr></thead>
+      <tbody>
+        <tr><td>读 count = 0</td><td>读到 0</td><td>读到 0</td></tr>
+        <tr><td>计算新值</td><td>得到 1</td><td>得到 1</td></tr>
+        <tr><td>写回</td><td>写入 1</td><td>写入 1</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>讲义用一句话总结：count++ reads, adds and writes. Another thread can interleave those steps。所以共享的可变数据需要协调，否则最终结果取决于调度顺序——这也回到了厨房里那只共用的炉子：两个任务都要用，就必须排队。</p>
+  <aside class="c-callout c-callout--exam">
+    <p class="c-callout__label">考点</p>
+    <p>run() 是普通调用、start() 才开线程、join() 才有先后；一个 Thread 对象只能 start 一次，结束的线程不能重启；count++ 不是一步完成的，两个线程各加一次的结果可能是 1。</p>
+  </aside>
+  <!-- course-image:soe102-ch10-start-run-join.jpg -->
+      <figure class="c-course-figure c-course-figure--inline" id="course-soe102-ch10-start-run-join">
+        <img class="c-course-figure__img" src="../../assets/course/soe102-ch10-start-run-join.jpg" alt="start()、run() 与 join() 的区别" loading="lazy" decoding="async">
+        <figcaption><span class="c-course-figure__num">课件图</span> start()、run() 与 join() 的区别 <span class="c-course-figure__src">来源：W12 p.40</span></figcaption>
+      </figure>
+
+<p class="c-source">W12 p.40–46</p>
+</section>
+
+        </div>
+
+        <footer class="chapter-foot">
+          <p class="c-source">W12</p>
+          <nav class="pager" aria-label="章节翻页">
+          <a class="pager__prev" href="ch09.html"><span>上一章</span>交互式程序与 ArrayList</a>
+          <a class="pager__next" href="index.html"><span>返回</span>学科主页</a>
+          </nav>
+        </footer>
+      </article>
+    </div>
+
+  </main>
+    <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>全科复习 · 个人复习资料</p>
+      <p>内容来源：课程讲义与术语表；资料缺口处标注“资料未提供”。</p>
+    </div>
+  </footer>
+  <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+    </svg>
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </svg>
+  </button>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/copy.js" defer></script>
+
+</body>
+</html>
